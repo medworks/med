@@ -15,17 +15,12 @@
 <body>
 	<div class="container">
 		<?php
-			include("./inc/header.php")
+			include("./inc/header.php");
 		?>
 
-		<section class="br-news">
-			<span class="right">خبرهای فوری</span>
-			<div class="news right">
-				<ul>
-					<p><a href="#">خبرهای فوری...</a></p>
-				</ul>
-			</div>
-		</section>
+		<?php
+			include("./inc/br-news.php");
+		?>
 
 		<section class="content">
 			
