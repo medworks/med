@@ -70,7 +70,9 @@
           </li>
         </ul>
       </div>
+ 
  </div> 
- <div id="" class="admin_container">container </div>
+ <div id="" class="admin_container">
+ </div>
  </body>
 </html>

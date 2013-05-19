@@ -26,13 +26,13 @@ header {
   direction : rtl;
   text-align :right;
   vertical-align: middle;  
-  -- position: absolute;
+  /*position: absolute;*/
   left: 100px;
   right: 10px; }
   header .logo {
     max-width: 380px;
     max-height: 30px;
-    margin: 30px 0 0 50px;
+    margin: 30px 0 0 140px;
     font-size: 18px;
     color: #d13736;
     font-weight: 500;
@@ -48,7 +48,7 @@ header {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    margin: 20px 0 0 0;
+    margin: 20px 110px 0 0;
     height: 32px;
     line-height: 32px; }
     header #mini-nav li {
@@ -99,12 +99,13 @@ header {
 
 .dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
   background-image: url("images/glyphicons-halflings-white.png"); }
+  
 
 #mainnav {
   display: block;
   float: right;
   position: relative;
-  top: 60px; }
+  top: 40px; }
   #mainnav > ul {
     width: 80px;
     position: absolute; }
@@ -136,13 +137,12 @@ header {
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
         position: absolute;
-        right: 100px;
+        right: 90px;
         top: 5px;
         z-index: 10;
         width: 11px;
         height: 20px; }
-  
-    
+
 	  
 .admin_top
 {
@@ -162,9 +162,6 @@ header {
  width :100px;
  min-height :500px;
  text-align : right;
- border-width:2px;
- border-style :solid;
- border-color :#A00000;
  margin-right :10px;
  margin-top : 10px;
  }
@@ -172,13 +169,17 @@ header {
  .admin_container
 {
  float : right;
- margin-right : 7px;
- margin-top : 10px;
+ position: relative;
  width :80%;
- min-height :500px;
- border-width:2px;
- border-style :solid;
- border-color :#A00000;
+ top: 15px;
+ margin: 0px 0px 70px 90px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  min-height: 1060px;
+  padding: 10px; 
  }
  
  ul {
