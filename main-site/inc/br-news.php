@@ -2,7 +2,8 @@
 	<span class="right">خبرهای فوری</span>
 	<div class="news right">
 		<ul>
-			<p><a href="#">خبرهای فوری...</a></p>
+			<a href="#">خبرهای فوری...</a>
 		</ul>
 	</div>
+	<div class="badboy"></div>
 </section>

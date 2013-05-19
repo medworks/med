@@ -220,4 +220,19 @@ section.br-news .news{
 	font-family: "bmitra";
 	font-size: 18px;
 	width: 840px;
+	text-align: right;
+}
+
+section.br-news .news ul a{
+	color: #444;
+}
+
+section.br-news .news ul a:hover{
+	color: #000;
+}
+/***************************************Content part**************************************/
+section.content{
+	background: #FFF;
+	min-height: 600px;
+	margin-top: 25px;
 }
