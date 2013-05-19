@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'bmitra';
+    src: url('fonts/BMitra.eot');
+    src: url('fonts/BMitra.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BMitra.woff') format('woff'),
+         url('fonts/BMitra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+	direction: rtl;
+    background: url('images/back_pattern.png');
+	background-position: center;
+}
+
+a:active,
+a:visited,
+a:link { 
+    border: none;
+    outline: none;
+}
+	
+header {
+  height: 50px;
+  direction : rtl;
+  text-align :right;
+  vertical-align: middle;  
+  -- position: absolute;
+  left: 100px;
+  right: 10px; }
+  header .logo {
+    max-width: 380px;
+    max-height: 30px;
+    margin: 30px 0 0 50px;
+    font-size: 18px;
+    color: #d13736;
+    font-weight: 500;
+    float: left; }
+    header .logo:hover {
+      opacity: 0.7; }
+  header .icons {
+    margin-left: 40px; }
+  header #mini-nav {    
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    float: right;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: 20px 0 0 0;
+    height: 32px;
+    line-height: 32px; }
+    header #mini-nav li {
+      float: right;
+      border-left: 1px solid #e6e6e6; }
+      header #mini-nav li:last-child {
+        border-right: 0; }
+      header #mini-nav li:first-child {
+        border-left: 0; border-left: 1px solid #e6e6e6; }
+    header #mini-nav a {
+      display: block;
+      padding: 0 15px;
+      color: black;
+      text-decoration: none;
+      cursor: pointer; }
+      header #mini-nav a:hover {
+        background: #e6e6e6; }
+    header #mini-nav span {
+      display: inline-block;
+      vertical-align: text-top;
+      margin-left: 5px;
+      padding: 0 5px;
+      line-height: 15px;
+      font-size: 11px;
+      color: white;
+      background: #d13736;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px; }
+    
+	  
+.admin_top
+{
+ float : right;
+ width : 92%;
+ min-height : 100px;
+ border-width: 2px;
+ border-style : solid;
+ border-color : #A00000;
+ margin-right :10px;
+ margin-bottom : 5px; 
+}
+
+.admin_right_panel  -- this section related to right nav div 
+{
+ float : right;
+ width :150px;
+ min-height :500px;
+ text-align : right;
+ border-width:2px;
+ border-style :solid;
+ border-color :#A00000;
+ margin-right :10px;
+ margin-top : 10px;
+ }
+
+ .admin_container
+{
+ float : right;
+ margin-right : 7px;
+ margin-top : 10px;
+ width :80%;
+ min-height :500px;
+ border-width:2px;
+ border-style :solid;
+ border-color :#A00000;
+ }
+ 
+ ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+ .hi1dden-phone
+ {
+	display: none;
+ }
