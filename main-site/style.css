@@ -8,6 +8,12 @@
     font-style: normal;
 }
 
+::selection{
+	background:#F9A386;
+	text-shadow:none;
+	color: #fff;
+}
+
 body{
 	background: url('./images/body-bg.png') center;
 }
@@ -231,8 +237,21 @@ section.br-news .news ul a:hover{
 	color: #000;
 }
 /***************************************Content part**************************************/
-section.content{
+section.main-content{
 	background: #FFF;
 	min-height: 600px;
 	margin-top: 25px;
+	padding: 20px 15px;
+}
+
+section.main-content .content{
+	width: 650px;
+}
+
+section.main-content .content .slideshow{
+}
+
+section.main-content .sidebar{
+	width: 250px;
+	margin-right: 50px;
 }

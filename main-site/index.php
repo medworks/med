@@ -22,8 +22,12 @@
 			include("./inc/br-news.php");
 		?>
 
-		<section class="content">
-			
+		<section class="main-content">
+			<div class="content right">
+				<div class="slideshow"></div>
+			</div>
+			<div class="sidebar left"></div>
+			<div class="badboy"></div>
 		</section>
 
 		<footer>
