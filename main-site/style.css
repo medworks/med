@@ -151,6 +151,23 @@ div.container header .mid h2 a strong{
 	display: none;
 }
 /************Main Menu Header***************/
+div.container header .main-menu menu{
+	background: url('./images/main-menu-bg.png') repeat-x bottom;
+	height: 52px;
+	border-bottom: 5px solid #F88C00;
+}
+
 div.container header .main-menu menu li{
 	float: right;
+}
+
+div.container header .main-menu menu li:first-child{
+	margin-right: 10px;
+}
+
+div.container header .main-menu menu li a{
+	display: block;
+	padding: 17px 5px;
+	font-family: 'bmitra';
+	font-size: 19px;
 }
