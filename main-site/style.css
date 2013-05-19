@@ -76,6 +76,7 @@ div.contain{
 div.container header{
 	margin: 20px auto 25px;
 	background: #fbfbfb;
+	min-height: 200px;
 }
 
 div.container header .top{
@@ -137,11 +138,19 @@ div.container header .top .search form .search{
 	outline: 0;
 	font-family: 'bmitra';
 }
-/************Mid Header***************/
+/************Mid Header*****************/
 div.container header .mid{
 	padding: 20px 15px;
 }
 
+div.container header .mid .logo{
+	margin-top: 8px;
+}
+
 div.container header .mid h2 a strong{
 	display: none;
+}
+/************Main Menu Header***************/
+div.container header .main-menu menu li{
+	float: right;
 }

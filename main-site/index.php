@@ -50,7 +50,15 @@
 				</div>
 			</div>
 			<div class="badboy"></div>
-			<div class="bot"></div>
+			<div class="main-menu">
+				<menu>
+					<li><a href="#">صفحه اصلی</a></li>
+					<li><a href="#">درباره ما</a></li>
+					<li><a href="#">گالری تصاویر</a></li>
+					<li><a href="#">خدمات</a></li>
+					<li><a href="#">تماس با ما</a></li>
+				</menu>
+			</div>
 		</header>
 
 		<section class="content">
