@@ -78,6 +78,70 @@ header {
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
       border-radius: 2px; }
+	  
+/* White icons with optional class, or on hover/active states of certain elements */
+.icon-white {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+.nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+.nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+.navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+.dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+.dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+.dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
+  background-image: url("images/glyphicons-halflings-white.png"); }
+
+#mainnav {
+  display: block;
+  float: right;
+  position: relative;
+  top: 60px; }
+  #mainnav > ul {
+    width: 80px;
+    position: absolute; }
+    #mainnav > ul > li {
+      display: block;
+      position: relative;
+      margin-bottom: 5px; }
+      #mainnav > ul > li [data-icon]:before {
+        font-size: 32px; }
+      #mainnav > ul > li:hover .fs1 {
+        color: #737373; }
+      #mainnav > ul > li:hover a {
+        color: #737373; }
+      #mainnav > ul > li.active {
+        background: transparent; }
+        #mainnav > ul > li.active a {
+          color: #d13736; }
+        #mainnav > ul > li.active .fs1 {
+          color: #d13736; }
+      #mainnav > ul > li > a {
+        display: block;
+        outline: 0;
+        height: 52px;
+        padding: 8px 5px;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 12px;
+        text-align: center; }
+      #mainnav > ul > li .current-arrow {
+        background-image: url("images/menu-arrow.png");
+        position: absolute;
+        right: 100px;
+        top: 5px;
+        z-index: 10;
+        width: 11px;
+        height: 20px; }
+  
     
 	  
 .admin_top
@@ -91,11 +155,11 @@ header {
  margin-right :10px;
  margin-bottom : 5px; 
 }
-
-.admin_right_panel  -- this section related to right nav div 
+/*  this section related to right nav div */
+.admin_right_panel   
 {
  float : right;
- width :150px;
+ width :100px;
  min-height :500px;
  text-align : right;
  border-width:2px;
