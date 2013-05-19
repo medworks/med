@@ -204,3 +204,20 @@ div.container header .main-menu menu li.active:first-child a{
 	background-repeat: no-repeat;
 	background-position: 0 -295px;
 }
+/***************************************Breaking news part**************************************/
+section.br-news span{
+	background: #FF0000;
+	padding: 6px 10px;
+	color: #fff;
+	font-family: "bmitra";
+	font-size: 18px;
+	width: 70px;
+}
+
+section.br-news .news{
+	background: #fff;
+	padding: 6px 10px;
+	font-family: "bmitra";
+	font-size: 18px;
+	width: 840px;
+}
