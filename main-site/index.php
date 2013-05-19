@@ -37,7 +37,7 @@
 			</div>
 			<div class="badboy"></div>
 			<div class="mid">
-				<div class="logo">
+				<div class="logo left">
 					<h2>
 						<a href="#" title="مدیا تک">
 							<img src="./images/logo.png" alt="مدیا تک">
@@ -45,8 +45,11 @@
 						</a>
 					</h2>
 				</div>
-				<div class="ads"></div>
+				<div class="ads right">
+					<a href="#"><img src="./images/others/ads.jpg"></a>
+				</div>
 			</div>
+			<div class="badboy"></div>
 			<div class="bot"></div>
 		</header>
 
