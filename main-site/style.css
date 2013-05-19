@@ -30,7 +30,6 @@ a:link{
 a,
 h5 a,
 a p{
-    color: #555;
 	text-align: right;
 	text-decoration: none;
 	-webkit-transition: color 1s;
@@ -43,7 +42,6 @@ a p{
 a:hover,
 h5 a:hover,
 a:hover p{
-	color: #000;
 	-webkit-transition: color 500ms;
 	-ms-transition: color 500ms;
 	-moz-transition: color 500ms;
@@ -103,10 +101,15 @@ div.container header .top .menu menu li{
 }
 
 div.container header .top .menu menu li a{
+    color: #555;
 	display: block;
 	padding: 3px 10px;
 	margin: 4px 0;
 	font-family: 'bmitra';
+}
+
+div.container header .top .menu menu li a:hover{
+	color: #000;
 }
 
 div.container header .top .search form span{
@@ -141,6 +144,7 @@ div.container header .top .search form .search{
 /************Mid Header*****************/
 div.container header .mid{
 	padding: 20px 15px;
+	height: 90px;
 }
 
 div.container header .mid .logo{
@@ -159,15 +163,44 @@ div.container header .main-menu menu{
 
 div.container header .main-menu menu li{
 	float: right;
+	margin-top: 5px;
+	border-right: 1px solid #222222;
 }
 
 div.container header .main-menu menu li:first-child{
+	border-right: 0 none;
 	margin-right: 10px;
 }
 
 div.container header .main-menu menu li a{
+	color: #fff;
 	display: block;
-	padding: 17px 5px;
+	padding: 14px 10px;
 	font-family: 'bmitra';
 	font-size: 19px;
+	border-right: 1px solid #383838;
+}
+
+div.container header .main-menu menu li:first-child a{
+	border-right: 0 none;
+	background: url('./images/separate.png') no-repeat 0 -350px;
+	width: 35px;
+	height: 14px;
+}
+
+div.container header .main-menu menu li.active a{
+	background-color: #F88C00;
+	color: #fff;
+	height: 20px;
+	border-right: 0 none;
+}
+
+div.container header .main-menu menu li.active{
+	border-right: 0 none; 
+}
+
+div.container header .main-menu menu li.active:first-child a{
+	background-image: url('./images/separate.png');
+	background-repeat: no-repeat;
+	background-position: 0 -295px;
 }

@@ -52,7 +52,7 @@
 			<div class="badboy"></div>
 			<div class="main-menu">
 				<menu>
-					<li><a href="#">صفحه اصلی</a></li>
+					<li class="active"><a href="#"></a></li>
 					<li><a href="#">درباره ما</a></li>
 					<li><a href="#">گالری تصاویر</a></li>
 					<li><a href="#">خدمات</a></li>
