@@ -37,7 +37,14 @@
 			</div>
 			<div class="badboy"></div>
 			<div class="mid">
-				<div class="logo"></div>
+				<div class="logo">
+					<h2>
+						<a href="#" title="مدیا تک">
+							<img src="./images/logo.png" alt="مدیا تک">
+							<strong>Mediateq....</strong>
+						</a>
+					</h2>
+				</div>
 				<div class="ads"></div>
 			</div>
 			<div class="bot"></div>

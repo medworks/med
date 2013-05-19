@@ -1,4 +1,4 @@
-@font-face {
+@font-face{
     font-family: 'bmitra';
     src: url('./fonts/BMitra.eot');
     src: url('./fonts/BMitra.eot?#iefix') format('embedded-opentype'),
@@ -22,7 +22,7 @@ div,table,input{
 
 a:active,
 a:visited,
-a:link { 
+a:link{ 
     border: none;
     outline: none;
 }
@@ -43,7 +43,7 @@ a p{
 a:hover,
 h5 a:hover,
 a:hover p{
-	color: #5CA20D;
+	color: #000;
 	-webkit-transition: color 500ms;
 	-ms-transition: color 500ms;
 	-moz-transition: color 500ms;
@@ -64,14 +64,15 @@ div.contain{
 	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 }
 
-.ok {
+.ok{
 	outline : 1px solid #fff;
 }
 
-.err {
+.err{
 	outline : 1px solid #f99;
 }
 /***************************************Header part**************************************/
+/************Top Header***************/
 div.container header{
 	margin: 20px auto 25px;
 	background: #fbfbfb;
@@ -135,4 +136,12 @@ div.container header .top .search form .search{
 	border-right: 1px solid #ececec;
 	outline: 0;
 	font-family: 'bmitra';
+}
+/************Mid Header***************/
+div.container header .mid{
+	padding: 20px 15px;
+}
+
+div.container header .mid h2 a strong{
+	display: none;
 }
