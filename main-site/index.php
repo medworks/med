@@ -58,7 +58,31 @@
 					</div>
 				</div>
 			</div>
-			<div class="sidebar left"></div>
+			<div class="sidebar right">
+				<div class="social">
+					<ul>
+						<li>
+							<a href="#" class="dribble"></a>
+						</li>
+						<li>
+							<a href="#" class="facebook"></a>
+						</li>
+						<li>
+							<a href="#" class="twitter"></a>
+						</li>
+						<li>
+							<a href="#" class="vimeo"></a>
+						</li>
+						<li>
+							<a href="#" class="youtube"></a>
+						</li>
+						<li>
+							<a href="#" class="rss"></a>
+						</li>
+					</ul>
+					<div class="badboy"></div>
+				</div>
+			</div>
 			<div class="badboy"></div>
 		</section>
 
