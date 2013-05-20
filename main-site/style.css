@@ -75,14 +75,6 @@ div.contain{
 .err{
 	outline : 1px solid #f99;
 }
-
-.line{
-	background: url('./images/stripe.png') repeat-x;
-	height: 12px;
-	margin-top: 5px;
-	overflow: hidden;
-	margin-bottom: 20px;
-}	
 /***************************************Header part**************************************/
 /************Top Header***************/
 div.container header{
@@ -263,6 +255,37 @@ section.br-news .news ul a:hover{
 	color: #000;
 }
 /***************************************Content part**************************************/
+section.main-content h2{
+	color: #5E5E5E;
+	font-family: 'bmitra';
+	font-size: 22px;
+	float: right;
+	margin-left: 10px;
+}
+
+.box-w-botborder{
+	border: 1px solid #DDD;
+	border-bottom: 4px solid #F88C00;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-ms-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-o-box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+	margin-bottom: 30px;
+}
+
+.line{
+	background: url('./images/stripe.png') repeat-x;
+	height: 12px;
+	margin-top: 5px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
 /************Content part*****************/
 section.main-content{
 	background: #FFF;
@@ -298,29 +321,6 @@ section.main-content .content .slideshow ul li img{
 section.main-content .content .recent-works{
 	margin-bottom: 30px;
 	padding: 3px 0;
-}
-
-section.main-content .content .recent-works h2{
-	color: #5E5E5E;
-	font-family: 'bmitra';
-	font-size: 22px;
-	float: right;
-	margin-left: 10px;
-}
-
-section.main-content .content .recent-works .works{
-	border: 1px solid #DDD;
-	border-bottom: 4px solid #F88C00;
-	-webkit-border-radius: 1px;
-	-moz-border-radius: 1px;
-	-ms-border-radius: 1px;
-	-o-border-radius: 1px;
-	border-radius: 1px;
-	-webkit-box-shadow: 0 1px 3px 0 #b5b5b5;
-	-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
-	-ms-box-shadow: 0 1px 3px 0 #b5b5b5;
-	-o-box-shadow: 0 1px 3px 0 #b5b5b5;
-	box-shadow: 0 1px 3px 0 #b5b5b5;
 }
 
 section.main-content .content .recent-works .works ul li{
@@ -376,6 +376,7 @@ section.main-content .sidebar .social{
 	-ms-box-shadow: 0 1px 3px 0 #B5B5B5;
 	-o-box-shadow: 0 1px 3px 0 #B5B5B5;
 	box-shadow: 0 1px 3px 0 #B5B5B5;
+	margin-bottom: 30px;
 }
 
 section.main-content .sidebar .social ul li{
@@ -389,6 +390,7 @@ section.main-content .sidebar .social ul li a{
 	display: inline-block;
 	width: 51px;
 	height: 51px;
+	opacity: 0.7;
 }
 
 section.main-content .sidebar .social ul li a.dribble{
@@ -402,6 +404,7 @@ section.main-content .sidebar .social ul li a.dribble{
 
 section.main-content .sidebar .social ul li a.dribble:hover{
 	background-position: 0 -505px;
+	opacity: 1;
 }
 
 section.main-content .sidebar .social ul li a.facebook{
@@ -415,6 +418,7 @@ section.main-content .sidebar .social ul li a.facebook{
 
 section.main-content .sidebar .social ul li a.facebook:hover{
 	background-position: 0 -1045px;
+	opacity: 1;
 }
 
 section.main-content .sidebar .social ul li a.twitter{
@@ -427,6 +431,7 @@ section.main-content .sidebar .social ul li a.twitter{
 }
 
 section.main-content .sidebar .social ul li a.twitter:hover{
+	opacity: 1;
 	background-position: 0 -721px;
 }
 
@@ -440,6 +445,7 @@ section.main-content .sidebar .social ul li a.vimeo{
 }
 
 section.main-content .sidebar .social ul li a.vimeo:hover{
+	opacity: 1;
 	background-position: 0 -613px;
 }
 
@@ -453,6 +459,7 @@ section.main-content .sidebar .social ul li a.youtube{
 }
 
 section.main-content .sidebar .social ul li a.youtube:hover{
+	opacity: 1;
 	background-position: 0 -829px;
 }
 
@@ -466,5 +473,10 @@ section.main-content .sidebar .social ul li a.rss{
 }
 
 section.main-content .sidebar .social ul li a.rss:hover{
+	opacity: 1;
 	background-position: 0 -938px;
+}
+
+section.main-content .sidebar .login-panel{
+	padding: 3px 0;
 }

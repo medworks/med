@@ -24,7 +24,7 @@
 
 		<section class="main-content">
 			<div class="content right">
-				<div class="slideshow">
+				<div class="slideshow box">
 					<ul>
 						<li>
 							<img src="./images/others/slide1.jpg" alt="">
@@ -36,7 +36,7 @@
 					<h2>کارهای اَخیر</h2>
 					<div class="line"></div>
 					<div class="badboy"></div>
-					<div class="works">
+					<div class="works box-w-botborder">
 						<ul>
 							<li>
 								<a href="#"><img src="./images/others/works.jpg" alt=""></a>
@@ -59,7 +59,7 @@
 				</div>
 			</div>
 			<div class="sidebar right">
-				<div class="social">
+				<div class="social box">
 					<ul>
 						<li>
 							<a href="#" class="dribble"></a>
@@ -81,6 +81,12 @@
 						</li>
 					</ul>
 					<div class="badboy"></div>
+				</div>
+				<div class="login-panel">
+					<h2>ورود کاربران</h2>
+					<div class="line"></div>
+					<div class="badboy"></div>
+					<div class="login box-w-botborder"></div>
 				</div>
 			</div>
 			<div class="badboy"></div>
