@@ -75,6 +75,14 @@ div.contain{
 .err{
 	outline : 1px solid #f99;
 }
+
+.line{
+	background: url('./images/stripe.png') repeat-x;
+	height: 12px;
+	margin-top: 5px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}	
 /***************************************Header part**************************************/
 /************Top Header***************/
 div.container header{
@@ -245,15 +253,81 @@ section.main-content{
 }
 
 section.main-content .content{
-	width: 650px;
+	width: 660px;
 }
 
 section.main-content .content .slideshow{
-	width: 660px;
 	height: 330px;
+	margin-bottom: 30px;
 }
 
+section.main-content .content .recent-works{
+	margin-bottom: 30px;
+	padding: 3px 0;
+}
+
+section.main-content .content .recent-works h2{
+	color: #5E5E5E;
+	font-family: 'bmitra';
+	font-size: 22px;
+	float: right;
+	margin-left: 10px;
+}
+
+section.main-content .content .recent-works .works{
+	border: 1px solid #DDD;
+	border-bottom: 4px solid #F88C00;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-moz-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-ms-box-shadow: 0 1px 3px 0 #b5b5b5;
+	-o-box-shadow: 0 1px 3px 0 #b5b5b5;
+	box-shadow: 0 1px 3px 0 #b5b5b5;
+}
+
+section.main-content .content .recent-works .works ul li{
+	float: right;
+	height: 190px;
+	margin: 20px 16px 10px 0;
+	padding: 2px;
+	text-align: right;
+	font-family: 'bmitra';
+}
+
+section.main-content .content .recent-works .works ul li img{
+	width: 185px;
+	height: 85px;
+	background: #fff;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 2px #B5B5B5;
+	-moz-box-shadow: 0 0 2px #B5B5B5;
+	-ms-box-shadow: 0 0 2px #B5B5B5;
+	-o-box-shadow: 0 0 2px #B5B5B5;
+	box-shadow: 0 0 2px #B5B5B5;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+}
+
+section.main-content .content .recent-works .works ul li h3{
+	color: #444;
+	margin-top: 5px;
+}
+
+section.main-content .content .recent-works .works ul li p{
+	margin-top: 10px;
+	color: #999;
+}
+
+
 section.main-content .sidebar{
+	padding: 20px;
 	width: 250px;
 	margin-right: 50px;
 }

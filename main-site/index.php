@@ -31,6 +31,32 @@
 						</li>
 					</ul>
 				</div>
+				<div class="badboy"></div>
+				<div class="recent-works">
+					<h2>کارهای اَخیر</h2>
+					<div class="line"></div>
+					<div class="badboy"></div>
+					<div class="works">
+						<ul>
+							<li>
+								<a href="#"><img src="./images/others/works.jpg" alt=""></a>
+								<h3>توضیحات...</h3>
+								<p>21 اردیبهشت 1392</p>
+							</li>
+							<li>
+								<a href="#"><img src="./images/others/works.jpg" alt=""></a>
+								<h3>توضیحات...</h3>
+								<p>21 اردیبهشت 1392</p>
+							</li>
+							<li>
+								<a href="#"><img src="./images/others/works.jpg" alt=""></a>
+								<h3>توضیحات...</h3>
+								<p>21 اردیبهشت 1392</p>
+							</li>
+						</ul>
+						<div class="badboy"></div>
+					</div>
+				</div>
 			</div>
 			<div class="sidebar left"></div>
 			<div class="badboy"></div>
