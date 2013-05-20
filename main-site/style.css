@@ -249,6 +249,8 @@ section.main-content .content{
 }
 
 section.main-content .content .slideshow{
+	width: 660px;
+	height: 330px;
 }
 
 section.main-content .sidebar{

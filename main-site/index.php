@@ -24,7 +24,13 @@
 
 		<section class="main-content">
 			<div class="content right">
-				<div class="slideshow"></div>
+				<div class="slideshow">
+					<ul>
+						<li>
+							<img src="./images/others/slide1.jpg" alt="">
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="sidebar left"></div>
 			<div class="badboy"></div>
