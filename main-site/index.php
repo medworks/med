@@ -113,5 +113,26 @@
 			<div class="badboy"></div>
 		</div>
 	</footer>
+	<section class="bot-footer">
+		<div class="container">
+			<div class="copyright left">
+				<a href="#">Mediateq</a>
+				 © Copyright 2013, All Rights Reserved
+			</div>
+			<div class="social right">
+				<ul>
+					<li><a href="#"><img src="./images/rss.png" alt="rss"></a></li>
+					<li><a href="#"><img src="./images/facebook.png" alt="facebook"></a></li>
+					<li><a href="#"><img src="./images/twitter.png" alt="twiter"></a></li>
+					<li><a href="#"><img src="./images/pinterest.png" alt="pinterest"></a></li>
+					<li><a href="#"><img src="./images/dribbble.png" alt="dribbble"></a></li>
+					<li><a href="#"><img src="./images/youtube.png" alt="youtube"></a></li>
+					<li><a href="#"><img src="./images/behance.png" alt="behance"></a></li>
+					<li><a href="#"><img src="./images/instagram.png" alt="instagram"></a></li>
+				</ul>
+			</div>
+			<div class="badboy"></div>
+		</div>
+	</section>
 </body>
 </html>

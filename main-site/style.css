@@ -695,3 +695,55 @@ footer .content ul li span{
 	display: block;
 	margin-top: 5px;
 }
+/***************************************Bottom Footer part**************************************/
+section.bot-footer{
+	background: #2e2e2e;
+	border-top: 1px solid #444;
+	color: #ccc;
+	height: 35px;
+}
+
+section.bot-footer .container .copyright{
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+section.bot-footer .container .copyright a{
+	color: #ccc;
+	font-size: 15px;
+}
+
+section.bot-footer .container .social{
+	margin: 3px 15px 0;
+}
+
+section.bot-footer .container .social li{
+	float: right;
+}
+
+section.bot-footer .container .social li img{
+	width: 25px;
+	height: 25px;
+}
+
+section.bot-footer .container .social li a{
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	filter: grayscale(1);
+	-webkit-transition: all 700ms;
+	-moz-transition: all 700ms;
+	-ms-transition: all 700ms;
+	-o-transition: all 700ms;
+	transition: all 700ms;
+	margin: 2px 1px 0 0;
+}
+
+section.bot-footer .container .social li a:hover{
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	filter: grayscale(0);
+}
