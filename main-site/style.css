@@ -713,6 +713,10 @@ section.bot-footer .container .copyright a{
 	font-size: 15px;
 }
 
+section.bot-footer .container .copyright a:hover{
+	color: #fff;
+}
+
 section.bot-footer .container .social{
 	margin: 3px 15px 0;
 }
