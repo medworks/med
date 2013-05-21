@@ -32,11 +32,11 @@
 					</ul>
 				</div>
 				<div class="badboy"></div>
-				<div class="recent-works">
+				<div class="recent-works main-box">
 					<h2>کارهای اَخیر</h2>
 					<div class="line"></div>
 					<div class="badboy"></div>
-					<div class="works box-w-botborder">
+					<div class="works box-right">
 						<ul>
 							<li>
 								<a href="#"><img src="./images/others/works.jpg" alt=""></a>
@@ -82,11 +82,21 @@
 					</ul>
 					<div class="badboy"></div>
 				</div>
-				<div class="login-panel">
+				<div class="login-panel main-box">
 					<h2>ورود کاربران</h2>
 					<div class="line"></div>
 					<div class="badboy"></div>
-					<div class="login box-w-botborder"></div>
+					<div class="login box-left">
+						<form action="">
+							<p><input type="text" name="username" class="username" value="نام کاربری" onfocus="if (this.value == 'نام کاربری') {this.value = '';}" onblur="if (this.value == '') {this.value = 'نام کاربری';}" /></p>
+							<p><input type="password" name="password" class="password" value="رمز عبور" onfocus="if (this.value == 'رمز عبور') {this.value = '';}" onblur="if (this.value == '') {this.value = 'رمز عبور';}" /></p>
+							<p class="right"><input type="submit" name="submit" class="submit" value="ورود" /></p>
+							<label class="right"><input type="checkbox" checked="checked" name="remember" class="remember"/> به خاطر بسپار</label>
+						</form>
+						<div class="badboy"></div>
+						<a href="#" class="forget">رمز خود را فراموش کرده ام!</a>
+						<div class="badboy"></div>
+					</div>
 				</div>
 			</div>
 			<div class="badboy"></div>
