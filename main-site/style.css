@@ -333,7 +333,7 @@ section.br-news .news ul a:hover{
 section.main-content{
 	background: #FFF;
 	min-height: 600px;
-	margin-top: 25px;
+	margin: 25px 0;
 	padding: 20px 15px;
 	-webkit-box-shadow: 0 0 5px #CACACA;
 	-moz-box-shadow: 0 0 5px #CACACA;
@@ -577,4 +577,10 @@ section.main-content .sidebar .login-panel .login a.forget{
 section.main-content .sidebar .login-panel .login a.forget:hover{
 	color: #000;
 	text-decoration: underline;
+}
+/***************************************Bottom Ads part**************************************/
+section.ads-bot{
+	width: 950px;
+	margin: 0 auto 20px;
+	text-align: center;
 }
