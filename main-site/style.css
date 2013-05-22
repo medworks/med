@@ -224,7 +224,7 @@ div.container header .top .search form .submit{
 }
 
 div.container header .top .search form .search{
-	background: #fff;
+	background: #fbfbfb;
 	padding: 2px 12px 2px 12px;
 	width: 90px;
 	color: #C5C5C5;
@@ -232,6 +232,7 @@ div.container header .top .search form .search{
 	border-right: 1px solid #ececec;
 	outline: 0;
 	font-family: 'bmitra';
+	height: 26px;
 }
 /************Mid Header*****************/
 div.container header .mid{
