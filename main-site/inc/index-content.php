@@ -5,30 +5,38 @@
 				<li>
 					<img src="./images/others/slide1.jpg" alt="">
 					<div class="ei-title">
-						<h2 style="opacity: 1; display: block; margin-right: 0px;"><a href="http://themes.tielabs.com/sahifa/?p=42">Post with Google Map</a></h2>
-						<h3 style="opacity: 1; display: block; margin-right: 0px;">iam wisi quam lorem vestibulum nec nibh, sollicitudin volutpat at libero litora, non adipiscing. Nul...</h3>
+						<h2><a href="#">اسلاید شماره 1</a></h2>
+						<h3>جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... </h3>
 					</div>
 				</li>
 				<li>
-					<img src="./images/others/slide1.jpg" alt="">
+					<img src="./images/others/slide2.jpg" alt="">
 					<div class="ei-title">
-						<h2 style="opacity: 1; display: block; margin-right: 0px;"><a href="http://themes.tielabs.com/sahifa/?p=42">Post with Google Map</a></h2>
-						<h3 style="opacity: 1; display: block; margin-right: 0px;">iam wisi quam lorem vestibulum nec nibh, sollicitudin volutpat at libero litora, non adipiscing. Nul...</h3>
+						<h2><a href="#">اسلاید شماره 2</a></h2>
+						<h3>جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... </h3>
 					</div>
 				</li>
 				<li>
-					<img src="./images/others/slide1.jpg" alt="">
+					<img src="./images/others/slide3.jpg" alt="">
 					<div class="ei-title">
-						<h2 style="opacity: 1; display: block; margin-right: 0px;"><a href="http://themes.tielabs.com/sahifa/?p=42">Post with Google Map</a></h2>
-						<h3 style="opacity: 1; display: block; margin-right: 0px;">iam wisi quam lorem vestibulum nec nibh, sollicitudin volutpat at libero litora, non adipiscing. Nul...</h3>
+						<h2><a href="#">اسلاید شماره 3</a></h2>
+						<h3>جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... </h3>
+					</div>
+				</li>
+				<li>
+					<img src="./images/others/slide4.jpg" alt="">
+					<div class="ei-title">
+						<h2><a href="#">اسلاید شماره 4</a></h2>
+						<h3>جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... </h3>
 					</div>
 				</li>
 			</ul>
 			<ul class="ei-slider-thumbs">
-				<li class="ei-slider-element" style="max-width: 100%; width: 20%; left: 0px;"></li>
-				<li style="max-width: 100%; width: 20%;"><a href="#">Slide 1</a><img src="./images/others/slide1.jpg" alt="thumb1"></li>
-				<li style="max-width: 100%; width: 20%;"><a href="#">Slide 2</a><img src="./images/others/slide1.jpg" alt="thumb2"></li>
-				<li style="max-width: 100%; width: 20%;"><a href="#">Slide 3</a><img src="./images/others/slide1.jpg" alt="thumb3"></li>
+				<li class="ei-slider-element"></li>
+				<li><a href="#">Slide 1</a><img src="./images/others/slide1.jpg" alt=""></li>
+				<li><a href="#">Slide 2</a><img src="./images/others/slide2.jpg" alt=""></li>
+				<li><a href="#">Slide 3</a><img src="./images/others/slide3.jpg" alt=""></li>
+				<li><a href="#">Slide 4</a><img src="./images/others/slide4.jpg" alt=""></li>
 			</ul>
 		</div>
 
