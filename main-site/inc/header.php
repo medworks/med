@@ -29,9 +29,7 @@
 					<menu>
 						<li><a href="#">صفحه اصلی</a></li>
 						<li><a href="#">درباره ما</a></li>
-						<li><a href="#">گالری تصاویر
-								<span>»</span>
-							</a>
+						<li><a href="#">گالری تصاویر</a>
 							<menu>
 								<li><a href="#">گالری تصاویر 1</a></li>
 								<li><a href="#">گالری تصاویر 2</a></li>
@@ -40,9 +38,7 @@
 								<li><a href="#">گالری تصاویر 5</a></li>
 							</menu>
 						</li>
-						<li><a href="#">خدمات
-								<span>»</span>
-							</a>
+						<li><a href="#">خدمات</a>
 							<menu>
 								<li><a href="#">خدمات 1</a></li>
 								<li><a href="#">خدمات 2</a></li>
@@ -76,9 +72,7 @@
 					<li><a href="#">درباره ما</a></li>
 					<li><a href="#">کارهای ما</a></li>
 					<li><a href="#">اخبار</a></li>
-					<li><a href="#">گالری تصاویر
-							<span>»</span>
-						</a>
+					<li><a href="#">گالری تصاویر</a>
 						<menu>
 							<li><a href="#">گالری تصاویر 1</a></li>
 							<li><a href="#">گالری تصاویر 2</a></li>
@@ -87,9 +81,7 @@
 							<li><a href="#">گالری تصاویر 5</a></li>
 						</menu>
 					</li>
-					<li><a href="#">خدمات
-							<span>»</span>
-						</a>
+					<li><a href="#">خدمات</a>
 						<menu>
 							<li><a href="#">خدمات 1</a></li>
 							<li><a href="#">خدمات 2</a></li>

@@ -133,6 +133,24 @@ jQuery(document).ready(function() {
         jQuery('html, body').animate({scrollTop: '0px'}, 800);
         return false;
     });
+
+    //Menus
+    jQuery('menu > li > menu, menu > li > menu > li > menu, menu > li > menu > li > menu> li > menu, .top-menu  menu > li > menu, .top-menu  menu > li > menu > li > menu, .top-menu  menu > li > menu > li > menu> li > menu ').parent('li').addClass('parent-list');
+    jQuery('.parent-list').find("a:first").append(' <span class="sub-indicator">&raquo;</span>');
+
+    jQuery("li , .top-menu li").each(function(){  
+        var $sublist = jQuery(this).find('menu:first');       
+        jQuery(this).hover(function(){  
+            $sublist.stop().css({overflow:"hidden", height:"auto", display:"none"}).slideDown(200, function(){
+                jQuery(this).css({overflow:"visible", height:"auto"});
+            }); 
+        },
+        function(){ 
+            $sublist.stop().slideUp(200, function() {   
+                jQuery(this).css({overflow:"hidden", display:"none"});
+            });
+        }); 
+    });
     
    
     
