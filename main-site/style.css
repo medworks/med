@@ -109,6 +109,33 @@ a.ttip, a.tooldown{display:inline-block;}
 .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
 .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
 .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+/* Scroll to top */
+#topcontrol{
+	z-index:2;
+	background: #FF8500 url(images/separate.png) no-repeat center -410px;
+	width: 30px;
+	height: 30px;
+	text-indent: -99999px;
+	position:fixed;
+	bottom:-100px;
+	right:10px;
+	cursor:pointer;
+	-webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
+    -webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	-ms-border-radius: 50px;
+	-o-border-radius: 50px;
+	border-radius: 50px;
+    overflow: auto;
+}
+
+#topcontrol:hover{ 
+	background-color: #fb9826;
+}
 /***************************************Header part**************************************/
 /************Top Header***************/
 div.container header{

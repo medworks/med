@@ -120,6 +120,19 @@ jQuery(document).ready(function() {
     jQuery('.tooltip-e').tipsy({fade: true, gravity: 'e'});
     jQuery('.tooltip-sw').tipsy({fade: true, gravity: 'w'});
     jQuery('.tooltip-se').tipsy({fade: true, gravity: 'e'});
+
+    //Scroll To top
+    jQuery(window).scroll(function(){
+        if (jQuery(this).scrollTop() > 100) {
+            jQuery('#topcontrol').css({bottom:"15px"});
+        } else {
+            jQuery('#topcontrol').css({bottom:"-100px"});
+        }
+    });
+    jQuery('#topcontrol').click(function(){
+        jQuery('html, body').animate({scrollTop: '0px'}, 800);
+        return false;
+    });
     
    
     
