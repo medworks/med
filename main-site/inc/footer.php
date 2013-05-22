@@ -104,14 +104,14 @@
 			</div>
 			<div class="social right">
 				<ul>
-					<li><a href="#"><img src="./images/rss.png" alt="rss"></a></li>
-					<li><a href="#"><img src="./images/facebook.png" alt="facebook"></a></li>
-					<li><a href="#"><img src="./images/twitter.png" alt="twiter"></a></li>
-					<li><a href="#"><img src="./images/pinterest.png" alt="pinterest"></a></li>
-					<li><a href="#"><img src="./images/dribbble.png" alt="dribbble"></a></li>
-					<li><a href="#"><img src="./images/youtube.png" alt="youtube"></a></li>
-					<li><a href="#"><img src="./images/behance.png" alt="behance"></a></li>
-					<li><a href="#"><img src="./images/instagram.png" alt="instagram"></a></li>
+					<li><a href="#" class="ttip" original-title="Rss"><img src="./images/rss.png" alt="Rss"></a></li>
+					<li><a href="#" class="ttip" original-title="Facebook"><img src="./images/facebook.png" alt="Facebook"></a></li>
+					<li><a href="#" class="ttip" original-title="Twitter"><img src="./images/twitter.png" alt="Twitter"></a></li>
+					<li><a href="#" class="ttip" original-title="Pinterest"><img src="./images/pinterest.png" alt="Pinterest"></a></li>
+					<li><a href="#" class="ttip" original-title="Dribbble"><img src="./images/dribbble.png" alt="Dribbble"></a></li>
+					<li><a href="#" class="ttip" original-title="Youtube"><img src="./images/youtube.png" alt="Youtube"></a></li>
+					<li><a href="#" class="ttip" original-title="Behance"><img src="./images/behance.png" alt="Behance"></a></li>
+					<li><a href="#" class="ttip" original-title="Instagram"><img src="./images/instagram.png" alt="Instagram"></a></li>
 				</ul>
 			</div>
 			<div class="badboy"></div>
