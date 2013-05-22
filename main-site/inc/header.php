@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="./1styles.css" />
 	<link rel="stylesheet" href="./style.css" />
 	<script src="./js/jquery.js" type="text/javascript"></script>
+	<script src="./js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="./js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="./js/html5shiv.js"></script>
