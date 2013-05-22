@@ -51,8 +51,7 @@
 								<li><a href="#">خدمات 5</a></li>
 							</menu>
 						</li>
-						<li><a href="#">تماس با ما</a>
-						</li>
+						<li><a href="#">تماس با ما</a></li>
 					</menu>
 				</div>
 			</div>
@@ -75,8 +74,28 @@
 				<menu>
 					<li class="active"><a href="#"></a></li>
 					<li><a href="#">درباره ما</a></li>
-					<li><a href="#">گالری تصاویر</a></li>
-					<li><a href="#">خدمات</a></li>
+					<li><a href="#">گالری تصاویر
+							<span>»</span>
+						</a>
+						<menu>
+							<li><a href="#">گالری تصاویر 1</a></li>
+							<li><a href="#">گالری تصاویر 2</a></li>
+							<li><a href="#">گالری تصاویر 3</a></li>
+							<li><a href="#">گالری تصاویر 4</a></li>
+							<li><a href="#">گالری تصاویر 5</a></li>
+						</menu>
+					</li>
+					<li><a href="#">خدمات
+							<span>»</span>
+						</a>
+						<menu>
+							<li><a href="#">خدمات 1</a></li>
+							<li><a href="#">خدمات 2</a></li>
+							<li><a href="#">خدمات 3</a></li>
+							<li><a href="#">خدمات 4</a></li>
+							<li><a href="#">خدماتر 5</a></li>
+						</menu>
+					</li>
 					<li><a href="#">تماس با ما</a></li>
 				</menu>
 			</div>
