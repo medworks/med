@@ -430,7 +430,8 @@ section.br-news span{
 	color: #fff;
 	font-family: "bmitra";
 	font-size: 18px;
-	width: 70px;
+	width: 92px;
+	text-align: center;
 }
 
 section.br-news .news{
@@ -438,7 +439,7 @@ section.br-news .news{
 	padding: 6px 10px;
 	font-family: "bmitra";
 	font-size: 18px;
-	width: 840px;
+	width: 818px;
 	text-align: right;
 }
 
