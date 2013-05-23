@@ -145,7 +145,7 @@ header {
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
         position: absolute;
-        right: 90px;
+        right: 91px;
         top: 25px;
         z-index: 10;
         width: 11px;
