@@ -29,7 +29,7 @@ header {
   left: 100px;
   right: 10px;
   font-family: 'bmitra';
-  font-size: 18px;
+  font-size: 17px;
   font-weight:bold;  }
   header .logo {
     max-width: 380px;
@@ -72,7 +72,7 @@ header {
       display: inline-block;
       vertical-align: text-top;
       margin-left: 5px;
-      padding: 0 5px;
+      padding: 1px 5px;
       line-height: 15px;
       font-size: 16px;
       color: white;
