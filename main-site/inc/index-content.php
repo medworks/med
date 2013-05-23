@@ -33,10 +33,10 @@
 			</ul>
 			<ul class="ei-slider-thumbs">
 				<li class="ei-slider-element"></li>
-				<li><a href="#">Slide 1</a><img src="./images/others/slide1.jpg" alt=""></li>
-				<li><a href="#">Slide 2</a><img src="./images/others/slide2.jpg" alt=""></li>
-				<li><a href="#">Slide 3</a><img src="./images/others/slide3.jpg" alt=""></li>
-				<li><a href="#">Slide 4</a><img src="./images/others/slide4.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./images/others/slide1.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./images/others/slide2.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./images/others/slide3.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./images/others/slide4.jpg" alt=""></li>
 			</ul>
 		</div>
 
