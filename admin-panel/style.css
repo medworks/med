@@ -106,14 +106,19 @@ header {
   display: block;
   float: right;
   position: relative;
-  top: 10px; }
+  top: 10px; 
+  font-family: 'bmitra';
+  font-size: 15px;
+  font-weight:bold;
+  }
   #mainnav > ul {
-    width: 80px;
+    width: 100px;
     position: absolute; }
     #mainnav > ul > li {
       display: block;
       position: relative;
-      margin-bottom: 10px; }
+      margin-bottom: 10px; 	
+	  }
       #mainnav > ul > li [data-icon]:before {	              
 	              font-family: 'icons'; /* BYO icon font, mapped smartly */
 				  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/				                    
@@ -125,11 +130,11 @@ header {
                    }
       #mainnav > ul > li:hover .fs1 {
         color: #737373; }
-      #mainnav > ul > li:hover a {
+      #mainnav > ul > li:hover a {	    
         color: #737373; }
       #mainnav > ul > li.active {
         background: transparent; }
-        #mainnav > ul > li.active a {
+        #mainnav > ul > li.active a {		  
           color: #d13736; }
         #mainnav > ul > li.active .fs1 {
           color: #d13736; }
