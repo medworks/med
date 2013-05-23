@@ -125,7 +125,7 @@ html[xmlns] .slides {display: block;}
 .flex-control-paging li a:hover { background: #000; }
 .flex-control-paging li a.flex-active { background: #F88C00; cursor: default; }
 .slider-caption{position: absolute;width: 75%;padding: 10px;background: #000;right: 0;bottom: 13px;color:#FFF;opacity:0.8;}
-.slider-caption h2 a, .full-width .content .slider-caption h2 {	color:#FFF;	font-size: 35px;font-family: BebasNeueRegular,arial,Georgia, serif;}
+.slider-caption h2 a, .full-width .content .slider-caption h2 {	color:#FFF;	font-size: 35px;}
 
 /*small*/
 .content .flexslider { width:660px; height:330px;}
@@ -134,7 +134,7 @@ html[xmlns] .slides {display: block;}
 .content .slider-caption h2 a{font-size: 22px;}
 .content .ei-slider{ height:330px;}
 .content .ei-slider-loading{line-height:375px;}
-.content .ei-title h3{font-size: 12px;line-height: 14px;width:435px;}
+.content .ei-title h3{font-size: 15px;line-height: 14px;width:435px;}
 .content .ei-title h2{font-size: 22px;}
 
 /*sidebar slider*/
@@ -151,7 +151,7 @@ html[xmlns] .slides {display: block;}
 .ei-slider-large li img{width: 100%;}
 .ei-title{position: absolute;right: 10%;margin-right: 0;margin-left:2%;bottom: 25%;color:#fff;opacity:0.8;}
 .ei-title h2, .ei-title h3{text-align: right;}
-.ei-title h2{color: #b5b5b5;font-size: 35px;font-family: BebasNeueRegular,arial,Georgia, serif;background:#000;float:right;padding:5px;margin-bottom:5px;}
+.ei-title h2{color: #b5b5b5;font-size: 35px;background:#000;float:right;padding:5px;margin-bottom:5px;}
 .ei-title h3{clear:both;font-size: 14px;line-height: 20px;width:835px;background:#000;padding:5px;}
 .ei-slider-thumbs{height: 13px;margin: 0 auto;position: relative;max-width:100%!important;}
 .ei-title a{color:#FFF;}
