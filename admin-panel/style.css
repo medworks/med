@@ -7,7 +7,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body{
 	direction: rtl;
     background: url('images/back_pattern.png');
@@ -80,6 +79,7 @@ header {
       border-radius: 2px; }
 	  
 /* White icons with optional class, or on hover/active states of certain elements */
+/*
 .icon-white {
   background-image: url("images/glyphicons-halflings-white.png"); }
 
@@ -99,22 +99,37 @@ header {
 
 .dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
   background-image: url("images/glyphicons-halflings-white.png"); }
-  
+  */
+ .icomoon-small [data-icon]:before {
+  font-size: 12px; }
+
+.icomoon-medium [data-icon]:before {
+  font-size: 24px; }
+
+.icomoon-large [data-icon]:before {
+  font-size: 36px; }
 
 #mainnav {
   display: block;
   float: right;
   position: relative;
-  top: 40px; }
+  top: 10px; }
   #mainnav > ul {
     width: 80px;
     position: absolute; }
     #mainnav > ul > li {
       display: block;
       position: relative;
-      margin-bottom: 5px; }
-      #mainnav > ul > li [data-icon]:before {
-        font-size: 32px; }
+      margin-bottom: 10px; }
+      #mainnav > ul > li [data-icon]:before {	              
+	              font-family: 'icons'; /* BYO icon font, mapped smartly */
+				  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+                  content: attr(data-icon);
+                  speak: none; /* Not to be trusted, but hey. */
+				  font-weight: normal;
+                  -webkit-font-smoothing: antialiased;
+				  font-size: 48px;
+                   }
       #mainnav > ul > li:hover .fs1 {
         color: #737373; }
       #mainnav > ul > li:hover a {
@@ -138,7 +153,7 @@ header {
         background-image: url("images/menu-arrow.png");
         position: absolute;
         right: 90px;
-        top: 5px;
+        top: 25px;
         z-index: 10;
         width: 11px;
         height: 20px; }
