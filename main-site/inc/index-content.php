@@ -1,12 +1,59 @@
 <section class="main-content">
 	<div class="content right">
-		<div class="slideshow box">
-			<ul>
+		<div id="ei-slider" class="slideshow ei-slider box">
+			<ul class="ei-slider-large">
 				<li>
 					<img src="./images/others/slide1.jpg" alt="">
+					<div class="ei-title">
+						<h2><a href="#">اسلاید شماره 1</a></h2>
+						<h3>جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... </h3>
+					</div>
+				</li>
+				<li>
+					<img src="./images/others/slide2.jpg" alt="">
+					<div class="ei-title">
+						<h2><a href="#">اسلاید شماره 2</a></h2>
+						<h3>جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... </h3>
+					</div>
+				</li>
+				<li>
+					<img src="./images/others/slide3.jpg" alt="">
+					<div class="ei-title">
+						<h2><a href="#">اسلاید شماره 3</a></h2>
+						<h3>جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... </h3>
+					</div>
+				</li>
+				<li>
+					<img src="./images/others/slide4.jpg" alt="">
+					<div class="ei-title">
+						<h2><a href="#">اسلاید شماره 4</a></h2>
+						<h3>جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... </h3>
+					</div>
 				</li>
 			</ul>
+			<ul class="ei-slider-thumbs">
+				<li class="ei-slider-element"></li>
+				<li><a href="#">Slide 1</a><img src="./images/others/slide1.jpg" alt=""></li>
+				<li><a href="#">Slide 2</a><img src="./images/others/slide2.jpg" alt=""></li>
+				<li><a href="#">Slide 3</a><img src="./images/others/slide3.jpg" alt=""></li>
+				<li><a href="#">Slide 4</a><img src="./images/others/slide4.jpg" alt=""></li>
+			</ul>
 		</div>
+
+		<script type="text/javascript">
+		    jQuery(function() {
+		        jQuery('#ei-slider').eislideshow({
+					animation			: 'center',
+					autoplay			: true,
+					slideshow_interval	: 3000,
+					speed          		: 800,
+					titlesFactor		: 0.60,
+					titlespeed          : 1000,
+					thumbMaxWidth       : 100
+		        });
+		    });
+		</script>
+
 		<div class="badboy"></div>
 		<div class="recent-works main-box">
 			<h2>کارهای اَخیر</h2>
