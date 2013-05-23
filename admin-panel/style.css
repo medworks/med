@@ -148,7 +148,7 @@ header {
         padding: 8px 5px;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.3);
-        font-size: 12px;
+        font-size: 15px;
         text-align: center; }
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
