@@ -27,10 +27,11 @@
  <div id="right" class="admin_right_panel"> 
 	 <div id="mainnav" class="hidden-phone hidden-tablet">
         <ul>
-          <li>
+          <li class="active">
+		  <span class="current-arrow"></span>
             <a href="#">
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#xe0a1;"></span>
+                <span class="fs1" aria-hidden="true" data-icon="&#x002b;"></span> <!-- &#x25c8; -->
               </div>
 پیشخوان
             </a>
@@ -38,16 +39,15 @@
           <li>
             <a href="#">
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#xe097;"></span>
+                <span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
               </div>
 مدیریت اخبار
             </a>
           </li>
-          <li class="active">
-            <span class="current-arrow"></span>
+          <li >            
             <a href="#">
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#xe047;"></span>
+                <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
               </div>
 مدیریت کار ها
             </a>
@@ -55,7 +55,7 @@
           <li>
             <a href="#">
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#xe025;"></span>
+                <span class="fs1" aria-hidden="true" data-icon="&#x25ce;"></span>
               </div>
 مدیریت اسلاید
             </a>
@@ -63,7 +63,7 @@
           <li>
             <a href="#">
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#xe14a;"></span>
+                <span class="fs1" aria-hidden="true" data-icon="&#x2709;"></span>
               </div>
 خروج
             </a>

@@ -7,11 +7,11 @@
     font-weight: normal;
     font-style: normal;
 }
-
 body{
 	direction: rtl;
     background: url('images/back_pattern.png');
 	background-position: center;
+	font-family: 'bmitra';
 }
 
 a:active,
@@ -20,7 +20,7 @@ a:link {
     border: none;
     outline: none;
 }
-	
+/* This Section related To Header Part*/	
 header {
   height: 50px;
   direction : rtl;
@@ -28,7 +28,10 @@ header {
   vertical-align: middle;  
   /*position: absolute;*/
   left: 100px;
-  right: 10px; }
+  right: 10px;
+  font-family: 'bmitra';
+  font-size: 17px;
+  font-weight:bold;  }
   header .logo {
     max-width: 380px;
     max-height: 30px;
@@ -70,9 +73,9 @@ header {
       display: inline-block;
       vertical-align: text-top;
       margin-left: 5px;
-      padding: 0 5px;
+      padding: 1px 5px;
       line-height: 15px;
-      font-size: 11px;
+      font-size: 16px;
       color: white;
       background: #d13736;
       -webkit-border-radius: 2px;
@@ -80,6 +83,7 @@ header {
       border-radius: 2px; }
 	  
 /* White icons with optional class, or on hover/active states of certain elements */
+/*
 .icon-white {
   background-image: url("images/glyphicons-halflings-white.png"); }
 
@@ -99,29 +103,42 @@ header {
 
 .dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
   background-image: url("images/glyphicons-halflings-white.png"); }
-  
-
+  */
+ 
+ /* This Section related To Right Navigation Menu Bar Part*/	
 #mainnav {
   display: block;
   float: right;
   position: relative;
-  top: 40px; }
+  top: 10px; 
+  font-family: 'bmitra';
+  font-size: 15px;
+  font-weight:bold;
+  }
   #mainnav > ul {
-    width: 80px;
+    width: 100px;
     position: absolute; }
     #mainnav > ul > li {
       display: block;
       position: relative;
-      margin-bottom: 5px; }
-      #mainnav > ul > li [data-icon]:before {
-        font-size: 32px; }
+      margin-bottom: 10px; 	
+	  }
+      #mainnav > ul > li [data-icon]:before {	              
+	              font-family: 'icons'; /* BYO icon font, mapped smartly */
+				  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/				                    
+                  content: attr(data-icon);
+                  speak: none; /* Not to be trusted, but hey. */
+				  font-weight: normal;
+                  -webkit-font-smoothing: antialiased;
+				  font-size: 48px;
+                   }
       #mainnav > ul > li:hover .fs1 {
         color: #737373; }
-      #mainnav > ul > li:hover a {
+      #mainnav > ul > li:hover a {	    
         color: #737373; }
       #mainnav > ul > li.active {
         background: transparent; }
-        #mainnav > ul > li.active a {
+        #mainnav > ul > li.active a {		  
           color: #d13736; }
         #mainnav > ul > li.active .fs1 {
           color: #d13736; }
@@ -132,18 +149,18 @@ header {
         padding: 8px 5px;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.3);
-        font-size: 12px;
+        font-size: 15px;
         text-align: center; }
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
         position: absolute;
-        right: 90px;
-        top: 5px;
+        right: 91px;
+        top: 25px;
         z-index: 10;
         width: 11px;
         height: 20px; }
 
-	  
+	 /* This Section related To Header Div Part*/	
 .admin_top
 {
  float : right;
@@ -166,6 +183,7 @@ header {
  margin-top : 10px;
  }
 
+ /* This Section related To Container Div Part*/	
  .admin_container
 {
  float : right;
