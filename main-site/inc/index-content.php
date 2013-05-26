@@ -1,6 +1,8 @@
 <section class="main-content">
-	<div class="content right">
-		<div id="ei-slider" class="slideshow ei-slider box">
+	<!-- ****************Content (Right) part****************** -->
+	<div class="content">
+		<!-- ***********Slideshow************ -->
+		<div id="ei-slider" class="slideshow ei-slider">
 			<ul class="ei-slider-large">
 				<li>
 					<img src="./images/others/slide1.jpg" alt="">
@@ -39,7 +41,6 @@
 				<li><a href="#"></a><img src="./images/others/slide4.jpg" alt=""></li>
 			</ul>
 		</div>
-
 		<script type="text/javascript">
 		    jQuery(function() {
 		        jQuery('#ei-slider').eislideshow({
@@ -53,8 +54,8 @@
 		        });
 		    });
 		</script>
-
 		<div class="badboy"></div>
+		<!-- ***********Recent Works************ -->
 		<div class="recent-works main-box">
 			<h2>کارهای اَخیر</h2>
 			<div class="line"></div>
@@ -110,10 +111,11 @@
 				});
 		  });
 		</script>
-
 	</div>
-	<div class="sidebar right">
-		<div class="social box">
+	<!-- ****************Sidebar (Left) part****************** -->
+	<div class="sidebar">
+		<!-- ***********Slideshow************ -->
+		<div class="social simple-box">
 			<ul>
 				<li>
 					<a href="#" class="dribble"></a>
@@ -136,6 +138,7 @@
 			</ul>
 			<div class="badboy"></div>
 		</div>
+		<!-- ***********Login Panel************ -->
 		<div class="login-panel main-box">
 			<h2>ورود کاربران</h2>
 			<div class="line"></div>
@@ -152,6 +155,35 @@
 				<div class="badboy"></div>
 			</div>
 		</div>
+		<!-- ***********Gallery Slideshow************ -->
+		<div class="gallery flexslider simple-box" id="slider">
+			<ul class="slides">
+				<li>
+					<a href="#"><img src="./images/others/slide1.jpg" alt=""></a>
+					<div class="slider-caption">
+						<h2><a href="#">اسلاید شماره 1</a></h2>
+					</div>
+				</li>
+				<li>
+					<a href="#"><img src="./images/others/slide2.jpg" alt=""></a>
+					<div class="slider-caption">
+						<h2><a href="#">اسلاید شماره 2</a></h2>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script>
+			jQuery(window).load(function() {
+			  jQuery('#slider').flexslider({
+				animation: "fade",
+				slideshowSpeed: 7000,
+				animationSpeed: 600,
+				randomize: false,
+				pauseOnHover: true,
+				controlNav: false
+			  });
+			});
+		</script>
 	</div>
 	<div class="badboy"></div>
 </section>
