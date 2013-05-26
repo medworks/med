@@ -1,0 +1,31 @@
+body				{ 
+background: url(images/login/login-page-bg.png) top center no-repeat #c4c4c4; color: #3a3a3a; 
+font-family:Tahoma,Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight: bold;
+text-align : right;
+direction:rtl;
+ }
+
+.clear				{ clear: both; }
+
+form				{ width: 406px; margin: 170px auto 0; text-align:right;	direction:rtl;}
+
+legend				{ display: none; }
+
+fieldset			{ border: 0; }
+
+label				{ width: 115px; text-align: right; float: right; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 16px; }
+
+input				{ width: 220px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 18px;
+					  color: #3a3a3a; }
+input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
+					  
+.button				{ background: url(images/login/button-bg.png) repeat-x top center; border: 1px solid #999;
+					  -moz-border-radius: 5px; padding: 5px; color: black; font-weight: bold;
+					  -webkit-border-radius: 5px; font-size: 13px;  width: 70px;
+					  margin: 1px 125 0 0px;
+					  }
+.button:hover		{ background: white; color: black; }
+
+	
