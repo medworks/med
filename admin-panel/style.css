@@ -147,9 +147,9 @@ header {
 		}
       #mainnav > ul > li:hover a {	    
         color: #737373; 
-        -webkit-transform: rotate(-7deg); 
-		-moz-transform: rotate(-7deg); 
-		-o-transform: rotate(-7deg);		
+        -webkit-transform: rotate(7deg); 
+		-moz-transform: rotate(7deg); 
+		-o-transform: rotate(7deg);		
 		}
       #mainnav > ul > li.active {
         background: transparent; }
