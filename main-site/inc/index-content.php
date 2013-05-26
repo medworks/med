@@ -63,15 +63,43 @@
 				<div id="slideshow-rec">
 					<div class="scroll-item">
 						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 1</a></h3>
+						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
 						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 2</a></h3>
+						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
 						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 3</a></h3>
+						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
 						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 4</a></h3>
+						<p>5 اردیبهشت 1392</p>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 5</a></h3>
+						<p>5 اردیبهشت 1392</p>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 6</a></h3>
+						<p>5 اردیبهشت 1392</p>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 7</a></h3>
+						<p>5 اردیبهشت 1392</p>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 8</a></h3>
+						<p>5 اردیبهشت 1392</p>
 					</div>
 				</div>
 				<div class="badboy"></div>
