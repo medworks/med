@@ -147,9 +147,9 @@ header {
 		}
       #mainnav > ul > li:hover a {	    
         color: #737373; 
-        -webkit-transform: rotate(7deg); 
-		-moz-transform: rotate(7deg); 
-		-o-transform: rotate(7deg);		
+        -webkit-transform: rotate(10deg); 
+		-moz-transform: rotate(10deg); 
+		-o-transform: rotate(10deg);		
 		}
       #mainnav > ul > li.active {
         background: transparent; }
@@ -169,7 +169,7 @@ header {
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
         position: absolute;
-        right: 91px;
+        right: 100px;
         top: 25px;
         z-index: 10;
         width: 11px;
@@ -196,6 +196,7 @@ header {
  text-align : right;
  margin-right :10px;
  margin-top : 10px;
+ margin-left :10px;
  }
 
  /* This Section related To Container Div Part*/	
