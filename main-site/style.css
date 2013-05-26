@@ -616,17 +616,33 @@ section.main-content .content .slideshow{
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
-section.main-content .content .recent-works .works ul li{
+section.main-content .content .recent-works .works{
+	position: relative;
+}
+
+section.main-content .content .recent-works .works .group_items{
 	float: right;
 	height: 190px;
-	margin: 20px 3px 0;
+	margin-top: 20px;
 	text-align: right;
 	font-family: 'bmitra';
 }
 
-section.main-content .content .recent-works .works ul li img{
-	width: 185px;
-	height: 85px;
+section.main-content .content .recent-works .works .group_items .scroll-item{
+	float: right;
+	padding: 3px;
+	text-align: right;
+	font-family: 'bmitra';
+	margin-right: 5px;
+}
+
+section.main-content .content .recent-works .works .group_items .scroll-item:first-child{
+	margin-right: 0;
+}
+
+section.main-content .content .recent-works .works .scroll-item a img{
+	width: 130px;
+	height: 60px;
 	background: #fff;
 	padding: 4px;
 	-webkit-box-shadow: 0 0 2px #B5B5B5;
@@ -641,15 +657,34 @@ section.main-content .content .recent-works .works ul li img{
 	border-radius: 1px;
 }
 
-section.main-content .content .recent-works .works ul li h3{
-	color: #444;
-	margin-top: 5px;
+section.main-content .content .recent-works .works .scroll-nav{
+	text-align:center;
 }
 
-section.main-content .content .recent-works .works ul li p{
-	margin-top: 10px;
-	color: #999;
+section.main-content .content .recent-works .works .scroll-nav a{
+	background:#b4b4b4;
+	width:10px;
+	height:10px;
+	text-indent:-9999px;
+	overflow:hidden;
+	display:inline-block;
+	margin:2px 2px 0;
+	-moz-border-radius: 50px;-webkit-border-radius: 50px; border-radius: 50px;
+	-webkit-transition: all .40s;
+	-moz-transition: all .40s;
+	-o-transition: all .40s;
+	transition: all .40s;
 }
+
+section.main-content .content .recent-works .works .scroll-nav a:hover{
+	background:#939393;
+}
+
+section.main-content .content .recent-works .works .scroll-nav a.activeSlide{
+	background:#666;
+}
+
+
 /************Sidebar part*****************/
 section.main-content .sidebar{
 	width: 270px;

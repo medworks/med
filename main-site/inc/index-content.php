@@ -60,26 +60,44 @@
 			<div class="line"></div>
 			<div class="badboy"></div>
 			<div class="works box-right">
-				<ul>
-					<li>
-						<a href="#"><img src="./images/others/works.jpg" alt=""></a>
-						<h3>توضیحات...</h3>
-						<p>21 اردیبهشت 1392</p>
-					</li>
-					<li>
-						<a href="#"><img src="./images/others/works.jpg" alt=""></a>
-						<h3>توضیحات...</h3>
-						<p>21 اردیبهشت 1392</p>
-					</li>
-					<li>
-						<a href="#"><img src="./images/others/works.jpg" alt=""></a>
-						<h3>توضیحات...</h3>
-						<p>21 اردیبهشت 1392</p>
-					</li>
-				</ul>
+				<div id="slideshow-rec">
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+					</div>
+					<div class="scroll-item">
+						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+					</div>
+				</div>
+				<div class="badboy"></div>
+				<div id="nav" class="scroll-nav"></div>
 				<div class="badboy"></div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				var vids = jQuery("#slideshow-rec .scroll-item");
+				for(var i = 0; i < vids.length; i+=4) {
+				  vids.slice(i, i+4).wrapAll('<div class="group_items"></div>');
+				}
+				jQuery(function() {
+					jQuery('#slideshow-rec').cycle({
+						fx:     'scrollHorz',
+						timeout: 3000,
+						pager:  '#nav',
+						slideExpr: '.group_items',
+						speed: 700,
+						pause: true
+					});
+				});
+		  });
+		</script>
+
 	</div>
 	<div class="sidebar right">
 		<div class="social box">
