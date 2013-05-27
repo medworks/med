@@ -121,7 +121,17 @@ header {
     #mainnav > ul > li {
       display: block;
       position: relative;
-      margin-bottom: 10px; 	
+      margin-bottom: 10px; 		  
+	  -webkit-border-radius: 15px; /* round the corner of box */
+	  -moz-border-radius: 15px;    /* round the corner of box */
+      border-radius: 15px;         /* round the corner of box */  	  
+	  border: 2px solid #eee; 
+	  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+	  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+	  box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+	  -webkit-transition: all 0.5s ease-out; 
+	  -moz-transition: all 0.5s ease; 
+	  -o-transition: all 0.5s ease; 
 	  }
       #mainnav > ul > li [data-icon]:before {	              
 	              font-family: 'icons'; /* BYO icon font, mapped smartly */
@@ -133,9 +143,14 @@ header {
 				  font-size: 48px;
                    }
       #mainnav > ul > li:hover .fs1 {
-        color: #737373; }
+        color: #737373; 		 
+		}
       #mainnav > ul > li:hover a {	    
-        color: #737373; }
+        color: #737373; 
+        -webkit-transform: rotate(10deg); 
+		-moz-transform: rotate(10deg); 
+		-o-transform: rotate(10deg);		
+		}
       #mainnav > ul > li.active {
         background: transparent; }
         #mainnav > ul > li.active a {		  
@@ -145,7 +160,7 @@ header {
       #mainnav > ul > li > a {
         display: block;
         outline: 0;
-        height: 52px;
+        height: 75px;
         padding: 8px 5px;
         text-decoration: none;
         color: rgba(0, 0, 0, 0.3);
@@ -154,7 +169,7 @@ header {
       #mainnav > ul > li .current-arrow {
         background-image: url("images/menu-arrow.png");
         position: absolute;
-        right: 91px;
+        right: 99px;
         top: 25px;
         z-index: 10;
         width: 11px;
@@ -181,6 +196,7 @@ header {
  text-align : right;
  margin-right :10px;
  margin-top : 10px;
+ margin-left :10px;
  }
 
  /* This Section related To Container Div Part*/	
