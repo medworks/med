@@ -89,13 +89,13 @@ div.contain{
 }
 /*************************************SlideShow***********************************/
 /* Slider */	
-.flexslider .slides > li , .full-width .content .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position:relative; height:498px;}
+.flexslider .slides > li , .full-width .content .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position:relative; height:204px;}
 .flexslider .slides img {width: 100%; height:100%; display: block;}
 .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
 html[xmlns] .slides {display: block;} 
 * html .slides {height: 1%;}
 .no-js .slides > li:first-child {display: block;}
-.flexslider , .full-width .content .flexslider {margin: 0 auto 20px;position:relative;zoom: 1;width: 995px;height:498px;background: #000 url('images/black-loader.gif') no-repeat 50% 48%;	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);}
+.flexslider , .full-width .content .flexslider {margin: 0 auto 20px;position:relative;zoom: 1;height:204px;background: #000 url('images/black-loader.gif') no-repeat 50% 48%;	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);}
 .flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
@@ -120,7 +120,7 @@ html[xmlns] .slides {display: block;}
 .flex-control-paging li a {display: block; cursor: pointer; text-indent: -9999px; width:100%; background:#666; height:13px;  -webkit-transition: all .5s ease; -moz-transition: all .5s ease; transition: all .5s ease;}
 .flex-control-paging li a:hover { background: #000; }
 .flex-control-paging li a.flex-active { background: #F88C00; cursor: default; }
-.slider-caption{position: absolute;width: 75%;padding: 7px;background: #000;right: 0;bottom: 0;color:#FFF;opacity:0.8;}
+.slider-caption{position: absolute;width: 94%;padding: 8px;background: #000;right: 0;bottom: 0;color:#FFF;opacity:0.8;}
 .slider-caption h2 a, .full-width .content .slider-caption h2 {	color:#FFF;	font-size: 18px;}
 
 /*small*/
@@ -586,7 +586,6 @@ section.br-news .news ul a:hover{
 }
 
 .simple-box{
-	width: 270px;
 	background: #fff;
 	border: 1px solid #DDD;
 	border-bottom: 0 none;
@@ -885,19 +884,6 @@ section.main-content .sidebar .login-panel .login a.forget:hover{
 	color: #000;
 	text-decoration: underline;
 }
-
-section.main-content .sidebar .gallery{
-	height: 204px;
-}
-
-section.main-content .sidebar .gallery ul{
-	height: inherit;
-}
-
-section.main-content .sidebar .gallery ul li{
-	height: inherit;
-}
-
 /***************************************Bottom Ads part**************************************/
 section.ads-bot{
 	width: 950px;
