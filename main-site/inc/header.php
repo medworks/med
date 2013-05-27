@@ -10,6 +10,7 @@
 	<script src="./js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="./js/html5shiv.js"></script>
+		<script src="./js/selectivizr-min.js"></script>
 	<![endif]-->
 	<link rel="Shortcut Icon" href="./favicon.ico" />
 </head>

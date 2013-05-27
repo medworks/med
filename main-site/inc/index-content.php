@@ -148,7 +148,7 @@
 					<p><input type="text" name="username" class="username" value="نام کاربری" onfocus="if (this.value == 'نام کاربری') {this.value = '';}" onblur="if (this.value == '') {this.value = 'نام کاربری';}" /></p>
 					<p><input type="password" name="password" class="password" value="رمز عبور" onfocus="if (this.value == 'رمز عبور') {this.value = '';}" onblur="if (this.value == '') {this.value = 'رمز عبور';}" /></p>
 					<p class="right"><input type="submit" name="submit" class="submit" value="ورود" /></p>
-					<label class="right"><input type="checkbox" checked="checked" name="remember" class="remember"/> به خاطر بسپار</label>
+					<label class="right">به خاطر بسپار <input type="checkbox" checked="checked" name="remember" class="remember"/></label>
 				</form>
 				<div class="badboy"></div>
 				<a href="#" class="forget">رمز خود را فراموش کرده ام!</a>
