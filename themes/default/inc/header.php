@@ -72,7 +72,7 @@
 				<menu>
 					<li class="active"><a href="#"></a></li>
 					<li><a href="#">درباره ما</a></li>
-					<li><a href="#">کارهای ما</a></li>
+					<li><a href="?item=works&act=do">کارهای ما</a></li>
 					<li><a href="#">اخبار</a></li>
 					<li><a href="#">گالری تصاویر</a>
 						<menu>
