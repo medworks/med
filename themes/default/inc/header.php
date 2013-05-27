@@ -3,16 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel="stylesheet" href="./1styles.css" />
-	<link rel="stylesheet" href="./style.css" />
-	<script src="./js/jquery.js" type="text/javascript"></script>
-	<script src="./js/jquery.cycle.all.js" type="text/javascript"></script>
-	<script src="./js/script.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="./themes/default/1styles.css" />
+	<link rel="stylesheet" href="./themes/default/style.css" />
+	<script src="./themes/default/js/jquery.js" type="text/javascript"></script>
+	<script src="./themes/default/js/jquery.cycle.all.js" type="text/javascript"></script>
+	<script src="./themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
-		<script src="./js/html5shiv.js"></script>
-		<script src="./js/selectivizr-min.js"></script>
+		<script src="./themes/default/js/html5shiv.js"></script>
+		<script src="./themes/default/js/selectivizr-min.js"></script>
 	<![endif]-->
-	<link rel="Shortcut Icon" href="./favicon.ico" />
+	<link rel="Shortcut Icon" href="./themes/default/favicon.ico" />
 </head>
 <body>
 	<div class="container">
@@ -58,13 +58,13 @@
 				<div class="logo left">
 					<h2>
 						<a href="#" title="مدیا تک">
-							<img src="./images/logo.png" alt="مدیا تک">
+							<img src="./themes/default/images/main/logo.png" alt="مدیا تک">
 							<strong>Mediateq....</strong>
 						</a>
 					</h2>
 				</div>
 				<div class="ads right">
-					<a href="#"><img src="./images/others/ads.jpg"></a>
+					<a href="#"><img src="./themes/default/images/main/others/ads.jpg"></a>
 				</div>
 			</div>
 			<div class="badboy"></div>

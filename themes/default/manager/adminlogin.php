@@ -9,11 +9,10 @@ if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
 	//$adminloginmsg=$message->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");
 $html=<<<cod
 <!DOCTYPE HTML>       
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fa" lang="fa">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 <title>بخش مديريت سايت</title>		
-<link rel="stylesheet" type="text/css" href="adminlogin.css"></link>	
+<link rel="stylesheet" type="text/css" href="./themes/default/adminlogin.css"></link>	
 </head>
 <body>
 <form action="" method="post">

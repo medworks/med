@@ -5,28 +5,28 @@
 		<div id="ei-slider" class="slideshow ei-slider">
 			<ul class="ei-slider-large">
 				<li>
-					<img src="./images/others/slide1.jpg" alt="">
+					<img src="./themes/default/images/main/others/slide1.jpg" alt="">
 					<div class="ei-title">
 						<h2><a href="#">اسلاید شماره 1</a></h2>
 						<h3>جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... </h3>
 					</div>
 				</li>
 				<li>
-					<img src="./images/others/slide2.jpg" alt="">
+					<img src="./themes/default/images/main/others/slide2.jpg" alt="">
 					<div class="ei-title">
 						<h2><a href="#">اسلاید شماره 2</a></h2>
 						<h3>جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... </h3>
 					</div>
 				</li>
 				<li>
-					<img src="./images/others/slide3.jpg" alt="">
+					<img src="./themes/default/images/main/others/slide3.jpg" alt="">
 					<div class="ei-title">
 						<h2><a href="#">اسلاید شماره 3</a></h2>
 						<h3>جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... </h3>
 					</div>
 				</li>
 				<li>
-					<img src="./images/others/slide4.jpg" alt="">
+					<img src="./themes/default/images/main/others/slide4.jpg" alt="">
 					<div class="ei-title">
 						<h2><a href="#">اسلاید شماره 4</a></h2>
 						<h3>جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... </h3>
@@ -35,10 +35,10 @@
 			</ul>
 			<ul class="ei-slider-thumbs">
 				<li class="ei-slider-element"></li>
-				<li><a href="#"></a><img src="./images/others/slide1.jpg" alt=""></li>
-				<li><a href="#"></a><img src="./images/others/slide2.jpg" alt=""></li>
-				<li><a href="#"></a><img src="./images/others/slide3.jpg" alt=""></li>
-				<li><a href="#"></a><img src="./images/others/slide4.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./themes/default/images/main/others/slide1.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./themes/default/images/main/others/slide2.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./themes/default/images/main/others/slide3.jpg" alt=""></li>
+				<li><a href="#"></a><img src="./themes/default/images/main/others/slide4.jpg" alt=""></li>
 			</ul>
 		</div>
 		<script type="text/javascript">
@@ -63,27 +63,27 @@
 			<div class="works box-right">
 				<div id="slideshow-rec">
 					<div class="scroll-item">
-						<a href="#"><img src="./images/others/slide1.jpg" alt="" ></a>
+						<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt="" ></a>
 						<h3><a href="#">عنوان شماره 1</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
-						<a href="#"><img src="./images/others/slide2.jpg" alt="" ></a>
+						<a href="#"><img src="./themes/default/images/main/others/slide2.jpg" alt="" ></a>
 						<h3><a href="#">عنوان شماره 1</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
-						<a href="#"><img src="./images/others/slide3.jpg" alt="" ></a>
+						<a href="#"><img src="./themes/default/images/main/others/slide3.jpg" alt="" ></a>
 						<h3><a href="#">عنوان شماره 2</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
-						<a href="#"><img src="./images/others/slide4.jpg" alt="" ></a>
+						<a href="#"><img src="./themes/default/images/main/others/slide4.jpg" alt="" ></a>
 						<h3><a href="#">عنوان شماره 3</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
-						<a href="#"><img src="./images/others/works.jpg" alt="" ></a>
+						<a href="#"><img src="./themes/default/images/main/others/works.jpg" alt="" ></a>
 						<h3><a href="#">عنوان شماره 4</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
@@ -159,13 +159,13 @@
 		<div class="gallery flexslider simple-box" id="slider">
 			<ul class="slides">
 				<li>
-					<a href="#"><img src="./images/others/slide1.jpg" alt=""></a>
+					<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt=""></a>
 					<div class="slider-caption">
 						<h2><a href="#">اسلاید شماره 1</a></h2>
 					</div>
 				</li>
 				<li>
-					<a href="#"><img src="./images/others/slide2.jpg" alt=""></a>
+					<a href="#"><img src="./themes/default/images/main/others/slide2.jpg" alt=""></a>
 					<div class="slider-caption">
 						<h2><a href="#">اسلاید شماره 2</a></h2>
 					</div>

@@ -6,17 +6,17 @@
 				<div class="content">
 					<ul>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
@@ -29,17 +29,17 @@
 				<div class="content">
 					<ul>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
@@ -52,17 +52,17 @@
 				<div class="content">
 					<ul>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
@@ -75,17 +75,17 @@
 				<div class="content">
 					<ul>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
 						<li>
-							<div class="pic"><a href="#"><img src="./images/others/works.jpg" alt=""></a></div>
+							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
 							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
 							<span class="date">31 اردیبهشت 1392</span>
 						</li>
@@ -104,14 +104,14 @@
 			</div>
 			<div class="social right">
 				<ul>
-					<li><a href="#" class="ttip" original-title="Rss"><img src="./images/rss.png" alt="Rss"></a></li>
-					<li><a href="#" class="ttip" original-title="Facebook"><img src="./images/facebook.png" alt="Facebook"></a></li>
-					<li><a href="#" class="ttip" original-title="Twitter"><img src="./images/twitter.png" alt="Twitter"></a></li>
-					<li><a href="#" class="ttip" original-title="Pinterest"><img src="./images/pinterest.png" alt="Pinterest"></a></li>
-					<li><a href="#" class="ttip" original-title="Dribbble"><img src="./images/dribbble.png" alt="Dribbble"></a></li>
-					<li><a href="#" class="ttip" original-title="Youtube"><img src="./images/youtube.png" alt="Youtube"></a></li>
-					<li><a href="#" class="ttip" original-title="Behance"><img src="./images/behance.png" alt="Behance"></a></li>
-					<li><a href="#" class="ttip" original-title="Instagram"><img src="./images/instagram.png" alt="Instagram"></a></li>
+					<li><a href="#" class="ttip" original-title="Rss"><img src="./themes/default/images/main/rss.png" alt="Rss"></a></li>
+					<li><a href="#" class="ttip" original-title="Facebook"><img src="./themes/default/images/main/facebook.png" alt="Facebook"></a></li>
+					<li><a href="#" class="ttip" original-title="Twitter"><img src="./themes/default/images/main/twitter.png" alt="Twitter"></a></li>
+					<li><a href="#" class="ttip" original-title="Pinterest"><img src="./themes/default/images/main/pinterest.png" alt="Pinterest"></a></li>
+					<li><a href="#" class="ttip" original-title="Dribbble"><img src="./themes/default/images/main/dribbble.png" alt="Dribbble"></a></li>
+					<li><a href="#" class="ttip" original-title="Youtube"><img src="./themes/default/images/main/youtube.png" alt="Youtube"></a></li>
+					<li><a href="#" class="ttip" original-title="Behance"><img src="./themes/default/images/main/behance.png" alt="Behance"></a></li>
+					<li><a href="#" class="ttip" original-title="Instagram"><img src="./themes/default/images/main/instagram.png" alt="Instagram"></a></li>
 				</ul>
 			</div>
 			<div class="badboy"></div>
