@@ -20,7 +20,7 @@
 				<div class="time right"><p>شنبه ، 28 اردیبهشت 1392</p></div>
 				<div class="search left">
 					<form action="">
-						<input type="text" name="search" class="search right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
+						<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 						<input type="submit" name="submit" class="submit left" value="" />
 						<span class="left"></span>
 					</form>

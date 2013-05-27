@@ -348,7 +348,7 @@ div.container header .top .search form .submit{
 	border: 0 none;
 }
 
-div.container header .top .search form .search{
+div.container header .top .search form input.search-box{
 	background: #fbfbfb;
 	padding: 2px 12px 2px 12px;
 	width: 90px;
@@ -358,6 +358,20 @@ div.container header .top .search form .search{
 	outline: 0;
 	font-family: 'bmitra';
 	height: 26px;
+	-webkit-transition: width .7s , color .4s;
+	-moz-transition: width .7s , color .4s;
+	-ms-transition: width .7s , color .4s;
+	-o-transition: width .7s , color .4s;
+	transition: width .7s , color .4s;
+}
+
+div.container header .top .search form input.search-box:hover{
+	color: #000;
+}
+
+div.container header .top .search form input.search-box:focus{
+	width: 150px;
+	color: #000;
 }
 /************Mid Header*****************/
 div.container header .mid{
