@@ -95,3 +95,21 @@
 				</menu>
 			</div>
 		</header>
+		<section class="br-news">
+			<span class="right">خبرهای فوری</span>
+			<div class="news right">
+				<ul>
+					<li><a href="#" title="خبرهای فوری1...">خبرهای فوری1...</a></li>
+					<li><a href="#" title="خبرهای فوری2...">خبرهای فوری2...</a></li>
+					<li><a href="#" title="خبرهای فوری3...">خبرهای فوری3...</a></li>
+					<li><a href="#" title="خبرهای فوری4...">خبرهای فوری4...</a></li>
+					<li><a href="#" title="خبرهای فوری5...">خبرهای فوری5...</a></li>				
+				</ul>
+				<script type="text/javascript">
+					jQuery(document).ready(function(){
+										createTicker(); 
+									});
+				</script>
+			</div>
+			<div class="badboy"></div>
+		</section>

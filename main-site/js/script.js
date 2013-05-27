@@ -96,17 +96,45 @@ function validateEmail(str){
         });
     });
 })(jQuery);
+/***************************************************************************************/
+function createTicker(){        
+    var tickerLIs = jQuery(".news ul").children();          
+    tickerItems = new Array();                                
+    tickerLIs.each(function(el) {                             
+        tickerItems.push( jQuery(this).html() );                
+    });                                                       
+    i = 0  ;                                                 
+    rotateTicker();                                           
+}       
 
+function rotateTicker(){                                    
+    if( i == tickerItems.length ){                            
+      i = 0;                                                  
+    }                                                         
+  tickerText = tickerItems[i];                              
+    c = 0;                                                    
+    typetext();                                               
+    setTimeout( "rotateTicker()", 5000 );                     
+    i++;                                                      
+}   
 
-// Anchor link for scroll
-(function($){
-    $(function(){
-        $('#scroll-top-top a').click(function(){
-            $('html, body').animate({scrollTop:0}, 500);
-        })
-        return false;
-    });
-})(jQuery);
+var isInTag = false;                                        
+function typetext() {                                         
+    var thisChar = tickerText.substr(c, 1);                   
+    if( thisChar == '<' ){ isInTag = true; }                  
+    if( thisChar == '>' ){ isInTag = false; }                 
+    jQuery('.news ul').html(tickerText.substr(0, c++));   
+    if(c < tickerText.length+1)                                     
+        if( isInTag ){                                                
+            typetext();                                                 
+        }else{                                                        
+            setTimeout("typetext()", 28);                               
+        }                                                             
+    else {                                                          
+        c = 1;                                                        
+        tickerText = "";                                              
+    }                                                                 
+} 
 /***************************************************************************************/
 jQuery(document).ready(function() {
 
