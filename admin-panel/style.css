@@ -147,9 +147,11 @@ header {
 		}
       #mainnav > ul > li:hover a {	    
         color: #737373; 
+		transform: rotate(10deg);
+		-ms-transform : rotate(10deg);
         -webkit-transform: rotate(10deg); 
 		-moz-transform: rotate(10deg); 
-		-o-transform: rotate(10deg);		
+		-o-transform: rotate(10deg);
 		}
       #mainnav > ul > li.active {
         background: transparent; }
@@ -212,7 +214,7 @@ header {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  min-height: 1060px;
+  min-height: 550px;
   padding: 10px; 
  }
  
