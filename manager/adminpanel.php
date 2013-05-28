@@ -10,6 +10,26 @@
 	<!--[if lt IE 9]>
 		<script src="./themes/default/js/html5shiv.js"></script>
 	<![endif]-->
+<?php
+ $path = realpath(dirname(__FILE__));
+$html=<<<cd
+
+	<script type="text/javascript">
+        $(document).ready(function() {
+		    $("#works").click(function()
+			{
+			  //var path = window.location.pathname+"manager/worksmgr.php";
+			   //alert(path);
+			   $.ajax({url:"./manager/worksmgr.php",success:function(result){	    
+			      $("#container").html(result);
+			}});
+		});
+    </script>
+cd;
+echo $html;
+echo $path;
+
+?>	
 </head>
 <body>
     <header>
@@ -45,7 +65,7 @@
             </a>
           </li>
           <li >            
-            <a href="./manager/worksmgr.php">
+            <a href="" id="works" name="works">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
               </div>
@@ -72,7 +92,7 @@
       </div>
  
  </div> 
- <div id="" class="admin_container">
+ <div id="container"  name="container" class="admin_container">
  </div>
  </body>
 </html>
