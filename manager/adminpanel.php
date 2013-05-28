@@ -45,7 +45,7 @@
             </a>
           </li>
           <li >            
-            <a href="#">
+            <a href="./manager/worksmgr.php">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
               </div>
@@ -53,7 +53,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="worksmgr.php">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x25ce;"></span>
               </div>

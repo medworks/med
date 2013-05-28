@@ -1,5 +1,4 @@
-<?php
-  include_once("config.php");
+<?php  
   include_once("security.php");  
     
 class Database
@@ -71,8 +70,10 @@ public function  SelectAll($tableName, $fields,$where = NULL,
 }
 
 public function insertquery($table, $keys, $values)
-{
+{    
     $this->cmd =  "INSERT INTO ".$table." (".implode(', ', $keys).") VALUES (".implode(', ', $values).")";  
+	//echo "<br/>",$this->cmd;
+	return $this->RunSQL();
 }
 
 public function updatequery($table, $values, $where, $orderby = array())

@@ -1,7 +1,8 @@
 <?php
+  include_once("./config.php");
   include_once("./classes/database.php");
   $db = database::getDatabase();
-  $works = $db->SelectAll('works',NULL,NULL," sdate");
+  $works = $db->SelectAll('works',NULL,NULL," fdate DESC");
   $html = " <div class='content'>
               <div class='main-box'>
                 <h2>کارهای ما</h2>

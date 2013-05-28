@@ -1,5 +1,6 @@
 <?php
   error_reporting (E_ALL ^ E_NOTICE);
+  
   define("_DB_NAME","mediatec");
   define("_DB_USER", "root");
   define("_DB_PASS", "");
