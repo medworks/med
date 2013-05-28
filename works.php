@@ -2,10 +2,12 @@
   include_once("./classes/database.php");
   $db = database::getDatabase();
   $works = $db->SelectAll('works',NULL,NULL," sdate");
-  $html = " <div class='content' >
-              <div class='page'>
-                <p><a href='./'>خانه</a>/ کارهای ما</p>
-              </div> ";
+  $html = " <div class='content'>
+              <div class='main-box'>
+                <h2>کارهای ما</h2>
+                <div class='line'></div>
+                <div class='badboy'></div>
+                <div class='box-right'> ";
 
   for($i=0;$i<count($works);$i++)
   {
@@ -20,6 +22,6 @@
     </div>
 cd;
   }
-$html.=" </div> ";  
+$html.=" </div></div></div> ";  
 return $html;
 ?>

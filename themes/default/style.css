@@ -642,7 +642,7 @@ section.main-content{
 
 section.main-content .content{
 	float: right;
-	width: 620px;
+	width: 590px;
 }
 
 section.main-content .content .slideshow{
@@ -746,7 +746,6 @@ section.main-content .content .recent-works .works .scroll-nav a.activeSlide{
 section.main-content .sidebar{
 	float: left;
 	width: 270px;
-	margin-right: 30px;
 }
 
 section.main-content .sidebar .social ul li{
@@ -1085,13 +1084,6 @@ section.bot-footer .container .social li a:hover{
 	filter: grayscale(0);
 }
 /***************************************Others page**************************************/
-section.main-content .content .page{
-	border-bottom: 1px solid #ddd;
-	margin-bottom: 10px;
-	padding-bottom: 5px;
-	font-size: 19px;
-	font-weight: bold;
-}
 
 section.main-content .content p span{
 	color: #555;
@@ -1101,6 +1093,12 @@ section.main-content .content p span{
 section.main-content .content .title{
 	margin-bottom: 10px;
 	font-size: 18px;
+	border-top: 1px solid #eee;
+	padding-top: 10px;
+}
+
+section.main-content .content .title:first-child{
+	border-top: 0 none;
 }
 
 section.main-content .content .detail{
@@ -1109,7 +1107,6 @@ section.main-content .content .detail{
 }
 
 section.main-content .content .time{
-	border-bottom: 1px solid #eee;
 	margin-bottom: 10px;
 	font-size: 18px;
 }
