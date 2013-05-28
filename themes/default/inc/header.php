@@ -29,7 +29,7 @@
 				</div>
 				<div class="menu">
 					<menu>
-						<li><a href="#">صفحه اصلی</a></li>
+						<li><a href="./">صفحه اصلی</a></li>
 						<li><a href="#">درباره ما</a></li>
 						<li><a href="#">گالری تصاویر</a>
 							<menu>
@@ -57,7 +57,7 @@
 			<div class="mid">
 				<div class="logo left">
 					<h2>
-						<a href="#" title="مدیا تک">
+						<a href="./" title="مدیا تک">
 							<img src="./themes/default/images/main/logo.png" alt="مدیا تک">
 							<strong>Mediateq....</strong>
 						</a>
@@ -70,7 +70,7 @@
 			<div class="badboy"></div>
 			<div class="main-menu">
 				<menu>
-					<li class="active"><a href="#"></a></li>
+					<li class="active"><a href="./"></a></li>
 					<li><a href="#">درباره ما</a></li>
 					<li><a href="?item=works&act=do">کارهای ما</a></li>
 					<li><a href="#">اخبار</a></li>

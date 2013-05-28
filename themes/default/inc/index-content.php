@@ -3,10 +3,13 @@
 ?>
 <section class="main-content">
 	<!-- ****************Content (Right) part****************** -->
+	<?php
+		if (GetPageName($_GET['item'],$_GET['act'])){
+			echo include_once GetPageName($_GET['item'],$_GET['act']);
+		}
+		else{
+	?>
 	<div class="content">
-	 <?php
-	  echo include_once GetPageName($_GET['item'],$_GET['act']);
-	 ?>
 		<!-- ***********Slideshow************ -->
 		<div id="ei-slider" class="slideshow ei-slider">
 			<ul class="ei-slider-large">
@@ -118,6 +121,7 @@
 		  });
 		</script>
 	</div>
+	<?php } ?>
 	<!-- ****************Sidebar (Left) part****************** -->
 	<div class="sidebar">
 		<!-- ***********Slideshow************ -->

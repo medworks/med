@@ -1084,3 +1084,36 @@ section.bot-footer .container .social li a:hover{
 	-o-filter: grayscale(0);
 	filter: grayscale(0);
 }
+/***************************************Others page**************************************/
+section.main-content .content .page{
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	font-size: 19px;
+	font-weight: bold;
+}
+
+section.main-content .content p span{
+	color: #555;
+	font-size: 19px;
+}
+
+section.main-content .content .title{
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+section.main-content .content .detail{
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+section.main-content .content .time{
+	border-bottom: 1px solid #eee;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+section.main-content .content .time p{
+	padding-bottom: 5px;
+}
