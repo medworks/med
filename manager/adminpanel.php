@@ -12,12 +12,20 @@
 	<![endif]-->
 <?php
  $path = realpath(dirname(__FILE__));
+  include_once("./config.php");
+ include_once("./classes/database.php"); 
+ 
 $html=<<<cd
   <script type='text/javascript'>
         $(document).ready(function(){
           $('#works').click(function(){
               // alert('test');
              $('#container').load('./manager/worksmgr.php');
+             return false;
+          });
+		  $('#news').click(function(){
+              // alert('test');
+             $('#container').empty().load('./manager/newsmgr.php');
              return false;
           });
         });
@@ -53,7 +61,7 @@ echo $html;
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="" id="news" name="news">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
               </div>
@@ -89,7 +97,68 @@ echo $html;
  
  </div> 
  <div id="container"  class="admin_container">
-    
+<?php
+ if ($_POST["mark"]=="saveworks")
+ {
+    $db = Database::getDatabase();
+	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+   {
+     //echo "enter to file if<br/>",
+     $filename =strtolower(basename($_FILES['pic']['name']));
+     $ext = substr($filename, strrpos($filename, '.') + 1);
+     //$newfilename= md5(rand() * time());
+	 $newfilename = $_POST['subject'];
+	 
+	 $ext=".".$ext;
+     //Determine the path to which we want to save this file
+     
+     //$newfilename = $_FILES['pic']['name'];
+     $newname = SITE_ROOT.'/workspics/'.$newfilename.$ext;
+     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname))
+     {       
+       //echo("عمليات آپلود با مشكل مواجه شد");      
+     }	 
+   }     
+	$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+	$values = array("'{$_POST[subject]}'","'{$newname}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
+	$db->insertquery('works',$fields,$values);
+	header('location:manager/adminpanel.php');
+ } else
+  if ($_POST["mark"]=="savenews")
+ {
+    $db = Database::getDatabase();
+	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+   {
+     //echo "enter to file if<br/>",
+     $filename =strtolower(basename($_FILES['pic']['name']));
+     $ext = substr($filename, strrpos($filename, '.') + 1);
+     //$newfilename= md5(rand() * time());
+	 $newfilename = $_POST['subject'];
+	 
+	 $ext=".".$ext;
+     //Determine the path to which we want to save this file
+     
+     //$newfilename = $_FILES['pic']['name'];
+     $newname = SITE_ROOT.'/newspics/'.$newfilename.$ext;
+     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname))
+     {       
+       //echo("عمليات آپلود با مشكل مواجه شد");      
+     }	 
+   }     
+	$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+	$values = array("'{$_POST[subject]}'","'{$newname}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
+	$db->insertquery('news',$fields,$values);	
+	header('location:manager/adminpanel.php');
+echo "	
+	 <script type='text/javascript'>
+        $(document).ready(function(){        
+		 //document.location.href='manager/adminpanel.php';
+		  $('#news').click();
+        });
+    </script>
+	";
+ }
+?>    
  </div>
  </body>
 </html>

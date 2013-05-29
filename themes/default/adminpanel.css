@@ -329,20 +329,20 @@ list-style: none;
   border-right: 0 none;
 }
 
-.admin_container form.worksmgr label,
-.admin_container form.worksmgr input, 
-.admin_container form.worksmgr textarea{ 
+.admin_container form label,
+.admin_container form input, 
+.admin_container form textarea{ 
   float: right;
   font-size: 18px;
 }
 
-.admin_container form.worksmgr input, 
-.admin_container form.worksmgr textarea{ 
+.admin_container form input, 
+.admin_container form textarea{ 
   margin: 5px 0 10px;
   outline: 0 none;
 }
 
-.admin_container form.worksmgr input.subject, 
-.admin_container form.worksmgr textarea{
+.admin_container form input.subject, 
+.admin_container form textarea{
   width: 450px;
 }
