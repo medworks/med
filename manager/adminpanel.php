@@ -17,7 +17,7 @@ $html=<<<cd
         $(document).ready(function(){
           $('#works').click(function(){
               // alert('test');
-             $('#container').empty().load('./manager/worksmgr.php');
+             $('#container').load('./manager/worksmgr.php');
              return false;
           });
         });
@@ -89,6 +89,7 @@ echo $html;
  
  </div> 
  <div id="container"  class="admin_container">
+    
  </div>
  </body>
 </html>

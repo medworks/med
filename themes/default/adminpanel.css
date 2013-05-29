@@ -7,105 +7,132 @@
     font-weight: normal;
     font-style: normal;
 }
+
 body{
-	direction: rtl;
-    background: url('images/back_pattern.png');
+  background: url('images/admin/back_pattern.png');
 	background-position: center;
 	font-family: 'bmitra';
 }
 
+div,table,form,label,input,a,p{
+  direction: rtl;
+}
+
+.ltr{
+  direction: ltr;
+}
+
 a:active,
 a:visited,
-a:link { 
+a:link{ 
     border: none;
     outline: none;
 }
-/* This Section related To Header Part*/	
+
+a,
+a p{
+  color: #444;
+  text-align: right;
+  text-decoration: none;
+  -webkit-transition: all ease-in-out 0.2s;
+  -moz-transition: all ease-in-out 0.2s;
+  -ms-transition: all ease-in-out 0.2s;
+  -o-transition: all ease-in-out 0.2s;
+  transition: all ease-in-out 0.2s;
+}
+
+a:hover,
+a:hover p,
+input:hover{
+  color: #000;
+}
+
+p,label,h1,h2,h3,h4{
+  text-align: right;
+  font-family: 'bmitra';
+}
+/***************************Header part*******************************/	
 header {
   height: 50px;
   direction : rtl;
   text-align :right;
-  vertical-align: middle;  
-  /*position: absolute;*/
+  vertical-align: middle;
   left: 100px;
   right: 10px;
   font-family: 'bmitra';
   font-size: 17px;
-  font-weight:bold;  }
-  header .logo {
-    max-width: 380px;
-    max-height: 30px;
-    margin: 30px 0 0 140px;
-    font-size: 18px;
-    color: #d13736;
-    font-weight: 500;
-    float: left; }
-    header .logo:hover {
-      opacity: 0.7; }
-  header .icons {
-    margin-left: 40px; }
-  header #mini-nav {    
-    border: 1px solid #e6e6e6;
-    background: #fafafa;
-    float: right;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    border-radius: 2px;
-    margin: 20px 110px 0 0;
-    height: 32px;
-    line-height: 32px; }
-    header #mini-nav li {
-      float: right;
-      border-left: 1px solid #e6e6e6; }
-      header #mini-nav li:last-child {
-        border-right: 0; }
-      header #mini-nav li:first-child {
-        border-left: 0; border-left: 1px solid #e6e6e6; }
-    header #mini-nav a {
-      display: block;
-      padding: 0 15px;
-      color: black;
-      text-decoration: none;
-      cursor: pointer; }
-      header #mini-nav a:hover {
-        background: #e6e6e6; }
-    header #mini-nav span {
-      display: inline-block;
-      vertical-align: text-top;
-      margin-left: 5px;
-      padding: 1px 5px;
-      line-height: 15px;
-      font-size: 16px;
-      color: white;
-      background: #d13736;
-      -webkit-border-radius: 2px;
-      -moz-border-radius: 2px;
-      border-radius: 2px; }
-	  
-/* White icons with optional class, or on hover/active states of certain elements */
-/*
-.icon-white {
-  background-image: url("images/glyphicons-halflings-white.png"); }
+  font-weight:bold; 
+}
 
-.nav-pills > .active > a > [class^="icon-"], .nav-pills > .active > a > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
+header .logo {
+  max-width: 380px;
+  max-height: 30px;
+  margin: 30px 0 0 140px;
+  font-size: 18px;
+  color: #d13736;
+  font-weight: 500;
+  float: left; 
+}
 
-.nav-list > .active > a > [class^="icon-"], .nav-list > .active > a > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
+header .logo:hover {
+  opacity: 0.7; 
+}
 
-.navbar-inverse .nav > .active > a > [class^="icon-"], .navbar-inverse .nav > .active > a > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
+header .icons {
+  margin-left: 40px; 
+}
 
-.dropdown-menu > li > a:hover > [class^="icon-"], .dropdown-menu > li > a:hover > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
-.dropdown-menu > .active > a > [class^="icon-"], .dropdown-menu > .active > a > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
+header #mini-nav {    
+  border: 1px solid #e6e6e6;
+  background: #fafafa;
+  float: right;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 20px 110px 0 0;
+  height: 32px;
+  line-height: 32px; 
+}
 
-.dropdown-submenu:hover > a > [class^="icon-"], .dropdown-submenu:hover > a > [class*=" icon-"] {
-  background-image: url("images/glyphicons-halflings-white.png"); }
-  */
- 
- /* This Section related To Right Navigation Menu Bar Part*/	
+header #mini-nav li {
+  float: right;
+  border-left: 1px solid #e6e6e6; 
+}
+
+header #mini-nav li:last-child {
+  border-right: 0; 
+}
+
+header #mini-nav li:first-child {
+  border-left: 0; border-left: 1px solid #e6e6e6; 
+}
+
+header #mini-nav a {
+  display: block;
+  padding: 0 15px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer; 
+}
+
+header #mini-nav a:hover {
+  background: #e6e6e6; 
+}
+
+header #mini-nav span {
+  display: inline-block;
+  vertical-align: text-top;
+  margin-left: 5px;
+  padding: 1px 5px;
+  line-height: 15px;
+  font-size: 16px;
+  color: white;
+  background: #d13736;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px; 
+}
+
 #mainnav {
   display: block;
   float: right;
@@ -114,72 +141,83 @@ header {
   font-family: 'bmitra';
   font-size: 15px;
   font-weight:bold;
-  }
-  #mainnav > ul {
-    width: 100px;
-    position: absolute; }
-    #mainnav > ul > li {
-      display: block;
-      position: relative;
-      margin-bottom: 10px; 		  
-	  -webkit-border-radius: 15px; /* round the corner of box */
-	  -moz-border-radius: 15px;    /* round the corner of box */
-      border-radius: 15px;         /* round the corner of box */  	  
-	  border: 2px solid #eee; 
-	  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-	  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-	  box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-	  -webkit-transition: all 0.5s ease-out; 
-	  -moz-transition: all 0.5s ease; 
-	  -o-transition: all 0.5s ease; 
-	  }
-      #mainnav > ul > li [data-icon]:before {	              
-	              font-family: 'icons'; /* BYO icon font, mapped smartly */
-				  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/				                    
-                  content: attr(data-icon);
-                  speak: none; /* Not to be trusted, but hey. */
-				  font-weight: normal;
-                  -webkit-font-smoothing: antialiased;
-				  font-size: 48px;
-                   }
-      #mainnav > ul > li:hover .fs1 {
-        color: #737373; 		 
-		}
-      #mainnav > ul > li:hover a {	    
-        color: #737373; 
-		transform: rotate(10deg);
-		-ms-transform : rotate(10deg);
-        -webkit-transform: rotate(10deg); 
-		-moz-transform: rotate(10deg); 
-		-o-transform: rotate(10deg);
-		}
-      #mainnav > ul > li.active {
-        background: transparent; }
-        #mainnav > ul > li.active a {		  
-          color: #d13736; }
-        #mainnav > ul > li.active .fs1 {
-          color: #d13736; }
-      #mainnav > ul > li > a {
-        display: block;
-        outline: 0;
-        height: 75px;
-        padding: 8px 5px;
-        text-decoration: none;
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 15px;
-        text-align: center; }
-      #mainnav > ul > li .current-arrow {
-        background-image: url("images/menu-arrow.png");
-        position: absolute;
-        right: 99px;
-        top: 25px;
-        z-index: 10;
-        width: 11px;
-        height: 20px; }
+}
 
-	 /* This Section related To Header Div Part*/	
-.admin_top
-{
+#mainnav > ul {
+  width: 100px;
+  position: absolute; 
+}
+
+#mainnav > ul > li {
+  display: block;
+  position: relative;
+  margin-bottom: 10px; 		  
+  -webkit-border-radius: 15px; /* round the corner of box */
+  -moz-border-radius: 15px;    /* round the corner of box */
+  border-radius: 15px;         /* round the corner of box */  	  
+  border: 2px solid #eee; 
+  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -webkit-transition: all 0.5s ease-out; 
+  -moz-transition: all 0.5s ease; 
+  -o-transition: all 0.5s ease; 
+}
+
+#mainnav > ul > li [data-icon]:before {	              
+  font-family: 'icons'; 		                    
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  font-size: 48px;
+}
+
+#mainnav > ul > li:hover .fs1 {
+  color: #737373; 		 
+}
+
+#mainnav > ul > li:hover a {	    
+  color: #737373; 
+  transform: rotate(10deg);
+  -ms-transform : rotate(10deg);
+  -webkit-transform: rotate(10deg); 
+  -moz-transform: rotate(10deg); 
+  -o-transform: rotate(10deg);
+}
+
+#mainnav > ul > li.active {
+  background: transparent;
+}
+
+#mainnav > ul > li.active a {		  
+  color: #d13736; 
+}
+
+#mainnav > ul > li.active .fs1 {
+  color: #d13736; 
+}
+
+#mainnav > ul > li > a {
+  display: block;
+  outline: 0;
+  height: 75px;
+  padding: 8px 5px;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  text-align: center; }
+  #mainnav > ul > li .current-arrow {
+  background-image: url("images/admin/menu-arrow.png");
+  position: absolute;
+  right: 99px;
+  top: 25px;
+  z-index: 10;
+  width: 11px;
+  height: 20px; 
+}
+
+.admin_top{
  float : right;
  width : 92%;
  min-height : 100px;
@@ -202,28 +240,103 @@ header {
  }
 
  /* This Section related To Container Div Part*/	
- .admin_container
-{
- float : right;
- position: relative;
- width :80%;
- top: 15px;
- margin: 0px 0px 70px 90px;
-  background: #fafafa;
-  border: 1px solid #e6e6e6;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  min-height: 550px;
-  padding: 10px; 
+ .admin_container{
+    float : right;
+    position: relative;
+    width :80%;
+    top: 15px;
+    background: #fafafa;
+    border: 1px solid #e6e6e6;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    min-height: 550px;
+    padding: 10px; 
  }
  
- ul {
+ul{
 margin: 0;
 padding: 0;
 list-style: none;
 }
- .hi1dden-phone
- {
+
+.hi1dden-phone{
 	display: none;
- }
+}
+/*****************************************Works Manger page******************************************/
+.admin_container .title{
+  margin-bottom: 15px;
+}
+
+.admin_container .title ul{
+  border: 1px solid #ededed;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.admin_container .title ul li{
+  float: right;
+  font-size: 19px;
+}
+
+.admin_container .title ul li a{
+  display: block;
+  background: #d33f3e;
+  padding: 6px 42px 6px 0;
+  color: #fff;
+  position: relative;
+  float: right;
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  -ms-border-radius: 0 2px 2px 0;
+  -o-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+}
+
+.admin_container .title ul li a:after{
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 30px solid #d33f3e;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  right: 100%;
+  z-index: 2;
+}
+
+.admin_container .title ul li:first-child a{
+  padding-right: 10px;
+}
+
+.admin_container .title ul li:last-child a{
+  background: transparent !important;
+  cursor: default;
+  pointer-events: none;
+  color: #000;
+}
+
+.admin_container .title ul li:last-child a:after{
+  border-top: 0 none;
+  border-bottom: 0 none;
+  border-right: 0 none;
+}
+
+.admin_container form.worksmgr label,
+.admin_container form.worksmgr input, 
+.admin_container form.worksmgr textarea{ 
+  float: right;
+}
+
+.admin_container form.worksmgr input, 
+.admin_container form.worksmgr textarea{ 
+  margin: 5px 0 10px;
+  outline: 0 none;
+}

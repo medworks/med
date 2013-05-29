@@ -32,36 +32,48 @@
   echo "saving faild";
  }
   $html=<<<cd
-   <form name="frmworksmgr"  action="" method="post" enctype="multipart/form-data" >
-     <label>
-       عنوان:   	 
-       <input type="text" name="subject" />
-	 </label>  
-	 <br/>
-	 <label>
-       عکس:
-       <input type="file" name="pic" />
-	 </label>
-	 <br/>
-	 <label>
-       توضیحات:
-       <textarea cols="50" rows="10" name="detail"> </textarea>
-	 </label>
-	 <br/>
-	 <label>
-       تاریخ شروع :   	 
-       <input type="text" name="sdate" />
-	 </label>
-	 <br/>
-	 <label>
-       تاریخ پایان :
-       <input type="text" name="fdate" />
-	 </label>  
-	 <br/>
-	 <input type="submit" value="ذخیره" />	 
-	 <input type="hidden" name="mark" value="save" />
-	 <input type="reset" value="پاک کردن" /> 	 	 
-   </form>
+  <div class="title">
+      <ul>
+        <li><a href="#">پیشخوان</a></li>
+        <li><a href="#">مدیریت کارها</a></li>
+      </ul>
+      <div class="badboy"></div>
+  </div>
+  <div class='content'>
+    <form name="frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
+       <label>
+         عنوان:   	 
+         <input type="text" name="subject" />
+  	   </label>
+       <span class='badboy'></span>  
+  	   <label>
+         عکس:
+         <input type="file" name="pic" />
+  	   </label>
+       <span class='badboy'></span>  
+  	   <label>
+         توضیحات:
+         <textarea cols="50" rows="10" name="detail"> </textarea>
+  	   </label>
+       <span class='badboy'></span>  
+       
+       <div class='badboy'></div>
+  	   <label>
+         تاریخ شروع :   	 
+         <input type="text" name="sdate" />
+  	   </label>
+       <span class='badboy'></span>
+  	   <label>
+         تاریخ پایان :
+         <input type="text" name="fdate" />
+  	   </label>
+       <span class='badboy'></span>  
+    	 <input type="submit" value="ذخیره" />	 
+    	 <input type="hidden" name="mark" value="save" />
+    	 <input type="reset" value="پاک کردن" /> 	 	 
+    </form>
+    <div class='badboy'></div>
+  </div>
 cd;
  echo $html;
 ?>
