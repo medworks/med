@@ -43,34 +43,32 @@
     <form name="frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
        <label>
          عنوان:   	 
-         <input type="text" name="subject" />
+         <input type="text" name="subject" class='subject' />
   	   </label>
        <span class='badboy'></span>  
   	   <label>
          عکس:
-         <input type="file" name="pic" />
+         <input type="file" name="pic" class='pic' />
   	   </label>
        <span class='badboy'></span>  
   	   <label>
          توضیحات:
-         <textarea cols="50" rows="10" name="detail"> </textarea>
+         <textarea cols="50" rows="10" name="detail" class='detail'> </textarea>
   	   </label>
-       <span class='badboy'></span>  
-       
-       <div class='badboy'></div>
+       <span class='badboy'></span> 
   	   <label>
          تاریخ شروع :   	 
-         <input type="text" name="sdate" />
+         <input type="text" name="sdate" class='sdate' />
   	   </label>
        <span class='badboy'></span>
   	   <label>
          تاریخ پایان :
-         <input type="text" name="fdate" />
+         <input type="text" name="fdate" class='fdate' />
   	   </label>
        <span class='badboy'></span>  
-    	 <input type="submit" value="ذخیره" />	 
+    	 <input type="submit" value="ذخیره" class='submit' />	 
     	 <input type="hidden" name="mark" value="save" />
-    	 <input type="reset" value="پاک کردن" /> 	 	 
+    	 <input type="reset" value="پاک کردن" class='reset' /> 	 	 
     </form>
     <div class='badboy'></div>
   </div>
