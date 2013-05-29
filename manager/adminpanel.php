@@ -13,21 +13,17 @@
 <?php
  $path = realpath(dirname(__FILE__));
 $html=<<<cd
-
-	<script type="text/javascript">
-        $(document).ready(function() {
-		    $("#works").click(function()
-			{
-			  //var path = window.location.pathname+"manager/worksmgr.php";
-			   //alert(path);
-			   $.ajax({url:"./manager/worksmgr.php",success:function(result){	    
-			      $("#container").html(result);
-			}});
-		});
+  <script type='text/javascript'>
+        $(document).ready(function(){
+          $('#works').click(function(){
+              // alert('test');
+             $('#container').empty().load('./manager/worksmgr.php');
+             return false;
+          });
+        });
     </script>
 cd;
 echo $html;
-echo $path;
 
 ?>	
 </head>
@@ -92,7 +88,7 @@ echo $path;
       </div>
  
  </div> 
- <div id="container"  name="container" class="admin_container">
+ <div id="container"  class="admin_container">
  </div>
  </body>
 </html>
