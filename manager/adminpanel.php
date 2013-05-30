@@ -98,6 +98,7 @@ echo $html;
  </div> 
  <div id="container"  class="admin_container">
 <?php
+
  if ($_POST["mark"]=="saveworks")
  {
     $db = Database::getDatabase();
@@ -113,14 +114,16 @@ echo $html;
      //Determine the path to which we want to save this file
      
      //$newfilename = $_FILES['pic']['name'];
-     $newname = SITE_ROOT.'/workspics/'.$newfilename.$ext;
-     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname))
+     $newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
+     $newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
+          if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
      {       
        //echo("عمليات آپلود با مشكل مواجه شد");      
      }	 
    }     
+
 	$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
-	$values = array("'{$_POST[subject]}'","'{$newname}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
+	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
 	$db->insertquery('works',$fields,$values);
 	header('location:manager/adminpanel.php');
  } else
@@ -139,24 +142,25 @@ echo $html;
      //Determine the path to which we want to save this file
      
      //$newfilename = $_FILES['pic']['name'];
-     $newname = SITE_ROOT.'/newspics/'.$newfilename.$ext;
-     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname))
+     $newname_os = OS_ROOT.'/newspics/'.$newfilename.$ext;
+     $newname_site = SITE_ROOT.'/newspics/'.$newfilename.$ext;
+     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
      {       
        //echo("عمليات آپلود با مشكل مواجه شد");      
      }	 
    }     
 	$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-	$values = array("'{$_POST[subject]}'","'{$newname}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
+	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
 	$db->insertquery('news',$fields,$values);	
 	header('location:manager/adminpanel.php');
-echo "	
+/*echo "	
 	 <script type='text/javascript'>
         $(document).ready(function(){        
 		 //document.location.href='manager/adminpanel.php';
 		  $('#news').click();
         });
     </script>
-	";
+	";*/
  }
 ?>    
  </div>

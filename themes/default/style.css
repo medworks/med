@@ -71,22 +71,6 @@ p,label,h1,h2,h3,h4{
 	text-align: right;
 	font-family: 'bmitra';
 }
-
-div.contain{
-	width: 950px;
-	margin: 50px auto 0;
-	padding: 0 40px 0;
-	background-color: #fff;
-	box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-}
-
-.ok{
-	outline : 1px solid #fff;
-}
-
-.err{
-	outline : 1px solid #f99;
-}
 /*************************************SlideShow***********************************/
 /* Slider */	
 .flexslider .slides > li , .full-width .content .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position:relative; height:204px;}
@@ -1084,33 +1068,60 @@ section.bot-footer .container .social li a:hover{
 	filter: grayscale(0);
 }
 /***************************************Others page**************************************/
-
-section.main-content .content p span{
-	color: #555;
-	font-size: 19px;
-}
-
 section.main-content .content .title{
 	margin-bottom: 10px;
-	font-size: 18px;
-	border-top: 1px solid #eee;
+	font-size: 22px;
 	padding-top: 10px;
 }
 
-section.main-content .content .title:first-child{
-	border-top: 0 none;
+section.main-content .content .time{
+	margin-bottom: 40px;
+}
+
+section.main-content .content .time p{
+	float: right;
+	margin-left: 20px;
+}
+
+section.main-content .content .pic{
+	float: right;
+	margin-left: 20px;
+}
+
+section.main-content .content .pic a:hover{
+	opacity: 0.7;
+}
+
+section.main-content .content .pic img{
+	width: 158px;
+	height: 158px;
+	background: #fff;
+	padding: 4px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+	-webkit-box-shadow: 0 0 2px #B5B5B5;
+	-moz-box-shadow: 0 0 2px #B5B5B5;
+	-ms-box-shadow: 0 0 2px #B5B5B5;
+	-o-box-shadow: 0 0 2px #B5B5B5;
+	box-shadow: 0 0 2px #B5B5B5;
+	-webkit-transition: all .40s;
+	-moz-transition: all .40s;
+	-ms-transition: all .40s;
+	-o-transition: all .40s;
+	transition: all .40s;
 }
 
 section.main-content .content .detail{
 	margin-bottom: 10px;
+	padding-top: 20px;
 	font-size: 18px;
+	line-height: 1.2;
 }
 
-section.main-content .content .time{
-	margin-bottom: 10px;
-	font-size: 18px;
-}
-
-section.main-content .content .time p{
-	padding-bottom: 5px;
+section.main-content .content .detail p{
+	text-align: justify;
+	
 }
