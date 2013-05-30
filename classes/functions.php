@@ -15,6 +15,9 @@ include_once ("lib/class.phpmailer.php");
                         case 'works':
                             if ($act=="do") return "works.php";
                         break;			          
+                        case 'news':
+                            if ($act=="do") return "news.php";
+						break;
 		}
 	}
  function createpostblock()

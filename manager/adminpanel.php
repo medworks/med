@@ -99,6 +99,8 @@ echo $html;
  <div id="container"  class="admin_container">
 <?php
 
+  // header('Content-Type: text/html; charset=windows-1256');
+
  if ($_POST["mark"]=="saveworks")
  {
     $db = Database::getDatabase();

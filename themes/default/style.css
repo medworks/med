@@ -1074,6 +1074,10 @@ section.main-content .content .title{
 	padding-top: 10px;
 }
 
+section.main-content .content p span{
+	color: #777;
+}
+
 section.main-content .content .time{
 	margin-bottom: 40px;
 }

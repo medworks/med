@@ -73,7 +73,7 @@
 					<li class="active"><a href="./"></a></li>
 					<li><a href="#">درباره ما</a></li>
 					<li><a href="?item=works&act=do">کارهای ما</a></li>
-					<li><a href="#">اخبار</a></li>
+					<li><a href="?item=news&act=do">اخبار</a></li>
 					<li><a href="#">گالری تصاویر</a>
 						<menu>
 							<li><a href="#">گالری تصاویر 1</a></li>
