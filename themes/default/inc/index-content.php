@@ -92,8 +92,8 @@
 						<p>5 اردیبهشت 1392</p>
 					</div>
 					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/works.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 4</a></h3>
+						<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt="" ></a>
+						<h3><a href="#">عنوان شماره 3</a></h3>
 						<p>5 اردیبهشت 1392</p>
 					</div>
 				</div>

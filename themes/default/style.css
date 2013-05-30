@@ -626,7 +626,7 @@ section.main-content{
 
 section.main-content .content{
 	float: right;
-	width: 590px;
+	width: 610px;
 }
 
 section.main-content .content .slideshow{
@@ -642,6 +642,7 @@ section.main-content .content .slideshow{
 
 section.main-content .content .recent-works .works{
 	position: relative;
+	padding: 6px;
 }
 
 section.main-content .content .recent-works .works .group_items{
