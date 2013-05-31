@@ -1,30 +1,29 @@
 <?php
-  include_once("./config.php");
-  include_once("./classes/database.php
+    include_once("./config.php");
+    include_once("./classes/database.php");
     if ($_POST["mark"]=="saveworks")
-  {
-    $db = Database::getDatabase();
-	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
-   {
-     
-     $filename =strtolower(basename($_FILES['pic']['name']));
-     $ext = substr($filename, strrpos($filename, '.') + 1);
-     //$newfilename= md5(rand() * time());
-	 $newfilename = $_POST['subject'];	 
-	 $ext=".".$ext;          
-     //$newfilename = $_FILES['pic']['name'];
-     $newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
-     $newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
-          if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-     {       
-       //echo("عمليات آپلود با مشكل مواجه شد");      
-     }	 
-   }     
-	$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
-	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
-	$db->insertquery('works',$fields,$values);
-	header('location:?item=worksmgr&act=do');
- }
+	{
+		$db = Database::getDatabase();
+		if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+		{     
+			$filename =strtolower(basename($_FILES['pic']['name']));
+			$ext = substr($filename, strrpos($filename, '.') + 1);
+			//$newfilename= md5(rand() * time());
+			$newfilename = $_POST['subject'];	 
+			$ext=".".$ext;          
+			//$newfilename = $_FILES['pic']['name'];
+			$newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
+			$newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
+			if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
+			{       
+				//echo("عمليات آپلود با مشكل مواجه شد");      
+			}	 
+		}     
+		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
+		$db->insertquery('works',$fields,$values);
+		header('location:?item=worksmgr&act=do');
+	}
 $html=<<<cd
   
   <div class="title">
