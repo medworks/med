@@ -27,8 +27,8 @@ public function RunSQL()
    $this->cmd = $security->xss_clean($this->cmd);
    //echo $this->cmd;
    $result =  mysql_query($this->cmd, $this->link);          
-   if (!$result) die ('Unable to run query:'.$this->errormessage());
-   else       return $result;
+   //if (!$result) die ('Unable to run query:'.$this->errormessage()); else
+    return $result;
 }
 
 public function affectedrows()
