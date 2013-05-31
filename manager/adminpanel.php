@@ -101,7 +101,9 @@ echo $html;
  </div> 
  <div id="container"  class="admin_container">
 <?php
+  if (isset($_GET['item']))  
   echo include_once GetPageName($_GET['item'],$_GET['act']); 
+  
 ?>    
  </div>
  </body>
