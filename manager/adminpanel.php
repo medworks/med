@@ -11,12 +11,14 @@
 		<script src="./themes/default/js/html5shiv.js"></script>
 	<![endif]-->
 <?php
- $path = realpath(dirname(__FILE__));
+  $path = realpath(dirname(__FILE__));
+  /*
   include_once("./config.php");
- include_once("./classes/database.php"); 
- 
+  include_once("./classes/database.php"); 
+ */
 $html=<<<cd
   <script type='text/javascript'>
+  /*
         $(document).ready(function(){
           $('#works').click(function(){
               // alert('test');
@@ -29,6 +31,7 @@ $html=<<<cd
              return false;
           });
         });
+		*/
     </script>
 cd;
 echo $html;
@@ -61,7 +64,7 @@ echo $html;
             </a>
           </li>
           <li>
-            <a href="" id="news" name="news">
+            <a href="?item=newsmgr&act=do" id="news" name="news">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
               </div>
@@ -69,7 +72,7 @@ echo $html;
             </a>
           </li>
           <li >            
-            <a href="" id="works" name="works">
+            <a href="?item=worksmgr&act=do" id="works" name="works">
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
               </div>
@@ -99,71 +102,10 @@ echo $html;
  <div id="container"  class="admin_container">
 <?php
 
+if (GetPageName($_GET['item'],$_GET['act'])){
+			echo include_once GetPageName($_GET['item'],$_GET['act']); }
   // header('Content-Type: text/html; charset=windows-1256');
 
- if ($_POST["mark"]=="saveworks")
- {
-    $db = Database::getDatabase();
-	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
-   {
-     //echo "enter to file if<br/>",
-     $filename =strtolower(basename($_FILES['pic']['name']));
-     $ext = substr($filename, strrpos($filename, '.') + 1);
-     //$newfilename= md5(rand() * time());
-	 $newfilename = $_POST['subject'];
-	 
-	 $ext=".".$ext;
-     //Determine the path to which we want to save this file
-     
-     //$newfilename = $_FILES['pic']['name'];
-     $newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
-     $newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
-          if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-     {       
-       //echo("عمليات آپلود با مشكل مواجه شد");      
-     }	 
-   }     
-
-	$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
-	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
-	$db->insertquery('works',$fields,$values);
-	header('location:manager/adminpanel.php');
- } else
-  if ($_POST["mark"]=="savenews")
- {
-    $db = Database::getDatabase();
-	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
-   {
-     //echo "enter to file if<br/>",
-     $filename =strtolower(basename($_FILES['pic']['name']));
-     $ext = substr($filename, strrpos($filename, '.') + 1);
-     //$newfilename= md5(rand() * time());
-	 $newfilename = $_POST['subject'];
-	 
-	 $ext=".".$ext;
-     //Determine the path to which we want to save this file
-     
-     //$newfilename = $_FILES['pic']['name'];
-     $newname_os = OS_ROOT.'/newspics/'.$newfilename.$ext;
-     $newname_site = SITE_ROOT.'/newspics/'.$newfilename.$ext;
-     if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-     {       
-       //echo("عمليات آپلود با مشكل مواجه شد");      
-     }	 
-   }     
-	$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
-	$db->insertquery('news',$fields,$values);	
-	header('location:manager/adminpanel.php');
-/*echo "	
-	 <script type='text/javascript'>
-        $(document).ready(function(){        
-		 //document.location.href='manager/adminpanel.php';
-		  $('#news').click();
-        });
-    </script>
-	";*/
- }
 ?>    
  </div>
  </body>

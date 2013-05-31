@@ -1,16 +1,30 @@
 <?php 
+    include_once("./config.php");
+    include_once("./classes/database.php");
+	if ($_POST["mark"]=="savenews")
+    {
+       $db = Database::getDatabase();
+	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+		{ 
+			$filename =strtolower(basename($_FILES['pic']['name']));
+			$ext = substr($filename, strrpos($filename, '.') + 1);
+			//$newfilename= md5(rand() * time());
+			$newfilename = $_POST['subject'];	 
+			$ext=".".$ext;          
+			//$newfilename = $_FILES['pic']['name'];
+			$newname_os = OS_ROOT.'/newspics/'.$newfilename.$ext;
+			$newname_site = SITE_ROOT.'/newspics/'.$newfilename.$ext;
+			if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
+			{       
+				//echo("عمليات آپلود با مشكل مواجه شد");      
+			}	 
+		}     
+	$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
+	$db->insertquery('news',$fields,$values);	
+	header('location:?item=newsmgr&act=do');
+	}
 $html=<<<cd
-<script type='text/javascript'>
-        $(document).ready(function(){
-          $('#submit').click(function(){
-             //  alert('test');
-             //document.forms["frmnewsmgr"].submit();
-			 $.post("adminpanel.php", $("#frmnewsmgr").serialize());
-           //  return false;
-          });
-		 
-        });
-    </script>
        <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>

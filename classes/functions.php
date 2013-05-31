@@ -18,6 +18,12 @@ include_once ("lib/class.phpmailer.php");
                         case 'news':
                             if ($act=="do") return "news.php";
 						break;
+						case 'worksmgr':
+                            if ($act=="do") return "manager/worksmgr.php";
+						break;
+						case 'newsmgr':
+                            if ($act=="do") return "manager/newsmgr.php";
+						break;
 		}
 	}
  function createpostblock()
