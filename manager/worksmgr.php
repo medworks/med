@@ -67,5 +67,5 @@ $html=<<<cd
     <div class="badboy"></div>
   </div>
 cd;
- echo $html;
+ return $html;
 ?>

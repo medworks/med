@@ -101,11 +101,7 @@ echo $html;
  </div> 
  <div id="container"  class="admin_container">
 <?php
-
-if (GetPageName($_GET['item'],$_GET['act'])){
-			echo include_once GetPageName($_GET['item'],$_GET['act']); }
-  // header('Content-Type: text/html; charset=windows-1256');
-
+  echo include_once GetPageName($_GET['item'],$_GET['act']); 
 ?>    
  </div>
  </body>
