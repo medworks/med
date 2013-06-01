@@ -111,7 +111,7 @@ $html=<<<cd
                 dateType  : 'jalali',
                 showOthers  : true,
                 langNumbers : true,
-                weekNumbers : true
+                weekNumbers : true,
           });
         </script>
        </p>

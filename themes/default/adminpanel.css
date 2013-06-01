@@ -373,7 +373,7 @@ footer p{
 
 .admin_container form input.subject, 
 .admin_container form textarea{
-  width: 710px;
+  width: 733px;
 }
 
 .admin_container form textarea{
@@ -394,10 +394,10 @@ footer p{
   display: inline-block;
 }
 
-.admin_container form img,
 .admin_container form img{
   margin-top: 5px;
   vertical-align: top;
+  outline: 0 none;
 }
 
 .admin_container form input.submit,
