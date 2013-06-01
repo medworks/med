@@ -3,30 +3,21 @@
     include_once("./classes/database.php");
 	include_once("./classes/messages.php");
 	include_once("./classes/session.php");	
-	$sess = Session::getSesstion();
+	include_once("./classes/functions.php");
+	//$sess = Session::getSesstion();
     if ($_POST["mark"]=="saveworks")
 	{
 		$db = Database::getDatabase();
-		$msg = Message::getMessage();		
-		$msgs = "";
-
-    if (!isset($_POST["subject"])) {
-      $msgs = $msg->ShowError("لطفا موضوع را تایپ نمایید");
-    }
-		elseif((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
+		$msg = Message::getMessage();
+		$msgs = "";	
+    
+		if((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
 		{    
-			$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+			header('location:?item=worksmgr&act=do&msg=4');
+			exit();
 		}
-    elseif (!isset($_POST["detail"])) {
-      $msgs = $msg->ShowError("لطفا متن مورد نظر را تایپ نمایید");
-    }
-    elseif(!isset($_POST["sdate"])){
-      $msgs = $msg->ShowError("تاریخ شروع را وارد نمایید");
-    }
-    elseif(!isset($_POST["fdate"])){
-      $msgs = $msg->ShowError("تاریخ پایان را وارد نمایید");
-    }
-		else
+    	else
 		{
 			$filename =strtolower(basename($_FILES['pic']['name']));
 			$ext = substr($filename, strrpos($filename, '.') + 1);
@@ -38,28 +29,29 @@
 			$newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
 			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
 			{     
-				$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+				header('location:?item=worksmgr&act=do&msg=3');
+				exit();
 			}	 
 		    else
-        {			
+			{			
   				$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
   				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
   				if (!$db->insertquery('works',$fields,$values)) 
   				{
-  					$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+  					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+					header('location:?item=worksmgr&act=do&msg=2');
+					exit();
   				} 	
   				else 
-  				{  					
-  					$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد"); 
-  				}
-  				 $sess->set("msg",$msgs);
-  			   header('location:?item=worksmgr&act=do');
-       		   			   
+  				{  										
+  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+					header('location:?item=worksmgr&act=do&msg=1');					
+  				}  				 
 			}
 		}	
 	}
-	$msgs = $sess->get("msg");	
-	$sess->delete("msg");
+	$msgs = getMessage($_GET['msg']);
 $html=<<<cd
 
   <div class="title">
@@ -85,7 +77,7 @@ $html=<<<cd
        <p>
   	     <label for="detail">توضیحات </label>
          <span>*</span>
-         <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>
+         <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>		 
        </p>
        <p>
   	    <label for="sdate">تاریخ شروع </label>
@@ -97,6 +89,7 @@ $html=<<<cd
          <span>*</span>
          <input type="text" name="fdate" class="fdate" id="fdate" />
        </p>
+	   <div class="left" >{$msgs}</div>
        <p>
       	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
       	 <input type="hidden" id="mark" class="mark" name="mark" value="saveworks" />
