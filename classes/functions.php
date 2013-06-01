@@ -1,6 +1,7 @@
 <?php
 include_once("lib/persiandate.php");
 include_once ("lib/class.phpmailer.php");
+include_once("./classes/messages.php");
   
   function GetPageName($func,$act)
 	{
@@ -24,6 +25,25 @@ include_once ("lib/class.phpmailer.php");
 						case 'newsmgr':
                             if ($act=="do") return "manager/newsmgr.php";
 						break;
+		}
+	}
+	function getMessage($msgid)
+	{
+		$msg = Message::getMessage();	
+		switch($msgid)
+		{
+			case 1:
+				return $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+			break;	
+			case 2:
+				return $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			break;	
+            case 3:
+				return $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+			break;	
+			case 4:
+				return $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+			break;	
 		}
 	}
  function createpostblock()
@@ -94,7 +114,7 @@ function datagrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 {
 			$code = "<table width='100%' class='datagrid' border='0'><tr class='datagridheader'>";
 			//if ($showEdit) $code .= "<td class='datagrid'></td>";
-			$code .= "<th>��?�</th>";
+			$code .= "<th>ÑÏ?Ý</th>";
 			$fields = array();
                         $DBase = new Database();
 			foreach($cols as $key=>$value)
