@@ -1,11 +1,18 @@
 <?php 
     include_once("./config.php");
-    include_once("./classes/database.php");
+    include_once("./classes/database.php");	
+	include_once("./classes/functions.php");
 	if ($_POST["mark"]=="savenews")
     {
        $db = Database::getDatabase();
-	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
 		{ 
+			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+			header('location:?item=newsmgr&act=do&msg=4');
+			exit();
+		}
+		else
+		{
 			$filename =strtolower(basename($_FILES['pic']['name']));
 			$ext = substr($filename, strrpos($filename, '.') + 1);
 			//$newfilename= md5(rand() * time());
@@ -14,16 +21,31 @@
 			//$newfilename = $_FILES['pic']['name'];
 			$newname_os = OS_ROOT.'/newspics/'.$newfilename.$ext;
 			$newname_site = SITE_ROOT.'/newspics/'.$newfilename.$ext;
-			if (move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
+			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
 			{       
-				//echo("عمليات آپلود با مشكل مواجه شد");      
-			}	 
-		}     
-	$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-	$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
-	$db->insertquery('news',$fields,$values);	
-	header('location:?item=newsmgr&act=do');
+				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+				header('location:?item=newsmgr&act=do&msg=3');
+				exit();
+			}
+			else
+			{
+				$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
+				if (!$db->insertquery('news',$fields,$values)) 
+  				{
+  					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+					header('location:?item=newsmgr&act=do&msg=2');
+					exit();
+  				} 	
+  				else 
+  				{  										
+  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+					header('location:?item=newsmgr&act=do&msg=1');					
+  				}  				 
+			}		     			
+		}			
 	}
+$msgs = getMessage($_GET['msg']);	
 $html=<<<cd
        <div class="title">
       <ul>
@@ -57,7 +79,8 @@ $html=<<<cd
   	   <label>
           منبع خبر :   	 
          <input type="text" name="res" class='' />
-  	   </label>       
+  	   </label>  
+      <div class="left" >{$msgs}</div>	   
        <span class='badboy'></span>  
     	 <input type="submit" id="submit" value="ذخیره" class='submit' />	 
     	 <input type="hidden" name="mark" value="savenews" />
