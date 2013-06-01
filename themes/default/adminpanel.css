@@ -240,19 +240,18 @@ header #mini-nav span {
  }
 
  /* This Section related To Container Div Part*/	
- .admin_container{
-    float : right;
-    position: relative;
-    width :80%;
-    top: 15px;
-    background: #fafafa;
-    border: 1px solid #e6e6e6;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    min-height: 550px;
-    padding: 10px; 
- }
+.admin_container{
+  float : right;
+  width : 780px;
+  top: 15px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 20px; 
+  margin: 20px 0;
+}
  
 ul{
 margin: 0;
@@ -262,6 +261,18 @@ list-style: none;
 
 .hi1dden-phone{
 	display: none;
+}
+
+footer{
+  background: #bfbfbf;
+  padding: 5px 0;
+  position: absolute;
+  width: 100%;
+}
+
+footer p{
+  text-align: center;
+  font-size: 18px;
 }
 /*****************************************Works Manger page******************************************/
 .admin_container .title{
@@ -329,20 +340,79 @@ list-style: none;
   border-right: 0 none;
 }
 
-.admin_container form label,
-.admin_container form input, 
-.admin_container form textarea{ 
-  float: right;
+.admin_container form p.note{
+  color: #000;
+  margin-bottom: 15px;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .admin_container form input, 
 .admin_container form textarea{ 
   margin: 5px 0 10px;
   outline: 0 none;
+  border: 1px solid #F1F1F1;
+  border-top-color: #ddd;
+  border-left-color: #ddd;
+  background: #F9F9F9;
+  color: #000;
+  padding: 4px 7px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+}
+
+.admin_container form input.pic{
+  background: #fff;
+  border: 0 none;
 }
 
 .admin_container form input.subject, 
 .admin_container form textarea{
-  width: 450px;
+  width: 710px;
+}
+
+.admin_container form textarea{
+  height: 450px;
+}
+
+.admin_container form p{
+  color: #888;
+}
+
+.admin_container form p span{
+  color: #000;
+}
+
+.admin_container form input.fdate,
+.admin_container form input.sdate{
+  width: 220px;
+}
+
+.admin_container form input.submit,
+.admin_container form input.mark,
+.admin_container form input.reset{
+  display: inline;
+  margin-left: 5px;
+  padding: 5px 18px;
+  color: #000;
+  -webkit-transition: background 300ms;
+  -moz-transition: background 300ms;
+  -ms-transition: background 300ms;
+  -o-transition: background 300ms;
+  transition: background 300ms;
+}
+
+.admin_container form input.submit:hover,
+.admin_container form input.reset:hover{
+  background: #ddd;
+  -webkit-transition: background 500ms;
+  -moz-transition: background 500ms;
+  -ms-transition: background 500ms;
+  -o-transition: background 500ms;
+  transition: background 500ms;
 }

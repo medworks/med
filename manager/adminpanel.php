@@ -39,8 +39,9 @@ echo $html;
 ?>	
 </head>
 <body>
+  
     <header>
-      <a href="#" class="logo">Media Teq Admin Panel</a>
+      <a href="#" class="logo">Mediateq Admin Panel</a>
       <div id="mini-nav">
         <ul class="hidden-phone">
           <li><a href="#" >وظایف</a></li>
@@ -51,6 +52,7 @@ echo $html;
     </header>
  <!-- <div id="top" class= "admin_top">top</div> -->
  <div id="clear" class="badboy"> </div>
+ <div class="container">
  <div id="right" class="admin_right_panel"> 
 	 <div id="mainnav" class="hidden-phone hidden-tablet">
         <ul>
@@ -103,8 +105,12 @@ echo $html;
 <?php
   if (isset($_GET['item']))  
   echo include_once GetPageName($_GET['item'],$_GET['act']); 
-  
 ?>    
  </div>
- </body>
+ </div>
+ <div class="badboy"></div>
+ <footer>
+   <p>پانل مدیرت مدیا تک</p>
+ </footer>
+</body>
 </html>
