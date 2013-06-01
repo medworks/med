@@ -5,8 +5,11 @@
 	<title> پانل مدیریت</title>
 	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css" />
 	<link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
-	
+	<link rel="stylesheet" href="./lib/validation/css/validationEngine.jquery.css" type="text/css"/>
 	<script type="text/javascript" src="./themes/default/js/jquery.js"></script>	
+	<script src="./lib/validation/js/jquery.validationEngine-en.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./lib/validation/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>	 
+		
 	<!--[if lt IE 9]>
 		<script src="./themes/default/js/html5shiv.js"></script>
 	<![endif]-->

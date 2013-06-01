@@ -53,7 +53,11 @@
 	}
 	$msgs = getMessage($_GET['msg']);
 $html=<<<cd
-
+<script type='text/javascript'>
+	$(document).ready(function(){	   
+        $("#frmworksmgr").validationEngine();
+       });
+</script>	   
   <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>
@@ -62,12 +66,12 @@ $html=<<<cd
       <div class="badboy"></div>
   </div>
   <div class="content">
-    <form name="frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
+    <form name="frmworksmgr" id= "frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="subject">عنوان </label>
          <span>*</span>  	 
-         <input type="text" name="subject" class="subject" id="subject" />
+         <input type="text" name="subject" class="validate[required] subject" id="subject" />
        </p>
        <p>
     	   <label for="pic">عکس </label>
