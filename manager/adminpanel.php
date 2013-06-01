@@ -4,9 +4,14 @@
 	<meta charset="UTF-8">
 	<title> پانل مدیریت</title>
 	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css" />
-	<link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
+  <link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
+	<link rel="stylesheet" type="text/css" href="./themes/default/calendar-blue.css" />
 	
-	<script type="text/javascript" src="./themes/default/js/jquery.js"></script>	
+  <script type="text/javascript" src="./themes/default/js/jquery.js"></script>  
+  <script type="text/javascript" src="./themes/default/js/jalali.js"></script>  
+  <script type="text/javascript" src="./themes/default/js/calendar.js"></script>  
+  <script type="text/javascript" src="./themes/default/js/calendar-setup.js"></script>  
+	<script type="text/javascript" src="./themes/default/js/calendar-fa.js"></script>	
 	<!--[if lt IE 9]>
 		<script src="./themes/default/js/html5shiv.js"></script>
 	<![endif]-->

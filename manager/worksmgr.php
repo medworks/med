@@ -89,13 +89,39 @@ $html=<<<cd
        </p>
        <p>
   	    <label for="sdate">تاریخ شروع </label>
-        <span>*</span>  	 
-        <input type="text" name="sdate" class="sdate" id="sdate" />
+        <span>*</span><br /> 
+        <input type="text" name="sdate" class="sdate" id="date_input_1" />
+        <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+         <script type="text/javascript">
+          Calendar.setup({
+            inputField  : "date_input_1",   // id of the input field
+            button      : "date_btn_1",   // trigger for the calendar (button ID)
+                ifFormat    : "%A, %e %B %Y ساعت %H:%M",       // format of the input field
+                showsTime   : true,
+                dateType  : 'jalali',
+                showOthers  : true,
+                langNumbers : true,
+                weekNumbers : true
+          });
+        </script>
        </p>
        <p>
   	     <label for="fdate">تاریخ پایان </label>
-         <span>*</span>
-         <input type="text" name="fdate" class="fdate" id="fdate" />
+         <span>*</span><br />
+         <input type="text" name="fdate" class="fdate" id="date_input_2" />
+         <img src="./themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
+         <script type="text/javascript">
+          Calendar.setup({
+            inputField  : "date_input_2",   // id of the input field
+            button      : "date_btn_2",   // trigger for the calendar (button ID)
+                ifFormat    : "%A, %e %B %Y ساعت %H:%M",       // format of the input field
+                showsTime   : true,
+                dateType  : 'jalali',
+                showOthers  : true,
+                langNumbers : true,
+                weekNumbers : true
+          });
+        </script>
        </p>
        <p>
       	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 

@@ -391,6 +391,13 @@ footer p{
 .admin_container form input.fdate,
 .admin_container form input.sdate{
   width: 220px;
+  display: inline-block;
+}
+
+.admin_container form img,
+.admin_container form img{
+  margin-top: 5px;
+  vertical-align: top;
 }
 
 .admin_container form input.submit,
