@@ -1,7 +1,7 @@
 <?php
 include_once("lib/persiandate.php");
 include_once ("lib/class.phpmailer.php");
-include_once("./messages.php");
+include_once("./classes/messages.php");
   
   function GetPageName($func,$act)
 	{
