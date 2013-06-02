@@ -26,7 +26,7 @@
         <a href="#" title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'></a>
       </div>
   		<div class="detail">
-  			<p>{$works[$i]["body"]}</p>
+  			{$works[$i]["body"]}
   		</div>
       <div class='badboy'></div>
     </div>
