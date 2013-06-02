@@ -401,8 +401,10 @@ footer p{
   outline: 0 none;
 }
 
-.admin_container form .mes{
+.admin_container .mes{
   margin-left: 80px;
+  text-align: right;
+  width: 100%;
 }
 
 .admin_container form input.submit,
