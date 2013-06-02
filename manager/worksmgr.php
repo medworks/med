@@ -86,7 +86,7 @@ $html=<<<cd
        <p>
   	    <label for="sdate">تاریخ شروع </label>
         <span>*</span><br /> 
-        <input type="text" name="sdate" class="sdate" id="date_input_1" />
+        <input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" />
         <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
@@ -104,7 +104,7 @@ $html=<<<cd
        <p>
   	     <label for="fdate">تاریخ پایان </label>
          <span>*</span><br />
-         <input type="text" name="fdate" class="fdate" id="date_input_2" />
+         <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" />
          <img src="./themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
@@ -130,7 +130,7 @@ $html=<<<cd
   </div>
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="lib/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="./themes/default/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
