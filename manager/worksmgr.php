@@ -70,22 +70,22 @@ $html=<<<cd
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="subject">عنوان </label>
-         <span>*</span>  	 
-         <input type="text" name="subject" class="validate[required] subject" id="subject" />
-       </p>
+         <span>*</span>
+       </p>  	 
+       <input type="text" name="subject" class="validate[required] subject" id="subject" />
        <p>
     	   <label for="pic">عکس </label>
          <span>*</span>
-         <input type="file" name="pic" class="pic" id="pic" />
        </p>
+       <input type="file" name="pic" class="pic" id="pic" />
        <p>
   	     <label for="detail">توضیحات </label>
          <span>*</span>
-         <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>		 
        </p>
+       <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>
        <p>
   	    <label for="sdate">تاریخ شروع </label>
-        <span>*</span><br /> 
+        <span>*</span><br /><br />
         <input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" />
         <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
@@ -103,7 +103,7 @@ $html=<<<cd
        </p>
        <p>
   	     <label for="fdate">تاریخ پایان </label>
-         <span>*</span><br />
+         <span>*</span><br /><br />
          <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" />
          <img src="./themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
          <script type="text/javascript">
@@ -119,7 +119,7 @@ $html=<<<cd
           });
         </script>
        </p>
-	   <div class="left" >{$msgs}</div>
+	     <div class="mes left">{$msgs}</div>
        <p>
       	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
       	 <input type="hidden" id="mark" class="mark" name="mark" value="saveworks" />

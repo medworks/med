@@ -348,8 +348,7 @@ footer p{
 }
 
 .admin_container form input, 
-.admin_container form textarea{ 
-  margin: 5px 0 10px;
+.admin_container form textarea{
   outline: 0 none;
   border: 1px solid #F1F1F1;
   border-top-color: #ddd;
@@ -382,6 +381,7 @@ footer p{
 
 .admin_container form p{
   color: #888;
+  margin: 15px 0 10px;
 }
 
 .admin_container form p span{
@@ -398,6 +398,10 @@ footer p{
   margin-top: 5px;
   vertical-align: top;
   outline: 0 none;
+}
+
+.admin_container form .mes{
+  margin-left: 80px;
 }
 
 .admin_container form input.submit,
@@ -423,7 +427,7 @@ footer p{
   -o-transition: background 500ms;
   transition: background 500ms;
 }
-
+/***************************************ERROR MESSAGE***********************************/
 .error
 {
 	border-style: solid;
