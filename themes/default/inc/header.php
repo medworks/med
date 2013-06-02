@@ -5,12 +5,13 @@
 	<title></title>
 	<link rel="stylesheet" href="./themes/default/1styles.css" />
 	<link rel="stylesheet" href="./themes/default/style.css" />
-	<script src="./themes/default/js/jquery.js" type="text/javascript"></script>
-	<script src="./themes/default/js/jquery.cycle.all.js" type="text/javascript"></script>
+
+	<script src="./lib/js/jquery.js" type="text/javascript"></script>
+	<script src="./lib/js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="./themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
-		<script src="./themes/default/js/html5shiv.js"></script>
-		<script src="./themes/default/js/selectivizr-min.js"></script>
+		<script src="./lib/js/html5shiv.js"></script>
+		<script src="./lib/js/selectivizr-min.js"></script>
 	<![endif]-->
 	<link rel="Shortcut Icon" href="./themes/default/favicon.ico" />
 </head>

@@ -17,7 +17,9 @@
   <script type="text/javascript" src="./lib/js/jquery.validationEngine.js"></script>	
 
 	<!--[if lt IE 9]>
-		<script src="./themes/default/js/html5shiv.js"></script>
+		<script src="./lib/js/html5shiv.js"></script>
+    <script src="./lib/js/selectivizr-min.js"></script>
+
 	<![endif]-->
 <?php
   $path = realpath(dirname(__FILE__));
