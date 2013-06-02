@@ -389,7 +389,8 @@ footer p{
 }
 
 .admin_container form input.fdate,
-.admin_container form input.sdate{
+.admin_container form input.sdate,
+.admin_container form input.ndate{
   width: 220px;
   display: inline-block;
 }
