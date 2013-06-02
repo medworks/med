@@ -52,7 +52,7 @@ $html=<<<cd
 			$("#frmnewsmgr").validationEngine();
        });
 	</script>	   
-       <div class="title">
+  <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>
         <li><a href="#">مدیریت اخبار</a></li>
@@ -61,35 +61,51 @@ $html=<<<cd
   </div>
   <div class='content'>
 	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
-       <label>
-         عنوان:   	 
-         <input type="text" name="subject" class='validate[required] subject' />
-  	   </label>
-       <span class='badboy'></span>  
-  	   <label>
-         عکس:
-         <input type="file" name="pic" class='pic' />
-  	   </label>
-       <span class='badboy'></span>  
-  	   <label>
-         توضیحات:
-         <textarea cols="50" rows="10" name="detail" class='detail'> </textarea>
-  	   </label>
-       <span class='badboy'></span> 
-  	   <label>
-          تاریخ :   	 
-         <input type="text" name="ndate" class='validate[required] ndate' />
-  	   </label>       
-	   <span class='badboy'></span> 
-  	   <label>
-          منبع خبر :   	 
-         <input type="text" name="res" class='validate[required]' />
-  	   </label>  
-      <div class="left" >{$msgs}</div>	   
-       <span class='badboy'></span>  
-    	 <input type="submit" id="submit" value="ذخیره" class='submit' />	 
-    	 <input type="hidden" name="mark" value="savenews" />
-    	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
+       <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
+       <p>
+         <label for="subject">عنوان </label>
+         <span>*</span>
+       </p>    
+       <input type="text" name="subject" class="validate[required] subject" id="subject" /> 
+  	   <p>
+         <label for="pic">عکس </label>
+         <span>*</span>
+       </p>
+       <input type="file" name="pic" class="pic" id="pic" />  
+  	   <p>
+         <label for="detail">توضیحات </label>
+         <span>*</span>
+       </p>
+       <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>
+  	   <p>
+        <label for="sdate">تاریخ </label>
+        <span>*</span><br /><br />
+        <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" />
+        <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+         <script type="text/javascript">
+          Calendar.setup({
+            inputField  : "date_input_1",   // id of the input field
+            button      : "date_btn_1",   // trigger for the calendar (button ID)
+                ifFormat    : "%A, %e %B %Y ساعت %H:%M",       // format of the input field
+                showsTime   : true,
+                dateType  : 'jalali',
+                showOthers  : true,
+                langNumbers : true,
+                weekNumbers : true
+          });
+        </script>
+       </p>
+       <p>
+  	   <label>منبع خبر </label>
+       <span>*</span>   	 
+       </p>
+       <input type="text" name="res" class='validate[required]' />
+       <div class="mes left" >{$msgs}</div>
+       <p>
+      	 <input type="submit" id="submit" value="ذخیره" class='submit' />	 
+      	 <input type="hidden" name="mark" value="savenews" />
+      	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
+       </p>  
 	</form>
 	<div class='badboy'></div>	
   </div>  
