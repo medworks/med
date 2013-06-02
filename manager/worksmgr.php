@@ -47,27 +47,23 @@
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
 					header('location:?item=worksmgr&act=do&msg=1');					
+					exit();
   				}  				 
 			}
 		}	
 	}
 	$msgs = getMessage($_GET['msg']);
 $html=<<<cd
-<script type='text/javascript'>
-	$(document).ready(function(){	   
-        $("#frmworksmgr").validationEngine();
-       });
-</script>	   
   <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>
         <li><a href="#">مدیریت کارها</a></li>
       </ul>
       <div class="badboy"></div>
-  </div>
-  <div class="mes" id="message">{$msgs}</div>
+  </div>  
   <div class="content">
     <form name="frmworksmgr" id= "frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
+	  <div class="mes" id="message">{$msgs}</div>
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="subject">عنوان </label>
@@ -128,7 +124,7 @@ $html=<<<cd
     </form>
     <div class="badboy"></div>
   </div>
-
+  
 <!-- TinyMCE -->
 <script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
@@ -177,7 +173,19 @@ $html=<<<cd
 	});
 </script>
 <!-- /TinyMCE -->  
-  
+<script type='text/javascript'>
+	$(document).ready(function(){		
+		$("#submit").click(function(){		    
+			//alert("test");
+			$("#message").html("nothing to do");
+			$("#message").fadeOut(5000,function (){
+                  window.location.href="?item=worksmgr&act=do"});
+			 
+          });
+		  
+	$("#frmworksmgr").validationEngine();	  
+    });	   
+</script>	     
 cd;
  return $html
   

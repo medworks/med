@@ -31,9 +31,9 @@ class Message
     
    public function ShowSuccess($msg)
     {            
-            return '<table class="success" width="100%"><tr><td valign="middle">' .
-                            '<img src="themes/default/images/msg/success.png" width="48" height="48"></td>' .
-                            '<td>' . $msg . "</td></tr></table>";
+            return "<table class='success' width='100%'><tr><td valign='middle'>" .
+                            "<img src='themes/default/images/msg/success.png' width='48' height='48'></td>" .
+                            "<td>" . $msg . "</td></tr></table>";
     }
     
    public function ShowComment($msg)
