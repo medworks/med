@@ -65,6 +65,7 @@ $html=<<<cd
       </ul>
       <div class="badboy"></div>
   </div>
+  <div class="mes" id="message">{$msgs}</div>
   <div class="content">
     <form name="frmworksmgr" id= "frmworksmgr" class="worksmgr" action="" method="post" enctype="multipart/form-data" >
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
@@ -119,7 +120,6 @@ $html=<<<cd
           });
         </script>
        </p>
-	     <div class="mes left">{$msgs}</div>
        <p>
       	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
       	 <input type="hidden" id="mark" class="mark" name="mark" value="saveworks" />

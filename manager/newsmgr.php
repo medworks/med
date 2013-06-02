@@ -59,6 +59,7 @@ $html=<<<cd
       </ul>
       <div class="badboy"></div>
   </div>
+  <div class="mes" id="message">{$msgs}</div>
   <div class='content'>
 	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
@@ -100,7 +101,6 @@ $html=<<<cd
        <span>*</span>   	 
        </p>
        <input type="text" name="res" class='validate[required]' />
-       <div class="mes left" >{$msgs}</div>
        <p>
       	 <input type="submit" id="submit" value="ذخیره" class='submit' />	 
       	 <input type="hidden" name="mark" value="savenews" />
