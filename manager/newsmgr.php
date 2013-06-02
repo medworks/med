@@ -60,10 +60,10 @@ $html=<<<cd
       <div class="badboy"></div>
   </div>
   <div class='content'>
-	<form name="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
+	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
        <label>
          عنوان:   	 
-         <input type="text" name="validate[required] subject" class='subject' />
+         <input type="text" name="subject" class='validate[required] subject' />
   	   </label>
        <span class='badboy'></span>  
   	   <label>
@@ -95,7 +95,7 @@ $html=<<<cd
   </div>  
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="lib/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
