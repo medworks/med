@@ -6,15 +6,15 @@
 	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css" />
 	<link rel="stylesheet" type="text/css" href="./themes/default/validationEngine.css"/>
 	<link rel="stylesheet" type="text/css" href="./themes/default/calendar-blue.css" />
-  <link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
+	<link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
 
-  <script type="text/javascript" src="./lib/js/jquery.js"></script>  
-  <script type="text/javascript" src="./lib/js/jalali.js"></script>  
-  <script type="text/javascript" src="./lib/js/calendar.js"></script>  
-  <script type="text/javascript" src="./lib/js/calendar-setup.js"></script>  
-  <script type="text/javascript" src="./lib/js/calendar-fa.js"></script>	
-  <script type="text/javascript" src="./lib/js/jquery.validationEngine-en.js"></script>
-  <script type="text/javascript" src="./lib/js/jquery.validationEngine.js"></script>	
+	<script type="text/javascript" src="./lib/js/jquery.js"></script>  
+	<script type="text/javascript" src="./lib/js/jalali.js"></script>  
+	<script type="text/javascript" src="./lib/js/calendar.js"></script>  
+	<script type="text/javascript" src="./lib/js/calendar-setup.js"></script>  
+	<script type="text/javascript" src="./lib/js/calendar-fa.js"></script>	
+	<script type="text/javascript" src="./lib/js/jquery.validationEngine-en.js"></script>
+	<script type="text/javascript" src="./lib/js/jquery.validationEngine.js"></script>	
 
 	<!--[if lt IE 9]>
 		<script src="./themes/default/js/html5shiv.js"></script>
@@ -113,7 +113,7 @@ echo $html;
  <div id="container"  class="admin_container">
 <?php
   if (isset($_GET['item']))  
-  echo include_once GetPageName($_GET['item'],$_GET['act']); 
+	echo include_once GetPageName($_GET['item'],$_GET['act']); 
 ?>    
  </div>
  </div>
