@@ -130,7 +130,7 @@ $html=<<<cd
   </div>
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="./themes/default/js/tiny/tiny_mce.js"></script>
+<script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
