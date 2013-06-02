@@ -47,6 +47,11 @@
 	}
 $msgs = getMessage($_GET['msg']);	
 $html=<<<cd
+	<script type='text/javascript'>
+		$(document).ready(function(){	   
+			$("#frmnewsmgr").validationEngine();
+       });
+	</script>	   
        <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>
@@ -55,10 +60,10 @@ $html=<<<cd
       <div class="badboy"></div>
   </div>
   <div class='content'>
-	<form name="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
+	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
        <label>
          عنوان:   	 
-         <input type="text" name="subject" class='subject' />
+         <input type="text" name="subject" class='validate[required] subject' />
   	   </label>
        <span class='badboy'></span>  
   	   <label>
@@ -73,12 +78,12 @@ $html=<<<cd
        <span class='badboy'></span> 
   	   <label>
           تاریخ :   	 
-         <input type="text" name="ndate" class='ndate' />
+         <input type="text" name="ndate" class='validate[required] ndate' />
   	   </label>       
 	   <span class='badboy'></span> 
   	   <label>
           منبع خبر :   	 
-         <input type="text" name="res" class='' />
+         <input type="text" name="res" class='validate[required]' />
   	   </label>  
       <div class="left" >{$msgs}</div>	   
        <span class='badboy'></span>  
@@ -90,7 +95,7 @@ $html=<<<cd
   </div>  
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="lib/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options
