@@ -46,9 +46,9 @@
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					//header('location:?item=worksmgr&act=do&msg=1');					
-					//exit();
-					$_GET['msg']=1;
+					header('location:?item=worksmgr&act=do&msg=1');					
+					exit();
+					
   				}  				 
 			}
 		}	
