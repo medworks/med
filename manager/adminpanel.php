@@ -45,6 +45,7 @@ $html=<<<cd
         });
 		*/
     </script>
+
 cd;
 echo $html;
 

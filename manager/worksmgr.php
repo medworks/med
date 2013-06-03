@@ -46,14 +46,30 @@
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=worksmgr&act=do&msg=1');					
-					exit();
+					//header('location:?item=worksmgr&act=do&msg=1');					
+					//exit();
+					$_GET['msg']=1;
   				}  				 
 			}
 		}	
 	}
-	$msgs = getMessage($_GET['msg']);
+
+$msgs = getMessage($_GET['msg']);
 $html=<<<cd
+<script type='text/javascript'>
+	$(document).ready(function(){		
+		$("#submit").click(function(){		    
+			//alert("test");
+			//$("#message").html('saeid hatami');
+		//window.location.href="?item=worksmgr&act=do";
+			//$("#message").fadeOut(5000,function (){
+              //    window.location.href="?item=worksmgr&act=do"});
+			 
+          });
+		  
+//	$("#frmworksmgr").validationEngine();	  
+    });	   
+</script>	     
   <div class="title">
       <ul>
         <li><a href="#">پیشخوان</a></li>
@@ -173,20 +189,7 @@ $html=<<<cd
 	});
 </script>
 <!-- /TinyMCE -->  
-<script type='text/javascript'>
-	$(document).ready(function(){		
-		$("#submit").click(function(){		    
-			//alert("test");
-			$("#message").html("nothing to do");
-			$("#message").fadeOut(5000,function (){
-                  window.location.href="?item=worksmgr&act=do"});
-			 
-          });
-		  
-	$("#frmworksmgr").validationEngine();	  
-    });	   
-</script>	     
 cd;
- return $html
   
+return $html;
 ?>
