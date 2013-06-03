@@ -84,12 +84,12 @@ $html=<<<cd
          <label for="name">نام </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="name" class="validate[required] subject" id="name" />
+       <input type="text" name="name" class="validate[required] name" id="name" />
 	   <p>
          <label for="family">نام خانوادگی </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="family" class="validate[required] subject" id="family" />
+       <input type="text" name="family" class="validate[required] family" id="family" />
        <p>
     	   <label for="pic">عکس </label>
          <span>*</span>
@@ -99,22 +99,22 @@ $html=<<<cd
          <label for="email">ایمیل </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="email" class="validate[required,custom[email]] subject" id="email" />
+       <input type="text" name="email" class="validate[required,custom[email]] email ltr" id="email" />
        <p>
          <label for="username">نام کاربری </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="username" class="validate[required] subject" id="username" />
+       <input type="text" name="username" class="validate[required] username ltr" id="username" />
 	   <p>
          <label for="password">رمز عبور </label>
          <span>*</span>
        </p>  	 
-       <input type="password" name="password" class="validate[required] subject" id="password" />
+       <input type="password" name="password" class="validate[required] password ltr" id="password" />
 	   <p>
          <label for="cpassword">تکرار رمز عبور </label>
          <span>*</span>
        </p>  	 
-       <input type="password" name="cpassword" class="validate[required,equals[password]] subject" id="cpassword" />       
+       <input type="password" name="cpassword" class="validate[required,equals[password]] cpassword ltr" id="cpassword" />       
        <p>
       	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
       	 <input type="hidden" id="mark" class="mark" name="mark" value="saveuser" />
