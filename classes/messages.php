@@ -17,30 +17,38 @@ class Message
    
    public function ShowError($msg)
     {     
-            return '<table class="error" width="100%"><tr><td valign="middle">' .
-                            '<img src="themes/default/images/msg/error.png" width="48" height="48"></td>' .
-                            '<td>' . $msg . "</td></tr></table>";
+            return '<div class="error">
+                        <img src="themes/default/images/msg/error.png" style="width:48px; height:48px; float:right; margin-right:250px">
+                        <p style="font-family:\'bmitra\'; font-size:20px; float:right; margin-top:20px; margin-right:10px;">'. $msg .'</p>
+                    </div>
+                    <div class="badboy"></div>';
     }
     
    public function ShowInfo($msg)
     {     
-            return '<table class="info" width="100%"><tr><td valign="middle">' .
-                            '<img src="themes/default/images/msg/info.png" width="48" height="48"></td>' .
-                            '<td>' . $msg . "</td></tr></table>";
+            return '<div class="info">
+                        <img src="themes/default/images/msg/info.png" style="width:48px; height:48px; float:right; margin-right:250px">
+                             <p style="font-family:\'bmitra\'; font-size:20px; float:right; margin-top:20px; margin-right:10px;">'. $msg .'</p>
+                    </div>
+                    <div class="badboy"></div>';
     }
     
    public function ShowSuccess($msg)
     {            
-            return "<table class='success' width='100%'><tr><td valign='middle'>" .
-                            "<img src='themes/default/images/msg/success.png' width='48' height='48'></td>" .
-                            "<td>" . $msg . "</td></tr></table>";
+            return '<div class="success">
+                      <img src="themes/default/images/msg/success.png" style="width:48px; height:48px; float:right; margin-right:250px">
+                      <p style="font-family:\'bmitra\'; font-size:20px; float:right; margin-top:20px; margin-right:10px;">'. $msg .'</p>
+                    </div>
+                    <div class="badboy"></div>';
     }
     
    public function ShowComment($msg)
     {     
-            return '<table class="comment" width="100%"><tr><td valign="middle">' .
-                            '<img src="themes/default/images/msg/comment.png" width="32" height="32"></td>' .
-                            '<td>' . $msg . "</td></tr></table>";
+            return '<div class="comment">
+                      <img src="themes/default/images/msg/comment.png" style="width:48px; height:48px; float:right; margin-right:250px">
+                      <p style="font-family:\'bmitra\'; font-size:20px; float:right; margin-top:20px; margin-right:10px;">' . $msg .'</p>
+                    </div>
+                    <div class="badboy"></div>';
     }
 
 }

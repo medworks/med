@@ -9,7 +9,7 @@ direction:rtl;
 
 .clear				{ clear: both; }
 
-form				{ width: 406px; margin: 170px auto 0; text-align:right;	direction:rtl;}
+form				{ width: 406px; margin: 170px auto 50px; text-align:right;	direction:rtl;}
 
 legend				{ display: none; }
 
@@ -28,4 +28,6 @@ input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
 					}
 .button:hover		{ background: white; color: black; }
 
-	
+.mes{
+  
+}
