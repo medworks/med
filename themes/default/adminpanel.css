@@ -241,6 +241,7 @@ header #mini-nav span {
 
  /* This Section related To Container Div Part*/	
 .admin_container{
+  min-height: 800px;
   float : right;
   width : 780px;
   top: 15px;
@@ -365,6 +366,15 @@ footer p{
   display: block;
 }
 
+.admin_container form input.name,
+.admin_container form input.family,
+.admin_container form input.email,
+.admin_container form input.username,
+.admin_container form input.password,
+.admin_container form input.cpassword{
+  width: 350px;
+}
+
 .admin_container form input.pic{
   background: #fff;
   border: 0 none;
@@ -429,75 +439,4 @@ footer p{
   -ms-transition: background 500ms;
   -o-transition: background 500ms;
   transition: background 500ms;
-}
-/***************************************ERROR MESSAGE***********************************/
-.error
-{
-	border-style: solid;
-	border-color: #EE9000;
-	border-width: 2px;
-	background-color: #FFE1C4;
-	color: #55BFFF;
-	padding-top: 10px;
-	padding-bottom: 10px
-}
-.error td
-{
-    vertical-align : middle;
-	font-size: 25px;
-	font-weight: bold;
-}
-.success
-{
-	border-style: solid;
-	border-color: #008000;
-	border-width: 2px;
-	//border-top-width: 2px;
-	//border-bottom-width: 2px;
-	background-color: #DCFFD2;
-	color: green;
-	padding-top: 5px;
-	padding-bottom: 5px;	
-}
-.success td
-{    
-	vertical-align : middle;
-	font-size: 25px;
-	font-weight: bold;
-}
-.info
-{
-	border-style: solid;
-	border-color: #2282BB;
-	border-width: 0px;
-	border-top-width: 5px;
-	border-bottom-width: 5px;
-	background-color: #55B5EE;
-	color: white;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.info td
-{
-    vertical-align : middle;
-	font-size: 25px;
-	font-weight: bold;
-}
-.comment
-{
-	border-style: solid;
-	border-color: #AAAAAA;
-	border-width: 0px;
-	border-top-width: 4px;
-	border-bottom-width: 4px;
-	background-color: #EEEEEE;
-	color: black;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-.comment td
-{
-    vertical-align : middle;
-	font-size: 25px;
-	font-weight: bold;
 }
