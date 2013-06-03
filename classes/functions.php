@@ -1,8 +1,9 @@
 <?php
+/*
 include_once("lib/persiandate.php");
 include_once ("lib/class.phpmailer.php");
 include_once("./classes/messages.php");
-  
+*/
   function GetPageName($func,$act)
 	{
 		switch($func)
@@ -20,10 +21,13 @@ include_once("./classes/messages.php");
                             if ($act=="do") return "news.php";
 						break;
 						case 'worksmgr':
-                            if ($act=="do") return "manager/worksmgr.php";
+                            if ($act=="do") return "../manager/worksmgr.php";
 						break;
 						case 'newsmgr':
-                            if ($act=="do") return "manager/newsmgr.php";
+                            if ($act=="do") return "../manager/newsmgr.php";
+						break;
+						case 'usermgr':
+                            if ($act=="do") return "../manager/usermgr.php";
 						break;
 		}
 	}

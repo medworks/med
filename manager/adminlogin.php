@@ -1,12 +1,24 @@
 <?php
-
+include_once("./config.php");
+include_once("./classes/database.php");
+include_once("./classes/session.php");
+include_once("./classes/login.php");
+include_once("./classes/messages.php");
+$login=Login::getLogin();
+$msg=Message::getMessage();
+$sess = Session::getSesstion();
+$adminloginmsg = "";
 if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
 {
-
+	if ($login->adminlogin($_POST['username'],$_POST['password']))
+	{
+	  echo "post is";
+		header("location: ./manager/adminpanel.php");
+	}	
+	else
+    {$adminloginmsg=$msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");}	
 }   
- else
- {
-	//$adminloginmsg=$message->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");
+
 $html=<<<cod
 <!DOCTYPE HTML>       
 <head>
@@ -26,15 +38,9 @@ $html=<<<cod
                 <input type="hidden" name="mark" value="adminlogin" />    
         </fieldset>
 </form>
-{adminloginmsg}
+{$adminloginmsg}
 </body>
 </html>
 cod;
-
-echo $html;
-  
-}
-
+echo $html; 
 ?>
-
-

@@ -1,7 +1,9 @@
 <?php 
-    include_once("./config.php");
-    include_once("./classes/database.php");	
-	include_once("./classes/functions.php");
+    include_once("../config.php");
+    include_once("../classes/database.php");
+	include_once("../classes/messages.php");
+	include_once("../classes/session.php");	
+	include_once("../classes/functions.php");
 	if ($_POST["mark"]=="savenews")
     {
        $db = Database::getDatabase();
@@ -82,7 +84,7 @@ $html=<<<cd
         <label for="sdate">تاریخ </label>
         <span>*</span><br /><br />
         <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" />
-        <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+        <img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
             inputField  : "date_input_1",   // id of the input field
@@ -111,7 +113,7 @@ $html=<<<cd
   </div>  
 
 <!-- TinyMCE -->
-<script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
+<script type="text/javascript" src="../lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options

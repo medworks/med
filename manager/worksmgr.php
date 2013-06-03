@@ -1,9 +1,9 @@
 <?php
-    include_once("./config.php");
-    include_once("./classes/database.php");
-	include_once("./classes/messages.php");
-	include_once("./classes/session.php");	
-	include_once("./classes/functions.php");
+    include_once("../config.php");
+    include_once("../classes/database.php");
+	include_once("../classes/messages.php");
+	include_once("../classes/session.php");	
+	include_once("../classes/functions.php");
 	//$sess = Session::getSesstion();
     if ($_POST["mark"]=="saveworks")
 	{
@@ -58,6 +58,7 @@ $msgs = getMessage($_GET['msg']);
 $html=<<<cd
 <script type='text/javascript'>
 	$(document).ready(function(){		
+	$("#frmworksmgr").validationEngine();	  
 		$("#submit").click(function(){		    
 			//alert("test");
 			//$("#message").html('saeid hatami');
@@ -65,9 +66,7 @@ $html=<<<cd
 			//$("#message").fadeOut(5000,function (){
               //    window.location.href="?item=worksmgr&act=do"});
 			 
-          });
-		  
-//	$("#frmworksmgr").validationEngine();	  
+          });		  
     });	   
 </script>	     
   <div class="title">
@@ -100,7 +99,7 @@ $html=<<<cd
   	    <label for="sdate">تاریخ شروع </label>
         <span>*</span><br /><br />
         <input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" />
-        <img src="./themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+        <img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
             inputField  : "date_input_1",   // id of the input field
@@ -118,7 +117,7 @@ $html=<<<cd
   	     <label for="fdate">تاریخ پایان </label>
          <span>*</span><br /><br />
          <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" />
-         <img src="./themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
+         <img src="../themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
             inputField  : "date_input_2",   // id of the input field
@@ -142,7 +141,7 @@ $html=<<<cd
   </div>
   
 <!-- TinyMCE -->
-<script type="text/javascript" src="./lib/js/tiny/tiny_mce.js"></script>
+<script type="text/javascript" src="../lib/js/tiny/tiny_mce.js"></script>
 <script type="text/javascript">
 	tinyMCE.init({
 		// General options

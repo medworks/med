@@ -3,18 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title> پانل مدیریت</title>
-	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css" />
-	<link rel="stylesheet" type="text/css" href="./themes/default/validationEngine.css"/>
-	<link rel="stylesheet" type="text/css" href="./themes/default/calendar-blue.css" />
-	<link rel="stylesheet" type="text/css" href="./themes/default/adminpanel.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/default/validationEngine.css"/>
+	<link rel="stylesheet" type="text/css" href="../themes/default/calendar-blue.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/default/adminpanel.css" />
 
-	<script type="text/javascript" src="./lib/js/jquery.js"></script>  
-	<script type="text/javascript" src="./lib/js/jalali.js"></script>  
-	<script type="text/javascript" src="./lib/js/calendar.js"></script>  
-	<script type="text/javascript" src="./lib/js/calendar-setup.js"></script>  
-	<script type="text/javascript" src="./lib/js/calendar-fa.js"></script>	
-	<script type="text/javascript" src="./lib/js/jquery.validationEngine-en.js"></script>
-	<script type="text/javascript" src="./lib/js/jquery.validationEngine.js"></script>	
+	<script type="text/javascript" src="../lib/js/jquery.js"></script>  
+	<script type="text/javascript" src="../lib/js/jalali.js"></script>  
+	<script type="text/javascript" src="../lib/js/calendar.js"></script>  
+	<script type="text/javascript" src="../lib/js/calendar-setup.js"></script>  
+	<script type="text/javascript" src="../lib/js/calendar-fa.js"></script>	
+	<script type="text/javascript" src="../lib/js/jquery.validationEngine-en.js"></script>
+	<script type="text/javascript" src="../lib/js/jquery.validationEngine.js"></script>	
 
 	<!--[if lt IE 9]>
 		<script src="./lib/js/html5shiv.js"></script>
@@ -23,6 +23,7 @@
 	<![endif]-->
 <?php
   $path = realpath(dirname(__FILE__));
+  include_once("../classes/functions.php");
   /*
   include_once("./config.php");
   include_once("./classes/database.php"); 
@@ -102,6 +103,14 @@ echo $html;
 مدیریت اسلاید
             </a>
           </li>
+		  <li >            
+            <a href="?item=usermgr&act=do" id="works" name="works">
+              <div class="icon">
+                <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
+              </div>
+مدیریت کاربران
+            </a>
+          </li>		  
           <li>
             <a href="#">
               <div class="icon">
