@@ -16,7 +16,7 @@ class Login
     
    public function adminlogin($username,$password)
    {
-       $tiba_session = Session::getSesstion();
+       $sess = Session::getSesstion();
        
        $security = Security::getSecurity();
        
@@ -31,12 +31,26 @@ class Login
        if (mysql_num_rows($res)!=1) return false;
        
        $row = mysql_fetch_assoc($res);
-       $tiba_session->set("login",true);
-       $tiba_session->set("username",$row["username"]);
-       $tiba_session->set("name",$row["name"]);
-       $tiba_session->set("family",$row["family"]);       
+       $sess->set("login",true);
+       $sess->set("username",$row["username"]);
+       $sess->set("name",$row["name"]);
+       $sess->set("family",$row["family"]);       
        return true;
    } 
+	function Logout()
+	{
+			$sess = Session::getSesstion();
+            return ($sess->delete("login") and $sess->delete("username") and $sess->delete("name") and $sess->delete("family"));
+	}	
+		
+		function IsLogged()
+		{
+			$sess = Session::getSesstion();
+        	if ($sess->get("login")) 
+			{
+				return true;
+			}	else return false;
+		}   
 }
 
 ?>

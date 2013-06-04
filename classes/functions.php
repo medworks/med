@@ -8,9 +8,9 @@ include_once("./classes/messages.php");
 	{
 		switch($func)
 		{
-			case 'initial':
-			 return "index.php";
-			 break;
+						case 'initial':
+							return "index.php";
+						break;
                         case 'about':
                             return "about.php";
 						break;	

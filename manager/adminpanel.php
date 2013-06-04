@@ -1,3 +1,26 @@
+<?php
+    include_once("../config.php");
+    include_once("../classes/functions.php");
+	include_once("../classes/messages.php");
+	include_once("../classes/session.php");	
+	include_once("../classes/security.php");
+	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+	
+	$login = Login::getLogin();
+	$mes = Message::getMessage();
+	if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+	}
+	if ($_GET["item"] == "logout")
+   {
+	   if ($login->Logout())
+			header("Location: ../index.php");
+	   else
+		    echo $mes->ShowError("عملیات خروج با خطا مواجه شد، لطفا مجددا سعی نمایید.");
+   }  
+?>
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
@@ -22,8 +45,7 @@
 
 	<![endif]-->
 <?php
-  $path = realpath(dirname(__FILE__));
-  include_once("../classes/functions.php");
+  $path = realpath(dirname(__FILE__));  
   /*
   include_once("./config.php");
   include_once("./classes/database.php"); 
@@ -60,7 +82,7 @@ echo $html;
         <ul class="hidden-phone">
           <li><a href="#" >وظایف</a></li>
           <li><a href="#">ثبت نام ها <span id="newSignup">06</span></a></li>         
-          <li><a href="login.html">خروج</a></li>
+          <li><a href="?item=logout&act=do">خروج</a></li>
         </ul>
       </div>
     </header>
@@ -125,7 +147,7 @@ echo $html;
  </div> 
  <div id="container"  class="admin_container">
 <?php
-  if (isset($_GET['item']))  
+  if (isset($_GET['item']) and $_GET['item']!="logout")  
 	echo include_once GetPageName($_GET['item'],$_GET['act']); 
 ?>    
  </div>
