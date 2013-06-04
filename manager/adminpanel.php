@@ -93,52 +93,46 @@ echo $html;
 	 <div id="mainnav" class="hidden-phone hidden-tablet">
         <ul>
           <li class="active">
-		  <span class="current-arrow"></span>
-            <a href="#">
+		        <span class="current-arrow"></span>
+            <a href="#">پیشخوان
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#x002b;"></span> <!-- &#x25c8; -->
+                <span class="dashboard"></span>
               </div>
-پیشخوان
             </a>
           </li>
           <li>
-            <a href="?item=newsmgr&act=do" id="news" name="news">
+            <a href="?item=newsmgr&act=do" id="news" name="news">مدیریت اخبار
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
+                <span class="news"></span>
               </div>
-مدیریت اخبار
             </a>
           </li>
           <li >            
-            <a href="?item=worksmgr&act=do" id="works" name="works">
+            <a href="?item=worksmgr&act=do" id="works" name="works">مدیریت کار ها
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
+                <span class="works"></span>
               </div>
-مدیریت کار ها
             </a>
           </li>
           <li>
-            <a href="worksmgr.php">
+            <a href="worksmgr.php">مدیریت اسلاید
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#x25ce;"></span>
+                <span class="fs1"></span>
               </div>
-مدیریت اسلاید
             </a>
           </li>
 		  <li >            
-            <a href="?item=usermgr&act=do" id="works" name="works">
+            <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
               <div class="icon">
-                <span class="fs1" aria-hidden="true" data-icon="&#x25c8;"></span>
+                <span class="users"></span>
               </div>
-مدیریت کاربران
             </a>
           </li>		  
           <li>
-            <a href="#">
+            <a href="#">خروج
               <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x2709;"></span>
               </div>
-خروج
             </a>
           </li>
         </ul>

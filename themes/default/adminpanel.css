@@ -164,13 +164,30 @@ header #mini-nav span {
   -o-transition: all 0.5s ease; 
 }
 
-#mainnav > ul > li [data-icon]:before {	              
-  font-family: 'icons'; 		                    
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  -webkit-font-smoothing: antialiased;
-  font-size: 48px;
+#mainnav > ul > li span{	              
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 15px;
+  margin-top: 6px;
+}
+
+#mainnav > ul > li span.dashboard{
+  background-image: url('images/admin/dashboard.png');
+}
+
+#mainnav > ul > li span.news{
+  background-image: url('images/admin/news.png');
+}
+
+#mainnav > ul > li span.works{
+  background-image: url('images/admin/works.png');
+}
+
+#mainnav > ul > li span.users{
+  background-image: url('images/admin/users.png');
 }
 
 #mainnav > ul > li:hover .fs1 {
@@ -178,12 +195,7 @@ header #mini-nav span {
 }
 
 #mainnav > ul > li:hover a {	    
-  color: #737373; 
-  transform: rotate(10deg);
-  -ms-transform : rotate(10deg);
-  -webkit-transform: rotate(10deg); 
-  -moz-transform: rotate(10deg); 
-  -o-transform: rotate(10deg);
+  opacity: 1;
 }
 
 #mainnav > ul > li.active {
@@ -205,12 +217,16 @@ header #mini-nav span {
   padding: 8px 5px;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.3);
-  font-size: 15px;
-  text-align: center; }
-  #mainnav > ul > li .current-arrow {
+  font-size: 17px;
+  text-align: center; 
+  opacity: 0.7;
+  white-space: nowrap;
+}
+  
+#mainnav > ul > li .current-arrow {
   background-image: url("images/admin/menu-arrow.png");
   position: absolute;
-  right: 99px;
+  right: 85px;
   top: 25px;
   z-index: 10;
   width: 11px;
