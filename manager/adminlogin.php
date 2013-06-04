@@ -8,45 +8,52 @@ $login=Login::getLogin();
 $msg=Message::getMessage();
 $sess = Session::getSesstion();
 $adminloginmsg = "";
-if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
+if ($login->IsLogged())
+{	
+		header("Location: ./manager/adminpanel.php");
+}
+else
 {
-	if ($login->adminlogin($_POST['username'],$_POST['password']))
+	if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
 	{
-	  echo "post is";
-		header("location: ./manager/adminpanel.php");
-	}	
-	else
-    {$adminloginmsg=$msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");}	
-}   
+		if ($login->adminlogin($_POST['username'],$_POST['password']))
+		{
+		  echo "post is";
+			header("location: ./manager/adminpanel.php");
+		}	
+		else
+		{$adminloginmsg=$msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");}	
+	}   
 
-$html=<<<cod
-<!DOCTYPE HTML>       
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
-<title>بخش مديريت سايت</title>		
-<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css"></link>   
-<link rel="stylesheet" type="text/css" href="./themes/default/adminlogin.css"></link>	
-</head>
-<body>
-<div class="container">
-    <form action="" method="post">
-            <fieldset>
-                    <legend>Log in</legend>			
-                    <label for="user">نام کاربری :</label>
-                    <input type="text" id="user" name="username"/>			
-                    <label for="password">رمز عبور :</label>
-                    <input type="password" id="password" name="password"/>			
-                    <input type="submit"  class="button" name="login" value="ورود"/>
-                    <input type="hidden" name="mark" value="adminlogin" />    
-            </fieldset>
-    </form>
-    <div class="badboy"></div>
-    <div class="mes">
-        {$adminloginmsg}
-    </div>
-</div>
-</body>
-</html>
+	$html=<<<cod
+	<!DOCTYPE HTML>       
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
+	<title>بخش مديريت سايت</title>		
+	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css"></link>   
+	<link rel="stylesheet" type="text/css" href="./themes/default/adminlogin.css"></link>	
+	</head>
+	<body>
+	<div class="container">
+		<form action="" method="post">
+				<fieldset>
+						<legend>Log in</legend>			
+						<label for="user">نام کاربری :</label>
+						<input type="text" id="user" name="username"/>			
+						<label for="password">رمز عبور :</label>
+						<input type="password" id="password" name="password"/>			
+						<input type="submit"  class="button" name="login" value="ورود"/>
+						<input type="hidden" name="mark" value="adminlogin" />    
+				</fieldset>
+		</form>
+		<div class="badboy"></div>
+		<div class="mes">
+			{$adminloginmsg}
+		</div>
+	</div>
+	</body>
+	</html>
 cod;
-echo $html; 
+	echo $html; 
+}	
 ?>
