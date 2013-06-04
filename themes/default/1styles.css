@@ -1,9 +1,12 @@
-/*
- * Ali.MD - 1Styles v2.0 rc
- * http://ali.md/1styles
- * Copyright (c) 2012 Ali Mihandoost under MIT License.
- * fork me on github.
- */
+@font-face{
+    font-family: 'bmitra';
+    src: url('./fonts/BMitra.eot');
+    src: url('./fonts/BMitra.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/BMitra.woff') format('woff'),
+         url('./fonts/BMitra.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 span{color:inherit}
 @media all{html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
 option{padding-left:.4em}

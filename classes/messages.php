@@ -18,7 +18,7 @@ class Message
    public function ShowError($msg)
     {     
             return '<div class="error">
-                        <img src="images/msg/error.png" alert="error" style="width:48px; height:48px; float:right; margin-right:250px">
+                        <img src="./themes/default/images/msg/error.png" alert="error" style="width:48px; height:48px; float:right; margin-right:250px">
                         <p style="font-family:\'bmitra\'; font-size:20px; float:right; margin-top:20px; margin-right:10px;">'. $msg .'</p>
                     </div>
                     <div class="badboy"></div>';
