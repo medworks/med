@@ -78,25 +78,27 @@ if ($_GET['act']=="edit")
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
-		<div id="mainnav" class="hidden-phone hidden-tablet">
+		<div class="title">
+	      <ul>
+	        <li><a href="#">پیشخوان</a></li>
+	        <li><a href="#">مدیریت اخبار</a></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>
+		<div class="sub-menu" id="mainnav">
 			<ul>
-			  <li class="active">		  
-				<a href="?item=newsmgr&act=new">
-				  <div class="icon">
-					<span class="fs1" aria-hidden="true" data-icon="&#x002b;"></span> <!-- &#x25c8; -->
-				  </div>
-	درج خبر جدید
+			  <li>		  
+				<a href="?item=newsmgr&act=new">درج خبر جدید
+					<span class="add-news"></span>
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newsmgr&act=mgr" id="news" name="news">
-				  <div class="icon">
-					<span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
-				  </div>
-	حذف/ویرایش اخبار
+				<a href="?item=newsmgr&act=mgr" id="news" name="news">حذف/ویرایش اخبار
+					<span class="edit-news"></span>
 				</a>
 			  </li>
 			 </ul>
+			 <div class="badboy"></div>
 		</div>		 
 ht;
 }else

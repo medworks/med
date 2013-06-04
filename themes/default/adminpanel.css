@@ -143,25 +143,25 @@ header #mini-nav span {
   font-weight:bold;
 }
 
-#mainnav > ul {
-  width: 100px;
-  position: absolute; 
-}
-
-#mainnav > ul > li {
-  display: block;
+#mainnav > ul > li{
   position: relative;
   margin-bottom: 10px; 		  
   -webkit-border-radius: 15px; /* round the corner of box */
   -moz-border-radius: 15px;    /* round the corner of box */
+  -ms-border-radius: 15px;    /* round the corner of box */
+  -o-border-radius: 15px;    /* round the corner of box */
   border-radius: 15px;         /* round the corner of box */  	  
   border: 2px solid #eee; 
   -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
   -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -ms-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -o-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
   box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
   -webkit-transition: all 0.5s ease-out; 
   -moz-transition: all 0.5s ease; 
+  -ms-transition: all 0.5s ease; 
   -o-transition: all 0.5s ease; 
+  transition: all 0.5s ease; 
 }
 
 #mainnav > ul > li span{	              
@@ -232,7 +232,37 @@ header #mini-nav span {
   width: 11px;
   height: 20px; 
 }
+/*************************************SUB menu******************************************/
+.sub-menu ul li{
+  margin-top: 35px;
+  width: 200px;
+  height: 200px;
+  margin-right: 250px;
+}
 
+.sub-menu ul li:first-child{
+  margin-top: 0;
+}
+
+.sub-menu ul li a{
+  font-size: 26px !important;
+}
+
+.sub-menu ul li span{
+  width: 128px !important;
+  height: 128px !important;
+  margin-right: 30px !important;
+  margin-top: 15px !important;
+}
+
+.sub-menu ul li span.add-news{
+  background-image: url('images/admin/addnews.png');
+}
+
+.sub-menu ul li span.edit-news{
+  background-image: url('images/admin/editnews.png');
+}
+/***************************************************************************************/
 .admin_top{
  float : right;
  width : 92%;
@@ -269,12 +299,6 @@ header #mini-nav span {
   padding: 20px; 
   margin: 20px 0;
 }
- 
-ul{
-margin: 0;
-padding: 0;
-list-style: none;
-}
 
 .hi1dden-phone{
 	display: none;
@@ -291,7 +315,7 @@ footer p{
   text-align: center;
   font-size: 18px;
 }
-/*****************************************Works Manger page******************************************/
+/*****************************************Manger page******************************************/
 .admin_container .title{
   margin-bottom: 15px;
 }

@@ -90,49 +90,37 @@ echo $html;
  <div id="clear" class="badboy"> </div>
  <div class="container">
  <div id="right" class="admin_right_panel"> 
-	 <div id="mainnav" class="hidden-phone hidden-tablet">
+	 <div id="mainnav">
         <ul>
           <li class="active">
 		        <span class="current-arrow"></span>
             <a href="#">پیشخوان
-              <div class="icon">
-                <span class="dashboard"></span>
-              </div>
+               <span class="dashboard"></span>
             </a>
           </li>
           <li>
             <a href="?item=newsmgr&act=do" id="news" name="news">مدیریت اخبار
-              <div class="icon">
                 <span class="news"></span>
-              </div>
             </a>
           </li>
           <li >            
             <a href="?item=worksmgr&act=do" id="works" name="works">مدیریت کار ها
-              <div class="icon">
                 <span class="works"></span>
-              </div>
             </a>
           </li>
           <li>
             <a href="worksmgr.php">مدیریت اسلاید
-              <div class="icon">
                 <span class="fs1"></span>
-              </div>
             </a>
           </li>
 		  <li >            
             <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
-              <div class="icon">
                 <span class="users"></span>
-              </div>
             </a>
           </li>		  
           <li>
             <a href="#">خروج
-              <div class="icon">
                 <span class="fs1" aria-hidden="true" data-icon="&#x2709;"></span>
-              </div>
             </a>
           </li>
         </ul>
