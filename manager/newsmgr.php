@@ -216,11 +216,11 @@ $rows = $db->SelectAll(
                                         $rowsClass[] = "datagridoddrow";
                                 }
                                 $rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
-                                        "style='text-decoration:none;'><img src='../themes/default/images/icons/edit.gif'></a>";
+                                        "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";
 
                                 $rows[$i]["delete"]=<<< del
                                 <a href='?func=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
-								<img src='../themes/default/images/icons/delete.gif'></a>
+								<img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
 
