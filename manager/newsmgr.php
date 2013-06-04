@@ -48,8 +48,7 @@
 		}			
 	} else
 	if ($_POST["mark"]=="editnews")
-	{
-		$values="`name`='{$_POST["tbsecname"]}'" ;		
+	{		
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$newname_site}'",
 						 "`body`"=>"'{$_POST[detail]}'",
@@ -63,10 +62,10 @@ if ($_GET['item']!="newsmgr")	exit();
 
 if ($_GET['act']=="new")
 {
-$editorinsert = "
-	<p>
-      	 <input type='submit' id='submit' value='ذخیره' class='submit' />	 
-      	 <input type='hidden' name='mark' value='savenews' />";
+	$editorinsert = "
+		<p>
+			<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+			<input type='hidden' name='mark' value='savenews' />";
 }
 if ($_GET['act']=="edit")
 {
