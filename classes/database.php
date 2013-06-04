@@ -51,6 +51,19 @@ public function errornumber()
   return mysql_errno($this->link);
 }
 
+function SelectFromTable($tableName, $fields=NULL, $where = NULL, $order = NULL)
+{
+	if (empty ($fields)) $fields="*";
+    if ($where) $where = " WHERE " . $where;
+	if ($order) $order = " ORDER BY " . $order;
+	$this->cmd = "SELECT $fields FROM `$tableName` " . $where . $order;               
+	$res = $this->RunSQL($this->cmd);
+    if ($res)
+	    return mysql_fetch_array($res);
+	else
+        return false;
+}
+
 public function  SelectAll($tableName, $fields,$where = NULL,
                  $order = NULL, $from = NULL, $count = NULL)
  {    
@@ -90,10 +103,11 @@ public function updatequery($table, $values, $where, $orderby = array())
     $sql = "UPDATE ".$table." SET ".implode(', ', $valstr);
 
     $sql .= ($where != '' AND count($where) >=1) ? " WHERE ".implode(" ", $where) : '';
-
+    
     $sql .= $orderby;
-
+    echo $sql;
     $this->cmd = $sql;
+	return $this->RunSQL($this->cmd);
 }
 
 public function maxOf($column, $table, $where)

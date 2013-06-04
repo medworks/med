@@ -42,12 +42,40 @@
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=newsmgr&act=do&msg=1');					
+					header('location:?item=newsmgr&act=new&msg=1');
   				}  				 
 			}		     			
 		}			
+	} else
+	if ($_POST["mark"]=="editnews")
+	{
+		$values="`name`='{$_POST["tbsecname"]}'" ;		
+		$values = array("`subject`"=>"'{$_POST[subject]}'",
+		                 "`image`"=>"'{$newname_site}'",
+						 "`body`"=>"'{$_POST[detail]}'",
+						 "`ndate`"=>"'{$_POST[ndate]}'",
+						 "`userid`"=>"'1'",
+						 "`resource`"=>"'{$_POST[res]}'");		
+        $db->updatequery("news",$values,array("id='{$_GET[nid]}'"));
+		header('location:?item=newsmgr&act=mgr');
 	}
 if ($_GET['item']!="newsmgr")	exit();
+
+if ($_GET['act']=="new")
+{
+$editorinsert = "
+	<p>
+      	 <input type='submit' id='submit' value='ذخیره' class='submit' />	 
+      	 <input type='hidden' name='mark' value='savenews' />";
+}
+if ($_GET['act']=="edit")
+{
+	$row=$db->SelectFromTable("news","*","id='{$_GET["nid"]}'",NULL);
+	$editorinsert = "
+	<p>
+      	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+      	 <input type='hidden' name='mark' value='editnews' />";
+}
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -73,7 +101,7 @@ if ($_GET['act']=="do")
 		</div>		 
 ht;
 }else
-if ($_GET['act']=="new")
+if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = getMessage($_GET['msg']);	
 $html=<<<cd
@@ -97,7 +125,7 @@ $html=<<<cd
          <label for="subject">عنوان </label>
          <span>*</span>
        </p>    
-       <input type="text" name="subject" class="validate[required] subject" id="subject" /> 
+       <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row['subject']}'/> 
   	   <p>
          <label for="pic">عکس </label>
          <span>*</span>
@@ -107,11 +135,11 @@ $html=<<<cd
          <label for="detail">توضیحات </label>
          <span>*</span>
        </p>
-       <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>
+       <textarea cols="50" rows="10" name="detail" class="detail" id="detail" > {$row['body']}</textarea>
   	   <p>
         <label for="sdate">تاریخ </label>
         <span>*</span><br /><br />
-        <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" />
+        <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" value='{$row['ndate']}' />
         <img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
@@ -130,10 +158,8 @@ $html=<<<cd
   	   <label>منبع خبر </label>
        <span>*</span>   	 
        </p>
-       <input type="text" name="res" class='validate[required]' />
-       <p>
-      	 <input type="submit" id="submit" value="ذخیره" class='submit' />	 
-      	 <input type="hidden" name="mark" value="savenews" />
+       <input type="text" name="res" class='validate[required]' value='{$row['resource']}'/>
+	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
 	</form>
