@@ -440,3 +440,43 @@ footer p{
   -o-transition: background 500ms;
   transition: background 500ms;
 }
+
+/*=============== data grid section  ===============*/
+.datagrid
+{
+        margin-top: 10px;
+	background-color: #ECECED;
+        /*#FFFFEE;*/
+        /*background-color: #FFF1BF;        */
+        border-spacing:0px;
+        text-align: center;
+}
+.datagridheader
+{
+	/*background-color: #22AAFF;*/
+        background-color: #668BDC;
+        text-align: center;
+        color: white;        
+}
+
+.datagridevenrow
+{
+	background-color: #EEF5FF;
+        /*background-color: #EAF2D3*/
+}
+.datagridoddrow
+{
+	background-color:#FEF4E4;
+        
+}
+.datagridcol
+{
+   background-color: #E3ECF9;
+}
+
+tr.datagridevenrow:hover, tr.datagridoddrow:hover
+{
+	background-color: #254590;
+        color: white;
+ /*    #CCEEFF;*/
+}

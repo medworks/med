@@ -114,7 +114,7 @@ public function countOf($table, $where)
   return $this->RunSQL();
 }
 
-public function countOfAll($table)
+public function countAll($table)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table`";
   return $this->RunSQL();
