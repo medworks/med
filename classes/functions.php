@@ -21,13 +21,13 @@ include_once("./classes/messages.php");
                             if ($act=="do") return "news.php";
 						break;
 						case 'worksmgr':
-                            if ($act=="do") return "../manager/worksmgr.php";
+                            if ($act=="do"or $act=="new" or $act=="mgr") return "../manager/worksmgr.php";
 						break;
 						case 'newsmgr':
-                            if ($act=="do") return "../manager/newsmgr.php";
+                            if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/newsmgr.php";
 						break;
 						case 'usermgr':
-                            if ($act=="do") return "../manager/usermgr.php";
+                            if ($act=="do" or $act=="new" or $act=="mgr") return "../manager/usermgr.php";
 						break;
 		}
 	}
@@ -118,7 +118,7 @@ function datagrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 {
 			$code = "<table width='100%' class='datagrid' border='0'><tr class='datagridheader'>";
 			//if ($showEdit) $code .= "<td class='datagrid'></td>";
-			$code .= "<th>ÑÏ?Ý</th>";
+			$code .= "<th>ردیف</th>";
 			$fields = array();
                         $DBase = new Database();
 			foreach($cols as $key=>$value)

@@ -17,12 +17,14 @@ else
 	if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
 	{
 		if ($login->adminlogin($_POST['username'],$_POST['password']))
-		{
-		  echo "post is";
+		{		 
 			header("location: ./manager/adminpanel.php");
 		}	
 		else
-		{$adminloginmsg=$msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");}	
+		{ 
+			$adminloginmsg = $msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");
+			//header("location: ./manager/adminlogin.php");
+		}	
 	}   
 
 	$html=<<<cod
