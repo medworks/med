@@ -4,9 +4,9 @@
 	include_once("../classes/messages.php");
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
+	$db = Database::getDatabase();
 	if ($_POST["mark"]=="savenews")
-    {
-       $db = Database::getDatabase();
+    {       
 	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
@@ -47,6 +47,34 @@
 			}		     			
 		}			
 	}
+if ($_GET['item']!="newsmgr")	exit();
+if ($_GET['act']=="do")
+{
+	$html=<<<ht
+		<div id="mainnav" class="hidden-phone hidden-tablet">
+			<ul>
+			  <li class="active">		  
+				<a href="?item=newsmgr&act=new">
+				  <div class="icon">
+					<span class="fs1" aria-hidden="true" data-icon="&#x002b;"></span> <!-- &#x25c8; -->
+				  </div>
+	درج خبر جدید
+				</a>
+			  </li>
+			  <li>
+				<a href="?item=newsmgr&act=mgr" id="news" name="news">
+				  <div class="icon">
+					<span class="fs1" aria-hidden="true" data-icon="&#x231a;"></span>
+				  </div>
+	حذف/ویرایش اخبار
+				</a>
+			  </li>
+			 </ul>
+		</div>		 
+ht;
+}else
+if ($_GET['act']=="new")
+{
 $msgs = getMessage($_GET['msg']);	
 $html=<<<cd
 	<script type='text/javascript'>
@@ -162,6 +190,65 @@ $html=<<<cd
 <!-- /TinyMCE -->  
    
 cd;
+} else
+if ($_GET['act']=="mgr")
+{
+$rows = $db->SelectAll(
+		"news",
+		"*",
+                null,
+		"id ASC",
+		$_GET["pageNo"]*10,
+		10);
+
+                $rowsClass = array();
+                $colsClass = array();
+                $rowCount =$db->countAll("news");
+                for($i = 0; $i < Count($rows); $i++)
+                {
+                                $rows[$i]["option"] =$rows[$i]["option"];
+                                if ($i % 2==0)
+                                 {
+                                        $rowsClass[] = "datagridevenrow";
+                                 }
+                                else
+                                {
+                                        $rowsClass[] = "datagridoddrow";
+                                }
+                                $rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
+                                        "style='text-decoration:none;'><img src='../themes/default/images/icons/edit.gif'></a>";
+
+                                $rows[$i]["delete"]=<<< del
+                                <a href='?func=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
+								<img src='../themes/default/images/icons/delete.gif'></a>
+del;
+                         }
+
+    if (!$_GET["pageNo"]) $_GET["pageNo"] = 0;
+            if (Count($rows) > 0)
+            {                    
+                    $gridcode .= datagrid(array( 
+							"subject"=>"عنوان",
+							"body"=>"شرح",
+							"ndate"=>"تاریخ",
+							"resource"=>"منبع",
+                            "edit"=>"ویرایش",
+							"delete"=>"حذف", ), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
+                    
+            }
+                     $code=<<<edit
+                    <div class="Top">                       
+						<center>
+							<form action="" method="post">
+								{$gridcode} 
+							</form>
+					   </center>
+					</div>
+
+edit;
+$html = $code;
+}	
 return $html;
 
 ?>

@@ -118,7 +118,7 @@ function datagrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 {
 			$code = "<table width='100%' class='datagrid' border='0'><tr class='datagridheader'>";
 			//if ($showEdit) $code .= "<td class='datagrid'></td>";
-			$code .= "<th>ÑÏ?Ý</th>";
+			$code .= "<th>ردیف</th>";
 			$fields = array();
                         $DBase = new Database();
 			foreach($cols as $key=>$value)
