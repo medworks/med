@@ -109,6 +109,11 @@ public function updatequery($table, $values, $where, $orderby = array())
 	return $this->RunSQL($this->cmd);
 }
 
+function delete($tablename,$IFfield,$IFvalue)
+{
+    $this->cmd = "DELETE FROM `{$tablename}` WHERE  $IFfield ='{$IFvalue}'";            
+    return $this->RunSQL($this->cmd);
+}
 public function maxOf($column, $table, $where)
 {
    $this->cmd ="SELECT MAX(`$column`) FROM `$table` WHERE $where";  

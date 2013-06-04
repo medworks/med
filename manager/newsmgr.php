@@ -75,6 +75,11 @@ if ($_GET['act']=="edit")
       	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
       	 <input type='hidden' name='mark' value='editnews' />";
 }
+if ($_GET['act']=="del")
+{
+	$db->delete("news"," id",$_GET["nid"]);
+	header('location:?item=newsmgr&act=mgr');
+}
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -244,8 +249,11 @@ $rows = $db->SelectAll(
                                         "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";
 
                                 $rows[$i]["delete"]=<<< del
-                                <a id='delcommand' href='?item=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
-								<img src='../themes/default/images/admin/icons/delete.gif'></a>
+                                <a href="javascript:void(0)"
+                                onclick="DelMsg('{$rows[$i]['id']}',
+                                    'از حذف این خبر اطمینان دارید؟',
+                                '?item=newsmgr&act=del&nid=');"
+                                 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
 
@@ -262,34 +270,7 @@ del;
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
                     
             }
-                     $code=<<<edit
-	<script type='text/javascript'>
-		$(document).ready(function(){	   			
-			$("#delcommand").click(function(){
-			    alert("delcommand");
-				var msg = 'از حذف این رکورد مطمئن هستید؟';
-				var div = $("<div>" + msg + "</div>");
-				div.dialog({
-				title: "Confirm",
-				buttons: [
-							{
-								text: "Yes",
-								click: function () {
-								$.post("newsmgr.php?id='{$_GET[nid]}'");
-								div.remove();
-								}
-							},
-							{
-								text: "No",
-								click: function () {
-									div.dialog("close");
-								}
-							}
-						]
-							});
-    });
-       });
-	</script>	   					 
+$code=<<<edit
                     <div class="Top">                       
 						<center>
 							<form action="" method="post">
