@@ -38,6 +38,7 @@
 	<script type="text/javascript" src="../lib/js/calendar-fa.js"></script>	
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine-en.js"></script>
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine.js"></script>	
+	<script type="text/javascript" src="../lib/js/jsfuncs.js"></script>	
 
 	<!--[if lt IE 9]>
 		<script src="./lib/js/html5shiv.js"></script>

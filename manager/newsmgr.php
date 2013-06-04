@@ -75,6 +75,11 @@ if ($_GET['act']=="edit")
       	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
       	 <input type='hidden' name='mark' value='editnews' />";
 }
+if ($_GET['act']=="del")
+{
+	$db->delete("news"," id",$_GET["nid"]);
+	header('location:?item=newsmgr&act=mgr');
+}
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -108,8 +113,8 @@ $msgs = getMessage($_GET['msg']);
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
-			$("#frmnewsmgr").validationEngine();
-       });
+			$("#frmnewsmgr").validationEngine();			
+    });
 	</script>	   
   <div class="title">
       <ul>
@@ -176,7 +181,6 @@ $html=<<<cd
 		theme : "advanced",
 		skin : "o2k7",
 		plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
-
 		// Theme options
 		theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
 		theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
@@ -185,17 +189,7 @@ $html=<<<cd
 		theme_advanced_toolbar_location : "top",
 		theme_advanced_toolbar_align : "left",
 		theme_advanced_statusbar_location : "bottom",
-		theme_advanced_resizing : true,
-
-		// Example content CSS (should be your site CSS)
-		content_css : "tiny_mce/css/content.css",
-
-		// Drop lists for link/image/media/template dialogs
-		template_external_list_url : "tiny_mce/lists/template_list.js",
-		external_link_list_url : "tiny_mce/lists/link_list.js",
-		external_image_list_url : "tiny_mce/lists/image_list.js",
-		media_external_list_url : "tiny_mce/lists/media_list.js",
-
+		theme_advanced_resizing : true,	
 		// Style formats
 		style_formats : [
 			{title : 'Bold text', inline : 'b'},
@@ -211,6 +205,7 @@ $html=<<<cd
 		template_replace_values : {
 			username : "Some User",
 			staffid : "991234"
+		
 		}
 	});
 </script>
@@ -246,8 +241,11 @@ $rows = $db->SelectAll(
                                         "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";
 
                                 $rows[$i]["delete"]=<<< del
-                                <a href='?func=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
-								<img src='../themes/default/images/admin/icons/delete.gif'></a>
+                                <a href="javascript:void(0)"
+                                onclick="DelMsg('{$rows[$i]['id']}',
+                                    'از حذف این خبر اطمینان دارید؟',
+                                '?item=newsmgr&act=del&nid=');"
+                                 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
 
@@ -264,7 +262,7 @@ del;
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
                     
             }
-                     $code=<<<edit
+$code=<<<edit
                     <div class="Top">                       
 						<center>
 							<form action="" method="post">
