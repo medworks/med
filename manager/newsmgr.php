@@ -106,8 +106,8 @@ $msgs = getMessage($_GET['msg']);
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
-			$("#frmnewsmgr").validationEngine();
-       });
+			$("#frmnewsmgr").validationEngine();			
+    });
 	</script>	   
   <div class="title">
       <ul>
@@ -244,7 +244,7 @@ $rows = $db->SelectAll(
                                         "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";
 
                                 $rows[$i]["delete"]=<<< del
-                                <a href='?func=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
+                                <a id='delcommand' href='?item=newsmgr&act=del&nid={$rows[$i]["id"]}'style='text-decoration:none;'> 
 								<img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
@@ -263,6 +263,33 @@ del;
                     
             }
                      $code=<<<edit
+	<script type='text/javascript'>
+		$(document).ready(function(){	   			
+			$("#delcommand").click(function(){
+			    alert("delcommand");
+				var msg = 'از حذف این رکورد مطمئن هستید؟';
+				var div = $("<div>" + msg + "</div>");
+				div.dialog({
+				title: "Confirm",
+				buttons: [
+							{
+								text: "Yes",
+								click: function () {
+								$.post("newsmgr.php?id='{$_GET[nid]}'");
+								div.remove();
+								}
+							},
+							{
+								text: "No",
+								click: function () {
+									div.dialog("close");
+								}
+							}
+						]
+							});
+    });
+       });
+	</script>	   					 
                     <div class="Top">                       
 						<center>
 							<form action="" method="post">

@@ -105,7 +105,6 @@ public function updatequery($table, $values, $where, $orderby = array())
     $sql .= ($where != '' AND count($where) >=1) ? " WHERE ".implode(" ", $where) : '';
     
     $sql .= $orderby;
-    echo $sql;
     $this->cmd = $sql;
 	return $this->RunSQL($this->cmd);
 }
