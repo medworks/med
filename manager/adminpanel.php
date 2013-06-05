@@ -93,8 +93,8 @@ echo $html;
  <div id="right" class="admin_right_panel"> 
 	 <div id="mainnav">
         <ul>
-          <li class="active">
-		        <span class="current-arrow"></span>
+          <li>
+		        <!-- <span class="current-arrow"></span> -->
             <a href="#">پیشخوان
                <span class="dashboard"></span>
             </a>
