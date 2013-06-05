@@ -391,7 +391,7 @@ function jtime()
 function jgetdate($timestamp="")
 {
         if($timestamp=="")
-                $timestamp=mktime();
+                $timestamp=time(); // this was mktime(); at before
 
         return array(
                 0=>$timestamp,
