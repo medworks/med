@@ -428,7 +428,7 @@ function jgetdate($timestamp="")
 //    <a href="http://www.gnu.org/copyleft/gpl.html" target="_blank">http://www.gnu.org/copyleft/gpl.html</a>
 //
 
-function ToJalali($datetime, $format = "Y/m/d")
+function ToJalali($datetime, $format = "Y-m-d")
 {
 	$jdate = jgetdate(strtotime($datetime));
 	return jdate($format, jmaketime($jdate["hours"],$jdate["minutes"],$jdate["seconds"],$jdate["mon"],$jdate["mday"],$jdate["year"]));
