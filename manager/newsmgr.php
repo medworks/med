@@ -20,10 +20,10 @@
 	}
 	if ($_POST["mark"]=="savenews")
     {       
-	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
+	   if((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لط�?ا �?ایل عکس را انتخاب کنید");
-			header('location:?item=newsmgr&act=do&msg=4');
+			header('location:?item=newsmgr&act=new&msg=4');
 			exit();
 		}
 		else
@@ -39,7 +39,7 @@
 			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
 			{       
 				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-				header('location:?item=newsmgr&act=do&msg=3');
+				header('location:?item=newsmgr&act=new&msg=3');
 				exit();
 			}
 			else
@@ -49,7 +49,7 @@
 				if (!$db->insertquery('news',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-					header('location:?item=newsmgr&act=do&msg=2');
+					header('location:?item=newsmgr&act=new&msg=2');
 					exit();
   				} 	
   				else 
