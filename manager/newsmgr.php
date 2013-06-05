@@ -219,7 +219,7 @@ $rows = $db->SelectAll(
 		"news",
 		"*",
                 null,
-		"id ASC",
+		"ndate DESC",
 		$_GET["pageNo"]*10,
 		10);
 
