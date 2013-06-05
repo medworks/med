@@ -484,39 +484,68 @@ footer p{
 /*=============== data grid section  ===============*/
 .datagrid
 {
-        margin-top: 10px;
-	background-color: #ECECED;
-        /*#FFFFEE;*/
-        /*background-color: #FFF1BF;        */
-        border-spacing:0px;
-        text-align: center;
+  margin-top: 10px;
+  background-color: #ECECED;
+  border-spacing:0px;
+  text-align: center;
 }
 .datagridheader
 {
-	/*background-color: #22AAFF;*/
-        background-color: #668BDC;
-        text-align: center;
-        color: white;        
+  background-color: #668BDC;
+  text-align: center;
+  color: white; 
+  font-size: 20px;       
 }
 
-.datagridevenrow
-{
-	background-color: #EEF5FF;
-        /*background-color: #EAF2D3*/
+.datagridheader th{
+  padding: 8px 5px;
 }
+
+.datagridevenrow{
+	background-color: #EEF5FF;
+}
+
 .datagridoddrow
 {
-	background-color:#FEF4E4;
-        
+  background-color:#FEF4E4;
 }
+
+.datagridevenrow td,
+.datagridoddrow td{
+  text-align: center;
+  padding: 0 5px 10px;
+}
+
+.datagridevenrow p,
+.datagridoddrow p{
+  text-align: center;
+}
+
+.datagridevenrow img,
+.datagridoddrow img{
+  margin: 0 !important;
+}
+
 .datagridcol
 {
    background-color: #E3ECF9;
 }
 
-tr.datagridevenrow:hover, tr.datagridoddrow:hover
+tr.datagridevenrow:hover,
+tr.datagridoddrow:hover
 {
-	background-color: #254590;
-        color: white;
- /*    #CCEEFF;*/
+  background-color: #254590;
+  color: white;
+}
+
+.page-num{
+  padding: 5px;
+}
+
+.page-num a{
+  color: #777;
+}
+
+.page-num a:hover{
+  color: #000;
 }

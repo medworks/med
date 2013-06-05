@@ -157,7 +157,7 @@ function datagrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 		//	if ($showEdit) $colNo++;
 		//	if ($showDelete) $colNo++;
 			$colNo++;
-			$code .= "<td colspan='{$colNo}' align='center' dir='ltr'>";
+			$code .= "<td colspan='{$colNo}' align='center' dir='rtl' class='page-num'>";
 			for($i = 0, $p = 1; $i <= (($rowCount-1)/$itemsInPage); $i++, $p++)
 			{
 				$code .= "<a style='text-decoration:none' href='?{$address}&pageNo={$i}'> " . str_replace("-", "&nbsp;", str_pad($p, 5, "-", STR_PAD_BOTH))  . " </a>";
