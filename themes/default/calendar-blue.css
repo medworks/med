@@ -94,7 +94,7 @@ div.calendar { position: relative; }
 
 .calendar tbody td.hilite { /* Hovered cells <TD> */
   background: #def;
-  padding: 1px 3px 1px 1px;
+  /*padding: 1px 3px 1px 1px;*/
   outline: 1px solid #bbb;
 }
 
