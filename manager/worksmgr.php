@@ -17,6 +17,12 @@
 			header('location:?item=worksmgr&act=do&msg=4');
 			exit();
 		}
+		else
+			if (empty($_POST['body']))
+			{
+			   header('location:?item=worksmgr&act=new&msg=5');
+			   exit();
+			}
     	else
 		{
 			$filename =strtolower(basename($_FILES['pic']['name']));
@@ -32,8 +38,8 @@
 				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
 				header('location:?item=worksmgr&act=do&msg=3');
 				exit();
-			}	 
-		    else
+			}	 		    
+			else
 			{			
   				$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
   				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	

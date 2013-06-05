@@ -43,6 +43,12 @@
 				exit();
 			}
 			else
+			if (empty($_POST['body']))
+			{
+			   header('location:?item=newsmgr&act=new&msg=5');
+			   exit();
+			}
+			else
 			{
 				$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
 				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		

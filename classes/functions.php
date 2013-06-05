@@ -48,6 +48,9 @@ include_once("./classes/messages.php");
 			case 4:
 				return $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
 			break;	
+			case 5:
+				return $msg->ShowError("لطفا فیلد توضیحات را ثبت کنید");
+			break;	
 		}
 	}
  function createpostblock()
