@@ -94,8 +94,7 @@ echo $html;
 	 <div id="mainnav">
         <ul>
           <li>
-		        <!-- <span class="current-arrow"></span> -->
-            <a href="#">پیشخوان
+            <a href="adminpanel.php">پیشخوان
                <span class="dashboard"></span>
             </a>
           </li>
