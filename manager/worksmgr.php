@@ -104,7 +104,7 @@ $html=<<<cd
           Calendar.setup({
             inputField  : "date_input_1",   // id of the input field
             button      : "date_btn_1",   // trigger for the calendar (button ID)
-                ifFormat    : "%A, %e %B %Y",       // format of the input field
+                ifFormat    : "%A، %e %B %Y",       // format of the input field
                 showsTime   : false,
                 dateType  : 'jalali',
                 showOthers  : true,
@@ -122,7 +122,7 @@ $html=<<<cd
           Calendar.setup({
             inputField  : "date_input_2",   // id of the input field
             button      : "date_btn_2",   // trigger for the calendar (button ID)
-                ifFormat    : "%A, %e %B %Y",       // format of the input field
+                ifFormat    : "%A، %e %B %Y",       // format of the input field
                 showsTime   : false,
                 dateType  : 'jalali',
                 showOthers  : true,

@@ -19,7 +19,7 @@
     {       
 	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
 		{ 
-			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+			//$msgs = $msg->ShowError("لط�?ا �?ایل عکس را انتخاب کنید");
 			header('location:?item=newsmgr&act=do&msg=4');
 			exit();
 		}
@@ -51,7 +51,7 @@
   				} 	
   				else 
   				{  										
-  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو�?قیت انجام شد");
 					//header('location:?item=newsmgr&act=new&msg=1');
   				}  				 
 			}		     			
@@ -108,7 +108,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newsmgr&act=mgr" id="news" name="news">حذف/ویرایش اخبار
+				<a href="?item=newsmgr&act=mgr" id="news" name="news">حذ�?/ویرایش اخبار
 					<span class="edit-news"></span>
 				</a>
 			  </li>
@@ -253,7 +253,7 @@ $rows = $db->SelectAll(
                                 $rows[$i]["delete"]=<<< del
                                 <a href="javascript:void(0)"
                                 onclick="DelMsg('{$rows[$i]['id']}',
-                                    'از حذف این خبر اطمینان دارید؟',
+                                    'از حذ�? این خبر اطمینان دارید؟',
                                 '?item=newsmgr&act=del&nid=');"
                                  style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
@@ -268,7 +268,7 @@ del;
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",
                             "edit"=>"ویرایش",
-							"delete"=>"حذف", ), $rows, $colsClass, $rowsClass, 10,
+							"delete"=>"حذ�?", ), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
                     
             }
