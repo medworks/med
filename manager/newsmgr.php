@@ -8,12 +8,15 @@
 	$db = Database::getDatabase();
 	if (isset($_POST["mark"]))
 	{
-		list($hour,$minute,$second) = preg_split(":", date("H:i:s"));
-		list($year,$month,$day) = preg_split("-", trim($_POST["ndate"]));
-		echo "ndate is :",trim($_POST["ndate"]);
-		echo "<br/>date is :",$year,$month,$day;
-		list($gyear,$gmonth,$gday)=jalali_to_gregorian($year,$month,$day);
-		$ndatetime=date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
+		list($hour,$minute,$second) = split(':', date('H:i:s'));
+		list($year,$month,$day) = split("-", trim($_POST["ndate"]));
+		//echo "ntime is :",$hour,$minute,$second;
+		//echo "<br/>ndate is :",trim($_POST["ndate"]);
+		//echo "<br/>date is :",tr_num($year),$month,$day;
+		list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);
+		//echo "<br/> gdate is :",$gyear,$gmonth,$gday;
+		$ndatetime = date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
+		//echo "<br/> ndatetime is :",$ndatetime;
 	}
 	if ($_POST["mark"]=="savenews")
     {       
@@ -52,7 +55,7 @@
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو�?قیت انجام شد");
-					//header('location:?item=newsmgr&act=new&msg=1');
+					header('location:?item=newsmgr&act=new&msg=1');
   				}  				 
 			}		     			
 		}			
@@ -108,7 +111,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newsmgr&act=mgr" id="news" name="news">حذ�?/ویرایش اخبار
+				<a href="?item=newsmgr&act=mgr" id="news" name="news">حذف/ویرایش اخبار
 					<span class="edit-news"></span>
 				</a>
 			  </li>
@@ -237,7 +240,12 @@ $rows = $db->SelectAll(
                 $colsClass = array();
                 $rowCount =$db->countAll("news");
                 for($i = 0; $i < Count($rows); $i++)
-                {
+                {						
+		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>15)?mb_substr($rows[$i]["subject"],0,15,"UTF-8")."...":$rows[$i]["subject"];
+                $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>15)?
+                mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 15,"UTF-8") . "..." :
+                html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
+                $rowss[$i]["ndate"] =ToJalali($rows[$i]["ndate"]);
                                 $rows[$i]["option"] =$rows[$i]["option"];
                                 if ($i % 2==0)
                                  {
@@ -253,7 +261,7 @@ $rows = $db->SelectAll(
                                 $rows[$i]["delete"]=<<< del
                                 <a href="javascript:void(0)"
                                 onclick="DelMsg('{$rows[$i]['id']}',
-                                    'از حذ�? این خبر اطمینان دارید؟',
+                                    'از حذف این خبر اطمینان دارید',
                                 '?item=newsmgr&act=del&nid=');"
                                  style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;

@@ -42,6 +42,12 @@ return   $stringtemp;
 
 }///end conver to number in persian
 
+// change to en or fa character
+function tr_num($str,$mod='en',$mf='٫'){
+ $num_a=array('0','1','2','3','4','5','6','7','8','9','.');
+ $key_a=array('۰','۱','۲','۳','۴','۵','۶','۷','۸','۹',$mf);
+ return($mod=='fa')?str_replace($num_a,$key_a,$str):str_replace($key_a,$num_a,$str);
+}
 
 function jdate($type,$maket="now")
 {
@@ -478,6 +484,9 @@ function gregorian_to_jalali ($g_y, $g_m, $g_d)
 
 function jalali_to_gregorian($j_y, $j_m, $j_d)
 {
+	$j_y = tr_num($j_y);
+	$j_m = tr_num($j_m);
+	$j_d = tr_num($j_d);
     $g_days_in_month = array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
     $j_days_in_month = array(31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29);
 
