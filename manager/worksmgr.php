@@ -11,7 +11,7 @@
 		$msg = Message::getMessage();
 		$msgs = "";	
     
-		if((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
+		if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{    
 			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
 			header('location:?item=worksmgr&act=do&msg=4');

@@ -20,7 +20,7 @@
 	}
 	if ($_POST["mark"]=="savenews")
     {       
-	   if((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
+	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لط�?ا �?ایل عکس را انتخاب کنید");
 			header('location:?item=newsmgr&act=new&msg=4');
