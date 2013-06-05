@@ -4,7 +4,17 @@
 	include_once("../classes/messages.php");
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
+	include_once("../lib/persiandate.php");
 	$db = Database::getDatabase();
+	if (isset($_POST["mark"]))
+	{
+		list($hour,$minute,$second) = preg_split(":", date("H:i:s"));
+		list($year,$month,$day) = preg_split("-", trim($_POST["ndate"]));
+		echo "ndate is :",trim($_POST["ndate"]);
+		echo "<br/>date is :",$year,$month,$day;
+		list($gyear,$gmonth,$gday)=jalali_to_gregorian($year,$month,$day);
+		$ndatetime=date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
+	}
 	if ($_POST["mark"]=="savenews")
     {       
 	   if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
@@ -32,7 +42,7 @@
 			else
 			{
 				$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[ndate]}'","'1'","'{$_POST[res]}'");		
+				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		
 				if (!$db->insertquery('news',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -42,7 +52,7 @@
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=newsmgr&act=new&msg=1');
+					//header('location:?item=newsmgr&act=new&msg=1');
   				}  				 
 			}		     			
 		}			
@@ -52,7 +62,7 @@
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$newname_site}'",
 						 "`body`"=>"'{$_POST[detail]}'",
-						 "`ndate`"=>"'{$_POST[ndate]}'",
+						 "`ndate`"=>"'{$ndatetime}'",
 						 "`userid`"=>"'1'",
 						 "`resource`"=>"'{$_POST[res]}'");		
         $db->updatequery("news",$values,array("id='{$_GET[nid]}'"));
@@ -151,8 +161,8 @@ $html=<<<cd
           Calendar.setup({
             inputField  : "date_input_1",   // id of the input field
             button      : "date_btn_1",   // trigger for the calendar (button ID)
-                ifFormat    : "%A, %e %B %Y ساعت %H:%M",       // format of the input field
-                showsTime   : true,
+                ifFormat    : "%Y-%m-%d",       // format of the input field
+                showsTime   : false,
                 dateType  : 'jalali',
                 showOthers  : true,
                 langNumbers : true,
@@ -218,7 +228,7 @@ if ($_GET['act']=="mgr")
 $rows = $db->SelectAll(
 		"news",
 		"*",
-                null,
+        null,
 		"ndate DESC",
 		$_GET["pageNo"]*10,
 		10);
