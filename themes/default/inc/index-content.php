@@ -1,5 +1,9 @@
 <?php
+  include_once("./config.php");
   include_once("./classes/functions.php");
+  include_once("./classes/database.php");
+  $db = database::getDatabase();
+  $works = $db->SelectAll('works',NULL,NULL," fdate DESC");
 ?>
 <section class="main-content">
 	<!-- ****************Content (Right) part****************** -->
@@ -66,36 +70,23 @@
 		<div class="badboy"></div>
 		<!-- ***********Recent Works************ -->
 		<div class="recent-works main-box">
-			<h2>کارهای اَخیر</h2>
+			<h2>کارهای ما</h2>
 			<div class="line"></div>
 			<div class="badboy"></div>
 			<div class="works box-right">
 				<div id="slideshow-rec">
-					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 1</a></h3>
-						<p>5 اردیبهشت 1392</p>
-					</div>
-					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/slide2.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 1</a></h3>
-						<p>5 اردیبهشت 1392</p>
-					</div>
-					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/slide3.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 2</a></h3>
-						<p>5 اردیبهشت 1392</p>
-					</div>
-					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/slide4.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 3</a></h3>
-						<p>5 اردیبهشت 1392</p>
-					</div>
-					<div class="scroll-item">
-						<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt="" ></a>
-						<h3><a href="#">عنوان شماره 3</a></h3>
-						<p>5 اردیبهشت 1392</p>
-					</div>
+					<?php
+						
+						for($i=0;$i<count($works);$i++){
+							echo "<div class='scroll-item'>
+									<a href='#'' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'></a>
+									<h3><a href='#'>{$works[$i]["subject"]}</a></h3>
+									<p><span>شروع: </span>{$works[$i]["sdate"]}</p><br />
+									<p><span>پایان: </span>{$works[$i]["fdate"]}</p>
+								  </div>";
+						}
+
+					?>
 				</div>
 				<div class="badboy"></div>
 				<div id="nav" class="scroll-nav"></div>
@@ -111,7 +102,7 @@
 				jQuery(function() {
 					jQuery('#slideshow-rec').cycle({
 						fx:     'scrollHorz',
-						timeout: 3000,
+						timeout: 6000,
 						pager:  '#nav',
 						slideExpr: '.group_items',
 						speed: 700,
