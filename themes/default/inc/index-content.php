@@ -1,10 +1,4 @@
-<?php
-  include_once("./config.php");
-  include_once("./classes/functions.php");
-  include_once("./classes/database.php");
-  $db = database::getDatabase();
-  $works = $db->SelectAll('works',NULL,NULL," fdate DESC");
-?>
+
 <section class="main-content">
 	<!-- ****************Content (Right) part****************** -->
 	<?php
@@ -59,7 +53,7 @@
 		        jQuery('#ei-slider').eislideshow({
 					animation			: 'center',
 					autoplay			: true,
-					slideshow_interval	: 3000,
+					slideshow_interval	: 6000,
 					speed          		: 800,
 					titlesFactor		: 0.60,
 					titlespeed          : 1000,
@@ -76,10 +70,11 @@
 			<div class="works box-right">
 				<div id="slideshow-rec">
 					<?php
-						
+						$db = database::getDatabase();
+  						$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
 						for($i=0;$i<count($works);$i++){
 							echo "<div class='scroll-item'>
-									<a href='#'' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'></a>
+									<a href='#' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'></a>
 									<h3><a href='#'>{$works[$i]["subject"]}</a></h3>
 									<p><span>شروع: </span>{$works[$i]["sdate"]}</p><br />
 									<p><span>پایان: </span>{$works[$i]["fdate"]}</p>

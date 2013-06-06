@@ -16,6 +16,11 @@
 	<link rel="Shortcut Icon" href="./themes/default/favicon.ico" />
 </head>
 <body>
+	<?php
+	  include_once("./config.php");
+	  include_once("./classes/functions.php");
+	  include_once("./classes/database.php");
+	?>
 	<div class="container">
 		<header>
 			<div class="top">
@@ -98,14 +103,18 @@
 			</div>
 		</header>
 		<section class="br-news">
-			<span class="right">خبرهای فوری</span>
+			<span class="right">خبرهای اخیر</span>
 			<div class="news right">
 				<ul>
-					<li><a href="#" title="خبرهای فوری1...">خبرهای فوری1...</a></li>
-					<li><a href="#" title="خبرهای فوری2...">خبرهای فوری2...</a></li>
-					<li><a href="#" title="خبرهای فوری3...">خبرهای فوری3...</a></li>
-					<li><a href="#" title="خبرهای فوری4...">خبرهای فوری4...</a></li>
-					<li><a href="#" title="خبرهای فوری5...">خبرهای فوری5...</a></li>				
+					<?php
+						$db = database::getDatabase();
+	  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+
+						for($i=0 ; $i<9 ; $i++){
+							$body= substr($news[$i]["body"],3,60);
+							echo "<li><a href='#' title='{$news[$i]["subject"]}'>$body...</a></li>";
+						}
+					?>
 				</ul>
 				<script type="text/javascript">
 					jQuery(document).ready(function(){
