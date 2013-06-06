@@ -239,7 +239,7 @@ $rows = $db->SelectAll(
 		"news",
 		"*",
         null,
-		"ndate DESC",
+		"ndate ASC",
 		$_GET["pageNo"]*10,
 		10);
 
@@ -279,7 +279,7 @@ del;
             {                    
                     $gridcode .= datagrid(array( 
 							"subject"=>"عنوان",
-							"body"=>"شرح",
+							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",
                             "edit"=>"ویرایش",

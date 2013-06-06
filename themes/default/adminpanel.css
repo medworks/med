@@ -160,7 +160,7 @@ header #mini-nav span {
   height: 48px;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 15px;
+  margin-right: 18px;
   margin-top: 6px;
 }
 
@@ -178,10 +178,6 @@ header #mini-nav span {
 
 #mainnav > ul > li span.users{
   background-image: url('images/admin/users.png');
-}
-
-#mainnav > ul > li:hover .fs1 {
-  color: #737373; 		 
 }
 
 #mainnav > ul > li:hover a {	    
@@ -220,7 +216,7 @@ header #mini-nav span {
 #mainnav > ul > li .current-arrow {
   background-image: url("images/admin/menu-arrow.png");
   position: absolute;
-  right: 85px;
+  right: 82px;
   top: 25px;
   z-index: 10;
   width: 11px;
@@ -485,9 +481,11 @@ footer p{
 {
   margin-top: 10px;
   background-color: #ECECED;
+  border: 1px solid #ededed;
   border-spacing:0px;
   text-align: center;
 }
+
 .datagridheader
 {
   background-color: #668BDC;
@@ -512,7 +510,7 @@ footer p{
 .datagridevenrow td,
 .datagridoddrow td{
   text-align: center;
-  padding: 0 5px 10px;
+  padding: 20px 5px;
 }
 
 .datagridevenrow p,
