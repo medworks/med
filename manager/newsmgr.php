@@ -22,7 +22,7 @@
     {       
 	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
-			//$msgs = $msg->ShowError("لط�?ا �?ایل عکس را انتخاب کنید");
+			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
 			header('location:?item=newsmgr&act=new&msg=4');
 			exit();
 		}
@@ -60,7 +60,7 @@
   				} 	
   				else 
   				{  										
-  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو�?قیت انجام شد");
+  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
 					header('location:?item=newsmgr&act=new&msg=1');
   				}  				 
 			}		     			
@@ -105,8 +105,8 @@ if ($_GET['act']=="do")
 	$html=<<<ht
 		<div class="title">
 	      <ul>
-	        <li><a href="#">پیشخوان</a></li>
-	        <li><a href="#">مدیریت اخبار</a></li>
+	        <li><a href="adminpanel.php">پیشخوان</a></li>
+	        <li><span>مدیریت اخبار</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
@@ -138,8 +138,8 @@ $html=<<<cd
 	</script>	   
   <div class="title">
       <ul>
-        <li><a href="#">پیشخوان</a></li>
-        <li><a href="#">مدیریت اخبار</a></li>
+        <li><a href="adminpanel.php">پیشخوان</a></li>
+	    <li><span>مدیریت اخبار</span></li>
       </ul>
       <div class="badboy"></div>
   </div>
@@ -288,6 +288,13 @@ del;
                     
             }
 $code=<<<edit
+					<div class="title">
+				      <ul>
+				        <li><a href="adminpanel.php">پیشخوان</a></li>
+					    <li><span>مدیریت اخبار</span></li>
+				      </ul>
+				      <div class="badboy"></div>
+				  </div>
                     <div class="Top">                       
 						<center>
 							<form action="" method="post">

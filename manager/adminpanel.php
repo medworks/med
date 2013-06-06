@@ -43,8 +43,8 @@
 	<!--[if lt IE 9]>
 		<script src="./lib/js/html5shiv.js"></script>
     <script src="./lib/js/selectivizr-min.js"></script>
-
 	<![endif]-->
+
 <?php
   $path = realpath(dirname(__FILE__));  
   /*
@@ -91,7 +91,7 @@ echo $html;
  <div id="clear" class="badboy"> </div>
  <div class="container">
  <div id="right" class="admin_right_panel"> 
-	 <div id="mainnav">
+	 <div id="mainnav" class="main-menu">
         <ul>
           <li>
             <a href="adminpanel.php">پیشخوان
@@ -120,7 +120,7 @@ echo $html;
           </li>		  
           <li>
             <a href="#">خروج
-                <span class="fs1" aria-hidden="true" data-icon="&#x2709;"></span>
+                <span class="fs1"></span>
             </a>
           </li>
         </ul>
@@ -128,10 +128,10 @@ echo $html;
  
  </div> 
  <div id="container"  class="admin_container">
-<?php
-  if (isset($_GET['item']) and $_GET['item']!="logout")  
-	echo include_once GetPageName($_GET['item'],$_GET['act']); 
-?>    
+    <?php
+      if (isset($_GET['item']) and $_GET['item']!="logout")  
+    	echo include_once GetPageName($_GET['item'],$_GET['act']); 
+    ?>    
  </div>
  </div>
  <div class="badboy"></div>

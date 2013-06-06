@@ -77,8 +77,8 @@ $html=<<<cd
 </script>	     
   <div class="title">
       <ul>
-        <li><a href="#">پیشخوان</a></li>
-        <li><a href="#">مدیریت کارها</a></li>
+         <li><a href="adminpanel.php">پیشخوان</a></li>
+	     <li><span>مدیریت کارها</span></li>
       </ul>
       <div class="badboy"></div>
   </div>  
@@ -92,7 +92,7 @@ $html=<<<cd
        </p>  	 
        <input type="text" name="subject" class="validate[required] subject" id="subject" />
        <p>
-    	   <label for="pic">عکس </label>
+    	 <label for="pic">عکس </label>
          <span>*</span>
        </p>
        <input type="file" name="pic" class="pic" id="pic" />

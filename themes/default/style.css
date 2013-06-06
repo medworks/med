@@ -1,9 +1,3 @@
-::selection{
-	background:#F9A386;
-	text-shadow:none;
-	color: #fff;
-}
-
 ::-webkit-scrollbar{
 	width: 8px;
 	height: 8px;

@@ -7,6 +7,13 @@
     font-weight: normal;
     font-style: normal;
 }
+
+::selection{
+  background:#F9A386;
+  text-shadow:none;
+  color: #fff;
+}
+
 /**********************************Message*******************************/
 /*******************************************Message part***************************************/
 .error{
