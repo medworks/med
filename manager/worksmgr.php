@@ -18,7 +18,7 @@
 			exit();
 		}
 		else
-			if (empty($_POST['body']))
+			if (empty($_POST['detail']))
 			{
 			   header('location:?item=worksmgr&act=new&msg=5');
 			   exit();

@@ -8,18 +8,11 @@
 	$db = Database::getDatabase();
 	if (isset($_POST["mark"]))
 	{
-		list($hour,$minute,$second) = split(':', date('H:i:s'));
-		list($year,$month,$day) = split("-", trim($_POST["ndate"]));
-		//echo "ntime is :",$hour,$minute,$second;
-		//echo "<br/>ndate is :",trim($_POST["ndate"]);
-		//echo "<br/>date is :",tr_num($year),$month,$day;
-		list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);
-		//echo "<br/> gdate is :",$gyear,$gmonth,$gday;
-		$ndatetime = date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
-		//echo "<br/> ndatetime is :",$ndatetime;
-	}
-	if ($_POST["mark"]=="savenews")
-    {       
+	   list($hour,$minute,$second) = split(':', date('H:i:s'));
+	   list($year,$month,$day) = split("-", trim($_POST["ndate"]));		
+	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
+	   $ndatetime = date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
+		          
 	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
@@ -43,29 +36,30 @@
 				exit();
 			}
 			else
-			if (empty($_POST['body']))
+			if (empty($_POST['detail']))
 			{
 			   header('location:?item=newsmgr&act=new&msg=5');
 			   exit();
-			}
-			else
-			{
-				$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		
-				if (!$db->InsertQuery('news',$fields,$values)) 
-  				{
-  					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-					header('location:?item=newsmgr&act=new&msg=2');
-					exit();
-  				} 	
-  				else 
-  				{  										
-  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-					header('location:?item=newsmgr&act=new&msg=1');
-  				}  				 
-			}		     			
-		}			
-	} else
+			}			
+		}
+	}	
+	if ($_POST["mark"]=="savenews")
+	{
+		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		
+		if (!$db->InsertQuery('news',$fields,$values)) 
+		{
+			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			header('location:?item=newsmgr&act=new&msg=2');
+			exit();
+		} 	
+		else 
+		{  										
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
+			header('location:?item=newsmgr&act=new&msg=1');
+		}  				 
+	}
+    else
 	if ($_POST["mark"]=="editnews")
 	{		
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
