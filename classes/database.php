@@ -31,27 +31,27 @@ public function RunSQL()
     return $result;
 }
 
-public function affectedrows()
+public function AffectedRows()
 {
   return mysql_affected_rows($this->link);
 }
 
-public function insertid()
+public function InsertId()
 {
   return mysql_insert_id($this->link);
 }
 
-public function errormessage()
+public function ErrorMessage()
 {
  return mysql_error($this->link);
 }
 
-public function errornumber()
+public function ErrorNumber()
 {
   return mysql_errno($this->link);
 }
 
-function SelectFromTable($tableName, $fields=NULL, $where = NULL, $order = NULL)
+function Select($tableName, $fields=NULL, $where = NULL, $order = NULL)
 {
 	if (empty ($fields)) $fields="*";
     if ($where) $where = " WHERE " . $where;
@@ -82,14 +82,14 @@ public function  SelectAll($tableName, $fields,$where = NULL,
     return $rows;
 }
 
-public function insertquery($table, $keys, $values)
+public function InsertQuery($table, $keys, $values)
 {    
     $this->cmd =  "INSERT INTO ".$table." (".implode(', ', $keys).") VALUES (".implode(', ', $values).")";  
 	//echo "<br/>",$this->cmd;
 	return $this->RunSQL();
 }
 
-public function updatequery($table, $values, $where, $orderby = array())
+public function UpdateQuery($table, $values, $where, $orderby = array())
 {
     foreach ($values as $key => $val)
     {
@@ -109,30 +109,30 @@ public function updatequery($table, $values, $where, $orderby = array())
 	return $this->RunSQL($this->cmd);
 }
 
-function delete($tablename,$IFfield,$IFvalue)
+function Delete($tablename,$IFfield,$IFvalue)
 {
     $this->cmd = "DELETE FROM `{$tablename}` WHERE  $IFfield ='{$IFvalue}'";            
     return $this->RunSQL($this->cmd);
 }
-public function maxOf($column, $table, $where)
+public function MaxOf($column, $table, $where)
 {
    $this->cmd ="SELECT MAX(`$column`) FROM `$table` WHERE $where";  
    return $this->RunSQL();
 }
 
-public function maxOfAll($column, $table)
+public function MaxOfAll($column, $table)
 {   
    $this->cmd ="SELECT MAX(`$column`) FROM `$table`";
    return $this->RunSQL();
 }
 
-public function countOf($table, $where)
+public function CountOf($table, $where)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table` WHERE $where";
   return $this->RunSQL();
 }
 
-public function countAll($table)
+public function CountAll($table)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table`";
   return $this->RunSQL();
