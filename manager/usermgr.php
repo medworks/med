@@ -11,7 +11,7 @@
 		$msg = Message::getMessage();
 		$msgs = "";	
     
-		if((empty($_FILES["pic"])) && ($_FILES['pic']['error'] != 0))
+		if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{    
 			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
 			header('location:?item=worksmgr&act=do&msg=4');
@@ -37,7 +37,7 @@
 			{			
   				$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
   				$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$newname_site}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
-  				if (!$db->insertquery('users',$fields,$values)) 
+  				if (!$db->InsertQuery('users',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
 					header('location:?item=worksmgr&act=do&msg=2');
@@ -54,7 +54,7 @@
 		}	
 	}
 
-$msgs = getMessage($_GET['msg']);
+$msgs = GetMessage($_GET['msg']);
 $html=<<<cd
 <script type='text/javascript'>
 	$(document).ready(function(){		

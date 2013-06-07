@@ -43,7 +43,7 @@
 			{			
   				$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
   				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
-  				if (!$db->insertquery('works',$fields,$values)) 
+  				if (!$db->InsertQuery('works',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
 					header('location:?item=worksmgr&act=do&msg=2');
@@ -60,7 +60,7 @@
 		}	
 	}
 
-$msgs = getMessage($_GET['msg']);
+$msgs = GetMessage($_GET['msg']);
 $html=<<<cd
 <script type='text/javascript'>
 	$(document).ready(function(){		
