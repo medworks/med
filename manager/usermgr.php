@@ -7,8 +7,8 @@
 	//$sess = Session::getSesstion();
     if ($_POST["mark"]=="saveuser")
 	{
-		$db = Database::getDatabase();
-		$msg = Message::getMessage();
+		$db = Database::GetDatabase();
+		$msg = Message::GetMessage();
 		$msgs = "";	
     
 		if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))

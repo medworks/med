@@ -5,7 +5,7 @@
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");
-	$db = Database::getDatabase();
+	$db = Database::GetDatabase();
 	if (isset($_POST["mark"]))
 	{
 	   date_default_timezone_set('Asia/Tehran');

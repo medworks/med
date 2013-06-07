@@ -33,7 +33,7 @@ include_once("./classes/messages.php");
 	}
 	function GetMessage($msgid)
 	{
-		$msg = Message::getMessage();	
+		$msg = Message::GetMessage();	
 		switch($msgid)
 		{
 			case 1:

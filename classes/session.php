@@ -20,7 +20,7 @@ class Session
         }
     }
     
-  public static function getSesstion()
+  public static function GetSesstion()
   {
    if(is_null(self::$me))
        self::$me = new Session();   
@@ -28,7 +28,7 @@ class Session
   } 
     
     
-    public function set($key, $val)
+    public function Set($key, $val)
     {
         $_SESSION[$key] = $val;
     }
@@ -37,14 +37,14 @@ class Session
         to set something like $_SESSION['key1']['key2']['key3']:
         $session->setMd(array('key1', 'key2', 'key3'), 'value')
     */
-    public function setarray($keyArray, $val)
+    public function Setarray($keyArray, $val)
     {
         $arrStr = "['".implode("']['", $keyArray)."']";
         $_SESSION{$arrStr} = $val;
     }
     
     
-    public function get($key)
+    public function Get($key)
     {
         return (isset($_SESSION[$key])) ? $_SESSION[$key] : false;
     }
@@ -53,14 +53,14 @@ class Session
         to get something like $_SESSION['key1']['key2']['key3']:
         $session->getMd(array('key1', 'key2', 'key3'))
     */
-    public function getarray($keyArray)
+    public function GetArray($keyArray)
     {
         $arrStr = "['".implode("']['", $keyArray)."']";
         return (isset($_SESSION{$arrStr})) ? $_SESSION{$arrStr} : false;
     }
     
     
-    public function delete($key)
+    public function Delete($key)
     {
         if (isset($_SESSION[$key])) {
             unset($_SESSION[$key]);
@@ -70,7 +70,7 @@ class Session
     }
     
     
-    public function deletearray($keyArray)
+    public function DeleteArray($keyArray)
     {
         $arrStr = "['".implode("']['", $keyArray)."']";
         if (isset($_SESSION{$arrStr})) {
@@ -81,7 +81,7 @@ class Session
     }
     
     
-    public function regenerateId($destroyOldSession=false)
+    public function RegenerateId($destroyOldSession=false)
     {
         session_regenerate_id(false);
         
@@ -97,13 +97,13 @@ class Session
     }
     
     
-    public function destroy()
+    public function Destroy()
     {
         return session_destroy();
     }
     
     
-    public function getName()
+    public function GetName()
     {
         return $this->sessionName;
     }

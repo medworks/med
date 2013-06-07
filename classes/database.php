@@ -14,7 +14,7 @@ class Database
       mysql_query("set names 'utf8'");
       mysql_select_db(_DB_NAME,$this->link);                  
  }
-public static function getDatabase()
+public static function GetDatabase()
 {
    if(is_null(self::$me))
        self::$me = new Database();

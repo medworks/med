@@ -8,7 +8,7 @@ class Message
                     
    }
    
-   public static function getMessage()
+   public static function GetMessage()
    {
       if(is_null(self::$me))
           self::$me = new Message();

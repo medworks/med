@@ -4,9 +4,9 @@ include_once("./classes/database.php");
 include_once("./classes/session.php");
 include_once("./classes/login.php");
 include_once("./classes/messages.php");
-$login=Login::getLogin();
-$msg=Message::getMessage();
-$sess = Session::getSesstion();
+$login=Login::GetLogin();
+$msg=Message::GetMessage();
+$sess = Session::GetSesstion();
 $adminloginmsg = "";
 if ($login->IsLogged())
 {	
@@ -16,7 +16,7 @@ else
 {
 	if (isset ($_POST["mark"]) AND $_POST["mark"] == "adminlogin")
 	{
-		if ($login->adminlogin($_POST['username'],$_POST['password']))
+		if ($login->AdminLogin($_POST['username'],$_POST['password']))
 		{		 
 			header("location: ./manager/adminpanel.php");
 		}	

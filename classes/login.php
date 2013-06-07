@@ -7,14 +7,14 @@ class Login
         $security = Security::getSecurity();
         $db = Database::getDatabase();
     }
-    public static function getLogin()
+    public static function GetLogin()
     {
       if(is_null(self::$me))
          self::$me = new Login ();
       return self::$me;
     }
     
-   public function adminlogin($username,$password)
+   public function AdminLogin($username,$password)
    {
        $sess = Session::getSesstion();
        
@@ -37,20 +37,20 @@ class Login
        $sess->set("family",$row["family"]);       
        return true;
    } 
-	function Logout()
+	function LogOut()
 	{
 			$sess = Session::getSesstion();
             return ($sess->delete("login") and $sess->delete("username") and $sess->delete("name") and $sess->delete("family"));
 	}	
 		
-		function IsLogged()
+	function IsLogged()
+	{
+		$sess = Session::getSesstion();
+		if ($sess->get("login")) 
 		{
-			$sess = Session::getSesstion();
-        	if ($sess->get("login")) 
-			{
-				return true;
-			}	else return false;
-		}   
+			return true;
+		}	else return false;
+	}   
 }
 
 ?>

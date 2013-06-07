@@ -7,15 +7,15 @@
 	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
 	
-	$login = Login::getLogin();
-	$mes = Message::getMessage();
+	$login = Login::GetLogin();
+	$mes = Message::GetMessage();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 	}
 	if ($_GET["item"] == "logout")
    {
-	   if ($login->Logout())
+	   if ($login->LogOut())
 			header("Location: ../index.php");
 	   else
 		    echo $mes->ShowError("عملیات خروج با خطا مواجه شد، لطفا مجددا سعی نمایید.");

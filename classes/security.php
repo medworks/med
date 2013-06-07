@@ -7,7 +7,7 @@ class Security
     {
         
     }
-    public static function getSecurity()
+    public static function GetSecurity()
     {
       if(is_null(self::$me))
          self::$me = new Security();
@@ -20,7 +20,7 @@ class Security
      * @param  string Data to be cleaned 
      * @return mixed 
      */ 
-    public function xss_clean($data) 
+    public function Xss_Clean($data) 
     { 
         // If its empty there is no point cleaning it :\ 
         if(empty($data)) 
@@ -94,7 +94,7 @@ class Security
      * @param  string Key to clean 
      * @return string 
      */ 
-    protected function clean_input_keys($data) 
+    protected function CleanInputKeys($data) 
     { 
         $chars = PCRE_UNICODE_PROPERTIES ? '\pL' : 'a-zA-Z'; 
          
@@ -112,14 +112,14 @@ class Security
      * @param  mixed Data to clean 
      * @return mixed 
      */ 
-    public function clean_input_data($data) 
+    public function CleanInputData($data) 
     { 
         if(is_array($data)) 
         { 
             $new_array = array(); 
             foreach($data as $key => $value) 
             { 
-                $new_array[$this->clean_input_keys($key)] = $this->clean_input_data($value); 
+                $new_array[$this->CleanInputKeys($key)] = $this->CleanInputData($value); 
             } 
              
             return $new_array; 
@@ -137,7 +137,7 @@ class Security
         }
         }
          
-        $data = $this->xss_clean($data); 
+        $data = $this->Xss_Clean($data); 
          
         return $data; 
     } 
