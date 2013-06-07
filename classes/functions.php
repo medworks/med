@@ -31,7 +31,7 @@ include_once("./classes/messages.php");
 						break;
 		}
 	}
-	function getMessage($msgid)
+	function GetMessage($msgid)
 	{
 		$msg = Message::getMessage();	
 		switch($msgid)
@@ -53,12 +53,8 @@ include_once("./classes/messages.php");
 			break;	
 		}
 	}
- function createpostblock()
- {
-     
- }
- 
-function pagination($itemsCount, $maxItemsInPage,
+  
+function Pagination($itemsCount, $maxItemsInPage,
 		$currentPageNo, $maxPageNumberAtTime, $linkFormat = "%PN%")
          {
 		$pageCount = ceil($itemsCount / $maxItemsInPage);
@@ -116,7 +112,7 @@ function pagination($itemsCount, $maxItemsInPage,
 	}
 
          
-function datagrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $keyName,
+function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $keyName,
 			$showKey, $showEdit, $showDelete, $rowCount,$address)
 {
 			$code = "<table width='100%' class='datagrid' border='0'><tr class='datagridheader'>";

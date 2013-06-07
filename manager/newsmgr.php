@@ -52,7 +52,7 @@
 			{
 				$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
 				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		
-				if (!$db->insertquery('news',$fields,$values)) 
+				if (!$db->InsertQuery('news',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
 					header('location:?item=newsmgr&act=new&msg=2');
@@ -74,7 +74,7 @@
 						 "`ndate`"=>"'{$ndatetime}'",
 						 "`userid`"=>"'1'",
 						 "`resource`"=>"'{$_POST[res]}'");		
-        $db->updatequery("news",$values,array("id='{$_GET[nid]}'"));
+        $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
 	}
 if ($_GET['item']!="newsmgr")	exit();
@@ -88,7 +88,7 @@ if ($_GET['act']=="new")
 }
 if ($_GET['act']=="edit")
 {
-	$row=$db->SelectFromTable("news","*","id='{$_GET["nid"]}'",NULL);
+	$row=$db->Select("news","*","id='{$_GET["nid"]}'",NULL);
 	$row['ndate'] = ToJalali($row["ndate"]);
 	$editorinsert = "
 	<p>
@@ -97,7 +97,7 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->delete("news"," id",$_GET["nid"]);
+	$db->Delete("news"," id",$_GET["nid"]);
 	header('location:?item=newsmgr&act=mgr');
 }
 if ($_GET['act']=="do")
@@ -129,7 +129,7 @@ ht;
 }else
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
-$msgs = getMessage($_GET['msg']);	
+$msgs = GetMessage($_GET['msg']);	
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -277,7 +277,7 @@ del;
     if (!$_GET["pageNo"]) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
-                    $gridcode .= datagrid(array( 
+                    $gridcode .= DataGrid(array( 
 							"subject"=>"عنوان",
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
