@@ -8,10 +8,11 @@
 	$db = Database::getDatabase();
 	if (isset($_POST["mark"]))
 	{
-	   list($hour,$minute,$second) = split(':', date('H:i:s'));
+	   date_default_timezone_set('Asia/Tehran');
+	   list($hour,$minute,$second) = split(':', Date('H:i:s'));
 	   list($year,$month,$day) = split("-", trim($_POST["ndate"]));		
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
-	   $ndatetime = date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
+	   $ndatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
 		          
 	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
