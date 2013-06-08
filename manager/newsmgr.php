@@ -232,16 +232,15 @@ cd;
 if ($_GET['act']=="mgr")
 {
 	if ($_POST["mark"]=="srhnews")
-	{
-	 //   echo "post is :",$_POST["txtsrh"];
-		//$rows = $db->Select("news",null,"subject ='{$_POST[txtsrh]}'","ndate DESC");
+	{	 
 		$rows = $db->SelectAll(
 				"news",
 				"*",
 				"subject LIKE '%{$_POST[txtsrh]}%'",
-				"ndate ASC",
+				"ndate DESC",
 				$_GET["pageNo"]*10,
 				10);
+		
 	}
 	else
 	{	
@@ -249,14 +248,14 @@ if ($_GET['act']=="mgr")
 				"news",
 				"*",
 				null,
-				"ndate ASC",
+				"ndate DESC",
 				$_GET["pageNo"]*10,
 				10);
     }
                 $rowsClass = array();
                 $colsClass = array();
                 $rowCount =$db->CountAll("news");
-                for($i = 0; $i <Count($rows); $i++)
+                for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>15)?mb_substr($rows[$i]["subject"],0,15,"UTF-8")."...":$rows[$i]["subject"];
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>15)?
@@ -299,8 +298,7 @@ del;
 $code=<<<edit
 <script type='text/javascript'>
 		$(document).ready(function(){	   			
-			$('#srhsubmit').click(function() {
-			//alert("submit testing");
+			$('#srhsubmit').click(function() {	
 			$('#frmsrh').submit();
 			return false;
 		});
@@ -322,7 +320,7 @@ $code=<<<edit
 								<input type="text" id="txtsrh" name="txtsrh" class="subject"  /> 
 								<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit"> جستجو</a>
 								<br/><br/>
-								<a href="?item=newsmgr&act=mgr&find=no" name="retall" id="retall"> کلیه اطلاعات</a>
+								<a href="?item=newsmgr&act=mgr&rec=all" name="retall" id="retall"> کلیه اطلاعات</a>
 								<input type="hidden" name="mark" value="srhnews" /> 								
 							</form>
 					   </center>
