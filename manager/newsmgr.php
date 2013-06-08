@@ -92,8 +92,9 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->Delete("news"," id",$_GET["nid"]);
-	header('location:?item=newsmgr&act=mgr');
+	$db->Delete("news"," id",$_GET["nid"]);	
+	//echo "pn is : ",$pn;
+	header("location:?item=newsmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
 if ($_GET['act']=="do")
 {
@@ -264,7 +265,7 @@ $rows = $db->SelectAll(
                                 <a href="javascript:void(0)"
                                 onclick="DelMsg('{$rows[$i]['id']}',
                                     'از حذف این خبر اطمینان دارید',
-                                '?item=newsmgr&act=del&nid=');"
+                                '?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
                                  style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
