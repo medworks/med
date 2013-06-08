@@ -46,10 +46,10 @@ include_once("./classes/messages.php");
 				return $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
 			break;	
 			case 4:
-				return $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
+				return $msg->ShowError("لطفا فایل عکس را انتخاب نمایید");
 			break;	
 			case 5:
-				return $msg->ShowError("لطفا فیلد توضیحات را ثبت کنید");
+				return $msg->ShowError("لطفا فیلد توضیحات را تکمیل نمایید");
 			break;	
 		}
 	}
