@@ -1,11 +1,11 @@
 <?php
-	include("inc/header.php");
+	include_once("inc/header.php");
 
-	include("inc/index-content.php");
+	include_once("inc/index-content.php");
 
-	include ('inc/sidebar.php');
+	include_once ('inc/sidebar.php');
 
-	include("inc/bot-ads.php");
+	include_once("inc/bot-ads.php");
 
-	include("inc/footer.php");
+	include_once("inc/footer.php");
 ?>

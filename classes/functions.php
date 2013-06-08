@@ -8,27 +8,31 @@ include_once("./classes/messages.php");
 	{
 		switch($func)
 		{
-						case 'initial':
-							return "index.php";
-						break;
-                        case 'about':
-                            return "about.php";
-						break;	
-                        case 'works':
-                            if ($act=="do") return "works.php";
-                        break;			          
-                        case 'news':
-                            if ($act=="do") return "news.php";
-						break;
-						case 'worksmgr':
-                            if ($act=="do"or $act=="new" or $act=="mgr") return "../manager/worksmgr.php";
-						break;
-						case 'newsmgr':
-                            if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/newsmgr.php";
-						break;
-						case 'usermgr':
-                            if ($act=="do" or $act=="new" or $act=="mgr") return "../manager/usermgr.php";
-						break;
+			case 'initial':
+				return "index.php";
+			break;
+            case 'about':
+                return "about.php";
+			break;	
+            case 'works':
+                if ($act=="do") return "works.php";
+            break;
+            case 'fullworks':
+                if ($act=="do") return "single-works.php";
+            break;			          
+            case 'news':
+                if ($act=="do") return "news.php";
+			break;
+			case 'worksmgr':
+                if ($act=="do" or $act=="new" or $act=="mgr") return "../manager/worksmgr.php";
+			break;
+			case 'newsmgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/newsmgr.php";
+			break;
+			case 'usermgr':
+                if ($act=="do" or $act=="new" or $act=="mgr") return "../manager/usermgr.php";
+			break;
+
 		}
 	}
 	function GetMessage($msgid)

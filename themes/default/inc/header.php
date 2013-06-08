@@ -18,7 +18,6 @@
 <body>
 	<?php
 	  include_once("./config.php");
-	  include_once("./classes/functions.php");
 	  include_once("./classes/database.php");
 	?>
 	<div class="container">
