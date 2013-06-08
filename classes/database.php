@@ -56,7 +56,7 @@ function Select($tableName, $fields=NULL, $where = NULL, $order = NULL)
 	if (empty ($fields)) $fields="*";
     if ($where) $where = " WHERE " . $where;
 	if ($order) $order = " ORDER BY " . $order;
-	$this->cmd = "SELECT $fields FROM `$tableName` " . $where . $order;               
+	$this->cmd = "SELECT $fields FROM `$tableName` " . $where . $order;		
 	$res = $this->RunSQL();
     if ($res)
 	    return mysql_fetch_array($res);
