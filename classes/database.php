@@ -117,25 +117,33 @@ function Delete($tablename,$IFfield,$IFvalue)
 public function MaxOf($column, $table, $where)
 {
    $this->cmd ="SELECT MAX(`$column`) FROM `$table` WHERE $where";  
-   return $this->RunSQL();
+   $res = $this->RunSQL();
+   $row = mysql_fetch_row($res);
+   return $row[0];
 }
 
 public function MaxOfAll($column, $table)
 {   
    $this->cmd ="SELECT MAX(`$column`) FROM `$table`";
-   return $this->RunSQL();
+   $res = $this->RunSQL();
+   $row = mysql_fetch_row($res);
+   return $row[0];
 }
 
 public function CountOf($table, $where)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table` WHERE $where";
-  return $this->RunSQL();
+  $res = $this->RunSQL();
+  $row = mysql_fetch_row($res);
+  return $row[0];
 }
 
 public function CountAll($table)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table`";
-  return $this->RunSQL();
+  $res = $this->RunSQL();
+  $row = mysql_fetch_row($res);
+  return $row[0];
 }
 
   }
