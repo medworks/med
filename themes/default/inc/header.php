@@ -124,3 +124,5 @@
 			</div>
 			<div class="badboy"></div>
 		</section>
+		<!-- Start of Content Part -->
+		<section class="main-content">
