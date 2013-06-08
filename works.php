@@ -10,7 +10,7 @@
                 <div class='badboy'></div>
                 ";
 
-  for($i=0;$i<count($works);$i++)
+  for($i=0 ; $i<count($works) ; $i++)
   {
   $html.=<<<cd
     <div class='box-right'> 

@@ -5,7 +5,7 @@
   $news = $db->SelectAll('news',NULL,NULL," ndate DESC");
   $html = " <div class='content'>
               <div class='main-box'>
-                <h2>کارهای ما</h2>
+                <h2>اخبار</h2>
                 <div class='line'></div>
                 <div class='badboy'></div>
                 ";
