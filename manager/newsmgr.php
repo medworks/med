@@ -6,14 +6,15 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");
 	$db = Database::GetDatabase();
-	if (isset($_POST["mark"]))
+	if ($_GET['item']!="newsmgr")	exit();			
+	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
 	   date_default_timezone_set('Asia/Tehran');
 	   list($hour,$minute,$second) = split(':', Date('H:i:s'));
 	   list($year,$month,$day) = split("-", trim($_POST["ndate"]));		
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
 	   $ndatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
-		          
+				  
 	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
@@ -72,7 +73,6 @@
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
 	}
-if ($_GET['item']!="newsmgr")	exit();
 
 if ($_GET['act']=="new")
 {
@@ -93,7 +93,7 @@ if ($_GET['act']=="edit")
 if ($_GET['act']=="del")
 {
 	$db->Delete("news"," id",$_GET["nid"]);
-	if ($db->countAll("news")%10==0) $_GET["pageNo"]-=1;		
+	if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
 	header("location:?item=newsmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
 if ($_GET['act']=="do")
@@ -231,18 +231,32 @@ cd;
 } else
 if ($_GET['act']=="mgr")
 {
-$rows = $db->SelectAll(
-		"news",
-		"*",
-        null,
-		"ndate ASC",
-		$_GET["pageNo"]*10,
-		10);
-
+	if ($_POST["mark"]=="srhnews")
+	{
+	 //   echo "post is :",$_POST["txtsrh"];
+		//$rows = $db->Select("news",null,"subject ='{$_POST[txtsrh]}'","ndate DESC");
+		$rows = $db->SelectAll(
+				"news",
+				"*",
+				"subject LIKE '%{$_POST[txtsrh]}%'",
+				"ndate ASC",
+				$_GET["pageNo"]*10,
+				10);
+	}
+	else
+	{	
+		$rows = $db->SelectAll(
+				"news",
+				"*",
+				null,
+				"ndate ASC",
+				$_GET["pageNo"]*10,
+				10);
+    }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =$db->countAll("news");
-                for($i = 0; $i < Count($rows); $i++)
+                $rowCount =$db->CountAll("news");
+                for($i = 0; $i <Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>15)?mb_substr($rows[$i]["subject"],0,15,"UTF-8")."...":$rows[$i]["subject"];
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>15)?
@@ -263,7 +277,7 @@ $rows = $db->SelectAll(
                                 $rows[$i]["delete"]=<<< del
                                 <a href="javascript:void(0)"
                                 onclick="DelMsg('{$rows[$i]['id']}',
-                                    'از حذف این خبر اطمینان دارید',
+                                    'از حذف این خبر اطمینان دارید؟',
                                 '?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
                                  style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
@@ -283,6 +297,15 @@ del;
                     
             }
 $code=<<<edit
+<script type='text/javascript'>
+		$(document).ready(function(){	   			
+			$('#srhsubmit').click(function() {
+			//alert("submit testing");
+			$('#frmsrh').submit();
+			return false;
+		});
+    });
+	</script>	   
 					<div class="title">
 				      <ul>
 				        <li><a href="adminpanel.php">پیشخوان</a></li>
@@ -292,8 +315,15 @@ $code=<<<edit
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="" method="post">
+							<form action="?item=newsmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
 								{$gridcode} 
+								<br/>
+								<label for="srhnews">جستجوی خبر </label>
+								<input type="text" id="txtsrh" name="txtsrh" class="subject"  /> 
+								<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit"> جستجو</a>
+								<br/><br/>
+								<a href="?item=newsmgr&act=mgr&find=no" name="retall" id="retall"> کلیه اطلاعات</a>
+								<input type="hidden" name="mark" value="srhnews" /> 								
 							</form>
 					   </center>
 					</div>
