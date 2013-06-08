@@ -92,8 +92,7 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->Delete("news"," id",$_GET["nid"]);	
-	//echo "pn is : ",$pn;
+	$db->Delete("news"," id",$_GET["nid"]);		
 	header("location:?item=newsmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
 if ($_GET['act']=="do")
