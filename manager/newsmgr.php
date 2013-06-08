@@ -92,7 +92,8 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->Delete("news"," id",$_GET["nid"]);		
+	$db->Delete("news"," id",$_GET["nid"]);
+	if (($db->countAll("news")%10)==0) $_GET["pageNo"] =$_GET["pageNo"]-1;	
 	header("location:?item=newsmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
 if ($_GET['act']=="do")
@@ -241,7 +242,6 @@ $rows = $db->SelectAll(
                 $rowsClass = array();
                 $colsClass = array();
                 $rowCount =$db->countAll("news");
-				echo "rowcount is :",$rowCount;
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>15)?mb_substr($rows[$i]["subject"],0,15,"UTF-8")."...":$rows[$i]["subject"];
