@@ -93,7 +93,8 @@ if ($_GET['act']=="edit")
 if ($_GET['act']=="del")
 {
 	$db->Delete("news"," id",$_GET["nid"]);
-	header('location:?item=newsmgr&act=mgr');
+	if ($db->countAll("news")%10==0) $_GET["pageNo"]-=1;		
+	header("location:?item=newsmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
 if ($_GET['act']=="do")
 {
@@ -258,18 +259,17 @@ $rows = $db->SelectAll(
                                         $rowsClass[] = "datagridoddrow";
                                 }
                                 $rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
-                                        "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";
-
+                                        "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
                                 $rows[$i]["delete"]=<<< del
                                 <a href="javascript:void(0)"
                                 onclick="DelMsg('{$rows[$i]['id']}',
                                     'از حذف این خبر اطمینان دارید',
-                                '?item=newsmgr&act=del&nid=');"
+                                '?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
                                  style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
 
-    if (!$_GET["pageNo"]) $_GET["pageNo"] = 0;
+    if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array( 
