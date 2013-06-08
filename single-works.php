@@ -29,7 +29,7 @@
 		</div>
 		<div class="date">
 			<p><span>تاریخ شروع: <?php $sdate = ToJalali($works["sdate"]," l d F  Y "); echo "$sdate"; ?></span></p>
-			<p><span>تاریخ پایان: <?php echo "{$works["fdate"]}"; ?></span></p>
+			<p><span>تاریخ پایان: <?php $fdate = ToJalali($works["fdate"]," l d F  Y "); echo "$fdate"; ?></span></p>
 		</div>
 		<div class="detail">
 			<div class="text right">
