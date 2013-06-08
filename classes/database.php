@@ -57,7 +57,7 @@ function Select($tableName, $fields=NULL, $where = NULL, $order = NULL)
     if ($where) $where = " WHERE " . $where;
 	if ($order) $order = " ORDER BY " . $order;
 	$this->cmd = "SELECT $fields FROM `$tableName` " . $where . $order;               
-	$res = $this->RunSQL($this->cmd);
+	$res = $this->RunSQL();
     if ($res)
 	    return mysql_fetch_array($res);
 	else
@@ -73,7 +73,7 @@ public function  SelectAll($tableName, $fields,$where = NULL,
     if ($order) $order = " ORDER BY " . $order;
     if (($from || $from == 0) && $count) $limit = " LIMIT $from, $count";
     $this->cmd = "SELECT $fields FROM `$tableName` " . $where . " " . $order . " " . $limit;    
-    $res =$this->RunSQL($this->cmd);
+    $res =$this->RunSQL();
     $rows = array();
     if ($res)
     {
@@ -106,13 +106,13 @@ public function UpdateQuery($table, $values, $where, $orderby = array())
     
     $sql .= $orderby;
     $this->cmd = $sql;
-	return $this->RunSQL($this->cmd);
+	return $this->RunSQL();
 }
 
 function Delete($tablename,$IFfield,$IFvalue)
 {
     $this->cmd = "DELETE FROM `{$tablename}` WHERE  $IFfield ='{$IFvalue}'";            
-    return $this->RunSQL($this->cmd);
+    return $this->RunSQL();
 }
 public function MaxOf($column, $table, $where)
 {
