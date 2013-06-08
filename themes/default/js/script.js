@@ -80,6 +80,31 @@ jQuery(document).ready(function() {
             });
         }); 
     });
+
+    //tabbed Boxes
+    jQuery(".cat-tabs-wrap").hide();
+    jQuery(".cat-tabs-header ul li:first").addClass("active").show();
+    jQuery(".cat-tabs-wrap:first").show(); 
+    jQuery(".cat-tabs-header ul li").click(function() {
+        jQuery(".cat-tabs-header ul li").removeClass("active");
+        jQuery(this).addClass("active");
+        jQuery(".cat-tabs-wrap").hide();
+        var activeTab = jQuery(this).find("a").attr("href");
+        jQuery(activeTab).slideDown();
+        return false;
+    });
+    
+    jQuery("#tabbed-widget .tabs-wrap").hide();
+    jQuery("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
+    jQuery("#tabbed-widget .tabs-wrap:first").show(); 
+    jQuery("#tabbed-widget  li.tabs").click(function() {
+        jQuery("#tabbed-widget ul.posts-taps li").removeClass("active");
+        jQuery(this).addClass("active");
+        jQuery("#tabbed-widget .tabs-wrap").hide();
+        var activeTab = jQuery(this).find("a").attr("href");
+        jQuery(activeTab).slideDown();
+        return false;
+    });
     
    
     

@@ -1,3 +1,7 @@
+<?php
+	include_once("./classes/database.php");
+	include_once("./lib/persiandate.php");
+?>
 <div class="sidebar">
 	<!-- ***********Slideshow************ -->
 	<div class="social simple-box">
@@ -69,5 +73,79 @@
 		  });
 		});
 	</script>
+	<!-- ***********Tabed menu************ -->
+	<div class="widget" id="tabbed-widget">
+		<div class="box-left tab">
+			<div class="widget-container">
+				<div class="widget-top">
+					<ul class="tabs posts-taps">
+						<li class="tabs active"><a href="#tab1">کارهای ما</a></li>
+						<li class="tabs"><a href="#tab2">اخبار</a></li>
+						<li class="tabs"><a href="#tab3">تصاویر</a></li>
+						<li class="tabs"><a href="#tab4">پست ها</a></li>
+					</ul>
+				</div>
+				<div class="tabs-wrap" id="tab1">
+					<ul>
+						<?php
+							$db = database::getDatabase();
+  							$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
+  							 for($i=0 ; $i<5 ; $i++){
+  							 	$sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
+    							$fdate = ToJalali($works[$i]["fdate"]," l d F  Y ");
+    							echo "<li>
+    									<div class='pic right'>
+    										<a href='?item=fullworks&act=do&wid={$works[$i]["id"]}' title='{$works[$i]["subject"]}'>
+    											<img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'>
+    										</a>
+    									</div>
+    									<div class='detail right'>
+    										<h3>
+    											<a href='?item=fullworks&act=do&wid={$works[$i]["id"]}' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a>
+    										</h3>
+    										<span class='date'>
+    											<span>$sdate</span>
+    										</span>
+    										<span class='date'>
+    											<span>$fdate</span>
+    										</span>
+    									</div>
+    								  </li>";
+  							 }
+						?>
+					</ul>
+				</div>
+				<div class="tabs-wrap" id="tab2">
+					<ul>
+						<?php
+							$db = database::getDatabase();
+  							$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+  							 for($i=0 ; $i<5 ; $i++){
+  							 	$ndate = ToJalali($news[$i]["sdate"]," l d F  Y ");
+    							echo "<li>
+    									<div class='pic right'>
+    										<a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>
+    											<img src='{$news[$i]["image"]}' alt='{$news[$i]["subject"]}'>
+    										</a>
+    									</div>
+    									<div class='detail right'>
+											<h3>
+												<a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a>
+											</h3>
+											<span class='date'>
+												<span>$ndate</span>
+											</span>
+										</div>
+    								  </li>";
+  							 }
+						?>
+					</ul>
+				</div>
+				<div class="tabs-wrap" id="tab3"></div>
+				<div class="tabs-wrap" id="tab4"></div>
+			</div>
+			<div class="badboy"></div>
+		</div>
+	</div>
 </div>
 <div class="badboy"></div>
