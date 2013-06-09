@@ -32,8 +32,8 @@
 					</form>
 					<div class="badboy"></div>
 				</div>
-				<div class="menu">
-					<menu>
+				<div class="top-menu">
+					<menu class="menu">
 						<li><a href="./">صفحه اصلی</a></li>
 						<li><a href="#">درباره ما</a></li>
 						<li><a href="#">گالری تصاویر</a>
