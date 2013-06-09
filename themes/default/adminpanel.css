@@ -37,6 +37,42 @@ input:hover{
   color: #000;
 }
 
+a.button{
+  font-size: 17px;
+  padding: 5px 10px;
+  background-color: #d4d4d4;
+  background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#d4d4d4),color-stop(100%,#c7c7c7));
+  background: -webkit-linear-gradient(top,#d4d4d4 0,#c7c7c7 100%);
+  background: -moz-linear-gradient(top,#d4d4d4 0,#c7c7c7 100%);
+  background: -o-linear-gradient(top,#d4d4d4 0,#c7c7c7 100%);
+  background: -ms-linear-gradient(top,#d4d4d4 0,#c7c7c7 100%);
+  background: linear-gradient(top,#d4d4d4 0,#c7c7c7 100%);
+  border: 1px solid #a3a3a3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #555;
+  display: inline-block;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3),inset 0 1px 0 rgba(255, 255, 255, 0.5),inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: background 0.40s;
+  -moz-transition: background 0.40s;
+  -ms-transition: background 0.40s;
+  -o-transition: background 0.40s;
+  transition: background 0.40s;
+}
+
+a.button:hover{
+  background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#d8d6d6),color-stop(100%,#cdcdcd));
+  background: -webkit-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
+  background: -moz-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
+  background: -o-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
+  background: -ms-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
+  background: linear-gradient(top,#d8d6d6,#cdcdcd 100%);
+}
+
 p,label,h1,h2,h3,h4{
   text-align: right;
   font-family: 'bmitra';
@@ -545,4 +581,19 @@ tr.datagridoddrow:hover
 
 .page-num a:hover{
   color: #000;
+}
+/********************************Search input****************************/
+input.search-form{
+  display: inline-block !important;
+  -webkit-border-radius: 4px !important;
+  -moz-border-radius: 4px !important;
+  -ms-border-radius: 4px !important;
+  -o-border-radius: 4px !important;
+  border-radius: 4px !important;
+  width: 250px;
+  color: #999 !important;
+}
+
+input.search-form:hover{
+  color: #000 !important;
 }

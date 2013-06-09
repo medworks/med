@@ -314,14 +314,15 @@ $code=<<<edit
                     <div class="Top">                       
 						<center>
 							<form action="?item=newsmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+								<p class="search-form">
+									<input type="text" id="txtsrh" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
+									<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=newsmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+								</p>
+								<input type="hidden" name="mark" value="srhnews" /> 
+
 								{$gridcode} 
-								<br/>
-								<label for="srhnews">جستجوی خبر </label>
-								<input type="text" id="txtsrh" name="txtsrh" class="subject"  /> 
-								<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit"> جستجو</a>
-								<br/><br/>
-								<a href="?item=newsmgr&act=mgr&rec=all" name="retall" id="retall"> کلیه اطلاعات</a>
-								<input type="hidden" name="mark" value="srhnews" /> 								
+															
 							</form>
 					   </center>
 					</div>
