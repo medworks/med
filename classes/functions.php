@@ -23,6 +23,9 @@ include_once("./classes/messages.php");
             case 'news':
                 if ($act=="do") return "news.php";
 			break;
+			case 'fullnews':
+                if ($act=="do") return "single-news.php";
+			break;
 			case 'worksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr") return "../manager/worksmgr.php";
 			break;
