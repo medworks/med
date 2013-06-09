@@ -20,57 +20,56 @@
 		</menu>
 		<div class="badboy"></div>
 	</div>
-	<div class="box-right">
+	<div class="box-right singlepage-box">
 		<div class="image">
 			<img src='<?php echo "{$works["image"]}" ?>' alt='<?php echo "{$works[$i]["subject"]}" ?>'>
 		</div>
-		<div class="title">
-			<p><?php echo "{$works["subject"]}"; ?></p>
-		</div>
-		<div class="date">
-			<p><span>تاریخ شروع: <?php $sdate = ToJalali($works["sdate"]," l d F  Y "); echo "$sdate"; ?></span></p>
-			<p><span>تاریخ پایان: <?php $fdate = ToJalali($works["fdate"]," l d F  Y "); echo "$fdate"; ?></span></p>
-		</div>
-		<div class="detail">
-			<div class="text right">
-				
+		<div class="tit-da-de">
+			<div class="title">
+				<p><?php echo "{$works["subject"]}"; ?></p>
 			</div>
-			<div class="overview left">
-				<ul>
-					<li>
-						<h5>Graphic - 78%</h5>
-						<span>
-							<span style="width:78%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Dynamic - 90%</h5>
-						<span>
-							<span style="width:90%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Jquery - 58%</h5>
-						<span>
-							<span style="width:58%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Zepto - 38%</h5>
-						<span>
-							<span style="width:38%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Static - 10%</h5>
-						<span>
-							<span style="width:10%"></span>
-						</span>
-					</li>
-				</ul>
+			<div class="date">
+				<p><span>تاریخ شروع: <?php $sdate = ToJalali($works["sdate"]," l d F  Y "); echo "$sdate"; ?></span></p>
+				<p><span>تاریخ پایان: <?php $fdate = ToJalali($works["fdate"]," l d F  Y "); echo "$fdate"; ?></span></p>
 			</div>
-			<?php echo "{$works["body"]}"; ?>
-			<div class="badboy"></div>
+			<div class="detail">
+				<div class="overview left">
+					<ul>
+						<li>
+							<h5>Graphic - 78%</h5>
+							<span>
+								<span style="width:78%"></span>
+							</span>
+						</li>
+						<li>
+							<h5>Dynamic - 90%</h5>
+							<span>
+								<span style="width:90%"></span>
+							</span>
+						</li>
+						<li>
+							<h5>Jquery - 58%</h5>
+							<span>
+								<span style="width:58%"></span>
+							</span>
+						</li>
+						<li>
+							<h5>Zepto - 38%</h5>
+							<span>
+								<span style="width:38%"></span>
+							</span>
+						</li>
+						<li>
+							<h5>Static - 10%</h5>
+							<span>
+								<span style="width:10%"></span>
+							</span>
+						</li>
+					</ul>
+				</div>
+				<?php echo "{$works["body"]}"; ?>
+				<div class="badboy"></div>
+			</div>
 		</div>
 	</div>
 </div>

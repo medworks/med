@@ -10,67 +10,32 @@
 <div class="content single-page">
 	<?php
 		$db = database::getDatabase();
- 		$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
+ 		$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
 	?>
 	<div class="title-menu">
 		<menu>
 			<li><a href="./">صفحه اصلی</a><span>/</span></li>
-			<li><a href="?item=works&act=do">کارهای ما</a><span>/</span></li>
-			<li><p><?php echo "{$works["subject"]}"; ?></p></li>
+			<li><a href="?item=news&act=do">اخبار</a><span>/</span></li>
+			<li><p><?php echo "{$news["subject"]}"; ?></p></li>
 		</menu>
 		<div class="badboy"></div>
 	</div>
-	<div class="box-right">
+	<div class="box-right singlepage-box">
 		<div class="image">
-			<img src='<?php echo "{$works["image"]}" ?>' alt='<?php echo "{$works[$i]["subject"]}" ?>'>
+			<img src='<?php echo "{$news["image"]}" ?>' alt='<?php echo "{$news[$i]["subject"]}" ?>'>
 		</div>
-		<div class="title">
-			<p><?php echo "{$works["subject"]}"; ?></p>
-		</div>
-		<div class="date">
-			<p><span>تاریخ شروع: <?php $sdate = ToJalali($works["sdate"]," l d F  Y "); echo "$sdate"; ?></span></p>
-			<p><span>تاریخ پایان: <?php $fdate = ToJalali($works["fdate"]," l d F  Y "); echo "$fdate"; ?></span></p>
-		</div>
-		<div class="detail">
-			<div class="text right">
-				
+		<div class="tit-da-de">
+			<div class="title">
+				<p><?php echo "{$news["subject"]}"; ?></p>
 			</div>
-			<div class="overview left">
-				<ul>
-					<li>
-						<h5>Graphic - 78%</h5>
-						<span>
-							<span style="width:78%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Dynamic - 90%</h5>
-						<span>
-							<span style="width:90%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Jquery - 58%</h5>
-						<span>
-							<span style="width:58%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Zepto - 38%</h5>
-						<span>
-							<span style="width:38%"></span>
-						</span>
-					</li>
-					<li>
-						<h5>Static - 10%</h5>
-						<span>
-							<span style="width:10%"></span>
-						</span>
-					</li>
-				</ul>
+			<div class="date">
+				<p><span>تاریخ ثبت: <?php $ndate = ToJalali($news["ndate"]," l d F  Y "); echo "$ndate"; ?></span></p>
+				<p><span>توسط: <?php echo "{$news["userid"]}"; ?></span></p>
+	        <p><span>منبع: <?php echo "{$news["resource"]}"; ?></span></p>  
 			</div>
-			<?php echo "{$works["body"]}"; ?>
-			<div class="badboy"></div>
+			<div class="detail">
+				<?php echo "{$news["body"]}"; ?>
+			</div>
 		</div>
 	</div>
 </div>

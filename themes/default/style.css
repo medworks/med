@@ -1279,7 +1279,7 @@ section.main-content .content .pic img{
 
 section.main-content .content .detail{
 	margin-bottom: 10px;
-	padding-top: 20px;
+	padding-top: 10px;
 	font-size: 18px;
 	line-height: 1.2;
 }
@@ -1288,6 +1288,10 @@ section.main-content .content .detail p{
 	text-align: right;
 }
 /******************************Single pages************************************/
+.single-page .singlepage-box{
+	padding: 0;
+}
+
 .single-page .title-menu{
 	border-bottom: 1px solid #DDD;
 	padding-bottom: 5px;
@@ -1313,52 +1317,57 @@ section.main-content .content .detail p{
 }
 
 .single-page .image img{
-	width: 588px;
+	width: 609px;
 	height: 333px;
 }
 
-.single-page .date{
+.single-page .tit-da-de{
+	padding: 15px;
+}
+
+.single-page .tit-da-de .title{
+	padding-top: 0 !important;
+}
+
+.single-page .tit-da-de .date{
 	text-align: right;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #eee;
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 }
 
-.single-page .date p{
+.single-page .tit-da-de .date p{
 	display: inline-block;
 	margin-left: 10px;
 }
 
-.single-page .detail .text{
-}
-
-.single-page .detail .overview{
+.single-page .tit-da-de .detail .overview{
 	width: 320px;
 	margin-right: 20px;
 	direction: ltr;
 }
 
-.single-page .detail .overview ul li{
+.single-page .tit-da-de .detail .overview ul li{
 	margin: 10px 0;
 }
 
-.single-page .detail .overview ul li:first-child{
+.single-page .tit-da-de .detail .overview ul li:first-child{
 	margin-top: 0;
 }
 
-.single-page .detail .overview ul li h5{
+.single-page .tit-da-de .detail .overview ul li h5{
 	font-size: 15px;
 	margin-bottom: 5px;
 	opacity: 0.8;
 }
 
-.single-page .detail .overview ul li span{
+.single-page .tit-da-de .detail .overview ul li span{
 	display: block;
 	background: #F2F2F2;
 	height: 15px;
 }
 
-.single-page .detail .overview ul li span span{
+.single-page .tit-da-de .detail .overview ul li span span{
 	display: block;
 	height: 15px;
 	background-color: #F88C00;
@@ -1371,7 +1380,7 @@ section.main-content .content .detail p{
 	transition: opacity 200ms;
 }
 
-.single-page .detail .overview ul li span:hover span{
+.single-page .tit-da-de .detail .overview ul li span:hover span{
 	opacity: 1;
 	-webkit-transition: opacity 300ms;
 	-moz-transition: opacity 300ms;
