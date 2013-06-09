@@ -147,5 +147,18 @@
 			<div class="badboy"></div>
 		</div>
 	</div>
+	<!-- ***********Subscribe************ -->
+	<div class="subscrib main-box">
+		<h2>اشتراک</h2>
+		<div class="line"></div>
+		<div class="badboy"></div>
+		<div class="box-left">
+			<form action="">
+				<p>اشتراک خبرنامه به وسیله ایمیل</p>
+				<input type="text" class="validate[custom[email]] subscrib ltr" id="subscrib" value="Enter your e-mail address" onfocus="if (this.value == 'Enter your e-mail address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your e-mail address';}" />
+				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
+			</form>
+		</div>
+	</div>
 </div>
 <div class="badboy"></div>
