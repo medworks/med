@@ -23,12 +23,12 @@ public static function GetDatabase()
  
 public function RunSQL()
 {              
-   $security = security::getSecurity ();
-   $this->cmd = $security->xss_clean($this->cmd);
+   $security = security::GetSecurity ();
+   $this->cmd = $security->Xss_Clean($this->cmd);
    //echo $this->cmd;
    $result =  mysql_query($this->cmd, $this->link);          
    //if (!$result) die ('Unable to run query:'.$this->errormessage()); else
-    return $result;
+   return $result;
 }
 
 public function AffectedRows()
