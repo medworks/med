@@ -58,6 +58,9 @@ include_once("./classes/messages.php");
 			case 5:
 				return $msg->ShowError("لطفا فیلد توضیحات را تکمیل نمایید");
 			break;	
+			case 6:
+				return $msg->ShowInfo("عبارت مورد نظر یافت نشد");
+			break;	
 		}
 	}
   

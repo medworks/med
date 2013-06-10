@@ -240,6 +240,7 @@ if ($_GET['act']=="mgr")
 				"ndate DESC",
 				$_GET["pageNo"]*10,
 				10);
+			if (!$rows) header("Location:?item=newsmgr&act=mgr&msg=6");
 		
 	}
 	else
@@ -295,6 +296,7 @@ del;
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
                     
             }
+$msgs = GetMessage($_GET['msg']);
 $code=<<<edit
 <script type='text/javascript'>
 		$(document).ready(function(){	   			
@@ -320,7 +322,7 @@ $code=<<<edit
 									<a href="?item=newsmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
-
+								{$msgs}
 								{$gridcode} 
 															
 							</form>

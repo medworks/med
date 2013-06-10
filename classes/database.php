@@ -78,7 +78,7 @@ public function  SelectAll($tableName, $fields,$where = NULL,
     if ($res)
     {
         while($row = mysql_fetch_array($res)) $rows[] = $row;
-    }
+    } else return false;
     return $rows;
 }
 

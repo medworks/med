@@ -16,10 +16,8 @@ class Login
     
    public function AdminLogin($username,$password)
    {
-       $sess = Session::GetSesstion();
-       
-       $security = Security::GetSecurity();
-       
+       $sess = Session::GetSesstion();       
+       $security = Security::GetSecurity();       
        $db = Database::GetDatabase();
        
        $username = $security->Xss_Clean($username);
