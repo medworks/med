@@ -31,7 +31,7 @@ class Security
         { 
             foreach($data as $key => $value) 
             { 
-                $data[$key] = $this->xss_clean($data); 
+                $data[$key] = $this->Xss_Clean($data); 
             } 
              
             return $data; 
