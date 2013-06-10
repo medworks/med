@@ -1,9 +1,9 @@
 <?php
-include_once("./config.php");
-include_once("./classes/database.php");
-include_once("./classes/session.php");
-include_once("./classes/login.php");
-include_once("./classes/messages.php");
+include_once("../config.php");
+include_once("../classes/database.php");
+include_once("../classes/session.php");
+include_once("../classes/login.php");
+include_once("../classes/messages.php");
 $login=Login::GetLogin();
 $msg=Message::GetMessage();
 $sess = Session::GetSesstion();
@@ -18,7 +18,7 @@ else
 	{
 		if ($login->AdminLogin($_POST['username'],$_POST['password']))
 		{		 
-			header("location: ./manager/adminpanel.php");
+			header("location:adminpanel.php");
 		}	
 		else
 		{ 
@@ -32,8 +32,8 @@ else
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	<title>بخش مديريت سايت</title>		
-	<link rel="stylesheet" type="text/css" href="./themes/default/1styles.css"></link>   
-	<link rel="stylesheet" type="text/css" href="./themes/default/adminlogin.css"></link>	
+	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css"></link>   
+	<link rel="stylesheet" type="text/css" href="../themes/default/adminlogin.css"></link>	
 	</head>
 	<body>
 	<div class="container">
