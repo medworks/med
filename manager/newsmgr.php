@@ -6,7 +6,13 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");
 	$db = Database::GetDatabase();
-	if ($_GET['item']!="newsmgr")	exit();			
+	//$sess = Session::GetSesstion();	
+	if ($_GET['item']!="newsmgr")	exit();	
+    //$sess->Set("subject",$_POST["subject"]);
+	//$sess->Set("image",$_POST["image"]);
+	//$sess->Set("body",$_POST["detail"]);	
+	//$sess->Set("ndate",$_POST["ndate"]);
+	//$sess->Set("resource",$_POST["resource"]);	
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
 	   date_default_timezone_set('Asia/Tehran');
