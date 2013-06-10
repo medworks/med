@@ -212,5 +212,43 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
         foreach($receivers as $key=>$r) $mail->AddAddress($r);
         $mail->IsHTML(true);
         return $mail->Send();
-      }                
+      }
+		
+		function IntegerOptionTag($fnum,$tnum,$optionname,$selected=Null,$onchange=Null)
+        {
+            $option = "<select name='$optionname' id='$optionname' onchange='$onchange' >";
+            for($i=$fnum;$i<=$tnum;$i++)
+            {
+               if ($selected == $i){ $select = "selected='1'";} else { $select="";}
+                $option.="<option value='$i'{$select} >$i</option>";
+            }
+            $option.="</select>";
+
+            return  $option;
+
+        }
+
+        function BooleanOptionTag($optionname,$trueval,$falseval,$selectedval=1)
+        {
+          if ($selectedval==1)  {$trueselected="selected"; $falseselected="";}
+          else {$trueselected=""; $falseselected="selected";};
+         $option="<select id='$optionname;' name='$optionname'>";
+         $option.="<option {$trueselected} value='1'>$trueval</option>";
+         $option.="<option {$falseselected} value='0'>$falseval</option>";
+         $option.="</select>";
+         return $option;
+        }
+
+        function SelectOptionTag($optionname,$arraydata,$selected=Null,$onchange=Null)
+        {
+            $option = "<select name='$optionname' id='$optionname' onchange='$onchange' >";
+            foreach($arraydata as $key=>$val)
+            {
+               if ($selected == $key){ $select = "selected='1'";} else { $select="";}
+                $option.="<option value='$key'{$select} >$val</option>";
+            }
+            $option.="</select>";
+            //var_dump($option);
+            return  $option;
+        }	  
 ?>

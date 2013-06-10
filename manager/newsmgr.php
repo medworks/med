@@ -10,8 +10,8 @@
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
 	   date_default_timezone_set('Asia/Tehran');
-	   list($hour,$minute,$second) = split(':', Date('H:i:s'));
-	   list($year,$month,$day) = split("-", trim($_POST["ndate"]));		
+	   list($hour,$minute,$second) = explode(':', Date('H:i:s'));
+	   list($year,$month,$day) = explode("-", trim($_POST["ndate"]));		
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
 	   $ndatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
 				  
@@ -232,11 +232,18 @@ cd;
 if ($_GET['act']=="mgr")
 {
 	if ($_POST["mark"]=="srhnews")
-	{	 
+	{	 		
+	    if ($_POST["cbsearch"]=="ndate")
+		{
+		   date_default_timezone_set('Asia/Tehran');		   
+		   list($year,$month,$day) = explode("/", trim($_POST["txtsrh"]));		
+		   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
+		   $_POST["txtsrh"] = Date("Y-m-d",mktime(0, 0, 0, $gmonth, $gday, $gyear));
+		}
 		$rows = $db->SelectAll(
 				"news",
 				"*",
-				"subject LIKE '%{$_POST[txtsrh]}%'",
+				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
 				"ndate DESC",
 				$_GET["pageNo"]*10,
 				10);
@@ -297,6 +304,11 @@ del;
                     
             }
 $msgs = GetMessage($_GET['msg']);
+$list = array("subject"=>"عنوان",
+              "body"=>"توضیحات",
+			  "ndate"=>"تاریخ",
+			  "resource"=>"منبع");
+$combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
 		$(document).ready(function(){	   			
@@ -316,6 +328,7 @@ $code=<<<edit
                     <div class="Top">                       
 						<center>
 							<form action="?item=newsmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							    جستجو بر اساس {$combobox}
 								<p class="search-form">
 									<input type="text" id="txtsrh" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
 									<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
