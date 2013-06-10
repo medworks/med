@@ -297,6 +297,11 @@ del;
                     
             }
 $msgs = GetMessage($_GET['msg']);
+$list = array("subject"=>"عنوان",
+              "body"=>"توضیحات",
+			  "ndate"=>"تاریخ",
+			  "resource"=>"منبع");
+$combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
 		$(document).ready(function(){	   			
@@ -316,6 +321,7 @@ $code=<<<edit
                     <div class="Top">                       
 						<center>
 							<form action="?item=newsmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							    جستجو بر اساس {$combobox}
 								<p class="search-form">
 									<input type="text" id="txtsrh" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
 									<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
