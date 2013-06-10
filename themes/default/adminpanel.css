@@ -66,11 +66,34 @@ a.button{
 
 a.button:hover{
   background: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#d8d6d6),color-stop(100%,#cdcdcd));
-  background: -webkit-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
-  background: -moz-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
-  background: -o-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
-  background: -ms-linear-gradient(top,#d8d6d6 0,#cdcdcd 100%);
-  background: linear-gradient(top,#d8d6d6,#cdcdcd 100%);
+  background: -webkit-linear-gradient(top,#a8a8a8 0,#cdcdcd 100%);
+  background: -moz-linear-gradient(top,#a8a8a8 0,#cdcdcd 100%);
+  background: -o-linear-gradient(top,#a8a8a8 0,#cdcdcd 100%);
+  background: -ms-linear-gradient(top,#a8a8a8 0,#cdcdcd 100%);
+  background: linear-gradient(top,#a8a8a8,#cdcdcd 100%);
+}
+
+#cbsearch{
+  width: 160px;
+  margin-top: 5px;
+  outline: 0 none;
+  border: 1px solid #F1F1F1;
+  border-top-color: #ddd;
+  border-left-color: #ddd;
+  background: #F9F9F9;
+  color: #000;
+  padding: 4px 7px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+}
+
+.cal-btn{
+  display: none;
 }
 
 p,label,h1,h2,h3,h4{
@@ -584,6 +607,7 @@ tr.datagridoddrow:hover
 }
 /********************************Search input****************************/
 input.search-form{
+  width: 330px;
   display: inline-block !important;
   -webkit-border-radius: 4px !important;
   -moz-border-radius: 4px !important;
