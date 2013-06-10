@@ -16,14 +16,14 @@ class Login
     
    public function AdminLogin($username,$password)
    {
-       $sess = Session::getSesstion();
+       $sess = Session::GetSesstion();
        
-       $security = Security::getSecurity();
+       $security = Security::GetSecurity();
        
-       $db = Database::getDatabase();
+       $db = Database::GetDatabase();
        
-       $username = $security->xss_clean($username);
-       $password = $security->xss_clean($password);
+       $username = $security->Xss_Clean($username);
+       $password = $security->Xss_Clean($password);
        $password = $password = md5($password);
        $db->cmd = "SELECT * FROM `users` " .
                             "WHERE (`username`='$username') AND (`password`='$password') limit 1";
@@ -31,22 +31,22 @@ class Login
        if (mysql_num_rows($res)!=1) return false;
        
        $row = mysql_fetch_assoc($res);
-       $sess->set("login",true);
-       $sess->set("username",$row["username"]);
-       $sess->set("name",$row["name"]);
-       $sess->set("family",$row["family"]);       
+       $sess->Set("login",true);
+       $sess->Set("username",$row["username"]);
+       $sess->Set("name",$row["name"]);
+       $sess->Set("family",$row["family"]);       
        return true;
    } 
 	function LogOut()
 	{
-			$sess = Session::getSesstion();
-            return ($sess->delete("login") and $sess->delete("username") and $sess->delete("name") and $sess->delete("family"));
+			$sess = Session::GetSesstion();
+            return ($sess->Delete("login") and $sess->Delete("username") and $sess->Delete("name") and $sess->Delete("family"));
 	}	
 		
 	function IsLogged()
 	{
-		$sess = Session::getSesstion();
-		if ($sess->get("login")) 
+		$sess = Session::GetSesstion();
+		if ($sess->Get("login")) 
 		{
 			return true;
 		}	else return false;
