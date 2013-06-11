@@ -21,11 +21,12 @@
 	<?php
 	  include_once("./config.php");
 	  include_once("./classes/database.php");
+	  include_once("./lib/persiandate.php");
 	?>
 	<div class="container">
 		<header>
 			<div class="top">
-				<div class="time right"><p>شنبه ، 28 اردیبهشت 1392</p></div>
+				<div class="time right"><p><?php $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y'); echo "$datetime"; ?></p></div>
 				<div class="search left">
 					<form action="">
 						<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />

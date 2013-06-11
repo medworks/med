@@ -29,8 +29,4 @@
   define ('OS_ROOT', $_SERVER['DOCUMENT_ROOT']."/media");
   
   
-  /*
-  define ('SITE_ROOT', '');
-  define ('OS_ROOT', $_SERVER['DOCUMENT_ROOT']);
-  */
-  ?>
+?>
