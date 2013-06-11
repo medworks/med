@@ -79,7 +79,7 @@
 			<div class="widget-container">
 				<div class="widget-top">
 					<ul class="tabs posts-taps">
-						<li class="tabs active"><a href="#tab1">کارهای ما</a></li>
+						<li class="tabs"><a href="#tab1">کارهای ما</a></li>
 						<li class="tabs"><a href="#tab2">اخبار</a></li>
 						<li class="tabs"><a href="#tab3">تصاویر</a></li>
 						<li class="tabs"><a href="#tab4">پست ها</a></li>
