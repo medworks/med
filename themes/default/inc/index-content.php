@@ -122,7 +122,7 @@
 				<li class="first-news">
 					<div class="pic first-tab-pic">
 						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide2.jpg" alt="">
+							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
 							<span class="overlay"></span>
 						</a>
 					</div>
