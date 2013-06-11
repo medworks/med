@@ -16,8 +16,10 @@ class Login
     
    public function AdminLogin($username,$password)
    {
-       $sess = Session::GetSesstion();       
-       $security = Security::GetSecurity();       
+       $sess = Session::GetSesstion();
+       
+       $security = Security::GetSecurity();
+       
        $db = Database::GetDatabase();
        
        $username = $security->Xss_Clean($username);
@@ -25,10 +27,10 @@ class Login
        $password = $password = md5($password);
        $db->cmd = "SELECT * FROM `users` " .
                             "WHERE (`username`='$username') AND (`password`='$password') limit 1";
-       $res =$db->RunSQL();
-       if (mysql_num_rows($res)!=1) return false;
-       
-       $row = mysql_fetch_assoc($res);
+       $res = $db->RunSQL();	   
+	  // if ($res===false) return false;
+	   if (mysql_num_rows($res)!=1) return false; 
+       $row = mysql_fetch_array($res);
        $sess->Set("login",true);
        $sess->Set("username",$row["username"]);
        $sess->Set("name",$row["name"]);

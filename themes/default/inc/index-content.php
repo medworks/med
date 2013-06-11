@@ -119,15 +119,31 @@
 		</div>
 		<div class="cat-tabs-wrap" id="catab3">
 			<ul>
-				
+				<li class="first-news">
+					<div class="pic first-tab-pic">
+						<a href="#" title="">
+							<img src="./themes/default/images/main/others/slide2.jpg" alt="">
+							<span class="overlay"></span>
+						</a>
+					</div>
+				</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
 			</ul>
+			<div class="badboy"></div>
 		</div>
 		<div class="cat-tabs-wrap" id="catab4">
 			<ul>
 				
 			</ul>
+			<div class="badboy"></div>
 		</div>
-		<div class="cat-tabs-wrap" id="catab1"></div>
+		<div class="cat-tabs-wrap" id="catab1">
+			<ul></ul>
+			<div class="badboy"></div>
+		</div>
 	</div>
 </div>
 <?php 

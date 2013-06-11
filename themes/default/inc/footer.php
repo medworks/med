@@ -7,7 +7,7 @@
 					<ul>
 						<?php
 							$db = database::getDatabase();
-		  					$news = $db->SelectAll('news',NULL,NULL," ndate ASC");
+		  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 
 							for($i=0 ; $i<3 ; $i++){
 								echo "<li>
