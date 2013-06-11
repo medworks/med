@@ -250,5 +250,10 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
             $option.="</select>";
             //var_dump($option);
             return  $option;
-        }	  
+        }
+       function GetUserName($userid)
+	   {
+	      $db = Database::GetDatabase();
+		  return $db ->Select("users","username","ID = '{$userid}'")[0];
+	   }
 ?>

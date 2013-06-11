@@ -33,6 +33,7 @@ class Login
        $row = mysql_fetch_array($res);
        $sess->Set("login",true);
        $sess->Set("username",$row["username"]);
+	   $sess->Set("userid",$row["id"]);
        $sess->Set("name",$row["name"]);
        $sess->Set("family",$row["family"]);       
        return true;

@@ -4,15 +4,16 @@
 	include_once("../classes/messages.php");
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
-	include_once("../lib/persiandate.php");
+	include_once("../lib/persiandate.php");	
 	$db = Database::GetDatabase();
-	//$sess = Session::GetSesstion();	
+	$sess = Session::GetSesstion();	
+	$userid = $sess->Get("userid");
 	if ($_GET['item']!="newsmgr")	exit();	
     //$sess->Set("subject",$_POST["subject"]);
 	//$sess->Set("image",$_POST["image"]);
 	//$sess->Set("body",$_POST["detail"]);	
 	//$sess->Set("ndate",$_POST["ndate"]);
-	//$sess->Set("resource",$_POST["resource"]);	
+	//$sess->Set("resource",$_POST["resource"]);		
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
 	   date_default_timezone_set('Asia/Tehran');
@@ -52,9 +53,9 @@
 		}
 	}	
 	if ($_POST["mark"]=="savenews")
-	{
+	{	    
 		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
-		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'1'","'{$_POST[res]}'");		
+		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -74,7 +75,7 @@
 		                 "`image`"=>"'{$newname_site}'",
 						 "`body`"=>"'{$_POST[detail]}'",
 						 "`ndate`"=>"'{$ndatetime}'",
-						 "`userid`"=>"'1'",
+						 "`userid`"=>"'{$userid}'",
 						 "`resource`"=>"'{$_POST[res]}'");		
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
@@ -285,6 +286,7 @@ if ($_GET['act']=="mgr")
                                 {
                                         $rowsClass[] = "datagridoddrow";
                                 }
+								$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
                                 $rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
                                         "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
                                 $rows[$i]["delete"]=<<< del
@@ -304,8 +306,9 @@ del;
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",
+							"username"=>"کاربر",
                             "edit"=>"ویرایش",
-							"delete"=>"حذف", ), $rows, $colsClass, $rowsClass, 10,
+							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
                     
             }
