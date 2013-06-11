@@ -1,6 +1,5 @@
 <?php  
-  include_once("security.php");  
-    
+  include_once("security.php");      
 class Database
   {
     
