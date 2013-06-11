@@ -254,6 +254,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
        function GetUserName($userid)
 	   {
 	      $db = Database::GetDatabase();
-		  return $db ->Select("users","username","ID = '{$userid}'")[0];
+		  $row = $db ->Select("users","name,family","ID = '{$userid}'");
+		  return ($row["name"]." ".$row["family"]);
 	   }
 ?>
