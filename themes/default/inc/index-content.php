@@ -4,6 +4,10 @@
 		echo include_once GetPageName($_GET['item'],$_GET['act']);
 	}
 	else{
+
+	include_once("./classes/database.php");
+	include_once("./lib/persiandate.php");
+
 ?>
 <div class="content">
 	<!-- ***********Slideshow************ -->
@@ -104,6 +108,27 @@
 			});
 	  });
 	</script>
+	<!-- ***********tabs************ -->
+	<div class="box-right cat-box-content cat-box tab" id="cats-tabs-box">
+		<div class="cat-tabs-header">
+			<ul>
+				<li><a href="#catab3">کارهای ما</a></li>
+				<li><a href="#catab4">اخبار</a></li>
+				<li><a href="#catab1">تصاویر</a></li>
+			</ul>
+		</div>
+		<div class="cat-tabs-wrap" id="catab3">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="cat-tabs-wrap" id="catab4">
+			<ul>
+				
+			</ul>
+		</div>
+		<div class="cat-tabs-wrap" id="catab1"></div>
+	</div>
 </div>
 <?php 
 	}
