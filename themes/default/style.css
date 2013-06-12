@@ -413,18 +413,18 @@ a.ttip, a.tooldown{display:inline-block;}
 .cat-tabs-wrap li{
 	overflow:hidden;
 	padding: 5px 0;
-	width:286px;
+	width:206px;
 	float:right;
-	clear:right;
 }
 
-.cat-tabs-wrap li.first-news{
+.cat-tabs-wrap li.first-li{
 	padding:0;
 	width:310px;
 	float:right;
+	margin-left: 25px;
 }
 
-.cat-tabs-wrap li.first-news p.post-meta{
+.cat-tabs-wrap li.first-li p.post-meta{
 	margin:10px 0;
 }
 
@@ -432,19 +432,44 @@ a.ttip, a.tooldown{display:inline-block;}
 	padding: 0;
 }
 
-.content .tab .pic{
+.content .tab .cat-tabs-header li a{
+	font-size: 18px;
+}
+
+.content .tab li.first-li .pic{
 	position: relative;
 }
 
-.content .tab .pic  a:hover span{
-	opacity: 1;
+.content .tab li.first-li .pic  a:hover span{
+	opacity: 1;	
 }
 
-.content .tab .first-tab-pic img{
+.content .tab li.first-li .pic img{
 	width: 306px !important;
 	height: 144px !important;
 	padding: 2px !important;
 	background: #f3f3f3 !important;
+	margin-bottom: 10px;
+}
+
+.content .tab li.first-li h2{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.content .tab li.first-li p{
+	margin-bottom: 5px;
+}
+
+.content .tab li .pic img{
+	width: 54px !important;
+	height: 54px !important;
+	padding: 2px !important;
+}
+
+.content .tab li h2{
+	font-size: 17px;
+	margin-bottom: 10px;
 }
 /***************************************Header part**************************************/
 /************Top Header***************/
@@ -916,7 +941,7 @@ section.main-content .content .recent-works .works .scroll-item a img{
 	width: 130px;
 	height: 60px;
 	background: #fff;
-	padding: 4px;
+	padding: 2px;
 	margin-bottom: 15px;
 	-webkit-box-shadow: 0 0 2px #B5B5B5;
 	-moz-box-shadow: 0 0 2px #B5B5B5;
@@ -972,6 +997,78 @@ section.main-content .content .recent-works .works .scroll-nav a:hover{
 
 section.main-content .content .recent-works .works .scroll-nav a.activeSlide{
 	background:#666;
+}
+/*******Two columns*******/
+section.main-content .content .two-columns .box-right{
+	padding: 0;
+}
+
+section.main-content .content .two-columns .column1,
+section.main-content .content .two-columns .column2{
+	width: 290px;
+	margin-right: 30px;
+}
+
+section.main-content .content .two-columns .column1{
+	margin-right: 0;
+}
+
+section.main-content .content .two-columns li{
+	padding: 5px 0;
+	background: #f2f2f2;
+	border-bottom: 1px solid #eaeaea;
+	border-top: 1px solid #FFF;
+	overflow: hidden;
+}
+
+section.main-content .content .two-columns li .inner-content{
+	padding: 10px;
+}
+
+section.main-content .content .two-columns .pic img{
+	width: 58px !important;
+	height: 58px !important;
+}
+
+section.main-content .content .two-columns li h2{
+	float: none;
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
+section.main-content .content .two-columns li.first-li{
+	background: transparent;
+	border-bottom: 3px solid #eaeaea;
+	padding: 0;
+}
+
+section.main-content .content .two-columns li.first-li .pic{
+	position: relative;
+	margin-bottom: 10px;
+	float: none;
+}
+
+section.main-content .content .two-columns li.first-li img{
+	width: 264px !important;
+	height: 133px !important;
+}
+
+section.main-content .content .two-columns li.first-li .pic a:hover span{
+	opacity: 1;
+}
+
+section.main-content .content .two-columns li.first-li h2{
+	font-size: 20px;
+	float: none;
+	margin-bottom: 10px;
+}
+
+section.main-content .content .two-columns li.first-li .date{
+	margin-bottom: 10px;
+}
+
+section.main-content .content .two-columns li.first-li .detail{
+	margin-bottom: 10px;
 }
 /************Sidebar part*****************/
 section.main-content .sidebar{
@@ -1395,7 +1492,7 @@ section.main-content .content .pic img{
 	width: 158px;
 	height: 158px;
 	background: #fff;
-	padding: 4px;
+	padding: 2px;
 	-webkit-border-radius: 1px;
 	-moz-border-radius: 1px;
 	-ms-border-radius: 1px;
