@@ -29,12 +29,14 @@
       </div>
   		<div class="detail">
   			{$works[$i]["body"]}
+        <a href="?item=fullworks&act=do&wid={$works[$i]["id"]}" title="" class="button">توضیحات بیشتر</a>
   		</div>
-      <a href="?item=fullworks&act=do&wid={$works[$i]["id"]}" title="" class="button">توضیحات بیشتر</a>
       <div class='badboy'></div>
     </div>
 cd;
   }
-$html.=" </div></div> ";  
+
+$html.=" </div></div>";
+
 return $html;
 ?>

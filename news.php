@@ -29,8 +29,8 @@
       </div>
   		<div class="detail">
   			{$news[$i]["body"]}
+        <a href="?item=fullnews&act=do&wid={$news[$i]["id"]}" title="" class="button">توضیحات بیشتر</a>
   		</div>
-      <a href="?item=fullnews&act=do&wid={$news[$i]["id"]}" title="" class="button">توضیحات بیشتر</a>
       <div class='badboy'></div>
     </div>
 cd;
