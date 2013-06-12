@@ -17,7 +17,7 @@
                 <div class='line'></div>
                 <div class='badboy'></div>
                 ";  
-  foreach($news as $key => $post)				
+  foreach($news as $key => $post)
  {
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$post["userid"] = GetUserName($post["userid"]);
