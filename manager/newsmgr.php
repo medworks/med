@@ -9,12 +9,7 @@
 	$sess = Session::GetSesstion();	
 	$userid = $sess->Get("userid");
 	$overall_error = false;
-	if ($_GET['item']!="newsmgr")	exit();	
-    //$sess->Set("subject",$_POST["subject"]);
-	//$sess->Set("image",$_POST["image"]);
-	//$sess->Set("body",$_POST["detail"]);	
-	//$sess->Set("ndate",$_POST["ndate"]);
-	//$sess->Set("resource",$_POST["resource"]);		
+	if ($_GET['item']!="newsmgr")	exit();	   
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
 	   date_default_timezone_set('Asia/Tehran');
