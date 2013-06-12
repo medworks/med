@@ -257,6 +257,10 @@ a.ttip, a.tooldown{display:inline-block;}
 	border-top: 0 none;
 }
 
+.sidebar .tab .tabs-wrap li .pic{
+	margin-right: 1px;
+}
+
 .sidebar .tab .tabs-wrap li .pic img{
 	width: 50px;
 	height: 50px;
@@ -405,9 +409,11 @@ a.ttip, a.tooldown{display:inline-block;}
 
 .cat-tabs-header li.active{
 	background:#FFF;
-	box-shadow: 0 -1px 2px #d4d4d4;
-	-moz-box-shadow:0 -1px 2px #d4d4d4;
 	-webkit-box-shadow:0 -1px 2px #d4d4d4;
+	-moz-box-shadow:0 -1px 2px #d4d4d4;
+	-ms-box-shadow:0 -1px 2px #d4d4d4;
+	-o-box-shadow:0 -1px 2px #d4d4d4;
+	box-shadow:0 -1px 2px #d4d4d4;
 }
 
 .cat-tabs-wrap li{
@@ -438,6 +444,9 @@ a.ttip, a.tooldown{display:inline-block;}
 
 .content .tab li.first-li .pic{
 	position: relative;
+	width: 304px !important;
+	height: 144px !important;
+	margin-bottom: 15px;
 }
 
 .content .tab li.first-li .pic  a:hover span{
@@ -445,7 +454,7 @@ a.ttip, a.tooldown{display:inline-block;}
 }
 
 .content .tab li.first-li .pic img{
-	width: 306px !important;
+	width: 304px !important;
 	height: 144px !important;
 	padding: 2px !important;
 	background: #f3f3f3 !important;
@@ -1482,6 +1491,7 @@ section.main-content .content .time p{
 section.main-content .content .pic{
 	float: right;
 	margin-left: 20px;
+	margin-right: 1px;
 }
 
 section.main-content .content .pic a:hover{
