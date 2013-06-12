@@ -697,12 +697,14 @@ div.container header .main-menu > menu > li:first-child a{
 div.container header .main-menu menu li.active a{
 	background-color: #F88C00;
 	color: #fff;
-	height: 20px;
+	height: 24px;
 	border-right: 0 none;
 }
 
 div.container header .main-menu menu li.active{
-	border-right: 0 none; 
+	border-right: 0 none !important;
+	margin-top: 0;
+	height: 52px;
 }
 
 div.container header .main-menu menu li.active:first-child a{
@@ -1528,10 +1530,13 @@ section.main-content .content .detail{
 	padding-top: 10px;
 	font-size: 18px;
 	line-height: 1.2;
+	margin-right: 185px;
 }
 
 section.main-content .content .detail p{
 	text-align: right;
+	margin-bottom: 5px;
+	word-wrap: break-word;
 }
 /******************************Single pages************************************/
 .single-page .singlepage-box{
