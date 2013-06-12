@@ -43,28 +43,35 @@ include_once("./classes/messages.php");
 	}
 	function GetMessage($msgid)
 	{
-		$msg = Message::GetMessage();	
+		$msg = Message::GetMessage();
+		$result = "";
 		switch($msgid)
 		{
 			case 1:
-				return $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+				$result = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
 			break;	
 			case 2:
-				return $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+				$result = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
 			break;	
             case 3:
-				return $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+				$result = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
 			break;	
 			case 4:
-				return $msg->ShowError("لطفا فایل عکس را انتخاب نمایید");
+				$result = $msg->ShowError("لطفا فایل عکس را انتخاب نمایید");
 			break;	
 			case 5:
-				return $msg->ShowError("لطفا فیلد توضیحات را تکمیل نمایید");
+				$result = $msg->ShowError("لطفا فیلد توضیحات را تکمیل نمایید");
 			break;	
 			case 6:
-				return $msg->ShowInfo("عبارت مورد نظر یافت نشد");
+				$result = $msg->ShowInfo("عبارت مورد نظر یافت نشد");
 			break;	
 		}
+		$result .= <<<JAVA
+		<script language="javascript">
+			$("#message").delay(5000).fadeOut(500);
+		</script>
+JAVA;
+		return $result;
 	}
   
 function Pagination($itemsCount, $maxItemsInPage,
