@@ -8,6 +8,7 @@
 	$db = Database::GetDatabase();
 	$sess = Session::GetSesstion();	
 	$userid = $sess->Get("userid");
+	$overall_error = false;
 	if ($_GET['item']!="newsmgr")	exit();	
     //$sess->Set("subject",$_POST["subject"]);
 	//$sess->Set("image",$_POST["image"]);
@@ -25,8 +26,12 @@
 	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			header('location:?item=newsmgr&act=new&msg=4');
-			exit();
+			//header('location:?item=newsmgr&act=new&msg=4');
+			$_GET["item"] = "newsmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 4;
+			$overall_error = true;
+			//exit();
 		}
 		else
 		{
@@ -47,12 +52,15 @@
 			else
 			if (empty($_POST['detail']))
 			{
-			   header('location:?item=newsmgr&act=new&msg=5');
-			   exit();
+			   //header('location:?item=newsmgr&act=new&msg=5');
+				$_GET["item"] = "newsmgr";
+				$_GET["act"] = "new";
+				$_GET["msg"] = 5;
+			   $overall_error = true;
 			}			
 		}
 	}	
-	if ($_POST["mark"]=="savenews")
+	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
 		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
 		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
@@ -69,7 +77,7 @@
 		}  				 
 	}
     else
-	if ($_POST["mark"]=="editnews")
+	if (!$overall_error && $_POST["mark"]=="editnews")
 	{		
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$newname_site}'",
@@ -81,6 +89,16 @@
 		header('location:?item=newsmgr&act=mgr');
 	}
 
+	if ($overall_error)
+	{
+		$row = array("subject"=>$_POST['subject'],
+						 "body"=>$_POST['detail'],
+						 "ndate"=>$_POST['ndate'],
+						 "userid"=>$userid,
+						 "resource"=>$_POST['res']);
+	}
+	
+	
 if ($_GET['act']=="new")
 {
 	$editorinsert = "
@@ -154,7 +172,7 @@ $html=<<<cd
          <label for="subject">عنوان </label>
          <span>*</span>
        </p>    
-       <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row['subject']}'/> 
+       <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[subject]}'/> 
   	   <p>
          <label for="pic">عکس </label>
          <span>*</span>
@@ -164,11 +182,11 @@ $html=<<<cd
          <label for="detail">توضیحات </label>
          <span>*</span>
        </p>
-       <textarea cols="50" rows="10" name="detail" class="detail" id="detail" > {$row['body']}</textarea>
+       <textarea cols="50" rows="10" name="detail" class="detail" id="detail" > {$row[body]}</textarea>
   	   <p>
         <label for="sdate">تاریخ </label>
         <span>*</span><br /><br />
-        <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" value='{$row['ndate']}' />
+        <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" value='{$row[ndate]}' />
         <img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
