@@ -13,6 +13,9 @@ include_once("./classes/messages.php");
 			break;
             case 'about':
                 return "about.php";
+			break;
+			case 'contact':
+                return "contact.php";
 			break;	
             case 'works':
                 if ($act=="do") return "works.php";

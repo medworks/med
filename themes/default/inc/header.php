@@ -38,7 +38,7 @@
 				<div class="top-menu">
 					<menu class="menu">
 						<li><a href="./">صفحه اصلی</a></li>
-						<li><a href="#">درباره ما</a></li>
+						<li><a href="?item=about">درباره ما</a></li>
 						<li><a href="#">گالری تصاویر</a>
 							<menu>
 								<li><a href="#">گالری تصاویر 1</a></li>
@@ -57,7 +57,7 @@
 								<li><a href="#">خدمات 5</a></li>
 							</menu>
 						</li>
-						<li><a href="#">تماس با ما</a></li>
+						<li><a href="?item=contact">تماس با ما</a></li>
 					</menu>
 				</div>
 			</div>
@@ -78,8 +78,8 @@
 			<div class="badboy"></div>
 			<div class="main-menu">
 				<menu>
-					<li class="active"><a href="./"></a></li>
-					<li><a href="#">درباره ما</a></li>
+					<li><a href="./"></a></li>
+					<li><a href="?item=about">درباره ما</a></li>
 					<li><a href="?item=works&act=do">کارهای ما</a></li>
 					<li><a href="?item=news&act=do">اخبار</a></li>
 					<li><a href="#">گالری تصاویر</a>
@@ -100,7 +100,7 @@
 							<li><a href="#">خدماتر 5</a></li>
 						</menu>
 					</li>
-					<li><a href="#">تماس با ما</a></li>
+					<li><a href="?item=contact">تماس با ما</a></li>
 				</menu>
 			</div>
 		</header>
