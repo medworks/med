@@ -922,7 +922,7 @@ section.main-content .content .slideshow{
 
 section.main-content .content .recent-works .works{
 	position: relative;
-	padding: 6px;
+	padding: 0px;
 }
 
 section.main-content .content .recent-works .works .group_items{
@@ -947,7 +947,7 @@ section.main-content .content .recent-works .works .group_items .scroll-item:fir
 }
 
 section.main-content .content .recent-works .works .scroll-item a img{
-	width: 130px;
+	width: 120px;
 	height: 60px;
 	background: #fff;
 	padding: 2px;
@@ -983,6 +983,8 @@ section.main-content .content .recent-works .works .scroll-item p{
 
 section.main-content .content .recent-works .works .scroll-nav{
 	text-align:center;
+	background: #F7F7F7;
+	padding: 5px;
 }
 
 section.main-content .content .recent-works .works .scroll-nav a{
@@ -1492,6 +1494,7 @@ section.main-content .content .pic{
 	float: right;
 	margin-left: 20px;
 	margin-right: 1px;
+	position: relative;
 }
 
 section.main-content .content .pic a:hover{
