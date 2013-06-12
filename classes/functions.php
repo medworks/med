@@ -112,15 +112,15 @@ function Pagination($itemsCount, $maxItemsInPage,
 		{
 			if ($i == $currentPageNo)
 			{
-				$code .= '<div><span class="pagenumber_selected">' . $i . '</span></div>';
+				$code .= '<div><span class="pagenumber_selected"><p>' . $i . '</p></span></div>';
 			}
 			else
 			{
 				$link = str_replace("%PN%", $i, $linkFormat);
-				$code .= '<div><a href="' . $link . '" class="pagenumber">' . $i . '</a></div>';
+				$code .= '<div><a href="' . $link . '" class="pagenumber"><p>' . $i . '</p></a></div>';
 			}
 		}
-		$code .= $nextPage . $lastPage . "<div class='clear'></div></div>";
+		$code .= $nextPage . $lastPage . "<div class='badboy'></div></div>";
 		return $code;
 	}
 
