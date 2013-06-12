@@ -1,5 +1,4 @@
-<?php
-	include_once("./themes/default/inc/header.php");
+<?php	
 	include_once("./config.php");
 	include_once("./lib/persiandate.php");
 	include_once("./classes/database.php");	
