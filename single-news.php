@@ -11,7 +11,7 @@ $html=<<<ht
 	<div class="content single-page">
 	<div class="title-menu">
 		<menu>
-			<li><a href="./">ص�?حه اصلی</a><span>/</span></li>
+			<li><a href="./">صفحه اصلی</a><span>/</span></li>
 			<li><a href="?item=news&act=do">اخبار</a><span>/</span></li>
 			<li><p>{$news[subject]}</p></li>
 		</menu>
