@@ -73,7 +73,7 @@
 		  });
 		});
 	</script>
-	<!-- ***********Tabed menu************ -->
+	<!-- ***********Tabed menu************ 
 	<div class="widget" id="tabbed-widget">
 		<div class="box-left tab">
 			<div class="widget-container">
@@ -88,7 +88,7 @@
 				<div class="tabs-wrap" id="tab1">
 					<ul>
 						<?php
-							$db = database::getDatabase();
+							/* $db = database::getDatabase();
   							$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
   							 for($i=0 ; $i<5 ; $i++){
   							 	$sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
@@ -111,14 +111,14 @@
     										</span>
     									</div>
     								  </li>";
-  							 }
+  							 }*/
 						?>
 					</ul>
 				</div>
 				<div class="tabs-wrap" id="tab2">
 					<ul>
 						<?php
-							$db = database::getDatabase();
+							/*$db = database::getDatabase();
   							$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
   							 for($i=0 ; $i<5 ; $i++){
   							 	$ndate = ToJalali($news[$i]["sdate"]," l d F  Y ");
@@ -137,7 +137,7 @@
 											</span>
 										</div>
     								  </li>";
-  							 }
+  							 }*/
 						?>
 					</ul>
 				</div>
@@ -147,6 +147,7 @@
 			<div class="badboy"></div>
 		</div>
 	</div>
+	-->
 	<!-- ***********Subscribe************ -->
 	<div class="subscrib main-box">
 		<h2>اشتراک</h2>

@@ -108,7 +108,7 @@
 			});
 	  });
 	</script>
-	<!-- ***********2 columns************ -->
+	<!-- ***********2 columns************ 
 		<div class="two-columns">
 			<div class="column1 right main-box">
 				<h2>کارهای ما</h2>
@@ -275,76 +275,14 @@
 			</div>
 			<div class="badboy"></div>
 		</div>
+		-->
 	<!-- ***********tabs************ -->
 	<div class="box-right cat-box-content cat-box tab" id="cats-tabs-box">
 		<div class="cat-tabs-header">
 			<ul>
-				<li><a href="#catab3">کارهای ما</a></li>
 				<li><a href="#catab4">اخبار</a></li>
 				<li><a href="#catab1">تصاویر</a></li>
 			</ul>
-		</div>
-		<div class="cat-tabs-wrap" id="catab3">
-			<ul>
-				<li class="first-li">
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-							<span class="overlay"></span>
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-					<div class="detial"><p>نتظنبت منضتبنشیت شت مکشتمک ت نتظنبت منضتبنشیت شت مکشتمک ت نتظنبت منضتبنشیت شت مکشتمک ت</p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-			</ul>
-			<div class="badboy"></div>
 		</div>
 		<div class="cat-tabs-wrap" id="catab4">
 			<ul>
