@@ -20,24 +20,25 @@
   foreach($news as $key => $post)				
  {
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
+	$post["userid"] = GetUserName($post["userid"]);
 	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
-			<a href="?item=fullnews&act=do&wid={$news[$i]["id"]}" title='{$news[$i]["subject"]}'><p>{$news[$i]["subject"]}</p></a>
+			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
 			<p><span>تاریخ ثبت:</span> {$ndate}</p>  
-			<p><span>توسط:</span> {$news[$i]["userid"]} </p>
-			<p><span>منبع:</span> {$news[$i]["resource"]}</p>  
+			<p><span>توسط:</span> {$post["userid"]} </p>
+			<p><span>منبع:</span> {$post["resource"]}</p>  
 		</div>
 		<div class='badboy'></div>
 		<div class="pic">
-			<a href="?item=fullnews&act=do&wid={$news[$i]["id"]}" title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}' alt='{$news[$i]["subject"]}'></a>
+			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
 		</div>
   		<div class="detail">
-  			{$news[$i]["body"]}
+  			{$post["body"]}
   		</div>
-		<a href="?item=fullnews&act=do&wid={$news[$i]["id"]}" title="" class="button">توضیحات بیشتر</a>
+		<a href="?item=fullnews&act=do&wid={$post["id"]}" title="" class="button">توضیحات بیشتر</a>
 		<div class='badboy'></div>
 	   </div>
 cd;
