@@ -96,31 +96,31 @@ function Pagination($itemsCount, $maxItemsInPage,
 		if ($currentPageNo > 1)
 		{
 			$link = str_replace("%PN%", 1, $linkFormat);
-			$firstPage = '<td class="spriteimg" id="firstPage"><a href="' . $link . '" class="pagenumber"></a></td>';
+			$firstPage = '<div class="firstPage"><a href="' . $link . '" class="pagenumber"></a></div>';
 			$link = str_replace("%PN%", $currentPageNo - 1, $linkFormat);
-			$prevPage = '<td class="spriteimg" id="prevPage"><a href="' . $link . '" class="pagenumber"></a></td>';
+			$prevPage = '<div class="prevPage"><a href="' . $link . '" class="pagenumber"></a></div>';
 		}
 		if ($currentPageNo < $pageCount)
 		{
 			$link = str_replace("%PN%", $currentPageNo + 1, $linkFormat);
-			$nextPage = '<td class="spriteimg" id="nextPage"><a href="' . $link . '" class="pagenumber"></a></td>';
+			$nextPage = '<div class="nextPage"><a href="' . $link . '" class="pagenumber"></a></div>';
 			$link = str_replace("%PN%", $pageCount, $linkFormat);
-			$lastPage = '<td class="spriteimg" id="lastPage"><a href="' . $link . '" class="pagenumber"></a></td>';
+			$lastPage = '<div class="lastPage"><a href="' . $link . '" class="pagenumber"></a></div>';
 		}
-		$code = '<center><table dir="ltr" border="0" style="padding-top:10px;padding-bottom:10px;"><tr>' . $firstPage . $prevPage;
+		$code = "<div class='pagination'> {$firstPage}{$prevPage}";
 		for($i = $left; $i <= $right; $i++)
 		{
 			if ($i == $currentPageNo)
 			{
-				$code .= '<td><span class="pagenumber_selected">' . $i . '</span></td>';
+				$code .= '<div><span class="pagenumber_selected">' . $i . '</span></div>';
 			}
 			else
 			{
 				$link = str_replace("%PN%", $i, $linkFormat);
-				$code .= '<td><a href="' . $link . '" class="pagenumber">' . $i . '</a></td>';
+				$code .= '<div><a href="' . $link . '" class="pagenumber">' . $i . '</a></div>';
 			}
 		}
-		$code .= $nextPage . $lastPage . "</tr></table></center>";
+		$code .= $nextPage . $lastPage . "<div class='clear'></div></div>";
 		return $code;
 	}
 
