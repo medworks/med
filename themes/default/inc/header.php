@@ -22,11 +22,16 @@
 	  include_once("./config.php");
 	  include_once("./classes/database.php");
 	  include_once("./lib/persiandate.php");
-	?>
-	<div class="container">
+
+	  $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
+	  $db = database::getDatabase();
+  	  $news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+
+	  $html=<<<cd
+	  	<div class="container">
 		<header>
 			<div class="top">
-				<div class="time right"><p><?php $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y'); echo "$datetime"; ?></p></div>
+				<div class="time right"><p> {$datetime} </p></div>
 				<div class="search left">
 					<form action="">
 						<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
@@ -104,19 +109,23 @@
 				</menu>
 			</div>
 		</header>
+
 		<section class="br-news">
 			<span class="right">خبرهای اخیر</span>
 			<div class="news right">
 				<ul>
-					<?php
-						$db = database::getDatabase();
-	  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
-
-						for($i=0 ; $i<9 ; $i++){
-							$body= substr($news[$i]["body"],3,60);
-							echo "<li><a href='#' title='{$news[$i]["subject"]}'>$body...</a></li>";
-						}
-					?>
+cd;
+					
+			for($i=0 ; $i<5 ; $i++){
+				$body= substr($news[$i]["body"],0,60);
+				$body= strip_tags($body);
+				// echo "<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$body</a></li>";
+				$html.=<<<cd
+					<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$body</a></li>
+cd;
+			}
+					
+			$html.=<<<cd
 				</ul>
 				<script type="text/javascript">
 					jQuery(document).ready(function(){
@@ -128,3 +137,6 @@
 		</section>
 		<!-- Start of Content Part -->
 		<section class="main-content">
+cd;
+echo $html;
+?>
