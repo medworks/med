@@ -20,7 +20,7 @@ $html=<<<ht
 	</div>
 	<div class="box-right singlepage-box">
 		<div class="image">
-			<img src={$news[image]} alt={$news[subject]} />
+			<img src='{$news[image]}' alt='{$news[subject]}' />
 		</div>
 		<div class="tit-da-de">
 			<div class="title">

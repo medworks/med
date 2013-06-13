@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel="stylesheet" href="./themes/default/1styles.css" />
-	<link rel="stylesheet" href="./themes/default/style.css" />
+	<link rel="stylesheet" href="themes/default/1styles.css" />
+	<link rel="stylesheet" href="themes/default/style.css" />
 
-	<script src="./lib/js/jquery.js" type="text/javascript"></script>
-	<script src="./lib/js/jquery.cycle.all.js" type="text/javascript"></script>
-	<script src="./lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
-	<script src="./lib/js/jquery.validationEngine.js" type="text/javascript"></script>	
-	<script src="./themes/default/js/script.js" type="text/javascript"></script>
+	<script src="lib/js/jquery.js" type="text/javascript"></script>
+	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
+	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
+	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>	
+	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
-		<script src="./lib/js/html5shiv.js"></script>
-		<script src="./lib/js/selectivizr-min.js"></script>
+		<script src="lib/js/html5shiv.js"></script>
+		<script src="lib/js/selectivizr-min.js"></script>
 	<![endif]-->
-	<link rel="Shortcut Icon" href="./themes/default/favicon.ico" />
+	<link rel="Shortcut Icon" href="themes/default/favicon.ico" />
 </head>
 <body>
 	<?php
