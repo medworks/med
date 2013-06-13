@@ -8,12 +8,12 @@
 						<?php
 							$db = database::getDatabase();
 		  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
-
+		  					$ndate = ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m"); 
 							for($i=0 ; $i<3 ; $i++){
 								echo "<li>
-										<div class='pic'><a href='#''><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
-										<h3><a href='#'>{$news[$i]["subject"]}</a></h3>
-										<span class='date'>{$news[$i]["ndate"]}</span>
+										<div class='pic'><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
+										<h3><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
+										<span class='date'>{$ndate}</span>
 									</li>";
 							}
 						?>
@@ -51,13 +51,15 @@
 						<?php
 							$db = database::getDatabase();
 		  					$works = $db->SelectAll('works',NULL,NULL," sdate DESC");
+		  					$sdate = ToJalali($works[$i]["sdate"]," l d F  Y"); 
+		  					$fdate = ToJalali($works[$i]["fworksdate"]," l d F  Y"); 
 
 							for($i=0 ; $i<3 ; $i++){
 								echo "<li>
-										<div class='pic'><a href='#''><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
-										<h3><a href='#'>{$works[$i]["subject"]}</a></h3>
-										<span class='date'>{$works[$i]["sdate"]}</span>
-										<span class='date'>{$works[$i]["fdate"]}</span>
+										<div class='pic'><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
+										<h3><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
+										<span class='date'>{$sdate}</span>
+										<span class='date'>{$fdate}</span>
 									</li>";
 							}
 						?>

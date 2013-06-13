@@ -20,7 +20,7 @@
 
   $html.="</h2><div class='line'></div>
   <div class='badboy'></div>";  
-  
+
   foreach($news as $key => $post)
  {
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
@@ -40,14 +40,14 @@
 		</div>
 		<div class='badboy'></div>
 		<div class="pic">
-			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
+			<a href="?item=fullnews&act=do&wid={$post[id]}" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
 		</div>
   		<div class="detail">
   			<p>{$body}</p>
 cd;
       if (mb_strlen($body)>500){
       $html.=<<<cd
-      <a href="?item=fullnews&act=do&wid={$post["id"]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+      <a href="?item=fullnews&act=do&wid={$post[id]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
 cd;
       }
       $html.=<<<cd
