@@ -23,7 +23,7 @@
 
   foreach($news as $key => $post)
  {
-	$ndate = ToJalali($news["ndate"]," l d F  Y ");
+	$ndate = ToJalali($news["ndate"]," l d F  Y ساعت H:m");
 	$post["userid"] = GetUserName($post["userid"]);
   $body= $post["body"];
   $body= strip_tags($body);
@@ -34,7 +34,7 @@
 			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
-			<p><span>تاریخ ثبت:</span> {$ndate}</p>  
+			<p><span>زمان ثبت:</span> {$ndate}</p>  
 			<p><span>توسط:</span> {$post["userid"]} </p>
 			<p><span>منبع:</span> {$post["resource"]}</p>  
 		</div>
