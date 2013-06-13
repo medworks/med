@@ -6,6 +6,8 @@
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$news[userid] = GetUserName($news["userid"]);
+	$body= $news['body'];
+	$body= strip_tags($body);
 $html=<<<ht
 	<div class="content single-page">
 	<div class="title-menu">
@@ -30,7 +32,7 @@ $html=<<<ht
 	        <p><span>منبع: {$news[resource]}</span></p>  
 			</div>
 			<div class="detail">
-				{$news[body]}
+				<p>{$body}</p>
 			</div>
 		</div>
 	</div>

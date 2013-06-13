@@ -21,6 +21,9 @@
  {
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$post["userid"] = GetUserName($post["userid"]);
+  $body= $post["body"];
+  $body= strip_tags($body);
+  $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;
 	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
@@ -36,9 +39,15 @@
 			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
 		</div>
   		<div class="detail">
-  			{$post["body"]}
+  			<p>{$body}</p>
+cd;
+      if (mb_strlen($body)>500){
+      $html.=<<<cd
+      <a href="?item=fullnews&act=do&wid={$post["id"]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+cd;
+      }
+      $html.=<<<cd
   		</div>
-		<a href="?item=fullnews&act=do&wid={$post["id"]}" title="" class="button">توضیحات بیشتر</a>
 		<div class='badboy'></div>
 	   </div>
 cd;

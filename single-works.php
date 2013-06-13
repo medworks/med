@@ -6,6 +6,8 @@
  	$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
 	$sdate = ToJalali($works["sdate"]," l d F  Y ");
 	$fdate = ToJalali($works["fdate"]," l d F  Y ");
+	$body= $works['body'];
+	$body= strip_tags($body);
 $html=<<<ht
 	<div class="content single-page">
 		<div class="title-menu">
@@ -63,9 +65,9 @@ $html=<<<ht
 						</li>
 					</ul>
 				</div>
-				{$works[body]}
-				<div class="badboy"></div>
+				<p>{$body}</p>
 			</div>
+			<div class="badboy"></div>
 		</div>
 	</div>
 </div>

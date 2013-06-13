@@ -118,7 +118,7 @@
 					for($i=0 ; $i<5 ; $i++){
 						$body= $news[$i]["body"];
 						$body= strip_tags($body);
-						$body= (mb_strlen($body))>60?mb_substr($body,0,40,"UTF-8")."...":$body;
+						$body= (mb_strlen($body)>40) ? mb_substr($body,0,40,"UTF-8")."..." : $body;
 						echo "<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$body</a></li>";
 					}
 				?>

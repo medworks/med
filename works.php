@@ -19,6 +19,9 @@
   foreach($works as $key => $post){
    $sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
    $fdate = ToJalali($works[$i]["fdate"]," l d F  Y ");
+   $body= $post["body"];
+   $body= strip_tags($body);
+   $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;
    $html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
@@ -33,9 +36,15 @@
         <a href="?item=fullworks&act=do&wid={$post[id]}" title='{$post[subject]}'><img src='{$post[image]}' alt='{$post[subject]}'></a>
 		</div>
   		<div class="detail">
-  			{$post[body]}
-        <a href="?item=fullworks&act=do&wid={$post[id]}" title="" class="button">توضیحات بیشتر</a>
-  		</div>
+  			<p>{$body}</p>
+cd;
+      if(mb_strlen($body)>500){
+      $html.=<<<cd
+      <a href="?item=fullworks&act=do&wid={$post[id]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+cd;
+      }
+  		$html.=<<<cd
+      </div>
 		<div class='badboy'></div>
 		</div>
 cd;

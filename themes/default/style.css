@@ -1530,12 +1530,11 @@ section.main-content .content .detail{
 	padding-top: 10px;
 	font-size: 18px;
 	line-height: 1.2;
-	margin-right: 185px;
 }
 
 section.main-content .content .detail p{
 	text-align: right;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	word-wrap: break-word;
 }
 /******************************Single pages************************************/
