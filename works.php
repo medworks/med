@@ -9,12 +9,15 @@
   $count = $maxItemsInPage;
   $works = $db->SelectAll("works","*",null,"fdate DESC",$from,$count);  
   $itemsCount = $db->CountAll("works");//count($works);
-  $html = " <div class='content'>
+  $html = "<div class='content'>
               <div class='main-box'>
-                <h2>کارهای ما</h2>
-                <div class='line'></div>
-                <div class='badboy'></div>
-                ";
+                <h2>کارهای ما ";
+                if($_GET["pid"]>1){
+                  $html.="<span>(صفحه {$_GET[pid]})</span>";
+                }
+
+  $html.="</h2><div class='line'></div>
+  <div class='badboy'></div>";
 
   foreach($works as $key => $post){
    $sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");

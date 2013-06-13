@@ -832,6 +832,11 @@ section.br-news .news ul a:hover{
 	margin-left: 10px;
 }
 
+.main-box h2 span{
+	color: #ccc;
+}
+
+
 .main-box .line{
 	background: url('images/main/stripe.png') repeat-x;
 	height: 12px;

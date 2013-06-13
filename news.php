@@ -13,10 +13,14 @@
   $itemsCount = $db->CountAll("news");//count($news);
   $html = " <div class='content'>
               <div class='main-box'>
-                <h2>اخبار</h2>
-                <div class='line'></div>
-                <div class='badboy'></div>
-                ";  
+                <h2>اخبار ";
+                if ($_GET["pid"]>1){
+                  $html.="<span>(صفحه {$_GET[pid]})</span>";
+                }
+
+  $html.="</h2><div class='line'></div>
+  <div class='badboy'></div>";  
+  
   foreach($news as $key => $post)
  {
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
