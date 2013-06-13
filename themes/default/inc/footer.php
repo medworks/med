@@ -101,14 +101,14 @@
 			</div>
 			<div class="social right">
 				<ul>
-					<li><a href="#" class="ttip" original-title="Rss"><img src="./themes/default/images/main/rss.png" alt="Rss"></a></li>
-					<li><a href="#" class="ttip" original-title="Facebook"><img src="./themes/default/images/main/facebook.png" alt="Facebook"></a></li>
-					<li><a href="#" class="ttip" original-title="Twitter"><img src="./themes/default/images/main/twitter.png" alt="Twitter"></a></li>
-					<li><a href="#" class="ttip" original-title="Pinterest"><img src="./themes/default/images/main/pinterest.png" alt="Pinterest"></a></li>
-					<li><a href="#" class="ttip" original-title="Dribbble"><img src="./themes/default/images/main/dribbble.png" alt="Dribbble"></a></li>
-					<li><a href="#" class="ttip" original-title="Youtube"><img src="./themes/default/images/main/youtube.png" alt="Youtube"></a></li>
-					<li><a href="#" class="ttip" original-title="Behance"><img src="./themes/default/images/main/behance.png" alt="Behance"></a></li>
-					<li><a href="#" class="ttip" original-title="Instagram"><img src="./themes/default/images/main/instagram.png" alt="Instagram"></a></li>
+					<li><a href="#" class="ttip" original-title="Rss"><img src="themes/default/images/main/rss.png" alt="Rss"></a></li>
+					<li><a href="#" class="ttip" original-title="Facebook"><img src="themes/default/images/main/facebook.png" alt="Facebook"></a></li>
+					<li><a href="#" class="ttip" original-title="Twitter"><img src="themes/default/images/main/twitter.png" alt="Twitter"></a></li>
+					<li><a href="#" class="ttip" original-title="Pinterest"><img src="themes/default/images/main/pinterest.png" alt="Pinterest"></a></li>
+					<li><a href="#" class="ttip" original-title="Dribbble"><img src="themes/default/images/main/dribbble.png" alt="Dribbble"></a></li>
+					<li><a href="#" class="ttip" original-title="Youtube"><img src="themes/default/images/main/youtube.png" alt="Youtube"></a></li>
+					<li><a href="#" class="ttip" original-title="Behance"><img src="themes/default/images/main/behance.png" alt="Behance"></a></li>
+					<li><a href="#" class="ttip" original-title="Instagram"><img src="themes/default/images/main/instagram.png" alt="Instagram"></a></li>
 				</ul>
 			</div>
 			<div class="badboy"></div>
