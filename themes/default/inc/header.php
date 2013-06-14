@@ -24,7 +24,7 @@
 	  include_once("./lib/persiandate.php");
 
 	  $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
-	  $db = database::getDatabase();
+	  $db = database::GetDatabase();
   	  $news = $db->SelectAll('news',NULL,NULL," ndate DESC");
   	?>
   <div class="container">

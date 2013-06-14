@@ -1,10 +1,13 @@
 <!-- ****************Content (Right) part****************** -->
 <?php
 	if (GetPageName($_GET['item'],$_GET['act'])){
+	 // echo "param is :",$_GET['item'],"<->",$_GET['act'];
 		echo include_once GetPageName($_GET['item'],$_GET['act']);
+		//exit();
 	}else{
 		include_once("./classes/database.php");
 		include_once("./lib/persiandate.php");
+		$db = database::GetDatabase();
 
 $html="<div class='content'>
 		<!-- ***********Slideshow************ -->
@@ -74,8 +77,7 @@ $html.=<<<cd
 		<div class="works box-right">
 			<div id="slideshow-rec">
 cd;
-				
-				$db = database::GetDatabase();
+								
 				$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
 				for($i=0 ; $i<count($works) ; $i++){
 					$sdate= ToJalali($works[$i]["sdate"]," l d F  Y");
@@ -294,7 +296,7 @@ $html.=<<<cd
 		<div class="cat-tabs-wrap" id="catab4">
 			<ul>
 cd;
-				$db = database::GetDatabase();
+				
 				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 				$ndate = ToJalali($news[0]["ndate"]," l d F  Y");
 $html.=<<<cd

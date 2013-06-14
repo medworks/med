@@ -6,7 +6,7 @@
 				<div class="content">
 					<ul>
 						<?php
-							$db = database::getDatabase();
+							$db = database::GetDatabase();
 		  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 							for($i=0 ; $i<3 ; $i++){
 		  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
@@ -49,7 +49,7 @@
 				<div class="content">
 					<ul>
 						<?php
-							$db = database::getDatabase();
+							$db = database::GetDatabase();
 		  					$works = $db->SelectAll('works',NULL,NULL," sdate DESC");
 		  					
 							for($i=0 ; $i<3 ; $i++){
