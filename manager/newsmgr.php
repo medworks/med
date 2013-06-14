@@ -288,32 +288,31 @@ if ($_GET['act']=="mgr")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all")?$db->CountAll("news"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("news"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["ndate"] =ToJalali($rows[$i]["ndate"]," l d F  Y ");
-                              //  $rows[$i]["option"] =$rows[$i]["option"];
-                                if ($i % 2==0)
-                                 {
-                                        $rowsClass[] = "datagridevenrow";
-                                 }
-                                else
-                                {
-                                        $rowsClass[] = "datagridoddrow";
-                                }
-								$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-                                $rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
-                                        "style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
-                                $rows[$i]["delete"]=<<< del
-                                <a href="javascript:void(0)"
-                                onclick="DelMsg('{$rows[$i]['id']}',
-                                    'از حذف این خبر اطمینان دارید؟',
-                                '?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
-                                 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
+                $rows[$i]["ndate"] =ToJalali($rows[$i]["ndate"]," l d F  Y ");                            
+				if ($i % 2==0)
+				 {
+						$rowsClass[] = "datagridevenrow";
+				 }
+				else
+				{
+						$rowsClass[] = "datagridoddrow";
+				}
+				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
+				$rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
+						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["delete"]=<<< del
+				<a href="javascript:void(0)"
+				onclick="DelMsg('{$rows[$i]['id']}',
+					'از حذف این خبر اطمینان دارید؟',
+				'?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
+				 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
 
