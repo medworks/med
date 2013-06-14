@@ -2,17 +2,15 @@
 <?php
 	if (GetPageName($_GET['item'],$_GET['act'])){
 		echo include_once GetPageName($_GET['item'],$_GET['act']);
-	}
-	else{
+	}else{
+		include_once("./classes/database.php");
+		include_once("./lib/persiandate.php");
 
-	include_once("./classes/database.php");
-	include_once("./lib/persiandate.php");
-
-?>
-<div class="content">
-	<!-- ***********Slideshow************ -->
-	<div id="ei-slider" class="slideshow ei-slider">
-		<ul class="ei-slider-large">
+$html="<div class='content'>
+		<!-- ***********Slideshow************ -->
+		<div id='ei-slider' class='slideshow ei-slider'>
+			<ul class='ei-slider-large'>";
+$html.=<<<cd
 			<li>
 				<img src="./themes/default/images/main/others/slide1.jpg" alt="">
 				<div class="ei-title">
@@ -41,13 +39,17 @@
 					<h3>جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... </h3>
 				</div>
 			</li>
-		</ul>
-		<ul class="ei-slider-thumbs">
+cd;
+		$html.="</ul>
+		<ul class='ei-slider-thumbs'>";
+$html.=<<<cd
 			<li class="ei-slider-element"></li>
 			<li><a href="#"></a><img src="./themes/default/images/main/others/slide1.jpg" alt=""></li>
 			<li><a href="#"></a><img src="./themes/default/images/main/others/slide2.jpg" alt=""></li>
 			<li><a href="#"></a><img src="./themes/default/images/main/others/slide3.jpg" alt=""></li>
 			<li><a href="#"></a><img src="./themes/default/images/main/others/slide4.jpg" alt=""></li>
+cd;
+$html.=<<<cd
 		</ul>
 	</div>
 	<script type="text/javascript">
@@ -71,19 +73,24 @@
 		<div class="badboy"></div>
 		<div class="works box-right">
 			<div id="slideshow-rec">
-				<?php
-					$db = database::getDatabase();
-						$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
-					for($i=0 ; $i<count($works) ; $i++){
-						echo "<div class='scroll-item'>
-								<a href='#' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}' alt='{$works[$i]["subject"]}'></a>
-								<h3><a href='#'>{$works[$i]["subject"]}</a></h3>
-								<p><span>شروع: </span>{$works[$i]["sdate"]}</p><br />
-								<p><span>پایان: </span>{$works[$i]["fdate"]}</p>
-							  </div>";
-					}
+cd;
+				
+				$db = database::GetDatabase();
+				$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
+				for($i=0 ; $i<count($works) ; $i++){
+					$sdate= ToJalali($works[$i]["sdate"]," l d F  Y");
+					$fdate= ToJalali($works[$i]["fdate"]," l d F  Y");
+$html.=<<<cd
+					<div class='scroll-item'>
+						<a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
+						<h3><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h3>
+						<p><span>شروع: </span>{$sdate}</p><br />
+						<p><span>پایان: </span>{$fdate}</p>
+					  </div>
+cd;
+				}
 
-				?>
+$html.=<<<cd
 			</div>
 			<div class="badboy"></div>
 			<div id="nav" class="scroll-nav"></div>
@@ -286,74 +293,57 @@
 		</div>
 		<div class="cat-tabs-wrap" id="catab4">
 			<ul>
+cd;
+				$db = database::GetDatabase();
+				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+				$ndate = ToJalali($news[0]["ndate"]," l d F  Y");
+$html.=<<<cd
 				<li class="first-li">
 					<div class="pic first-tab-pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
+						<a href="?item=fullworks&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">
+							<img src="{$news[0][image]}" alt="{$news[0][subject]}">
 							<span class="overlay"></span>
 						</a>
 					</div>
 					<h2>
-						<a href="#" title="">پروژه اول</a>
+						<a href="?item=fullworks&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">{$news[0][subject]}</a>
 					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-					<div class="detial"><p>نتظنبت منضتبنشیت شت مکشتمک ت نتظنبت منضتبنشیت شت مکشتمک ت نتظنبت منضتبنشیت شت مکشتمک ت</p></div>
+					<div class="date"><p><span>{$ndate}</span></p></div>
+					<div class="detial"><p>{$news[0][body]}</p></div>
 				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#" title="">
-							<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-						</a>
-					</div>
-					<h2>
-						<a href="#" title="">پروژه اول</a>
-					</h2>
-					<div class="date"><p><span>یکشنبه 1392 12</span></p></div>
-				</li>
+cd;
+				for($i=1 ; $i<5 ; $i++){
+					$ndate= ToJalali($news[$i]["ndate"]," l d F  Y");
+$html.=<<<cd
+					<li>
+						<div class="pic">
+							<a href="?item=fullworks&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">
+								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}">
+							</a>
+						</div>
+						<h2>
+							<a href="?item=fullworks&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a>
+						</h2>
+						<div class="date"><p><span>$ndate</span></p></div>
+					</li>				
+cd;
+				}
+$html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
 			</ul>
 			<div class="badboy"></div>
 		</div>
 		<div class="cat-tabs-wrap" id="catab1">
-			<ul></ul>
+			<ul>
+cd;
+$html.=<<<cd
+			</ul>
 			<div class="badboy"></div>
 		</div>
 	</div>
 </div>
-<?php 
-	}
+cd;
+ 	}
+echo $html;
 ?>
