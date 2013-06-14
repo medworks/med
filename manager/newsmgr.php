@@ -267,7 +267,13 @@ if ($_GET['act']=="mgr")
 				"ndate DESC",
 				$_GET["pageNo"]*10,
 				10);
-			if (!$rows) header("Location:?item=newsmgr&act=mgr&msg=6");
+			if (!$rows) 
+			{					
+				$_GET['item'] = "newsmgr";
+				$_GET['act'] = "mgr";
+				$_GET['msg'] = 6;				
+				//header("Location:?item=newsmgr&act=mgr&msg=6");
+			}
 		
 	}
 	else
@@ -282,7 +288,7 @@ if ($_GET['act']=="mgr")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =$db->CountAll("news");
+                $rowCount =($_GET["rec"]=="all")?$db->CountAll("news"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
