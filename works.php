@@ -20,8 +20,8 @@
   <div class='badboy'></div>";
 
   foreach($works as $key => $post){
-   $sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
-   $fdate = ToJalali($works[$i]["fdate"]," l d F  Y ");
+   $sdate = ToJalali($post["sdate"]," l d F  Y ");
+   $fdate = ToJalali($post["fdate"]," l d F  Y ");
    $body= $post["body"];
    $body= strip_tags($body);
    $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;

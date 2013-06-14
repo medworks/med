@@ -21,14 +21,13 @@
   $html.="</h2><div class='line'></div>
   <div class='badboy'></div>";  
 
-  foreach($news as $key => $post)
- {
-	$ndate = ToJalali($news["ndate"]," l d F  Y ساعت H:m");
-	$post["userid"] = GetUserName($post["userid"]);
-  $body= $post["body"];
-  $body= strip_tags($body);
-  $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;
-	$html.=<<<cd
+  foreach($news as $key => $post){
+  	$ndate = ToJalali($post["ndate"]," l d F  Y ساعت H:m");
+  	$post["userid"] = GetUserName($post["userid"]);
+    $body= $post["body"];
+    $body= strip_tags($body);
+    $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;
+  	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
 			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
