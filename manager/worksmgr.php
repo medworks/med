@@ -6,25 +6,30 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");	
 	$db = Database::GetDatabase();
-    if ($_POST["mark"]=="saveworks")
+	$overall_error = false;
+	if ($_GET['item']!="worksmgr")	exit();
+	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
 	{
-		$db = Database::GetDatabase();
-		$msg = Message::GetMessage();
-		$msgs = "";	
-    
-		if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
-		{    
-			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
-			header('location:?item=worksmgr&act=do&msg=4');
-			exit();
+	   date_default_timezone_set('Asia/Tehran');
+	   list($hour,$minute,$second) = explode(':', Date('H:i:s'));
+	   list($year,$month,$day) = explode("-", trim($_POST["sdate"]));
+	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);
+	   $sdatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
+	   list($year,$month,$day) = explode("-", trim($_POST["fdate"]));
+	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);
+	   $fdatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
+				  
+	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
+		{ 
+			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+			//header('location:?item=worksmgr&act=new&msg=4');
+			$_GET["item"] = "worksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 4;
+			$overall_error = true;
+			//exit();
 		}
 		else
-			if (empty($_POST['detail']))
-			{
-			   header('location:?item=worksmgr&act=new&msg=5');
-			   exit();
-			}
-    	else
 		{
 			$filename =strtolower(basename($_FILES['pic']['name']));
 			$ext = substr($filename, strrpos($filename, '.') + 1);
@@ -35,31 +40,83 @@
 			$newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
 			$newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
 			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-			{     
+			{       
 				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-				header('location:?item=worksmgr&act=do&msg=3');
+				header('location:?item=worksmgr&act=new&msg=3');
 				exit();
-			}	 		    
-			else
-			{			
-  				$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
-  				$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$_POST[sdate]}'","'{$_POST[fdate]}'");	
-  				if (!$db->InsertQuery('works',$fields,$values)) 
-  				{
-  					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-					header('location:?item=worksmgr&act=do&msg=2');
-					exit();
-  				} 	
-  				else 
-  				{  										
-  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=worksmgr&act=do&msg=1');					
-					exit();
-					
-  				}  				 
 			}
-		}	
+			else
+			if (empty($_POST['detail']))
+			{
+			   //header('location:?item=worksmgr&act=new&msg=5');
+				$_GET["item"] = "worksmgr";
+				$_GET["act"] = "new";
+				$_GET["msg"] = 5;
+			   $overall_error = true;
+			}			
+		}
+	}	
+    if (!$overall_error && $_POST["mark"]=="saveworks")
+	{						   				
+		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
+		if (!$db->InsertQuery('works',$fields,$values)) 
+		{
+			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			header('location:?item=worksmgr&act=new&msg=2');
+			exit();
+		} 	
+		else 
+		{  										
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+			header('location:?item=worksmgr&act=new&msg=1');					
+			exit();
+			
+		}  				 
 	}
+	else
+	if (!$overall_error && $_POST["mark"]=="editnews")
+	{		
+		$values = array("`subject`"=>"'{$_POST[subject]}'",
+		                 "`image`"=>"'{$newname_site}'",
+						 "`body`"=>"'{$_POST[detail]}'",
+						 "`sdate`"=>"'{$sdatetime}'",
+						 "`fdate`"=>"'{$fdatetime}'");		
+        $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));
+		header('location:?item=worksmgr&act=mgr');
+	}
+
+	if ($overall_error)
+	{
+		$row = array("subject"=>$_POST['subject'],
+						 "body"=>$_POST['detail'],
+						 "ndate"=>$_POST['ndate'],
+						 "userid"=>$userid,
+						 "resource"=>$_POST['res']);
+	}
+	if ($_GET['act']=="new")
+	{
+		$editorinsert = "
+			<p>
+				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+				<input type='hidden' name='mark' value='saveworks' />";
+	}
+	if ($_GET['act']=="edit")
+	{
+		$row=$db->Select("works","*","id='{$_GET["wid"]}'",NULL);
+		$row['sdate'] = ToJalali($row["sdate"]);
+		$row['fdate'] = ToJalali($row["fdate"]);
+		$editorinsert = "
+		<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editworks' />";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("works"," id",$_GET["wid"]);
+		if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
+		header("location:?item=worksmgr&act=mgr&pageNo={$_GET[pageNo]}");
+	}	
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -111,7 +168,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="subject">عنوان </label>
 			 <span>*</span>
 		   </p>  	 
-		   <input type="text" name="subject" class="validate[required] subject" id="subject" />
+		   <input type="text" name="subject" class="validate[required] subject" id="subject" value="{$row[subject]}" />
 		   <p>
 			 <label for="pic">عکس </label>
 			 <span>*</span>
@@ -121,11 +178,11 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="detail">توضیحات </label>
 			 <span>*</span>
 		   </p>
-		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail"> </textarea>
+		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail">{$row[body]}</textarea>
 		   <p>
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
-			<input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" />
+			<input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" value="{$row[sdate]}" />
 			<img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
 			 <script type="text/javascript">
 			  Calendar.setup({
@@ -143,7 +200,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		   <p>
 			 <label for="fdate">تاریخ پایان </label>
 			 <span>*</span><br /><br />
-			 <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" />
+			 <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" value="{$row[fdate]}"/>
 			 <img src="../themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
 			 <script type="text/javascript">
 			  Calendar.setup({
@@ -158,9 +215,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			  });
 			</script>
 		   </p>
-		   <p>
-			 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
-			 <input type="hidden" id="mark" class="mark" name="mark" value="saveworks" />
+		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
 		</form>
@@ -222,7 +277,7 @@ if ($_GET['act']=="mgr")
 {
 	if ($_POST["mark"]=="srhnews")
 	{	 		
-	    if ($_POST["cbsearch"]=="ndate")
+	    if ($_POST["cbsearch"]=="sdate" or $_POST["cbsearch"]=="fdate")
 		{
 		   date_default_timezone_set('Asia/Tehran');		   
 		   list($year,$month,$day) = explode("/", trim($_POST["txtsrh"]));		
@@ -233,7 +288,7 @@ if ($_GET['act']=="mgr")
 				"works",
 				"*",
 				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
-				"ndate DESC",
+				"sdate DESC,fdate DESC",
 				$_GET["pageNo"]*10,
 				10);
 			if (!$rows) 
@@ -251,13 +306,13 @@ if ($_GET['act']=="mgr")
 				"works",
 				"*",
 				null,
-				"ndate DESC",
+				"sdate DESC,fdate DESC",
 				$_GET["pageNo"]*10,
 				10);
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all")?$db->CountAll("works"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews" )?$db->CountAll("works"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
@@ -275,13 +330,13 @@ if ($_GET['act']=="mgr")
 						$rowsClass[] = "datagridoddrow";
 				}
 				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-				$rows[$i]["edit"] = "<a href='?item=worksmgr&act=edit&nid={$rows[$i]["id"]}' " .
+				$rows[$i]["edit"] = "<a href='?item=worksmgr&act=edit&wid={$rows[$i]["id"]}' " .
 						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
-				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
+				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&wid=');"
 				 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                          }
@@ -314,7 +369,7 @@ $code=<<<edit
 		});
 		$('#cbsearch').change(function(){
 			$("select option:selected").each(function(){
-	            if($(this).val()=="ndate"){
+	            if($(this).val()=="sdate"||$(this).val()=="fdate"){
 	            	$('.cal-btn').css('display' , 'inline-block');
 	            	return false;
 	            }else{
