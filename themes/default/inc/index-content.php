@@ -300,19 +300,27 @@ cd;
 				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 				$ndate = ToJalali($news[0]["ndate"]," l d F  Y");
 				$body= strip_tags($news[0]['body']);
+				$body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 $html.=<<<cd
 				<li class="first-li">
 					<div class="pic first-tab-pic">
-						<a href="?item=fullworks&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">
+						<a href="?item=fullnews&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">
 							<img src="{$news[0][image]}" alt="{$news[0][subject]}">
 							<span class="overlay"></span>
 						</a>
 					</div>
 					<h2>
-						<a href="?item=fullworks&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">{$news[0][subject]}</a>
+						<a href="?item=fullnews&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">{$news[0][subject]}</a>
 					</h2>
 					<div class="date"><p><span>{$ndate}</span></p></div>
 					<div class="detial"><p>{$body}</p></div>
+cd;
+					if (mb_strlen($body)>100){
+						$html.=<<<cd
+						<a href="?item=fullnews&act=do&wid={$news[0][id]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+cd;
+					}
+$html.=<<<cd
 				</li>
 cd;
 				for($i=1 ; $i<5 ; $i++){
@@ -320,12 +328,12 @@ cd;
 $html.=<<<cd
 					<li>
 						<div class="pic">
-							<a href="?item=fullworks&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">
+							<a href="?item=fullnews&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">
 								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}">
 							</a>
 						</div>
 						<h2>
-							<a href="?item=fullworks&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a>
+							<a href="?item=fullnews&act=do&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a>
 						</h2>
 						<div class="date"><p><span>$ndate</span></p></div>
 					</li>				

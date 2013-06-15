@@ -466,7 +466,8 @@ a.ttip, a.tooldown{display:inline-block;}
 }
 
 .content .tab li.first-li p{
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	line-height: 1.2;
 }
 
 .content .tab li .pic img{
@@ -1544,6 +1545,7 @@ section.main-content .content .detail p{
 	text-align: right;
 	margin-bottom: 10px;
 	word-wrap: break-word;
+	line-height: 2;
 }
 /******************************Single pages************************************/
 .single-page .singlepage-box{
