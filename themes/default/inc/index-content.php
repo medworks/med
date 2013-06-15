@@ -299,6 +299,7 @@ cd;
 				
 				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 				$ndate = ToJalali($news[0]["ndate"]," l d F  Y");
+				$body= strip_tags($news[0]['body']);
 $html.=<<<cd
 				<li class="first-li">
 					<div class="pic first-tab-pic">
@@ -311,7 +312,7 @@ $html.=<<<cd
 						<a href="?item=fullworks&act=do&wid={$news[0][id]}" title="{$news[0][subject]}">{$news[0][subject]}</a>
 					</h2>
 					<div class="date"><p><span>{$ndate}</span></p></div>
-					<div class="detial"><p>{$news[0][body]}</p></div>
+					<div class="detial"><p>{$body}</p></div>
 				</li>
 cd;
 				for($i=1 ; $i<5 ; $i++){
@@ -346,6 +347,7 @@ $html.=<<<cd
 	</div>
 </div>
 cd;
- 	}
 echo $html;
+ 	}
+
 ?>

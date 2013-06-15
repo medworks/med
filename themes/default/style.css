@@ -931,6 +931,10 @@ section.main-content .content .recent-works .works{
 	padding: 0px;
 }
 
+section.main-content .content .recent-works .works #slideshow-rec{
+	margin-right: 12px;
+}
+
 section.main-content .content .recent-works .works .group_items{
 	float: right;
 	height: 190px;
@@ -957,7 +961,7 @@ section.main-content .content .recent-works .works .scroll-item a img{
 	height: 60px;
 	background: #fff;
 	padding: 2px;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	-webkit-box-shadow: 0 0 2px #B5B5B5;
 	-moz-box-shadow: 0 0 2px #B5B5B5;
 	-ms-box-shadow: 0 0 2px #B5B5B5;
@@ -984,7 +988,7 @@ section.main-content .content .recent-works .works .scroll-item h3 a:hover{
 }
 
 section.main-content .content .recent-works .works .scroll-item p{
-	font-size: 13px;
+	font-size: 14px;
 }
 
 section.main-content .content .recent-works .works .scroll-nav{
