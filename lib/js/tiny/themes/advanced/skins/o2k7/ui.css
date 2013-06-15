@@ -58,7 +58,7 @@
 .o2k7Skin table.mceListBoxEnabled:hover .mceText, .o2k7Skin .mceListBoxHover .mceText, .o2k7Skin .mceListBoxSelected .mceText {background:#FFF}
 .o2k7Skin table.mceListBoxEnabled:hover .mceOpen, .o2k7Skin .mceListBoxHover .mceOpen, .o2k7Skin .mceListBoxSelected .mceOpen {background-position:-66px -22px}
 .o2k7Skin .mceListBoxDisabled .mceText {color:gray}
-.o2k7Skin .mceListBoxMenu {overflow:auto; overflow-x:hidden; margin-left:3px}
+.o2k7Skin .mceListBoxMenu {overflow:auto; overflow-x:hidden; margin-left:3px;}
 .o2k7Skin .mceOldBoxModel .mceListBox .mceText {height:22px}
 .o2k7Skin select.mceListBox {font-family:Tahoma,Verdana,Arial,Helvetica; font-size:12px; border:1px solid #b3c7e1; background:#FFF;}
 
@@ -90,7 +90,7 @@
 .o2k7Skin .mceNoIcons span.mceIcon {width:0;}
 .o2k7Skin .mceNoIcons a .mceText {padding-left:10px}
 .o2k7Skin .mceMenu table {background:#FFF}
-.o2k7Skin .mceMenu a, .o2k7Skin .mceMenu span, .o2k7Skin .mceMenu {display:block}
+.o2k7Skin .mceMenu a, .o2k7Skin .mceMenu span, .o2k7Skin .mceMenu {display:block; direction: ltr;}
 .o2k7Skin .mceMenu td {height:20px}
 .o2k7Skin .mceMenu a {position:relative;padding:3px 0 4px 0}
 .o2k7Skin .mceMenu .mceText {position:relative; display:block; font-family:Tahoma,Verdana,Arial,Helvetica; color:#000; cursor:default; margin:0; padding:0 25px 0 25px; display:block}
