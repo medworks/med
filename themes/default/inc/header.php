@@ -13,7 +13,6 @@
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
-		<script src="lib/js/selectivizr-min.js"></script>
 	<![endif]-->
 	<link rel="Shortcut Icon" href="themes/default/favicon.ico" />
 </head>

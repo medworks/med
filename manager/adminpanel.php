@@ -1,6 +1,6 @@
 <?php
-    include_once("../config.php");
-    include_once("../classes/functions.php");
+  include_once("../config.php");
+  include_once("../classes/functions.php");
 	include_once("../classes/messages.php");
 	include_once("../classes/session.php");	
 	include_once("../classes/security.php");
@@ -42,7 +42,6 @@
 
 	<!--[if lt IE 9]>
 		<script src="./lib/js/html5shiv.js"></script>
-    <script src="./lib/js/selectivizr-min.js"></script>
 	<![endif]-->
 <?php
   $path = realpath(dirname(__FILE__));  
