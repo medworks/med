@@ -94,7 +94,7 @@ $html=<<<cd
     	   <label for="pic">عکس </label>
          <span>*</span>
        </p>
-       <input type="file" name="pic" class="pic" id="pic" />
+       <input type="file" name="pic" class="validate[required] pic" id="pic" />
        <p>
          <label for="email">ایمیل </label>
          <span>*</span>
