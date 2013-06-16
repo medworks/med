@@ -90,9 +90,8 @@
 	{
 		$row = array("subject"=>$_POST['subject'],
 						 "body"=>$_POST['detail'],
-						 "ndate"=>$_POST['ndate'],
-						 "userid"=>$userid,
-						 "resource"=>$_POST['res']);
+						 "sdate"=>$_POST['sdate'],
+						 "fdate"=>$_POST['fdate']);
 	}
 	if ($_GET['act']=="new")
 	{
