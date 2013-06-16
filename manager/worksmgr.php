@@ -78,6 +78,7 @@
 	else
 	if (!$overall_error && $_POST["mark"]=="editnews")
 	{		
+	    $_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$newname_site}'",
 						 "`body`"=>"'{$_POST[detail]}'",
