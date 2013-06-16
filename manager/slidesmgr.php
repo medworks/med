@@ -19,13 +19,13 @@ if ($_GET['act']=="do")
 			<ul>
 			  <li>		  
 				<a href="?item=slidesmgr&act=new">درج عکس جدید
-					<span class="add-news"></span>
+					<span class="add-slide"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=slidesmgr&act=mgr" id="news" name="news">
 				  حذف/ویرایش عکس ها
-					<span class="edit-news"></span>
+					<span class="edit-slide"></span>
 				</a>
 			  </li>
 			 </ul>

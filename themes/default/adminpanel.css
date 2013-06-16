@@ -323,6 +323,14 @@ header #mini-nav span {
 .sub-menu ul li span.edit-works{
   background-image: url('images/admin/editworks.png');
 }
+
+.sub-menu ul li span.add-slide{
+  background-image: url('images/admin/addslide.png');
+}
+
+.sub-menu ul li span.edit-slide{
+  background-image: url('images/admin/editslides.png');
+}
 /***************************************************************************************/
 .admin_top{
  float : right;
