@@ -173,12 +173,12 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="pic">عکس </label>
 			 <span>*</span>
 		   </p>
-		   <input type="file" name="pic" class="pic" id="pic" />
+		   <input type="file" name="pic" class="validate[required] pic" id="pic" />
 		   <p>
 			 <label for="detail">توضیحات </label>
 			 <span>*</span>
 		   </p>
-		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail">{$row[body]}</textarea>
+		   <textarea cols="50" rows="10" name="detail" class="validate[required] detail" id="detail">{$row[body]}</textarea>
 		   <p>
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
@@ -231,6 +231,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			theme : "advanced",
 			skin : "o2k7",
 			plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
+			init_instance_callback : "initialiseInstance",
 
 			// Theme options
 			theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
@@ -268,6 +269,16 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 				staffid : "991234"
 			}
 		});
+
+		function initialiseInstance(editor){
+			$('#submit').click(function(event){
+				if(editor.getContent()==""){
+					$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
+				}else{
+					$('#detail_tbl').validationEngine('hide');
+				}
+			});
+		}
 	</script>
 	<!-- /TinyMCE -->  
 cd;
