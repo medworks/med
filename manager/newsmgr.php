@@ -58,6 +58,7 @@
 	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
 		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+		$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
