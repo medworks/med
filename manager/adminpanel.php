@@ -107,7 +107,7 @@ echo $html;
             </a>
           </li>
           <li>
-            <a href="worksmgr.php">مدیریت اسلاید
+            <a href="?item=slidesmgr&act=do">مدیریت اسلاید
                 <span class="fs1"></span>
             </a>
           </li>

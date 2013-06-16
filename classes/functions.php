@@ -38,6 +38,9 @@ include_once("./classes/messages.php");
 			case 'usermgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/usermgr.php";
 			break;
+			case 'slidesmgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/slidesmgr.php";
+			break;
 
 		}
 	}
