@@ -239,6 +239,10 @@ header #mini-nav span {
   background-image: url('images/admin/users.png');
 }
 
+#mainnav > ul > li span.slidemgr{
+  background-image: url('images/admin/slides.png');
+}
+
 #mainnav > ul > li:hover a {	    
   opacity: 1;
 }
@@ -310,6 +314,14 @@ header #mini-nav span {
 
 .sub-menu ul li span.edit-news{
   background-image: url('images/admin/editnews.png');
+}
+
+.sub-menu ul li span.add-works{
+  background-image: url('images/admin/addworks.png');
+}
+
+.sub-menu ul li span.edit-works{
+  background-image: url('images/admin/editworks.png');
 }
 /***************************************************************************************/
 .admin_top{

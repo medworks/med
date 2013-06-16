@@ -132,12 +132,12 @@ if ($_GET['act']=="do")
 			<ul>
 			  <li>		  
 				<a href="?item=worksmgr&act=new">درج کار جدید
-					<span class="add-news"></span>
+					<span class="add-works"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کار ها
-					<span class="edit-news"></span>
+					<span class="edit-works"></span>
 				</a>
 			  </li>
 			 </ul>
