@@ -469,6 +469,13 @@ footer p{
   width: 350px;
 }
 
+.admin_container form input.email,
+.admin_container form input.username,
+.admin_container form input.password,
+.admin_container form input.cpassword{
+  font-family: 'arial';
+}
+
 .admin_container form input.pic{
   outline: 0 none;
   background: #F9F9F9;
