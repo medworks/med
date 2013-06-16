@@ -78,6 +78,7 @@ function Pagination($itemsCount, $maxItemsInPage,
 		$currentPageNo, $maxPageNumberAtTime, $linkFormat = "%PN%")
          {
 		$pageCount = ceil($itemsCount / $maxItemsInPage);
+		if ($pageCount <= 1) return "";
 		$half = floor($maxPageNumberAtTime / 2);
 		$left = $currentPageNo - $half;
 		$right = $currentPageNo + $half;
