@@ -46,8 +46,8 @@ $html=<<<cd
 			});	
 			function PreviewImg()
 			{				
-			    document.getElementById('img').src=document.getElementById('pic').value;
-				$("img").css( "width", "80", "height", "60" );				
+			    document.getElementById('img').src = document.getElementById('pic').value;
+				$("img").css( "width", "80px", "height", "60px" );
 			}
 		</script>	     
 		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
