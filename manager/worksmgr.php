@@ -59,6 +59,7 @@
     if (!$overall_error && $_POST["mark"]=="saveworks")
 	{						   				
 		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+		$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
 		if (!$db->InsertQuery('works',$fields,$values)) 
 		{
