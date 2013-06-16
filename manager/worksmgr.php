@@ -89,9 +89,10 @@
 	if ($overall_error)
 	{
 		$row = array("subject"=>$_POST['subject'],
-						 "body"=>$_POST['detail'],
-						 "sdate"=>$_POST['sdate'],
-						 "fdate"=>$_POST['fdate']);
+					 "image"=>$_FILES['pic']['name'],
+					 "body"=>$_POST['detail'],					
+					 "sdate"=>$_POST['sdate'],
+					 "fdate"=>$_POST['fdate']);
 	}
 	if ($_GET['act']=="new")
 	{
@@ -172,7 +173,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="pic">عکس </label>
 			 <span>*</span>
 		   </p>
-		   <input type="file" name="pic" class="validate[required] pic" id="pic" />
+		   <input type="file" name="pic" class="validate[required] pic" id="pic" value="{$row[image]}"/>
 		   <p>
 			 <label for="detail">توضیحات </label>
 			 <span>*</span>
