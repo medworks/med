@@ -42,15 +42,23 @@ $combobox = SelectOptionTag("cbpos",$list,"1");
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
-				$("#frmslidesmgr").validationEngine();			
-			});	   
+				$("#frmslidesmgr").validationEngine();
+			});	
+			function PreviewImg()
+			{				
+			    document.getElementById('img').src=document.getElementById('pic').value;
+				$("img").css( "width", "80", "height", "60" );				
+			}
 		</script>	     
 		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
 				<label for="pic">عکس </label>
 				<span>*</span>
 			</p>
-			<input type="file" name="pic" class="validate[required] pic" id="pic" />  
+			<input type="file" name="pic" class="validate[required] pic" id="pic" onchange="PreviewImg();" />  
+			<div id="imgpreview">
+				<img id="img" src="" alt="Image" />				
+			</div>
 			<p>
 				<label for="subject">عنوان </label>
 				<span>*</span>
