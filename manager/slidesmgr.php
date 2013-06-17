@@ -42,12 +42,18 @@ $combobox = SelectOptionTag("cbpos",$list,"1");
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
-				$("#frmslidesmgr").validationEngine();
-			});	
-			function PreviewImg()
-			{				
-			    document.getElementById('img').src = document.getElementById('pic').value;
-				$("img").css( "width", "80px", "height", "60px" );
+				$("#frmslidesmgr").validationEngine();			   
+			});
+
+			function showPreview(ele){
+				$('#img').attr('src', ele.value); // for IE
+	            if (ele.files && ele.files[0]){
+				    var reader = new FileReader();
+					reader.onload = function (e){
+	                    $('#img').attr('src', e.target.result);
+	           		}
+	                reader.readAsDataURL(ele.files[0]);
+	            }
 			}
 		</script>	     
 		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
@@ -55,7 +61,7 @@ $html=<<<cd
 				<label for="pic">عکس </label>
 				<span>*</span>
 			</p>
-			<input type="file" name="pic" class="validate[required] pic" id="pic" onchange="PreviewImg();" />  
+			<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)"/>  
 			<div id="imgpreview">
 				<img id="img" src="" alt="Image" />				
 			</div>
