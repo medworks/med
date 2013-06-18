@@ -94,7 +94,10 @@ $html=<<<cd
     	   <label for="pic">عکس </label>
          <span>*</span>
        </p>
-       <input type="file" name="pic" class="validate[required] pic" id="pic" />
+       <input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />
+       <div id="imgpreview">
+        <img id="img" src="" alt="" />        
+       </div>
        <p>
          <label for="email">ایمیل </label>
          <span>*</span>

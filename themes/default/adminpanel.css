@@ -100,6 +100,23 @@ p,label,h1,h2,h3,h4{
   text-align: right;
   font-family: 'bmitra';
 }
+
+img#img{
+  display: none;
+  text-align: right;
+  margin-bottom: 10px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 0 2px #B5B5B5;
+  -moz-box-shadow: 0 0 2px #B5B5B5;
+  -ms-box-shadow: 0 0 2px #B5B5B5;
+  -o-box-shadow: 0 0 2px #B5B5B5;
+  box-shadow: 0 0 2px #B5B5B5;
+  padding: 2px;
+}
 /***************************Header part*******************************/	
 header {
   height: 50px;
@@ -137,6 +154,8 @@ header #mini-nav {
   float: right;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px;
   margin: 20px 110px 0 0;
   height: 32px;
@@ -179,6 +198,8 @@ header #mini-nav span {
   background: #d13736;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
   border-radius: 2px; 
 }
 
@@ -215,11 +236,9 @@ header #mini-nav span {
 
 #mainnav > ul > li span{	              
   display: block;
-  width: 48px;
   height: 48px;
   background-repeat: no-repeat;
   background-position: center;
-  margin-right: 18px;
   margin-top: 6px;
 }
 
@@ -262,7 +281,6 @@ header #mini-nav span {
   display: block;
   opacity: 0.5;
   outline: 0;
-  height: 75px;
   padding: 8px 5px;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.3);
@@ -279,7 +297,7 @@ header #mini-nav span {
 #mainnav > ul > li .current-arrow {
   background-image: url("images/admin/menu-arrow.png");
   position: absolute;
-  right: 82px;
+  right: 100px;
   top: 25px;
   z-index: 10;
   width: 11px;
@@ -364,6 +382,8 @@ header #mini-nav span {
   border: 1px solid #e6e6e6;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
   border-radius: 4px;
   padding: 20px; 
   margin: 20px 0;
@@ -384,7 +404,7 @@ footer p{
   text-align: center;
   font-size: 18px;
 }
-/*****************************************Manger page******************************************/
+/*****************************************Manager page******************************************/
 .admin_container .title{
   margin-bottom: 15px;
 }
@@ -578,6 +598,23 @@ footer p{
   transition: background 500ms;
 }
 
+select#cbpos{
+  display: block;
+  text-align: right;
+  outline: 0 none;
+  background: #F9F9F9;
+  border: 1px solid #F1F1F1;
+  border-top-color: #ddd;
+  border-left-color: #ddd;
+  color: #000;
+  padding: 4px 7px;
+  margin-bottom: 15px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
 /*=============== data grid section  ===============*/
 .datagrid
 {

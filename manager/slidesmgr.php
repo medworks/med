@@ -44,26 +44,22 @@ $html=<<<cd
 			$(document).ready(function(){		
 				$("#frmslidesmgr").validationEngine();			   
 			});
-
-			function showPreview(ele){
-				$('#img').attr('src', ele.value); // for IE
-	            if (ele.files && ele.files[0]){
-				    var reader = new FileReader();
-					reader.onload = function (e){
-	                    $('#img').attr('src', e.target.result);
-	           		}
-	                reader.readAsDataURL(ele.files[0]);
-	            }
-			}
-		</script>	     
+		</script>
+		<div class="title">
+	      <ul>
+	        <li><a href="adminpanel.php">پیشخوان</a></li>
+	        <li><span>مدیریت اسلاید</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>	     
 		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
 				<label for="pic">عکس </label>
 				<span>*</span>
 			</p>
-			<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)"/>  
+			<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
 			<div id="imgpreview">
-				<img id="img" src="" alt="Image" />				
+				<img id="img" src="" alt="" />				
 			</div>
 			<p>
 				<label for="subject">عنوان </label>
@@ -80,8 +76,10 @@ $html=<<<cd
 				<span>*</span>
 			</p>
 			{$combobox}
-			<input type='submit' id='submit' value='ذخیره' class='submit' />
-			<input type="reset" value="پاک کردن" class='reset' /> 	
+			<p>
+				<input type='submit' id='submit' value='ذخیره' class='submit' />
+				<input type="reset" value="پاک کردن" class='reset' /> 	
+			</p>
 		</form>
 cd;
 }

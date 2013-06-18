@@ -175,7 +175,10 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="pic">عکس </label>
 			 <span>*</span>
 		   </p>
-		   <input type="file" name="pic" class="validate[required] pic" id="pic" value="{$row[image]}"/>
+		   <input type="file" name="pic" class="validate[required] pic" id="pic" value="{$row[image]}" OnChange="showPreview(this)" />
+		    <div id="imgpreview">
+				<img id="img" src="" alt="" />				
+			</div>
 		   <p>
 			 <label for="detail">توضیحات </label>
 			 <span>*</span>
