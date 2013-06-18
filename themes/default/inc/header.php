@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title></title>
 	<link rel="stylesheet" href="themes/default/1styles.css" />
@@ -10,6 +11,7 @@
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>	
+	<script type="text/javascript" src="lib/js/CFInstall.js"></script>
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -17,6 +19,13 @@
 	<link rel="Shortcut Icon" href="themes/default/favicon.ico" />
 </head>
 <body>
+  <script>
+   // You may want to place these lines inside an onload handler
+   CFInstall.check({
+     mode: "overlay",
+     destination: "http://media.mediateq.ir"
+   });
+  </script>
 	<?php
 	  include_once("./config.php");
 	  include_once("./classes/database.php");
