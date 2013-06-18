@@ -1,10 +1,46 @@
 <?php
-    include_once("../config.php");
-    include_once("../classes/database.php");
-	include_once("../classes/messages.php");
-	include_once("../classes/session.php");	
-	include_once("../classes/functions.php");
-	include_once("../lib/persiandate.php");	
+ include_once("../config.php");
+ include_once("../classes/database.php");
+ include_once("../classes/messages.php");
+ include_once("../classes/session.php");	
+ include_once("../classes/functions.php");
+ include_once("../lib/persiandate.php");
+ if ($_GET['item']!="slidesmgr")	exit();
+ $db = Database::GetDatabase();
+ if (isset($_POST["mark"]))
+ {
+	 $filename = strtolower(basename($_FILES['pic']['name']));
+	 $ext = substr($filename, strrpos($filename, '.') + 1);
+	 $newfilename= md5(rand() * time());
+	 //$newfilename = $_POST['subject'];	 
+	 $ext=".".$ext;          
+	 //$newfilename = $_FILES['pic']['name'];
+	 $newname_os = OS_ROOT.'/slidespics/'.$newfilename.$ext;
+	 $newname_site = SITE_ROOT.'/slidespics/'.$newfilename.$ext;
+	 if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
+	 {       
+		//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
+		header('location:?item=slidesmgr&act=new&msg=3');
+		exit();
+	 }
+  } 	
+ if ($_POST["mark"]=="saveslides")
+ {						   				
+	$fields = array("`image`","`subject`","`body`","`pos`");	
+	$values = array("'{$newname_site}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
+	if (!$db->InsertQuery('slides',$fields,$values)) 
+	{
+		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+		header('location:?item=slidesmgr&act=new&msg=2');
+		exit();
+	} 	
+	else 
+	{  										
+		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+		header('location:?item=slidesmgr&act=new&msg=1');					
+		exit();
+	 }
+ }
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -35,6 +71,7 @@ ht;
 }else
 if ($_GET['act']=="new")
 {
+$msgs = GetMessage($_GET['msg']);
 $list = array("1"=>"اسلاید بزرگ",
               "2"=>"اسلاید کوچک",
 			  "3"=>"همه موارد");			  
@@ -52,6 +89,7 @@ $html=<<<cd
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>	     
+		{$msgs}
 		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
 				<label for="pic">عکس </label>
@@ -78,7 +116,8 @@ $html=<<<cd
 			{$combobox}
 			<p>
 				<input type='submit' id='submit' value='ذخیره' class='submit' />
-				<input type="reset" value="پاک کردن" class='reset' /> 	
+				<input type="reset" value="پاک کردن" class='reset' /> 
+				<input type='hidden' name='mark' value='saveslides' />
 			</p>
 		</form>
 cd;
