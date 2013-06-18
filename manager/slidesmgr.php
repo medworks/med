@@ -11,8 +11,8 @@
  {
 	 $filename = strtolower(basename($_FILES['pic']['name']));
 	 $ext = substr($filename, strrpos($filename, '.') + 1);
-	 //$newfilename= md5(rand() * time());
-	 $newfilename = $_POST['subject'];	 
+	 $newfilename= md5(rand() * time());
+	 //$newfilename = $_POST['subject'];	 
 	 $ext=".".$ext;          
 	 //$newfilename = $_FILES['pic']['name'];
 	 $newname_os = OS_ROOT.'/slidespics/'.$newfilename.$ext;
