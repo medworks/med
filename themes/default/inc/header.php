@@ -11,7 +11,7 @@
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>	
-	<script type="text/javascript" src="lib/js/CFInstall.js"></script>
+	<script src="lib/js/CFInstall.js" type="text/javascript"></script>
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -20,7 +20,6 @@
 </head>
 <body>
   <script>
-   // You may want to place these lines inside an onload handler
    CFInstall.check({
      mode: "overlay",
      destination: "http://media.mediateq.ir"

@@ -38,6 +38,7 @@
 	<script type="text/javascript" src="../lib/js/calendar-fa.js"></script>	
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine-en.js"></script>
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine.js"></script>	
+  <script type="text/javascript" src="../lib/js/CFInstall.js"></script>
 	<script type="text/javascript" src="../lib/js/jsfuncs.js"></script>	
 
 	<!--[if lt IE 9]>
@@ -74,7 +75,12 @@ echo $html;
 ?>	
 </head>
 <body>
-  
+    <script>
+       CFInstall.check({
+         mode: "overlay",
+         destination: "http://media.mediateq.ir"
+       });
+    </script>
     <header>
       <a href="#" class="logo">Mediateq Admin Panel</a>
       <div id="mini-nav">
