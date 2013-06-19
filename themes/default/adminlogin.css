@@ -1,13 +1,58 @@
-body				{ 
-background: url(images/admin/login/login-page-bg.png) top center no-repeat #c4c4c4; color: #3a3a3a; 
-font-family:Tahoma,Verdana, Arial, Helvetica, sans-serif;
-font-size:12px;
-font-weight: bold;
-text-align : right;
-direction:rtl;
- }
+body{ 
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	background: url('images/admin/login/bg-login.png') repeat #1b1b1b;
+	font-size: 14px;
+	text-shadow: #050505 0 -1px 0;
+	font-weight: bold;
+	font-family: 'bmitra';
+}
 
-.clear				{ clear: both; }
+.container{
+	margin: 0 0 0 -160px;
+	width: 320px;
+	text-align: center;
+	z-index: 99;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+
+.container .logo{
+	text-align: center;
+	padding-top: 140px;
+}
+
+.container .logo img{
+	width: 150px;
+}
+
+.container .login-content{
+	margin-top: -140px;
+}
+
+.top-login{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: solid 3px #777973;
+	height: 250px;
+	width: 100%;
+	background: url('images/admin/login/bg-login-top.png') repeat #fff;
+	z-index: 1;
+}
+
+.top-login2{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: solid 2px #545551;
+	height: 252px;
+	width: 100%;
+	background: transparent;
+	z-index: 2;
+}
 
 form				{ width: 406px; margin: 170px auto 50px; text-align:right;	direction:rtl;}
 
@@ -15,18 +60,47 @@ legend				{ display: none; }
 
 fieldset			{ border: 0; }
 
-label				{ width: 115px; text-align: right; float: right; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 16px; }
+label				{ width: 115px; text-align: right; float: right; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 22px; }
 
 input				{ width: 220px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 18px;
 					  color: #3a3a3a; }
 input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
 					  
-.button				{ background: url(images/admin/login/button-bg.png) repeat-x top center; border: 1px solid #999;
-					  -moz-border-radius: 5px; padding: 5px; color: black; font-weight: bold;
-					  -webkit-border-radius: 5px; font-size: 13px;  width: 70px;
-					  margin: 1px 125 0 0px;
-					}
-.button:hover		{ background: white; color: black; }
+.button{ 
+	float: left;
+	padding: 6px 10px;
+	margin-left: 29px;
+	color: #fff;
+	font-size: 18px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	background: -ms-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	background: -o-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	text-shadow: #050505 0 -1px 0;
+	background-color: #459300;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	border: solid 1px transparent;
+	cursor: pointer;
+	letter-spacing: 1px;
+	width: 100px;
+	margin-top: 15px;
+}
+
+.button:hover{
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	background: -ms-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	background: -o-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	text-shadow: #050505 0 -1px 2px;
+	background-color: #a4d04a;
+	color: #fff;
+}
 
 .mes{
   
