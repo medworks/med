@@ -24,6 +24,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 <head>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title> پانل مدیریت</title>
 	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css" />
