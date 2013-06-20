@@ -233,7 +233,6 @@ $code=<<<edit
 
 edit;
 $html = $code;
-echo $html;
 }	
 return $html;
 ?>	
