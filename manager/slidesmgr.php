@@ -126,8 +126,7 @@ else
 if ($_GET['act']=="mgr")
 {
 	if ($_POST["mark"]=="srhnews")
-	{	 		
-	   
+	{	 			   
 		$rows = $db->SelectAll(
 				"slides",
 				"*",
@@ -181,12 +180,12 @@ if ($_GET['act']=="mgr")
 				'?item=slidesmgr&act=del&pageNo={$_GET[pageNo]}&sid=');"
 				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
-                         }
+               }
 
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
-                    $gridcode .= DataGrid(array( 
+                    $gridcode.= DataGrid(array( 
 							"image"=>"عکس",
 							"subject"=>"عنوان",
 							"body"=>"توضیحات",
@@ -206,17 +205,7 @@ $code=<<<edit
 		$('#srhsubmit').click(function(){	
 			$('#frmsrh').submit();
 			return false;
-		});
-		$('#cbsearch').change(function(){
-			$("select option:selected").each(function(){
-	            if($(this).val()=="sdate"||$(this).val()=="fdate"){
-	            	$('.cal-btn').css('display' , 'inline-block');
-	            	return false;
-	            }else{
-	            	$('.cal-btn').css('display' , 'none');
-	            }
-  			});
-		});
+		});		
 	});
 </script>	   
 					<div class="title">
@@ -244,6 +233,7 @@ $code=<<<edit
 
 edit;
 $html = $code;
+echo $html;
 }	
 return $html;
 ?>	
