@@ -122,5 +122,128 @@ $html=<<<cd
 		</form>
 cd;
 }
+else
+if ($_GET['act']=="mgr")
+{
+	if ($_POST["mark"]=="srhnews")
+	{	 		
+	   
+		$rows = $db->SelectAll(
+				"slides",
+				"*",
+				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
+				"id DESC",
+				$_GET["pageNo"]*10,
+				10);
+			if (!$rows) 
+			{					
+				$_GET['item'] = "slidesmgr";
+				$_GET['act'] = "mgr";
+				$_GET['msg'] = 6;				
+				//header("Location:?item=worksmgr&act=mgr&msg=6");
+			}
+		
+	}
+	else
+	{	
+		$rows = $db->SelectAll(
+				"slides",
+				"*",
+				null,
+				"id DESC",
+				$_GET["pageNo"]*10,
+				10);
+    }
+                $rowsClass = array();
+                $colsClass = array();
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews" )?$db->CountAll("slides"):Count($rows);
+                for($i = 0; $i < Count($rows); $i++)
+                {						
+		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+                $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
+                mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
+                html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
+                $rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";			
+				if ($i % 2==0)
+				 {
+						$rowsClass[] = "datagridevenrow";
+				 }
+				else
+				{
+						$rowsClass[] = "datagridoddrow";
+				}				
+				$rows[$i]["edit"] = "<a href='?item=slidesmgr&act=edit&sid={$rows[$i]["id"]}' " .
+						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["delete"]=<<< del
+				<a href="javascript:void(0)"
+				onclick="DelMsg('{$rows[$i]['id']}',
+					'از حذف این فعالیت اطمینان دارید؟',
+				'?item=slidesmgr&act=del&pageNo={$_GET[pageNo]}&sid=');"
+				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
+del;
+                         }
+
+    if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
+            if (Count($rows) > 0)
+            {                    
+                    $gridcode .= DataGrid(array( 
+							"image"=>"عکس",
+							"subject"=>"عنوان",
+							"body"=>"توضیحات",
+							"pos"=>"موقعیت نمایش",							
+                            "edit"=>"ویرایش",
+							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=slidesmgr&act=mgr");
+                    
+            }
+$msgs = GetMessage($_GET['msg']);
+$list = array("subject"=>"عنوان",
+              "body"=>"توضیحات" );
+$combobox = SelectOptionTag("cbsearch",$list,"subject");
+$code=<<<edit
+<script type='text/javascript'>
+	$(document).ready(function(){	   			
+		$('#srhsubmit').click(function(){	
+			$('#frmsrh').submit();
+			return false;
+		});
+		$('#cbsearch').change(function(){
+			$("select option:selected").each(function(){
+	            if($(this).val()=="sdate"||$(this).val()=="fdate"){
+	            	$('.cal-btn').css('display' , 'inline-block');
+	            	return false;
+	            }else{
+	            	$('.cal-btn').css('display' , 'none');
+	            }
+  			});
+		});
+	});
+</script>	   
+					<div class="title">
+				      <ul>
+				        <li><a href="adminpanel.php">پیشخوان</a></li>
+					    <li><span>مدیریت اسلاید</span></li>
+				      </ul>
+				      <div class="badboy"></div>
+				  </div>
+                    <div class="Top">                       
+						<center>
+							<form action="?item=slidesmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+								<p>جستجو بر اساس {$combobox}</p>								
+									<a href="?item=slidesmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=slidesmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+								</p>
+								<input type="hidden" name="mark" value="srhnews" /> 
+								{$msgs}
+
+								{$gridcode} 
+															
+							</form>
+					   </center>
+					</div>
+
+edit;
+$html = $code;
+}	
 return $html;
 ?>	
