@@ -8,7 +8,7 @@
  if ($_GET['item']!="slidesmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
- if (isset($_POST["mark"]))
+ if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
 	 $filename = strtolower(basename($_FILES['pic']['name']));
 	 $ext = substr($filename, strrpos($filename, '.') + 1);
