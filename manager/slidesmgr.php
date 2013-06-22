@@ -95,7 +95,12 @@ $html=<<<cd
 				<label for="pic">عکس </label>
 				<span>*</span>
 			</p>
-			<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
+			<div class="upload-file">
+				<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
+				<span class="filename">عکسی انتخاب نشده است</span>
+				<span class="action">انتخاب عکس</span>
+			</div>
+			<div class="badboy"></div>
 			<div id="imgpreview">
 				<img id="img" src="" alt="" />				
 			</div>
