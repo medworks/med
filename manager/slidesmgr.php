@@ -97,7 +97,7 @@ $html=<<<cd
 			</p>
 			<div class="upload-file">
 				<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
-				<span class="filename">عکسی انتخاب نشده است</span>
+				<span class="filename">عکس مورد نظر را انتخاب نمایید</span>
 				<span class="action">انتخاب عکس</span>
 			</div>
 			<div class="badboy"></div>
