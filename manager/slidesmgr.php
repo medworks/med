@@ -7,6 +7,7 @@
  include_once("../lib/persiandate.php");
  if ($_GET['item']!="slidesmgr")	exit();
  $db = Database::GetDatabase();
+ $overall_error = false;
  if (isset($_POST["mark"]))
  {
 	 $filename = strtolower(basename($_FILES['pic']['name']));
@@ -21,10 +22,11 @@
 	 {       
 		//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
 		header('location:?item=slidesmgr&act=new&msg=3');
+		$overall_error  = true;
 		exit();
 	 }
   } 	
- if ($_POST["mark"]=="saveslides")
+ if (!$overall_error && $_POST["mark"]=="saveslides")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`pos`");	
 	$values = array("'{$newname_site}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
@@ -41,8 +43,26 @@
 		exit();
 	 }
  }
+ else
+ if (!$overall_error && $_POST["mark"]=="editslides")
+ {			    
+	$values = array("`image`"=>"'{$newname_site}'",
+	       		    "`subject`"=>"'{$_POST[subject]}'",
+					"`body`"=>"'{$_POST[body]}'",
+					"`pos`"=>"'{$_POST[cbpos]}'");		
+	$db->UpdateQuery("slides",$values,array("id='{$_GET['sid']}'"));
+	//echo $db->cmd;
+	header('location:?item=slidesmgr&act=mgr');
+	}
+
+	if ($overall_error)
+	{
+		$row = array("image"=>$_FILES['pic']['name'],
+					 "subject"=>$_POST['subject'],
+					 "body"=>$_POST['body']);
+	}
  
- if ($_GET['act']=="new")
+   if ($_GET['act']=="new")
 	{
 		$editorinsert = "
 			<p>
@@ -59,7 +79,7 @@
 	}
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("slides"," id",$_GET["wid"]);
+		$db->Delete("slides"," id",$_GET["sid"]);
 		if ($db->CountAll("slides")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=slidesmgr&act=mgr&pageNo={$_GET[pageNo]}");
 	}	
