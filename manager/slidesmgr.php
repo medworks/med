@@ -41,6 +41,28 @@
 		exit();
 	 }
  }
+ 
+ if ($_GET['act']=="new")
+	{
+		$editorinsert = "
+			<p>
+				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+				<input type='hidden' name='mark' value='saveslides' />";
+	}
+	if ($_GET['act']=="edit")
+	{
+		$row=$db->Select("slides","*","id='{$_GET["sid"]}'",NULL);				
+		$editorinsert = "
+		<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editslides' />";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("slides"," id",$_GET["wid"]);
+		if ($db->CountAll("slides")%10==0) $_GET["pageNo"]-=1;		
+		header("location:?item=slidesmgr&act=mgr&pageNo={$_GET[pageNo]}");
+	}	
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -69,13 +91,14 @@ if ($_GET['act']=="do")
 		</div>		 
 ht;
 }else
-if ($_GET['act']=="new")
+if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $list = array("1"=>"اسلاید بزرگ",
               "2"=>"اسلاید کوچک",
-			  "3"=>"همه موارد");			  
-$combobox = SelectOptionTag("cbpos",$list,"1");
+			  "3"=>"همه موارد");
+$itemselect = ($row['pos'])? $row['pos'] :"1";
+$combobox = SelectOptionTag("cbpos",$list,$itemselect);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
@@ -108,21 +131,19 @@ $html=<<<cd
 				<label for="subject">عنوان </label>
 				<span>*</span>
 			</p>
-			<input type="text" name="subject" class="validate[required] subject" id="subject" />
+			<input type="text" name="subject" class="validate[required] subject" id="subject" value="{$row[subject]}" />
 			<p>
 				<label for="subject">توضیحات </label>
 				<span>*</span>
 			</p>
-			<input type="text" name="body" class="validate[required] subject" id="body" /> 
+			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
 			<p>
 				<label for="cbpos">نمایش عکس در </label>
 				<span>*</span>
 			</p>
 			{$combobox}
-			<p>
-				<input type='submit' id='submit' value='ذخیره' class='submit' />
-				<input type="reset" value="پاک کردن" class='reset' /> 
-				<input type='hidden' name='mark' value='saveslides' />
+			{$editorinsert}
+				<input type="reset" value="پاک کردن" class='reset' /> 				
 			</p>
 		</form>
 cd;
@@ -167,7 +188,13 @@ if ($_GET['act']=="mgr")
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";			
+                $rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
+				switch($rows[$i]["pos"])
+				{
+				 case 1: $rows[$i]["pos"] = "اسلاید بزرگ"; break;
+				 case 2: $rows[$i]["pos"] = "اسلاید کوچک"; break;
+				 case 3: $rows[$i]["pos"] = "همه موارد"; break;
+				}
 				if ($i % 2==0)
 				 {
 						$rowsClass[] = "datagridevenrow";
