@@ -422,6 +422,13 @@ a.ttip, a.tooldown{display:inline-block;}
 	float:right;
 }
 
+.cat-tabs-wrap li.picture{
+	overflow:hidden;
+	padding: 5px 18px;
+	width: 58px;
+	float:right;
+}
+
 .cat-tabs-wrap li.first-li{
 	padding:0;
 	width:310px;
@@ -459,7 +466,42 @@ a.ttip, a.tooldown{display:inline-block;}
 	background: #f3f3f3 !important;
 	margin-bottom: 10px;
 }
+/******************/
+.cat-tabs-wrap li.first-li-picture{
+	padding:0;
+	width:256px;
+	float:right;
+	margin-left: 25px;
+}
 
+.cat-tabs-wrap li.first-li-picture p.post-meta{
+	margin:10px 0;
+}
+
+.content .tab li.first-li-picture .pic{
+	position: relative;
+	width: 250px !important;
+	height: 144px !important;
+	margin-bottom: 15px;
+}
+
+.content .tab li.first-li-picture .pic  a:hover span{
+	opacity: 1;	
+}
+
+.content .tab li.first-li-picture .pic img{
+	width: 250px !important;
+	height: 144px !important;
+	padding: 2px !important;
+	background: #f3f3f3 !important;
+	margin-bottom: 10px;
+}
+
+.content .tab li.first-li-picture h2{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+/*******************/
 .content .tab li.first-li h2{
 	font-size: 20px;
 	margin-bottom: 10px;

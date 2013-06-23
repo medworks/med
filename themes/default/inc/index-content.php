@@ -334,6 +334,32 @@ $html.=<<<cd
 		<div class="cat-tabs-wrap" id="catab1">
 			<ul>
 cd;
+				$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+$html.=<<<cd
+					<li class="first-li-picture">
+						<div class="pic first-tab-pic">
+							<a href="" title="{$slides[0][subject]}">
+								<img src="{$slides[0][image]}" alt="{$slides[0][subject]}">
+								<span class="overlay"></span>
+							</a>
+						</div>
+						<h2>
+							<a href="" title="{$slides[0][subject]}">{$slides[0][subject]}</a>
+						</h2>
+						<div class="detial"><p>{$slides[0][body]}</p></div>
+					</li>
+cd;
+				for($i=1 ; $i<13 ; $i++){
+$html.=<<<cd
+					<li class="picture">
+						<div class="pic">
+							<a href="" title="{$slides[$i][subject]}">
+								<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}">
+							</a>
+						</div>
+					</li>	
+cd;
+				}
 $html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
