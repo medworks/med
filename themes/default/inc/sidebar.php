@@ -1,6 +1,6 @@
 <?php
 	include_once("./classes/database.php");
-	include_once("./lib/persiandate.php");
+	$db = database::GetDatabase();
 ?>
 <div class="sidebar">
 	<!-- ***********Slideshow************ -->
@@ -47,18 +47,21 @@
 	<!-- ***********Gallery Slideshow************ -->
 	<div class="gallery flexslider simple-box" id="slider">
 		<ul class="slides">
-			<li>
-				<a href="#"><img src="./themes/default/images/main/others/slide1.jpg" alt=""></a>
-				<div class="slider-caption">
-					<h2><a href="#">اسلاید شماره 1</a></h2>
-				</div>
-			</li>
-			<li>
-				<a href="#"><img src="./themes/default/images/main/others/slide2.jpg" alt=""></a>
-				<div class="slider-caption">
-					<h2><a href="#">اسلاید شماره 2</a></h2>
-				</div>
-			</li>
+			<?php
+				$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+				for($i=0 ; $i<count($slides) ; $i++){
+					if($slides[$i]['pos']==2 || $slides[$i]['pos']==3){
+
+						echo "<li>
+								<a href=''><img src='{$slides[$i][image]}' alt='{$slides[$i][subject]}'></a>
+								<div class='slider-caption'>
+									<h2><a href=''>{$slides[$i][subject]}</a></h2>
+								</div>
+							</li>";
+
+					}
+				}
+			?>
 		</ul>
 	</div>
 	<script>
