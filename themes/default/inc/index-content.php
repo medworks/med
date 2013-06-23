@@ -13,45 +13,31 @@ $html="<div class='content'>
 		<!-- ***********Slideshow************ -->
 		<div id='ei-slider' class='slideshow ei-slider'>
 			<ul class='ei-slider-large'>";
+
+	$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+	for($i=0 ; $i<count($slides) ; $i++){
+		if($slides[$i]['pos']==1 || $slides[$i]['pos']==3){
 $html.=<<<cd
 			<li>
-				<img src="./themes/default/images/main/others/slide1.jpg" alt="">
+				<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}">
 				<div class="ei-title">
-					<h2><a href="#">اسلاید شماره 1</a></h2>
-					<h3>جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... جزئیات اسلاید شماره 1... </h3>
-				</div>
-			</li>
-			<li>
-				<img src="./themes/default/images/main/others/slide2.jpg" alt="">
-				<div class="ei-title">
-					<h2><a href="#">اسلاید شماره 2</a></h2>
-					<h3>جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... جزئیات اسلاید شماره 2... </h3>
-				</div>
-			</li>
-			<li>
-				<img src="./themes/default/images/main/others/slide3.jpg" alt="">
-				<div class="ei-title">
-					<h2><a href="#">اسلاید شماره 3</a></h2>
-					<h3>جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... جزئیات اسلاید شماره 3... </h3>
-				</div>
-			</li>
-			<li>
-				<img src="./themes/default/images/main/others/slide4.jpg" alt="">
-				<div class="ei-title">
-					<h2><a href="#">اسلاید شماره 4</a></h2>
-					<h3>جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... جزئیات اسلاید شماره 4... </h3>
+					<h2><a href="#">{$slides[$i][subject]}</a></h2>
+					<h3>{$slides[$i][body]}</h3>
 				</div>
 			</li>
 cd;
+		}
+	}
 		$html.="</ul>
-		<ul class='ei-slider-thumbs'>";
+		<ul class='ei-slider-thumbs'>
+			<li class='ei-slider-element'></li>";
+		for($i=0 ; $i<count($slides) ; $i++){
+			if($slides[$i]['pos']==1 || $slides[$i]['pos']==3){
 $html.=<<<cd
-			<li class="ei-slider-element"></li>
-			<li><a href="#"></a><img src="./themes/default/images/main/others/slide1.jpg" alt=""></li>
-			<li><a href="#"></a><img src="./themes/default/images/main/others/slide2.jpg" alt=""></li>
-			<li><a href="#"></a><img src="./themes/default/images/main/others/slide3.jpg" alt=""></li>
-			<li><a href="#"></a><img src="./themes/default/images/main/others/slide4.jpg" alt=""></li>
+			<li><a href="#"></a><img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}"></li>
 cd;
+			}
+		}
 $html.=<<<cd
 		</ul>
 	</div>
