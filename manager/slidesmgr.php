@@ -8,12 +8,13 @@
  if ($_GET['item']!="slidesmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
+ $pic_on_edit_section = null;
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
 	 $filename = strtolower(basename($_FILES['pic']['name']));
 	 $ext = substr($filename, strrpos($filename, '.') + 1);
-	 $newfilename= md5(rand() * time());
-	 //$newfilename = $_POST['subject'];	 
+	 //$newfilename= md5(rand() * time());
+	 $newfilename = $_POST['subject'];	 
 	 $ext=".".$ext;          
 	 //$newfilename = $_FILES['pic']['name'];
 	 $newname_os = OS_ROOT.'/slidespics/'.$newfilename.$ext;
@@ -64,6 +65,7 @@
  
    if ($_GET['act']=="new")
 	{
+	    $pic_on_edit_insert_section ="<img id='img' src='' alt='' />";
 		$editorinsert = "
 			<p>
 				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
@@ -71,7 +73,8 @@
 	}
 	if ($_GET['act']=="edit")
 	{
-		$row=$db->Select("slides","*","id='{$_GET["sid"]}'",NULL);				
+		$row=$db->Select("slides","*","id='{$_GET["sid"]}'",NULL);
+		$pic_on_edit_insert_section = "<img src='{$row[image]}'width='200px' height='100px' />";
 		$editorinsert = "
 		<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
@@ -140,12 +143,17 @@ $html=<<<cd
 			</p>
 			<div class="upload-file">
 				<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
-				<span class="filename">عکس مورد نظر را انتخاب نمایید</span>
+				<span class="filename">
+				<script language="javascript">
+					 //$('form #pic').val({$row[image]});
+					 $('form #pic').fileupload('add', {files: filesList, url:'{$row[image]}'});
+				</script>
+				</span>
 				<span class="action">انتخاب عکس</span>
-			</div>
+			</div>			
 			<div class="badboy"></div>
-			<div id="imgpreview">
-				<img id="img" src="" alt="" />				
+			<div id="imgpreview">				
+				{$pic_on_edit_insert_section}
 			</div>
 			<p>
 				<label for="subject">عنوان </label>
