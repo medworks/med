@@ -11,6 +11,9 @@ include_once("./classes/messages.php");
 			case 'initial':
 				return "index.php";
 			break;
+			case 'dashboard':
+				if ($act=="do") return "../manager/dashboard.php";
+			break;
             case 'about':
                 return "about.php";
 			break;
