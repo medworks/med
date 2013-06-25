@@ -54,7 +54,7 @@
 	$db->UpdateQuery("slides",$values,array("id='{$_GET['sid']}'"));
 	//echo $db->cmd;
 	header('location:?item=slidesmgr&act=mgr');
-	}
+ }
 
 	if ($overall_error)
 	{
