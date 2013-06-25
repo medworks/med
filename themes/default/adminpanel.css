@@ -188,6 +188,16 @@ form .upload-file .action{
   overflow: hidden;
   width: 80px;
 }
+
+#filesbrowser{
+  text-align: right;
+  border: 1px solid #eee;
+  display: none;
+}
+
+a#filesbrowserbtn{
+  cursor: pointer;
+}
 /***************************Header part*******************************/	
 header {
   height: 50px;

@@ -15,5 +15,5 @@ $html=<<<cd
 	</div>	
 	<div id="body" class=""></div>
 cd;
-	
+echo $html;
 ?>
