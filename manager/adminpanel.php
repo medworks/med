@@ -99,7 +99,7 @@ echo $html;
 	 <div id="mainnav" class="main-menu">
         <ul>
           <li>
-            <a href="adminpanel.php">پیشخوان
+            <a href="?item=dashboard&act=do">پیشخوان
                <span class="dashboard"></span>
             </a>
           </li>
