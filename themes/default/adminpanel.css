@@ -779,10 +779,18 @@ a#filesbrowserbtn{
 .picmanager .prev{
   min-height: 300px;
   width: 210px;
+  border-left: 1px solid #eee;
+  padding: 10px 20px 10px 10px;
+}
+
+.picmanager .prev .pic img{
+  width: 200px;
+  height: 100px;
+  margin-top: 0;
 }
 
 .picmanager .files{
-  width: 558px;
+  width: 548px;
   min-height: 300px;
   margin-right: 220px;
 }
