@@ -8,50 +8,61 @@
 	include_once("../lib/pchart/class/pImage.class.php");
 	
 	$db = Database::GetDatabase();
+	$news = $db->SelectAll("news","*",null,"ndate DESC");
+	$row = array();
+	$gdate = array();
+	$count = array();
+	foreach($news as $key => $val)
+	{
+	  $row[] = "'".ToJalali($val['ndate'],"Y-m-d")."'";
+	  $gdate[] = "'".Date("Y-m-d",$val['ndate'])."'";
+	}
+	$uniq = array_unique($row);
+	$guniq = array_unique($gdate);
+	foreach($guniq as $key => $val)
+	{
+		$count[] = $db->CountOf("news","ndate = {$val}");
+        echo $db->cmd;		
+	}
+	$xAxis = implode(', ',$uniq);
+	$series = implode(', ',$count);
 
- /* Create and populate the pData object */
- $MyData = new pData();  
- $MyData->addPoints(array(4,2,10,12,8,3),"Probe 1");
- $MyData->addPoints(array(3,12,15,8,5,5),"Probe 2");
- $MyData->addPoints(array(2,7,5,18,15,22),"Probe 3");
- $MyData->setSerieTicks("Probe 2",4);
- $MyData->setAxisName(0,"Temperatures");
- $MyData->addPoints(array("Jan","Feb","Mar","Apr","May","Jun"),"Labels");
- $MyData->setSerieDescription("Labels","Months");
- $MyData->setAbscissa("Labels");
-
- /* Create the pChart object */
- $myPicture = new pImage(700,230,$MyData);
-
- /* Turn of Antialiasing */
- $myPicture->Antialias = FALSE;
-
- /* Add a border to the picture */
- $myPicture->drawRectangle(0,0,699,229,array("R"=>0,"G"=>0,"B"=>0));
+ $html=<<<cd
  
- /* Write the chart title */ 
- $myPicture->setFontProperties(array("FontName"=>"../lib/pchart/fonts/Forgotte.ttf","FontSize"=>11));
- $myPicture->drawText(150,35,"Average temperature",array("FontSize"=>20,"Align"=>TEXT_ALIGN_BOTTOMMIDDLE));
+ <script src="../lib/highcharts/js/highcharts.js"></script>
+ <script src="../lib/highcharts/js/modules/exporting.js"></script>
+ <script type="text/javascript">
+ $(function () {
+        $('#pnlnews').highcharts({
+           chart: {		
+				 type: 'spline',		   
+				width: 800,
+				height:600,
+				zoomType: 'xy'
+			},			
+            title: {
+                text: 'نمودار اخبار'
+            },
+            xAxis: {			 
+                categories: [{$xAxis}]
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+			    title: {
+                    text: 'تعداد خبر'
+                },
+                name: 'تعداد خبر',
+                data: [{$series}]
+                }]
+        });
+    });
+		
+	</script>
 
- /* Set the default font */
- $myPicture->setFontProperties(array("FontName"=>"../lib/pchart/fonts/pf_arma_five.ttf","FontSize"=>6));
+ <div id="pnlnews" style="width: 400px; height: 400px; margin: 0 auto"></div>
 
- /* Define the chart area */
- $myPicture->setGraphArea(60,40,650,200);
-
- /* Draw the scale */
- $scaleSettings = array("XMargin"=>10,"YMargin"=>10,"Floating"=>TRUE,"GridR"=>200,"GridG"=>200,"GridB"=>200,"DrawSubTicks"=>TRUE,"CycleBackground"=>TRUE);
- $myPicture->drawScale($scaleSettings);
-
- /* Write the chart legend */
- $myPicture->drawLegend(540,20,array("Style"=>LEGEND_NOBORDER,"Mode"=>LEGEND_HORIZONTAL));
-
- /* Turn on Antialiasing */
- $myPicture->Antialias = TRUE;
-
- /* Draw the area chart */
- $myPicture->drawAreaChart();
-
- /* Render the picture (choose the best way) */
- $myPicture->autoOutput("pictures/example.drawAreaChart.simple.png");
+cd;
+ return $html;
 ?>
