@@ -11,6 +11,12 @@ $html=<<<cd
 			<div class="pic">
 				<img src="../themes/default/images/main/others/slide1.jpg" alt="">
 			</div>
+			<div class="detail">
+				<h2><span>نام فایل: </span>اسلاید یک</h2>
+				<p><span>سایز: </span>150 کیلوبایت</p>
+			</div>
+			<a href="#" title="" class="button">انتخاب</a>
+			<a href="#" title="" class="button">خروج</a>
 		</div>
 		<div class="files"></div>
 		<div class="badboy"></div>

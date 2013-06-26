@@ -789,6 +789,23 @@ a#filesbrowserbtn{
   margin-top: 0;
 }
 
+.picmanager .prev .detail{
+  margin-top: 20px;
+}
+
+.picmanager .prev .detail span{
+  color: #777;
+}
+
+.picmanager .prev .detail h2{
+  font-size: 17px;
+}
+
+.picmanager .prev .detail p{
+  font-size: 15px;
+  color: #000;
+}
+
 .picmanager .files{
   width: 548px;
   min-height: 300px;
