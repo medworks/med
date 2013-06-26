@@ -188,6 +188,25 @@ form .upload-file .action{
   overflow: hidden;
   width: 80px;
 }
+
+.overlay{
+  background: url('images/admin/overlay-icon.png') no-repeat center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  top: 2px;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.overlay:hover{
+  opacity: 0.8;
+}
 /***************************Header part*******************************/	
 header {
   height: 50px;
@@ -767,6 +786,7 @@ input.search-form:hover{
 }
 /**********************************Files browser*********************************/
 #filesbrowser{
+  width: 748px;
   text-align: right;
   border: 1px solid #eee;
   /*display: none;*/
@@ -777,16 +797,28 @@ a#filesbrowserbtn{
 }
 
 .picmanager .prev{
-  min-height: 300px;
   width: 210px;
   border-left: 1px solid #eee;
-  padding: 10px 20px 10px 10px;
+  padding: 20px 15px 10px 10px;
 }
 
 .picmanager .prev .pic img{
   width: 200px;
   height: 100px;
   margin-top: 0;
+  background: #fff;
+  padding: 2px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 0 2px #B5B5B5;
+  -moz-box-shadow: 0 0 2px #B5B5B5;
+  -ms-box-shadow: 0 0 2px #B5B5B5;
+  -o-box-shadow: 0 0 2px #B5B5B5;
+  box-shadow: 0 0 2px #B5B5B5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
 }
 
 .picmanager .prev .detail{
@@ -804,10 +836,50 @@ a#filesbrowserbtn{
 .picmanager .prev .detail p{
   font-size: 15px;
   color: #000;
+  margin-bottom: 20px;
 }
 
 .picmanager .files{
-  width: 548px;
-  min-height: 300px;
-  margin-right: 220px;
+  width: 487px;
+  padding: 20px 15px 10px 10px;
+}
+
+.picmanager .files .pics ul li{
+  float: right;
+  margin-left: 17px;
+  margin-bottom: 10px;
+}
+
+.picmanager .files .pics ul li .pic{
+  width: 104px;
+  height: 54px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.picmanager .files .pics ul li .pic img{
+  width: 100px;
+  height: 50px;
+  margin-top: 0;
+  background: #fff;
+  padding: 2px;
+  margin-bottom: 10px;
+  -webkit-box-shadow: 0 0 2px #B5B5B5;
+  -moz-box-shadow: 0 0 2px #B5B5B5;
+  -ms-box-shadow: 0 0 2px #B5B5B5;
+  -o-box-shadow: 0 0 2px #B5B5B5;
+  box-shadow: 0 0 2px #B5B5B5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  -ms-border-radius: 1px;
+  -o-border-radius: 1px;
+  border-radius: 1px;
+}
+
+.picmanager .files .pics ul li span{
+  color: #777;
+}
+
+.picmanager .files .pics ul li a{
+  cursor: pointer;
 }
