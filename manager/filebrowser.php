@@ -9,7 +9,7 @@ $html=<<<cd
 	<div class="picmanager">
 		<div class="prev right">
 			<div class="pic">
-				<img src="../themes/default/images/main/others/slide1.jpg" alt="">
+				<img id="previmage" src="../themes/default/images/main/others/slide1.jpg" alt="">
 			</div>
 			<div class="detail">
 				<h2><span>نام فایل: </span>اسلاید یک</h2>
@@ -23,7 +23,7 @@ $html=<<<cd
 				<ul>
 					<li>
 						<div class="pic">
-							<a title="انتخاب عکس">
+							<a class="select" title="انتخاب عکس">
 								<img src="../themes/default/images/main/others/slide1.jpg" alt="" />
 								<div class="overlay"></div>
 							</a>
