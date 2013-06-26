@@ -55,24 +55,24 @@
 				zoomType: 'xy'
 			},			
             title: {
-                text: 'نمودار اخبار'
+			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
+             text: 'نمودار اخبار'
             },
-            xAxis: {
-				style: {
-                    font: 'bold 15px bmira,tahoma'
-                },			
-                categories: [{$xnAxis}]
+            xAxis: {			   
+			  style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },	
+              categories: [{$xnAxis}]
             },
 			yAxis: {
-                title: {
+			  style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
+              title: {
                     text: 'تعداد خبر '
                 }
             },
             credits: {
                 enabled: false
-            },
-			
+            },			
             series: [{
+			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
 			    title: {
                     text: 'تعداد'
                 },
@@ -91,6 +91,7 @@
 				zoomType: 'xy'
 			},			
             title: {
+			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
                 text: 'نمودار فعالیت های انجام شده'
             },
             xAxis: {			 
@@ -119,7 +120,7 @@
 
  <div id="pnlnews" style="width: 400px; height: 400px; margin: 0;"></div>
  <hr/><br/>
- <div id="pnlworks" style="width: 400px; height: 400px; margin:650px 0;"></div>
+ <div id="pnlworks" style="width: 400px; height: 400px; margin:200px 0;"></div>
 
 cd;
  return $html;
