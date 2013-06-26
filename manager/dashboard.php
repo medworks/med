@@ -3,26 +3,26 @@
     include_once("../classes/database.php");	
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");		
-	include_once("../lib/pchart/class/pData.class.php"); 
-	include_once("../lib/pchart/class/pDraw.class.php"); 
-	include_once("../lib/pchart/class/pImage.class.php");
-	
+		
 	$db = Database::GetDatabase();
-	$news = $db->SelectAll("news","*",null,"ndate DESC");
+	$news = $db->SelectAll("news","*",null,"ndate");
 	$row = array();
 	$gdate = array();
 	$count = array();
 	foreach($news as $key => $val)
 	{
 	  $row[] = "'".ToJalali($val['ndate'],"Y-m-d")."'";
-	  $gdate[] = "'".Date("Y-m-d",$val['ndate'])."'";
+	  $gdate[] = "'".date("Y-m-d",strtotime($val['ndate']))."'";	  
 	}
+	//echo "count gdate is :",count($gdate);
+	//foreach($gdate as $key => $val) echo $val."<br/>";
 	$uniq = array_unique($row);
 	$guniq = array_unique($gdate);
-	foreach($guniq as $key => $val)
+	//echo "count guniq is :",count($guniq);
+	foreach($gdate as $key => $val)
 	{
 		$count[] = $db->CountOf("news","ndate = {$val}");
-        echo $db->cmd;		
+        //echo $db->cmd;		
 	}
 	$xAxis = implode(', ',$uniq);
 	$series = implode(', ',$count);
