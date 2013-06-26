@@ -188,16 +188,6 @@ form .upload-file .action{
   overflow: hidden;
   width: 80px;
 }
-
-#filesbrowser{
-  text-align: right;
-  border: 1px solid #eee;
-  display: none;
-}
-
-a#filesbrowserbtn{
-  cursor: pointer;
-}
 /***************************Header part*******************************/	
 header {
   height: 50px;
@@ -774,4 +764,25 @@ input.search-form{
 
 input.search-form:hover{
   color: #000 !important;
+}
+/**********************************Files browser*********************************/
+#filesbrowser{
+  text-align: right;
+  border: 1px solid #eee;
+  /*display: none;*/
+}
+
+a#filesbrowserbtn{
+  cursor: pointer;
+}
+
+.picmanager .prev{
+  min-height: 300px;
+  width: 210px;
+}
+
+.picmanager .files{
+  width: 558px;
+  min-height: 300px;
+  margin-right: 220px;
 }

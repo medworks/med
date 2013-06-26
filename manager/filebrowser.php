@@ -6,14 +6,11 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");		
 $html=<<<cd
-	<div id="right" class="" > 
-		<div id="pic"></div>
-		<span> اسم فایل</span>
-		<span> اندازه فایل</span>
-		<a href="">انتخاب</a>
-		<a href="">خروج</a>
-	</div>	
-	<div id="body" class=""></div>
+	<div class="picmanager">
+		<div class="prev right"></div>
+		<div class="files"></div>
+		<div class="badboy"></div>
+	</div>
 cd;
 echo $html;
 ?>
