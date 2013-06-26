@@ -5,8 +5,7 @@
 	include_once("../lib/persiandate.php");		
 		
 	$db = Database::GetDatabase();
-	$news = $db->SelectAll("news","*",null,"ndate");
-	$works = $db->SelectAll("works","*",null,"fdate");
+	$news = $db->SelectAll("news","*",null,"ndate");	
 	$row = array();
 	$itemcount = array();
 	$count = array();
@@ -22,13 +21,14 @@
 	}
 	$xnAxis = implode(', ',$uniq);
 	$nseries = implode(', ',$count);
-	unset($row);
+    unset($row);
 	unset($itemcount);
-	unset($count);
+	unset($count);	
 //*************************************************************
+    $works = $db->SelectAll("works","*",null,"sdate");
     foreach($works as $key => $val)
 	{
-	  $row[] = "'".ToJalali($val['fdate'],"Y-m-d")."'";	
+	  $row[] = "'".ToJalali($val['sdate'],"Y-m-d")."'";	
 	}	
 	$uniq = array_unique($row);	
 	$itemcount = array_count_values($row);	
@@ -92,7 +92,7 @@
 			},			
             title: {
 			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
-                text: 'نمودار فعالیت های انجام شده'
+                text: 'نمودار فعالیت های اخذ شده '
             },
             xAxis: {			 
                 categories: [{$xwAxis}]
