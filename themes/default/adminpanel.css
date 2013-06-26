@@ -207,6 +207,10 @@ form .upload-file .action{
 .overlay:hover{
   opacity: 0.8;
 }
+
+.highcharts-container{
+  direction: ltr;
+}
 /***************************Header part*******************************/	
 header {
   height: 50px;
