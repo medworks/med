@@ -13,7 +13,7 @@ $html=<<<cd
 			</div>
 			<div class="detail">
 				<h2><span>نام فایل: </span><span id="namepreview"></span></h2>
-				<p><span>سایز: </span></p>
+				<p><span>سایز: </span><span id="typepreview"></span></p>
 			</div>
 			<a href="#" title="" class="button">انتخاب</a>
 			<a href="#" title="" class="button">خروج</a>

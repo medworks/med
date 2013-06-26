@@ -793,7 +793,7 @@ input.search-form:hover{
   width: 748px;
   text-align: right;
   border: 1px solid #eee;
-  /*display: none;*/
+  display: none;
 }
 
 a#filesbrowserbtn{
