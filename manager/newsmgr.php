@@ -181,7 +181,9 @@ $html=<<<cd
 	   </div>
 	   <div class="badboy"></div>
 	   <p>
-	   		<a class="button" id="filesbrowserbtn">انتخاب عکس</a>
+	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" />
+	   		<a class="filesbrowserbtn" id="filesbrowserbtn" title="گالری تصاویر">گالری تصاویر</a>
+	   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 	   </p>
 	   <div class="badboy"></div>
 	   <div id="filesbrowser"></div>
