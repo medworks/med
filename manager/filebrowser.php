@@ -12,8 +12,9 @@ $html=<<<cd
 				<img id="previmage" src="" alt="">
 			</div>
 			<div class="detail">
-				<h2><span>نام فایل: </span><span id="namepreview"></span></h2>
-				<p><span>سایز: </span><span id="typepreview"></span></p>
+				<h2><span class="highlight">نام فایل: </span><span id="namepreview"></span></h2>
+				<p><span class="highlight">پسوند: </span><span id="typepreview"></span></p>
+				<p><span class="highlight">سایز: </span><span id="sizepreview"></span></p>
 			</div>
 			<a href="#" title="" class="button">انتخاب</a>
 			<a href="#" title="" class="button">خروج</a>
@@ -60,11 +61,11 @@ $html=<<<cd
 					<li>
 						<div class="pic">
 							<a title="انتخاب عکس">
-								<img src="../themes/default/images/main/others/slide1.jpg" alt="" />
+								<img src="../themes/default/images/main/others/logo.png" alt="" />
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید پنج</span></h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">لگو</span></h2>
 					</li>
 				</ul>
 				<div class="badboy"></div>

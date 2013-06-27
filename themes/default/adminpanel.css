@@ -829,7 +829,7 @@ a#filesbrowserbtn{
   margin-top: 20px;
 }
 
-.picmanager .prev .detail span{
+.picmanager .prev .detail span.highlight{
   color: #777;
 }
 
@@ -845,7 +845,7 @@ a#filesbrowserbtn{
 
 .picmanager .files{
   width: 487px;
-  padding: 20px 15px 10px 10px;
+  padding: 20px 10px 10px 10px;
 }
 
 .picmanager .files .pics ul li{
