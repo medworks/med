@@ -876,7 +876,7 @@ a#filesbrowserbtn{
   border-radius: 1px;
 }
 
-.picmanager .files .pics ul li span{
+.picmanager .files .pics ul li span.highlight{
   color: #777;
 }
 

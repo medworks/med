@@ -9,11 +9,11 @@ $html=<<<cd
 	<div class="picmanager">
 		<div class="prev right">
 			<div class="pic">
-				<img id="previmage" src="../themes/default/images/main/others/slide1.jpg" alt="">
+				<img id="previmage" src="" alt="">
 			</div>
 			<div class="detail">
-				<h2><span>نام فایل: </span>اسلاید یک</h2>
-				<p><span>سایز: </span>150 کیلوبایت</p>
+				<h2><span>نام فایل: </span><span id="namepreview"></span></h2>
+				<p><span>سایز: </span></p>
 			</div>
 			<a href="#" title="" class="button">انتخاب</a>
 			<a href="#" title="" class="button">خروج</a>
@@ -28,7 +28,7 @@ $html=<<<cd
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span>نام فایل: </span>اسلاید یک</h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید یک</span></h2>
 					</li>
 					<li>
 						<div class="pic">
@@ -37,7 +37,7 @@ $html=<<<cd
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span>نام فایل: </span>اسلاید یک</h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید دو</span></h2>
 					</li>
 					<li>
 						<div class="pic">
@@ -46,7 +46,7 @@ $html=<<<cd
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span>نام فایل: </span>اسلاید یک</h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید سه</span></h2>
 					</li>
 					<li>
 						<div class="pic">
@@ -55,7 +55,7 @@ $html=<<<cd
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span>نام فایل: </span>اسلاید یک</h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید چهار</span></h2>
 					</li>
 					<li>
 						<div class="pic">
@@ -64,7 +64,7 @@ $html=<<<cd
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span>نام فایل: </span>اسلاید یک</h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">اسلاید پنج</span></h2>
 					</li>
 				</ul>
 				<div class="badboy"></div>
