@@ -12,7 +12,8 @@
          {             
 			 if(is_file("../newspics/".$file))
 			 {                              
-					  $dirname = basename($file);
+					  $dirname = "../newspics/".basename($file);
+					  $filename = basename($file);
                       $pics.=<<<cd
 					     <li>
 						<div class="pic">
@@ -21,11 +22,11 @@
 								<div class="overlay"></div>
 							</a>
 						</div>
-						<h2><span class="highlight">نام فایل: </span><span class="filename">{$dirname}</span></h2>
+						<h2><span class="highlight">نام فایل: </span><span class="filename">{$filename}</span></h2>
 					</li>
 cd;
 					 // echo $dirname;                                    
-					 
+					  
 			  }
         }
     }
