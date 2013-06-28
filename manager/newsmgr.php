@@ -313,7 +313,8 @@ if ($_GET['act']=="mgr")
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["ndate"] =ToJalali($rows[$i]["ndate"]," l d F  Y ");                            
+                $rows[$i]["ndate"] =ToJalali($rows[$i]["ndate"]," l d F  Y ");
+				$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";                                            
 				if ($i % 2==0)
 				 {
 						$rowsClass[] = "datagridevenrow";
@@ -339,6 +340,7 @@ del;
             {                    
                     $gridcode .= DataGrid(array( 
 							"subject"=>"عنوان",
+							"image"=>"تصویر",
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",
