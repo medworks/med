@@ -10,10 +10,10 @@
     {        
          if (!preg_match("/^[.]/",$file,$out, PREG_OFFSET_CAPTURE))
          {             
-			 if(is_dir("../newspics/".$file))
+			 if(is_file("../newspics/".$file))
 			 {                              
 					  $dirname = basename($file);
-                      $pics=<<<cd
+                      $pics.=<<<cd
 					     <li>
 						<div class="pic">
 							<a class="select" title="انتخاب عکس">
@@ -25,9 +25,7 @@
 					</li>
 cd;
 					 // echo $dirname;                                    
-					  $newspics[] = array("Name"=>basename($file),
-									   "Size"=>(filesize($file)/1024),//KB
-									   "ext"=> substr($file, strrpos($file, '.') + 1));
+					 
 			  }
         }
     }
