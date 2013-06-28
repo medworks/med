@@ -1,8 +1,8 @@
 <?php    	
     $pics = "";
 	$dir = "";
-	$cur_url =  substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], 'item') + 5);	
-	if ($cur_url=="newsmgr")
+	$cur_url =  substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], 'item') + 5);    
+	if ($_GET['item']=="newsmgr")
 	{	   
 		$dir='../newspics';
 	}	
