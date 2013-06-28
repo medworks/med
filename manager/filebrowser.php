@@ -1,18 +1,24 @@
-<?php
-    include_once("../config.php");
-    include_once("../classes/database.php");
-	include_once("../classes/messages.php");
-	include_once("../classes/session.php");	
-	include_once("../classes/functions.php");
-	include_once("../lib/persiandate.php");	    
-	$handle=opendir('../newspics');
+<?php    	
+    $pics = "";
+	$dir = "";
+	$cur_url =  substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], 'item') + 5);	
+	if ($cur_url=="newsmgr")
+	{	   
+		$dir='../newspics';
+	}	
+	else
+	if ($_GET['item']=="worksmgr")
+	{	 
+		$dir='../worksmgr';
+	}		
+    $handle=opendir($dir);
     while ($file = readdir($handle))
     {        
          if (!preg_match("/^[.]/",$file,$out, PREG_OFFSET_CAPTURE))
          {             
-			 if(is_file("../newspics/".$file))
+			 if(is_file("{$dir}/".$file))
 			 {                              
-					  $dirname = "../newspics/".basename($file);
+					  $dirname = "{$dir}/".basename($file);
 					  $filename = basename($file);
                       $pics.=<<<cd
 					     <li>
@@ -25,8 +31,6 @@
 						<h2><span class="highlight">نام فایل: </span><span class="filename">{$filename}</span></h2>
 					</li>
 cd;
-					 // echo $dirname;                                    
-					  
 			  }
         }
     }
