@@ -182,7 +182,7 @@ $html=<<<cd
 	   <div class="badboy"></div> -->
 	   <p>
 	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" />
-	   		<a class="filesbrowserbtn" id="filesbrowserbtn" title="گالری تصاویر">گالری تصاویر</a>
+	   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
 	   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 	   </p>
 	   <div class="badboy"></div>
