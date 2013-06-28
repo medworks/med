@@ -18,8 +18,8 @@
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
 	   $ndatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
 				  
-	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
-		{ 
+	   if(empty($_POST["selectpic"]))
+	   { 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
 			//header('location:?item=newsmgr&act=new&msg=4');
 			$_GET["item"] = "newsmgr";
@@ -28,38 +28,22 @@
 			$overall_error = true;
 			//exit();
 		}
-		else
+		else						
+		if (empty($_POST['detail']))
 		{
-			$filename =strtolower(basename($_FILES['pic']['name']));
-			$ext = substr($filename, strrpos($filename, '.') + 1);
-			//$newfilename= md5(rand() * time());
-			$newfilename = $_POST['subject'];	 
-			$ext=".".$ext;          
-			//$newfilename = $_FILES['pic']['name'];
-			$newname_os = OS_ROOT.'/newspics/'.$newfilename.$ext;
-			$newname_site = SITE_ROOT.'/newspics/'.$newfilename.$ext;
-			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-			{       
-				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-				header('location:?item=newsmgr&act=new&msg=3');
-				exit();
-			}
-			else
-			if (empty($_POST['detail']))
-			{
-			   //header('location:?item=newsmgr&act=new&msg=5');
-				$_GET["item"] = "newsmgr";
-				$_GET["act"] = "new";
-				$_GET["msg"] = 5;
-			   $overall_error = true;
-			}			
-		}
+		   //header('location:?item=newsmgr&act=new&msg=5');
+			$_GET["item"] = "newsmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 5;
+		   $overall_error = true;
+		}			
+		
 	}	
 	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
 		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -77,7 +61,7 @@
 	{		
 	    $_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
-		                 "`image`"=>"'{$newname_site}'",
+		                 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`body`"=>"'{$_POST[detail]}'",
 						 "`ndate`"=>"'{$ndatetime}'",
 						 "`userid`"=>"'{$userid}'",
@@ -89,10 +73,11 @@
 	if ($overall_error)
 	{
 		$row = array("subject"=>$_POST['subject'],
-						 "body"=>$_POST['detail'],
-						 "ndate"=>$_POST['ndate'],
-						 "userid"=>$userid,
-						 "resource"=>$_POST['res']);
+		             "image"=>$_POST['image'],
+					 "body"=>$_POST['detail'],
+					 "ndate"=>$_POST['ndate'],
+					 "userid"=>$userid,
+					 "resource"=>$_POST['res']);
 	}
 	
 	
@@ -163,7 +148,7 @@ $html=<<<cd
   </div>
   <div class="mes" id="message">{$msgs}</div>
   <div class='content'>
-	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" enctype="multipart/form-data" >  
+	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" >  
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="subject">عنوان </label>
@@ -173,15 +158,9 @@ $html=<<<cd
   	   <p>
          <label for="pic">عکس </label>
          <span>*</span>
-       </p>
-       <!-- <div class="upload-file">
-       		<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />
-			<span class="filename">عکس مورد نظر را انتخاب نمایید</span>
-			<span class="action">انتخاب عکس</span>
-	   </div>
-	   <div class="badboy"></div> -->
+       </p>       
 	   <p>
-	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" />
+	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
 	   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
 	   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 	   </p>
