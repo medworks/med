@@ -41,15 +41,21 @@
     unset($row);
 	unset($itemcount);
 	unset($count);
+$list = array("area"=>"محیطی",
+              "line"=>"خطی",
+              "pie"=>"دایره ای",
+			  "bar"=>"میله ای");
+$combobox = SelectOptionTag("cbchart",$list,'area','GoUrl("adminpanel.php?item=dashboard&act=do")');	
  $html=<<<cd
  
  <script src="../lib/highcharts/js/highcharts.js"></script>
  <script src="../lib/highcharts/js/modules/exporting.js"></script>
  <script type="text/javascript">
  $(function () {
+ alert($('#cbchart').val());
         $('#pnlnews').highcharts({
            chart: {		
-				 type: 'area',		   
+				type: $('#cbchart').val(),
 				width: 800,
 				height:600,
 				zoomType: 'xy'
@@ -117,7 +123,9 @@
     });
 
 	</script>
-
+	<span>انتخاب نوع نمودار</span>
+{$combobox}
+<hr/>
  <div id="pnlnews" style="width: 400px; height: 400px; margin: 0;"></div>
  <hr/><br/>
  <div id="pnlworks" style="width: 400px; height: 400px; margin:200px 0;"></div>
