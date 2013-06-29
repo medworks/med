@@ -926,6 +926,7 @@ a#filesbrowserbtn{
   width: 487px;
   padding: 20px 10px 10px 10px;
   border-right: 1px solid #eee;
+  height: 300px;
 }
 
 .picmanager .files .pics ul li{
@@ -968,4 +969,10 @@ a#filesbrowserbtn{
 
 .picmanager .files .pics ul li a{
   cursor: pointer;
+}
+
+p.note{
+  font-size: 17px;
+  padding-right: 10px;
+  line-height: 2;
 }

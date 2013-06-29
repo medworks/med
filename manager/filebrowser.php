@@ -25,7 +25,7 @@
 
 					if(in_array($exe, $allowedExts)){
                       $pics.=<<<cd
-					     <li>
+					    <li>
 							<div class="pic">
 								<a class="select" title="انتخاب عکس {$name}">
 									<img src="{$dirname}" alt="{$name}" />
@@ -35,7 +35,7 @@
 							<h2><span class="highlight">نام فایل: </span><span class="filename">{$name}</span></h2>
 						</li>
 cd;
-					}	
+					}else{$pics="<p class='note'>متاسفانه تصویری یافت نشد! ابتدا تصویر مورد نظر خود را در قسمت آپلود اضافه نمایید سپس از این قسمت انتخاب نمایید.</p>";}	
 			  }
         }
     }
@@ -58,7 +58,9 @@ $html=<<<cd
 		<div class="files right">
 			<div class="pics">
 				<ul>
+
 					{$pics}
+
 				</ul>
 				<div class="badboy"></div>
 			</div>
