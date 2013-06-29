@@ -174,12 +174,12 @@ $html=<<<cd
          <label for="pic">عکس </label>
          <span>*</span>
        </p>
-       <div class="upload-file">
-       		<!-- <input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" /> -->
+       <!-- <div class="upload-file">
+       		<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />
 			<span class="filename">عکس مورد نظر را انتخاب نمایید</span>
 			<span class="action">انتخاب عکس</span>
 	   </div>
-	   <div class="badboy"></div>
+	   <div class="badboy"></div> -->
 	   <p>
 	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" />
 	   		<a class="filesbrowserbtn" id="filesbrowserbtn" title="گالری تصاویر">گالری تصاویر</a>
