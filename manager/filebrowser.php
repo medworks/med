@@ -19,17 +19,23 @@
 			 {                              
 					  $dirname = "{$dir}/".basename($file);
 					  $filename = basename($file);
+					  $exe = substr($filename, strrpos($filename, '.') + 1);
+					  $name = substr($filename, 0, strrpos($filename, '.'));
+					  $allowedExts = array('jpg','jpeg','png','bmp','gif');
+
+					if(in_array($exe, $allowedExts)){
                       $pics.=<<<cd
 					     <li>
-						<div class="pic">
-							<a class="select" title="انتخاب عکس">
-								<img src="{$dirname}" alt="" />
-								<div class="overlay"></div>
-							</a>
-						</div>
-						<h2><span class="highlight">نام فایل: </span><span class="filename">{$filename}</span></h2>
-					</li>
+							<div class="pic">
+								<a class="select" title="انتخاب عکس {$name}">
+									<img src="{$dirname}" alt="{$name}" />
+									<div class="overlay"></div>
+								</a>
+							</div>
+							<h2><span class="highlight">نام فایل: </span><span class="filename">{$name}</span></h2>
+						</li>
 cd;
+					}	
 			  }
         }
     }
