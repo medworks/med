@@ -32,7 +32,6 @@
 
 	  $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
 	  $db = database::GetDatabase();
-  	  $news = $db->SelectAll('news',NULL,NULL," ndate DESC");
   	?>
   <div class="container">
 	<header>
@@ -121,12 +120,12 @@
 		<div class="news right">
 			<ul>
 
-				<?php		
-					for($i=0 ; $i<5 ; $i++){
-						$body= $news[$i]["body"];
-						$body= strip_tags($body);
-						$body= (mb_strlen($body)>40) ? mb_substr($body,0,40,"UTF-8")."..." : $body;
-						echo "<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$body</a></li>";
+				<?php
+  	  				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+					for($i=0 ; $i<count($news) ; $i++){
+						$subject= $news[$i]["subject"];
+						$subject= (mb_strlen($subject)>100) ? mb_substr($subject,0,100,"UTF-8")."..." : $subject;
+						echo "<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$subject</a></li>";
 					}
 				?>
 			</ul>
