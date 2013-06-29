@@ -41,11 +41,12 @@
     unset($row);
 	unset($itemcount);
 	unset($count);
-$list = array("area"=>"محیطی",
+$list = array("none"=>"انتخاب نوع",
+              "area"=>"محیطی",
               "line"=>"خطی",
               "pie"=>"دایره ای",
 			  "bar"=>"میله ای");
-$combobox = SelectOptionTag("cbchart",$list,'area');	
+$combobox = SelectOptionTag("cbchart",$list);	
  $html=<<<cd
 <span>انتخاب نوع نمودار</span>
 {$combobox}
@@ -55,7 +56,7 @@ $combobox = SelectOptionTag("cbchart",$list,'area');
  <script type="text/javascript"> 
  $('#cbchart').change(function(){    
 	$("select option:selected").each(function(){
-	alert($(this).val());	
+	window.location.href = "adminpanel.php?item=dashboard&act=do&type="+$(this).val();	
 	return false;
 				});
 });	
@@ -63,7 +64,7 @@ $combobox = SelectOptionTag("cbchart",$list,'area');
  $(function () {       		
         $('#pnlnews').highcharts({
            chart: {		
-				type: 'area',
+				type: '{$_GET[type]}',
 				width: 800,
 				height:600,
 				zoomType: 'xy'
@@ -100,7 +101,7 @@ $combobox = SelectOptionTag("cbchart",$list,'area');
 	$(function () {
         $('#pnlworks').highcharts({
            chart: {		
-				 type: 'area',		   
+			    type: '{$_GET[type]}',		   
 				width: 800,
 				height:600,
 				zoomType: 'xy'
