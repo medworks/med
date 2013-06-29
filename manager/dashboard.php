@@ -46,7 +46,7 @@ $list = array("none"=>"انتخاب نوع",
               "line"=>"خطی",
               "pie"=>"دایره ای",
 			  "bar"=>"میله ای");
-$combobox = SelectOptionTag("cbchart",$list);	
+$combobox = SelectOptionTag("cbchart",$list,'area');	
  $html=<<<cd
 <span>انتخاب نوع نمودار</span>
 {$combobox}
