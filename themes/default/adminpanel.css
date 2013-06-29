@@ -878,7 +878,6 @@ a#filesbrowserbtn{
 
 .picmanager .prev{
   width: 210px;
-  border-left: 1px solid #eee;
   padding: 20px 15px 10px 10px;
 }
 
@@ -926,12 +925,15 @@ a#filesbrowserbtn{
 .picmanager .files{
   width: 487px;
   padding: 20px 10px 10px 10px;
+  border-right: 1px solid #eee;
 }
 
 .picmanager .files .pics ul li{
   float: right;
   margin-left: 17px;
   margin-bottom: 20px;
+  width: 104px;
+  height: 100px;
 }
 
 .picmanager .files .pics ul li .pic{
