@@ -68,10 +68,11 @@ $list = array("none"=>"انتخاب نوع نمودار",
               "line"=>"خطی",
               "pie"=>"دایره ای",
 			  "bar"=>"میله ای");
-$combobox = SelectOptionTag("cbchart",$list,'area');	
+$combobox = SelectOptionTag("cbchart",$list);	
  $html=<<<cd
-<span>انتخاب نوع نمودار</span>
-{$combobox}
+<p>
+	{$combobox}
+</p>
 <hr/> 
  <script src="../lib/highcharts/js/highcharts.js"></script>
  <script src="../lib/highcharts/js/modules/exporting.js"></script>
