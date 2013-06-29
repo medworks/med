@@ -7,6 +7,7 @@
 	$db = Database::GetDatabase();
 	$news = $db->SelectAll("news","*",null,"ndate");	
 	$row = array();
+	$pie = array();
 	$itemcount = array();
 	$count = array();
 	foreach($news as $key => $val)
@@ -17,12 +18,22 @@
 	$itemcount = array_count_values($row);	
 	foreach($itemcount as $key => $val)
 	{
-		$count[] = $val;        
+		$count[] = $val;
+		$pie[] = "[{$key},{$val}]";
 	}
-	$xnAxis = implode(', ',$uniq);
-	$nseries = implode(', ',$count);
+	if ($_GET["type"]=="pie")
+	{		
+		//$xnAxis = implode(', ',$uniq);
+		$nseries = implode(', ',$pie);
+	}
+    else
+	{ 	
+		$xnAxis = implode(', ',$uniq);
+		$nseries = implode(', ',$count);
+	}
     unset($row);
 	unset($itemcount);
+	unset($pie);
 	unset($count);	
 //*************************************************************
     $works = $db->SelectAll("works","*",null,"sdate");
@@ -35,13 +46,24 @@
 	foreach($itemcount as $key => $val)
 	{
 		$count[] = $val;        
+		$pie[] = "[{$key},{$val}]";
 	}
-	$xwAxis = implode(', ',$uniq);
-	$wseries = implode(', ',$count);	
+	if ($_GET["type"]=="pie")
+	{		
+		//$xwAxis = implode(', ',$uniq);		
+		$wseries = implode(', ',$pie);
+	}
+    else
+	{ 	
+		$xwAxis = implode(', ',$uniq);
+	    $wseries = implode(', ',$count);
+	}
+	
     unset($row);
 	unset($itemcount);
+	unset($pie);
 	unset($count);
-$list = array("none"=>"انتخاب نوع",
+$list = array("none"=>"انتخاب نوع نمودار",
               "area"=>"محیطی",
               "line"=>"خطی",
               "pie"=>"دایره ای",
@@ -86,7 +108,7 @@ $combobox = SelectOptionTag("cbchart",$list,'area');
             credits: {
                 enabled: false
             },			
-            series: [{
+            series: [{			
 			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
 			    title: {
                     text: 'تعداد'
