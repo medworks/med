@@ -63,7 +63,7 @@
 	unset($itemcount);
 	unset($pie);
 	unset($count);
-$list = array("none"=>"انتخاب نوع",
+$list = array("none"=>"انتخاب نوع نمودار",
               "area"=>"محیطی",
               "line"=>"خطی",
               "pie"=>"دایره ای",
