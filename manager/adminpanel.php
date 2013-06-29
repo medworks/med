@@ -12,7 +12,7 @@
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
-		die();
+		die(); //solve security bug
 	}
 	if ($_GET["item"] == "logout")
    {

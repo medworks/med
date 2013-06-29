@@ -4,7 +4,14 @@
 	include_once("../classes/messages.php");
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
+	include_once("../classes/login.php");
 	include_once("../lib/persiandate.php");	
+	$login = Login::getLogin();
+	if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
 	$db = Database::GetDatabase();
 	$sess = Session::GetSesstion();	
 	$userid = $sess->Get("userid");

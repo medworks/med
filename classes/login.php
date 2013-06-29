@@ -50,7 +50,7 @@ class Login
 		if ($sess->Get("login")) 
 		{
 			return true;
-		}	else return false;
+		}else return false;
 	}   
 }
 
