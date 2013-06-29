@@ -2,7 +2,7 @@
 	include_once("../classes/database.php");	
 	include_once("../classes/login.php");	
 	$login = Login::getLogin();
-	if (!login->IsLogged())
+	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
