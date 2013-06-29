@@ -18,7 +18,7 @@ else
 	{
 		if ($login->AdminLogin($_POST['username'],$_POST['password']))
 		{		 
-			header("location:adminpanel.php");
+			header("location:adminpanel.php?item=dashboard&act=do&type=area");
 		}	
 		else
 		{ 
