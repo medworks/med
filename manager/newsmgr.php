@@ -175,9 +175,6 @@ $html=<<<cd
 	   <div class="badboy"></div>
 	   <div id="filesbrowser"></div>
 	   <div class="badboy"></div>
-       	<div id="imgpreview">
-			<img id="img" src="" alt="" />				
-		</div>
   	   <p>
          <label for="detail">توضیحات </label>
          <span>*</span>

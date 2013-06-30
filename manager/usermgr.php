@@ -92,7 +92,7 @@ $html=<<<cd
          <span>*</span>
        </p>  	 
        <input type="text" name="name" class="validate[required] name" id="name" />
-	   <p>
+	     <p>
          <label for="family">نام خانوادگی </label>
          <span>*</span>
        </p>  	 
@@ -101,10 +101,15 @@ $html=<<<cd
     	   <label for="pic">عکس </label>
          <span>*</span>
        </p>
-       <input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />
-       <div id="imgpreview">
-        <img id="img" src="" alt="" />        
-       </div>
+       <p>
+          <input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
+          <input type="text" class="showadd" id="showadd" value='{$row[image]}' />
+          <a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
+          <a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
+       </p>
+       <div class="badboy"></div>
+       <div id="filesbrowser"></div>
+       <div class="badboy"></div>
        <p>
          <label for="email">ایمیل </label>
          <span>*</span>

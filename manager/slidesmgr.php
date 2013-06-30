@@ -148,20 +148,15 @@ $html=<<<cd
 				<label for="pic">عکس </label>
 				<span>*</span>
 			</p>
-			<div class="upload-file">
-				<input type="file" name="pic" class="validate[required] pic" id="pic" OnChange="showPreview(this)" />  
-				<span class="filename">
-				<script language="javascript">
-					 //$('form #pic').val({$row[image]});
-					 $('form #pic').fileupload('add', {files: filesList, url:'{$row[image]}'});
-				</script>
-				</span>
-				<span class="action">انتخاب عکس</span>
-			</div>			
-			<div class="badboy"></div>
-			<div id="imgpreview">				
-				{$pic_on_edit_insert_section}
-			</div>
+			<p>
+		   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
+		   		<input type="text" class="showadd" id="showadd" value='{$row[image]}' />
+		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
+		   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
+		   </p>
+		   <div class="badboy"></div>
+		   <div id="filesbrowser"></div>
+		   <div class="badboy"></div>
 			<p>
 				<label for="subject">عنوان </label>
 				<span>*</span>
