@@ -100,7 +100,7 @@ echo $html;
 	 <div id="mainnav" class="main-menu">
         <ul>
           <li>
-            <a href="?item=dashboard&act=do">پیشخوان
+            <a href="?item=dashboard&act=do&type=line">پیشخوان
                <span class="dashboard"></span>
             </a>
           </li>
