@@ -168,6 +168,7 @@ $html=<<<cd
        </p>       
 	   <p>
 	   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
+	   		<input type="text" class="showadd" id="showadd" value='{$row[image]}' />
 	   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
 	   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 	   </p>
