@@ -846,7 +846,7 @@ a#filesbrowserbtn{
   width: 487px;
   padding: 20px 10px 10px 10px;
   border-right: 1px solid #eee;
-  height: 300px;
+  min-height: 300px;
 }
 
 .picmanager .files .pics ul li{
