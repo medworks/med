@@ -123,6 +123,11 @@ echo $html;
             <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
                 <span class="users"></span>
             </a>
+          </li>	
+          <li >            
+            <a href="?item=uploadmgr&act=do" id="users" name="users">مدیریت آپلود
+                <span class="users"></span>
+            </a>
           </li>		  
           <li>
             <a href="#">خروج
