@@ -24,7 +24,7 @@
 	else
 	if ($_GET['item']=="slidesmgr")
 	{	 
-		$dir='../slidesspics';
+		$dir='../slidespics';
 	}		
     $handle=opendir($dir);
     while ($file = readdir($handle))
