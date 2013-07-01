@@ -19,7 +19,7 @@
 	else
 	if ($_GET['item']=="worksmgr")
 	{	 
-		$dir='../worksmgr';
+		$dir='../workspics';
 	}		
     $handle=opendir($dir);
     while ($file = readdir($handle))
