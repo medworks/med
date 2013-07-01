@@ -18,26 +18,21 @@
  $pic_on_edit_section = null;
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
-	 $filename = strtolower(basename($_FILES['pic']['name']));
-	 $ext = substr($filename, strrpos($filename, '.') + 1);
-	 //$newfilename= md5(rand() * time());
-	 $newfilename = $_POST['subject'];	 
-	 $ext=".".$ext;          
-	 //$newfilename = $_FILES['pic']['name'];
-	 $newname_os = OS_ROOT.'/slidespics/'.$newfilename.$ext;
-	 $newname_site = SITE_ROOT.'/slidespics/'.$newfilename.$ext;
-	 if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-	 {       
-		//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-		header('location:?item=slidesmgr&act=new&msg=3');
-		$overall_error  = true;
-		exit();
-	 }
+	 if(empty($_POST["selectpic"]))
+		{ 
+			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+			//header('location:?item=slidesmgr&act=new&msg=4');
+			$_GET["item"] = "slidesmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 4;
+			$overall_error = true;
+			//exit();
+		}
   } 	
  if (!$overall_error && $_POST["mark"]=="saveslides")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`pos`");	
-	$values = array("'{$newname_site}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
+	$values = array("'{$_POST[selectpic]}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
 	if (!$db->InsertQuery('slides',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -54,7 +49,7 @@
  else
  if (!$overall_error && $_POST["mark"]=="editslides")
  {			    
-	$values = array("`image`"=>"'{$newname_site}'",
+	$values = array("`image`"=>"'{$_POST[selectpic]}'",
 	       		    "`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'",
 					"`pos`"=>"'{$_POST[cbpos]}'");		
@@ -151,7 +146,7 @@ $html=<<<cd
 			<p>
 		   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
 		   		<input type="text" class="showadd" id="showadd" value='{$row[image]}' />
-		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
+		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="slidesmgr" title="گالری تصاویر">گالری تصاویر</a>
 		   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 		   </p>
 		   <div class="badboy"></div>
