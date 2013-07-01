@@ -26,7 +26,7 @@
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);
 	   $fdatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));
 				  
-	   if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
+	    if(empty($_POST["selectpic"]))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
 			//header('location:?item=worksmgr&act=new&msg=4');
@@ -37,22 +37,7 @@
 			//exit();
 		}
 		else
-		{
-			$filename =strtolower(basename($_FILES['pic']['name']));
-			$ext = substr($filename, strrpos($filename, '.') + 1);
-			//$newfilename= md5(rand() * time());
-			$newfilename = $_POST['subject'];	 
-			$ext=".".$ext;          
-			//$newfilename = $_FILES['pic']['name'];
-			$newname_os = OS_ROOT.'/workspics/'.$newfilename.$ext;
-			$newname_site = SITE_ROOT.'/workspics/'.$newfilename.$ext;
-			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-			{       
-				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-				header('location:?item=worksmgr&act=new&msg=3');
-				exit();
-			}
-			else
+		{			
 			if (empty($_POST['detail']))
 			{
 			   //header('location:?item=worksmgr&act=new&msg=5');
@@ -67,7 +52,7 @@
 	{						   				
 		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$newname_site}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
 		if (!$db->InsertQuery('works',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -83,22 +68,23 @@
 		}  				 
 	}
 	else
-	if (!$overall_error && $_POST["mark"]=="editnews")
+	if (!$overall_error && $_POST["mark"]=="editworks")
 	{		
 	    $_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
-		                 "`image`"=>"'{$newname_site}'",
+		                 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`body`"=>"'{$_POST[detail]}'",
 						 "`sdate`"=>"'{$sdatetime}'",
 						 "`fdate`"=>"'{$fdatetime}'");		
         $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));
+		echo $db->cmd;
 		header('location:?item=worksmgr&act=mgr');
 	}
 
 	if ($overall_error)
 	{
 		$row = array("subject"=>$_POST['subject'],
-					 "image"=>$_FILES['pic']['name'],
+					 "image"=>$_POST['image'],
 					 "body"=>$_POST['detail'],					
 					 "sdate"=>$_POST['sdate'],
 					 "fdate"=>$_POST['fdate']);
@@ -185,7 +171,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		   <p>
 		   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
 		   		<input type="text" class="showadd" id="showadd" value='{$row[image]}' />
-		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
+		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="worksmgr" title="گالری تصاویر">گالری تصاویر</a>
 		   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 		   </p>
 		   <div class="badboy"></div>
