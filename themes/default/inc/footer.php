@@ -27,7 +27,7 @@
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$slides = $db->SelectAll('slides',NULL,NULL," pos ASC");
+		  					$slides = $db->SelectAll('slides',NULL,NULL," pos DESC");
 		  					
 							for($i=0 ; $i<3 ; $i++){ 
 								echo "<li>
