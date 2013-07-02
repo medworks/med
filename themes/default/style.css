@@ -1703,6 +1703,15 @@ section.main-content .content .detail p{
 .gallery-page ul li .gallpic{
 	width: 180px;
 	height: 90px;
+	position: relative;
+}
+
+.gallery-page ul li .gallpic a{
+	vertical-align: top !important;
+}
+
+.gallery-page ul li .gallpic a:hover span{
+	opacity: 0.7;
 }
 
 .gallery-page ul li .gallpic img{
@@ -1728,4 +1737,5 @@ section.main-content .content .detail p{
 	font-size: 18px;
 	margin-right: 5px;
 	color: #000;
+	margin-top: 10px;
 }
