@@ -141,5 +141,6 @@ input.text{
 }
 
 .mes{
-  
+  direction: rtl;
+  margin-right: -125px;
 }
