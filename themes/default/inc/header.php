@@ -51,15 +51,7 @@
 				<menu class="menu">
 					<li><a href="./">صفحه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
-					<li><a href="#">گالری تصاویر</a>
-						<menu>
-							<li><a href="#">گالری تصاویر 1</a></li>
-							<li><a href="#">گالری تصاویر 2</a></li>
-							<li><a href="#">گالری تصاویر 3</a></li>
-							<li><a href="#">گالری تصاویر 4</a></li>
-							<li><a href="#">گالری تصاویر 5</a></li>
-						</menu>
-					</li>
+					<li><a href="?item=gallery">گالری تصاویر</a></li>
 					<li><a href="#">خدمات</a>
 						<menu>
 							<li><a href="#">خدمات 1</a></li>
@@ -94,15 +86,7 @@
 				<li><a href="?item=about">درباره ما</a></li>
 				<li><a href="?item=works&act=do">کارهای ما</a></li>
 				<li><a href="?item=news&act=do">اخبار</a></li>
-				<li><a href="#">گالری تصاویر</a>
-					<menu>
-						<li><a href="#">گالری تصاویر 1</a></li>
-						<li><a href="#">گالری تصاویر 2</a></li>
-						<li><a href="#">گالری تصاویر 3</a></li>
-						<li><a href="#">گالری تصاویر 4</a></li>
-						<li><a href="#">گالری تصاویر 5</a></li>
-					</menu>
-				</li>
+				<li><a href="?item=gallery">گالری تصاویر</a></li>
 				<li><a href="#">خدمات</a>
 					<menu>
 						<li><a href="#">خدمات 1</a></li>

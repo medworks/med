@@ -19,6 +19,9 @@ include_once("./classes/messages.php");
 			break;
 			case 'contact':
                 return "contact.php";
+			break;
+			case 'gallery':
+                return "gallery.php";
 			break;	
             case 'works':
                 if ($act=="do") return "works.php";

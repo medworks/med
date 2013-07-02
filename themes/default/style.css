@@ -1690,4 +1690,36 @@ section.main-content .content .detail p{
 	-o-transition: opacity 300ms;
 	transition: opacity 300ms;
 }
+/*********************************Gallery page*****************************/
+.gallery-page{
+	padding: 10px !important;
+}
 
+.gallery-page ul li{
+	float: right;
+	margin: 10px 8px 20px 0px;
+}
+
+.gallery-page ul li img{
+	width: 180px;
+	height: 90px;
+	background: #fff;
+	padding: 2px;
+	margin-bottom: 10px;
+	-webkit-box-shadow: 0 0 2px #B5B5B5;
+	-moz-box-shadow: 0 0 2px #B5B5B5;
+	-ms-box-shadow: 0 0 2px #B5B5B5;
+	-o-box-shadow: 0 0 2px #B5B5B5;
+	box-shadow: 0 0 2px #B5B5B5;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	-ms-border-radius: 1px;
+	-o-border-radius: 1px;
+	border-radius: 1px;
+}
+
+.gallery-page ul li h2{
+	float: none !important;
+	font-size: 18px;
+	margin-right: 5px;
+}
