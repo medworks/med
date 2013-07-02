@@ -32,7 +32,7 @@
 							for($i=0 ; $i<3 ; $i++){ 
 								echo "<li>
 										<div class='pic'><a href='{$slides[$i][image]}' rel='prettyphoto[gallery1]' title='{$slides[$i]["subject"]}'><img src='{$slides[$i]["image"]}'alt='{$slides[$i]["subject"]}'></a></div>
-										<h3><a href='{$slides[$i][image]}' rel='prettyphoto[gallery1]' title='{$slides[$i]["subject"]}'>{$slides[$i]["subject"]}</a></h3>
+										<h3>{$slides[$i]["subject"]}</h3>
 									</li>";
 							}
 						?>

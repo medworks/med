@@ -344,7 +344,7 @@ $html.=<<<cd
 							</a>
 						</div>
 						<h2>
-							<a href="{$slides[0][image]}" title="{$slides[0][subject]}">{$slides[0][subject]}</a>
+							{$slides[0][subject]}
 						</h2>
 						<div class="detial"><p>{$slides[0][body]}</p></div>
 					</li>

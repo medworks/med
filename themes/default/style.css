@@ -1697,10 +1697,15 @@ section.main-content .content .detail p{
 
 .gallery-page ul li{
 	float: right;
-	margin: 10px 8px 20px 0px;
+	margin: 10px 5px 20px 10px;
 }
 
-.gallery-page ul li img{
+.gallery-page ul li .gallpic{
+	width: 180px;
+	height: 90px;
+}
+
+.gallery-page ul li .gallpic img{
 	width: 180px;
 	height: 90px;
 	background: #fff;
@@ -1722,4 +1727,5 @@ section.main-content .content .detail p{
 	float: none !important;
 	font-size: 18px;
 	margin-right: 5px;
+	color: #000;
 }
