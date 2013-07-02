@@ -27,12 +27,12 @@
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$slides = $db->SelectAll('slides',NULL,NULL," pos DESC");
+		  					$slides = $db->SelectAll('slides',NULL,NULL," pos ASC");
 		  					
 							for($i=0 ; $i<3 ; $i++){ 
 								echo "<li>
-										<div class='pic'><a href='?item=fullslides&act=do&wid={$slides[$i][id]}' title='{$slides[$i]["subject"]}'><img src='{$slides[$i]["image"]}'alt='{$slides[$i]["subject"]}'></a></div>
-										<h3><a href='?item=fullslides&act=do&wid={$slides[$i][id]}' title='{$slides[$i]["subject"]}'>{$slides[$i]["subject"]}</a></h3>
+										<div class='pic'><a href='{$slides[$i][image]}' rel='prettyphoto[gallery1]' title='{$slides[$i]["subject"]}'><img src='{$slides[$i]["image"]}'alt='{$slides[$i]["subject"]}'></a></div>
+										<h3><a href='{$slides[$i][image]}' rel='prettyphoto[gallery1]' title='{$slides[$i]["subject"]}'>{$slides[$i]["subject"]}</a></h3>
 									</li>";
 							}
 						?>
@@ -111,5 +111,13 @@
 		</div>
 	</section>
 	<div id="topcontrol"></div>
+	<script type="text/javascript">
+		  $(document).ready(function(){
+		    $("a[rel^='prettyphoto']").prettyPhoto({
+		    	autoplay_slideshow: true,
+		    	show_title: false,
+		    });
+		  });
+	</script>
 </body>
 </html>
