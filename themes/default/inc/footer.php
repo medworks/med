@@ -25,21 +25,17 @@
 				<div class="title"><h4>گالری تصاویر</h4></div>
 				<div class="content">
 					<ul>
-						<li>
-							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
-							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
-							<span class="date">31 اردیبهشت 1392</span>
-						</li>
-						<li>
-							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
-							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
-							<span class="date">31 اردیبهشت 1392</span>
-						</li>
-						<li>
-							<div class="pic"><a href="#"><img src="./themes/default/images/main/others/works.jpg" alt=""></a></div>
-							<h3><a href="#">جزئیات...  جزئیات... جزئیات... جزئیات...</a></h3>
-							<span class="date">31 اردیبهشت 1392</span>
-						</li>
+						<?php
+							$db = database::GetDatabase();
+		  					$slides = $db->SelectAll('slides',NULL,NULL," pos DESC");
+		  					
+							for($i=0 ; $i<3 ; $i++){ 
+								echo "<li>
+										<div class='pic'><a href='?item=fullslides&act=do&wid={$slides[$i][id]}' title='{$slides[$i]["subject"]}'><img src='{$slides[$i]["image"]}'alt='{$slides[$i]["subject"]}'></a></div>
+										<h3><a href='?item=fullslides&act=do&wid={$slides[$i][id]}' title='{$slides[$i]["subject"]}'>{$slides[$i]["subject"]}</a></h3>
+									</li>";
+							}
+						?>
 					</ul>
 					<div class="badboy"></div>
 				</div>
