@@ -18,7 +18,7 @@ $html.=<<<ct
 							<div class="gallpic">
 								<a href="{$slides[$i][image]}" rel="prettyphoto[gallery3]" title="{$slides[$i][subject]}">
 									<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}" />
-									<span class="overlay"></span>
+									<span class="overlay-zoom"></span>
 								</a>
 							</div>
 							<h2>{$slides[$i][subject]}</h2>

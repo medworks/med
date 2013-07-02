@@ -91,8 +91,8 @@ a.button:hover{
     background: linear-gradient(top,#ffb93a0,#f3ab26 100%);
 }
 
+.overlay-zoom,
 .overlay{
-	background: url('images/main/link-overlay.png') no-repeat center;
 	width: 100%;
 	height: 100%;
 	display: block;
@@ -104,6 +104,14 @@ a.button:hover{
 	-o-transition: all .4s ease-in-out;
 	-ms-transition: all .4s ease-in-out;
 	transition: all .4s ease-in-out;
+}
+
+.overlay{
+	background: url('images/main/link-overlay.png') no-repeat center;
+}
+
+.overlay-zoom{
+	background: url('images/main/overlay-icon-02.png') no-repeat center !important;
 }
 
 p,label,h1,h2,h3,h4{
@@ -455,6 +463,10 @@ a.ttip, a.tooldown{display:inline-block;}
 	margin-bottom: 15px;
 }
 
+.content .tab li.first-li .pic  a{
+	vertical-align: top;
+}
+
 .content .tab li.first-li .pic  a:hover span{
 	opacity: 1;	
 }
@@ -483,6 +495,10 @@ a.ttip, a.tooldown{display:inline-block;}
 	width: 250px !important;
 	height: 144px !important;
 	margin-bottom: 15px;
+}
+
+.content .tab li.first-li-picture .pic  a{
+	vertical-align: top;
 }
 
 .content .tab li.first-li-picture .pic  a:hover span{
@@ -1707,11 +1723,11 @@ section.main-content .content .detail p{
 }
 
 .gallery-page ul li .gallpic a{
-	vertical-align: top !important;
+	vertical-align: top;
 }
 
 .gallery-page ul li .gallpic a:hover span{
-	opacity: 0.7;
+	opacity: 1;
 }
 
 .gallery-page ul li .gallpic img{

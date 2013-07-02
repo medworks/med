@@ -340,7 +340,7 @@ $html.=<<<cd
 						<div class="pic first-tab-pic">
 							<a href="{$slides[0][image]}" rel='prettyphoto[gallery2]' title="{$slides[0][subject]}">
 								<img src="{$slides[0][image]}" alt="{$slides[0][subject]}">
-								<span class="overlay"></span>
+								<span class="overlay-zoom"></span>
 							</a>
 						</div>
 						<h2>
