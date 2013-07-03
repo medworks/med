@@ -144,7 +144,7 @@ $html=<<<cd
 				<span>*</span>
 			</p>
 			<div class="upload-file">
-				<input type="file" name="pic" class="pic" id="pic" onChange="showPreview(this)" />  
+				<input type="file" name="pic" class="pic" id="pic" onChange="showPreview(this);" />  
 				<span class="validate[required] filename"></span>
 				<span class="action">انتخاب فایل</span>
 			</div>		   
