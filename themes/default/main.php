@@ -5,7 +5,5 @@
 
 	include_once ('inc/sidebar.php');
 
-	include_once("inc/bot-ads.php");
-
 	include_once("inc/footer.php");
 ?>

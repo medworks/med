@@ -76,7 +76,7 @@
 				</h2>
 			</div>
 			<div class="ads right">
-				<a href="#"><img src="./themes/default/images/main/others/ads.jpg"></a>
+				<a href="#"><img src="./themes/default/images/main/text-logo.png"></a>
 			</div>
 		</div>
 		<div class="badboy"></div>
