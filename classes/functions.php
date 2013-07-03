@@ -36,7 +36,7 @@ include_once("./classes/messages.php");
                 if ($act=="do") return "single-news.php";
 			break;
 			case 'uploadmgr':
-                if ($act=="do") return "uploadmgr.php";
+              if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/uploadmgr.php";
 			break;
 			case 'worksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/worksmgr.php";
