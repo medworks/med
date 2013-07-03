@@ -119,15 +119,10 @@ ht;
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
-$list = array("1"=>"اسلاید بزرگ",
-              "2"=>"اسلاید کوچک",
-			  "3"=>"همه موارد");
-$itemselect = ($row['pos'])? $row['pos'] :"1";
-$combobox = SelectOptionTag("cbpos",$list,$itemselect);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
-				$("#frmslidesmgr").validationEngine();			   
+				$("#uploadmgr").validationEngine();			   
 			});
 		</script>
 		<div class="title">
@@ -138,35 +133,28 @@ $html=<<<cd
 	      <div class="badboy"></div>
 	    </div>	     
 		{$msgs}
-		<form name="frmslidesmgr" id="frmslidesmgr" class="" action="" method="post" enctype="multipart/form-data" > 
+		<form name="frmuploadmgr" id="frmuploadmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
-				<label for="pic">عکس </label>
+				<label for="file">مسير فايل :</label>  
 				<span>*</span>
+				<input type="file" name="file" size ="50" id="file" />
 			</p>
 			<p>
-		   		<input type="text" name="selectpic" class="selectpic" id="selectpic" value='{$row[image]}' />
-		   		<input type="text" class="validate[required] showadd" id="showadd" value='{$row[image]}' />
-		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="slidesmgr" title="گالری تصاویر">گالری تصاویر</a>
-		   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
+		   		
 		   </p>
-		   <div class="badboy"></div>
-		   <div id="filesbrowser"></div>
+		   <div class="badboy"></div>		   
 		   <div class="badboy"></div>
 			<p>
-				<label for="subject">عنوان </label>
+				<label for="subname">اسم مستعار</label>
 				<span>*</span>
 			</p>
-			<input type="text" name="subject" class="validate[required] subject" id="subject" value="{$row[subject]}" />
+			<input type="text" name="subname" class="validate[required] subject" id="subname" value="{$row[subject]}" />
 			<p>
 				<label for="subject">توضیحات </label>
 				<span>*</span>
 			</p>
 			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
-			<p>
-				<label for="cbpos">نمایش عکس در </label>
-				<span>*</span>
-			</p>
-			{$combobox}
+			
 			{$editorinsert}
 				<input type="reset" value="پاک کردن" class='reset' /> 				
 			</p>
