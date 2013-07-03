@@ -280,4 +280,15 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		  $row = $db ->Select("users","name,family","ID = '{$userid}'");
 		  return ($row["name"]." ".$row["family"]);
 	   }
+	   function CheckboxTag($name,$arraydata)
+	   {
+		 $chb = "";
+	     foreach($arraydata as $key=>$val)
+		 {
+			$chb.=<<<cb
+			<input type="checkbox" name="{$name}" value="$key"> $val <br>		 
+cb;
+		}
+		return $chb;
+	   }
 ?>
