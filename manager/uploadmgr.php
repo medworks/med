@@ -12,7 +12,7 @@
 	header("Location: ../index.php");
 	die(); // solve a security bug
  }
- if ($_GET['item']!="slidesmgr")	exit();
+ if ($_GET['item']!="uploadmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
  $pic_on_edit_section = null;
@@ -94,19 +94,19 @@ if ($_GET['act']=="do")
 		<div class="title">
 	      <ul>
 	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><span>مدیریت اسلاید</span></li>
+	        <li><span>مدیریت آپلود عکس</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=slidesmgr&act=new">درج عکس جدید
+				<a href="?item=uploadmgr&act=new">درج عکس جدید
 					<span class="add-slide"></span>
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=slidesmgr&act=mgr" id="news" name="news">
+				<a href="?item=uploadmgr&act=mgr" id="news" name="news">
 				  حذف/ویرایش عکس ها
 					<span class="edit-slide"></span>
 				</a>
