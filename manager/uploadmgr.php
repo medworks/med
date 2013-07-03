@@ -127,7 +127,7 @@ $checkboxes = CheckboxTag("picsadr",$chechbox);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
-				$("#uploadmgr").validationEngine();			   
+				$("#frmuploadmgr").validationEngine();			   
 			});
 		</script>
 		<div class="title">
@@ -153,12 +153,12 @@ $html=<<<cd
 				<img id="img" src="" alt="" />				
 			</div>
 			<p>
-				<label for="subname">اسم مستعار</label>
+				<label for="subject">اسم مستعار</label>
 				<span>*</span>
 			</p>
-			<input type="text" name="subname" class="validate[required] subject" id="subname" value="{$row[subject]}" />
+			<input type="text" name="subject" class="validate[required] subject" id="subject" value="{$row[subject]}" />
 			<p>
-				<label for="subject">توضیحات </label>
+				<label for="body">توضیحات </label>
 				<span>*</span>
 			</p>
 			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
@@ -175,7 +175,7 @@ if ($_GET['act']=="mgr")
 	if ($_POST["mark"]=="srhnews")
 	{	 			   
 		$rows = $db->SelectAll(
-				"slides",
+				"uploadcenter",
 				"*",
 				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
 				"id DESC",
@@ -183,7 +183,7 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "slidesmgr";
+				$_GET['item'] = "uploadmgr";
 				$_GET['act'] = "mgr";
 				$_GET['msg'] = 6;				
 				//header("Location:?item=worksmgr&act=mgr&msg=6");
@@ -193,7 +193,7 @@ if ($_GET['act']=="mgr")
 	else
 	{	
 		$rows = $db->SelectAll(
-				"slides",
+				"uploadcenter",
 				"*",
 				null,
 				"id DESC",
@@ -202,7 +202,7 @@ if ($_GET['act']=="mgr")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews" )?$db->CountAll("slides"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews" )?$db->CountAll("uploadcenter"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
@@ -224,13 +224,13 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}				
-				$rows[$i]["edit"] = "<a href='?item=slidesmgr&act=edit&sid={$rows[$i]["id"]}' " .
+				$rows[$i]["edit"] = "<a href='?item=uploadmgr&act=edit&uid={$rows[$i]["id"]}' " .
 						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
-				'?item=slidesmgr&act=del&pageNo={$_GET[pageNo]}&sid=');"
+				'?item=uploadmgr&act=del&pageNo={$_GET[pageNo]}&uid=');"
 				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
 del;
                }
@@ -245,7 +245,7 @@ del;
 							"pos"=>"موقعیت نمایش",							
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
-                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=slidesmgr&act=mgr");
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=uploadmgr&act=mgr");
                     
             }
 $msgs = GetMessage($_GET['msg']);
@@ -264,17 +264,17 @@ $code=<<<edit
 					<div class="title">
 				      <ul>
 				        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-					    <li><span>مدیریت اسلاید</span></li>
+					    <li><span> مدیریت آپلود</span></li>
 				      </ul>
 				      <div class="badboy"></div>
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="?item=slidesmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							<form action="?item=uploadmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
 								<p>جستجو بر اساس {$combobox}							
 									<input type="text" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  />
-									<a href="?item=slidesmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
-									<a href="?item=slidesmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+									<a href="?item=uploadmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=uploadmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
