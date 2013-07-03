@@ -119,6 +119,11 @@ ht;
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
+$chechbox = array("newspics"=>"پوشه اخبار",
+                  "workspics"=>"پوشه فعالیت ها",
+                  "userspics"=>"پوشه کاربران",
+				  "slidespics"=>"پوشه اسلاید ها");
+$checkboxes = CheckboxTag("picsadr",$chechbox);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
@@ -154,7 +159,7 @@ $html=<<<cd
 				<span>*</span>
 			</p>
 			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
-			
+			{$checkboxes}
 			{$editorinsert}
 				<input type="reset" value="پاک کردن" class='reset' /> 				
 			</p>
