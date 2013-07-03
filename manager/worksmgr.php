@@ -117,7 +117,7 @@ if ($_GET['act']=="do")
 	$html=<<<ht
 		<div class="title">
 	      <ul>
-	        <li><a href="adminpanel.php">پیشخوان</a></li>
+	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
 	        <li><span>مدیریت کار ها</span></li>
 	      </ul>
 	      <div class="badboy"></div>
@@ -150,7 +150,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 	</script>	     
 	  <div class="title">
 		  <ul>
-			 <li><a href="adminpanel.php">پیشخوان</a></li>
+			 <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
 			 <li><span>مدیریت کارها</span></li>
 		  </ul>
 		  <div class="badboy"></div>
@@ -169,8 +169,8 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <span>*</span>
 		   </p>
 		   <p>
-		   		<input type="text" name="selectpic" class="validate[required] selectpic" id="selectpic" value='{$row[image]}' />
-		   		<input type="text" class="showadd" id="showadd" value='{$row[image]}' />
+		   		<input type="text" name="selectpic" class="selectpic" id="selectpic" value='{$row[image]}' />
+		   		<input type="text" class="validate[required] showadd" id="showadd" value='{$row[image]}' />
 		   		<a class="filesbrowserbtn" id="filesbrowserbtn" name="worksmgr" title="گالری تصاویر">گالری تصاویر</a>
 		   		<a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
 		   </p>
@@ -397,7 +397,7 @@ $code=<<<edit
 </script>	   
 					<div class="title">
 				      <ul>
-				        <li><a href="adminpanel.php">پیشخوان</a></li>
+				        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
 					    <li><span>مدیریت کار ها</span></li>
 				      </ul>
 				      <div class="badboy"></div>
