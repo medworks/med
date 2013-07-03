@@ -84,7 +84,7 @@ echo $html;
        });
     </script>
     <header>
-      <a href="#" class="logo">Mediateq Admin Panel</a>
+      <a href="../" class="logo" title="Mediateq" target="_blank">Mediateq website</a>
       <div id="mini-nav">
         <ul class="hidden-phone">
           <li><a href="#" >وظایف</a></li>
@@ -126,7 +126,7 @@ echo $html;
           </li>	
           <li >            
             <a href="?item=uploadmgr&act=do" id="users" name="users">مدیریت آپلود
-                <span class="users"></span>
+                <span class="upload"></span>
             </a>
           </li>		  
           <li>

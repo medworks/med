@@ -337,6 +337,10 @@ header #mini-nav span {
   background-image: url('images/admin/slides.png');
 }
 
+#mainnav > ul > li span.upload{
+  background-image: url('images/admin/upload-icon.png');
+}
+
 #mainnav > ul > li:hover a {	    
   opacity: 1;
 }
