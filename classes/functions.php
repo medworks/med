@@ -11,9 +11,6 @@ include_once("./classes/messages.php");
 			case 'initial':
 				return "index.php";
 			break;
-			case 'dashboard':
-				if ($act=="do") return "../manager/dashboard.php";
-			break;
             case 'about':
                 return "about.php";
 			break;
@@ -22,6 +19,9 @@ include_once("./classes/messages.php");
 			break;
 			case 'gallery':
                 return "gallery.php";
+			break;
+			case 'dashboard':
+				if ($act=="do") return "dashboard.php";
 			break;	
             case 'works':
                 if ($act=="do") return "works.php";
@@ -34,6 +34,9 @@ include_once("./classes/messages.php");
 			break;
 			case 'fullnews':
                 if ($act=="do") return "single-news.php";
+			break;
+			case 'uploadmgr':
+                if ($act=="do") return "uploadmgr.php";
 			break;
 			case 'worksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/worksmgr.php";
