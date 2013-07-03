@@ -101,14 +101,14 @@ if ($_GET['act']=="do")
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=uploadmgr&act=new">درج عکس جدید
-					<span class="add-slide"></span>
+				<a href="?item=uploadmgr&act=new">فایل جدید
+					<span class="add-file"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=uploadmgr&act=mgr" id="news" name="news">
-				  حذف/ویرایش عکس ها
-					<span class="edit-slide"></span>
+				  حذف/ویرایش فایلها
+					<span class="edit-file"></span>
 				</a>
 			  </li>
 			 </ul>

@@ -101,13 +101,13 @@ if ($_GET['act']=="do")
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=slidesmgr&act=new">درج عکس جدید
+				<a href="?item=slidesmgr&act=new">عکس جدید
 					<span class="add-slide"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=slidesmgr&act=mgr" id="news" name="news">
-				  حذف/ویرایش عکس ها
+				  حذف/ویرایش اسلاید
 					<span class="edit-slide"></span>
 				</a>
 			  </li>

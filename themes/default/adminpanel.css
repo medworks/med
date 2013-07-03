@@ -428,6 +428,14 @@ header #mini-nav span {
 .sub-menu ul li span.edit-slide{
   background-image: url('images/admin/editslides.png');
 }
+
+.sub-menu ul li span.add-file{
+  background-image: url('images/admin/new-upload.png');
+}
+
+.sub-menu ul li span.edit-file{
+  background-image: url('images/admin/editslides.png');
+}
 /***************************************************************************************/
 .admin_top{
  float : right;
