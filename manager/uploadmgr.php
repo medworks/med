@@ -140,15 +140,18 @@ $html=<<<cd
 		{$msgs}
 		<form name="frmuploadmgr" id="frmuploadmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
-				<label for="file">مسير فايل :</label>  
+				<label for="pic">فایل </label>
 				<span>*</span>
-				<input type="file" name="file" size ="50" id="file" />
 			</p>
-			<p>
-		   		
-		   </p>
-		   <div class="badboy"></div>		   
+			<div class="upload-file">
+				<input type="file" name="pic" class="pic" id="pic" onChange="showPreview(this)" />  
+				<span class="validate[required] filename"></span>
+				<span class="action">انتخاب فایل</span>
+			</div>		   
 		   <div class="badboy"></div>
+		   <div id="imgpreview">
+				<img id="img" src="" alt="" />				
+			</div>
 			<p>
 				<label for="subname">اسم مستعار</label>
 				<span>*</span>
