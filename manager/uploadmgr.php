@@ -13,6 +13,7 @@
  if ($_GET['item']!="uploadmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
+ $pic_fldr_bit_addr = "";// in this variable save string bit of pics folders
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
 	 if(empty($_POST["selectpic"]))
@@ -24,7 +25,16 @@
 			$_GET["msg"] = 4;
 			$overall_error = true;
 		}
-  } 	
+  }  
+  //foreach($_POST['picsaddr']as $key=>$val)
+  for($i=0;$i<count($_POST['picsaddr']);$i++)
+  {
+   if ($_POST['picsaddr'][$i]!="") 
+	{$pic_fldr_bit_addr .= "1";}
+   else
+    {$pic_fldr_bit_addr .= "0";}      
+  }
+   echo $pic_fldr_bit_addr;  
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
@@ -119,7 +129,7 @@ $chechbox = array("newspics"=>"پوشه اخبار",
                   "workspics"=>"پوشه فعالیت ها",
                   "userspics"=>"پوشه کاربران",
 				  "slidespics"=>"پوشه اسلاید ها");
-$checkboxes = CheckboxTag("picsadr",$chechbox);
+$checkboxes = CheckboxTag("picsaddr",$chechbox);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
