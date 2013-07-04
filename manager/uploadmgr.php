@@ -1,10 +1,8 @@
 <?php
  include_once("../config.php");
  include_once("../classes/database.php");
- include_once("../classes/messages.php");
- include_once("../classes/session.php");	
+ include_once("../classes/messages.php");	
  include_once("../classes/functions.php"); 
- include_once("../lib/persiandate.php");
  include_once("../classes/login.php");
  $login = Login::getLogin();
  if (!$login->IsLogged())
@@ -15,47 +13,45 @@
  if ($_GET['item']!="uploadmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
- $pic_on_edit_section = null;
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
 	 if(empty($_POST["selectpic"]))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			//header('location:?item=slidesmgr&act=new&msg=4');
-			$_GET["item"] = "slidesmgr";
+			//header('location:?item=uploadmgr&act=new&msg=4');
+			$_GET["item"] = "uploadmgr";
 			$_GET["act"] = "new";
 			$_GET["msg"] = 4;
 			$overall_error = true;
-			//exit();
 		}
   } 	
- if (!$overall_error && $_POST["mark"]=="saveslides")
+ if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
-	$fields = array("`image`","`subject`","`body`","`pos`");	
+	$fields = array("`image`","`subject`","`body`","`address`");	
 	$values = array("'{$_POST[selectpic]}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
-	if (!$db->InsertQuery('slides',$fields,$values)) 
+	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		header('location:?item=slidesmgr&act=new&msg=2');
+		header('location:?item=uploadmgr&act=new&msg=2');
 		exit();
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		header('location:?item=slidesmgr&act=new&msg=1');					
+		header('location:?item=uploadmgr&act=new&msg=1');					
 		exit();
 	 }
  }
  else
- if (!$overall_error && $_POST["mark"]=="editslides")
+ if (!$overall_error && $_POST["mark"]=="editfile")
  {			    
 	$values = array("`image`"=>"'{$_POST[selectpic]}'",
 	       		    "`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'",
-					"`pos`"=>"'{$_POST[cbpos]}'");		
-	$db->UpdateQuery("slides",$values,array("id='{$_GET['sid']}'"));
+					"`address`"=>"'{$_POST[cbpos]}'");		
+	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['sid']}'"));
 	//echo $db->cmd;
-	header('location:?item=slidesmgr&act=mgr');
+	header('location:?item=uploadmgr&act=mgr');
  }
 
 	if ($overall_error)
@@ -71,16 +67,16 @@
 		$editorinsert = "
 			<p>
 				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
-				<input type='hidden' name='mark' value='saveslides' />";
+				<input type='hidden' name='mark' value='savefile' />";
 	}
 	if ($_GET['act']=="edit")
 	{
-		$row=$db->Select("slides","*","id='{$_GET["sid"]}'",NULL);
+		$row=$db->Select("uploadcenter","*","id='{$_GET["uid"]}'",NULL);
 		$pic_on_edit_insert_section = "<img src='{$row[image]}'width='200px' height='100px' />";
 		$editorinsert = "
 		<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
-			 <input type='hidden' name='mark' value='editslides' />";
+			 <input type='hidden' name='mark' value='editfile' />";
 	}
 	if ($_GET['act']=="del")
 	{
