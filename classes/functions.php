@@ -287,7 +287,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		 {
 			$chb.=<<<cb
 			<label class="right">$val
-				<input type="checkbox" name="{$name}" value="$key" class="folder"> 
+				<input type="checkbox" name="{$name}[]" value="$key" class="folder"> 
 			</label>
 			<div class="badboy"></div>
 cb;
