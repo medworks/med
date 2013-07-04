@@ -145,7 +145,7 @@ $html=<<<cd
 			</p>
 			<div class="upload-file">
 				<input type="file" name="pic" class="validate[required] pic ltr" id="pic" onChange="showPreview(this);" />  
-				<span class="filename ltr">لطفا عکس مورد نظر را انتخاب نمایید</span>
+				<span class="filename">لطفا عکس مورد نظر را انتخاب نمایید</span>
 				<span class="action">انتخاب فایل</span>
 			</div>		   
 		   <div class="badboy"></div>

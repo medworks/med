@@ -286,7 +286,10 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 	     foreach($arraydata as $key=>$val)
 		 {
 			$chb.=<<<cb
-			<input type="checkbox" name="{$name}" value="$key"> $val <br>		 
+			<label class="right">$val
+				<input type="checkbox" name="{$name}" value="$key" class="folder"> 
+			</label>
+			<div class="badboy"></div>
 cb;
 		}
 		return $chb;

@@ -263,6 +263,14 @@ form .upload-file .action{
 .highcharts-container{
   direction: ltr;
 }
+
+input[type="checkbox"]{
+  display: inline-block !important;
+}
+
+label{
+  direction: ltr;
+}
 /***************************Header part*******************************/	
 header {
   height: 50px;
