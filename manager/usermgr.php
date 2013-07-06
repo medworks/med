@@ -45,7 +45,7 @@
 					
   				}  				 
 			}
-		}	
+	}	
 
 $msgs = GetMessage($_GET['msg']);
 $html=<<<cd
