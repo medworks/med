@@ -39,10 +39,12 @@ $RECYCLE.BIN/
 .buildpath
 .project
 /userspics/*
+/tmp/*
 /workspics/*
 /slidespics/*
 /newspics/*
 !/userspics/*.txt
+!/tmp/*.txt
 !/workspics/*.txt
 !/slidespics/*.txt
 !/newspics/*.txt
