@@ -13,38 +13,11 @@
  if ($_GET['item']!="uploadmgr")	exit();
  $db = Database::GetDatabase();
  $overall_error = false;
- $pic_fldr_bit_addr = "";// in this variable save string bit of pics folders
- if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
- {
- if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
-   {
-     $filename =strtolower(basename($_FILES['pic']['name']));
-     $ext = substr($filename, strrpos($filename, '.') + 1);
-   
-     //Determine the path to which we want to save this file
-    // $ext=".".$ext;
-     $newfilename = $_FILES['pic']['name'];
-     $newname = dirname(__FILE__).'/uploads/'.$_FILES['pic']['name'];//$newfilename.$ext;
-     if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
-     {       
-       
-     }else {}
-   }
-	 if(empty($_POST["selectpic"]))
-		{ 
-			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			//header('location:?item=uploadmgr&act=new&msg=4');
-			$_GET["item"] = "uploadmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 4;
-			$overall_error = true;
-		}
-  }  
-  //foreach($_POST['picsaddr']as $key=>$val)
-  $pic_fldr_bit_addr = array("newspics"=>0,
-                             "workspics"=>0,
-							 "userspics"=>0,
-							 "slidespics"=>0);
+ // in this variable save string bit of pics folders
+ $pic_fldr_bit_addr = array("newspics"=>0,
+                            "workspics"=>0,
+  						    "userspics"=>0,
+							"slidespics"=>0);
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
 	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
@@ -53,12 +26,44 @@
 	if ($_POST['picsaddr'][$i]=="slidespics") {$pic_fldr_bit_addr["slidespics"]= 1;}	  
   }	  
   $str = "";
-  foreach($pic_fldr_bit_addr as $key=>$val)
-   $str .= $val;
+  foreach($pic_fldr_bit_addr as $key=>$val) $str .= $val;   
+ if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
+ {
+	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+   {
+		 $filename =strtolower(basename($_FILES['pic']['name']));
+		 $ext = substr($filename, strrpos($filename, '.') + 1);	   
+		 //Determine the path to which we want to save this file
+		// $ext=".".$ext;
+		 $newfilename = $_FILES['pic']['name'];
+		 foreach($pic_fldr_bit_addr as $key=>$val)
+		 {
+		   if ($val==1)
+		   {
+				$newname = dirname(__FILE__)."/{$key}/".$_FILES['pic']['name'];  			
+				if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
+				{       
+			   
+				}
+				else {}
+		   }	
+         }
+	}	 
+   else	 
+   { 
+		//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+		//header('location:?item=uploadmgr&act=new&msg=4');
+		$_GET["item"] = "uploadmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 4;
+		$overall_error = true;
+	}
+  }    
+  
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
-	$values = array("'{$_POST[selectpic]}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
+	$values = array("'{$newfilename}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
