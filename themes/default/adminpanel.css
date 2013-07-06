@@ -148,7 +148,6 @@ form .upload-file .filename{
 }
 
 form .upload-file .action{
-  cursor: pointer;
   margin-right: -4px;
   margin-bottom: 0;
   text-align: center;
@@ -696,7 +695,7 @@ footer p{
   float: right;
   height: 25px;
   border: none;
-  cursor: default;
+  cursor: pointer;
   width: 100%;
 }
 
