@@ -286,7 +286,7 @@ header {
 header .logo {
   max-width: 380px;
   max-height: 30px;
-  margin: 30px 0 0 140px;
+  margin: 28px 0 0 140px;
   font-size: 18px;
   color: #d13736;
   font-weight: 500;
@@ -343,7 +343,7 @@ header #mini-nav a:hover {
 header #mini-nav span {
   display: inline-block;
   vertical-align: text-top;
-  margin-left: 5px;
+  margin-top: 4px;
   padding: 1px 5px;
   line-height: 15px;
   font-size: 16px;
