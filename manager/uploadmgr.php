@@ -28,7 +28,7 @@
   $str = "";
   foreach($pic_fldr_bit_addr as $key=>$val) $str .= $val;   
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
- {
+ { 
 	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
    {
 		 $filename =strtolower(basename($_FILES['pic']['name']));
@@ -39,8 +39,9 @@
 		 foreach($pic_fldr_bit_addr as $key=>$val)
 		 {
 		   if ($val==1)
-		   {
-				$newname = dirname(__FILE__)."/{$key}/".$_FILES['pic']['name'];  			
+		   {				
+				$newname = OS_ROOT."/{$key}/".$_FILES['pic']['name'];
+				echo $newname;
 				if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
 				{       
 			   
