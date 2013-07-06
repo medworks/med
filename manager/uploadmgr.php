@@ -168,8 +168,10 @@ $html=<<<cd
 				<span>*</span>
 			</p>
 			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
-			<label for="picsadr">محل ذخیره سازی فایل</label>
-			<span>*</span>			
+			<p>
+				<label for="picsadr">محل ذخیره سازی فایل</label>
+				<span>*</span>
+			</p>			
 			{$checkboxes}
 			{$editorinsert}
 				<input type="reset" value="پاک کردن" class='reset' /> 				
