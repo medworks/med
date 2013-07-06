@@ -155,9 +155,11 @@ slideshow:!0,slideshowSpeed:7E3,animationSpeed:600,initDelay:0,randomize:!1,paus
 removed:function(){}};d.fn.flexslider=function(h){h=h||{};if("object"===typeof h)return this.each(function(){var a=d(this),c=a.find(h.selector?h.selector:".slides > li");1===c.length?(c.fadeIn(400),h.start&&h.start(a)):void 0===a.data("flexslider")&&new d.flexslider(this,h)});var k=d(this).data("flexslider");switch(h){case "play":k.play();break;case "pause":k.pause();break;case "next":k.flexAnimate(k.getTarget("next"),!0);break;case "prev":case "previous":k.flexAnimate(k.getTarget("prev"),!0);break;
 default:"number"===typeof h&&k.flexAnimate(h,!0)}}})(jQuery);
 
+// active menu
 $(document).ready(function(){
-    $('.main-menu a').each(function(index) {
-        if(this.href.trim() == window.location){
+    $('.main-menu a').each(function(){
+        var url= window.location;
+        if(this.href.trim() == url){
             $(this).parent().addClass("active");
         }
     });
