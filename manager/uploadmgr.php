@@ -32,20 +32,19 @@
 	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
    {
 		 $filename =strtolower(basename($_FILES['pic']['name']));
-		 $ext = substr($filename, strrpos($filename, '.') + 1);	   
-		 //Determine the path to which we want to save this file
-		// $ext=".".$ext;
+		 $ext = substr($filename, strrpos($filename, '.') + 1);	   		 		
 		 $newfilename = $_FILES['pic']['name'];
+		 $newname = OS_ROOT."/tmp/".$_FILES['pic']['name'];
+		 if (!(move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
+		 {       
+			   
+		 }		 
 		 foreach($pic_fldr_bit_addr as $key=>$val)
 		 {
 		   if ($val==1)
 		   {		   
-				$newname = OS_ROOT."/{$key}/".$_FILES['pic']['name'];				
-				if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
-				{       
-			   
-				}
-				else {}
+			 $newname2 = OS_ROOT."/{$key}/".$newfilename;
+             copy($newname,$newname2);			 
 		   }	
          }
 	}	 
