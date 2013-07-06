@@ -27,14 +27,20 @@
 		}
   }  
   //foreach($_POST['picsaddr']as $key=>$val)
+  $pic_fldr_bit_addr = array("newspics"=>0,
+                             "workspics"=>0,
+							 "userspics"=>0,
+							 "slidespics"=>0);
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
-   if ($_POST['picsaddr'][$i]!="") 
-	{$pic_fldr_bit_addr .= "1";}
-   else
-    {$pic_fldr_bit_addr .= "0";}      
-  }
-   echo $pic_fldr_bit_addr;  
+	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
+	if ($_POST['picsaddr'][$i]=="workspics") {$pic_fldr_bit_addr["workspics"]= 1;}
+	if ($_POST['picsaddr'][$i]=="userspics") {$pic_fldr_bit_addr["userspics"]= 1;}
+	if ($_POST['picsaddr'][$i]=="slidespics") {$pic_fldr_bit_addr["slidespics"]= 1;}	  
+  }	  
+  $str = "";
+  foreach($pic_fldr_bit_addr as $key=>$val)
+   $str .= $val;
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
