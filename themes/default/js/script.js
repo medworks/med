@@ -156,11 +156,26 @@ removed:function(){}};d.fn.flexslider=function(h){h=h||{};if("object"===typeof h
 default:"number"===typeof h&&k.flexAnimate(h,!0)}}})(jQuery);
 
 // active menu
-$(document).ready(function(){
+/*$(document).ready(function(){
     $('.main-menu a').each(function(){
         var url= window.location;
         if(this.href.trim() == url){
             $(this).parent().addClass("active");
         }
     });
+});*/
+
+
+$(document).ready(function(){
+    var url= window.location.href;
+    $('.main-menu a').each(function(){
+        if(this.href.trim() == url){
+            $(this).parent().addClass("active");
+        }
+    });
+        var href= url.substr(url.lastIndexOf("full"), url.lastIndexOf("&"));
+        alert(url);
+        //href= href.split('full');
+        //href= href[1].split('&');
+        //$('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
 });
