@@ -26,7 +26,7 @@
 	if ($_POST['picsaddr'][$i]=="slidespics") {$pic_fldr_bit_addr["slidespics"]= 1;}	  
   }	  
   $str = "";
-  foreach($pic_fldr_bit_addr as $key=>$val) $str .= $val;   
+ foreach($pic_fldr_bit_addr as $key=>$val) {$str .= $val;}
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  { 
 	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
@@ -39,9 +39,8 @@
 		 foreach($pic_fldr_bit_addr as $key=>$val)
 		 {
 		   if ($val==1)
-		   {				
-				$newname = OS_ROOT."/{$key}/".$_FILES['pic']['name'];
-				echo $newname;
+		   {		   
+				$newname = OS_ROOT."/{$key}/".$_FILES['pic']['name'];				
 				if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
 				{       
 			   
