@@ -16,6 +16,20 @@
  $pic_fldr_bit_addr = "";// in this variable save string bit of pics folders
  if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
  {
+ if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
+   {
+     $filename =strtolower(basename($_FILES['pic']['name']));
+     $ext = substr($filename, strrpos($filename, '.') + 1);
+   
+     //Determine the path to which we want to save this file
+    // $ext=".".$ext;
+     $newfilename = $_FILES['pic']['name'];
+     $newname = dirname(__FILE__).'/uploads/'.$_FILES['pic']['name'];//$newfilename.$ext;
+     if ((move_uploaded_file($_FILES['pic']['tmp_name'],$newname)))
+     {       
+       
+     }else {}
+   }
 	 if(empty($_POST["selectpic"]))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
@@ -44,7 +58,7 @@
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
-	$values = array("'{$_POST[selectpic]}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$_POST[cbpos]}'");
+	$values = array("'{$_POST[selectpic]}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
