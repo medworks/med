@@ -80,7 +80,9 @@ include_once("./classes/messages.php");
 		}
 		$result .= <<<JAVA
 		<script language="javascript">
+		$(document).ready(function(){
 			$("#message").delay(5000).fadeOut(500);
+		});	
 		</script>
 JAVA;
 		return $result;

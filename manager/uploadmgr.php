@@ -167,7 +167,9 @@ $html=<<<cd
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>	     
+		<div id="message">
 		{$msgs}
+		</div>
 		<form name="frmuploadmgr" id="frmuploadmgr" class="" action="" method="post" enctype="multipart/form-data" > 
 			<p>
 				<label for="pic">فایل </label>

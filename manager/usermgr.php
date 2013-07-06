@@ -16,30 +16,17 @@
 	{
 		$db = Database::GetDatabase();
 		$msg = Message::GetMessage();
-		$msgs = "";	
-    
-		if((empty($_FILES["pic"])) or ($_FILES['pic']['error'] != 0))
-		{    
-			//$msgs = $msg->ShowError("لطفا فایل عکس را انتخاب کنید");
-			header('location:?item=worksmgr&act=do&msg=4');
-			exit();
-		}
-    	else
-		{
-			$filename =strtolower(basename($_FILES['pic']['name']));
-			$ext = substr($filename, strrpos($filename, '.') + 1);
-			//$newfilename= md5(rand() * time());
-			$newfilename = $_POST['subject'];	 
-			$ext=".".$ext;          
-			//$newfilename = $_FILES['pic']['name'];
-			$newname_os = OS_ROOT.'/userspics/'.$newfilename.$ext;
-			$newname_site = SITE_ROOT.'/userspics/'.$newfilename.$ext;
-			if (!move_uploaded_file($_FILES["pic"]["tmp_name"],$newname_os))
-			{     
-				//$msgs = $msg->ShowError("عمليات آپلود با مشكل مواجه شد");
-				header('location:?item=worksmgr&act=do&msg=3');
-				exit();
-			}	 
+		$msgs = "";	    
+	if(empty($_POST["selectpic"]))
+   { 
+		//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+		//header('location:?item=newsmgr&act=new&msg=4');
+		$_GET["item"] = "usermgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 4;
+		$overall_error = true;
+		//exit();
+	}
 		    else
 			{			
   				$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
@@ -47,19 +34,18 @@
   				if (!$db->InsertQuery('users',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-					header('location:?item=worksmgr&act=do&msg=2');
+					header('location:?item=usermgr&act=do&msg=2');
 					exit();
   				} 	
   				else 
   				{  										
   					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=worksmgr&act=do&msg=1');					
+					header('location:?item=usermgr&act=do&msg=1');					
 					exit();
 					
   				}  				 
 			}
 		}	
-	}
 
 $msgs = GetMessage($_GET['msg']);
 $html=<<<cd
