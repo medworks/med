@@ -292,18 +292,22 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 			if ($checked[$i]==1)
 			{
 			$chb.=<<<cb
-				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder" checked> 
+				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder" checked %dis%> 
 cb;
 			}
 			else
 			{
 			$chb.=<<<cb
-				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder"> 
+				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder" %dis%> 
 cb;
 			}
 			$chb.="</label>  <div class='badboy'></div> ";
 		$i++;
 		}
+		if (isset($checked))
+			$chb = str_replace("%dis%","disabled" ,$chb);
+		else
+			$chb = str_replace("%dis%","",$chb);
 		return $chb;
 	   }
 ?>
