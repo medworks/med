@@ -13,38 +13,39 @@
 	}
 	if ($_GET['item']!="usermgr")	exit();
 	$db = Database::GetDatabase();
-	$msg = Message::GetMessage();
-    if ($_POST["mark"]=="saveuser")
-	{		
+	$msg = Message::GetMessage();	
+	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")    
+	{
 		$msgs = "";	    
-	if(empty($_POST["selectpic"]))
-   { 
-		//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-		//header('location:?item=newsmgr&act=new&msg=4');
-		$_GET["item"] = "usermgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 4;
-		$overall_error = true;
-		//exit();
+		if(empty($_POST["selectpic"]))
+		{
+			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+			//header('location:?item=newsmgr&act=new&msg=4');
+			$_GET["item"] = "usermgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 4;
+			$overall_error = true;
+			//exit();
+		}		
 	}
-		    else
-			{			
-  				$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
-  				$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$_POST[selectpic]}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
-  				if (!$db->InsertQuery('users',$fields,$values)) 
-  				{
-  					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-					header('location:?item=usermgr&act=do&msg=2');
-					exit();
-  				} 	
-  				else 
-  				{  										
-  					//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-					header('location:?item=usermgr&act=do&msg=1');					
-					exit();
-					
-  				}  				 
-			}
+	else
+	if (!$overall_error &&$_POST["mark"]=="saveuser")
+	{
+		$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
+		$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$_POST[selectpic]}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
+		if (!$db->InsertQuery('users',$fields,$values)) 
+		{
+			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			header('location:?item=usermgr&act=do&msg=2');
+			exit();
+		} 	
+		else 
+		{  										
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+			header('location:?item=usermgr&act=do&msg=1');					
+			exit();
+			
+		}  				 
 	}
 	else
 	if (!$overall_error && $_POST["mark"]=="editnews")
@@ -77,8 +78,7 @@ if ($_GET['act']=="new")
 }
 if ($_GET['act']=="edit")
 {
-	$row=$db->Select("news","*","id='{$_GET["nid"]}'",NULL);
-	$row['ndate'] = ToJalali($row["ndate"]);
+	$row=$db->Select("users","*","id='{$_GET["uid"]}'",NULL);
 	$editorinsert = "
 	<p>
       	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
@@ -149,12 +149,12 @@ $html=<<<cd
          <label for="name">نام </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="name" class="validate[required] name" id="name" />
+       <input type="text" name="name" class="validate[required] name" id="name" value="{$row[name]}" />
 	     <p>
          <label for="family">نام خانوادگی </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="family" class="validate[required] family" id="family" />
+       <input type="text" name="family" class="validate[required] family" id="family" value="{$row[family]}"/>
        <p>
     	   <label for="pic">عکس </label>
          <span>*</span>
@@ -172,22 +172,22 @@ $html=<<<cd
          <label for="email">ایمیل </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="email" class="validate[required,custom[email]] email ltr" id="email" />
+       <input type="text" name="email" class="validate[required,custom[email]] email ltr" id="email" value="{$row[email]}"/>
        <p>
          <label for="username">نام کاربری </label>
          <span>*</span>
        </p>  	 
-       <input type="text" name="username" class="validate[required] username ltr" id="username" />
+       <input type="text" name="username" class="validate[required] username ltr" id="username" value="{$row[username]}"/>
 	   <p>
          <label for="password">رمز عبور </label>
          <span>*</span>
        </p>  	 
-       <input type="password" name="password" class="validate[required] password ltr" id="password" />
+       <input type="password" name="password" class="validate[required] password ltr" id="password" value="{$row[password]}"/>
 	   <p>
          <label for="cpassword">تکرار رمز عبور </label>
          <span>*</span>
        </p>  	 
-       <input type="password" name="cpassword" class="validate[required,equals[password]] cpassword ltr" id="cpassword" />       
+       <input type="password" name="cpassword" class="validate[required,equals[password]] cpassword ltr" id="cpassword" value="{$row[password]}" />       
        {$editorinsert}
       	 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
        </p>
