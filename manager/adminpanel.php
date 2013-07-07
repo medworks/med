@@ -6,14 +6,16 @@
 	include_once("../classes/security.php");
 	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
-	
-	$login = Login::GetLogin();
-	$mes = Message::GetMessage();
+	$login = Login::GetLogin();	
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); //solve security bug
-	}
+	}	
+	$mes = Message::GetMessage();
+	$sess = Session::GetSesstion();
+	$name = $sess->Get("name").' '.$sess->Get("family");
+	$user = $sess->Get("username");
 	if ($_GET["item"] == "logout")
    {
 	   if ($login->LogOut())
@@ -89,8 +91,10 @@ echo $html;
         <ul class="hidden-phone">
           <li><a href="#" >وظایف</a></li>
           <li><a href="#">ثبت نام ها <span id="newSignup">06</span></a></li>         
-          <li><a href="?item=logout&act=do">خروج</a></li>
+          <li><a href="?item=logout&act=do">خروج</a></li>		  
         </ul>
+		نام :<?php echo $name?>
+		نام کاربری : <?php echo $user?>
       </div>
     </header>
  <!-- <div id="top" class= "admin_top">top</div> -->

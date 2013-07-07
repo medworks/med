@@ -282,18 +282,32 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		  $row = $db ->Select("users","name,family","ID = '{$userid}'");
 		  return ($row["name"]." ".$row["family"]);
 	   }
-	   function CheckboxTag($name,$arraydata)
+	   function CheckboxTag($name,$arraydata,$checked=NULL)
 	   {
 		 $chb = "";
+		 $i=0;
 	     foreach($arraydata as $key=>$val)
-		 {
+		 {	    
+			$chb.="<label class='right'>$val";
+			if ($checked[$i]==1)
+			{
 			$chb.=<<<cb
-			<label class="right">$val
-				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder"> 
-			</label>
-			<div class="badboy"></div>
+				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder" checked %dis%> 
 cb;
+			}
+			else
+			{
+			$chb.=<<<cb
+				<input type="checkbox" name="{$name}[]" value="$key" class="validate[minCheckbox[1]] folder" %dis%> 
+cb;
+			}
+			$chb.="</label>  <div class='badboy'></div> ";
+		$i++;
 		}
+		if (isset($checked))
+			$chb = str_replace("%dis%","disabled" ,$chb);
+		else
+			$chb = str_replace("%dis%","",$chb);
 		return $chb;
 	   }
 ?>
