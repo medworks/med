@@ -45,7 +45,51 @@
 					
   				}  				 
 			}
-	}	
+	}
+	else
+	if (!$overall_error && $_POST["mark"]=="editnews")
+	{			    
+		$values = array("`name`"=>"'{$_POST[subject]}'",
+		                 "`family`"=>"'{$_POST[selectpic]}'",
+						 "`image`"=>"'{$_POST[detail]}'",
+						 "`email`"=>"'{$ndatetime}'",
+						 "`username`"=>"'{$userid}'",
+						 "`password`"=>"'{$_POST[res]}'");		
+        $db->UpdateQuery("users",$values,array("id='{$_GET[nid]}'"));
+		header('location:?item=usermgr&act=mgr');
+	}
+
+	if ($overall_error)
+	{
+		$row = array("name"=>$_POST['subject'],
+		             "family"=>$_POST['image'],
+					 "image"=>$_POST['detail'],
+					 "email"=>$_POST['ndate'],
+					 "username"=>$userid,
+					 "password"=>$_POST['res']);
+	}
+if ($_GET['act']=="new")
+{
+	$editorinsert = "
+		<p>
+			<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+			<input type='hidden' name='mark' value='saveuser' />";
+}
+if ($_GET['act']=="edit")
+{
+	$row=$db->Select("news","*","id='{$_GET["nid"]}'",NULL);
+	$row['ndate'] = ToJalali($row["ndate"]);
+	$editorinsert = "
+	<p>
+      	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+      	 <input type='hidden' name='mark' value='edituser' />";
+}
+if ($_GET['act']=="del")
+{
+	$db->Delete("news"," id",$_GET["uid"]);
+	if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
+	header("location:?item=usermgr&act=mgr&pageNo={$_GET[pageNo]}");
+}	
 if ($_GET['act']=="do")
 {
 	$html=<<<ht
@@ -144,9 +188,7 @@ $html=<<<cd
          <span>*</span>
        </p>  	 
        <input type="password" name="cpassword" class="validate[required,equals[password]] cpassword ltr" id="cpassword" />       
-       <p>
-      	 <input type="submit" value="ذخیره" id="submit" class="submit" />	 
-      	 <input type="hidden" id="mark" class="mark" name="mark" value="saveuser" />
+       {$editorinsert}
       	 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
        </p>
     </form>
@@ -191,8 +233,7 @@ if ($_GET['act']=="mgr")
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		                       
-					$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
-				
+					$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";				
 					if ($i % 2==0)
 					{
 						$rowsClass[] = "datagridevenrow";
@@ -256,9 +297,7 @@ $code=<<<edit
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
-
 								{$gridcode} 
-															
 							</form>
 					   </center>
 					</div>
