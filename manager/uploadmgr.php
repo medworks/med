@@ -27,7 +27,7 @@
   }	  
   $str = "";
  foreach($pic_fldr_bit_addr as $key=>$val) {$str .= $val;}
- if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
+ if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews" and $_POST["mark"]!="editfile")
  { 
 	if((!empty($_FILES["pic"])) && ($_FILES['pic']['error'] == 0))
    {
@@ -151,10 +151,28 @@ $chechbox = array("newspics"=>"پوشه اخبار",
                   "workspics"=>"پوشه فعالیت ها",
                   "userspics"=>"پوشه کاربران",
 				  "slidespics"=>"پوشه اسلاید ها");
-if ($_GET['act']=="edit")			  
+if ($_GET['act']=="edit")
+{
 	$checkboxes = CheckboxTag("picsaddr",$chechbox,$row['address']);
+$select_pic_for_new_section	="
+	<div class='upload-file' disabled='true'>
+				<input type='file' name='pic' class='validate[required] pic ltr' id='pic' onChange='showPreview(this);' />  
+				<span class='filename'>لطفا عکس مورد نظر را انتخاب نمایید</span>
+				<span class='action'>انتخاب فایل</span>
+			</div>
+";				
+}	
 else
+{
 	$checkboxes = CheckboxTag("picsaddr",$chechbox);
+$select_pic_for_new_section	="
+	<div class='upload-file'>
+				<input type='file' name='pic' class='validate[required] pic ltr' id='pic' onChange='showPreview(this);' />  
+				<span class='filename'>لطفا عکس مورد نظر را انتخاب نمایید</span>
+				<span class='action'>انتخاب فایل</span>
+			</div>
+";			
+}	
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
@@ -176,11 +194,7 @@ $html=<<<cd
 				<label for="pic">فایل </label>
 				<span>*</span>
 			</p>
-			<div class="upload-file">
-				<input type="file" name="pic" class="validate[required] pic ltr" id="pic" onChange="showPreview(this);" />  
-				<span class="filename">لطفا عکس مورد نظر را انتخاب نمایید</span>
-				<span class="action">انتخاب فایل</span>
-			</div>		   
+			{$select_pic_for_new_section}
 		   <div class="badboy"></div>
 		   <div id="imgpreview">
 				<img id="img" src="" alt="" />				
