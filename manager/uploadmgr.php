@@ -151,7 +151,10 @@ $chechbox = array("newspics"=>"پوشه اخبار",
                   "workspics"=>"پوشه فعالیت ها",
                   "userspics"=>"پوشه کاربران",
 				  "slidespics"=>"پوشه اسلاید ها");
-$checkboxes = CheckboxTag("picsaddr",$chechbox);
+if ($_GET['act']=="edit")			  
+	$checkboxes = CheckboxTag("picsaddr",$chechbox,$row['address']);
+else
+	$checkboxes = CheckboxTag("picsaddr",$chechbox);
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		
