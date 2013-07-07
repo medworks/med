@@ -46,7 +46,35 @@
   				}  				 
 			}
 	}	
-
+if ($_GET['act']=="do")
+{
+	$html=<<<ht
+		<div class="title">
+	      <ul>
+	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><span>مدیریت اخبار</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>
+		<div class="sub-menu" id="mainnav">
+			<ul>
+			  <li>		  
+				<a href="?item=usermgr&act=new">درج کاربر جدید
+					<span class="add-news"></span>
+				</a>
+			  </li>
+			  <li>
+				<a href="?item=usermgr&act=mgr" id="news" name="news">حذف/ویرایش کاربران 
+					<span class="edit-news"></span>
+				</a>
+			  </li>
+			 </ul>
+			 <div class="badboy"></div>
+		</div>		 
+ht;
+}else
+if ($_GET['act']=="new" or $_GET['act']=="edit")
+{
 $msgs = GetMessage($_GET['msg']);
 $html=<<<cd
 <script type='text/javascript'>
@@ -125,6 +153,118 @@ $html=<<<cd
     <div class="badboy"></div>
   </div>   
 cd;
-  
+}
+else
+if ($_GET['act']=="mgr")
+{
+	if ($_POST["mark"]=="srhnews")
+	{	 			   
+		$rows = $db->SelectAll(
+				"users",
+				"*",
+				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
+				"id DESC",
+				$_GET["pageNo"]*10,
+				10);
+			if (!$rows) 
+			{					
+				$_GET['item'] = "usermgr";
+				$_GET['act'] = "mgr";
+				$_GET['msg'] = 6;				
+				//header("Location:?item=usermgr&act=mgr&msg=6");
+			}
+		
+	}
+	else
+	{	
+		$rows = $db->SelectAll(
+				"users",
+				"*",
+				null,
+				"id DESC",
+				$_GET["pageNo"]*10,
+				10);
+    }
+                $rowsClass = array();
+                $colsClass = array();
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews" )?$db->CountAll("users"):Count($rows);
+                for($i = 0; $i < Count($rows); $i++)
+                {						
+		                       
+					$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
+				
+					if ($i % 2==0)
+					{
+						$rowsClass[] = "datagridevenrow";
+					}
+					else
+					{
+						$rowsClass[] = "datagridoddrow";
+					}				
+				$rows[$i]["edit"] = "<a href='?item=usermgr&act=edit&uid={$rows[$i]["id"]}' " .
+						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["delete"]=<<< del
+				<a href="javascript:void(0)"
+				onclick="DelMsg('{$rows[$i]['id']}',
+					'از حذف این فعالیت اطمینان دارید؟',
+				'?item=usermgr&act=del&pageNo={$_GET[pageNo]}&uid=');"
+				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
+del;
+               }
+
+    if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
+            if (Count($rows) > 0)
+            {                    
+                    $gridcode.= DataGrid(array( 
+							"name"=>"نام",
+							"family"=>"نام خانوادگی",
+							"image"=>"عکس",
+							"username"=>"نام کاربری",
+                            "edit"=>"ویرایش",
+							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=usermgr&act=mgr");
+                    
+            }
+$msgs = GetMessage($_GET['msg']);
+$list = array("name"=>"نام",
+              "family"=>"نام خانوادگی",
+			  "username"=>"نام کاربری");              
+$combobox = SelectOptionTag("cbsearch",$list,"name");
+$code=<<<edit
+<script type='text/javascript'>
+	$(document).ready(function(){	   			
+		$('#srhsubmit').click(function(){	
+			$('#frmsrh').submit();
+			return false;
+		});		
+	});
+</script>	   
+					<div class="title">
+				      <ul>
+				        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
+					    <li><span> مدیریت آپلود</span></li>
+				      </ul>
+				      <div class="badboy"></div>
+				  </div>
+                    <div class="Top">                       
+						<center>
+							<form action="?item=uploadmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+								<p>جستجو بر اساس {$combobox}							
+									<input type="text" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  />
+									<a href="?item=uploadmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=uploadmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+								</p>
+								<input type="hidden" name="mark" value="srhnews" /> 
+								{$msgs}
+
+								{$gridcode} 
+															
+							</form>
+					   </center>
+					</div>
+
+edit;
+$html = $code;
+}	
 return $html;
 ?>
