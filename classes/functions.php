@@ -287,7 +287,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		 $chb = "";
 		 $i=0;
 	     foreach($arraydata as $key=>$val)
-		 {		    
+		 {	    
 			$chb.="<label class='right'>$val";
 			if ($checked[$i]==1)
 			{
