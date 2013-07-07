@@ -179,3 +179,10 @@ $(document).ready(function(){
         }
     });
 });
+// *****************hide all validate message***********************
+$(document).ready(function(){
+    $('.reset').click(function(){
+        $('.formError').validationEngine('hideAll');
+        showPreview();
+    })
+});
