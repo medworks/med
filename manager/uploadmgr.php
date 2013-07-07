@@ -154,18 +154,16 @@ $chechbox = array("newspics"=>"پوشه اخبار",
 if ($_GET['act']=="edit")
 {
 	$checkboxes = CheckboxTag("picsaddr",$chechbox,$row['address']);
-$select_pic_for_new_section	="
-	<div class='upload-file' disabled='true'>
-				<input type='file' name='pic' class='validate[required] pic ltr' id='pic' onChange='showPreview(this);' />  
-				<span class='filename'>لطفا عکس مورد نظر را انتخاب نمایید</span>
-				<span class='action'>انتخاب فایل</span>
-			</div>
-";				
+	$select_pic_for_new_section	="";				
 }	
 else
 {
 	$checkboxes = CheckboxTag("picsaddr",$chechbox);
-$select_pic_for_new_section	="
+	$select_pic_for_new_section	="
+	<p>
+		<label for='pic'>فایل </label>
+		<span>*</span>
+	</p>
 	<div class='upload-file'>
 				<input type='file' name='pic' class='validate[required] pic ltr' id='pic' onChange='showPreview(this);' />  
 				<span class='filename'>لطفا عکس مورد نظر را انتخاب نمایید</span>
@@ -189,11 +187,7 @@ $html=<<<cd
 		<div id="message">
 		{$msgs}
 		</div>
-		<form name="frmuploadmgr" id="frmuploadmgr" class="" action="" method="post" enctype="multipart/form-data" > 
-			<p>
-				<label for="pic">فایل </label>
-				<span>*</span>
-			</p>
+		<form name="frmuploadmgr" id="frmuploadmgr" class="" action="" method="post" enctype="multipart/form-data" > 			
 			{$select_pic_for_new_section}
 		   <div class="badboy"></div>
 		   <div id="imgpreview">
