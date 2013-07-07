@@ -11,7 +11,7 @@
 		header("Location: ../index.php");
 		die(); // solve a security bug
 	}
-	//$sess = Session::getSesstion();
+	if ($_GET['item']!="usermgr")	exit();
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();
     if ($_POST["mark"]=="saveuser")
@@ -30,7 +30,7 @@
 		    else
 			{			
   				$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
-  				$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$newname_site}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
+  				$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$_POST[selectpic]}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
   				if (!$db->InsertQuery('users',$fields,$values)) 
   				{
   					//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -49,24 +49,24 @@
 	else
 	if (!$overall_error && $_POST["mark"]=="editnews")
 	{			    
-		$values = array("`name`"=>"'{$_POST[subject]}'",
-		                 "`family`"=>"'{$_POST[selectpic]}'",
-						 "`image`"=>"'{$_POST[detail]}'",
-						 "`email`"=>"'{$ndatetime}'",
-						 "`username`"=>"'{$userid}'",
-						 "`password`"=>"'{$_POST[res]}'");		
-        $db->UpdateQuery("users",$values,array("id='{$_GET[nid]}'"));
+		$values = array("`name`"=>"'{$_POST[name]}'",
+		                 "`family`"=>"'{$_POST[family]}'",
+						 "`image`"=>"'{$_POST[selectpic]}'",
+						 "`email`"=>"'{{$_POST[email]}}'",
+						 "`username`"=>"'{$_POST[username]}'",
+						 "`password`"=>"'{$_POST[password]}'");		
+        $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));
 		header('location:?item=usermgr&act=mgr');
 	}
 
 	if ($overall_error)
 	{
-		$row = array("name"=>$_POST['subject'],
-		             "family"=>$_POST['image'],
-					 "image"=>$_POST['detail'],
-					 "email"=>$_POST['ndate'],
-					 "username"=>$userid,
-					 "password"=>$_POST['res']);
+		$row = array("name"=>$_POST['name'],
+		             "family"=>$_POST['family'],
+					 "image"=>$_POST['selectpic'],
+					 "email"=>$_POST['email'],
+					 "username"=>$_POST[username],
+					 "password"=>$_POST[password]);
 	}
 if ($_GET['act']=="new")
 {
