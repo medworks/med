@@ -57,6 +57,7 @@
 	-o-border-radius: 6px;
 	line-height: 1.5;
 	white-space: nowrap;
+	font-family: 'bmitra';
 }
 
 .formError.inline .formErrorContent {
