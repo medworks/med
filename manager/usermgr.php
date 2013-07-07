@@ -12,10 +12,10 @@
 		die(); // solve a security bug
 	}
 	//$sess = Session::getSesstion();
+	$db = Database::GetDatabase();
+	$msg = Message::GetMessage();
     if ($_POST["mark"]=="saveuser")
-	{
-		$db = Database::GetDatabase();
-		$msg = Message::GetMessage();
+	{		
 		$msgs = "";	    
 	if(empty($_POST["selectpic"]))
    { 
@@ -163,7 +163,7 @@ if ($_GET['act']=="mgr")
 				"users",
 				"*",
 				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
-				"id DESC",
+				"id ASC",
 				$_GET["pageNo"]*10,
 				10);
 			if (!$rows) 
@@ -181,7 +181,7 @@ if ($_GET['act']=="mgr")
 				"users",
 				"*",
 				null,
-				"id DESC",
+				"id ASC",
 				$_GET["pageNo"]*10,
 				10);
     }
@@ -248,11 +248,11 @@ $code=<<<edit
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="?item=uploadmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							<form action="?item=usermgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
 								<p>جستجو بر اساس {$combobox}							
 									<input type="text" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  />
-									<a href="?item=uploadmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
-									<a href="?item=uploadmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+									<a href="?item=usermgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=usermgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
