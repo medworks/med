@@ -220,7 +220,7 @@ if ($_GET['act']=="mgr")
 				$_GET['item'] = "uploadmgr";
 				$_GET['act'] = "mgr";
 				$_GET['msg'] = 6;				
-				//header("Location:?item=worksmgr&act=mgr&msg=6");
+				//header("Location:?item=uploadmgr&act=mgr&msg=6");
 			}
 		
 	}
@@ -244,12 +244,7 @@ if ($_GET['act']=="mgr")
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
                 $rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
-				switch($rows[$i]["pos"])
-				{
-				 case 1: $rows[$i]["pos"] = "اسلاید بزرگ"; break;
-				 case 2: $rows[$i]["pos"] = "اسلاید کوچک"; break;
-				 case 3: $rows[$i]["pos"] = "همه موارد"; break;
-				}
+				
 				if ($i % 2==0)
 				 {
 						$rowsClass[] = "datagridevenrow";
@@ -276,7 +271,6 @@ del;
 							"image"=>"عکس",
 							"subject"=>"عنوان",
 							"body"=>"توضیحات",
-							"pos"=>"موقعیت نمایش",							
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=uploadmgr&act=mgr");
