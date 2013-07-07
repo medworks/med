@@ -79,11 +79,9 @@
  else
  if (!$overall_error && $_POST["mark"]=="editfile")
  {			    
-	$values = array("`image`"=>"'{$_POST[selectpic]}'",
-	       		    "`subject`"=>"'{$_POST[subject]}'",
-					"`body`"=>"'{$_POST[body]}'",
-					"`address`"=>"'{$_POST[cbpos]}'");		
-	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['sid']}'"));
+	$values = array("`subject`"=>"'{$_POST[subject]}'",
+					"`body`"=>"'{$_POST[body]}'");
+	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['uid']}'"));
 	//echo $db->cmd;
 	header('location:?item=uploadmgr&act=mgr');
  }
@@ -114,8 +112,8 @@
 	}
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("slides"," id",$_GET["sid"]);
-		if ($db->CountAll("slides")%10==0) $_GET["pageNo"]-=1;		
+		$db->Delete("uploadcenter"," id",$_GET["uid"]);
+		if ($db->CountAll("uploadcenter")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=slidesmgr&act=mgr&pageNo={$_GET[pageNo]}");
 	}	
 if ($_GET['act']=="do")
