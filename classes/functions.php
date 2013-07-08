@@ -51,7 +51,7 @@ include_once("./classes/messages.php");
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/slidesmgr.php";
 			break;
 			case 'thememgr':
-                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/thememgr.php";
+                if ($act=="do" or $act=="chg" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/thememgr.php";
 			break;
 
 		}
