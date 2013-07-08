@@ -13,6 +13,13 @@
 	if ($_GET['item']!="thememgr")	exit();
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();
+	if($_GET["act"]=="chg")
+	{
+		$values = array("`value`"=>"'{$_GET['name']}'");
+		$db->UpdateQuery("settings",$values,array("`key` ='Site_Theme_Name'"));     		
+	//	header('location:?item=thememgr&act=do');
+	}
+
 	$i = 0;
 	$handle=opendir('../themes');
     while ($file = readdir($handle))
@@ -35,9 +42,9 @@
 					  if ($Stat == 0) {$Status = "غیر فعال";} else {$Status = "فعال";}
 					  $themes[] = array("Name"=>basename($file),
 										"Status"=>$Status,
-										"Active"=>($Stat==0)? "<a href='?item=thememgr&act=do&name={$dirname}'" .
+										"Active"=>($Stat==0)? "<a href='?item=thememgr&act=chg&name={$dirname}'" .
 										"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/disable.gif'></a>" :
-									    "<a href='?item=thememgr&act=do&name={$dirname}' " .
+									    "<a href='?item=thememgr&act=chg&name={$dirname}' " .
 										"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/enable.gif'></a>");
 				 }
            }
