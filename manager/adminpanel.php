@@ -17,6 +17,7 @@
 	$sess = Session::GetSesstion();
 	$name = $sess->Get("name").' '.$sess->Get("family");
 	$user = $sess->Get("username");
+	$datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
 	if ($_GET["item"] == "logout")
    {
 	   if ($login->LogOut())
@@ -75,8 +76,7 @@ $html=<<<cd
     </script>
 
 cd;
-echo $html;
-$datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
+//echo $html;
 ?>	
 </head>
 <body>
