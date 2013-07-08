@@ -16,7 +16,7 @@
 	if($_GET["act"]=="chg")
 	{
 		$values = array("`value`"=>"'{$_GET['name']}'");
-		$db->UpdateQuery("settings",$values,array("`key` ='Site_Theme_Name'"));     		
+		$db->UpdateQuery("settings",$values,array("`key` ='Site_Theme_Name'"));		
 	//	header('location:?item=thememgr&act=do');
 	}
 
