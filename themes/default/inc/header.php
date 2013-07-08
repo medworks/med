@@ -41,7 +41,7 @@
   <div class="container">
 	<header>
 		<div class="top">
-			<div class="time right"><p> <?php echo"$datetime" ?> </p></div>
+			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
 				<form action="">
 					<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
