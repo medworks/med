@@ -285,6 +285,16 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		  $row = $db ->Select("users","name,family","ID = '{$userid}'");
 		  return ($row["name"]." ".$row["family"]);
 	   }
+	   
+	   function GetSettingValue($key, $strip_tags = 0)
+       {
+			$db = Database::GetDatabase();
+			$row = $db ->Select("settings","value","`key`='{$key}'");		
+			if ($strip_tags == 1 && $row)
+				$row["value"] = strip_tags($row["value"]);
+			return ($row) ? $row["value"] : false;
+       }
+	   
 	   function CheckboxTag($name,$arraydata,$checked=NULL)
 	   {
 		 $chb = "";
