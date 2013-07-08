@@ -14,7 +14,8 @@
 	if ($_GET['item']!="usermgr")	exit();
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();
-	$overall_error = false;	
+	$overall_error = false;
+	$pass = "";
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")    
 	{
 		$msgs = "";	    
@@ -37,13 +38,13 @@
 		if (!$db->InsertQuery('users',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=usermgr&act=do&msg=2');
+			header('location:?item=usermgr&act=new&msg=2');
 			exit();
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-			header('location:?item=usermgr&act=do&msg=1');					
+			header('location:?item=usermgr&act=new&msg=1');					
 			exit();
 			
 		}  				 
@@ -51,12 +52,16 @@
 	else
 	if (!$overall_error && $_POST["mark"]=="edituser")
 	{			    
+		if ($_POST['password'] != $row['password'])
+			$pass = md5($_POST['password']);
+		else
+			$pass = $_POST['password'];
 		$values = array("`name`"=>"'{$_POST[name]}'",
 		                 "`family`"=>"'{$_POST[family]}'",
 						 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`email`"=>"'{$_POST[email]}'",
 						 "`username`"=>"'{$_POST[username]}'",
-						 "`password`"=>"'{$_POST[password]}'");		
+						 "`password`"=>"'{$pass}}'");		
         $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
 		header('location:?item=usermgr&act=mgr');
 	}
