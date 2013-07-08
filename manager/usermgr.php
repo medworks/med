@@ -72,6 +72,7 @@
 	}
 if ($_GET['act']=="new")
 {
+	$pic_on_edit_insert_section = "";
 	$editorinsert = "
 		<p>
 			<input type='submit' id='submit' value='ذخیره' class='submit' />	 
@@ -80,6 +81,7 @@ if ($_GET['act']=="new")
 if ($_GET['act']=="edit")
 {
 	$row=$db->Select("users","*","id='{$_GET["uid"]}'",NULL);
+	$pic_on_edit_insert_section = "<img src='{$row[image]}'width='200px' height='200px' />";
 	$editorinsert = "
 	<p>
       	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
@@ -145,6 +147,7 @@ $html=<<<cd
   <div class="content">
     <form name="frmusermgr" id= "frmusermgr" class="usermgr" action="" method="post" enctype="multipart/form-data" >
 	  <div class="mes" id="message">{$msgs}</div>
+       {$pic_on_edit_insert_section}
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="name">نام </label>
