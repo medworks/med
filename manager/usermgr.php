@@ -12,9 +12,9 @@
 		die(); // solve a security bug
 	}
 	if ($_GET['item']!="usermgr")	exit();
-	$overall_error = false;
 	$db = Database::GetDatabase();
-	$msg = Message::GetMessage();	
+	$msg = Message::GetMessage();
+	$overall_error = false;	
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")    
 	{
 		$msgs = "";	    
@@ -28,12 +28,12 @@
 			$overall_error = true;
 			//exit();
 		}		
-	}
-	else
+	}	
 	if (!$overall_error &&$_POST["mark"]=="saveuser")
 	{
+	    $pass = md5($_POST[password]);
 		$fields = array("`name`","`family`","`image`","`email`","`username`","`password`");
-		$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$_POST[selectpic]}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$_POST[password]}'");	
+		$values = array("'{$_POST[name]}'","'{$_POST[family]}'","'{$_POST[selectpic]}'","'{$_POST[email]}'","'{$_POST[username]}'","'{$pass}'");	
 		if (!$db->InsertQuery('users',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -54,7 +54,7 @@
 		$values = array("`name`"=>"'{$_POST[name]}'",
 		                 "`family`"=>"'{$_POST[family]}'",
 						 "`image`"=>"'{$_POST[selectpic]}'",
-						 "`email`"=>"'{{$_POST[email]}}'",
+						 "`email`"=>"'{$_POST[email]}'",
 						 "`username`"=>"'{$_POST[username]}'",
 						 "`password`"=>"'{$_POST[password]}'");		
         $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
@@ -67,8 +67,8 @@
 		             "family"=>$_POST['family'],
 					 "image"=>$_POST['selectpic'],
 					 "email"=>$_POST['email'],
-					 "username"=>$_POST[username],
-					 "password"=>$_POST[password]);
+					 "username"=>$_POST['username'],
+					 "password"=>$_POST['password']);
 	}
 if ($_GET['act']=="new")
 {
