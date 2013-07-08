@@ -31,9 +31,9 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title> پانل مدیریت</title>
-	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css" />
-	<link rel="stylesheet" type="text/css" href="../themes/default/validationEngine.css"/>
-	<link rel="stylesheet" type="text/css" href="../themes/default/calendar-blue.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/css/validationEngine.css"/>
+	<link rel="stylesheet" type="text/css" href="../themes/css/calendar-blue.css" />
 	<link rel="stylesheet" type="text/css" href="../themes/default/adminpanel.css" />
 
 	<script type="text/javascript" src="../lib/js/jquery.js"></script>  

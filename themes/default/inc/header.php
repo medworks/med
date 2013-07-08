@@ -4,9 +4,9 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel="stylesheet" href="themes/default/1styles.css" />
-	<link rel="stylesheet" href="themes/default/prettyphoto.css" />
-	<link rel="stylesheet" href="themes/default/validationEngine.css"/>
+	<link rel="stylesheet" href="themes/css/1styles.css" />
+	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
+	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
 	<link rel="stylesheet" href="themes/default/style.css" />
 
 	<script src="lib/js/jquery.js" type="text/javascript"></script>

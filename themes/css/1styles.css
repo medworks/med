@@ -1,9 +1,9 @@
 @font-face{
     font-family: 'bmitra';
-    src: url('fonts/BMitra.eot');
-    src: url('fonts/BMitra.eot?#iefix') format('embedded-opentype'),
-         url('fonts/BMitra.woff') format('woff'),
-         url('fonts/BMitra.ttf') format('truetype');
+    src: url('../fonts/BMitra.eot');
+    src: url('../fonts/BMitra.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/BMitra.woff') format('woff'),
+         url('../fonts/BMitra.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -31,7 +31,7 @@
 
 .error span{
   display: inline-block;
-  background: url('images/msg/error.png') no-repeat right center;
+  background: url('../images/msg/error.png') no-repeat right center;
   background-size: 48px 48px;
   height: 48px;
   width: 48px;
@@ -62,7 +62,7 @@
 
 .info span{
   display: inline-block;
-  background: url('images/msg/info.png') no-repeat right center;
+  background: url('../images/msg/info.png') no-repeat right center;
   background-size: 48px 48px;
   height: 48px;
   width: 48px;
@@ -93,7 +93,7 @@
 
 .success span{
   display: inline-block;
-  background: url('images/msg/success.png') no-repeat right center;
+  background: url('../images/msg/success.png') no-repeat right center;
   background-size: 48px 48px;
   height: 48px;
   width: 48px;
@@ -124,7 +124,7 @@
 
 .comment span{
   display: inline-block;
-  background: url('images/msg/comment.png') no-repeat right center;
+  background: url('../images/msg/comment.png') no-repeat right center;
   background-size: 48px 48px;
   height: 48px;
   width: 48px;
