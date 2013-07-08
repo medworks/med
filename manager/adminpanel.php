@@ -1,11 +1,12 @@
 <?php
     include_once("../config.php");
     include_once("../classes/functions.php");
-	include_once("../classes/messages.php");
-	include_once("../classes/session.php");	
-	include_once("../classes/security.php");
-	include_once("../classes/database.php");	
-	include_once("../classes/login.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+    include_once("../lib/persiandate.php");
+  	include_once("../classes/login.php");
 	$login = Login::GetLogin();	
 	if (!$login->IsLogged())
 	{
@@ -30,9 +31,9 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title> پانل مدیریت</title>
-	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css" />
-	<link rel="stylesheet" type="text/css" href="../themes/default/validationEngine.css"/>
-	<link rel="stylesheet" type="text/css" href="../themes/default/calendar-blue.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css" />
+	<link rel="stylesheet" type="text/css" href="../themes/css/validationEngine.css"/>
+	<link rel="stylesheet" type="text/css" href="../themes/css/calendar-blue.css" />
 	<link rel="stylesheet" type="text/css" href="../themes/default/adminpanel.css" />
 
 	<script type="text/javascript" src="../lib/js/jquery.js"></script>  
@@ -75,7 +76,7 @@ $html=<<<cd
 
 cd;
 echo $html;
-
+$datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
 ?>	
 </head>
 <body>
@@ -89,12 +90,14 @@ echo $html;
       <a href="../" class="logo" title="Mediateq" target="_blank">Mediateq website</a>
       <div id="mini-nav">
         <ul class="hidden-phone">
-          <li><a href="#" >وظایف</a></li>
-          <li><a href="#">ثبت نام ها <span id="newSignup">06</span></a></li>         
+          <li><a><?php echo "نام: <span class='highlight'>$name</span>"; ?></a></li>
+          <li><a><?php echo "نام کاربری: <span class='highlight'>$user</span>"; ?></a></li>
+          <li><a><?php echo "تاریخ: <span class='highlight'>$datetime</span>"; ?></a></li>
+          <!-- <li><a href="#" >وظایف</a></li>
+          <li><a href="#">ثبت نام ها <span id="newSignup">06</span></a></li> -->         
           <li><a href="?item=logout&act=do">خروج</a></li>		  
         </ul>
-		نام :<?php echo $name?>
-		نام کاربری : <?php echo $user?>
+        <div class="badboy"></div>
       </div>
     </header>
  <!-- <div id="top" class= "admin_top">top</div> -->

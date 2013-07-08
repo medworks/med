@@ -4,9 +4,9 @@
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<title></title>
-	<link rel="stylesheet" href="themes/default/1styles.css" />
-	<link rel="stylesheet" href="themes/default/prettyphoto.css" />
-	<link rel="stylesheet" href="themes/default/validationEngine.css"/>
+	<link rel="stylesheet" href="themes/css/1styles.css" />
+	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
+	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
 	<link rel="stylesheet" href="themes/default/style.css" />
 
 	<script src="lib/js/jquery.js" type="text/javascript"></script>
@@ -41,7 +41,7 @@
   <div class="container">
 	<header>
 		<div class="top">
-			<div class="time right"><p> <?php echo"$datetime" ?> </p></div>
+			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
 				<form action="">
 					<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />

@@ -32,7 +32,7 @@ else
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	<title>بخش مديريت سايت</title>		
-	<link rel="stylesheet" type="text/css" href="../themes/default/1styles.css"></link>   
+	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css"></link>   
 	<link rel="stylesheet" type="text/css" href="../themes/default/adminlogin.css"></link>	
 	</head>
 	<body>
