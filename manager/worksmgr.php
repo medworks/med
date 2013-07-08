@@ -76,8 +76,7 @@
 						 "`body`"=>"'{$_POST[detail]}'",
 						 "`sdate`"=>"'{$sdatetime}'",
 						 "`fdate`"=>"'{$fdatetime}'");		
-        $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));
-		echo $db->cmd;
+        $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));		
 		header('location:?item=worksmgr&act=mgr');
 	}
 
