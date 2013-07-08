@@ -260,6 +260,7 @@ del;
 							"name"=>"نام",
 							"family"=>"نام خانوادگی",
 							"image"=>"عکس",
+							"email"=>"ایمیل",
 							"username"=>"نام کاربری",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
