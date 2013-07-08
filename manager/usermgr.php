@@ -12,6 +12,7 @@
 		die(); // solve a security bug
 	}
 	if ($_GET['item']!="usermgr")	exit();
+	$overall_error = false;
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();	
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")    
@@ -48,7 +49,7 @@
 		}  				 
 	}
 	else
-	if (!$overall_error && $_POST["mark"]=="editnews")
+	if (!$overall_error && $_POST["mark"]=="edituser")
 	{			    
 		$values = array("`name`"=>"'{$_POST[name]}'",
 		                 "`family`"=>"'{$_POST[family]}'",
@@ -56,7 +57,7 @@
 						 "`email`"=>"'{{$_POST[email]}}'",
 						 "`username`"=>"'{$_POST[username]}'",
 						 "`password`"=>"'{$_POST[password]}'");		
-        $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));
+        $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
 		header('location:?item=usermgr&act=mgr');
 	}
 
@@ -86,8 +87,8 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->Delete("news"," id",$_GET["uid"]);
-	if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
+	$db->Delete("users"," id",$_GET["uid"]);
+	if ($db->CountAll("users")%10==0) $_GET["pageNo"]-=1;		
 	header("location:?item=usermgr&act=mgr&pageNo={$_GET[pageNo]}");
 }	
 if ($_GET['act']=="do")
