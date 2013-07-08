@@ -137,7 +137,7 @@ cd;
             </a>
           </li>		  
           <li>
-            <a href="#">خروج
+            <a href="?item=thememgr&act=do">مدیریت قالب
                 <span class="fs1"></span>
             </a>
           </li>
