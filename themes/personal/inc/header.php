@@ -25,6 +25,7 @@
 </head>
 <body>
 	<div class="container">
+		<!-- Header part -->
 		<header>
 			<div class="logo left">
 				<h2>
@@ -38,7 +39,16 @@
 					<li class="ltr"><span class="tel-icon"></span><a title="Tel">+98 (511) 766 6436</a></li>
 				</ul>	
 			</div>
+			<div class="badboy"></div>
 		</header>
+		<!-- Contain part -->
+		<section class="contain">
+			<menu>
+				<li><a href="./"><span class="home-icon"></span>خانه</a></li>
+				<li><a href="#"><span class="contact-icon"></span>تماس با ما</a></li>
+			</menu>
+		</section>
+		<!--  -->
 	</div>
 </body>
 </html>

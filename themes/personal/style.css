@@ -154,3 +154,31 @@ header .information ul li span.at{
 	float: none;
 	margin: 0 1px;
 }
+/**************************************Contain part***********************************/
+section.contain menu li{
+	text-align: right;
+}
+
+section.contain menu li span{
+	display: block;
+	width: 38px;
+	height: 38px;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 5px 10px;
+}
+
+section.contain menu li span.home-icon{
+	background-image: url('images/home.png'); 
+}
+
+section.contain menu li span.contact-icon{
+	background-image: url('images/contact.png'); 
+}
+
+section.contain menu li a{
+	display: inline-block;
+	padding: 8px 5px;
+	font-size: 20px;
+	text-align: center;
+}
