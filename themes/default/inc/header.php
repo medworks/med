@@ -16,7 +16,7 @@
 	<script src="lib/js/CFInstall.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
-	<script src="themes/default/js/jquery.prettyphoto.js" type="text/javascript"></script>	
+	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
