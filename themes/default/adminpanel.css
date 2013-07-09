@@ -315,6 +315,19 @@ header #mini-nav {
   line-height: 32px; 
 }
 
+header #mini-nav li.exit{
+  background: #d13736;
+}
+
+header #mini-nav li.exit a{
+  color: #fff;
+}
+
+header #mini-nav li.exit a:hover{
+  background: #d13736;
+  color: #000;
+}
+
 header #mini-nav li {
   float: right;
   border-left: 1px solid #e6e6e6; 

@@ -95,7 +95,7 @@ cd;
           <li><a><?php echo "تاریخ: <span class='highlight'>$datetime</span>"; ?></a></li>
           <!-- <li><a href="#" >وظایف</a></li>
           <li><a href="#">ثبت نام ها <span id="newSignup">06</span></a></li> -->         
-          <li><a href="?item=logout&act=do">خروج</a></li>		  
+          <li class="exit"><a href="?item=logout&act=do">خروج</a></li>		  
         </ul>
         <div class="badboy"></div>
       </div>
