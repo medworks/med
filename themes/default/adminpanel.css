@@ -518,6 +518,14 @@ header #mini-nav span.newSignup{
 .sub-menu ul li span.edit-file{
   background-image: url('images/admin/editslides.png');
 }
+
+.sub-menu ul li span.add-user{
+  background-image: url('images/admin/add-user.png');
+}
+
+.sub-menu ul li span.edit-user{
+  background-image: url('images/admin/edit-user.png');
+}
 /***************************************************************************************/
 .admin_top{
  float : right;

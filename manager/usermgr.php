@@ -112,12 +112,12 @@ if ($_GET['act']=="do")
 			<ul>
 			  <li>		  
 				<a href="?item=usermgr&act=new">درج کاربر جدید
-					<span class="add-news"></span>
+					<span class="add-user"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=usermgr&act=mgr" id="news" name="news">حذف/ویرایش کاربران 
-					<span class="edit-news"></span>
+					<span class="edit-user"></span>
 				</a>
 			  </li>
 			 </ul>
