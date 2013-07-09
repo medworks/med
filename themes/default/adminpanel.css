@@ -423,6 +423,10 @@ header #mini-nav span.newSignup{
   background-image: url('images/admin/upload-icon.png');
 }
 
+#mainnav > ul > li span.template{
+  background-image: url('images/admin/template.png');
+}
+
 #mainnav > ul > li:hover a {	    
   opacity: 1;
 }

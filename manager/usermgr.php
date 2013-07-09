@@ -152,25 +152,28 @@ $html=<<<cd
   <div class="content">
     <form name="frmusermgr" id= "frmusermgr" class="usermgr" action="" method="post" enctype="multipart/form-data" >
 	  <div class="mes" id="message">{$msgs}</div>
-       {$pic_on_edit_insert_section}
        <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
        <p>
          <label for="name">نام </label>
          <span>*</span>
        </p>  	 
        <input type="text" name="name" class="validate[required] name" id="name" value="{$row[name]}" />
-	     <p>
+	   <p>
          <label for="family">نام خانوادگی </label>
          <span>*</span>
        </p>  	 
        <input type="text" name="family" class="validate[required] family" id="family" value="{$row[family]}"/>
        <p>
-    	   <label for="pic">عکس </label>
-         <span>*</span>
+         <label for="family">عکس فعلی </label>
+       </p> 
+       <div class="userpic right">{$pic_on_edit_insert_section}</div>
+       <div class="badboy"></div>
+       <p>
+    	 <label for="pic">عکس جدید </label>
        </p>
        <p>
           <input type="text" name="selectpic" class="selectpic" id="selectpic" value='{$row[image]}' />
-          <input type="text" class="validate[required] showadd" id="showadd" value='{$row[image]}' />
+          <input type="text" class="showadd" id="showadd" value='{$row[image]}' />
           <a class="filesbrowserbtn" id="filesbrowserbtn" name="newsmgr" title="گالری تصاویر">گالری تصاویر</a>
           <a class="selectbuttton" id="selectbuttton" title="انتخاب">انتخاب</a>
        </p>

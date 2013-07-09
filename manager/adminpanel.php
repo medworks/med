@@ -138,7 +138,7 @@ cd;
           </li>		  
           <li>
             <a href="?item=thememgr&act=do">مدیریت قالب
-                <span class="fs1"></span>
+                <span class="template"></span>
             </a>
           </li>
         </ul>
