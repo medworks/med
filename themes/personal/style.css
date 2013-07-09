@@ -145,3 +145,12 @@ header .information ul li a{
 	font-size: 14px;
 	white-space: nowrap;
 }
+
+header .information ul li span.at{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: url('images/at.png') no-repeat center;
+	float: none;
+	margin: 0 1px;
+}

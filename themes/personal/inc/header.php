@@ -34,7 +34,7 @@
 			</div>
 			<div class="information right">
 				<ul>
-					<li><span class="email-icon"></span><a href="mailto:info@mediateq.ir" title="Send mail" target="_blank">info@mediateq.ir</a></li>
+					<li><span class="email-icon"></span><a href="mailto:info@mediateq.ir" title="Send mail" target="_blank">info<span class="at"></span>mediateq.ir</a></li>
 					<li class="ltr"><span class="tel-icon"></span><a title="Tel">+98 (511) 766 6436</a></li>
 				</ul>	
 			</div>
