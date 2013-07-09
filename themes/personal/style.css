@@ -1,5 +1,5 @@
 body{
-	background: url('images/admin/login/bg-login-top.png') center;
+	background: url('images/bg.jpg') center;
 }
 
 div,table,input,a,p,form{
@@ -101,4 +101,47 @@ a.button:hover{
 p,label,h1,h2,h3,h4{
 	text-align: right;
 	font-family: 'bmitra';
+}
+/*************************************Header******************************************/
+header{
+	margin: 15px 0 20px 100px;
+}
+
+header .logo strong{
+	display: none;
+}
+
+header .logo h2{
+	text-align: left;
+}
+
+header .information li{
+	margin: 10px 0;
+}
+
+header .information ul li span{
+	margin-top: 3px;
+	margin-right: 5px;
+	display: block;
+	float: left;
+	width: 15px;
+	height: 15px;
+	background-image: url('images/glyphicons-mini.png');
+	background-repeat: no-repeat;
+	opacity: 0.7;
+}
+
+header .information ul li span.email-icon{
+	background-position: -72px 0px;
+}
+
+header .information ul li span.tel-icon{
+	background-position: -335px -25px;
+}
+
+header .information ul li a{
+	color: #5c5c5c;
+	font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
+	font-size: 14px;
+	white-space: nowrap;
 }

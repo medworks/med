@@ -24,6 +24,21 @@
 	<link rel="Shortcut Icon" href="themes/personal/favicon.ico" />
 </head>
 <body>
-	
+	<div class="container">
+		<header>
+			<div class="logo left">
+				<h2>
+					<a href="./" title="Mediateq"><img src="themes/personal/images/logo.png" alt="Mediateq" /></a>
+					<strong>Mediateq</strong>
+				</h2>
+			</div>
+			<div class="information right">
+				<ul>
+					<li><span class="email-icon"></span><a href="mailto:info@mediateq.ir" title="Send mail" target="_blank">info@mediateq.ir</a></li>
+					<li class="ltr"><span class="tel-icon"></span><a title="Tel">+98 (511) 766 6436</a></li>
+				</ul>	
+			</div>
+		</header>
+	</div>
 </body>
 </html>
