@@ -37,11 +37,11 @@
 					{
 							$rowsClass[] = "datagridoddrow";
 					}
-					$disable = array('css','fonts','images','js');
+					$disable_folders = array('css','fonts','images','js');
 					$dirname = basename($file);                 
 					$Stat = $db->CountOf("settings","`key` = 'Site_Theme_Name' and `value` ='{$dirname}'");
 					if ($Stat == 0) {$Status = "غیر فعال";} else {$Status = "فعال";}
-					if(!in_array(basename($file), $disable))
+					if(!in_array(basename($file), $disable_folders))
 					{
 						$themes[] = array("Name"=>basename($file),
 									"Status"=>$Status,
