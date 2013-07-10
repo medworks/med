@@ -10,8 +10,7 @@
 	include_once("config.php");
     include_once("classes/database.php"); 
 	include_once("./classes/functions.php");
-	error_reporting (E_ALL ^ E_NOTICE);
-	$db = Database::GetDatabase();
+	error_reporting (E_ALL ^ E_NOTICE);	
 	$theme = GetSettingValue('Site_Theme_Name',0);    
 	include_once("./themes/{$theme}/main.php");
 	//include_once("./themes/personal/main.php");	
