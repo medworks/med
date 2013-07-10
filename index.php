@@ -7,8 +7,8 @@
  *   Programmers          : Saeid Hatami  &  Mojtaba Amjadi                *
  *   Start Date           : 1392-02-20 ,Friday,2013-05-10                  * 
  ***************************************************************************/
-    include_once("config.php");
-    include_once("classes/database.php");
+	include_once("config.php");
+    include_once("classes/database.php"); 
 	include_once("./classes/functions.php");
 	error_reporting (E_ALL ^ E_NOTICE);
 	$db = Database::GetDatabase();
