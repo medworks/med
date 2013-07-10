@@ -49,7 +49,18 @@
 					<li><a href="#"><span class="contact-icon"></span>تماس با ما</a></li>
 				</menu>
 			</div>
-			<div class="contain"></div>
+			<div class="contain">
+				<div class="inner">
+					<div class="inner-wrap">
+						<div class="slideshow"></div>
+						<div class="client-part"></div>
+						<div class="works-part"></div>
+						<div class="tabs-part"></div>
+						<div class="about-part"></div>
+					</div>
+					<footer></footer>
+				</div>
+			</div>
 			<div class="badboy"></div>
 		</section>
 		<!--  -->

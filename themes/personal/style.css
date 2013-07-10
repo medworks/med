@@ -206,10 +206,45 @@ section.middle menu li a{
 }
 
 section.middle .contain{
-	min-height: 650px;
 	float: right;
 	width: 828px;
 	background: #fff;
 	border: 1px solid rgba(0,0,0,0.08);
-	margin-right: -1px;
+	margin: 0 -1px 50px 0;
+}
+
+section.middle .contain .inner{
+	margin: 50px 0 0;
+}
+
+section.middle .contain .inner-wrap{
+	padding: 0 50px;
+}
+/*****Slideshow*****/
+section.middle .contain .inner .slideshow{
+	min-height: 500px;
+	margin-bottom: 25px;
+}
+/*****Client-part*****/
+section.middle .contain .client-part{
+	min-height: 250px;
+	margin-bottom: 25px;
+}
+/*****Works-part*****/
+section.middle .contain .works-part{
+	min-height: 400px;
+	margin-bottom: 25px;
+}
+/*****Tabs-part*****/
+section.middle .contain .tabs-part{
+	min-height: 400px;
+	margin-bottom: 25px;
+}
+/*****Tabs-part*****/
+section.middle .contain .about-part{
+	min-height: 300px;
+}
+/*************************************Footer******************************************/
+footer{
+	min-height: 500px;
 }
