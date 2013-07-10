@@ -224,6 +224,7 @@ section.middle .contain .inner-wrap{
 section.middle .contain .inner .slideshow{
 	min-height: 500px;
 	margin-bottom: 25px;
+	position: relative;
 }
 /*****Client-part*****/
 section.middle .contain .client-part{
