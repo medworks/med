@@ -161,13 +161,19 @@ header .information ul li span.at{
 /**************************************Middle part***********************************/
 section.middle menu{
 	float: right;
+	position: relative;
 }
 
 section.middle menu li{
-	text-align: right;
-	background: #fff;
-	border: 1px solid #e6e6e6;
+	background: #f9f9f9;
+	border: 1px solid rgba(0,0,0,0.08);
 	padding: 5px 20px;
+	margin-bottom: 10px;
+}
+
+section.middle menu li.active{
+	border-left: none;
+	background: #fff;
 }
 
 section.middle menu li span{
@@ -198,9 +204,8 @@ section.middle menu li a{
 section.middle .contain{
 	min-height: 650px;
 	float: right;
-	width: 796px;
-	top: 15px;
+	width: 828px;
 	background: #fff;
-	border: 1px solid #e6e6e6;
-	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.08);
+	margin-right: -1px;
 }
