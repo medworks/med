@@ -172,8 +172,12 @@ section.middle menu li{
 }
 
 section.middle menu li.active{
-	border-left: none;
+	border-left-color: #fff;
 	background: #fff;
+}
+
+section.middle menu li.active a{
+	opacity: 1;
 }
 
 section.middle menu li span{

@@ -43,10 +43,12 @@
 		</header>
 		<!-- Contain part -->
 		<section class="middle">
-			<menu>
-				<li class="active"><a href="./"><span class="home-icon"></span>خانه</a></li>
-				<li><a href="#"><span class="contact-icon"></span>تماس با ما</a></li>
-			</menu>
+			<div class="main-menu">
+				<menu>
+					<li><a href="./"><span class="home-icon"></span>خانه</a></li>
+					<li><a href="#"><span class="contact-icon"></span>تماس با ما</a></li>
+				</menu>
+			</div>
 			<div class="contain"></div>
 			<div class="badboy"></div>
 		</section>
