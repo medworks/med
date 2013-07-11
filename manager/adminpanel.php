@@ -141,6 +141,11 @@ cd;
                 <span class="template"></span>
             </a>
           </li>
+		   <li>
+            <a href="?item=settingmgr&act=do">مدیریت تنظیمات
+                <span class="template"></span>
+            </a>
+          </li>
         </ul>
       </div>
  
