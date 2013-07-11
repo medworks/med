@@ -279,9 +279,59 @@ section.middle .contain .inner .slideshow .slotholder img.defaultimg{
 section.middle .contain .client-part{
 	margin-bottom: 20px;
 }
+
+section.middle .contain .client-part .text-container div.tab{
+    display: none;
+    position: static;
+    visibility: hidden;
+}
+
+section.middle .contain .client-part .title h2{
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+section.middle .contain .client-part .text p{
+    font-size: 20px;
+    text-align: center;
+}
+
+section.middle .contain .client-part ul li{
+    float: right;
+    margin-top: 50px;
+    margin-right: 65px;
+    text-align: center;
+}
+
+section.middle .contain .client-part ul li.active a span{
+    background: #74c9be;
+}
+
+section.middle .contain .client-part ul li.active a{
+    color: #74c9be;
+}
+
+section.middle .contain .client-part ul li a{
+    display: block;
+    font-size: 22px;
+    text-align: center;
+}
+
+section.middle .contain .client-part ul li a span{
+    display: block;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    background: #ececec;
+    margin-bottom: 15px;
+}
 /*****Works-part*****/
 section.middle .contain .works-part{
-	min-height: 400px;
 	margin-bottom: 25px;
 }
 /*****Tabs-part*****/

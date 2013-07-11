@@ -195,7 +195,33 @@
 						        <div class="tp-bannertimer"></div>
 							</div>
 						</div>
-						<div class="client-part"></div>
+						<div class="client-part">
+							<div class="cat-tabs-wrap" id="tab1">
+								<div class="title"><h2>تب یک</h2></div>
+								<div class="text"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمر<p></div>
+							</div>
+							<div class="cat-tabs-wrap" id="tab2">
+								<div class="title"><h2>تب دو</h2></div>
+								<div class="text"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمر<p></div>
+							</div>
+							<div class="cat-tabs-wrap" id="tab3">
+								<div class="title"><h2>تب سه</h2></div>
+								<div class="text"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمر<p></div>
+							</div>
+							<div class="cat-tabs-wrap" id="tab4">
+								<div class="title"><h2>تب چهار</h2></div>
+								<div class="text"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمرمرفی محصولات ما به صورت مستمر<p></div>
+							</div>
+							<div class="cat-tabs-header">
+								<ul>
+									<li><a href="#tab1"><span class="tab1-icon"></span>تب یک</a></li>
+									<li><a href="#tab2"><span class="tab1-icon"></span>تب دو</a></li>
+									<li><a href="#tab3"><span class="tab1-icon"></span>تب سه</a></li>
+									<li><a href="#tab4"><span class="tab1-icon"></span>تب چهار</a></li>
+								</ul>	
+							</div>
+							<div class="badboy"></div>
+						</div>
 						<hr class="arrow">
 						<div class="works-part"></div>
 						<div class="tabs-part"></div>

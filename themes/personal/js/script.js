@@ -13,9 +13,8 @@ $(document).ready(function(){
     });
 });
 // ******** Slideshow
-jQuery(document).ready(function() {
-   jQuery('.banner').revolution(
-      {
+jQuery(document).ready(function(){
+   jQuery('.banner').revolution({
           delay:5000,
           startheight:500,
           startwidth:960,
@@ -42,4 +41,30 @@ jQuery(document).ready(function() {
           shadow:0,                     
           fullWidth:"off"                   
       });
+});
+// ******** Client part tabs
+jQuery(document).ready(function(){
+    $(".cat-tabs-wrap").hide();
+        $(".cat-tabs-header ul li:first").addClass("active").show();
+        $(".cat-tabs-wrap:first").show(); 
+        $(".cat-tabs-header ul li").click(function() {
+            $(".cat-tabs-header ul li").removeClass("active");
+            $(this).addClass("active");
+            $(".cat-tabs-wrap").hide();
+            var activeTab = $(this).find("a").attr("href");
+            $(activeTab).fadeIn();
+            return false;
+        });
+    
+    $("#tabbed-widget .tabs-wrap").hide();
+    $("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
+    $("#tabbed-widget .tabs-wrap:first").show(); 
+    $("#tabbed-widget  li.tabs").click(function() {
+        $("#tabbed-widget ul.posts-taps li").removeClass("active");
+        $(this).addClass("active");
+        $("#tabbed-widget .tabs-wrap").hide();
+        var activeTab = $(this).find("a").attr("href");
+        $(activeTab).fadeIn();
+        return false;
+    });
 });
