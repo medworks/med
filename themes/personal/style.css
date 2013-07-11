@@ -222,7 +222,7 @@ section.middle .contain .inner-wrap{
 }
 /*****Slideshow*****/
 section.middle .contain .inner .slideshow{
-	margin-bottom: 25px;
+	margin-bottom: 50px;
 	position: relative;
 }
 
@@ -232,7 +232,7 @@ section.middle .contain .inner .slideshow .tp-rightarrow.default{
 }
 
 section.middle .contain .inner .slideshow .slotholder img.defaultimg{
-	height: 406px !important;
+	height: 386px !important;
 }
 /*****Client-part*****/
 section.middle .contain .client-part{
