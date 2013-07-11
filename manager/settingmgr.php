@@ -133,6 +133,32 @@ else
 	<!-- /TinyMCE -->  
 ht;
 	}
+	else
+	if ($_GET['act']=="seo")
+	{
+		$Site_Title = GetSettingValue('Site_Title',0);
+		$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
+		$Site_Describtion = GetSettingValue('Site_Describtion',0);
+		$html=<<<ht
+			<form name="frmworksmgr" id= "frmabout" action="" method="post" >
+				<p>
+					<label for="subject">عنوان سایت </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="title" class="validate[required] subject" id="title" value='{$Site_Title}'/>
+				<p>
+					<label for="subject">کلمات کلیدی </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="keys" class="validate[required] subject" id="title" value='{$Site_KeyWords}'/>
+								<p>
+					<label for="subject">توضیحات سایت </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="describe" class="validate[required] subject" id="title" value='{$Site_Describtion}'/>
+			</form>
+ht;
+	}
 	
 return $html;
 ?>
