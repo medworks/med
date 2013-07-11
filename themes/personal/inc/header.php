@@ -196,6 +196,7 @@
 							</div>
 						</div>
 						<div class="client-part"></div>
+						<hr class="arrow">
 						<div class="works-part"></div>
 						<div class="tabs-part"></div>
 						<div class="about-part"></div>

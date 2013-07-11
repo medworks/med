@@ -102,6 +102,47 @@ p,label,h1,h2,h3,h4{
 	text-align: right;
 	font-family: 'bmitra';
 }
+
+*, *:before, *:after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+hr {
+    border: 0;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #dedede;
+    margin: 40px 0 60px;
+}
+
+hr.arrow:after,
+hr.arrow:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+hr.arrow:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #fff;
+    border-width: 7px;
+    left: 50%;
+    margin-left: -7px;
+}
+
+hr.arrow:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #dedede;
+    border-width: 8px;
+    left: 50%;
+    margin-left: -8px;
+}
 /*************************************Header******************************************/
 header{
 	margin: 25px 10px 20px;
@@ -236,8 +277,7 @@ section.middle .contain .inner .slideshow .slotholder img.defaultimg{
 }
 /*****Client-part*****/
 section.middle .contain .client-part{
-	min-height: 250px;
-	margin-bottom: 25px;
+	margin-bottom: 20px;
 }
 /*****Works-part*****/
 section.middle .contain .works-part{
