@@ -76,7 +76,7 @@ else
 	      </ul>
 	      <div class="badboy"></div>
 	</div>
-	<form name="frmworksmgr" id= "frmabout" action="" method="post" >
+	<form name="frmabout" id= "frmabout" action="" method="post" >
 		<p>
 			 <label for="about">درباره ما </label>
 			 <span>*</span>
@@ -164,7 +164,7 @@ ht;
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
-			<form name="frmworksmgr" id= "frmabout" action="" method="post" >
+			<form name="frmseo" id= "frmabout" action="" method="post" >
 				<p>
 					<label for="subject">عنوان سایت </label>
 					<span>*</span>
@@ -188,6 +188,45 @@ ht;
 			</form>
 ht;
 	}
+	else
+	if ($_GET['act']=="emails")
+	{
+		$Admin_Email = GetSettingValue('Admin_Email',0);
+		$News_Email = GetSettingValue('News_Email',0);
+		$Contact_Email = GetSettingValue('Contact_Email',0);
+		$html=<<<ht
+		<div class="title">
+	      <ul>
+	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
+			<li><span>اطلاعات سئو</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>
+			<form name="frmemails" id= "frmabout" action="" method="post" >
+				<p>
+					<label for="subject">ایمیل ادمین</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="admin_email" class="validate[required] subject" id="title" value='{$Admin_Email}'/>
+				<p>
+					<label for="subject">ایمیل خبرنامه </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="news_email" class="validate[required] subject" id="title" value='{$News_Email}'/>
+								<p>
+					<label for="subject"> ایمیل تماس با ما</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="contact_email" class="validate[required] subject" id="title" value='{$Contact_Email}'/>
+				<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editemail' />
+		     <input type="reset" value="پاک کردن" class="reset" /> 	 	 
+		   </p>
+			</form>
+ht;
+	}	
 	
 return $html;
 ?>
