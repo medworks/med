@@ -298,6 +298,14 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 			return ($row) ? $row["value"] : false;
        }
 	   
+	   function SetSettingValue($key,$value,$strip_tags = 0)
+       {
+			$db = Database::GetDatabase();
+			if ($strip_tags == 1) $value = strip_tags($value);
+			$val = array("value"=>"'$value'");			 
+			return $db ->UpdateQuery("settings",$val,array("`key`='{$key}'"));
+       }
+	   
 	   function CheckboxTag($name,$arraydata,$checked=NULL)
 	   {
 		 $chb = "";
