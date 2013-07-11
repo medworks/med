@@ -34,6 +34,13 @@
 		SetSettingValue("Contact_Email",$_POST["contact_email"]);
 		header('location:?item=settingmgr&act=do');		
 	}
+	else
+	if ($_POST['mark']=="editgrid")
+	{
+		SetSettingValue("Max_Page_Number",$_POST["Max_Page_Number"]);
+		SetSettingValue("Max_Post_Number",$_POST["Max_Post_Number"]);		
+		header('location:?item=settingmgr&act=do');		
+	}
 	if ($_GET['act']=="do")
    {
 	$html=<<<ht
@@ -172,7 +179,7 @@ ht;
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
-			<form name="frmseo" id= "frmabout" action="" method="post" >
+			<form name="frmseo" id= "frmseo" action="" method="post" >
 				<p>
 					<label for="subject">عنوان سایت </label>
 					<span>*</span>
@@ -182,12 +189,12 @@ ht;
 					<label for="subject">کلمات کلیدی </label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="keywords" class="validate[required] subject" id="title" value='{$Site_KeyWords}'/>
+				<input type="text" name="keywords" class="validate[required] subject" id="keywords" value='{$Site_KeyWords}'/>
 								<p>
 					<label for="subject">توضیحات سایت </label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="describe" class="validate[required] subject" id="title" value='{$Site_Describtion}'/>
+				<input type="text" name="describe" class="validate[required] subject" id="describe" value='{$Site_Describtion}'/>
 				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editseo' />
@@ -207,7 +214,7 @@ ht;
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
 	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
-			<li><span>اطلاعات سئو</span></li>
+			<li><span>ایمیل ها</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
@@ -216,20 +223,53 @@ ht;
 					<label for="subject">ایمیل ادمین</label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="admin_email" class="validate[required] subject" id="title" value='{$Admin_Email}'/>
+				<input type="text" name="admin_email" class="validate[required] subject" id="admin_email" value='{$Admin_Email}'/>
 				<p>
 					<label for="subject">ایمیل خبرنامه </label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="news_email" class="validate[required] subject" id="title" value='{$News_Email}'/>
+				<input type="text" name="news_email" class="validate[required] subject" id="news_email" value='{$News_Email}'/>
 								<p>
 					<label for="subject"> ایمیل تماس با ما</label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="contact_email" class="validate[required] subject" id="title" value='{$Contact_Email}'/>
+				<input type="text" name="contact_email" class="validate[required] subject" id="contact_email" value='{$Contact_Email}'/>
 				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editemail' />
+		     <input type="reset" value="پاک کردن" class="reset" /> 	 	 
+		   </p>
+			</form>
+ht;
+	}
+	else
+	if ($_GET['act']=="grid")
+	{
+		$Max_Page_Number = GetSettingValue('Max_Page_Number',0);
+		$Max_Post_Number = GetSettingValue('Max_Post_Number',0);		
+		$html=<<<ht
+		<div class="title">
+	      <ul>
+	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
+			<li><span>جداول اطلاعات</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>
+			<form name="frmemails" id= "frmemails" action="" method="post" >
+				<p>
+					<label for="subject">تعداد صفحه در صفحه بندی</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="Max_Page_Number" class="validate[required] subject" id="Max_Page_Number" value='{$Max_Page_Number}'/>
+				<p>
+					<label for="subject">تعداد مطلب در صفحه اول</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="Max_Post_Number" class="validate[required] subject" id="title" value='{$Max_Post_Number}'/>				
+				<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editgrid' />
 		     <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
 			</form>
