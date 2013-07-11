@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
           stopAtSlide:-1,
           stopAfterLoops:-1,
 
-          shadow:1,                     
+          shadow:0,                     
           fullWidth:"off"                   
       });
 });
