@@ -31,8 +31,8 @@
 	$html=<<<ht
 		<div class="title">
 	      <ul>
-	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><span>مدیریت اخبار</span></li>
+	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><span>مدیریت تنظیمات</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
@@ -68,6 +68,14 @@ else
 	{
 	$About_System = GetSettingValue('About_System',0);
 	$html=<<<ht
+	<div class="title">
+	      <ul>
+	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
+			<li><span>درباره ما</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	</div>
 	<form name="frmworksmgr" id= "frmabout" action="" method="post" >
 		<p>
 			 <label for="about">درباره ما </label>
@@ -148,6 +156,14 @@ ht;
 		$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
 		$Site_Describtion = GetSettingValue('Site_Describtion',0);
 		$html=<<<ht
+		<div class="title">
+	      <ul>
+	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
+	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
+			<li><span>اطلاعات سئو</span></li>
+	      </ul>
+	      <div class="badboy"></div>
+	    </div>
 			<form name="frmworksmgr" id= "frmabout" action="" method="post" >
 				<p>
 					<label for="subject">عنوان سایت </label>
