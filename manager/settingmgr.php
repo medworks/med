@@ -26,6 +26,14 @@
 		SetSettingValue("Site_Describtion",$_POST["describe"]);
 		header('location:?item=settingmgr&act=do');	
 	}
+	else
+	if ($_POST['mark']=="editemail")
+	{
+		SetSettingValue("Admin_Email",$_POST["admin_email"]);
+		SetSettingValue("News_Email",$_POST["news_email"]);
+		SetSettingValue("Contact_Email",$_POST["contact_email"]);
+		header('location:?item=settingmgr&act=do');		
+	}
 	if ($_GET['act']=="do")
    {
 	$html=<<<ht
@@ -203,7 +211,7 @@ ht;
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
-			<form name="frmemails" id= "frmabout" action="" method="post" >
+			<form name="frmemails" id= "frmemails" action="" method="post" >
 				<p>
 					<label for="subject">ایمیل ادمین</label>
 					<span>*</span>
