@@ -18,6 +18,14 @@
 		SetSettingValue("About_System",$_POST["about"]);		
 		header('location:?item=settingmgr&act=do');
 	}
+	else
+	if ($_POST['mark']=="editseo")
+	{
+		SetSettingValue("Site_Title",$_POST["title"]);
+		SetSettingValue("Site_KeyWords",$_POST["keywords"]);
+		SetSettingValue("Site_Describtion",$_POST["describe"]);
+		header('location:?item=settingmgr&act=do');	
+	}
 	if ($_GET['act']=="do")
    {
 	$html=<<<ht
@@ -150,12 +158,17 @@ ht;
 					<label for="subject">کلمات کلیدی </label>
 					<span>*</span>
 				</p>    
-				<input type="text" name="keys" class="validate[required] subject" id="title" value='{$Site_KeyWords}'/>
+				<input type="text" name="keywords" class="validate[required] subject" id="title" value='{$Site_KeyWords}'/>
 								<p>
 					<label for="subject">توضیحات سایت </label>
 					<span>*</span>
 				</p>    
 				<input type="text" name="describe" class="validate[required] subject" id="title" value='{$Site_Describtion}'/>
+				<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editseo' />
+		     <input type="reset" value="پاک کردن" class="reset" /> 	 	 
+		   </p>
 			</form>
 ht;
 	}
