@@ -12,3 +12,34 @@ $(document).ready(function(){
         }
     });
 });
+// ******** Slideshow
+jQuery(document).ready(function() {
+   jQuery('.banner').revolution(
+      {
+          delay:5000,
+          startheight:500,
+          startwidth:960,
+
+          hideThumbs:300,
+
+          thumbWidth:100,   
+          thumbHeight:50,
+          thumbAmount:5,
+
+          navigationType:"none",                    
+          navigationArrows:"verticalcentered",      
+          navigationStyle:"round",              
+
+          touchenabled:"on",                    
+          onHoverStop:"on",                 
+
+          navOffsetHorizontal:0,
+          navOffsetVertical:20,
+
+          stopAtSlide:-1,
+          stopAfterLoops:-1,
+
+          shadow:1,                     
+          fullWidth:"off"                   
+      });
+});

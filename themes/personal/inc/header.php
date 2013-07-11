@@ -59,7 +59,7 @@
 							<div class="banner ltr">
 								<ul>
 						            <!-- THE 1 SLIDE -->
-						            <li data-transition="turnoff" data-slotamount="1" data-masterspeed="300" >
+						            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" >
 						                        <img src="themes/personal/images/others/slide1.png" >
 
 						                        <div class="caption large_text fade"
@@ -110,7 +110,7 @@
 						            </li>
 
 						            <!-- THE 2 SLIDE -->
-						            <li data-transition="slideleft" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb5.jpg">
+						            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb5.jpg">
 
 						                    <img src="themes/personal/images/others/slide2.jpg" >
 
@@ -165,7 +165,7 @@
 
 
 						            <!-- THE 3 SLIDE -->
-						            <li data-transition="flyin" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
+						            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
 						                    <img src="themes/personal/images/others/slide3.jpg" >
 
 						                    <div class="caption large_text sfl"
@@ -205,38 +205,6 @@
 			</div>
 			<div class="badboy"></div>
 		</section>
-		<script>
-		    jQuery(document).ready(function() {
-		       jQuery('.banner').revolution(
-		          {
-		              delay:5000,
-		              startheight:500,
-		              startwidth:960,
-		    
-		              hideThumbs:300,
-		    
-		              thumbWidth:100,	
-		              thumbHeight:50,
-		              thumbAmount:5,
-		    
-		              navigationType:"both",					
-		              navigationArrows:"verticalcentered",		
-		              navigationStyle:"round",				
-		    
-		              touchenabled:"on",					
-		              onHoverStop:"on",					
-		    
-		              navOffsetHorizontal:0,
-		              navOffsetVertical:20,
-		    
-		              stopAtSlide:-1,
-		              stopAfterLoops:-1,
-		    
-		              shadow:1,						
-		              fullWidth:"off"					
-		          });
-		    });
-		</script>
 		<!--  -->
 	</div>
 </body>
