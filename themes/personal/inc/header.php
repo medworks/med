@@ -223,6 +223,7 @@
 							<div class="badboy"></div>
 						</div>
 						<hr class="arrow">
+						<h2 class="work-title">کارهای ما</h2>
 						<div class="works-part">
 							<div id="slideshow-rec">
 								<div class='scroll-item'>
