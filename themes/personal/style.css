@@ -286,14 +286,29 @@ section.middle .contain .client-part .text-container div.tab{
     visibility: hidden;
 }
 
-section.middle .contain .client-part .text-container h2{
+section.middle .contain .client-part .title h2{
     font-size: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+section.middle .contain .client-part .text p{
+    font-size: 20px;
     text-align: center;
 }
 
-section.middle .contain .client-part .text-container p{
-    font-size: 18px;
-    text-align: center;
+section.middle .contain .client-part ul li{
+    float: right;
+    margin-top: 50px;
+    margin-right: 118px;
+}
+
+section.middle .contain .client-part ul li a{
+    display: block;
+}
+
+section.middle .contain .client-part ul li a span{
+    display: block;
 }
 /*****Works-part*****/
 section.middle .contain .works-part{

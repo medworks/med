@@ -13,9 +13,8 @@ $(document).ready(function(){
     });
 });
 // ******** Slideshow
-jQuery(document).ready(function() {
-   jQuery('.banner').revolution(
-      {
+jQuery(document).ready(function(){
+   jQuery('.banner').revolution({
           delay:5000,
           startheight:500,
           startwidth:960,
@@ -42,4 +41,47 @@ jQuery(document).ready(function() {
           shadow:0,                     
           fullWidth:"off"                   
       });
+});
+// ******** Client part tabs
+jQuery(document).ready(function(){
+   /* $('.text-container li a').each(function(){
+        var href= $(this).attr('href');
+        href= href.split('#');
+        // alert(href[1]);
+        var selectDivID= $(this).parent().parent().parent().children('.tab').attr('id');
+        var selectDiv= $(this).parent().parent().parent().children('.tab');
+        if(selectDivID == href[1]){
+          selectDiv.css({
+            'display':'block',
+            'visibility':'visible',
+            'position':'static'
+          })
+        }
+        
+
+    })*/
+
+jQuery(".cat-tabs-wrap").hide();
+    jQuery(".cat-tabs-header ul li:first").addClass("active").show();
+    jQuery(".cat-tabs-wrap:first").show(); 
+    jQuery(".cat-tabs-header ul li").click(function() {
+        jQuery(".cat-tabs-header ul li").removeClass("active");
+        jQuery(this).addClass("active");
+        jQuery(".cat-tabs-wrap").hide();
+        var activeTab = jQuery(this).find("a").attr("href");
+        jQuery(activeTab).fadeIn();
+        return false;
+    });
+    
+    jQuery("#tabbed-widget .tabs-wrap").hide();
+    jQuery("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
+    jQuery("#tabbed-widget .tabs-wrap:first").show(); 
+    jQuery("#tabbed-widget  li.tabs").click(function() {
+        jQuery("#tabbed-widget ul.posts-taps li").removeClass("active");
+        jQuery(this).addClass("active");
+        jQuery("#tabbed-widget .tabs-wrap").hide();
+        var activeTab = jQuery(this).find("a").attr("href");
+        jQuery(activeTab).fadeIn();
+        return false;
+    });
 });
