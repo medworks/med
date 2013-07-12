@@ -2,9 +2,10 @@
   include_once("./config.php");
   include_once("./classes/database.php");
   include_once("./lib/persiandate.php");
+  include_once("./classes/functions.php");
   $db = Database::GetDatabase();
   $pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
-  $maxItemsInPage = 5;
+  $maxItemsInPage = GetSettingValue('Max_Post_Number',0);
   $from = ($pageNo - 1) * $maxItemsInPage;
   $count = $maxItemsInPage;
   $works = $db->SelectAll("works","*",null,"fdate DESC",$from,$count);  
@@ -55,7 +56,7 @@ cd;
 
 $html.=" </div> ";  
 $linkFormat = '?item=works&act=do&pid=%PN%';
-$maxPageNumberAtTime = 3;
+$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 $pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
 $html .= '<center>' . $pageNos . '</center> </div>';
 
