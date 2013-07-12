@@ -279,9 +279,24 @@ section.middle .contain .inner .slideshow .slotholder img.defaultimg{
 section.middle .contain .client-part{
 	margin-bottom: 20px;
 }
+
+section.middle .contain .client-part .text-container div.tab{
+    display: none;
+    position: static;
+    visibility: hidden;
+}
+
+section.middle .contain .client-part .text-container h2{
+    font-size: 24px;
+    text-align: center;
+}
+
+section.middle .contain .client-part .text-container p{
+    font-size: 18px;
+    text-align: center;
+}
 /*****Works-part*****/
 section.middle .contain .works-part{
-	min-height: 400px;
 	margin-bottom: 25px;
 }
 /*****Tabs-part*****/
