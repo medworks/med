@@ -69,7 +69,7 @@
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=settingmgr&act=grid" >جداول اطلاعات 
+				<a href="?item=settingmgr&act=grid" >صفحه بندی مطالب 
 					<span class="information"></span>
 				</a>
 			  </li>
