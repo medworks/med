@@ -1,3 +1,9 @@
+::selection{
+    background: #fefac7;
+    color: #555555;
+    text-shadow: none;
+}
+
 body{
 	background: url('images/bg.jpg') center;
 }
