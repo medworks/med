@@ -5,7 +5,7 @@
   include_once("./classes/functions.php");
   $db = Database::GetDatabase();
   $pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
-  $maxItemsInPage = 5;
+  $maxItemsInPage = GetSettingValue('Max_Post_Number',0);
   $from = ($pageNo - 1) * $maxItemsInPage;
   $count = $maxItemsInPage;
   
@@ -57,7 +57,7 @@ cd;
   }
 $html.=" </div> ";  
 $linkFormat = '?item=news&act=do&pid=%PN%';
-$maxPageNumberAtTime = 3;
+$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 $pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
 $html .= '<center>' . $pageNos . '</center> </div>';
 return $html;
