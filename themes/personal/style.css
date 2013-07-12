@@ -386,6 +386,8 @@ section.middle .contain .client-part ul li a span.tab4-icon{
 /*****Works-part*****/
 section.middle .contain .works-part{
 	margin-bottom: 25px;
+    position: relative;
+    padding-top: 25px;
 }
 
 section.middle .contain .works-part .scroll-item{
@@ -415,6 +417,30 @@ section.middle .contain .works-part .scroll-item h2{
 
 section.middle .contain .works-part .scroll-item p{
     font-size: 18px;
+}
+
+section.middle .contain .works-part .nav{
+    position: absolute;
+    top: -15px;
+    right: 0;
+}
+
+section.middle .contain .works-part .nav a{
+    display: inline-block;
+    background: #ececec;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    text-indent: 99999px;
+}
+
+section.middle .contain .works-part .nav a#prev{
+    
+}
+
+section.middle .contain .works-part .nav a#next{
+    
 }
 /*****Tabs-part*****/
 section.middle .contain .tabs-part{
