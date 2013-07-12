@@ -52,25 +52,25 @@
 	      <div class="badboy"></div>
 	    </div>
 		<div class="sub-menu" id="mainnav">
-			<ul>
+			<ul class="two-column">
 			  <li>		  
-				<a href="?item=settingmgr&act=about">متن درباره ما
-					<span class="add-user"></span>
+				<a href="?item=settingmgr&act=about">درباره ما
+					<span class="about-us"></span>
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=settingmgr&act=seo" >اطلاعات سئو 
-					<span class="edit-user"></span>
+				<a href="?item=settingmgr&act=seo" >اطلاعات تکمیلی 
+					<span class="seo-detail"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=settingmgr&act=emails" >ایمیل ها 
-					<span class="edit-user"></span>
+					<span class="email"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=settingmgr&act=grid" >جداول اطلاعات 
-					<span class="edit-user"></span>
+					<span class="information"></span>
 				</a>
 			  </li>
 			 </ul>

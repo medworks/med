@@ -440,6 +440,10 @@ header #mini-nav span.newSignup{
   background-image: url('images/admin/template.png');
 }
 
+#mainnav > ul > li span.setting{
+  background-image: url('images/admin/setting.png');
+}
+
 #mainnav > ul > li:hover a {	    
   opacity: 1;
 }
@@ -480,6 +484,15 @@ header #mini-nav span.newSignup{
   z-index: 10;
   width: 11px;
   height: 20px; 
+}
+/*************************************SUB menu for two column****************************/
+.sub-menu ul.two-column li{
+  float: right;
+  margin-right: 120px;
+}
+
+.sub-menu ul.two-column li:first-child{
+  margin-top: 35px !important;
 }
 /*************************************SUB menu******************************************/
 .sub-menu ul li{
@@ -542,6 +555,22 @@ header #mini-nav span.newSignup{
 
 .sub-menu ul li span.edit-user{
   background-image: url('images/admin/edit-user.png');
+}
+
+.sub-menu ul li span.information{
+  background-image: url('images/admin/information.png');
+}
+
+.sub-menu ul li span.seo-detail{
+  background-image: url('images/admin/seo-detail.png');
+}
+
+.sub-menu ul li span.email{
+  background-image: url('images/admin/email.png');
+}
+
+.sub-menu ul li span.about-us{
+  background-image: url('images/admin/aboutus.png');
 }
 /***************************************************************************************/
 .admin_top{

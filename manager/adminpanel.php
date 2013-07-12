@@ -142,8 +142,8 @@ cd;
             </a>
           </li>
 		   <li>
-            <a href="?item=settingmgr&act=do">مدیریت تنظیمات
-                <span class="template"></span>
+            <a href="?item=settingmgr&act=do">تنظیمات
+                <span class="setting"></span>
             </a>
           </li>
         </ul>
