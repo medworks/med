@@ -156,16 +156,6 @@ removed:function(){}};d.fn.flexslider=function(h){h=h||{};if("object"===typeof h
 default:"number"===typeof h&&k.flexAnimate(h,!0)}}})(jQuery);
 
 //******************************** Active Main Menu
-/*$(document).ready(function(){
-    $('.main-menu a').each(function(){
-        var url= window.location;
-        if(this.href.trim() == url){
-            $(this).parent().addClass("active");
-        }
-    });
-});*/
-
-
 $(document).ready(function(){
     var url= window.location.href;
     $('.main-menu a').each(function(){
