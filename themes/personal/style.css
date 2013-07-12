@@ -304,12 +304,16 @@ section.middle .contain .client-part ul li{
     text-align: center;
 }
 
-section.middle .contain .client-part ul li.active a span{
-    background: #74c9be;
+section.middle .contain .client-part ul li.active a span,
+section.middle .contain .client-part ul li:hover a span{
+    background-color: #74c9be;
+    opacity: 1;
 }
 
-section.middle .contain .client-part ul li.active a{
+section.middle .contain .client-part ul li.active a,
+section.middle .contain .client-part ul li:hover a{
     color: #74c9be;
+    opacity: 1;
 }
 
 section.middle .contain .client-part ul li a{
@@ -327,8 +331,33 @@ section.middle .contain .client-part ul li a span{
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     border-radius: 50px;
-    background: #ececec;
+    background-color: #ececec;
     margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+section.middle .contain .client-part ul li a span.tab1-icon{
+    background-image: url('images/home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section.middle .contain .client-part ul li a span.tab2-icon{
+    background-image: url('images/contact.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section.middle .contain .client-part ul li a span.tab3-icon{
+    background-image: url('images/home.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+section.middle .contain .client-part ul li a span.tab4-icon{
+    background-image: url('images/contact.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 /*****Works-part*****/
 section.middle .contain .works-part{

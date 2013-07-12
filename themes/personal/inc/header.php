@@ -215,9 +215,9 @@
 							<div class="cat-tabs-header">
 								<ul>
 									<li><a href="#tab1"><span class="tab1-icon"></span>تب یک</a></li>
-									<li><a href="#tab2"><span class="tab1-icon"></span>تب دو</a></li>
-									<li><a href="#tab3"><span class="tab1-icon"></span>تب سه</a></li>
-									<li><a href="#tab4"><span class="tab1-icon"></span>تب چهار</a></li>
+									<li><a href="#tab2"><span class="tab2-icon"></span>تب دو</a></li>
+									<li><a href="#tab3"><span class="tab3-icon"></span>تب سه</a></li>
+									<li><a href="#tab4"><span class="tab4-icon"></span>تب چهار</a></li>
 								</ul>	
 							</div>
 							<div class="badboy"></div>
