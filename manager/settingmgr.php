@@ -13,6 +13,11 @@
 		die(); // solve a security bug
 	 }
 	$db = Database::GetDatabase();
+	if ($_POST['mark']=="editabout")
+	{
+		SetSettingValue("About_System",$_POST["about"]);		
+		header('location:?item=settingmgr&act=do');
+	}
 	if ($_GET['act']=="do")
    {
 	$html=<<<ht
@@ -57,10 +62,10 @@ else
 	$html=<<<ht
 	<form name="frmworksmgr" id= "frmabout" action="" method="post" >
 		<p>
-			 <label for="detail">درباره ما </label>
+			 <label for="about">درباره ما </label>
 			 <span>*</span>
 		   </p>
-		   <textarea cols="50" rows="10" name="detail" class="validate[required] detail" id="detail">{$About_System}</textarea>
+		   <textarea cols="50" rows="10" name="about" class="validate[required] detail" id="detail">{$About_System}</textarea>
 		   <p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editabout' />
