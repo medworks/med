@@ -223,7 +223,62 @@
 							<div class="badboy"></div>
 						</div>
 						<hr class="arrow">
-						<div class="works-part"></div>
+						<div class="works-part">
+							<div id="slideshow-rec">
+								<div class='scroll-item'>
+									<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
+									<h2><a href='' title=''>کار اول</a></h2>
+									<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
+								</div>
+								<div class='scroll-item'>
+									<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
+									<h2><a href='' title=''>کار اول</a></h2>
+									<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
+								</div>
+								<div class='scroll-item'>
+									<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
+									<h2><a href='' title=''>کار اول</a></h2>
+									<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
+								</div>
+								<div class='scroll-item'>
+									<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
+									<h2><a href='' title=''>کار اول</a></h2>
+									<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
+								</div>
+								<div class='scroll-item'>
+									<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
+									<h2><a href='' title=''>کار اول</a></h2>
+									<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
+								</div>
+							</div>
+							<div class="badboy"></div>
+							<div class="nav">
+								<a id="prev1" href="#">Prev</a>
+								<a id="next1" href="#">Next</a>
+							</div>
+							<div class="badboy"></div>
+						</div>
+						<!-- Script for rec work slideshow -->
+						<script type="text/javascript">
+							jQuery(document).ready(function() {
+								var vids = jQuery("#slideshow-rec .scroll-item");
+								for(var i = 0; i < vids.length; i+=3) {
+								  vids.slice(i, i+3).wrapAll('<div class="group_items"></div>');
+								}
+								jQuery(function() {
+									jQuery('#slideshow-rec').cycle({
+										fx:     'scrollHorz',
+										timeout: 6000,
+										slideExpr: '.group_items',
+										speed: 700,
+										pause: true,
+										prev:   '#prev1', 
+   										next:   '#next1',
+									});
+								});
+						 	});
+						</script>
+						<!-- END Script for rec work slideshow -->
 						<div class="tabs-part"></div>
 						<div class="about-part"></div>
 					</div>

@@ -387,6 +387,35 @@ section.middle .contain .client-part ul li a span.tab4-icon{
 section.middle .contain .works-part{
 	margin-bottom: 25px;
 }
+
+section.middle .contain .works-part .scroll-item{
+    float: right;
+    width: 215px;
+    margin-right: 40px;
+}
+
+section.middle .contain .works-part .scroll-item:first-child{
+    margin-right: 0;
+}
+
+section.middle .contain .works-part .scroll-item a{
+    display: block;
+    text-align: right;
+}
+
+section.middle .contain .works-part .scroll-item a img{
+    width: 215px;
+    height: 200px;
+}
+
+section.middle .contain .works-part .scroll-item h2{
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+section.middle .contain .works-part .scroll-item p{
+    font-size: 18px;
+}
 /*****Tabs-part*****/
 section.middle .contain .tabs-part{
 	min-height: 400px;
