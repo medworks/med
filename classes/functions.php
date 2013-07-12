@@ -53,6 +53,9 @@ include_once("./classes/messages.php");
 			case 'thememgr':
                 if ($act=="do" or $act=="chg" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/thememgr.php";
 			break;
+			case 'settingmgr':
+                if ($act=="do" or $act=="about" or $act=="seo" or $act=="grid" or $act=="emails") return "../manager/settingmgr.php";
+			break;
 
 		}
 	}

@@ -61,7 +61,7 @@
 						 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`email`"=>"'{$_POST[email]}'",
 						 "`username`"=>"'{$_POST[username]}'",
-						 "`password`"=>"'{$pass}}'");		
+						 "`password`"=>"'{$pass}'");		
         $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
 		header('location:?item=usermgr&act=mgr');
 	}
@@ -135,9 +135,9 @@ $html=<<<cd
 		$("#submit").click(function(){		    
 			//alert("test");
 			//$("#message").html('saeid hatami');
-		//window.location.href="?item=worksmgr&act=do";
+		//window.location.href="?item=usermgr&act=do";
 			//$("#message").fadeOut(5000,function (){
-              //    window.location.href="?item=worksmgr&act=do"});
+              //    window.location.href="?item=usermgr&act=do"});
 			 
           });		  
     });	   
