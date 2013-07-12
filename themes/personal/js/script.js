@@ -44,44 +44,27 @@ jQuery(document).ready(function(){
 });
 // ******** Client part tabs
 jQuery(document).ready(function(){
-   /* $('.text-container li a').each(function(){
-        var href= $(this).attr('href');
-        href= href.split('#');
-        // alert(href[1]);
-        var selectDivID= $(this).parent().parent().parent().children('.tab').attr('id');
-        var selectDiv= $(this).parent().parent().parent().children('.tab');
-        if(selectDivID == href[1]){
-          selectDiv.css({
-            'display':'block',
-            'visibility':'visible',
-            'position':'static'
-          })
-        }
-        
-
-    })*/
-
-jQuery(".cat-tabs-wrap").hide();
-    jQuery(".cat-tabs-header ul li:first").addClass("active").show();
-    jQuery(".cat-tabs-wrap:first").show(); 
-    jQuery(".cat-tabs-header ul li").click(function() {
-        jQuery(".cat-tabs-header ul li").removeClass("active");
-        jQuery(this).addClass("active");
-        jQuery(".cat-tabs-wrap").hide();
-        var activeTab = jQuery(this).find("a").attr("href");
-        jQuery(activeTab).fadeIn();
-        return false;
-    });
+    $(".cat-tabs-wrap").hide();
+        $(".cat-tabs-header ul li:first").addClass("active").show();
+        $(".cat-tabs-wrap:first").show(); 
+        $(".cat-tabs-header ul li").click(function() {
+            $(".cat-tabs-header ul li").removeClass("active");
+            $(this).addClass("active");
+            $(".cat-tabs-wrap").hide();
+            var activeTab = $(this).find("a").attr("href");
+            $(activeTab).fadeIn();
+            return false;
+        });
     
-    jQuery("#tabbed-widget .tabs-wrap").hide();
-    jQuery("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
-    jQuery("#tabbed-widget .tabs-wrap:first").show(); 
-    jQuery("#tabbed-widget  li.tabs").click(function() {
-        jQuery("#tabbed-widget ul.posts-taps li").removeClass("active");
-        jQuery(this).addClass("active");
-        jQuery("#tabbed-widget .tabs-wrap").hide();
-        var activeTab = jQuery(this).find("a").attr("href");
-        jQuery(activeTab).fadeIn();
+    $("#tabbed-widget .tabs-wrap").hide();
+    $("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
+    $("#tabbed-widget .tabs-wrap:first").show(); 
+    $("#tabbed-widget  li.tabs").click(function() {
+        $("#tabbed-widget ul.posts-taps li").removeClass("active");
+        $(this).addClass("active");
+        $("#tabbed-widget .tabs-wrap").hide();
+        var activeTab = $(this).find("a").attr("href");
+        $(activeTab).fadeIn();
         return false;
     });
 });
