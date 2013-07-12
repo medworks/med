@@ -152,7 +152,7 @@
 
 .firstPage
 {
-	background-image: url("images/admin/icons/first.png");
+	background-image: url("../default/images/admin/icons/first.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
@@ -161,7 +161,7 @@
 
 .prevPage
 {
-	background-image: url("images/admin/icons/prev.png");
+	background-image: url("../default/images/admin/icons/prev.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
@@ -171,7 +171,7 @@
 
 .nextPage
 {
-	background-image: url("images/admin/icons/next.png");
+	background-image: url("../default/images/admin/icons/next.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
@@ -181,7 +181,7 @@
 
 .lastPage
 {
-	background-image: url("images/admin/icons/last.png");
+	background-image: url("../default/images/admin/icons/last.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
