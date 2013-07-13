@@ -44,27 +44,29 @@ jQuery(document).ready(function(){
 });
 // ******** Client part tabs
 jQuery(document).ready(function(){
-    $(".cat-tabs-wrap").hide();
-        $(".cat-tabs-header ul li:first").addClass("active").show();
-        $(".cat-tabs-wrap:first").show(); 
-        $(".cat-tabs-header ul li").click(function() {
-            $(".cat-tabs-header ul li").removeClass("active");
-            $(this).addClass("active");
-            $(".cat-tabs-wrap").hide();
-            var activeTab = $(this).find("a").attr("href");
-            $(activeTab).fadeIn();
-            return false;
-        });
-    
-    $("#tabbed-widget .tabs-wrap").hide();
-    $("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
-    $("#tabbed-widget .tabs-wrap:first").show(); 
-    $("#tabbed-widget  li.tabs").click(function() {
-        $("#tabbed-widget ul.posts-taps li").removeClass("active");
-        $(this).addClass("active");
-        $("#tabbed-widget .tabs-wrap").hide();
-        var activeTab = $(this).find("a").attr("href");
-        $(activeTab).fadeIn();
-        return false;
-    });
+      $(".cat-tabs-wrap").hide();
+      $(".cat-tabs-header ul li:first-child").addClass("active").show();
+      $(".cat-tabs-wrap:first-child").show(); 
+      $(".cat-tabs-header ul li").click(function() {
+          $(".cat-tabs-header ul li").removeClass("active");
+          $(this).addClass("active");
+          $(".cat-tabs-wrap").hide();
+          var activeTab = $(this).find("a").attr("href");
+          $(activeTab).fadeIn();
+          return false;
+      });
+});
+// ******** TABS part tabs
+jQuery(document).ready(function(){
+      $(".cat-tabs-wrap2").hide();
+      $(".cat-tabs-header2 ul li:first").addClass("active").show();
+      $(".cat-tabs-wrap2:first").show(); 
+      $(".cat-tabs-header2 ul li").click(function() {
+          $(".cat-tabs-header2 ul li").removeClass("active");
+          $(this).addClass("active");
+          $(".cat-tabs-wrap2").hide();
+          var activeTab = $(this).find("a").attr("href");
+          $(activeTab).show('slow');
+          return false;
+      });
 });

@@ -240,10 +240,6 @@ section.middle .contain .inner .slideshow .slotholder img.defaultimg{
 	height: 386px !important;
 }
 /*****Client-part*****/
-section.middle .contain .client-part{
-	margin-bottom: 20px;
-}
-
 section.middle .contain .client-part .text-container div.tab{
     display: none;
     position: static;
@@ -347,7 +343,6 @@ h2.work-title{
 }
 
 section.middle .contain .works-part{
-	margin-bottom: 25px;
     position: relative;
     padding-top: 25px;
 }
@@ -415,15 +410,84 @@ section.middle .contain .works-part .nav a#next1{
     background-image: url('images/prev.png');
 }
 /*****Tabs-part*****/
-section.middle .contain .tabs-part{
-	min-height: 400px;
+section.middle .contain .tabs-part .tit{
 	margin-bottom: 25px;
+}
+
+section.middle .contain .tabs-part .tit h2{
+	text-align: center;
+	font-size: 23px;
+	margin-bottom: 10px;
+}
+
+section.middle .contain .tabs-part .tit p{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 40px;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2{
+	float: right;
+	padding-top: 10px;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li{
+	background: #f7f7f7;
+	text-align: center;
+	border-bottom: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+	margin-left: -1px;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li:first-child{
+	border-top: 1px solid #dedede;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li.active{
+	background: #fff;
+	z-index: 3;
+	position: relative;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li.active a{
+	color: #74c9be;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li a{
+	display: block;
+	padding: 17px 25px 17px 145px;
+	font-size: 20px;
+}
+
+section.middle .contain .tabs-part .cat-tabs-header2 ul li a:hover{
+	color: #74c9be;
+}
+
+section.middle .contain .tabs-part .cat-tabs{
+	border-right: 1px solid #dedede;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+
+section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2{
+	margin-right: 20px;
+}
+
+section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 h3{
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 p{
+	line-height: 1.5;
+	font-size: 18px;
 }
 /*****Tabs-part*****/
 section.middle .contain .about-part{
-	min-height: 300px;
+	min-height: 50px;
 }
 /*************************************Footer******************************************/
 footer{
-	min-height: 500px;
+	min-height: 50px;
 }
