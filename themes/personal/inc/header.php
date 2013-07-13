@@ -315,7 +315,36 @@
 							<div class="badboy"></div>
 						</div>
 						<hr class="arrow">
-						<div class="about-part"></div>
+						<div class="about-part">
+							<div class="left aboutus">
+								<div class="tit"><h2>درباره ما</h2></div>
+								<div class="detail">
+									<div class="pic"><img src="themes/personal/images/others/a1.jpg" alt=""></div>
+									<div class="text">
+										<div class="arrow-box"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر <p></div>
+									</div>
+									<div class="badboy"></div>
+								</div>
+								<div class="detail">
+									<div class="pic"><img src="themes/personal/images/others/a1.jpg" alt=""></div>
+									<div class="text">
+										<div class="arrow-box"><p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر <p></div>
+									</div>
+									<div class="badboy"></div>
+								</div>
+							</div>
+							<div class="aboutworks">
+								<div class="tit"><h2>چرا مشتریان ما را انتخاب می کنند</h2></div>
+								<div class="detail">
+									<p>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی محصولات ما به صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر صورت مستمر </p>
+									<p class="tik"><span></span>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی </p>
+									<p class="tik"><span></span>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی </p>
+									<p class="tik"><span></span>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی </p>
+									<p class="tik"><span></span>توضیحات مربوط بهمرفی محصولات ما به صورت مستمر مرفی </p>
+								</div>
+							</div>
+							<div class="badboy"></div>
+						</div>
 					</div>
 					<footer></footer>
 				</div>

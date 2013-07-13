@@ -107,6 +107,36 @@ hr.arrow:before {
     left: 50%;
     margin-left: -8px;
 }
+
+.arrow-box {
+    position: relative;
+    border: 1px solid #dedede;
+    margin-left: 15px;
+    padding: 15px 20px;
+    background-color: #fafafa;
+}
+.arrow-box:after,
+.arrow-box:before {
+    right: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.arrow-box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #fafafa;
+    border-width: 7px;
+    top: 22px;
+}
+.arrow-box:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #dedede;
+    border-width: 8px;
+    top: 21px;
+}
 /*************************************Header******************************************/
 header{
 	margin: 25px 10px 20px;
@@ -484,8 +514,51 @@ section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 p{
 	font-size: 18px;
 }
 /*****Tabs-part*****/
-section.middle .contain .about-part{
-	
+section.middle .contain .about-part .tit h2{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+section.middle .contain .about-part .aboutus{
+    width: 340px;
+}
+
+section.middle .contain .about-part .aboutus .pic{
+    float: left;
+}
+
+section.middle .contain .about-part .aboutus .pic img{
+    width: 60px;
+    height: 60px;
+}
+
+section.middle .contain .about-part .aboutus .text{
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+section.middle .contain .about-part .aboutus .text p{
+    font-size: 15px;
+}
+
+section.middle .contain .about-part .aboutworks{
+    margin-left: 380px;
+}
+
+section.middle .contain .about-part .aboutworks .detail p{
+    font-size: 15px;
+}
+
+section.middle .contain .about-part .aboutworks .detail p.tik{
+    margin-top: 10px;
+}
+
+section.middle .contain .about-part .aboutworks .detail p span{
+    display: inline-block;
+    width: 15px;
+    height: 15px; 
+    margin-left: 3px;   
+    background: url('images/glyphicons-mini.png') no-repeat -287px 0;
 }
 /*************************************Footer******************************************/
 footer{
