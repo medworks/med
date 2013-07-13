@@ -314,6 +314,7 @@
 							</div>
 							<div class="badboy"></div>
 						</div>
+						<hr class="arrow">
 						<div class="about-part"></div>
 					</div>
 					<footer></footer>

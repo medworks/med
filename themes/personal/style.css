@@ -485,9 +485,9 @@ section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 p{
 }
 /*****Tabs-part*****/
 section.middle .contain .about-part{
-	min-height: 50px;
+	
 }
 /*************************************Footer******************************************/
 footer{
-	min-height: 50px;
+	min-height: 100px;
 }
