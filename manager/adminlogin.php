@@ -10,7 +10,7 @@ $sess = Session::GetSesstion();
 $adminloginmsg = "";
 if ($login->IsLogged())
 {	
-		header("Location: ../manager/adminpanel.php");
+		header("Location: ../manager/adminpanel.php?item=dashboard&act=do&type=line");
 }
 else
 {
