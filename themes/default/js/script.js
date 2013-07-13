@@ -90,24 +90,9 @@ jQuery(document).ready(function() {
         jQuery(this).addClass("active");
         jQuery(".cat-tabs-wrap").hide();
         var activeTab = jQuery(this).find("a").attr("href");
-        jQuery(activeTab).slideDown();
+        jQuery(activeTab).fadeIn();
         return false;
     });
-    
-    jQuery("#tabbed-widget .tabs-wrap").hide();
-    jQuery("#tabbed-widget ul.posts-taps li:first").addClass("active").show();
-    jQuery("#tabbed-widget .tabs-wrap:first").show(); 
-    jQuery("#tabbed-widget  li.tabs").click(function() {
-        jQuery("#tabbed-widget ul.posts-taps li").removeClass("active");
-        jQuery(this).addClass("active");
-        jQuery("#tabbed-widget .tabs-wrap").hide();
-        var activeTab = jQuery(this).find("a").attr("href");
-        jQuery(activeTab).slideDown();
-        return false;
-    });
-    
-   
-    
 });
 
 // tipsy, version 1.0.0a
