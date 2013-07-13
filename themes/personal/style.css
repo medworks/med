@@ -597,11 +597,11 @@ footer .inner-wrap .first{
     margin-right: 0;
 }
 
-footer .inner-wrap .first li{
+footer .inner-wrap li{
     border-top: 1px solid rgba(255,255,255,0.15);
     padding: 15px 0;
 }
 
-footer .inner-wrap .first li:first-child{    
+footer .inner-wrap li:first-child{    
     border-top: 0 none;
 }

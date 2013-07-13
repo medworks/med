@@ -372,7 +372,29 @@
 									</li>
 								</ul>
 							</div>
-							<div class="second"></div>
+							<div class="second">
+								<div class="title"><h2>هدر دوم</h2></div>
+								<ul>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+								</ul>
+							</div>
 							<div class="third"></div>
 							<div class="badboy"></div>
 						</div>
