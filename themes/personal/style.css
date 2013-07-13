@@ -615,3 +615,7 @@ footer .inner-wrap .third .text p.fax{
 footer .inner-wrap .third .text p span{
     display: inline-block;
 }
+/*************************************Bottom of Footer******************************************/
+div.bot-footer{
+    background: #333333;
+}

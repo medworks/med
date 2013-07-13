@@ -412,6 +412,9 @@
 							<div class="badboy"></div>
 						</div>
 					</footer>
+					<div class="bot-footer">
+						<div class="inner-wrap"></div>
+					</div>
 				</div>
 			</div>
 			<div class="badboy"></div>
