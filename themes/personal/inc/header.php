@@ -346,7 +346,37 @@
 							<div class="badboy"></div>
 						</div>
 					</div>
-					<footer></footer>
+					<!-- Contain part -->
+					<footer>
+						<div class="inner-wrap">
+							<div class="first">
+								<div class="title"><h2>هدر اول</h2></div>
+								<ul>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
+											<span class="date">دوازدهم مرداد 1392</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="second"></div>
+							<div class="third"></div>
+							<div class="badboy"></div>
+						</div>
+					</footer>
 				</div>
 			</div>
 			<div class="badboy"></div>
