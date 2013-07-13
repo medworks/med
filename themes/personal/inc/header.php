@@ -395,7 +395,20 @@
 									</li>
 								</ul>
 							</div>
-							<div class="third"></div>
+							<div class="third">
+								<div class="title"><h2>هدر سوم</h2></div>
+								<ul>
+									<li>
+										<div class="text">
+											<p>توضیحات بیشتر... توضیحات بیشتر توضیحات بیشتر توضیحات بیشتر... </p>
+											<p class='address'><span>آدرس:</span> مشهد، سه راه فلسطسن، ساختمان 202، طبقه اول، واحد 3</p>
+											<p class="tel ltr"><span>Tel:</span> +98 (511) 766 6436</p>
+											<p class="fax ltr"><span>Fax:</span> +98 (511) 761 3679</p>
+											<p class='email ltr'><span>E-Mail:</span> info@mediateq.ir</p>
+										</div>
+									</li>
+								</ul>
+							</div>
 							<div class="badboy"></div>
 						</div>
 					</footer>

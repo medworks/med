@@ -563,7 +563,7 @@ section.middle .contain .about-part .aboutworks .detail p span{
 /*************************************Footer******************************************/
 footer{
     background: #393939;
-    padding: 30px 0 30px;
+    padding: 40px 0 40px;
 }
 
 footer h2{
@@ -604,4 +604,14 @@ footer .inner-wrap li{
 
 footer .inner-wrap li:first-child{    
     border-top: 0 none;
+}
+
+footer .inner-wrap .third .text p.tel,
+footer .inner-wrap .third .text p.email,
+footer .inner-wrap .third .text p.fax{
+    text-align: left;
+}
+
+footer .inner-wrap .third .text p span{
+    display: inline-block;
 }
