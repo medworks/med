@@ -246,7 +246,7 @@ section.middle menu li a{
 
 section.middle .contain{
 	float: right;
-	width: 828px;
+	width: 820px;
 	background: #fff;
 	border: 1px solid rgba(0,0,0,0.08);
 	margin: 0 -1px 50px 0;
@@ -380,11 +380,7 @@ section.middle .contain .works-part{
 section.middle .contain .works-part .scroll-item{
     float: right;
     width: 215px;
-    margin-right: 40px;
-}
-
-section.middle .contain .works-part .scroll-item:first-child{
-    margin-right: 0;
+    margin-right: 20px;
 }
 
 section.middle .contain .works-part .scroll-item a{
@@ -590,7 +586,7 @@ footer .inner-wrap .second,
 footer .inner-wrap .third{
     float: right;
     width: 222px;
-    margin-right: 30px;
+    margin-right: 27px;
 }
 
 footer .inner-wrap .first{
