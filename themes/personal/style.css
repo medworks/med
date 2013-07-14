@@ -610,6 +610,9 @@ footer .inner-wrap .third .text p.tel,
 footer .inner-wrap .third .text p.email,
 footer .inner-wrap .third .text p.fax{
     text-align: left;
+    font-family: 'arial';
+    font-size: 14px;
+    margin-top: 15px;
 }
 
 footer .inner-wrap .third .text p span{
@@ -618,4 +621,72 @@ footer .inner-wrap .third .text p span{
 /*************************************Bottom of Footer******************************************/
 div.bot-footer{
     background: #333333;
+    padding: 30px 0;
+}
+
+div.bot-footer p{
+    color: #dedede;
+}
+
+div.bot-footer .inner-wrap p.copyright{
+    text-align: left;
+    font-family: 'arial';
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+div.bot-footer .inner-wrap .social{
+    float: right;
+}
+
+div.bot-footer .inner-wrap .social ul li{
+    float: left;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    opacity: 0.6;
+    margin-left: 5px;
+    background-image: url('images/social-icon.png');
+    background-repeat: no-repeat;
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -ms-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+div.bot-footer .inner-wrap .social ul li:hover{
+    opacity: 1;
+}
+
+div.bot-footer .inner-wrap .social ul li a{
+    display: block;
+    width: 35px;
+    height: 35px;
+}
+
+div.bot-footer .inner-wrap .social ul li.rss{
+    background-color: #e86f04;
+    background-position: -183px -25px;
+}
+
+div.bot-footer .inner-wrap .social ul li.twitter{
+    background-color: #5daed5;
+    background-position: -27px -25px;
+}
+
+div.bot-footer .inner-wrap .social ul li.facebook{
+    background-color: #4470cf;
+    background-position: -66px -25px;
+}
+
+div.bot-footer .inner-wrap .social ul li.dribbble{
+    background-color: #d07ead;
+    background-position: -183px -77px;
+}
+
+div.bot-footer .inner-wrap .social ul li.pinterest{
+    background-color: #c53942;
+    background-position: -261px -176px;
 }

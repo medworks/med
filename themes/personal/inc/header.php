@@ -413,7 +413,19 @@
 						</div>
 					</footer>
 					<div class="bot-footer">
-						<div class="inner-wrap"></div>
+						<div class="inner-wrap">
+							<p class="copyright ltr">&copy; 2013 Mediateq. All rights reserved.</p>
+							<div class="social">
+								<ul>
+									<li class="rss"><a href="#"></a></li>
+									<li class="twitter"><a href="#"></a></li>
+									<li class="facebook"><a href="#"></a></li>
+									<li class="dribbble"><a href="#"></a></li>
+									<li class="pinterest"><a href="#"></a></li>
+								</ul>
+								<div class="badboy"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
