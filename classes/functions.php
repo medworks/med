@@ -350,8 +350,8 @@ code;
           return $Html;
 	  }
 	  
-	  function ShowBlock($acceptpos)
-      {
+	function ShowBlock($acceptpos)
+    {
 			$db = Database::GetDatabase();
             $rows=$db->SelectAll("block", "*","`pos`='$acceptpos'","order ASC,id ASC");
             foreach ($rows as $row)
