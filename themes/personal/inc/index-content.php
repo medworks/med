@@ -6,7 +6,7 @@
 				<div class="banner ltr">
 					<ul>
 			            <!-- THE 1 SLIDE -->
-			            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" >
+			            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" >
 	                        <img src="themes/personal/images/others/slide1.png" >
 
 	                        <div class="caption large_text fade"
@@ -57,7 +57,7 @@
 			            </li>
 
 			            <!-- THE 2 SLIDE -->
-			            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb5.jpg">
+			            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb5.jpg">
 							<img src="themes/personal/images/others/slide2.jpg" >
 
 		                    <div class="caption large_text sft"
@@ -111,7 +111,7 @@
 
 
 			            <!-- THE 3 SLIDE -->
-			            <li data-transition="fade" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
+			            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
 		                    <img src="themes/personal/images/others/slide3.jpg" >
 
 		                    <div class="caption large_text sfl"

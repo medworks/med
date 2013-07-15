@@ -23,7 +23,7 @@ $(document).ready(function(){
           thumbHeight:50,
           thumbAmount:5,
 
-          navigationType:"none",                    
+          navigationType:"bullet",                    
           navigationArrows:"verticalcentered",      
           navigationStyle:"round",              
 
