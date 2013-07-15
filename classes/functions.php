@@ -11,9 +11,6 @@ include_once("./classes/messages.php");
 			case 'initial':
 				return "index.php";
 			break;
-			case 'home':
-                return "themes/persnal/inc/index-content.php";
-			break;
             case 'about':
                 return "about.php";
 			break;
