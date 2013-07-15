@@ -241,13 +241,16 @@ section.middle .main-menu menu li span.contact-icon{
 	background-image: url('images/contact.png'); 
 }
 
-section.middle .main-menu menu li a{
+section.middle .main-menu menu li  a{
 	display: inline-block;
 	padding: 8px 20px;
 	font-size: 20px;
 	text-align: center;
-	opacity: 0.5;
     color: #5c5c5c; 
+}
+
+section.middle .main-menu > menu > li >  a{
+    opacity: 0.5;
 }
 /****SUBMenu*****/
 section.middle .main-menu menu li menu{
