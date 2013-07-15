@@ -216,8 +216,8 @@
 					}
 					$(function() {
 						$('#slideshow-rec').cycle({
-							fx: 'scrollHorz',
-							timeout: 6000,
+							fx: 'fade',
+							timeout: 0,
 							slideExpr: '.group_items',
 							speed: 700,
 							pause: true,
