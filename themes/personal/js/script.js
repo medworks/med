@@ -13,7 +13,7 @@ $(document).ready(function(){
     });
 });
 // ******** Slideshow
-jQuery(document).ready(function(){
+$(document).ready(function(){
    jQuery('.banner').revolution({
           delay:5000,
           startheight:500,
@@ -43,7 +43,7 @@ jQuery(document).ready(function(){
       });
 });
 // ******** Client part tabs
-jQuery(document).ready(function(){
+$(document).ready(function(){
       $(".cat-tabs-wrap").hide();
       $(".cat-tabs-header ul li:first-child").addClass("active").show();
       $(".cat-tabs-wrap:first-child").show(); 
@@ -57,7 +57,7 @@ jQuery(document).ready(function(){
       });
 });
 // ******** TABS part tabs
-jQuery(document).ready(function(){
+$(document).ready(function(){
       $(".cat-tabs-wrap2").hide();
       $(".cat-tabs-header2 ul li:first").addClass("active").show();
       $(".cat-tabs-wrap2:first").show(); 
@@ -71,7 +71,7 @@ jQuery(document).ready(function(){
       });
 });
 // ******** Main menu effect
-jQuery(document).ready(function(){
+$(document).ready(function(){
       $("li , .main-menu li").each(function(){  
           var $sublist = $(this).find('menu:first');       
           
@@ -86,4 +86,9 @@ jQuery(document).ready(function(){
           }); 
 
       });
+});
+// ******** Image hover
+$(document).ready(function() {
+  $('#slideshow-rec .scroll-item a').append('<div class="more"></div>');
+  $('#slideshow-rec .scroll-item > a ').hoverdir();
 });
