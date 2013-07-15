@@ -506,6 +506,10 @@ section.middle .contain .works-part .scroll-item{
     margin-right: 20px;
 }
 
+section.middle .contain .works-part .scroll-item:first-child{
+    margin-right: 0
+}
+/*Overlay for works image*/
 section.middle .contain .works-part .scroll-item a,
 section.middle .contain .works-part .scroll-item a img {
     display: block;
@@ -555,7 +559,7 @@ section.middle .contain .works-part .scroll-item a div.da-animate {
     -ms-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-
+/*End of overlay*/
 section.middle .contain .works-part .scroll-item a{
     display: block;
     text-align: right;

@@ -209,20 +209,20 @@
 			</div>
 			<!-- Script for rec work slideshow -->
 			<script type="text/javascript">
-				jQuery(document).ready(function() {
-					var vids = jQuery("#slideshow-rec .scroll-item");
+				$(document).ready(function() {
+					var vids = $("#slideshow-rec .scroll-item");
 					for(var i = 0; i < vids.length; i+=3) {
 					  vids.slice(i, i+3).wrapAll('<div class="group_items"></div>');
 					}
-					jQuery(function() {
-						jQuery('#slideshow-rec').cycle({
-							fx:     'scrollHorz',
+					$(function() {
+						$('#slideshow-rec').cycle({
+							fx: 'scrollHorz',
 							timeout: 6000,
 							slideExpr: '.group_items',
 							speed: 700,
 							pause: true,
-							prev:   '#prev1', 
-								next:   '#next1',
+							prev: '#prev1', 
+							next: '#next1',
 						});
 					});
 			 	});
