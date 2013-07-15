@@ -1,5 +1,5 @@
-// ******** Active menu
 $(document).ready(function(){
+// ******** Active menu
     var url= window.location.href;
     $('.main-menu a').each(function(){
         if(this.href.trim() == url){
@@ -11,10 +11,8 @@ $(document).ready(function(){
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
         }
     });
-});
 // ******** Slideshow
-$(document).ready(function(){
-   jQuery('.banner').revolution({
+   $('.banner').revolution({
           delay:5000,
           startheight:500,
           startwidth:960,
@@ -41,9 +39,7 @@ $(document).ready(function(){
           shadow:0,                     
           fullWidth:"off"                   
       });
-});
 // ******** Client part tabs
-$(document).ready(function(){
       $(".cat-tabs-wrap").hide();
       $(".cat-tabs-header ul li:first-child").addClass("active").show();
       $(".cat-tabs-wrap:first-child").show(); 
@@ -55,9 +51,7 @@ $(document).ready(function(){
           $(activeTab).fadeIn();
           return false;
       });
-});
 // ******** TABS part tabs
-$(document).ready(function(){
       $(".cat-tabs-wrap2").hide();
       $(".cat-tabs-header2 ul li:first").addClass("active").show();
       $(".cat-tabs-wrap2:first").show(); 
@@ -69,9 +63,7 @@ $(document).ready(function(){
           $(activeTab).show('slow');
           return false;
       });
-});
 // ******** Main menu effect
-$(document).ready(function(){
       $("li , .main-menu li").each(function(){  
           var $sublist = $(this).find('menu:first');       
           
@@ -86,9 +78,7 @@ $(document).ready(function(){
           }); 
 
       });
-});
 // ******** Image hover
-$(document).ready(function() {
   $('#slideshow-rec .scroll-item a').append('<div class="more"></div>');
   $('#slideshow-rec .scroll-item > a ').hoverdir();
 });
