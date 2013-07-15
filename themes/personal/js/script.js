@@ -70,3 +70,20 @@ jQuery(document).ready(function(){
           return false;
       });
 });
+// ******** Main menu effect
+jQuery(document).ready(function(){
+      $("li , .main-menu li").each(function(){  
+          var $sublist = $(this).find('menu:first');       
+          
+          $(this).hover(function(){  
+                $sublist.stop().css({overflow:"hidden", height:"auto", display:"none"}).slideDown(300, function(){
+                    $(this).css({overflow:"visible", height:"auto"});
+                }); 
+            },function(){ 
+                $sublist.stop().slideUp(200, function(){   
+                    $(this).css({overflow:"hidden", display:"none"});
+                });
+          }); 
+
+      });
+});
