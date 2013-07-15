@@ -296,6 +296,10 @@ section.middle .main-menu menu li span.contact-icon{
 	background-image: url('images/contact.png'); 
 }
 
+section.middle .main-menu menu li span.works-icon{
+    background-image: url('images/works.png'); 
+}
+
 section.middle .main-menu menu li  a{
 	display: inline-block;
 	padding: 8px 20px;

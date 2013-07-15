@@ -12,6 +12,9 @@
 			case 'contact':
                 return "themes/personal/contact.php";
 			break;
+			case 'works':
+                return "themes/personal/works.php";
+			break;
 		}
 	}
 ?>
@@ -26,6 +29,7 @@
 					<li><a href="#">خانه 4</a></li>
 				</menu>
 			</li>
+			<li><a href="?item=works"><span class="works-icon"></span>کارهای ما</a></li>
 			<li><a href="?item=contact"><span class="contact-icon"></span>تماس با ما</a></li>
 		</menu>
 	</div>
