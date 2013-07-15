@@ -1,3 +1,4 @@
+					</div>
 					<footer>
 						<div class="inner-wrap">
 							<div class="first">
@@ -82,7 +83,6 @@
 			</div>
 			<div class="badboy"></div>
 		</section>
-		<!--  -->
 	</div>
 </body>
 </html>
