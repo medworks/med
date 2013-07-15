@@ -334,4 +334,58 @@ cb;
 			$chb = str_replace("%dis%","",$chb);
 		return $chb;
 	   }
+	   
+	   function CreateBlock($title,$content)
+       {
+            $Html=<<<code
+				<div class="subscrib main-box">
+					<h2>{$title}</h2>
+					<div class="line"> </div>
+					<div class="badboy"> </div>
+					<div class="box-left">
+						{$content}
+					</div>
+				</div>
+code;
+          return $Html;
+	  }
+	  
+	  function ShowBlock($acceptpos)
+      {
+			$db = Database::GetDatabase();
+            $rows=$db->SelectAll("block", "*","`pos`='$acceptpos'","order ASC,id ASC");
+            foreach ($rows as $row)
+            {                        
+                if ($row["plugin"]==0)
+                {
+                    if($row["contenttype"]==1)
+                    {
+                        $content="
+							<marquee onmouseover='this.stop()' onmouseout='this.start()'
+                            scrolldelay='85' scrollamount='2' direction='up'>
+                            {$row["content"]}
+                            </marquee>
+                                 ";
+                    }
+                    else
+                    {
+                        $content=$row["content"];
+                    }
+                    $ret.=CreateBlock($row["name"],$content);
+                }
+                else
+                {
+                    $srow=$this->Select("plugins", "*","`id`='{$row['plugin']}'");                          
+                    if($srow["status"]==2)
+                    {                        
+                        $blockname = $row["name"];
+                        $content=include_once "plugins/".$srow["name"]."/".$srow["name"]."_plugin.php";
+                        $ret.=CreateBlock($blockname,$content);
+                    }
+                    else {$ret.=null;}
+                }                        
+            }
+            return $ret;
+    }
+	  
 ?>
