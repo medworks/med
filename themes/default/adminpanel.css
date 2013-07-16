@@ -597,7 +597,7 @@ header #mini-nav span.newSignup{
 
  /* This Section related To Container Div Part*/	
 .admin_container{
-  min-height: 800px;
+  min-height: 960px;
   float : right;
   width : 780px;
   top: 15px;
@@ -617,6 +617,7 @@ header #mini-nav span.newSignup{
 }
 
 footer{
+  margin-top: 50px;
   background: #bfbfbf;
   padding: 5px 0;
   position: absolute;
