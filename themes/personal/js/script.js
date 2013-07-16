@@ -81,4 +81,28 @@ $(document).ready(function(){
 // ******** Image hover
   $('#slideshow-rec .scroll-item a').append('<div class="more"></div>');
   $('#slideshow-rec .scroll-item > a ').hoverdir();
+
+  $('.overlay a').append('<div class="more"></div>');
+  $('.overlay > a ').hoverdir();
+// ******** ISOTOPE
+    var $container = $('.items');
+    $container.imagesLoaded(function(){
+        $container.isotope({
+            itemSelector: '.item',
+            layoutMode: 'fitRows'
+        });
+    });
+
+    $('.filter li a').click(function (){
+        $('.filter li a').removeClass('active');
+        $(this).addClass('active');
+
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector
+        });
+
+        return false;
+    });
+
 });
