@@ -862,6 +862,10 @@ footer .inner-wrap .third .text p.fax{
     margin-top: 15px;
 }
 
+footer .inner-wrap .third .text p.email a{
+    color: #dedede;
+}
+
 footer .inner-wrap .third .text p span{
     display: inline-block;
 }

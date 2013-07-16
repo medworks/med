@@ -56,7 +56,7 @@
 											<p class='address'><span>آدرس:</span> مشهد، سه راه فلسطسن، ساختمان 202، طبقه اول، واحد 3</p>
 											<p class="tel ltr"><span>Tel:</span> +98 (511) 766 6436</p>
 											<p class="fax ltr"><span>Fax:</span> +98 (511) 761 3679</p>
-											<p class='email ltr'><span>E-Mail:</span> info@mediateq.ir</p>
+											<p class='email ltr'><span>E-Mail:</span><a href="mailto:info@mediateq.ir"> info[at]mediateq.ir</a></p>
 										</div>
 									</li>
 								</ul>
