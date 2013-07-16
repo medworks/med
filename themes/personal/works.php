@@ -4,14 +4,17 @@ $html=<<<cd
 		<div class="page-header">
 			<h1>کارهای ما</h1>
 			<div class="filter">
-				<a href="#" class="filter-button" data-toggle="dropdown" data-hover="dropdown">انتخاب نوع کار</a>
-				<ul class="dropdown-menu filter">
-		            <li><a href="#" data-filter="*" class="active">همه موارد</a></li>
-		            <li><a href="#" data-filter=".web">وب</a></li>
-		            <li><a href="#" data-filter=".graphic">گرافیکی</a></li>
-		            <li><a href="#" data-filter=".artwork">هنری</a></li>
-		            <li><a href="#" data-filter=".video">ویدئو</a></li>
-	            </ul>
+				<menu>
+					<li><a href="#" class="filter-button">انتخاب نوع کار</a>
+						<menu>
+				            <li><a href="#" data-filter="*" class="active">همه موارد</a></li>
+				            <li><a href="#" data-filter=".web">وب</a></li>
+				            <li><a href="#" data-filter=".graphic">گرافیکی</a></li>
+				            <li><a href="#" data-filter=".artwork">هنری</a></li>
+				            <li><a href="#" data-filter=".video">ویدئو</a></li>
+			            </menu>
+		            </li>
+	            </menu>
 			</div>
 			<div class="badboy"></div>
 		</div>

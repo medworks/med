@@ -22,6 +22,7 @@
 	<script src="themes/personal/js/jquery.themepunch.revolution.min.js" type="text/javascript"></script>
 	<script src="themes/personal/js/jquery.hoverdir.min.js" type="text/javascript"></script>
 	<script src="themes/personal/js/jquery.isotope.min.js" type="text/javascript"></script>
+	<script src="themes/personal/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
 	<script src="themes/personal/js/script.js" type="text/javascript"></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>

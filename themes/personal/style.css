@@ -197,9 +197,12 @@ hr.arrow:before {
     left: 0px
 }
 /*****Filter menu******/
+.filter{
+    float: left;
+}
+
 a.filter-button{
-    display: inline-block;
-    padding: 5px 25px;
+    padding: 3px 25px;
     background: #74c9be;
     color: #fff;
     font-size: 22px;
@@ -210,43 +213,22 @@ a.filter-button{
     border-radius: 5px;
 }
 
-.filter{
-    position: relative;
-    float: left;
-    margin-top: -5px;
-}
-
-.filter ul{
-    position: absolute;
-    left: 0;
-    /*display: none;*/
-    padding-top: 18px;
+.filter menu{
     z-index: 1000;
 }
 
-.filter ul:before{
-    content: "";
-    width: 0;
-    display: block;
-    position: absolute;
-    top: 12px;
-    right: 130px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #74c9be;
-}
-
-.filter ul li{
+.filter menu li{
     background: #74c9be;
     text-align: right;
     border-top: 1px solid rgba(0,0,0,0.11);
+    position: relative;
 }
 
-.filter ul li:first-child{
+.filter menu li:first-child{
     border-top: 0 none;
 }
 
-.filter ul li a{
+.filter menu li menu li a{
     display: block;
     padding: 8px 10px 8px 90px;
     color: #fff;
@@ -254,9 +236,33 @@ a.filter-button{
     white-space: nowrap;
 }
 
-.filter ul li a:hover,
-.filter ul li a.active{
+.filter menu li menu a:hover,
+.filter menu li menu a.active{
     background: rgba(0,0,0,0.11);
+}
+
+.filter menu li a:hover menu{
+    display: block;
+}
+
+.filter menu li menu{
+    display: none;
+    padding-top: 15px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.filter menu li menu:before{
+    content: "";
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 130px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #74c9be;
 }
 /*****Isotope menu******/
 .isotope,
