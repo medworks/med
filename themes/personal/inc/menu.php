@@ -15,6 +15,9 @@
 			case 'works':
                 return "themes/personal/works.php";
 			break;
+			case 'news':
+                return "themes/personal/news.php";
+			break;
 		}
 	}
 ?>
@@ -30,6 +33,7 @@
 				</menu>
 			</li>
 			<li><a href="?item=works"><span class="works-icon"></span>کارهای ما</a></li>
+			<li><a href="?item=news"><span class="news-icon"></span>اخبار</a></li>
 			<li><a href="?item=contact"><span class="contact-icon"></span>تماس با ما</a></li>
 		</menu>
 	</div>
