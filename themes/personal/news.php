@@ -1,6 +1,6 @@
 <?php
 $html=<<<cd
-	<div class="news-page">
+	<div class="news-page" id="others-page">
 		<div class="page-header">
 			<h1>اخبار</h1>
 			<div class="filter">
@@ -18,7 +18,7 @@ $html=<<<cd
 			<div class="badboy"></div>
 		</div>
 		<div class="badboy"></div>
-		<div class="news">
+		<div class="news" id="special-page">
 			<ul class="items">
 				<li class="item social">
 					<div class="overlay">
