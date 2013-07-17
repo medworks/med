@@ -27,6 +27,11 @@ $html=<<<cd
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">گرافیکی</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
 				</li>
 				<li class="item web">
 					<div class="overlay">
@@ -34,23 +39,34 @@ $html=<<<cd
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
-				</li><li class="item graphic">
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">وب</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
+				</li>
+				<li class="item artwork">
 					<div class="overlay">
 						<a href="#">
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
-				</li><li class="item artwork">
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">هنری</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
+				</li>
+				<li class="item video">
 					<div class="overlay">
 						<a href="#">
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
-				</li><li class="item video">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">ویدئو</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
 					</div>
 				</li>
 				<li class="item graphic">
@@ -59,6 +75,11 @@ $html=<<<cd
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">گرافیکی</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
 				</li>
 				<li class="item web">
 					<div class="overlay">
@@ -66,25 +87,36 @@ $html=<<<cd
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
-				</li><li class="item graphic">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-				</li><li class="item artwork">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-				</li><li class="item video">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">وب</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
 					</div>
 				</li>
+				<li class="item artwork">
+					<div class="overlay">
+						<a href="#">
+							<img src="themes/personal/images/others/slide2.jpg" alt="" />
+						</a>
+					</div>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">هنری</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
+				</li>
+				<li class="item video">
+					<div class="overlay">
+						<a href="#">
+							<img src="themes/personal/images/others/slide2.jpg" alt="" />
+						</a>
+					</div>
+					<div class="detail">
+						<h3><a href="#" title="">تیتر اول</a></h3>
+						<p class="type">ویدئو</p>
+						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
+					</div>
+				</li>				
 			</ul>
 			<div class="badboy"></div>
 		</div>
