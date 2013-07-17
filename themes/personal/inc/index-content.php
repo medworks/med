@@ -8,50 +8,40 @@ $html=<<<cd
             <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" >
                 <img src="themes/personal/images/others/slide1.png" >
 
-                <div class="caption large_text fade"
-                     data-x="509"
-                     data-y="290"
+                <div class="caption very_large_black_text randomrotate"
+                     data-x="600"
+                     data-y="50"
                      data-speed="300"
                      data-start="800"
-                     data-easing="easeOutExpo"  ></div>
+                     data-easing="easeOutExpo">
+                     <span>اسلاید شماره یک</span>
+                </div>
 
-                <div class="caption very_large_black_text randomrotate"
-                     data-x="641"
-                     data-y="95"
+                <div class="caption large_text randomrotate"
+                     data-x="600"
+                     data-y="120"
                      data-speed="300"
                      data-start="1100"
-                     data-easing="easeOutExpo"  >SLIDER</div>
+                     data-easing="easeOutExpo">
+                     <span style="color: #ffc600;">رنگهای مختلف</span>
+                </div>
 
                 <div class="caption large_black_text randomrotate"
                      data-x="642"
                      data-y="161"
                      data-speed="300"
                      data-start="1400"
-                     data-easing="easeOutExpo"  >REVOLUTION</div>
+                     data-easing="easeOutExpo" >
+                     <span style="color: #30ff00;">موقعیت های مختلف</span>
+                </div>
 
                 <div class="caption bold_red_text randomrotate"
                      data-x="645"
                      data-y="201"
                      data-speed="300"
                      data-start="1700"
-                     data-easing="easeOutExpo"  >GOT FULLSCREEN VIDEO</div>
-
-                <div class="caption sfb"
-                     data-x="640"
-                     data-y="223"
-                     data-speed="300"
-                     data-start="2000"
-                     data-easing="easeOutBack"  >
-                     <!-- <img src="images/slides/video.jpg" alt="Image 7"> --> 
-                 </div>
-
-                <div class="caption sft"
-                     data-x="639"
-                     data-y="383"
-                     data-speed="300"
-                     data-start="2300"
-                     data-easing="easeOutExpo"  data-linktoslide="4" >
-                    <!-- <img src="images/slides/videobutton.jpg" alt="Image 8"> -->
+                     data-easing="easeOutExpo" >
+                     <span>سرعت های مختلف</span>
                 </div>
             </li>
 
@@ -64,21 +54,18 @@ $html=<<<cd
                      data-y="44"
                      data-speed="300"
                      data-start="800"
-                     data-easing="easeOutExpo"  >TOUCH ENABLED</div>
+                     data-easing="easeOutExpo">
+                     <span>قابلیت چرخش نوشته ها</span>
+                </div>
 
                 <div class="caption medium_text sfl"
                      data-x="79"
-                     data-y="82"
+                     data-y="150"
                      data-speed="300"
                      data-start="1100"
-                     data-easing="easeOutExpo"  >AND</div>
-
-                <div class="caption large_text sfr"
-                     data-x="128"
-                     data-y="78"
-                     data-speed="300"
-                     data-start="1100"
-                     data-easing="easeOutExpo"  ><span style="color: #ffc600;">RESPONSIVE</span></div>
+                     data-easing="easeOutExpo">
+                     <span>قابلیت گذاشتن عکس</span>
+                </div>
 
                 <div class="caption lfl"
                      data-x="53"
@@ -86,7 +73,7 @@ $html=<<<cd
                      data-speed="300"
                      data-start="1400"
                      data-easing="easeOutExpo"  >
-                     <!-- <img src="images/slides/imac.png" alt="Image 4"> -->
+                     <img width='200px' height="150px" src="themes/personal/images/others/slide2.jpg" alt="Image 4">
                  </div>
 
                 <div class="caption lfl"
@@ -118,22 +105,17 @@ $html=<<<cd
                      data-y="200"
                      data-speed="300"
                      data-start="1000"
-                     data-easing="easeOutExpo"  >A Happy</div>
+                     data-easing="easeOutExpo">
+                     <span>با آرزوی موفقیت برای شما</span>
+                </div>
 
                 <div class="caption large_text sfl"
                      data-x="37"
                      data-y="243"
                      data-speed="300"
                      data-start="1300"
-                     data-easing="easeOutExpo"  >Holiday Season</div>
-
-                <div class="caption randomrotate"
-                     data-x="610"
-                     data-y="174"
-                     data-speed="800"
-                     data-start="1600"
-                     data-easing="easeOutExpo"  >
-                     <!-- <img src="images/slides/TP_logo.png" alt="Image 4"> -->
+                     data-easing="easeOutExpo">
+                     <span>اوقات خوشی داشته باشید</span>
                 </div>
             </li>
         </ul>
