@@ -1,7 +1,7 @@
 <?php
 $html=<<<cd
 	<div class="works-page">
-		<div class="page-header">
+		<div class="page-header" id="others-page">
 			<h1>کارهای ما</h1>
 			<div class="filter">
 				<menu>
@@ -19,7 +19,7 @@ $html=<<<cd
 			<div class="badboy"></div>
 		</div>
 		<div class="badboy"></div>
-		<div class="works">
+		<div class="works" id="special-page">
 			<ul class="items">
 				<li class="item graphic">
 					<div class="overlay">

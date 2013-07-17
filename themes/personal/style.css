@@ -974,11 +974,11 @@ div.bot-footer .inner-wrap .social ul li.pinterest{
     font-size: 25px;
     float: right;
 }
-/*************************************Works page******************************************/
-div.works-page .works{
+
+#others-page #special-page{
     margin-bottom: 25px;
 }
-
+/*************************************Works page******************************************/
 div.works-page .works ul{
     margin-right: -15px;
 }
@@ -1009,10 +1009,6 @@ div.works-page .works ul li p.text{
     font-size: 18px;
 }
 /*************************************News page******************************************/
-div.news-page .news{
-    margin-bottom: 25px;
-}
-
 div.news-page .news ul{
     margin-right: -15px;
 }
