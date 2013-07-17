@@ -86,10 +86,14 @@ $(document).ready(function(){
       $('.overlay > a ').hoverdir();
 // ******** ISOTOPE
       var $container = $('.items');
+      $.Isotope.prototype._positionAbs = function( x, y ) {
+        return { right: x, top: y };
+      };
       $container.imagesLoaded(function(){
           $container.isotope({
               itemSelector: '.item',
-              layoutMode: 'fitRows'
+              layoutMode: 'fitRows',
+              transformsEnabled: false
           });
       });
 

@@ -218,13 +218,16 @@ a.filter-button{
 }
 
 .filter menu li{
-    background: #74c9be;
-    text-align: right;
-    border-top: 1px solid rgba(0,0,0,0.11);
     position: relative;
 }
 
-.filter menu li:first-child{
+.filter menu li menu li{
+    background: #74c9be;
+    text-align: right;
+    border-top: 1px solid rgba(0,0,0,0.11);
+}
+
+.filter menu li menu li:first-child{
     border-top: 0 none;
 }
 
@@ -281,11 +284,11 @@ a.filter-button{
     transition-property: height, width;
 }
 .isotope .item {
-    -webkit-transition-property: -webkit-transform, opacity;
-    -moz-transition-property: -moz-transform, opacity;
-    -ms-transition-property: -ms-transform, opacity;
-    -o-transition-property: top, left, opacity;
-    transition-property: transform, opacity;
+    -webkit-transition-property: right, top, -webkit-transform, opacity;
+     -moz-transition-property: right, top, -moz-transform, opacity;
+      -ms-transition-property: right, top, -ms-transform, opacity;
+       -o-transition-property: right, top, -o-transform, opacity;
+          transition-property: right, top, transform, opacity;
 }
 /*************************************Header******************************************/
 header{
