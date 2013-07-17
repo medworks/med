@@ -40,7 +40,9 @@
 	<div class="contain">
 		<div class="inner">
 			<div class="inner-wrap">
-				<?php
-				    if (isset($_GET['item']))  
-				    	echo include_once GetPage($_GET['item']);
-				?>
+		<?php
+		    if (isset($_GET['item']))  
+		    	echo include_once GetPage($_GET['item']);
+		    else
+		    	header("Location: ?item=home");
+		?>
