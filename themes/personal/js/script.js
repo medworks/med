@@ -5,7 +5,7 @@ $(document).ready(function(){
         if(this.href.trim() == url){
             $(this).parent().addClass("active");
         }else if(this.href.trim().match(/full/g)){
-            var href= url.substr(url.indexOf("full"), url.indexOf("&"));
+            var href= url.substr(url.indexOf("full"));
             href= href.split('full');
             href= href[1].split('&');
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');

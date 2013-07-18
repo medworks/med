@@ -354,7 +354,7 @@ a.filter-button{
 }
 /*************************************Header******************************************/
 header{
-	margin: 25px 0px 20px 18px;
+	margin: 25px 0px 20px 28px;
 }
 
 header .logo strong{
@@ -417,7 +417,7 @@ section.middle .main-menu menu{
 
 section.middle .main-menu > menu > li{
 	background: #f9f9f9;
-	border: 1px solid rgba(0,0,0,0.08);
+	border: 1px solid rgba(0,0,0,0.09);
 	margin-bottom: 10px;
     position: relative;
 }
@@ -466,7 +466,7 @@ section.middle .main-menu menu li span.gallery-icon{
 
 section.middle .main-menu menu li  a{
 	display: inline-block;
-	padding: 8px 20px;
+	padding: 15px;
 	font-size: 18px;
 	text-align: center;
     color: #5c5c5c; 
