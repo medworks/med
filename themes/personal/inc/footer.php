@@ -84,5 +84,13 @@
 			<div class="badboy"></div>
 		</section>
 	</div>
+	<script type="text/javascript">
+		  $(document).ready(function(){
+		    $("a[rel^='prettyphoto']").prettyPhoto({
+		    	autoplay_slideshow: true,
+		    	show_title: false,
+		    });
+		  });
+	</script>
 </body>
 </html>
