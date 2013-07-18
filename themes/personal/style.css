@@ -1278,3 +1278,27 @@ div.contact-page .contact .detail .address p.email{
     font-size: 18px;
     line-height: 1.5;
 }
+/*************************************Single-work page******************************************/
+.singlework-page .singlework .pic{
+    margin-bottom: 20px;
+}
+
+.singlework-page .singlework .pic img{
+    width: 720px;
+    height: 421px;
+}
+
+.singlework-page .singlework .detail h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.singlework-page .singlework .detail p.type{
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.singlework-page .singlework .detail p.text{
+    font-size: 18px;
+    line-height: 1.5;
+}

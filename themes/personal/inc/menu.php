@@ -24,6 +24,9 @@
 			case 'fullnews':
                 return "themes/personal/single-news.php";
 			break;
+			case 'fullworks':
+                return "themes/personal/single-work.php";
+			break;
 		}
 	}
 ?>

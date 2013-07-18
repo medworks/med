@@ -1,7 +1,7 @@
 <?php
 $html=<<<cd
-	<div class="works-page">
-		<div class="page-header" id="others-page">
+	<div class="works-page" id="others-page">
+		<div class="page-header">
 			<h1>کارهای ما</h1>
 			<div class="filter">
 				<menu>
@@ -23,12 +23,12 @@ $html=<<<cd
 			<ul class="items">
 				<li class="item graphic">
 					<div class="overlay">
-						<a href="#">
+						<a href="?item=fullworks">
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
 					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
+						<h3><a href="?item=fullworks" title="">تیتر اول</a></h3>
 						<p class="type">گرافیکی</p>
 						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
 					</div>
