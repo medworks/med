@@ -85,6 +85,13 @@ hr.arrow:before {
     margin-left: -8px;
 }
 
+.line{
+    clear: both;
+    display: block;
+    border-bottom: 1px solid #dedede;
+    margin: 40px 15px 40px 0;
+}
+
 .arrow-box {
     position: relative;
     border: 1px solid #dedede;
@@ -294,8 +301,18 @@ a.filter-button{
        -o-transition-property: right, top, -o-transform, opacity;
           transition-property: right, top, transform, opacity;
 }
+/*Pageination*/
+.pageination{
+    float: right;
+    margin-bottom: 30px;
+}
+
+.pageination a:first-child{
+    margin-right: 0;
+}
 /*Button*/
 .btn{
+    display: inline-block;
     color: #fff;
     background: #74c9be;
     margin-right: 5px;

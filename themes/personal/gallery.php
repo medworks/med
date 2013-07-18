@@ -41,6 +41,7 @@ $html=<<<cd
 						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
 					</div>
 				</li>
+				<span class="line"></span>
 				<li>
 					<div class="overlay">
 						<a href="themes/personal/images/others/slide2.jpg" rel="prettyphoto[gallery3]">
@@ -74,10 +75,18 @@ $html=<<<cd
 						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
 					</div>
 				</li>
-				
+				<span class="line"></span>
 			</ul>
 			<div class="badboy"></div>
 		</div>
+		<div class="pageination">
+			<a href="#" class="btn">1</a>
+			<a href="#" class="btn">2</a>
+			<a href="#" class="btn">3</a>
+			<a href="#" class="btn">4</a>
+			<a href="#" class="btn">5</a>
+		</div>
+		<div class="badboy"></div>
 	</div>
 cd;
 return $html;
