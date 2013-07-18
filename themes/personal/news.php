@@ -22,12 +22,12 @@ $html=<<<cd
 			<ul class="items">
 				<li class="item social">
 					<div class="overlay">
-						<a href="#">
+						<a href="?item=fullnews">
 							<img src="themes/personal/images/others/slide2.jpg" alt="" />
 						</a>
 					</div>
 					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
+						<h3><a href="?item=fullnews" title="">تیتر اول</a></h3>
 						<ul>
 							<li><p class="date">29 اردیبهشت 1392</p></li>
 							<li><p class="sep">|</p></li>

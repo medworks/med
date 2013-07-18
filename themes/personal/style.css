@@ -354,7 +354,7 @@ a.filter-button{
 }
 /*************************************Header******************************************/
 header{
-	margin: 25px 0px 20px 30px;
+	margin: 25px 0px 20px 18px;
 }
 
 header .logo strong{
@@ -441,7 +441,7 @@ section.middle .main-menu menu li span{
 	height: 28px;
 	background-repeat: no-repeat;
 	background-position: center;
-	padding: 5px 16px;
+	padding: 5px 20px;
 }
 
 section.middle .main-menu menu li span.home-icon{
@@ -467,7 +467,7 @@ section.middle .main-menu menu li span.gallery-icon{
 section.middle .main-menu menu li  a{
 	display: inline-block;
 	padding: 8px 20px;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: center;
     color: #5c5c5c; 
 }
@@ -1037,6 +1037,10 @@ div.bot-footer .inner-wrap .social ul li.pinterest{
     float: right;
 }
 
+.page-header h1 span{
+    color: #888;
+}
+
 #others-page #special-page{
     margin-bottom: 25px;
 }
@@ -1143,6 +1147,7 @@ div.news-page .news ul li .detail ul li p{
 div.news-page .news ul li .detail ul li p.sep{
     margin: 2px 0;
     font-size: 14px;
+    color: #ddd;
 }
 
 div.news-page .news ul li p.text{
@@ -1239,4 +1244,37 @@ div.contact-page .contact .detail .address p.fax,
 div.contact-page .contact .detail .address p.email{
     text-align: left;
     font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
+}
+/*************************************Single-news page******************************************/
+.singlenew-page .singlenew .pic{
+    margin-bottom: 20px;
+}
+
+.singlenew-page .singlenew .pic img{
+    width: 720px;
+    height: 421px;
+}
+
+.singlenew-page .singlenew .detail h2{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.singlenew-page .singlenew .detail ul li{
+    float: right;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.singlenew-page .singlenew .detail ul li p{
+    color: #999;
+}
+
+.singlenew-page .singlenew .detail ul li p.sep{
+    color: #ddd;
+}
+
+.singlenew-page .singlenew .detail p.text{
+    font-size: 18px;
+    line-height: 1.5;
 }
