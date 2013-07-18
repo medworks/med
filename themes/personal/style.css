@@ -307,6 +307,10 @@ a.filter-button{
     margin-bottom: 30px;
 }
 
+.pageination a{
+    padding: 8px 15px;
+}
+
 .pageination a:first-child{
     margin-right: 0;
 }
