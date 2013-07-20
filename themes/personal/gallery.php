@@ -1,6 +1,14 @@
 <?php
+	include_once("./config.php");
+ 	include_once("./classes/functions.php");
 	$db = database::GetDatabase();
-	$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+	$pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
+	$maxItemsInPage = GetSettingValue('Max_Post_Number',0);
+	$from = ($pageNo - 1) * $maxItemsInPage;
+	$count = $maxItemsInPage;
+	$slides = $db->SelectAll("slides","*",null," pos ASC",$from,$count);
+    $itemsCount = $db->CountAll("slides");
+
 $html=<<<cd
 	<div class="gallery-page">
 		<div class="page-header" id="others-page">
@@ -38,6 +46,11 @@ $html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
 		</div>
+cd;
+		$linkFormat = '?item=gallery&pid=%PN%';
+		$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
+		$pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
+		/*
 		<div class="pageination">
 			<a href="#" class="btn">1</a>
 			<a href="#" class="btn">2</a>
@@ -45,6 +58,13 @@ $html.=<<<cd
 			<a href="#" class="btn">4</a>
 			<a href="#" class="btn">5</a>
 		</div>
+		*/
+$html.=<<<cd
+		<div class="pageination">
+			<center> $pageNos </center>
+		</div>
+cd;
+$html.=<<<cd
 		<div class="badboy"></div>
 	</div>
 cd;
