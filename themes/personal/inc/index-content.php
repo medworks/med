@@ -1,5 +1,6 @@
 <?php
 	include_once("./classes/database.php");
+	include_once("./lib/persiandate.php");
 	$db = database::GetDatabase();
 $html=<<<cd
 <!-- *********************Slideshow part************************** -->
@@ -76,20 +77,20 @@ $html.=<<<cd
 	<div class="badboy"></div>
 </div>
 <hr class="arrow">
-<!-- *********************Work part************************** -->
-<h2 class="work-title">کارهای ما</h2>
-<div class="works-part">
+<!-- *********************News part************************** -->
+<h2 class="news-title">اخبار</h2>
+<div class="news-part">
 	<div id="slideshow-rec">
 cd;
-		$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
-			for($i=0 ; $i<count($works) ; $i++){
-				$body= $works[$i]['body'];
-				$body= strip_tags($body);
+		$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
+			for($i=0 ; $i<count($news) ; $i++){
+				$ndate = ToJalali($news[0]["ndate"]," l d F  Y");
+				$body= strip_tags($news[0]['body']);
 				$body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 $html.=<<<cd
 			<div class='scroll-item'>
-			    <a href='?item=fullworks&wid={$works[$i][id]}' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
-			    <h2><a href='?item=fullworks&wid={$works[$i][id]}' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h2>
+			    <a href='?item=fullnews&wid={$news[$i][id]}' title='{$news[$i][subject]}'><img src='{$news[$i][image]}' alt='{$news[$i][subject]}'></a>
+			    <h2><a href='?item=fullnews&wid={$news[$i][id]}' title='{$news[$i][subject]}'>{$news[$i][subject]}</a></h2>
 			    <p>{$body}</p>
 			</div>
 cd;

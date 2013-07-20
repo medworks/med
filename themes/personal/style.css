@@ -643,37 +643,37 @@ section.middle .contain .client-part ul li a span.tab4-icon{
     background-repeat: no-repeat;
     background-position: center;
 }
-/*****Works-part*****/
+/*****news-part*****/
 h2.work-title{
     font-size: 22px;
 }
 
-section.middle .contain .works-part{
+section.middle .contain .news-part{
     position: relative;
     padding-top: 25px;
 }
 
-section.middle .contain .works-part .scroll-item{
+section.middle .contain .news-part .scroll-item{
     float: right;
     width: 230px;
     margin-right: 15px;
 }
 
-section.middle .contain .works-part .scroll-item:first-child{
+section.middle .contain .news-part .scroll-item:first-child{
     margin-right: 0
 }
 /*Overlay for works image*/
-section.middle .contain .works-part .scroll-item a,
-section.middle .contain .works-part .scroll-item a img {
+section.middle .contain .news-part .scroll-item a,
+section.middle .contain .news-part .scroll-item a img {
     display: block;
     position: relative;
 }
 
-section.middle .contain .works-part .scroll-item a {
+section.middle .contain .news-part .scroll-item a {
     overflow: hidden
 }
 
-section.middle .contain .works-part .scroll-item a div {
+section.middle .contain .news-part .scroll-item a div {
     position: absolute;
     background-color: rgba(116,201,190,0.95);
     width: 100%;
@@ -686,7 +686,7 @@ section.middle .contain .works-part .scroll-item a div {
     background-repeat: no-repeat;
 }
 
-section.middle .contain .works-part .scroll-item a div:before {
+section.middle .contain .news-part .scroll-item a div:before {
     font-family: 'fontello';
     font-style: normal;
     font-weight: normal;
@@ -705,7 +705,7 @@ section.middle .contain .works-part .scroll-item a div:before {
     margin: -12px 0 0 -12px;
 }
 
-section.middle .contain .works-part .scroll-item a div.da-animate {
+section.middle .contain .news-part .scroll-item a div.da-animate {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease-in-out;
     -o-transition: all 0.3s ease-in-out;
@@ -713,33 +713,33 @@ section.middle .contain .works-part .scroll-item a div.da-animate {
     transition: all 0.3s ease-in-out;
 }
 /*End of overlay*/
-section.middle .contain .works-part .scroll-item a{
+section.middle .contain .news-part .scroll-item a{
     display: block;
     text-align: right;
 }
 
-section.middle .contain .works-part .scroll-item a img{
+section.middle .contain .news-part .scroll-item a img{
     width: 230px;
     height: 200px;
 }
 
-section.middle .contain .works-part .scroll-item h2{
+section.middle .contain .news-part .scroll-item h2{
     font-size: 20px;
     margin: 10px 0;
 }
 
-section.middle .contain .works-part .scroll-item p{
+section.middle .contain .news-part .scroll-item p{
     font-size: 18px;
     text-align: justify;
 }
 
-section.middle .contain .works-part .nav{
+section.middle .contain .news-part .nav{
     position: absolute;
     top: -28px;
     left: 0;
 }
 
-section.middle .contain .works-part .nav a{
+section.middle .contain .news-part .nav a{
     display: inline-block;
     background: #ececec;
     width: 30px;
@@ -755,15 +755,15 @@ section.middle .contain .works-part .nav a{
     background-position: center;
 }
 
-section.middle .contain .works-part .nav a:hover{
+section.middle .contain .news-part .nav a:hover{
     background-color: #74c9be;
 }
 
-section.middle .contain .works-part .nav a#prev1{
+section.middle .contain .news-part .nav a#prev1{
     background-image: url('images/next.png');
 }
 
-section.middle .contain .works-part .nav a#next1{
+section.middle .contain .news-part .nav a#next1{
     background-image: url('images/prev.png');
 }
 /*****Tabs-part*****/
@@ -840,7 +840,7 @@ section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 p{
 	line-height: 1.5;
 	font-size: 18px;
 }
-/*****Tabs-part*****/
+/*****aboutus-part*****/
 section.middle .contain .about-part .tit h2{
     font-size: 22px;
     margin-bottom: 20px;
@@ -1275,7 +1275,7 @@ div.contact-page .contact .detail .address p.email{
     color: #ddd;
 }
 
-.singlenew-page .singlenew .detail p.text{
+.singlenew-page .singlenew .detail div.text{
     font-size: 18px;
     line-height: 1.5;
 }
@@ -1299,7 +1299,7 @@ div.contact-page .contact .detail .address p.email{
     margin-bottom: 15px;
 }
 
-.singlework-page .singlework .detail p{
+.singlework-page .singlework .detail div.text{
     font-size: 18px;
     line-height: 1.5;
 }

@@ -16,7 +16,7 @@ $html=<<<cd
 			<div class='detail'>
 				<h2>{$works[subject]}</h2>
 				<!-- <p class="type">گرافیکی</p> -->
-				{$works[body]}
+				<div class="text">{$works[body]}</div>
 			</div>
 		</div>
 	</div>
