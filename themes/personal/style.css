@@ -302,17 +302,75 @@ a.filter-button{
           transition-property: right, top, transform, opacity;
 }
 /*Pageination*/
-.pageination{
+.pagination div{
     float: right;
     margin-bottom: 30px;
+    margin-left: 3px;
 }
 
-.pageination a{
-    padding: 8px 15px;
+.pagination div span,
+.pagination div a{
+  display: block;
+  padding: 3px;
+  border-radius: 3px;
+  padding: 8px 8px;
 }
 
-.pageination a:first-child{
+.pagination a:first-child{
     margin-right: 0;
+}
+
+.pagination div p{
+  font-size: 19px;
+  text-align: center;
+}
+
+.firstPage{
+    background-color: #74c9be;
+    width: 24px;
+    height: 24px;
+}
+
+.prevPage{
+    background-color: #74c9be;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.nextPage{
+    background-color: #74c9be;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.lastPage{
+    background-color: #74c9be;
+    width: 24px;
+    height: 24px;
+}
+
+.pagenumber{
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #74c9be;
+}
+
+.pagenumber_selected{
+    display: block;
+    background-color: #505050;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.pagenumber_section{
+    text-align: center;
 }
 /*Button*/
 .btn{

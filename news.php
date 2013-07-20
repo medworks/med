@@ -1,8 +1,6 @@
 <?php
-  include_once("./config.php");
   include_once("./classes/database.php");
   include_once("./lib/persiandate.php");
-  include_once("./classes/functions.php");
   $db = Database::GetDatabase();
   $pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
   $maxItemsInPage = GetSettingValue('Max_Post_Number',0);

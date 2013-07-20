@@ -60,9 +60,7 @@ cd;
 		</div>
 		*/
 $html.=<<<cd
-		<div class="pageination">
 			<center> $pageNos </center>
-		</div>
 cd;
 $html.=<<<cd
 		<div class="badboy"></div>
