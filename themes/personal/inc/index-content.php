@@ -1,53 +1,17 @@
 <?php
+	include_once("./classes/database.php");
+	$db = database::GetDatabase();
 $html=<<<cd
 <!-- *********************Slideshow part************************** -->
 <div class="slideshow ltr bannercontainer responsive">
 	<div class="banner ltr">
 		<ul>
-            <!-- THE 1 SLIDE -->
-            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" >
-                <img src="themes/personal/images/others/slide1.png" >
-
-                <div class="caption very_large_black_text randomrotate"
-                     data-x="600"
-                     data-y="50"
-                     data-speed="300"
-                     data-start="800"
-                     data-easing="easeOutExpo">
-                     <span>اسلاید شماره یک</span>
-                </div>
-
-                <div class="caption large_text randomrotate"
-                     data-x="600"
-                     data-y="120"
-                     data-speed="300"
-                     data-start="1100"
-                     data-easing="easeOutExpo">
-                     <span style="color: #ffc600;">رنگهای مختلف</span>
-                </div>
-
-                <div class="caption large_black_text randomrotate"
-                     data-x="642"
-                     data-y="161"
-                     data-speed="300"
-                     data-start="1400"
-                     data-easing="easeOutExpo" >
-                     <span style="color: #30ff00;">موقعیت های مختلف</span>
-                </div>
-
-                <div class="caption bold_red_text randomrotate"
-                     data-x="645"
-                     data-y="201"
-                     data-speed="300"
-                     data-start="1700"
-                     data-easing="easeOutExpo" >
-                     <span>سرعت های مختلف</span>
-                </div>
-            </li>
-
-            <!-- THE 2 SLIDE -->
-            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb5.jpg">
-				<img src="themes/personal/images/others/slide2.jpg" >
+cd;
+			$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+			for($i=0 ; $i<count($slides) ; $i++){
+$html.=<<<cd
+            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="{$slides[$i][image]}">
+				<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}" >
 
                 <div class="caption large_text sft"
                      data-x="50"
@@ -55,7 +19,7 @@ $html=<<<cd
                      data-speed="300"
                      data-start="800"
                      data-easing="easeOutExpo">
-                     <span>قابلیت چرخش نوشته ها</span>
+                     <p style="white-space: normal;">{$slides[$i][subject]}</p>
                 </div>
 
                 <div class="caption medium_text sfl"
@@ -64,7 +28,7 @@ $html=<<<cd
                      data-speed="300"
                      data-start="1100"
                      data-easing="easeOutExpo">
-                     <span>قابلیت گذاشتن عکس</span>
+                     <p style="white-space: normal;">{$slides[$i][body]}</p>
                 </div>
 
                 <div class="caption lfl"
@@ -73,51 +37,12 @@ $html=<<<cd
                      data-speed="300"
                      data-start="1400"
                      data-easing="easeOutExpo"  >
-                     <img width='200px' height="150px" src="themes/personal/images/others/slide2.jpg" alt="Image 4">
+                     <img width='200px' height="150px" src="{$slides[$i][image]}" alt="{$slides[$i][subject]}">
                  </div>
-
-                <div class="caption lfl"
-                     data-x="253"
-                     data-y="282"
-                     data-speed="300"
-                     data-start="1500"
-                     data-easing="easeOutExpo"  >
-                     <!-- <img src="images/slides/ipad.png" alt="Image 5"> -->
-                 </div>
-
-                <div class="caption lfl"
-                     data-x="322"
-                     data-y="313"
-                     data-speed="300"
-                     data-start="1600"
-                     data-easing="easeOutExpo"  >
-                     <!-- <img src="images/slides/iphone.png" alt="Image 6"> -->
-                </div>
             </li>
-
-
-            <!-- THE 3 SLIDE -->
-            <li data-transition="slotfade-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb6.jpg">
-                <img src="themes/personal/images/others/slide3.jpg" >
-
-                <div class="caption large_text sfl"
-                     data-x="38"
-                     data-y="200"
-                     data-speed="300"
-                     data-start="1000"
-                     data-easing="easeOutExpo">
-                     <span>با آرزوی موفقیت برای شما</span>
-                </div>
-
-                <div class="caption large_text sfl"
-                     data-x="37"
-                     data-y="243"
-                     data-speed="300"
-                     data-start="1300"
-                     data-easing="easeOutExpo">
-                     <span>اوقات خوشی داشته باشید</span>
-                </div>
-            </li>
+cd;
+			}
+$html.=<<<cd
         </ul>
         <div class="tp-bannertimer"></div>
 	</div>
