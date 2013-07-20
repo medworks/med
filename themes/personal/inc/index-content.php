@@ -129,21 +129,18 @@ $html.=<<<cd
 <!-- *********************Tab part************************** -->
 <div class="tabs-part">
 cd;
-	$works = $db->SelectAll("works","*",null,"fdate DESC",$from,$count);
-		$subject = $works[0]['subject'];
-		$body = strip_tags($works[0]['body']);
-		$body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 $html.=<<<cd
 	<div class="tit">
-		<h2>{$subject}</h2>
-		<p>{$body}</p>
+		<h2>اخبار</h2>
+		<!-- <p></p>  -->
 	</div>
 	<div class="cat-tabs-header2">
 		<ul>
 cd;
-			for($i=1 ; $i<5 ; $i++){
+  			$works = $db->SelectAll("works","*",null,"fdate DESC");  
+			for($i=0 ; $i<5 ; $i++){
 				if($i<count($works)){
-					$j= $i+4;
+					$j= $i+10;
 $html.=<<<cd
 				<li><a href="#tab$j"><span class="tab8-icon"></span>{$works[$i][subject]}</a></li>
 cd;
@@ -153,8 +150,8 @@ $html.=<<<cd
 	</div>
 	<div class="cat-tabs">
 cd;
-		for($i=1 ; $i<5 ; $i++){
-			$j= $i+4;
+		for($i=0 ; $i<5 ; $i++){
+			$j= $i+10;
 			$body= $works[$i]['body'];
 			$body= strip_tags($body);
    			$body= (mb_strlen($body)>700) ? mb_substr($body,0,700,"UTF-8")."..." : $body;
@@ -162,6 +159,12 @@ $html.=<<<cd
 			<div class="cat-tabs-wrap2" id="tab$j">
 				<div class="title"><h3>{$works[$i][subject]}</h3></div>
 				<div class="text"><p>{$body}<p></div>
+cd;
+				if(mb_strlen($body)>700)
+$html.=<<<cd
+				<div class="continue"><p><a href="?item=fullworks&wid={$works[$i][id]}">ادامه مطلب &#8604;</a></p></div>
+cd;
+$html.=<<<cd
 			</div>
 cd;
 		}
