@@ -80,31 +80,21 @@ $html.=<<<cd
 <h2 class="work-title">کارهای ما</h2>
 <div class="works-part">
 	<div id="slideshow-rec">
-		<div class='scroll-item'>
-			<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
-			<h2><a href='' title=''>کار اول</a></h2>
-			<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
-		</div>
-		<div class='scroll-item'>
-			<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
-			<h2><a href='' title=''>کار اول</a></h2>
-			<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
-		</div>
-		<div class='scroll-item'>
-			<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
-			<h2><a href='' title=''>کار اول</a></h2>
-			<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
-		</div>
-		<div class='scroll-item'>
-			<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
-			<h2><a href='' title=''>کار اول</a></h2>
-			<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
-		</div>
-		<div class='scroll-item'>
-			<a href='#' title=''><img src='themes/personal/images/others/slide2.jpg' alt=''></a>
-			<h2><a href='' title=''>کار اول</a></h2>
-			<p>توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... توضیحات کار اول... </p>
-		</div>
+cd;
+		$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
+			for($i=0 ; $i<count($works) ; $i++){
+				$body= $works[$i]['body'];
+				$body= strip_tags($body);
+				$body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
+$html.=<<<cd
+			<div class='scroll-item'>
+			    <a href='?item=fullworks&wid={$works[$i][id]}' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
+			    <h2><a href='?item=fullworks&wid={$works[$i][id]}' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h2>
+			    <p>{$body}</p>
+			</div>
+cd;
+			}
+$html.=<<<cd
 	</div>
 	<div class="badboy"></div>
 	<div class="nav">

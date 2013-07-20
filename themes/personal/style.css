@@ -730,6 +730,7 @@ section.middle .contain .works-part .scroll-item h2{
 
 section.middle .contain .works-part .scroll-item p{
     font-size: 18px;
+    text-align: justify;
 }
 
 section.middle .contain .works-part .nav{
