@@ -124,6 +124,84 @@ p,label,h1,h2,h3,h4{
 	text-align: right;
 	font-family: 'bmitra';
 }
+/**********************************Pagination*******************************/
+.pagination div{
+  float: right;
+}
+
+.pagination div span,
+.pagination div a{
+  display: block;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.pagination div p{
+  font-size: 19px;
+  text-align: center;
+}
+
+.firstPage
+{
+	background-image: url("../default/images/main/first.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+  height: 24px;
+}
+
+.prevPage
+{
+	background-image: url("../default/images/main/prev.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.nextPage
+{
+	background-image: url("../default/images/main/next.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+	height: 24px;
+  margin-left: 10px;
+}
+
+.lastPage
+{
+	background-image: url("../default/images/main/last.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 24px;
+  height: 24px;
+}
+
+.pagenumber
+{
+	display: block;
+	width: 20px;
+	height: 20px;
+	color: #000;
+	text-align: center;
+}
+
+.pagenumber_selected
+{
+	display: block;
+	background-color: #f78400;
+	width: 20px;
+	height: 20px;
+	color: #eee;
+	text-align: center;
+}
+
+.pagenumber_section
+{
+	text-align: center;
+}
 /*************************************SlideShow***********************************/
 /* Slider */	
 .flexslider .slides > li , .full-width .content .flexslider .slides > li {display: none; -webkit-backface-visibility: hidden; position:relative; height:204px;}
