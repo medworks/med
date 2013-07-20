@@ -162,7 +162,7 @@ $html.=<<<cd
 cd;
 				if(mb_strlen($body)>700)
 $html.=<<<cd
-				<div class="continue"><p><a href="?item=fullworks&wid={$works[$i][id]}">ادامه مطلب &#8604;</a></p></div>
+				<div class="continue"><p><a href="?item=fullworks&wid={$works[$i][id]}">ادامه خبر &#8604;</a></p></div>
 cd;
 $html.=<<<cd
 			</div>
