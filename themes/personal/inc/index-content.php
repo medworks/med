@@ -131,7 +131,7 @@ $html.=<<<cd
 cd;
 $html.=<<<cd
 	<div class="tit">
-		<h2>اخبار</h2>
+		<h2>کارهای ما</h2>
 		<!-- <p></p>  -->
 	</div>
 	<div class="cat-tabs-header2">
@@ -154,17 +154,12 @@ cd;
 			$j= $i+10;
 			$body= $works[$i]['body'];
 			$body= strip_tags($body);
-   			$body= (mb_strlen($body)>700) ? mb_substr($body,0,700,"UTF-8")."..." : $body;
+   			$body= (mb_strlen($body)>1200) ? mb_substr($body,0,1200,"UTF-8")."..." : $body;
 $html.=<<<cd
 			<div class="cat-tabs-wrap2" id="tab$j">
-				<div class="title"><h3>{$works[$i][subject]}</h3></div>
+				<div class="title"><h3><a href="?item=fullworks&wid={$works[$i][id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></h3></div>
 				<div class="text"><p>{$body}<p></div>
-cd;
-				if(mb_strlen($body)>700)
-$html.=<<<cd
-				<div class="continue"><p><a href="?item=fullworks&wid={$works[$i][id]}">ادامه خبر &#8604;</a></p></div>
-cd;
-$html.=<<<cd
+				<div class="continue"><p><a href="?item=fullworks&wid={$works[$i][id]}">ادامه مطلب &#8604;</a></p></div>
 			</div>
 cd;
 		}
