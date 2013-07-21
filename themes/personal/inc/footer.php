@@ -1,58 +1,61 @@
+<?php
+	include_once("./classes/functions.php");
+ 	include_once("./classes/database.php");
+  	include_once("./lib/persiandate.php");
+	$db = database::GetDatabase();
+
+$html=<<<cd
 					</div>
 					<footer>
 						<div class="inner-wrap">
 							<div class="first">
-								<div class="title"><h2>هدر اول</h2></div>
+								<div class="title"><h2>اخبار</h2></div>
 								<ul>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
+cd;
+									$news= $db->SelectAll('news',NULL,NULL," ndate DESC");
+									for($i=0 ; $i<3 ; $i++){
+										$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
+$html.=<<<cd
+										<li>
+											<div class="text">
+												<p><a href="?item=fullnews&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a></p>
+												<span class="date">{$ndate}</span>
+											</div>
+										</li>
+cd;
+									}
+$html.=<<<cd
 								</ul>
 							</div>
 							<div class="second">
-								<div class="title"><h2>هدر دوم</h2></div>
+								<div class="title"><h2>کارهای ما</h2></div>
 								<ul>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
-									<li>
-										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... توضیحات بیشتر... </p>
-											<span class="date">دوازدهم مرداد 1392</span>
-										</div>
-									</li>
+cd;
+									$works= $db->SelectAll('works',NULL,NULL," fdate DESC");
+									for($i=0 ; $i<3 ; $i++){
+										$sdate= ToJalali($works[$i]["sdate"]," l d F  Y");
+										$fdate= ToJalali($works[$i]["fdate"]," l d F  Y");
+$html.=<<<cd
+										<li>
+											<div class="text">
+												<p><a href="?item=fullworks&wid={$works[$i][id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></p>
+												<span class="sdate">{$sdate}</span>
+												<span class="sep">|</span>
+												<span class="fdate">{$fdate}</span>
+												<div class="badboy"></div>
+											</div>
+										</li>
+cd;
+									}
+$html.=<<<cd
 								</ul>
 							</div>
 							<div class="third">
-								<div class="title"><h2>هدر سوم</h2></div>
+								<div class="title"><h2>ارتباط با ما</h2></div>
 								<ul>
 									<li>
 										<div class="text">
-											<p>توضیحات بیشتر... توضیحات بیشتر توضیحات بیشتر توضیحات بیشتر... </p>
+											<p>راههای ارتباط با ما</p>
 											<p class='address'><span>آدرس:</span> مشهد، سه راه فلسطسن، ساختمان 202، طبقه اول، واحد 3</p>
 											<p class="tel ltr"><span>Tel:</span> +98 (511) 766 6436</p>
 											<p class="fax ltr"><span>Fax:</span> +98 (511) 761 3679</p>
@@ -94,3 +97,7 @@
 	</script>
 </body>
 </html>
+cd;
+
+echo $html;
+?>

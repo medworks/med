@@ -940,6 +940,10 @@ footer .inner-wrap .third{
     margin-right: 27px;
 }
 
+footer .inner-wrap a{
+    color: #dedede;
+}
+
 footer .inner-wrap .first{
     margin-right: 0;
 }
@@ -951,6 +955,17 @@ footer .inner-wrap li{
 
 footer .inner-wrap li:first-child{    
     border-top: 0 none;
+}
+
+footer .inner-wrap li .sdate,
+footer .inner-wrap li .fdate,
+footer .inner-wrap li .sep{
+    float: right;
+    margin-left: 3px;
+}
+
+footer .inner-wrap li .sep{
+    color: #7d7b7b;
 }
 
 footer .inner-wrap .third .text p.tel,
