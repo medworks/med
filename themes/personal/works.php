@@ -1,125 +1,65 @@
 <?php
+	include_once("./config.php");
+ 	include_once("./classes/functions.php");
+ 	include_once("./classes/database.php");
+  	include_once("./lib/persiandate.php");
+	$db = database::GetDatabase();
+	$pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
+	$maxItemsInPage = GetSettingValue('Max_Post_Number',0);
+	$from = ($pageNo - 1) * $maxItemsInPage;
+	$count = $maxItemsInPage;
+	$works = $db->SelectAll("works","*",null," fdate DESC",$from,$count);
+    $itemsCount = $db->CountAll("works");
 $html=<<<cd
 	<div class="works-page" id="others-page">
 		<div class="page-header">
 			<h1>کارهای ما</h1>
-			<div class="filter">
-				<menu>
-					<li><a href="#" class="filter-button">انتخاب نوع کار</a>
-						<menu>
-				            <li><a href="#" data-filter="*" class="active">همه موارد</a></li>
-				            <li><a href="#" data-filter=".web">وب</a></li>
-				            <li><a href="#" data-filter=".graphic">گرافیکی</a></li>
-				            <li><a href="#" data-filter=".artwork">هنری</a></li>
-				            <li><a href="#" data-filter=".video">ویدئو</a></li>
-			            </menu>
-		            </li>
-	            </menu>
-			</div>
 			<div class="badboy"></div>
 		</div>
-		<div class="badboy"></div>
 		<div class="works" id="special-page">
-			<ul class="items">
-				<li class="item graphic">
-					<div class="overlay">
-						<a href="?item=fullworks">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="?item=fullworks" title="">تیتر اول</a></h3>
-						<p class="type">گرافیکی</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item web">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">وب</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item artwork">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">هنری</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item video">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">ویدئو</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item graphic">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">گرافیکی</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item web">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">وب</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item artwork">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">هنری</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item video">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<p class="type">ویدئو</p>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>				
+			<ul>
+cd;
+				for($i=0 ; $i<count($works) ; $i++){
+					$body= $works[$i]['subject'];
+					$body= strip_tags($body);
+   					$body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
+   					$sdate = ToJalali($works["sdate"]," l d F  Y ");
+   					$fdate = ToJalali($works["fdate"]," l d F  Y "); 
+$html.=<<<cd
+					<li>
+						<div class="overlay">
+							<a href="?item=fullworks&wid={$post[id]}">
+								<img src="{$works[$i][image]}" alt="{$works[$i][subject]}" />
+							</a>
+						</div>
+						<div class="detail">
+							<h3><a href="?item=fullworks&wid={$post[id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></h3>
+							<ul>
+								<li><p class="sdate">{$sdate}</p></li>
+								<li><p class="sep">|</p></li>
+								<li><p class="fdate">{$fdate}</p></li>
+							</ul>
+							<div class="badboy"></div>
+							<p class="text">{$body}</p>
+						</div>
+					</li>
+cd;
+					if(($i+1) % 3 == 0 || $i == (count($works)-1))
+$html.=<<<cd
+					<span class="line"></span>
+cd;
+				}
+$html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
 		</div>
+cd;
+		$linkFormat = '?item=works&pid=%PN%';
+		$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
+		$pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
+
+$html.=<<<cd
+		$pageNos
 	</div>
 cd;
 return $html;

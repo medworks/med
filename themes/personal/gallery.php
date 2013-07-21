@@ -1,6 +1,7 @@
 <?php
 	include_once("./config.php");
  	include_once("./classes/functions.php");
+ 	include_once("./classes/database.php");
 	$db = database::GetDatabase();
 	$pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
 	$maxItemsInPage = GetSettingValue('Max_Post_Number',0);
@@ -50,19 +51,9 @@ cd;
 		$linkFormat = '?item=gallery&pid=%PN%';
 		$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 		$pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
-		/*
-		<div class="pageination">
-			<a href="#" class="btn">1</a>
-			<a href="#" class="btn">2</a>
-			<a href="#" class="btn">3</a>
-			<a href="#" class="btn">4</a>
-			<a href="#" class="btn">5</a>
-		</div>
-		*/
+
 $html.=<<<cd
-			$pageNos
-cd;
-$html.=<<<cd
+		$pageNos
 	</div>
 cd;
 return $html;
