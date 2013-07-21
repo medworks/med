@@ -125,62 +125,61 @@ p,label,h1,h2,h3,h4{
 	font-family: 'bmitra';
 }
 /**********************************Pagination*******************************/
-.pagination div{
-  float: right;
+.pagination li{
+	float: right;
 }
 
-.pagination div span,
-.pagination div a{
-  display: block;
-  padding: 3px;
-  border-radius: 3px;
+.pagination li span,
+.pagination li a{
+	display: block;
+	padding: 3px;
+	border-radius: 3px;
 }
 
-.pagination div p{
-  font-size: 19px;
-  text-align: center;
+.pagination li p{
+	font-size: 19px;
+	text-align: center;
 }
 
-.firstPage
-{
+.firstPage{
 	background-image: url("../default/images/main/first.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
-  height: 24px;
+    height: 24px;
+    text-indent: 9999px;
 }
 
-.prevPage
-{
+.prevPage{
 	background-image: url("../default/images/main/prev.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
-  height: 24px;
-  margin-right: 10px;
+    height: 24px;
+    margin-right: 10px;
+    text-indent: 9999px;
 }
 
-.nextPage
-{
+.nextPage{
 	background-image: url("../default/images/main/next.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
 	height: 24px;
-  margin-left: 10px;
+    margin-left: 10px;
+    text-indent: 9999px;
 }
 
-.lastPage
-{
+.lastPage{
 	background-image: url("../default/images/main/last.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 24px;
-  height: 24px;
+    height: 24px;
+    text-indent: 9999px;
 }
 
-.pagenumber
-{
+.pagenumber{
 	display: block;
 	width: 20px;
 	height: 20px;
@@ -188,8 +187,7 @@ p,label,h1,h2,h3,h4{
 	text-align: center;
 }
 
-.pagenumber_selected
-{
+.pagenumber_selected{
 	display: block;
 	background-color: #f78400;
 	width: 20px;

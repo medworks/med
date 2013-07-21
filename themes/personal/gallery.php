@@ -60,10 +60,9 @@ cd;
 		</div>
 		*/
 $html.=<<<cd
-			<center> $pageNos </center>
+			$pageNos
 cd;
 $html.=<<<cd
-		<div class="badboy"></div>
 	</div>
 cd;
 return $html;
