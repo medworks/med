@@ -23,17 +23,17 @@ cd;
 					$body= $works[$i]['subject'];
 					$body= strip_tags($body);
    					$body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
-   					$sdate = ToJalali($works["sdate"]," l d F  Y ");
-   					$fdate = ToJalali($works["fdate"]," l d F  Y "); 
+   					$sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
+   					$fdate = ToJalali($works[$i]["fdate"]," l d F  Y "); 
 $html.=<<<cd
 					<li>
 						<div class="overlay">
-							<a href="?item=fullworks&wid={$post[id]}">
+							<a href="?item=fullworks&wid={$works[$i][id]}">
 								<img src="{$works[$i][image]}" alt="{$works[$i][subject]}" />
 							</a>
 						</div>
 						<div class="detail">
-							<h3><a href="?item=fullworks&wid={$post[id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></h3>
+							<h3><a href="?item=fullworks&wid={$works[$i][id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></h3>
 							<ul>
 								<li><p class="sdate">{$sdate}</p></li>
 								<li><p class="sep">|</p></li>

@@ -1,7 +1,10 @@
 <?php
 	include_once("./classes/database.php");
+  	include_once("./lib/persiandate.php");
 	$db = database::getDatabase();
 	$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
+	$sdate = ToJalali($works["sdate"]," l d F  Y ");
+   	$fdate = ToJalali($works["fdate"]," l d F  Y ");
 $html=<<<cd
 	<div class="singlework-page" id="others-page">
 		<div class="page-header">
@@ -15,7 +18,12 @@ $html=<<<cd
 			</div>
 			<div class='detail'>
 				<h2>{$works[subject]}</h2>
-				<!-- <p class="type">گرافیکی</p> -->
+				<ul>
+					<li><p class="sdate">{$sdate}</p></li>
+					<li><p class="sep">|</p></li>
+					<li><p class="fdate">{$fdate}</p></li>
+				</ul>
+				<div class="badboy"></div>
 				<div class="text">{$works[body]}</div>
 			</div>
 		</div>

@@ -1109,6 +1109,7 @@ div.works-page .works ul li ul li:first-child{
 
 div.works-page .works ul li ul li p{
     color: #999;
+    font-size: 15px;
 }
 
 div.works-page .works ul li ul li p.sep{
@@ -1341,4 +1342,19 @@ div.contact-page .contact .detail .address p.email{
 .singlework-page .singlework .detail div.text{
     font-size: 18px;
     line-height: 1.5;
+}
+
+.singlework-page .singlework .detail ul li{
+    float: right;
+    margin-bottom: 15px;
+    margin-right: 3px;
+}
+
+.singlework-page .singlework .detail ul li p{
+    color: #999;
+    font-size: 17px;
+}
+
+.singlework-page .singlework .detail ul li p.sep{
+    color: #ccc;
 }
