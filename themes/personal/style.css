@@ -922,6 +922,7 @@ footer h2{
 footer p{
     color: #dedede;
     font-size: 17px;
+    line-height: 1.5;
 }
 
 footer span{
@@ -929,7 +930,7 @@ footer span{
     display: block;
     text-align: right;
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 footer .inner-wrap .first,

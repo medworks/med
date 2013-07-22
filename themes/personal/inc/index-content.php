@@ -15,7 +15,7 @@ $html.=<<<cd
 				<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}" >
 
                 <div class="caption large_text sft"
-                     data-x="50"
+                     data-x="750"
                      data-y="44"
                      data-speed="300"
                      data-start="800"
@@ -24,17 +24,17 @@ $html.=<<<cd
                 </div>
 
                 <div class="caption medium_text sfl"
-                     data-x="79"
-                     data-y="150"
+                     data-x="200"
+                     data-y="100"
                      data-speed="300"
                      data-start="1100"
                      data-easing="easeOutExpo">
-                     <p style="white-space: normal;">{$slides[$i][body]}</p>
+                     <p style="white-space: normal; margin-right: 50px; line-height: 1.5;">{$slides[$i][body]}</p>
                 </div>
 
                 <div class="caption lfl"
-                     data-x="53"
-                     data-y="192"
+                     data-x="30"
+                     data-y="350"
                      data-speed="300"
                      data-start="1400"
                      data-easing="easeOutExpo"  >
