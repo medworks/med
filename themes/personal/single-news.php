@@ -4,7 +4,7 @@
 	$db = database::GetDatabase();
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
   	$ndate = ToJalali($news["ndate"]," l d F  Y ساعت H:m");
-  	$news[userid] = GetUserName($news["userid"]);
+  	$news["userid"] = GetUserName($news["userid"]);
 $html=<<<cd
 	<div class="singlenew-page" id="others-page">
 		<div class="page-header">
@@ -19,11 +19,11 @@ $html=<<<cd
 			<div class='detail'>
 				<h2>{$news[subject]}</h2>
 				<ul>
-					<li><p class="date">تاریخ: {$ndate}</p></li>
+					<li><p class="date">{$ndate}</p></li>
 					<li><p class="sep">|</p></li>
-					<li><p class="by">منبع: {$news[resource]}</p></li>
+					<li><p class="by">{$news["userid"]}</p></li>
 					<li><p class="sep">|</p></li>
-					<li><p class="type">ثبت: {$news[userid]}</p></li>
+					<li><p class="type">اجتماعی</p></li>
 				</ul>
 				<div class="badboy"></div>
 				<div class="text">{$news[body]}</div>

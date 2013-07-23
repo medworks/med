@@ -1,4 +1,15 @@
 <?php
+	include_once("./classes/database.php");
+  	include_once("./lib/persiandate.php");
+  	$db = Database::GetDatabase();
+  	$db = Database::GetDatabase();
+    $pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
+    $maxItemsInPage = GetSettingValue('Max_Post_Number',0);
+    $from = ($pageNo - 1) * $maxItemsInPage;
+    $count = $maxItemsInPage;
+  	$news = $db->SelectAll("news","*",null,"ndate DESC",$from,$count);
+  	$itemsCount = $db->CountAll("news");
+
 $html=<<<cd
 	<div class="news-page" id="others-page">
 		<div class="page-header">
@@ -20,125 +31,50 @@ $html=<<<cd
 		<div class="badboy"></div>
 		<div class="news" id="special-page">
 			<ul class="items">
-				<li class="item social">
-					<div class="overlay">
-						<a href="?item=fullnews">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="?item=fullnews" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">اجتماعی</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item inernet">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">اینترنت</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item technology">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">تکنولوژی</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item social">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">اجتماعی</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item inernet">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">اینترنت</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-				<li class="item technology">
-					<div class="overlay">
-						<a href="#">
-							<img src="themes/personal/images/others/slide2.jpg" alt="" />
-						</a>
-					</div>
-					<div class="detail">
-						<h3><a href="#" title="">تیتر اول</a></h3>
-						<ul>
-							<li><p class="date">29 اردیبهشت 1392</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="by">مجتبی امجدی</p></li>
-							<li><p class="sep">|</p></li>
-							<li><p class="type">تکنولوژی</p></li>
-						</ul>
-						<div class="badboy"></div>
-						<p class="text">توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... توضیحات لازم... </p>
-					</div>
-				</li>
-							
+cd;
+				for($i=0 ; $i<count($news) ; $i++){
+					$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
+					$news["userid"] = GetUserName($news[$i]["userid"]);
+					$body= $news[$i]["body"];
+				    $body= strip_tags($body);
+				    $body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
+$html.=<<<cd
+					<li class="item social">
+						<div class="overlay">
+							<a href="?item=fullnews&wid={$news[$i][id]}">
+								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}" />
+							</a>
+						</div>
+						<div class="detail">
+							<h3><a href="?item=fullnews&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a></h3>
+							<ul>
+								<li><p class="date">{$ndate}</p></li>
+							</ul>
+							<div class="badboy"></div>
+							<ul>
+								<li><p class="by">{$news["userid"]}</p></li>
+								<li><p class="sep">|</p></li>
+								<li><p class="type">اجتماعی</p></li>
+							</ul>
+							<div class="badboy"></div>
+							<p class="text">{$body}</p>
+						</div>
+					</li>
+cd;
+				}
+$html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
 		</div>
 	</div>
+cd;
+
+$linkFormat = '?item=news&pid=%PN%';
+$maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
+$pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
+
+$html.=<<<cd
+		{$pageNos}
 cd;
 return $html;
 ?>
