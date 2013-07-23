@@ -1210,6 +1210,7 @@ div.news-page .news ul li .detail ul li p.sep{
 
 div.news-page .news ul li p.text{
     font-size: 18px;
+    text-align: justify;
 }
 /*************************************Contact page******************************************/
 div.contact-page .contact .map{

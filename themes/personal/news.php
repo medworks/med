@@ -37,7 +37,7 @@ cd;
 					$news["userid"] = GetUserName($news[$i]["userid"]);
 					$body= $news[$i]["body"];
 				    $body= strip_tags($body);
-				    $body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
+				    $body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 $html.=<<<cd
 					<li class="item social">
 						<div class="overlay">

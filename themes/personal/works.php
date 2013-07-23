@@ -22,7 +22,7 @@ cd;
 				for($i=0 ; $i<count($works) ; $i++){
 					$body= $works[$i]['subject'];
 					$body= strip_tags($body);
-   					$body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
+   					$body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
    					$sdate = ToJalali($works[$i]["sdate"]," l d F  Y ");
    					$fdate = ToJalali($works[$i]["fdate"]," l d F  Y "); 
 $html.=<<<cd
