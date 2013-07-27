@@ -126,36 +126,41 @@ cd;
                 <span class="slidemgr"></span>
             </a>
           </li>
-		  <li>
+          <li>
+            <a href="?item=catmgr&act=do">دسته بندی
+                <span class="catmgr"></span>
+            </a>
+          </li>
+    		  <li>
             <a href="?item=blockmgr&act=do">مدیریت بلاک 
                 <span class=""></span>
             </a>
           </li>
-		  <li>
+    		  <li>
             <a href="?item=pluginmgr&act=do">مدیریت پلاگین
                 <span class=""></span>
             </a>
           </li>
-		  <li >            
-            <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
-                <span class="users"></span>
-            </a>
-          </li>	
-          <li >            
-            <a href="?item=uploadmgr&act=do" id="users" name="users">مدیریت آپلود
-                <span class="upload"></span>
-            </a>
-          </li>		  
-          <li>
-            <a href="?item=thememgr&act=do">مدیریت قالب
-                <span class="template"></span>
-            </a>
-          </li>
-		   <li>
-            <a href="?item=settingmgr&act=do">تنظیمات
-                <span class="setting"></span>
-            </a>
-          </li>
+    		  <li >            
+              <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
+                  <span class="users"></span>
+              </a>
+            </li>	
+            <li >            
+              <a href="?item=uploadmgr&act=do" id="users" name="users">مدیریت آپلود
+                  <span class="upload"></span>
+              </a>
+            </li>		  
+            <li>
+              <a href="?item=thememgr&act=do">مدیریت قالب
+                  <span class="template"></span>
+              </a>
+            </li>
+    		    <li>
+              <a href="?item=settingmgr&act=do">تنظیمات
+                  <span class="setting"></span>
+              </a>
+            </li>
         </ul>
       </div>
  

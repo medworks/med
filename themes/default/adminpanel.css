@@ -432,6 +432,10 @@ header #mini-nav span.newSignup{
   background-image: url('images/admin/slides.png');
 }
 
+#mainnav > ul > li span.catmgr{
+  background-image: url('images/admin/cat.png');
+}
+
 #mainnav > ul > li span.upload{
   background-image: url('images/admin/upload-icon.png');
 }
@@ -533,6 +537,14 @@ header #mini-nav span.newSignup{
   background-image: url('images/admin/editworks.png');
 }
 
+.sub-menu ul li span.add-cat{
+  background-image: url('images/admin/add-cat.png');
+}
+
+.sub-menu ul li span.edit-cat{
+  background-image: url('images/admin/edit-cat.png');
+}
+
 .sub-menu ul li span.add-slide{
   background-image: url('images/admin/addslide.png');
 }
@@ -597,7 +609,7 @@ header #mini-nav span.newSignup{
 
  /* This Section related To Container Div Part*/	
 .admin_container{
-  min-height: 960px;
+  min-height: 1060px;
   float : right;
   width : 780px;
   top: 15px;
