@@ -25,7 +25,7 @@
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
-		<div class="sub-menu" id="mainnav">
+		<!-- <div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
 				<a href="?item=catmgr&act=new">گروه جدید
@@ -39,7 +39,11 @@
 			  </li>
 			 </ul>
 			 <div class="badboy"></div>
-		</div>		 
+		</div> -->
+
+		<form>
+			
+		</form> 
 ht;
 }
 return $html;
