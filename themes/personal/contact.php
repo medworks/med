@@ -8,7 +8,7 @@ $html=<<<cd
 		<div class="badboy"></div>
 		<div class="contact" id="special-page">
 			<div class="map">
-				<iframe src="http://mapsengine.google.com/map/u/0/view?mid=zXBBpAwsRbSk.kCrA-zSqoLqw" width="720" height="350"></iframe>
+				<iframe src="http://mapsengine.google.com/map/u/0/embed?mid=zXBBpAwsRbSk.kCrA-zSqoLqw" width="720" height="350"></iframe>
 			</div>
 			<div class="detail">
 				<div class="contact-form right">
