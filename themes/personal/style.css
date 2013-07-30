@@ -614,7 +614,7 @@ section.middle .contain .client-part ul li:hover a{
 
 section.middle .contain .client-part ul li a{
     display: block;
-    font-size: 22px;
+    font-size: 20px;
     text-align: center;
 }
 
@@ -653,7 +653,7 @@ section.middle .contain .client-part ul li a span.tab1-icon{
 }
 
 section.middle .contain .client-part ul li a span.tab2-icon{
-    background-image: url('images/contact.png');
+    background-image: url('images/ads.png');
     background-repeat: no-repeat;
     background-position: center;
 }
