@@ -16,6 +16,11 @@ div,table,input,a,p,form{
 	direction: ltr;
 }
 
+.enfont{
+    font-family: 'Helvetica Neue", Helvetica, Arial, sans-serif';
+    font-size: 17px;
+}
+
 a:active,
 a:visited,
 a:link{ 
@@ -581,6 +586,7 @@ section.middle .contain .client-part .title h2{
 section.middle .contain .client-part .text p{
     font-size: 20px;
     text-align: center;
+    line-height: 1.5;
 }
 
 section.middle .contain .client-part ul li{
@@ -641,7 +647,7 @@ section.middle .contain .client-part ul li a span{
 }
 
 section.middle .contain .client-part ul li a span.tab1-icon{
-    background-image: url('images/home.png');
+    background-image: url('images/responsive.png');
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -653,13 +659,13 @@ section.middle .contain .client-part ul li a span.tab2-icon{
 }
 
 section.middle .contain .client-part ul li a span.tab3-icon{
-    background-image: url('images/home.png');
+    background-image: url('images/optimized.png');
     background-repeat: no-repeat;
     background-position: center;
 }
 
 section.middle .contain .client-part ul li a span.tab4-icon{
-    background-image: url('images/contact.png');
+    background-image: url('images/seo.png');
     background-repeat: no-repeat;
     background-position: center;
 }
