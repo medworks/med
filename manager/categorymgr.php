@@ -37,7 +37,7 @@
     else
 	if (!$overall_error && $_POST["mark"]=="editcat")
 	{		
-	    $_POST["detail"] = addslashes($_POST["detail"]);
+	    //$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`catname`"=>"'{$_POST[catname]}'",
 						 "`urlname`"=>"'{$_POST[urlname]}'",
 						 "`describe`"=>"'{$_POST[describe]}'",
@@ -150,7 +150,7 @@ cd;
 } else
 if ($_GET['act']=="mgr")
 {
-	if ($_POST["mark"]=="editcat")
+	if ($_POST["mark"]=="srhcat")
 	{	 		
 	   $rows = $db->SelectAll(
 				"category",
