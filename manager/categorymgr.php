@@ -210,7 +210,6 @@ del;
 							"catname"=>"نام گروه",
 							"urlname"=>"لینک اینترنتی",
 							"describe"=>"توضیحات",
-							"username"=>"کاربر",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=catmgr&act=mgr");
@@ -228,16 +227,6 @@ $code=<<<edit
 			$('#frmsrh').submit();
 			return false;
 		});
-		$('#cbsearch').change(function(){
-			$("select option:selected").each(function(){
-	            if($(this).val()=="ndate"){
-	            	$('.cal-btn').css('display' , 'inline-block');
-	            	return false;
-	            }else{
-	            	$('.cal-btn').css('display' , 'none');
-	            }
-  			});
-		});
 	});
 </script>	   
 					<div class="title">
@@ -254,19 +243,6 @@ $code=<<<edit
 
 								<p class="search-form">
 									<input type="text" id="date_input_1" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
-									<img src="../themes/default/images/admin/cal.png" class="cal-btn" id="date_btn_2" alt="cal-pic">
-							         <script type="text/javascript">
-							          Calendar.setup({
-							            inputField  : "date_input_1",   // id of the input field
-							            button      : "date_btn_2",   // trigger for the calendar (button ID)
-							                ifFormat    : "%Y/%m/%d",       // format of the input field
-							                showsTime   : false,
-							                dateType  : 'jalali',
-							                showOthers  : true,
-							                langNumbers : true,
-							                weekNumbers : true
-							          });
-							        </script>
 									<a href="?item=catmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
 									<a href="?item=catmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
