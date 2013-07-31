@@ -177,7 +177,7 @@ if ($_GET['act']=="mgr")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="editcat")?$db->CountAll("category"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhcat")?$db->CountAll("category"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["catname"] =(mb_strlen($rows[$i]["catname"])>20)?mb_substr($rows[$i]["catname"],0,20,"UTF-8")."...":$rows[$i]["catname"];
