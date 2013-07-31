@@ -13,8 +13,7 @@
 		die(); // solve a security bug
 	}
 	$db = Database::GetDatabase();
-	$sess = Session::GetSesstion();	
-	$userid = $sess->Get("userid");
+	$sess = Session::GetSesstion();
 	$overall_error = false;
 	if ($_GET['item']!="catmgr")	exit();
 	if (!$overall_error && $_POST["mark"]=="savecat")
@@ -40,8 +39,7 @@
 	    //$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`catname`"=>"'{$_POST[catname]}'",
 						 "`urlname`"=>"'{$_POST[urlname]}'",
-						 "`describe`"=>"'{$_POST[describe]}'",
-						 "`userid`"=>"'{$userid}'");		
+						 "`describe`"=>"'{$_POST[describe]}'");		
         $db->UpdateQuery("category",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=catmgr&act=mgr');
 	}
@@ -50,8 +48,7 @@
 	{
 		$row = array("catname"=>$_POST['subject'],
 					 "urlname"=>$_POST['urlname'],
-					 "describe"=>$_POST['describe'],
-					 "userid"=>$userid);
+					 "describe"=>$_POST['describe']);
 	}
 	
 	
@@ -195,7 +192,6 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}
-				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
 				$rows[$i]["edit"] = "<a href='?item=catmgr&act=edit&nid={$rows[$i]["id"]}' " .
 						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
 				$rows[$i]["delete"]=<<< del
