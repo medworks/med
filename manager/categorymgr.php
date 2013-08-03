@@ -18,9 +18,9 @@
 	if ($_GET['item']!="catmgr")	exit();
 	if (!$overall_error && $_POST["mark"]=="savecat")
 	{	    
-		$fields = array("`catname`","`urlname`","`describe`");
+		$fields = array("`catname`","`latinname`","`describe`");
 		//$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[catname]}'","'{$_POST[urlname]}'","'{$_POST[describe]}'");		
+		$values = array("'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'");		
 		if (!$db->InsertQuery('category',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -38,7 +38,7 @@
 	{		
 	    //$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`catname`"=>"'{$_POST[catname]}'",
-						 "`urlname`"=>"'{$_POST[urlname]}'",
+						 "`latinname`"=>"'{$_POST[latinname]}'",
 						 "`describe`"=>"'{$_POST[describe]}'");		
         $db->UpdateQuery("category",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=catmgr&act=mgr');
@@ -47,7 +47,7 @@
 	if ($overall_error)
 	{
 		$row = array("catname"=>$_POST['subject'],
-					 "urlname"=>$_POST['urlname'],
+					 "latinname"=>$_POST['latinname'],
 					 "describe"=>$_POST['describe']);
 	}
 	
@@ -126,10 +126,10 @@ $html=<<<cd
        </p>    
        <input type="text" name="catname" class="validate[required] catname" id="catname" value='{$row[catname]}'/>
        <p>
-         <label for="urlname">لینک اینترنتی </label>
+         <label for="latinname">نام لاتین </label>
          <span>*</span>
        </p>    
-       <input type="text" name="urlname" class="validate[required] urlname" id="urlname" value='{$row[urlname]}'/>
+       <input type="text" name="latinname" class="validate[required] latinname ltr" id="latinname" value='{$row[latinname]}'/>
        <p>
          <label for="describe">توضیحات </label>
          <span>*</span>
@@ -181,7 +181,7 @@ if ($_GET['act']=="mgr")
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["catname"] =(mb_strlen($rows[$i]["catname"])>20)?mb_substr($rows[$i]["catname"],0,20,"UTF-8")."...":$rows[$i]["catname"];
-		        $rows[$i]["urlname"] =(mb_strlen($rows[$i]["urlname"])>20)?mb_substr($rows[$i]["urlname"],0,20,"UTF-8")."...":$rows[$i]["urlname"];
+		        $rows[$i]["latinname"] =(mb_strlen($rows[$i]["latinname"])>20)?mb_substr($rows[$i]["latinname"],0,20,"UTF-8")."...":$rows[$i]["latinname"];
 		        $rows[$i]["describe"] =(mb_strlen($rows[$i]["describe"])>50)?mb_substr($rows[$i]["describe"],0,50,"UTF-8")."...":$rows[$i]["describe"];
                               
 				if ($i % 2==0)
@@ -208,7 +208,7 @@ del;
             {                    
                     $gridcode .= DataGrid(array( 
 							"catname"=>"نام گروه",
-							"urlname"=>"لینک اینترنتی",
+							"latinname"=>"نام لاتین",
 							"describe"=>"توضیحات",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
@@ -217,7 +217,7 @@ del;
             }
 $msgs = GetMessage($_GET['msg']);
 $list = array("catname"=>"نام گروه",
-			  "urlname"=>"لینک اینترنتی",
+			  "latinname"=>"نام لاتین",
 			  "describe"=>"توضیحات");
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
