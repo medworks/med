@@ -124,17 +124,17 @@ $html=<<<cd
          <label for="catname">نام گروه </label>
          <span>*</span>
        </p>    
-       <input type="text" name="catname" class="validate[required] catname" id="catname" value='{$row[catname]}'/>
+       <input type="text" name="catname" class="validate[required] catname family" id="catname" value='{$row[catname]}'/>
        <p>
          <label for="latinname">نام لاتین </label>
          <span>*</span>
        </p>    
-       <input type="text" name="latinname" class="validate[required] latinname ltr" id="latinname" value='{$row[latinname]}'/>
+       <input type="text" name="latinname" class="validate[required] latinname family ltr" id="latinname" value='{$row[latinname]}'/>
        <p>
          <label for="describe">توضیحات </label>
          <span>*</span>
        </p>    
-       <input type="text" name="describe" class="validate[required] describe" id="describe" value='{$row[describe]}'/>
+       <input type="text" name="describe" class="validate[required] describe subject" id="describe" value='{$row[describe]}'/>
        <p>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
