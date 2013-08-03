@@ -2,7 +2,6 @@
 	include_once("./classes/database.php");
   	include_once("./lib/persiandate.php");
   	$db = Database::GetDatabase();
-  	$db = Database::GetDatabase();
     $pageNo = ($_GET["pid"]) ? $_GET["pid"] : 1;
     $maxItemsInPage = GetSettingValue('Max_Post_Number',0);
     $from = ($pageNo - 1) * $maxItemsInPage;
@@ -18,10 +17,16 @@ $html=<<<cd
 				<menu>
 					<li><a href="#" class="filter-button">انتخاب نوع خبر</a>
 						<menu>
-				            <li><a href="#" data-filter="*" class="active">همه موارد</a></li>
-				            <li><a href="#" data-filter=".social">اجتماعی</a></li>
-				            <li><a href="#" data-filter=".inernet">اینترنت</a></li>
-				            <li><a href="#" data-filter=".technology">تکنولوژی</a></li>
+							<li><a href="#" data-filter="*" class="active">همه موارد</a></li>
+cd;
+							for($i=0 ; $i<count($category) ; $i++){
+
+$html.=<<<cd
+								<li><a href="#" data-filter=".{$news[$i][catname]}">{$news[$i][catname]}</a></li>
+cd;
+							}
+$html.=<<<cd
+
 			            </menu>
 		            </li>
 	            </menu>
@@ -39,7 +44,7 @@ cd;
 				    $body= strip_tags($body);
 				    $body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 $html.=<<<cd
-					<li class="item social">
+					<li class="item {$news[$i][catname]}">
 						<div class="overlay">
 							<a href="?item=fullnews&wid={$news[$i][id]}">
 								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}" />
