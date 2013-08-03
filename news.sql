@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 03, 2013 at 11:26 AM
+-- Generation Time: Aug 03, 2013 at 01:15 PM
 -- Server version: 5.5.25a
 -- PHP Version: 5.4.4
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `news` (
   `ndate` datetime NOT NULL,
   `userid` int(11) NOT NULL,
   `resource` varchar(50) NOT NULL,
-  `catname` varchar(25) NOT NULL,
+  `groupname` varchar(25) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `subject`, `image`, `body`, `ndate`, `userid`, `resource`, `catname`) VALUES
+INSERT INTO `news` (`id`, `subject`, `image`, `body`, `ndate`, `userid`, `resource`, `groupname`) VALUES
 (1, 'خبر یک', '/media/newspics/خبر یک.png', '<p><span style="font-family: arial, helvetica, sans-serif; font-size: large;">خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... خبر یک... </span></p>', '2013-06-15 19:10:07', 1, 'عصر ایران', ''),
 (2, 'خبر دو', '/media/newspics/خبر دو.png', '<address><span style="font-size: large;">خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... خبر دو... </span></address>', '2013-06-16 19:10:47', 1, 'نارنجی', ''),
 (3, 'خبر سه', '/media/newspics/خبر چهار.png', '<p>خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... خبر سه... </p>', '2013-06-17 19:12:55', 1, 'عصر ایران', ''),

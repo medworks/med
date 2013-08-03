@@ -72,7 +72,8 @@
 						 "`body`"=>"'{$_POST[detail]}'",
 						 "`ndate`"=>"'{$ndatetime}'",
 						 "`userid`"=>"'{$userid}'",
-						 "`resource`"=>"'{$_POST[res]}'");		
+						 "`resource`"=>"'{$_POST[res]}'",
+						 "`groupname`"=>"'{$_POST[group]}'");		
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
 	}
@@ -84,7 +85,8 @@
 					 "body"=>$_POST['detail'],
 					 "ndate"=>$_POST['ndate'],
 					 "userid"=>$userid,
-					 "resource"=>$_POST['res']);
+					 "resource"=>$_POST['res'],
+					 "groupname"=>$_POST[group]);
 	}
 	
 	
@@ -203,6 +205,20 @@ $html=<<<cd
        <span>*</span>   	 
        </p>
        <input type="text" name="res" class='validate[required]' value='{$row['resource']}'/>
+       <p>
+         <label for="detail">توضیحات </label>
+         <span>*</span>
+       </p>
+       <select name='selectgroup' id='selectgroup' class='selectgroup'>
+cd;
+		$category = $db->SelectAll("category","*",null,"catname ASC");
+		for($i=0 ; $i<count($category) ; $i++){
+$html.=<<<cd
+			<option name="group" value="{$category[$i][catname]}">{$category[$i][catname]}</option>
+cd;
+		}
+$html.=<<<cd
+       </select>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
@@ -349,6 +365,7 @@ del;
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",
+							"groupname"=>"گروه",
 							"username"=>"کاربر",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
@@ -359,7 +376,8 @@ $msgs = GetMessage($_GET['msg']);
 $list = array("subject"=>"عنوان",
               "body"=>"توضیحات",
 			  "ndate"=>"تاریخ",
-			  "resource"=>"منبع");
+			  "resource"=>"منبع",
+			  "groupname"=>"گروه");
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
