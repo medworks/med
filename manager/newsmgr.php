@@ -48,9 +48,9 @@
 	}	
 	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
-		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`","`groupname`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");		
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group]}'");		
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -86,7 +86,7 @@
 					 "ndate"=>$_POST['ndate'],
 					 "userid"=>$userid,
 					 "resource"=>$_POST['res'],
-					 "groupname"=>$_POST[group]);
+					 "groupname"=>$_POST['group']);
 	}
 	
 	
@@ -209,12 +209,12 @@ $html=<<<cd
          <label for="detail">توضیحات </label>
          <span>*</span>
        </p>
-       <select name='selectgroup' id='selectgroup' class='selectgroup'>
+       <select name="group" id='selectgroup' class='selectgroup'>
 cd;
 		$category = $db->SelectAll("category","*",null,"catname ASC");
 		for($i=0 ; $i<count($category) ; $i++){
 $html.=<<<cd
-			<option name="group" value="{$category[$i][catname]}">{$category[$i][catname]}</option>
+			<option value="{$category[$i][catname]}">{$category[$i][catname]}</option>
 cd;
 		}
 $html.=<<<cd
