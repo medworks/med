@@ -219,6 +219,7 @@ cd;
 		}
 $html.=<<<cd
        </select>
+       <div class="badboy"></div>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
