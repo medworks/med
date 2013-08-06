@@ -206,10 +206,11 @@ $html=<<<cd
        </p>
        <input type="text" name="res" class='validate[required]' value='{$row['resource']}'/>
        <p>
-         <label for="detail">توضیحات </label>
+         <label>انتخاب گروه </label>
          <span>*</span>
        </p>
-       <select name="group" id='selectgroup' class='selectgroup'>
+       <select name="group" id='selectgroup' class='selectgroup validate[required]'>
+       		<option value="">انتخاب گروه</option>
 cd;
 		$category = $db->SelectAll("category","*",null,"catname ASC");
 		for($i=0 ; $i<count($category) ; $i++){
@@ -220,6 +221,8 @@ cd;
 $html.=<<<cd
        </select>
        <div class="badboy"></div>
+       <p><a title="اضافه نمودن گروه" class="addgroup"><span></span>اضافه نمودن گروه</a></p>
+       <input type="text" name="group" class='addgroup-field validate[required]'/>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
