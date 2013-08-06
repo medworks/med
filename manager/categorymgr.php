@@ -18,9 +18,9 @@
 	if ($_GET['item']!="catmgr")	exit();
 	if (!$overall_error && $_POST["mark"]=="savecat")
 	{	    
-		$fields = array("`catname`","`latinname`","`describe`");
+		$fields = array("`catname`","`latinname`","`describe`","`parent`");
 		//$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'");		
+		$values = array("'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'","'{$_POST[parent]}'");		
 		if (!$db->InsertQuery('category',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -39,7 +39,8 @@
 	    //$_POST["detail"] = addslashes($_POST["detail"]);
 		$values = array("`catname`"=>"'{$_POST[catname]}'",
 						 "`latinname`"=>"'{$_POST[latinname]}'",
-						 "`describe`"=>"'{$_POST[describe]}'");		
+						 "`describe`"=>"'{$_POST[describe]}'",
+						 "`parent`"=>"'{$_POST[parent]}'");		
         $db->UpdateQuery("category",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=catmgr&act=mgr');
 	}
@@ -48,7 +49,8 @@
 	{
 		$row = array("catname"=>$_POST['subject'],
 					 "latinname"=>$_POST['latinname'],
-					 "describe"=>$_POST['describe']);
+					 "describe"=>$_POST['describe'],
+					 "parent"=>$_POST['parent']);
 	}
 	
 	
@@ -136,6 +138,21 @@ $html=<<<cd
        </p>    
        <input type="text" name="describe" class="validate[required] describe subject" id="describe" value='{$row[describe]}'/>
        <p>
+         <label for="detail">انتخاب گروه مادر </label>
+       </p>
+       <select name="parent" id='selectgroup' class='selectgroup'>
+       		<option value="">انتخاب گروه مادر</option>
+cd;
+		$category = $db->SelectAll("category","*",null,"catname ASC");
+		for($i=0 ; $i<count($category) ; $i++){
+$html.=<<<cd
+			<option value="{$category[$i][catname]}">{$category[$i][catname]}</option>
+cd;
+		}
+$html.=<<<cd
+	   </select>
+	   <div class="badboy"></div>
+       <p>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
@@ -210,6 +227,7 @@ del;
 							"catname"=>"نام گروه",
 							"latinname"=>"نام لاتین",
 							"describe"=>"توضیحات",
+							"parent"=>"گروه مادر",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=catmgr&act=mgr");
@@ -218,7 +236,8 @@ del;
 $msgs = GetMessage($_GET['msg']);
 $list = array("catname"=>"نام گروه",
 			  "latinname"=>"نام لاتین",
-			  "describe"=>"توضیحات");
+			  "describe"=>"توضیحات",
+			  "parent"=>"گروه مادر");
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
