@@ -50,7 +50,12 @@
 	{	    
 		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`","`groupname`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group]}'");		
+		if($_POST['group']!=null){
+			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group]}'");
+		}else{
+			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group2]}'");
+			$db->InsertQuery('category','catname',$_POST['group2']);
+		}
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -67,13 +72,24 @@
 	if (!$overall_error && $_POST["mark"]=="editnews")
 	{		
 	    $_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("`subject`"=>"'{$_POST[subject]}'",
-		                 "`image`"=>"'{$_POST[selectpic]}'",
-						 "`body`"=>"'{$_POST[detail]}'",
-						 "`ndate`"=>"'{$ndatetime}'",
-						 "`userid`"=>"'{$userid}'",
-						 "`resource`"=>"'{$_POST[res]}'",
-						 "`groupname`"=>"'{$_POST[group]}'");		
+	    if($_POST['group']!=null){
+			$values = array("`subject`"=>"'{$_POST[subject]}'",
+			                 "`image`"=>"'{$_POST[selectpic]}'",
+							 "`body`"=>"'{$_POST[detail]}'",
+							 "`ndate`"=>"'{$ndatetime}'",
+							 "`userid`"=>"'{$userid}'",
+							 "`resource`"=>"'{$_POST[res]}'",
+							 "`groupname`"=>"'{$_POST[group]}'");
+		}else{
+			$values = array("`subject`"=>"'{$_POST[subject]}'",
+			                 "`image`"=>"'{$_POST[selectpic]}'",
+							 "`body`"=>"'{$_POST[detail]}'",
+							 "`ndate`"=>"'{$ndatetime}'",
+							 "`userid`"=>"'{$userid}'",
+							 "`resource`"=>"'{$_POST[res]}'",
+							 "`groupname`"=>"'{$_POST[group2]}'");
+			$db->InsertQuery('category','catname',$_POST['group2']);
+		}		
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
 	}
@@ -222,7 +238,7 @@ $html.=<<<cd
        </select>
        <div class="badboy"></div>
        <p><a title="اضافه نمودن گروه" class="addgroup"><span></span>اضافه نمودن گروه</a></p>
-       <input type="text" name="group" class='addgroup-field validate[required]' value=""/>
+       <input type="text" name="group2" class='addgroup-field validate[required]' value=""/>
        <p><a title="پاک کردن فیلد" class="delfield"><span></span>پاک کردن فیلد</a></p>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
