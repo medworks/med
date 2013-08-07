@@ -787,6 +787,7 @@ footer p{
 
 .admin_container form input.selectpic,
 .admin_container form input.showadd{
+  float: right;
   width: 350px;
   direction: ltr;
   border-color: #DDDDDD;
@@ -898,12 +899,25 @@ select#cbpos{
   display: inline-block;
   margin-left: 5px;
   width: 16px;
-  height: 16px;
+  height: 14px;
   background: url('images/admin/add.png') no-repeat center;
 }
 
 .admin_container form input.addgroup-field{
   display: none;
+}
+
+.admin_container form a.delfield{
+  display: none;
+  cursor: pointer;
+}
+
+.admin_container form a.delfield span{
+  display: inline-block;
+  margin-left: 5px;
+  width: 16px;
+  height: 6px;
+  background: url('images/admin/minus.png') no-repeat center;
 }
 /*=============== data grid section  ===============*/
 .datagrid

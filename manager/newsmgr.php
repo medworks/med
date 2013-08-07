@@ -222,7 +222,8 @@ $html.=<<<cd
        </select>
        <div class="badboy"></div>
        <p><a title="اضافه نمودن گروه" class="addgroup"><span></span>اضافه نمودن گروه</a></p>
-       <input type="text" name="group" class='addgroup-field validate[required]'/>
+       <input type="text" name="group" class='addgroup-field validate[required]' value=""/>
+       <p><a title="پاک کردن فیلد" class="delfield"><span></span>پاک کردن فیلد</a></p>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
