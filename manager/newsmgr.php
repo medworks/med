@@ -42,7 +42,7 @@
 			$_GET["item"] = "newsmgr";
 			$_GET["act"] = "new";
 			$_GET["msg"] = 5;
-		   $overall_error = true;
+		    $overall_error = true;
 		}			
 		
 	}	
@@ -54,7 +54,9 @@
 			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group]}'");
 		}else{
 			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group2]}'");
-			$db->InsertQuery('category','catname',$_POST['group2']);
+			$fields2 = array("`catname`");
+			$values2 = array("'{$_POST[group2]}'");
+			$db->InsertQuery('category',$fields2,$values2);
 		}
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
@@ -88,7 +90,10 @@
 							 "`userid`"=>"'{$userid}'",
 							 "`resource`"=>"'{$_POST[res]}'",
 							 "`groupname`"=>"'{$_POST[group2]}'");
-			$db->InsertQuery('category','catname',$_POST['group2']);
+
+			$fields2 = array("`catname`");
+			$values2 = array("'{$_POST[group2]}'");
+			$db->InsertQuery('category',$fields2,$values2);
 		}		
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
