@@ -4,6 +4,7 @@ $(document).ready(function(){
     $('.main-menu a').each(function(){
         if(this.href.trim() == url){
             $(this).parent().addClass("active");
+            return false;
         }else if(this.href.trim().match(/full/g)){
             var href= url.substr(url.indexOf("full"));
             href= href.split('full');
