@@ -12,28 +12,28 @@ include_once("./classes/messages.php");
 				return "index.php";
 			break;
             case 'about':
-                return "about.php";
+                return "themes/default/about.php";
 			break;
 			case 'contact':
-                return "contact.php";
+                return "themes/default/contact.php";
 			break;
 			case 'gallery':
-                return "gallery.php";
+                return "themes/default/gallery.php";
 			break;
 			case 'dashboard':
 				if ($act=="do") return "dashboard.php";
 			break;	
             case 'works':
-                if ($act=="do") return "works.php";
+                if ($act=="do") return "themes/default/works.php";
             break;
             case 'fullworks':
-                if ($act=="do") return "single-works.php";
+                if ($act=="do") return "themes/default/single-works.php";
             break;			          
             case 'news':
-                if ($act=="do") return "news.php";
+                if ($act=="do") return "themes/default/news.php";
 			break;
 			case 'fullnews':
-                if ($act=="do") return "single-news.php";
+                if ($act=="do") return "themes/default/single-news.php";
 			break;
 			case 'uploadmgr':
               if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/uploadmgr.php";
