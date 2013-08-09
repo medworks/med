@@ -243,7 +243,7 @@ html[xmlns] .slides {display: block;}
 .content .slider-caption h2 a{font-size: 22px;}
 .content .ei-slider{ height:330px;}
 .content .ei-slider-loading{line-height:375px;}
-.content .ei-title h3{font-size: 15px;line-height: 14px;width:435px;}
+.content .ei-title h3{font-size: 15px;width:435px;}
 .content .ei-title h2{font-size: 22px;}
 
 /*sidebar slider*/
@@ -508,7 +508,7 @@ a.ttip, a.tooldown{display:inline-block;}
 .cat-tabs-wrap li{
 	overflow:hidden;
 	padding: 5px 0;
-	width:206px;
+	width:230px;
 	float:right;
 }
 
@@ -1686,6 +1686,10 @@ section.main-content .content .detail p{
 	margin-bottom: 10px;
 	word-wrap: break-word;
 	line-height: 2;
+}
+
+section.main-content .content .detail p span{
+	color: #000 !important;
 }
 /******************************Single pages************************************/
 .single-page .singlepage-box{

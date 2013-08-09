@@ -310,6 +310,7 @@ $html.=<<<cd
 				</li>
 cd;
 				for($i=1 ; $i<5 ; $i++){
+					if($news[$i]['subject']!=null){
 					$ndate= ToJalali($news[$i]["ndate"]," l d F  Y");
 $html.=<<<cd
 					<li>
@@ -324,7 +325,7 @@ $html.=<<<cd
 						<div class="date"><p><span>$ndate</span></p></div>
 					</li>				
 cd;
-				}
+				}}
 $html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
@@ -350,6 +351,7 @@ $html.=<<<cd
 					</li>
 cd;
 				for($i=1 ; $i<13 ; $i++){
+					if($slides[$i]['image']!=null){
 $html.=<<<cd
 					<li class="picture">
 						<div class="pic">
@@ -359,7 +361,7 @@ $html.=<<<cd
 						</div>
 					</li>	
 cd;
-				}
+				}}
 $html.=<<<cd
 			</ul>
 			<div class="badboy"></div>

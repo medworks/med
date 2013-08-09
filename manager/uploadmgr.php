@@ -129,13 +129,13 @@ if ($_GET['act']=="do")
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=uploadmgr&act=new">فایل جدید
+				<a href="?item=uploadmgr&act=new">عکس جدید
 					<span class="add-file"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=uploadmgr&act=mgr" id="news" name="news">
-				  حذف/ویرایش فایلها
+				  حذف/ویرایش عکس ها
 					<span class="edit-file"></span>
 				</a>
 			  </li>
@@ -180,7 +180,7 @@ $html=<<<cd
 		<div class="title">
 	      <ul>
 	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><span>مدیریت اسلاید</span></li>
+	        <li><span>مدیریت عکس ها</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>	     
@@ -195,14 +195,14 @@ $html=<<<cd
 			</div>
 			<p>
 				<label for="subject">اسم مستعار</label>
-				<span>*</span>
+				<span></span>
 			</p>
-			<input type="text" name="subject" class="validate[required] subject" id="subject" value="{$row[subject]}" />
+			<input type="text" name="subject" class="subject" id="subject" value="{$row[subject]}" />
 			<p>
 				<label for="body">توضیحات </label>
-				<span>*</span>
+				<span></span>
 			</p>
-			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
+			<input type="text" name="body" class="subject" id="body" value="{$row[body]}" /> 
 			<p>
 				<label for="picsadr">محل ذخیره سازی فایل</label>
 				<span>*</span>
