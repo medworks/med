@@ -148,11 +148,11 @@ $(document).ready(function(){
             $(this).parent().addClass("active");
             return false;
         }else if(this.href.trim().match(/full/g)){
-            var href= url.substr(url.indexOf("full"), url.indexOf("&"));
+            var href= url.substr(url.indexOf("full"));
             href= href.split('full');
             href= href[1].split('&');
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
-        }else if(this.href.trim().match(/pid/g)){
+        }else if(this.href.trim().match(/wid/g)){
             var href= url.substr(url.indexOf("item"));
             href= href.split('item=');
             href= href[1].split('&');
