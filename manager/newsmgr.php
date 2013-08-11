@@ -178,8 +178,20 @@ $html=<<<cd
   </div>
   <div class="mes" id="message">{$msgs}</div>
   <div class='content'>
-	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" >  
-       <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
+	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" >
+     <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
+	 <select name="group" id='selectgroup' class='selectgroup validate[required]'>
+       		<option value="">انتخاب گروه</option>
+cd;
+		$category = $db->SelectAll("category","*",null,"catname ASC");
+		for($i=0 ; $i<count($category) ; $i++){
+$html.=<<<cd
+			<option value="{$category[$i][catname]}">{$category[$i][catname]}</option>
+cd;
+		}
+$html.=<<<cd
+       </select>
+       <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>
          <span>*</span>
@@ -226,25 +238,6 @@ $html=<<<cd
        <span>*</span>   	 
        </p>
        <input type="text" name="res" class='validate[required]' value='{$row['resource']}'/>
-       <p>
-         <label>انتخاب گروه </label>
-         <span>*</span>
-       </p>
-       <select name="group" id='selectgroup' class='selectgroup validate[required]'>
-       		<option value="">انتخاب گروه</option>
-cd;
-		$category = $db->SelectAll("category","*",null,"catname ASC");
-		for($i=0 ; $i<count($category) ; $i++){
-$html.=<<<cd
-			<option value="{$category[$i][catname]}">{$category[$i][catname]}</option>
-cd;
-		}
-$html.=<<<cd
-       </select>
-       <div class="badboy"></div>
-       <p><a title="اضافه نمودن گروه" class="addgroup"><span></span>اضافه نمودن گروه</a></p>
-       <input type="text" name="group2" class='addgroup-field validate[required]' value=""/>
-       <p><a title="پاک کردن فیلد" class="delfield"><span></span>پاک کردن فیلد</a></p>
 	   {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
