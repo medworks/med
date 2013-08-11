@@ -488,10 +488,6 @@ header #mini-nav span.newSignup{
   padding: 10px 5px;
 }
 
-#mainnav > ul > li:first-child .current-arrow{
-  display: none;
-}
-
 #mainnav > ul > li .current-arrow{
   position: absolute;
 }
@@ -532,10 +528,6 @@ header #mini-nav span.newSignup{
   margin-top: 35px !important;
 }
 /*************************************SUB menu******************************************/
-.sub-menu{
-  margin-bottom: 50px;
-}
-
 .sub-menu ul li{
   margin-top: 35px;
   width: 200px;
@@ -547,11 +539,35 @@ header #mini-nav span.newSignup{
   margin-top: 0;
 }
 
-.sub-menu ul li a{
-  font-size: 26px !important;
+.sub-menu ul li{
+   -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -ms-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  -o-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
+  -webkit-border-radius: 15px; 
+  -moz-border-radius: 15px;    
+  -ms-border-radius: 15px;   
+  -o-border-radius: 15px;    
+  border-radius: 15px;
+  padding-right: 0 !important;         
 }
 
-.sub-menu ul li span{
+.sub-menu ul li a{
+  font-size: 26px !important;
+  opacity: 1 !important;
+  color: #000 !important;
+  display: block !important;
+  background-position: center bottom !important;
+  -webkit-filter: none !important;
+  -moz-filter: none !important;
+  -ms-filter: none !important;
+  -o-filter: none !important;
+  filter: none !important;
+}
+
+.sub-menu ul li a span{
+  display: block !important;
   width: 128px !important;
   height: 128px !important;
   margin-right: 30px !important;
@@ -650,6 +666,7 @@ header #mini-nav span.newSignup{
  /* This Section related To Container Div Part*/	
 .admin_container{
   float : right;
+  min-height: 550px;
   width : 780px;
   top: 15px;
   background: #fff;
