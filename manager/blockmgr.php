@@ -61,6 +61,34 @@ $html=<<<cd
   <div class='content'>
 	<form name="frmblocks" id="frmblocks" class="" action="" method="post" >
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
+	 <div class="badboy"></div>
+      <p>
+         <label for="subject">عنوان </label>
+         <span>*</span>
+      </p>    
+      <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[subject]}'/> 
+	  <p>
+         <label for="subject">انتساب به پلاگین</label>
+         <span>*</span>
+      </p>
+	  <p>
+         <label for="subject">موقعیت مکانی</label>
+         <span>*</span>
+      </p>    
+      <p>
+         <label for="subject">ترتیب مکانی</label>
+         <span>*</span>
+      </p>    
+      <input type="text" name="order" class="validate[required] subject" id="order" value='{$row[subject]}'/> 
+      <p>
+         <label for="subject">نمایش برای</label>
+         <span>*</span>
+      </p>    
+      <p>
+         <label for="subject">نوع محتوا</label>
+         <span>*</span>
+      </p>    
+      
 	</form> 
 cd;
 }
