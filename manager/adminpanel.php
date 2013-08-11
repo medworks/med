@@ -112,6 +112,11 @@ cd;
             </a>
           </li>
           <li>
+            <a href="?item=catmgr&act=do">دسته بندی
+                <span class="catmgr"></span>
+            </a>
+          </li>
+          <li>
             <a href="?item=newsmgr&act=do" id="news" name="news">مدیریت اخبار
                 <span class="news"></span>
             </a>
@@ -124,11 +129,6 @@ cd;
           <li>
             <a href="?item=slidesmgr&act=do">مدیریت اسلاید
                 <span class="slidemgr"></span>
-            </a>
-          </li>
-          <li>
-            <a href="?item=catmgr&act=do">دسته بندی
-                <span class="catmgr"></span>
             </a>
           </li>
     		  <li>
