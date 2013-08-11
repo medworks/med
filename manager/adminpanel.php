@@ -107,59 +107,37 @@ cd;
 	 <div id="mainnav" class="main-menu">
         <ul>
           <li>
-            <a href="?item=dashboard&act=do&type=line">پیشخوان
-               <span class="dashboard"></span>
-            </a>
+            <a href="?item=dashboard&act=do&type=line" class='dashboard'><p>پیشخوان</p></a>
           </li>
           <li>
-            <a href="?item=catmgr&act=do">دسته بندی
-                <span class="catmgr"></span>
-            </a>
+            <a href="?item=catmgr&act=do" class="catmgr"><p>دسته بندی</p></a>
           </li>
           <li>
-            <a href="?item=newsmgr&act=do" id="news" name="news">مدیریت اخبار
-                <span class="news"></span>
-            </a>
+            <a href="?item=newsmgr&act=do" id="news" name="news" class="news"><p>مدیریت اخبار</p></a>
           </li>
           <li >            
-            <a href="?item=worksmgr&act=do" id="works" name="works">مدیریت کار ها
-                <span class="works"></span>
-            </a>
+            <a href="?item=worksmgr&act=do" id="works" name="works" class="works"><p>مدیریت کار ها</p></a>
           </li>
           <li>
-            <a href="?item=slidesmgr&act=do">مدیریت اسلاید
-                <span class="slidemgr"></span>
-            </a>
+            <a href="?item=slidesmgr&act=do" class="slidemgr"><p>مدیریت اسلاید</p></a>
           </li>
     		  <li>
-            <a href="?item=blockmgr&act=do">مدیریت بلاک 
-                <span class="block"></span>
-            </a>
+            <a href="?item=blockmgr&act=do" class="block"><p>مدیریت بلاک</p></a>
           </li>
     		  <li>
-            <a href="?item=pluginmgr&act=do">مدیریت پلاگین
-                <span class="plugin"></span>
-            </a>
+            <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
           </li>
     		  <li >            
-              <a href="?item=usermgr&act=do" id="users" name="users">مدیریت کاربران
-                  <span class="users"></span>
-              </a>
+              <a href="?item=usermgr&act=do" id="users" name="users" class="users"><p>مدیریت کاربران</p></a>
             </li>	
             <li >            
-              <a href="?item=uploadmgr&act=do" id="users" name="users">مدیریت آپلود
-                  <span class="upload"></span>
-              </a>
+              <a href="?item=uploadmgr&act=do" id="users" name="users" class="upload"><p>مدیریت آپلود</p></a>
             </li>		  
             <li>
-              <a href="?item=thememgr&act=do">مدیریت قالب
-                  <span class="template"></span>
-              </a>
+              <a href="?item=thememgr&act=do" class="template"><p>مدیریت قالب</p></a>
             </li>
     		    <li>
-              <a href="?item=settingmgr&act=do">تنظیمات
-                  <span class="setting"></span>
-              </a>
+              <a href="?item=settingmgr&act=do" class="setting"><p>تنظیمات</p></a>
             </li>
         </ul>
       </div>

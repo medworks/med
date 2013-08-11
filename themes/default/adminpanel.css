@@ -4,6 +4,10 @@ body{
 	font-family: 'bmitra';
 }
 
+.container{
+  width: 980px;
+}
+
 div,table,form,label,input,a,p{
   direction: rtl;
 }
@@ -384,75 +388,66 @@ header #mini-nav span.newSignup{
 }
 
 #mainnav > ul > li{
-  position: relative;
-  margin-bottom: 10px; 		  
-  -webkit-border-radius: 15px; /* round the corner of box */
-  -moz-border-radius: 15px;    /* round the corner of box */
-  -ms-border-radius: 15px;    /* round the corner of box */
-  -o-border-radius: 15px;    /* round the corner of box */
-  border-radius: 15px;         /* round the corner of box */  	  
-  border: 2px solid #eee; 
-  -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-  -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-  -ms-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-  -o-box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
-  box-shadow: 4px 4px 4px rgba(0,0,0,0.2); 
+  position: relative;		  
+  -webkit-box-shadow: 1px 1px 4px rgba(0,0,0,0.2); 
+  -moz-box-shadow: 1px 1px 4px rgba(0,0,0,0.2); 
+  -ms-box-shadow: 14px 1px 4px rgba(0,0,0,0.2); 
+  -o-box-shadow: 1px 1px 4px rgba(0,0,0,0.2); 
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.2); 
   -webkit-transition: all 0.5s ease-out; 
   -moz-transition: all 0.5s ease; 
   -ms-transition: all 0.5s ease; 
   -o-transition: all 0.5s ease; 
-  transition: all 0.5s ease; 
+  transition: all 0.5s ease;
+  padding-right: 5px;
 }
 
-#mainnav > ul > li span{	              
-  display: block;
-  height: 48px;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 6px;
+#mainnav > ul > li a p{
+  margin-right: 35px;
+  padding-top: 4px;
 }
 
-#mainnav > ul > li span.dashboard{
+#mainnav > ul > li a.dashboard{
   background-image: url('images/admin/dashboard.png');
 }
 
-#mainnav > ul > li span.news{
+#mainnav > ul > li a.news{
   background-image: url('images/admin/news.png');
 }
 
-#mainnav > ul > li span.works{
+#mainnav > ul > li a.works{
   background-image: url('images/admin/works.png');
 }
 
-#mainnav > ul > li span.users{
+#mainnav > ul > li a.users{
   background-image: url('images/admin/users.png');
 }
 
-#mainnav > ul > li span.slidemgr{
+#mainnav > ul > li a.slidemgr{
   background-image: url('images/admin/slides.png');
 }
 
-#mainnav > ul > li span.plugin{
+#mainnav > ul > li a.plugin{
   background-image: url('images/admin/plugin.png');
 }
 
-#mainnav > ul > li span.block{
+#mainnav > ul > li a.block{
   background-image: url('images/admin/block.png');
 }
 
-#mainnav > ul > li span.catmgr{
+#mainnav > ul > li a.catmgr{
   background-image: url('images/admin/cat.png');
 }
 
-#mainnav > ul > li span.upload{
+#mainnav > ul > li a.upload{
   background-image: url('images/admin/upload-icon.png');
 }
 
-#mainnav > ul > li span.template{
+#mainnav > ul > li a.template{
   background-image: url('images/admin/template.png');
 }
 
-#mainnav > ul > li span.setting{
+#mainnav > ul > li a.setting{
   background-image: url('images/admin/setting.png');
 }
 
@@ -460,9 +455,7 @@ header #mini-nav span.newSignup{
   opacity: 1;
 }
 
-#mainnav > ul > li.active a {
-  background: transparent;
-  color: #d13736;
+#mainnav > ul > li.active a{
   opacity: 1;
   -webkit-filter: grayscale(0);
   -moz-filter: grayscale(0);
@@ -471,11 +464,17 @@ header #mini-nav span.newSignup{
   filter: grayscale(0);
 }
 
+#mainnav > ul > li.active a p{
+  color: #d13736;
+}
+
 #mainnav > ul > li > a {
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: right;
   display: block;
   opacity: 0.5;
   outline: 0;
-  padding: 8px 5px;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.3);
   font-size: 17px;
@@ -486,16 +485,42 @@ header #mini-nav span.newSignup{
   -ms-filter: grayscale(1);
   -o-filter: grayscale(1);
   filter: grayscale(1);
+  padding: 10px 5px;
 }
-  
-#mainnav > ul > li .current-arrow {
-  background-image: url("images/admin/menu-arrow.png");
+
+#mainnav > ul > li:first-child .current-arrow{
+  display: none;
+}
+
+#mainnav > ul > li .current-arrow{
   position: absolute;
-  right: 100px;
-  top: 25px;
-  z-index: 10;
-  width: 11px;
-  height: 20px; 
+}
+
+#mainnav > ul > li .current-arrow:before,
+#mainnav > ul > li .current-arrow:after{
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+#mainnav > ul > li .current-arrow:before{
+  border-color: rgba(0, 0, 0, 0);
+  border-right-color: transparent;
+  border-width: 40px;
+  top: 50%;
+  margin-top: -40px;
+}
+
+#mainnav > ul > li .current-arrow:after{
+  border-color: rgba(136, 183, 213, 0);
+  border-right-color: #d8d8d8;
+  border-width: 22px;
+  top: 50%;
+  margin-top: -43px;
 }
 /*************************************SUB menu for two column****************************/
 .sub-menu ul.two-column li{
@@ -507,6 +532,10 @@ header #mini-nav span.newSignup{
   margin-top: 35px !important;
 }
 /*************************************SUB menu******************************************/
+.sub-menu{
+  margin-bottom: 50px;
+}
+
 .sub-menu ul li{
   margin-top: 35px;
   width: 200px;
@@ -612,30 +641,19 @@ header #mini-nav span.newSignup{
  margin-bottom : 5px; 
 }
 /*  this section related to right nav div */
-.admin_right_panel   
-{
+.admin_right_panel{
  float : right;
- width :100px;
- min-height :500px;
- text-align : right;
- margin-right :10px;
- margin-top : 10px;
- margin-left :10px;
+ width :150px;
+ margin-top : 11px;
  }
 
  /* This Section related To Container Div Part*/	
 .admin_container{
-  min-height: 1060px;
   float : right;
   width : 780px;
   top: 15px;
   background: #fff;
   border: 1px solid #e6e6e6;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
   padding: 20px; 
   margin: 20px 0;
 }
