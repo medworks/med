@@ -28,12 +28,12 @@
 			<ul>
 			  <li>		  
 				<a href="?item=blockmgr&act=new"> ایجاد بلاک
-					<span class="add-works"></span>
+					<span class="add-block"></span>
 				</a>
 			  </li>
 			  <li>
 				<a href="?item=blockmgr&act=mgr" >حذف/ویرایش بلاک
-					<span class="edit-works"></span>
+					<span class="edit-block"></span>
 				</a>
 			  </li>
 			 </ul>

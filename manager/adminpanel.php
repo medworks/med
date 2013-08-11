@@ -133,12 +133,12 @@ cd;
           </li>
     		  <li>
             <a href="?item=blockmgr&act=do">مدیریت بلاک 
-                <span class=""></span>
+                <span class="block"></span>
             </a>
           </li>
     		  <li>
             <a href="?item=pluginmgr&act=do">مدیریت پلاگین
-                <span class=""></span>
+                <span class="plugin"></span>
             </a>
           </li>
     		  <li >            
