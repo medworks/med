@@ -62,10 +62,10 @@ include_once("./classes/messages.php");
 			case 'settingmgr':
                 if ($act=="do" or $act=="about" or $act=="seo" or $act=="grid" or $act=="emails") return "../manager/settingmgr.php";
 			break;
-			case 'blockmgr':
+			case 'blocksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/blockmgr.php";
 			break;
-			case 'pluginmgr':
+			case 'pluginsmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/pluginmgr.php";
 			break;
 
