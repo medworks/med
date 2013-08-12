@@ -50,34 +50,11 @@
 	<!--[if lt IE 9]>
 		<script src="./lib/js/html5shiv.js"></script>
 	<![endif]-->
+
 <?php
   $path = realpath(dirname(__FILE__));  
-  /*
-  include_once("./config.php");
-  include_once("./classes/database.php"); 
- */
-$html=<<<cd
-  <script type='text/javascript'>
-  
-  /*
-        $(document).ready(function(){
-          $('#works').click(function(){
-              // alert('test');
-             $('#container').load('./manager/worksmgr.php');
-             return false;
-          });
-		  $('#news').click(function(){
-              // alert('test');
-             $('#container').empty().load('./manager/newsmgr.php');
-             return false;
-          });
-        });
-		*/
-    </script>
-
-cd;
-//echo $html;
 ?>	
+
 </head>
 <body>
     <script>
@@ -86,6 +63,7 @@ cd;
          destination: "http://media.mediateq.ir"
        });
     </script>
+<div class="container">
     <header>
       <a href="../" class="logo" title="Mediateq" target="_blank">Mediateq website</a>
       <div id="mini-nav">
@@ -100,11 +78,10 @@ cd;
         <div class="badboy"></div>
       </div>
     </header>
- <!-- <div id="top" class= "admin_top">top</div> -->
- <div id="clear" class="badboy"> </div>
- <div class="container">
+    <div class="badboy"> </div>
+ 
  <div id="right" class="admin_right_panel"> 
-	 <div id="mainnav" class="main-menu">
+	  <div id="mainnav" class="main-menu">
         <ul>
           <li>
             <a href="?item=dashboard&act=do&type=line" class='dashboard'><p>پیشخوان</p></a>
@@ -128,19 +105,19 @@ cd;
             <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
           </li>
     		  <li >            
-              <a href="?item=usermgr&act=do" id="users" name="users" class="users"><p>مدیریت کاربران</p></a>
-            </li>	
-            <li >            
-              <a href="?item=uploadmgr&act=do" id="users" name="users" class="upload"><p>مدیریت آپلود</p></a>
-            </li>		  
-            <li>
-              <a href="?item=thememgr&act=do" class="template"><p>مدیریت قالب</p></a>
-            </li>
-    		    <li>
-              <a href="?item=settingmgr&act=do" class="setting"><p>تنظیمات</p></a>
-            </li>
+            <a href="?item=usermgr&act=do" id="users" name="users" class="users"><p>مدیریت کاربران</p></a>
+          </li>	
+          <li >            
+            <a href="?item=uploadmgr&act=do" id="users" name="users" class="upload"><p>مدیریت آپلود</p></a>
+          </li>		  
+          <li>
+            <a href="?item=thememgr&act=do" class="template"><p>مدیریت قالب</p></a>
+          </li>
+  		    <li>
+            <a href="?item=settingmgr&act=do" class="setting"><p>تنظیمات</p></a>
+          </li>
         </ul>
-      </div>
+    </div>
  
  </div> 
  <div id="container"  class="admin_container">
@@ -149,10 +126,14 @@ cd;
     	echo include_once GetPageName($_GET['item'],$_GET['act']); 
     ?>    
  </div>
- </div>
+
  <div class="badboy"></div>
  <footer>
+  <div class="foot">
    <p>پانل مدیرت مدیا تک</p>
+   <img src="../themes/default/images/admin/logo.png" alt="MEdiateq" />
+  </div>
  </footer>
+ </div>
 </body>
 </html>
