@@ -49,6 +49,7 @@
              copy($newname,$newname2);			 
 		   }	
          }
+		 unlink($newname);
 	}	 
    else	 
    { 
