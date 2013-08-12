@@ -514,9 +514,9 @@ header #mini-nav span.newSignup{
 #mainnav > ul > li .current-arrow:after{
   border-color: rgba(136, 183, 213, 0);
   border-right-color: #d8d8d8;
-  border-width: 22px;
+  border-width: 16px;
   top: 50%;
-  margin-top: -43px;
+  margin-top: -36px;
 }
 /*************************************SUB menu for two column****************************/
 .sub-menu ul.two-column li{
