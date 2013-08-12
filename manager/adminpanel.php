@@ -99,7 +99,7 @@
             <a href="?item=slidesmgr&act=do" class="slidemgr"><p>مدیریت اسلاید</p></a>
           </li>
     		  <li>
-            <a href="?item=blockmgr&act=do" class="block"><p>مدیریت بلاک</p></a>
+            <a href="?item=blocksmgr&act=do" class="block"><p>مدیریت بلاک</p></a>
           </li>
     		  <li>
             <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
