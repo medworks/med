@@ -14,6 +14,21 @@
 	if ($_GET['item']!="blocksmgr")	exit();
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();
+	
+	if ($_GET['act']=="new")
+	{
+		$editorinsert = "
+			<p>
+				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+				<input type='hidden' name='mark' value='saveblocks' />";
+	}
+	if ($_GET['act']=="edit")
+	{		
+		$editorinsert = "
+		<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editblocks' />";
+	}	
 	if ($_GET['act']=="do")
 	{
 	$html=<<<ht
@@ -44,19 +59,19 @@ ht;
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);	
-$pos = array("right"=>"راست",
-              "left"=>"چپ",
-			  "top"=>"بالا",
-			  "bottom"=>"پایین");
-$pos = SelectOptionTag("cbpos",$pos,"right");
-$auth = array("all"=>"کلیه کاربران",
-              "admin"=>"کاربران مدیر ",
-			  "user"=>"کاربران عضو");
-$auth = SelectOptionTag("cbauth",$auth,"all");
+$pos = array( "1"=>"راست",
+              "2"=>"چپ",
+			  "3"=>"بالا",
+			  "4"=>"پایین");
+$pos = SelectOptionTag("cbpos",$pos,"1");
+$auth = array("1"=>"کلیه کاربران",
+              "2"=>"کاربران مدیر ",
+			  "3"=>"کاربران عضو");
+$auth = SelectOptionTag("cbauth",$auth,"1");
 
-$type = array("normal"=>"عادی",
-              "circular"=>"چرخشی");
-$type = SelectOptionTag("cbtype",$type,"normal");
+$type = array("1"=>"عادی",
+              "2"=>"چرخشی");
+$type = SelectOptionTag("cbtype",$type,"1");
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -179,12 +194,12 @@ cd;
 if ($_GET['act']=="mgr")
 {
 	if ($_POST["mark"]=="srhnews")
-	{	 		
-	    
+	{	 			    
 		$rows = $db->SelectAll(
 				"block",
 				"*",
-				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",				
+				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
+				null,
 				$_GET["pageNo"]*10,
 				10);
 			if (!$rows) 
@@ -197,11 +212,12 @@ if ($_GET['act']=="mgr")
 		
 	}
 	else
-	{	
+	{		
 		$rows = $db->SelectAll(
 				"block",
 				"*",
-				null,				
+				null,
+				null,
 				$_GET["pageNo"]*10,
 				10);
     }
@@ -210,7 +226,25 @@ if ($_GET['act']=="mgr")
                 $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("block"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
-		        $rows[$i]["name"] =(mb_strlen($rows[$i]["name"])>20)?mb_substr($rows[$i]["name"],0,20,"UTF-8")."...":$rows[$i]["name"];                
+		        $rows[$i]["name"] =(mb_strlen($rows[$i]["name"])>20)?mb_substr($rows[$i]["name"],0,20,"UTF-8")."...":$rows[$i]["name"];
+			    switch($rows[$i]["pos"])
+				{
+				 case 1: $rows[$i]["pos"] = "راست"; break;
+				 case 2: $rows[$i]["pos"] = "چپ"; break;
+				 case 3: $rows[$i]["pos"] = "بالا"; break;
+				 case 4: $rows[$i]["pos"] = "پایین"; break;
+				}
+				switch($rows[$i]["acclevel"])
+				{
+				 case 1: $rows[$i]["acclevel"] = "کلیه کاربران"; break;
+				 case 2: $rows[$i]["acclevel"] = "کاربران مدیر"; break;
+				 case 3: $rows[$i]["acclevel"] = "کاربران عضو"; break;				 
+				}
+				switch($rows[$i]["contenttype"])
+				{
+				 case 1: $rows[$i]["contenttype"] = "عادی"; break;
+				 case 2: $rows[$i]["contenttype"] = "چرخشی"; break;				 
+				}
 				if ($i % 2==0)
 				 {
 						$rowsClass[] = "datagridevenrow";
@@ -244,9 +278,9 @@ del;
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=blocksmgr&act=mgr");
                     
-            }
+            }			
 $msgs = GetMessage($_GET['msg']);
-$list = array("name"=>"عنوان");
+$list = array("name"=>"نام");
 $combobox = SelectOptionTag("cbsearch",$list,"name");
 $code=<<<edit
 <script type='text/javascript'>
@@ -259,7 +293,7 @@ $code=<<<edit
 </script>	   
 					<div class="title">
 				      <ul>
-				        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
+				        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
 					    <li><span>مدیریت بلاک ها</span></li>
 				      </ul>
 				      <div class="badboy"></div>
@@ -271,20 +305,15 @@ $code=<<<edit
 
 								<p class="search-form">
 									<input type="text" id="date_input_1" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
-									<img src="../themes/default/images/admin/cal.png" class="cal-btn" id="date_btn_2" alt="cal-pic">
-							        
 									<a href="?item=blocksmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
 									<a href="?item=blocksmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
-
 								{$gridcode} 
-															
 							</form>
 					   </center>
 					</div>
-
 edit;
 $html = $code;
 }	
