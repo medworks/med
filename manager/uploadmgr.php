@@ -115,6 +115,16 @@
 	}
 	if ($_GET['act']=="del")
 	{
+	    $row=$db->Select("uploadcenter","*","id='{$_GET["uid"]}'",NULL);
+		$pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");
+		foreach($row['address'] as $key=>$val)
+		 {
+		   if ($val==1)
+		   {
+               $address= OS_ROOT."/{$pic_fldrs[key($row['address'])]}/".$row['image'];
+			   unlink($address);
+		   }
+         }		 
 		$db->Delete("uploadcenter"," id",$_GET["uid"]);
 		if ($db->CountAll("uploadcenter")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=uploadmgr&act=mgr&pageNo={$_GET[pageNo]}");
