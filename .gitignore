@@ -42,9 +42,11 @@ $RECYCLE.BIN/
 /workspics/*
 /slidespics/*
 /newspics/*
+/gallerypics/*
 !/userspics/*.txt
 !/tmp/*.txt
 !/workspics/*.txt
 !/slidespics/*.txt
 !/newspics/*.txt
+!/gallerypics/*.txt
 /themes/default/images/main/others/
