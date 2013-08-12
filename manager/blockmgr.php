@@ -157,6 +157,7 @@ $html=<<<cd
          <span>*</span>
       </p>
 	  {$plugin}
+	  <div class="badboy"></div>
 	  <p>
          <label for="cbpos">موقعیت مکانی</label>
          <span>*</span>
@@ -172,6 +173,7 @@ $html=<<<cd
          <span>*</span>
       </p>
 	  {$auth}
+	  <div class="badboy"></div>
       <p>
          <label for="cbtype">نوع محتوا</label>
          <span>*</span>
@@ -185,7 +187,8 @@ $html=<<<cd
 	  {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
-	</form> 
+	</form>
+</div> 
 
 <!-- TinyMCE -->
 	<script type="text/javascript" src="../lib/js/tiny/tiny_mce.js"></script>
