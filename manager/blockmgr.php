@@ -14,6 +14,60 @@
 	if ($_GET['item']!="blocksmgr")	exit();
 	$db = Database::GetDatabase();
 	$msg = Message::GetMessage();
+	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")
+	{	   
+		if (empty($_POST['content']))
+		{
+		   //header('location:?item=blocksmgr&act=new&msg=5');
+			$_GET["item"] = "blocksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 5;
+		    $overall_error = true;
+		}
+	}
+	if (!$overall_error && $_POST["mark"]=="saveblocks")
+	{	    
+		$fields = array("`name`","`pos`","`order`","`acclevel`","`plugin`","`content`","`contenttype`");
+		$_POST["content"] = addslashes($_POST["content"]);
+		$values = array("'{$_POST[subject]}'","'{$_POST[cbpos]}'","'{$_POST[order]}'","'{$_POST[cbauth]}'","'{$_POST[cbplugin]}'","'{$_POST[content]}'","'{$_POST[cbtype]}'");						
+		if (!$db->InsertQuery('block',$fields,$values)) 
+		{
+			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			header('location:?item=newsmgr&act=new&msg=2');
+			exit();
+		} 	
+		else 
+		{  										
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
+			header('location:?item=newsmgr&act=new&msg=1');
+		}  				 
+	}
+    else
+	if (!$overall_error && $_POST["mark"]=="editblocks")
+	{		
+	    $_POST["content"] = addslashes($_POST["content"]);	    
+		$values = array("`name`"=>"'{$_POST[subject]}'",
+						 "`pos`"=>"'{$_POST[cbpos]}'",
+						 "`order`"=>"'{$_POST[order]}'",
+						 "`acclevel`"=>"'{$_POST[cbauth]}'",
+						 "`plugin`"=>"'{$_POST[cbplugin]}'",
+						 "`content`"=>"'{$_POST[content]}'",
+						 "`contenttype`"=>"'{$_POST[cbtype]}'");			
+        $db->UpdateQuery("blocks",$values,array("id='{$_GET[bid]}'"));
+		header('location:?item=blocksmgr&act=mgr');
+	}
+
+	if ($overall_error)
+	{
+		$row = array("subject"=>$_POST['subject'],
+		             "image"=>$_POST['image'],
+					 "body"=>$_POST['detail'],
+					 "ndate"=>$_POST['ndate'],
+					 "userid"=>$userid,
+					 "resource"=>$_POST['res'],
+					 "groupname"=>$_POST['group']);
+	}
+	
 	
 	if ($_GET['act']=="new")
 	{
@@ -58,7 +112,10 @@ ht;
 } else
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
-$msgs = GetMessage($_GET['msg']);	
+$msgs = GetMessage($_GET['msg']);
+$plugin = array( "1"=>"خبرنامه",
+                 "2"=>"نظر سنجی");			     
+$plugin = SelectOptionTag("cbplugin",$plugin,"1");
 $pos = array( "1"=>"راست",
               "2"=>"چپ",
 			  "3"=>"بالا",
@@ -94,11 +151,12 @@ $html=<<<cd
          <label for="subject">عنوان </label>
          <span>*</span>
       </p>    
-      <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[subject]}'/> 
+      <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[name]}'/> 
 	  <p>
-         <label for="subject">انتساب به پلاگین</label>
+         <label for="cbplugin">انتساب به پلاگین</label>
          <span>*</span>
       </p>
+	  {$plugin}
 	  <p>
          <label for="cbpos">موقعیت مکانی</label>
          <span>*</span>
@@ -108,7 +166,7 @@ $html=<<<cd
          <label for="order">ترتیب مکانی</label>
          <span>*</span>
       </p>    
-      <input type="text" name="order" class="validate[required] subject" id="order" value='{$row[subject]}'/> 
+      <input type="text" name="order" class="validate[required] subject" id="order" value='{$row[order]}'/> 
       <p>
          <label for="cbauth">نمایش برای</label>
          <span>*</span>
@@ -123,7 +181,7 @@ $html=<<<cd
          <label for="content">محتوا </label>
          <span>*</span>
       </p>   
-	  <textarea cols="50" rows="10" name="content" class="detail" id="content" > </textarea>
+	  <textarea cols="40" rows="8" name="content" class="detail" id="content" > </textarea>
 	  {$editorinsert}       
       	 <input type="reset" value="پاک کردن" class='reset' /> 	 	     
        </p>  
