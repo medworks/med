@@ -282,9 +282,9 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
          return $option;
         }
 
-        function SelectOptionTag($optionname,$arraydata,$selected=Null,$onchange=Null)
+        function SelectOptionTag($optionname,$arraydata,$selected=Null,$onchange=Null,$classname=null)
         {
-            $option = "<select name='$optionname' class='$optionname' id='$optionname' onchange='$onchange' >";
+            $option = "<select name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
             foreach($arraydata as $key=>$val)
             {
                if ($selected == $key){ $select = "selected='1'";} else { $select="";}
