@@ -115,24 +115,24 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 $msgs = GetMessage($_GET['msg']);
 $plugin = array( "1"=>"خبرنامه",
                  "2"=>"نظر سنجی");			     
-$plugin = SelectOptionTag("cbplugin",$plugin,"1");
+$plugin = SelectOptionTag("cbplugin",$plugin,"1",null,"cbplugin");
 $pos = array( "1"=>"راست",
               "2"=>"چپ",
 			  "3"=>"بالا",
 			  "4"=>"پایین");
-$pos = SelectOptionTag("cbpos",$pos,"1");
+$pos = SelectOptionTag("cbpos",$pos,"1",null,'cbpos validate[required]');
 $auth = array("1"=>"کلیه کاربران",
               "2"=>"کاربران مدیر ",
 			  "3"=>"کاربران عضو");
-$auth = SelectOptionTag("cbauth",$auth,"1");
+$auth = SelectOptionTag("cbauth",$auth,"1",null,'cbauth validate[required]');
 
 $type = array("1"=>"عادی",
               "2"=>"چرخشی");
-$type = SelectOptionTag("cbtype",$type,"1");
+$type = SelectOptionTag("cbtype",$type,"1",null,'cbtype validate[required]');
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
-			$("#frmnewsmgr").validationEngine();			
+			$("#frmblocks").validationEngine();			
     });
 	</script>	   
   <div class="title">
@@ -154,7 +154,6 @@ $html=<<<cd
       <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[name]}'/> 
 	  <p>
          <label for="cbplugin">انتساب به پلاگین</label>
-         <span>*</span>
       </p>
 	  {$plugin}
 	  <div class="badboy"></div>
@@ -162,12 +161,12 @@ $html=<<<cd
          <label for="cbpos">موقعیت مکانی</label>
          <span>*</span>
       </p> 
-       {$pos}	  
+       {$pos}
+       <div class="badboy"></div>
       <p>
          <label for="order">ترتیب مکانی</label>
-         <span>*</span>
       </p>    
-      <input type="text" name="order" class="validate[required] subject" id="order" value='{$row[order]}'/> 
+      <input type="text" name="order" class="subject" id="order" value='{$row[order]}'/> 
       <p>
          <label for="cbauth">نمایش برای</label>
          <span>*</span>
@@ -179,9 +178,9 @@ $html=<<<cd
          <span>*</span>
       </p>    
       {$type}
+       <div class="badboy"></div>
 	  <p>
          <label for="content">محتوا </label>
-         <span>*</span>
       </p>   
 	  <textarea cols="40" rows="8" name="content" class="detail" id="content" > </textarea>
 	  {$editorinsert}       
