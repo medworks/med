@@ -17,13 +17,15 @@
  $pic_fldr_bit_addr = array("newspics"=>0,
                             "workspics"=>0,
   						    "userspics"=>0,
-							"slidespics"=>0);
+							"slidespics"=>0,
+							"gallerypics"=>0);
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
 	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
 	if ($_POST['picsaddr'][$i]=="workspics") {$pic_fldr_bit_addr["workspics"]= 1;}
 	if ($_POST['picsaddr'][$i]=="userspics") {$pic_fldr_bit_addr["userspics"]= 1;}
 	if ($_POST['picsaddr'][$i]=="slidespics") {$pic_fldr_bit_addr["slidespics"]= 1;}	  
+	if ($_POST['picsaddr'][$i]=="gallerypics") {$pic_fldr_bit_addr["gallerypics"]= 1;}	  
   }	  
   $str = "";
  foreach($pic_fldr_bit_addr as $key=>$val) {$str .= $val;}
@@ -114,7 +116,7 @@
 	{
 		$db->Delete("uploadcenter"," id",$_GET["uid"]);
 		if ($db->CountAll("uploadcenter")%10==0) $_GET["pageNo"]-=1;		
-		header("location:?item=slidesmgr&act=mgr&pageNo={$_GET[pageNo]}");
+		header("location:?item=uploadmgr&act=mgr&pageNo={$_GET[pageNo]}");
 	}	
 if ($_GET['act']=="do")
 {
@@ -150,7 +152,8 @@ $msgs = GetMessage($_GET['msg']);
 $chechbox = array("newspics"=>"پوشه اخبار",
                   "workspics"=>"پوشه فعالیت ها",
                   "userspics"=>"پوشه کاربران",
-				  "slidespics"=>"پوشه اسلاید ها");
+				  "slidespics"=>"پوشه اسلاید ها",
+				  "gallerypics"=>"پوشه گالری تصاویر");
 if ($_GET['act']=="edit")
 {
 	$checkboxes = CheckboxTag("picsaddr",$chechbox,$row['address']);

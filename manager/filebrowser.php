@@ -27,6 +27,11 @@
 		$dir='../slidespics';
 	}
 	else
+	if ($_GET['item']=="gallerymgr")
+	{	 
+		$dir='../gallerypics';
+	}
+	else
 	if ($_GET['item']=="usermgr")
 	{	 
 		$dir='../userspics';
@@ -66,7 +71,7 @@ $html=<<<cd
 	<div class="picmanager">
 		<div class="prev right">
 			<div class="pic">
-				<img id="previmage" src="../themes/default/images/admin/imgprev.jpg" alt="">
+				<img id="previmage" src="./images/imgprev.jpg" alt="">
 			</div>
 			<div class="detail">
 				<h2><span class="highlight">نام فایل: </span><span id="namepreview">---</span></h2>

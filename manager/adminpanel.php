@@ -98,6 +98,9 @@
           <li>
             <a href="?item=slidesmgr&act=do" class="slidemgr"><p>مدیریت اسلاید</p></a>
           </li>
+          <li>
+            <a href="?item=gallerymgr&act=do" class="gallerymgr"><p>گالری تصاویر</p></a>
+          </li>
     		  <li>
             <a href="?item=blockmgr&act=do" class="block"><p>مدیریت بلاک</p></a>
           </li>

@@ -50,6 +50,9 @@ include_once("./classes/messages.php");
 			case 'slidesmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/slidesmgr.php";
 			break;
+			case 'gallerymgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/gallerymgr.php";
+			break;
 			case 'catmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/categorymgr.php";
 			break;

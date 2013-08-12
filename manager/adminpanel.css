@@ -427,6 +427,10 @@ header #mini-nav span.newSignup{
   background-image: url('./images/slides.png');
 }
 
+#mainnav > ul > li a.gallerymgr{
+  background-image: url('./images/gallerymgr.png');
+}
+
 #mainnav > ul > li a.plugin{
   background-image: url('./images/plugin.png');
 }
@@ -604,6 +608,14 @@ header #mini-nav span.newSignup{
 
 .sub-menu ul li span.edit-slide{
   background-image: url('./images/editslides.png');
+}
+
+.sub-menu ul li span.add-gallery{
+  background-image: url('./images/addgallery.png');
+}
+
+.sub-menu ul li span.edit-gallery{
+  background-image: url('./images/editgallery.png');
 }
 
 .sub-menu ul li span.add-file{
