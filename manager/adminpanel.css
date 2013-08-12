@@ -802,7 +802,9 @@ footer p{
 
 .admin_container form .selectgroup,
 .admin_container form .cbplugin,
-.admin_container form .cbauth{
+.admin_container form .cbauth,
+.admin_container form .cbpos,
+.admin_container form .cbtype{
   float: right;
   width: 150px;
   outline: 0 none;
