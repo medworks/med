@@ -157,6 +157,7 @@ $html=<<<cd
          <span>*</span>
       </p>
 	  {$plugin}
+	  <div class="badboy"></div>
 	  <p>
          <label for="cbpos">موقعیت مکانی</label>
          <span>*</span>
@@ -172,6 +173,7 @@ $html=<<<cd
          <span>*</span>
       </p>
 	  {$auth}
+	  <div class="badboy"></div>
       <p>
          <label for="cbtype">نوع محتوا</label>
          <span>*</span>
