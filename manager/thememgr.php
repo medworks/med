@@ -46,9 +46,9 @@
 						$themes[] = array("Name"=>basename($file),
 									"Status"=>$Status,
 									"Active"=>($Stat==0)? "<a href='?item=thememgr&act=chg&name={$dirname}'" .
-									"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/disable.gif'></a>" :
+									"style='text-decoration:none;' class='dis-field' ></a>" :
 								    "<a href='?item=thememgr&act=chg&name={$dirname}' " .
-									"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/enable.gif'></a>");
+									"style='text-decoration:none;' class='en-field'></a>");
 					}
 				 }
            }

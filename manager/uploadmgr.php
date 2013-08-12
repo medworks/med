@@ -264,14 +264,14 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}				
-				$rows[$i]["edit"] = "<a href='?item=uploadmgr&act=edit&uid={$rows[$i]["id"]}' " .
-						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["edit"] = "<a href='?item=uploadmgr&act=edit&uid={$rows[$i]["id"]}' class='edit-field'" .
+						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
 				'?item=uploadmgr&act=del&pageNo={$_GET[pageNo]}&uid=');"
-				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
+				 class='del-field' style='text-decoration:none;'></a>
 del;
                }
 

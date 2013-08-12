@@ -219,7 +219,7 @@ $html.=<<<cd
         <label for="sdate">تاریخ </label>
         <span>*</span><br /><br />
         <input type="text" name="ndate" class="validate[required] ndate" id="date_input_1" value='{$row[ndate]}' />
-        <img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+        <img src="./images/cal.png" id="date_btn_1" alt="cal-pic">
          <script type="text/javascript">
           Calendar.setup({
             inputField  : "date_input_1",   // id of the input field
@@ -364,14 +364,14 @@ if ($_GET['act']=="mgr")
 						$rowsClass[] = "datagridoddrow";
 				}
 				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-				$rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' " .
-						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' class='edit-field'" .
+						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این خبر اطمینان دارید؟',
 				'?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
-				 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
+				 class='del-field' style='text-decoration:none;'></a>
 del;
                          }
 

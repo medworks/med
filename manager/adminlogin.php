@@ -33,11 +33,11 @@ else
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	<title>بخش مديريت سايت</title>		
 	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css"></link>   
-	<link rel="stylesheet" type="text/css" href="../themes/default/adminlogin.css"></link>	
+	<link rel="stylesheet" type="text/css" href="./adminlogin.css"></link>	
 	</head>
 	<body>
 	<div class="container">
-		<div class="logo"><img src="../themes/default/images/admin/logo.png" alt="mediateq"></div>
+		<div class="logo"><img src="./images/logo2.png" alt="mediateq"></div>
 		<div class="login-content">
 			<form action="" method="post">
 					<fieldset>

@@ -230,14 +230,14 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}				
-				$rows[$i]["edit"] = "<a href='?item=slidesmgr&act=edit&sid={$rows[$i]["id"]}' " .
-						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["edit"] = "<a href='?item=slidesmgr&act=edit&sid={$rows[$i]["id"]}' class='edit-field'" .
+						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
 				'?item=slidesmgr&act=del&pageNo={$_GET[pageNo]}&sid=');"
-				 style='text-decoration:none;'> <img src='../themes/default/images/admin/icons/delete.gif'></a>
+				 class='del-field' style='text-decoration:none;'></a>
 del;
                }
 

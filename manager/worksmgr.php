@@ -185,7 +185,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
 			<input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" value="{$row[sdate]}" />
-			<img src="../themes/default/images/admin/cal.png" id="date_btn_1" alt="cal-pic">
+			<img src="./images/cal.png" id="date_btn_1" alt="cal-pic">
 			 <script type="text/javascript">
 			  Calendar.setup({
 				inputField  : "date_input_1",   // id of the input field
@@ -203,7 +203,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			 <label for="fdate">تاریخ پایان </label>
 			 <span>*</span><br /><br />
 			 <input type="text" name="fdate" class="validate[required] fdate" id="date_input_2" value="{$row[fdate]}"/>
-			 <img src="../themes/default/images/admin/cal.png" id="date_btn_2" alt="cal-pic">
+			 <img src="./images/cal.png" id="date_btn_2" alt="cal-pic">
 			 <script type="text/javascript">
 			  Calendar.setup({
 				inputField  : "date_input_2",   // id of the input field
@@ -344,14 +344,14 @@ if ($_GET['act']=="mgr")
 						$rowsClass[] = "datagridoddrow";
 				}
 				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-				$rows[$i]["edit"] = "<a href='?item=worksmgr&act=edit&wid={$rows[$i]["id"]}' " .
-						"style='text-decoration:none;'><img src='../themes/default/images/admin/icons/edit.gif'></a>";								
+				$rows[$i]["edit"] = "<a href='?item=worksmgr&act=edit&wid={$rows[$i]["id"]}' class='edit-field'" .
+						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
 				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&wid=');"
-				 style='text-decoration:none;'><img src='../themes/default/images/admin/icons/delete.gif'></a>
+				 class='del-field' style='text-decoration:none;'></a>
 del;
                          }
 

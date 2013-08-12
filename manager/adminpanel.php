@@ -34,8 +34,8 @@
 	<title> پانل مدیریت</title>
 	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css" />
 	<link rel="stylesheet" type="text/css" href="../themes/css/validationEngine.css"/>
-	<link rel="stylesheet" type="text/css" href="../themes/css/calendar-blue.css" />
-	<link rel="stylesheet" type="text/css" href="../themes/default/adminpanel.css" />
+	<link rel="stylesheet" type="text/css" href="./calendar-blue.css" />
+	<link rel="stylesheet" type="text/css" href="./adminpanel.css" />
 
 	<script type="text/javascript" src="../lib/js/jquery.js"></script>  
 	<script type="text/javascript" src="../lib/js/jalali.js"></script>  
@@ -131,7 +131,7 @@
  <footer>
   <div class="foot">
    <p>پانل مدیرت مدیا تک</p>
-   <img src="../themes/default/images/admin/logo.png" alt="MEdiateq" />
+   <img src="./images/logo.png" alt="MEdiateq" />
   </div>
  </footer>
  </div>

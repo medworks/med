@@ -1,5 +1,5 @@
 body{
-  background: url('images/admin/login/bg-login-top.png');
+  background: url('./images/bg.jpg');
 	background-position: center;
 	font-family: 'bmitra';
 }
@@ -408,47 +408,47 @@ header #mini-nav span.newSignup{
 }
 
 #mainnav > ul > li a.dashboard{
-  background-image: url('images/admin/dashboard.png');
+  background-image: url('./images/dashboard.png');
 }
 
 #mainnav > ul > li a.news{
-  background-image: url('images/admin/news.png');
+  background-image: url('./images/news.png');
 }
 
 #mainnav > ul > li a.works{
-  background-image: url('images/admin/works.png');
+  background-image: url('./images/works.png');
 }
 
 #mainnav > ul > li a.users{
-  background-image: url('images/admin/users.png');
+  background-image: url('./images/users.png');
 }
 
 #mainnav > ul > li a.slidemgr{
-  background-image: url('images/admin/slides.png');
+  background-image: url('./images/slides.png');
 }
 
 #mainnav > ul > li a.plugin{
-  background-image: url('images/admin/plugin.png');
+  background-image: url('./images/plugin.png');
 }
 
 #mainnav > ul > li a.block{
-  background-image: url('images/admin/block.png');
+  background-image: url('./images/block.png');
 }
 
 #mainnav > ul > li a.catmgr{
-  background-image: url('images/admin/cat.png');
+  background-image: url('./images/cat.png');
 }
 
 #mainnav > ul > li a.upload{
-  background-image: url('images/admin/upload-icon.png');
+  background-image: url('./images/upload-icon.png');
 }
 
 #mainnav > ul > li a.template{
-  background-image: url('images/admin/template.png');
+  background-image: url('./images/template.png');
 }
 
 #mainnav > ul > li a.setting{
-  background-image: url('images/admin/setting.png');
+  background-image: url('./images/setting.png');
 }
 
 #mainnav > ul > li:hover a {	    
@@ -575,75 +575,75 @@ header #mini-nav span.newSignup{
 }
 
 .sub-menu ul li span.add-news{
-  background-image: url('images/admin/addnews.png');
+  background-image: url('./images/addnews.png');
 }
 
 .sub-menu ul li span.edit-news{
-  background-image: url('images/admin/editnews.png');
+  background-image: url('./images/editnews.png');
 }
 
 .sub-menu ul li span.add-works{
-  background-image: url('images/admin/addworks.png');
+  background-image: url('./images/addworks.png');
 }
 
 .sub-menu ul li span.edit-works{
-  background-image: url('images/admin/editworks.png');
+  background-image: url('./images/editworks.png');
 }
 
 .sub-menu ul li span.add-cat{
-  background-image: url('images/admin/add-cat.png');
+  background-image: url('./images/add-cat.png');
 }
 
 .sub-menu ul li span.edit-cat{
-  background-image: url('images/admin/edit-cat.png');
+  background-image: url('./images/edit-cat.png');
 }
 
 .sub-menu ul li span.add-slide{
-  background-image: url('images/admin/addslide.png');
+  background-image: url('./images/addslide.png');
 }
 
 .sub-menu ul li span.edit-slide{
-  background-image: url('images/admin/editslides.png');
+  background-image: url('./images/editslides.png');
 }
 
 .sub-menu ul li span.add-file{
-  background-image: url('images/admin/new-upload.png');
+  background-image: url('./images/new-upload.png');
 }
 
 .sub-menu ul li span.edit-file{
-  background-image: url('images/admin/editslides.png');
+  background-image: url('./images/editslides.png');
 }
 
 .sub-menu ul li span.add-user{
-  background-image: url('images/admin/add-user.png');
+  background-image: url('./images/add-user.png');
 }
 
 .sub-menu ul li span.edit-user{
-  background-image: url('images/admin/edit-user.png');
+  background-image: url('./images/edit-user.png');
 }
 
 .sub-menu ul li span.add-block{
-  background-image: url('images/admin/addblock.png');
+  background-image: url('./images/addblock.png');
 }
 
 .sub-menu ul li span.edit-block{
-  background-image: url('images/admin/editblock.png');
+  background-image: url('./images/editblock.png');
 }
 
 .sub-menu ul li span.information{
-  background-image: url('images/admin/information.png');
+  background-image: url('./images/information.png');
 }
 
 .sub-menu ul li span.seo-detail{
-  background-image: url('images/admin/seo-detail.png');
+  background-image: url('./images/seo-detail.png');
 }
 
 .sub-menu ul li span.email{
-  background-image: url('images/admin/email.png');
+  background-image: url('./images/email.png');
 }
 
 .sub-menu ul li span.about-us{
-  background-image: url('images/admin/aboutus.png');
+  background-image: url('./images/aboutus.png');
 }
 /***************************************************************************************/
 .admin_top{
@@ -680,7 +680,8 @@ header #mini-nav span.newSignup{
 }
 
 footer .foot{
-  text-align: center;    
+  text-align: center;
+  margin-right: 60px;   
 }
 
 footer .foot img{
@@ -941,34 +942,28 @@ select#cbpos{
   border-radius: 3px;
 }
 
-.admin_container form a.addgroup{
-  font-size: 18px;
-  cursor: pointer;
+.admin_container a.edit-field{
+  background: url('./images/icons/edit.gif') no-repeat center;
+  display: block;
+  height: 16px;
 }
 
-.admin_container form a.addgroup span{
-  display: inline-block;
-  margin-left: 5px;
-  width: 16px;
-  height: 14px;
-  background: url('images/admin/add.png') no-repeat center;
+.admin_container a.del-field{
+  background: url('./images/icons/delete.gif') no-repeat center;
+  display: block;
+  height: 16px;
 }
 
-.admin_container form input.addgroup-field{
-  display: none;
+.admin_container a.dis-field{
+  background: url('./images/icons/disable.gif') no-repeat center;
+  display: block;
+  height: 16px;
 }
 
-.admin_container form a.delfield{
-  display: none;
-  cursor: pointer;
-}
-
-.admin_container form a.delfield span{
-  display: inline-block;
-  margin-left: 5px;
-  width: 16px;
-  height: 6px;
-  background: url('images/admin/minus.png') no-repeat center;
+.admin_container a.en-field{
+  background: url('./images/icons/enable.gif') no-repeat center;
+  display: block;
+  height: 16px;
 }
 /*=============== data grid section  ===============*/
 .datagrid
