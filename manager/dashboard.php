@@ -14,63 +14,75 @@
 	}	
 	$db = Database::GetDatabase();
 	$news = $db->SelectAll("news","*",null,"ndate");	
-	$row = array();
-	$pie = array();
-	$itemcount = array();
-	$count = array();
-	foreach($news as $key => $val)
+	if (isset($news))
 	{
-	  $row[] = "'".ToJalali($val['ndate'],"Y-m-d")."'";	
+		$row = array();
+		$pie = array();
+		$itemcount = array();
+		$count = array();
+		foreach($news as $key => $val)
+		{
+		  $row[] = "'".ToJalali($val['ndate'],"Y-m-d")."'";	
+		}	
+		if (isset($row))
+		{
+			$uniq = array_unique($row);	
+			$itemcount = array_count_values($row);			
+			foreach($itemcount as $key => $val)
+			{
+				$count[] = $val;
+				$pie[] = "[{$key},{$val}]";
+			}
+			if ($_GET["type"]=="pie")
+			{		
+				//$xnAxis = implode(', ',$uniq);
+				$nseries = implode(', ',$pie);
+			}
+			else
+			{ 	
+				$xnAxis = implode(', ',$uniq);
+				$nseries = implode(', ',$count);
+			}
+			unset($row);
+			unset($itemcount);
+			unset($pie);
+			unset($count);
+		}	
 	}	
-	$uniq = array_unique($row);	
-	$itemcount = array_count_values($row);	
-	foreach($itemcount as $key => $val)
-	{
-		$count[] = $val;
-		$pie[] = "[{$key},{$val}]";
-	}
-	if ($_GET["type"]=="pie")
-	{		
-		//$xnAxis = implode(', ',$uniq);
-		$nseries = implode(', ',$pie);
-	}
-    else
-	{ 	
-		$xnAxis = implode(', ',$uniq);
-		$nseries = implode(', ',$count);
-	}
-    unset($row);
-	unset($itemcount);
-	unset($pie);
-	unset($count);	
 //*************************************************************
     $works = $db->SelectAll("works","*",null,"sdate");
-    foreach($works as $key => $val)
+	if (isset($works))
 	{
-	  $row[] = "'".ToJalali($val['sdate'],"Y-m-d")."'";	
+		foreach($works as $key => $val)
+		{
+		  $row[] = "'".ToJalali($val['sdate'],"Y-m-d")."'";	
+		}	
+		if (isset($row))
+		{			
+			$uniq = array_unique($row);	
+			$itemcount = array_count_values($row);
+			foreach($itemcount as $key => $val)
+			{
+				$count[] = $val;        
+				$pie[] = "[{$key},{$val}]";
+			}
+			if ($_GET["type"]=="pie")
+			{		
+				//$xwAxis = implode(', ',$uniq);		
+				$wseries = implode(', ',$pie);
+			}
+			else
+			{ 	
+				$xwAxis = implode(', ',$uniq);
+				$wseries = implode(', ',$count);
+			}
+			
+			unset($row);
+			unset($itemcount);
+			unset($pie);
+			unset($count);
+		}	
 	}	
-	$uniq = array_unique($row);	
-	$itemcount = array_count_values($row);	
-	foreach($itemcount as $key => $val)
-	{
-		$count[] = $val;        
-		$pie[] = "[{$key},{$val}]";
-	}
-	if ($_GET["type"]=="pie")
-	{		
-		//$xwAxis = implode(', ',$uniq);		
-		$wseries = implode(', ',$pie);
-	}
-    else
-	{ 	
-		$xwAxis = implode(', ',$uniq);
-	    $wseries = implode(', ',$count);
-	}
-	
-    unset($row);
-	unset($itemcount);
-	unset($pie);
-	unset($count);
 $list = array("none"=>"انتخاب نوع نمودار",
               "area"=>"محیطی",
               "line"=>"خطی",
