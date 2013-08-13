@@ -623,7 +623,7 @@ header #mini-nav span.newSignup{
 }
 
 .sub-menu ul li span.edit-file{
-  background-image: url('./images/editslides.png');
+  background-image: url('./images/edit-file.png');
 }
 
 .sub-menu ul li span.add-user{
@@ -693,7 +693,7 @@ header #mini-nav span.newSignup{
 
 footer .foot{
   text-align: center;
-  margin-right: 150px;   
+  margin-right: 165px;   
 }
 
 footer .foot img{

@@ -157,11 +157,6 @@ $(document).ready(function(){
             href= href.split('item=');
             href= href[1].split('&');
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
-        }else if(this.href.trim().match(/gallery/g)){
-            var href= url.substr(url.indexOf("item"));
-            href= href.split('item=');
-            href= href[1].split('#');
-            $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
         }
     });
 });
