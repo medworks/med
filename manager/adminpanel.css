@@ -800,11 +800,7 @@ footer p{
   display: block;
 }
 
-.admin_container form .selectgroup,
-.admin_container form .cbplugin,
-.admin_container form .cbauth,
-.admin_container form .cbpos,
-.admin_container form .cbtype{
+.admin_container form .select{
   float: right;
   width: 150px;
   outline: 0 none;
@@ -940,8 +936,7 @@ footer p{
   transition: background 500ms;
 }
 
-select#cbpos,
-select#cbtype{
+select.select2{
   display: block;
   text-align: right;
   outline: 0 none;
