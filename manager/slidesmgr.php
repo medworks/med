@@ -123,7 +123,7 @@ $list = array("1"=>"اسلاید بزرگ",
               "2"=>"اسلاید کوچک",
 			  "3"=>"همه موارد");
 $itemselect = ($row['pos'])? $row['pos'] :"1";
-$combobox = SelectOptionTag("cbpos",$list,$itemselect);
+$combobox = SelectOptionTag("cbpos",$list,$itemselect,null,'select2');
 $html=<<<cd
 		<script type='text/javascript'>
 			$(document).ready(function(){		

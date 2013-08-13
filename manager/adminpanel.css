@@ -536,7 +536,7 @@ header #mini-nav span.newSignup{
   margin-top: 35px;
   width: 200px;
   height: 200px;
-  margin-right: 250px;
+  margin-right: 300px;
 }
 
 .sub-menu ul li:first-child{
@@ -693,7 +693,7 @@ header #mini-nav span.newSignup{
 
 footer .foot{
   text-align: center;
-  margin-right: 60px;   
+  margin-right: 150px;   
 }
 
 footer .foot img{
@@ -800,11 +800,7 @@ footer p{
   display: block;
 }
 
-.admin_container form .selectgroup,
-.admin_container form .cbplugin,
-.admin_container form .cbauth,
-.admin_container form .cbpos,
-.admin_container form .cbtype{
+.admin_container form .select{
   float: right;
   width: 150px;
   outline: 0 none;
@@ -940,8 +936,7 @@ footer p{
   transition: background 500ms;
 }
 
-select#cbpos,
-select#cbtype{
+select.select2{
   display: block;
   text-align: right;
   outline: 0 none;

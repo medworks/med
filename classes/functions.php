@@ -288,7 +288,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
             foreach($arraydata as $key=>$val)
             {
                if ($selected == $key){ $select = "selected='1'";} else { $select="";}
-                $option.="<option value='$key'{$select} >$val</option>";
+                $option.="<option value='$key' {$select} >$val</option>";
             }
             $option.="</select>";
             //var_dump($option);

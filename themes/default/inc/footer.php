@@ -16,13 +16,14 @@
 							$db = database::GetDatabase();
 		  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 							for($i=0 ; $i<3 ; $i++){
-		  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
-								echo "<li>
-										<div class='pic'><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
-										<h3><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
-										<span class='date'>{$ndate}</span>
-									</li>";
-							}
+								if($news[$i]['subject']!=null){
+			  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
+									echo "<li>
+											<div class='pic'><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
+											<h3><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
+											<span class='date'>{$ndate}</span>
+										</li>";
+							}}
 						?>
 					</ul>
 					<div class="badboy"></div>
@@ -34,14 +35,15 @@
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$slides = $db->SelectAll('slides',NULL,NULL," pos DESC");
+		  					$gallery = $db->SelectAll('gallery',NULL,NULL,NULL);
 		  					
-							for($i=0 ; $i<3 ; $i++){ 
-								echo "<li>
-										<div class='pic'><a href='{$slides[$i][image]}' rel='prettyphoto[gallery1]' title='{$slides[$i]["subject"]}'><img src='{$slides[$i]["image"]}'alt='{$slides[$i]["subject"]}'></a></div>
-										<h3>{$slides[$i]["subject"]}</h3>
-									</li>";
-							}
+							for($i=0 ; $i<3 ; $i++){
+								if($gallery[$i]['image']!=null){
+									echo "<li>
+											<div class='pic'><a href='{$gallery[$i][image]}' rel='prettyphoto[gallery1]' title='{$gallery[$i]["subject"]}'><img src='{$gallery[$i]["image"]}'alt='{$gallery[$i]["subject"]}'></a></div>
+											<h3>{$gallery[$i]["subject"]}</h3>
+										</li>";
+							}}
 						?>
 					</ul>
 					<div class="badboy"></div>
@@ -56,15 +58,16 @@
 		  					$works = $db->SelectAll('works',NULL,NULL," sdate DESC");
 		  					
 							for($i=0 ; $i<3 ; $i++){
-								$sdate = ToJalali($works[$i]["sdate"]," l d F  Y"); 
-		  						$fdate = ToJalali($works[$i]["fworksdate"]," l d F  Y"); 
-								echo "<li>
-										<div class='pic'><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
-										<h3><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
-										<span class='date'>{$sdate}</span>
-										<span class='date'>{$fdate}</span>
-									</li>";
-							}
+								if($works[$i]['subject']!=null){
+									$sdate = ToJalali($works[$i]["sdate"]," l d F  Y"); 
+			  						$fdate = ToJalali($works[$i]["fworksdate"]," l d F  Y"); 
+									echo "<li>
+											<div class='pic'><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
+											<h3><a href='?item=fullworks&act=do&wid={$works[$i][id]}' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
+											<span class='date'>{$sdate}</span>
+											<span class='date'>{$fdate}</span>
+										</li>";
+							}}
 						?>
 					</ul>
 					<div class="badboy"></div>

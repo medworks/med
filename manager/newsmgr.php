@@ -162,7 +162,12 @@ ht;
 }else
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
-$msgs = GetMessage($_GET['msg']);	
+$msgs = GetMessage($_GET['msg']);
+$category = $db->SelectAll("category","*",null,"catname ASC");
+	for($i=0 ; $i<count($category) ; $i++){
+		$group[$category[$i]['catname']] = $category[$i]['catname'];
+    }		     
+$group = SelectOptionTag("group",$group,"1",null,"select");
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -180,17 +185,7 @@ $html=<<<cd
   <div class='content'>
 	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" >
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
-	 <select name="group" id='selectgroup' class='selectgroup validate[required]'>
-       		<option value="">انتخاب گروه</option>
-cd;
-		$category = $db->SelectAll("category","*",null,"catname ASC");
-		for($i=0 ; $i<count($category) ; $i++){
-$html.=<<<cd
-			<option value="{$category[$i][catname]}">{$category[$i][catname]}</option>
-cd;
-		}
-$html.=<<<cd
-       </select>
+	 {$group}
        <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>

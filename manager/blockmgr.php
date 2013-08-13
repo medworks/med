@@ -115,20 +115,20 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 $msgs = GetMessage($_GET['msg']);
 $plugin = array( "1"=>"خبرنامه",
                  "2"=>"نظر سنجی");			     
-$plugin = SelectOptionTag("cbplugin",$plugin,"1",null,"cbplugin");
+$plugin = SelectOptionTag("cbplugin",$plugin,"1",null,"select");
 $pos = array( "1"=>"راست",
               "2"=>"چپ",
 			  "3"=>"بالا",
 			  "4"=>"پایین");
-$pos = SelectOptionTag("cbpos",$pos,"1",null,'cbpos validate[required]');
+$pos = SelectOptionTag("cbpos",$pos,"1",null,'select validate[required]');
 $auth = array("1"=>"کلیه کاربران",
               "2"=>"کاربران مدیر ",
 			  "3"=>"کاربران عضو");
-$auth = SelectOptionTag("cbauth",$auth,"1",null,'cbauth validate[required]');
+$auth = SelectOptionTag("cbauth",$auth,"1",null,'select validate[required]');
 
 $type = array("1"=>"عادی",
               "2"=>"چرخشی");
-$type = SelectOptionTag("cbtype",$type,"1",null,'cbtype validate[required]');
+$type = SelectOptionTag("cbtype",$type,"1",null,'select validate[required]');
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
