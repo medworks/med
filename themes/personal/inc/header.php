@@ -1,9 +1,8 @@
 <?php
-	$Site_Title = GetSettingValue('Site_Title',0);
-	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	$Site_Describtion = GetSettingValue('Site_Describtion',0);
-?>
-<!doctype html>
+$Site_Title = GetSettingValue('Site_Title',0);
+$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
+$Site_Describtion = GetSettingValue('Site_Describtion',0);
+?><!doctype html>
 <html lang="fr">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -50,4 +49,4 @@
 				</ul>	
 			</div>
 			<div class="badboy"></div>
-		</header>
+		</header>	
