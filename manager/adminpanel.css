@@ -536,7 +536,7 @@ header #mini-nav span.newSignup{
   margin-top: 35px;
   width: 200px;
   height: 200px;
-  margin-right: 250px;
+  margin-right: 300px;
 }
 
 .sub-menu ul li:first-child{
@@ -693,7 +693,7 @@ header #mini-nav span.newSignup{
 
 footer .foot{
   text-align: center;
-  margin-right: 60px;   
+  margin-right: 150px;   
 }
 
 footer .foot img{
