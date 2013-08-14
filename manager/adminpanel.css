@@ -525,7 +525,7 @@ header #mini-nav span.newSignup{
 /*************************************SUB menu for two column****************************/
 .sub-menu ul.two-column li{
   float: right;
-  margin-right: 120px;
+  margin-right: 135px;
 }
 
 .sub-menu ul.two-column li:first-child{
