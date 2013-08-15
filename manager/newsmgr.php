@@ -148,9 +148,9 @@ $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
 			$("#frmnewsmgr").validationEngine();
-			$("#cbsec").change(function() {			
-			//$.get('{$_SERVER['REQUEST_URI']}&sec='+$(this).val(), function(data) {
+			$("#cbsec").change(function(){
 			$.get('ajaxcommand.php?sec='+$(this).val(), function(data) {
+					$('#catgory p').css('display','block')
 					$('#catgory').html(data);
 				});
 			});
@@ -173,11 +173,13 @@ $html=<<<cd
          <span>*</span>
        </p>    
 	 {$cbsection}
-	 <p>
-         <label for="cbsection">گروه </label>
-         <span>*</span>
-       </p>    
-	   <div id="catgory"></div>
+	 <div class="badboy"></div>    
+	   <div id="catgory">
+	   	   <p>
+	         <label for="cbsection">گروه </label>
+	         <span>*</span>
+	       </p>
+	   </div>
        <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>

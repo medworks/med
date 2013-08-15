@@ -981,6 +981,10 @@ select.select2{
   display: block;
   height: 16px;
 }
+
+#catgory p{
+  display: none;
+}
 /*=============== data grid section  ===============*/
 .datagrid
 {
