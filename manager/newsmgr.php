@@ -148,8 +148,9 @@ $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
 			$("#frmnewsmgr").validationEngine();
-			$("#cbsec").change(function() { alert($(this).val());
-			 $.post('{$_SERVER['REQUEST_URI']}&sec='+$(this).val(), function(data) {
+			$("#cbsec").change(function() {			
+			//$.get('{$_SERVER['REQUEST_URI']}&sec='+$(this).val(), function(data) {
+			$.get('ajaxcommand.php?sec='+$(this).val(), function(data) {
 					$('#catgory').html(data);
 				});
 			});
