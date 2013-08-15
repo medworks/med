@@ -527,13 +527,9 @@ header #mini-nav span.newSignup{
   float: right;
   margin-right: 135px;
 }
-
-.sub-menu ul.two-column li:first-child{
-  margin-top: 35px !important;
-}
 /*************************************SUB menu******************************************/
 .sub-menu ul li{
-  margin-top: 35px;
+  margin-bottom: 35px;
   width: 200px;
   height: 200px;
   margin-right: 300px;
@@ -600,6 +596,14 @@ header #mini-nav span.newSignup{
 
 .sub-menu ul li span.edit-cat{
   background-image: url('./images/edit-cat.png');
+}
+
+.sub-menu ul li span.add-headline{
+  background-image: url('./images/addheadline.png');
+}
+
+.sub-menu ul li span.edit-headline{
+  background-image: url('./images/editheadline.png');
 }
 
 .sub-menu ul li span.add-slide{
