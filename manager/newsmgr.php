@@ -48,16 +48,9 @@
 	}	
 	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
-		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`","`groupname`");
-		$_POST["detail"] = addslashes($_POST["detail"]);
-		if($_POST['group']!=null){
-			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group]}'");
-		}else{
-			$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[group2]}'");
-			$fields2 = array("`catname`");
-			$values2 = array("'{$_POST[group2]}'");
-			$db->InsertQuery('category',$fields2,$values2);
-		}
+		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+		$_POST["detail"] = addslashes($_POST["detail"]);		
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -73,28 +66,14 @@
     else
 	if (!$overall_error && $_POST["mark"]=="editnews")
 	{		
-	    $_POST["detail"] = addslashes($_POST["detail"]);
-	    if($_POST['group']!=null){
-			$values = array("`subject`"=>"'{$_POST[subject]}'",
+	    $_POST["detail"] = addslashes($_POST["detail"]);	    
+		$values = array("`subject`"=>"'{$_POST[subject]}'",
 			                 "`image`"=>"'{$_POST[selectpic]}'",
 							 "`body`"=>"'{$_POST[detail]}'",
 							 "`ndate`"=>"'{$ndatetime}'",
 							 "`userid`"=>"'{$userid}'",
-							 "`resource`"=>"'{$_POST[res]}'",
-							 "`groupname`"=>"'{$_POST[group]}'");
-		}else{
-			$values = array("`subject`"=>"'{$_POST[subject]}'",
-			                 "`image`"=>"'{$_POST[selectpic]}'",
-							 "`body`"=>"'{$_POST[detail]}'",
-							 "`ndate`"=>"'{$ndatetime}'",
-							 "`userid`"=>"'{$userid}'",
-							 "`resource`"=>"'{$_POST[res]}'",
-							 "`groupname`"=>"'{$_POST[group2]}'");
-
-			$fields2 = array("`catname`");
-			$values2 = array("'{$_POST[group2]}'");
-			$db->InsertQuery('category',$fields2,$values2);
-		}		
+							 "`resource`"=>"'{$_POST[res]}'");
+			
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
 	}
@@ -106,8 +85,7 @@
 					 "body"=>$_POST['detail'],
 					 "ndate"=>$_POST['ndate'],
 					 "userid"=>$userid,
-					 "resource"=>$_POST['res'],
-					 "groupname"=>$_POST['group']);
+					 "resource"=>$_POST['res']);
 	}
 	
 	
@@ -378,8 +356,7 @@ del;
 							"image"=>"تصویر",
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
-							"resource"=>"منبع",
-							"groupname"=>"گروه",
+							"resource"=>"منبع",							
 							"username"=>"کاربر",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
@@ -390,8 +367,7 @@ $msgs = GetMessage($_GET['msg']);
 $list = array("subject"=>"عنوان",
               "body"=>"توضیحات",
 			  "ndate"=>"تاریخ",
-			  "resource"=>"منبع",
-			  "groupname"=>"گروه");
+			  "resource"=>"منبع");
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
