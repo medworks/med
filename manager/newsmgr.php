@@ -142,7 +142,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"id ASC");
-$cbsection = DbSelectOptionTag("cbsec",$sections,"secname");	
+$cbsection = DbSelectOptionTag("cbsec",$sections,"secname");
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -166,6 +166,11 @@ $html=<<<cd
          <span>*</span>
        </p>    
 	 {$cbsection}
+	 <p>
+         <label for="cbsection">گروه </label>
+         <span>*</span>
+       </p>    
+	   
        <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>

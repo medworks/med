@@ -297,6 +297,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		function DbSelectOptionTag($optionname,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null)
         {
             $option = "<select name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
+			$option.="<option value=0>انتخاب کنید</option>";
             foreach($dbdata as $key=>$val)
             {			  
                if ($selected == $val["id"]){ $select = "selected='1'";} else { $select="";}
