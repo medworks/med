@@ -143,10 +143,16 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"id ASC");
 $cbsection = DbSelectOptionTag("cbsec",$sections,"secname");
+
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
-			$("#frmnewsmgr").validationEngine();			
+			$("#frmnewsmgr").validationEngine();
+			$("#cbsec").change(function() { alert($(this).val());
+			 $.post('{$_SERVER['REQUEST_URI']}&sec='+$(this).val(), function(data) {
+					$('#catgory').html(data);
+				});
+			});
     });
 	</script>	   
   <div class="title">
@@ -170,7 +176,7 @@ $html=<<<cd
          <label for="cbsection">گروه </label>
          <span>*</span>
        </p>    
-	   
+	   <div id="catgory"></div>
        <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>
