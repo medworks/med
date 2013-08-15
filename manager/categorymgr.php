@@ -87,11 +87,22 @@ if ($_GET['act']=="do")
 	    </div>
 		<div class="sub-menu" id="mainnav">
 			<ul>
+			<li>		  
+				<a href="?item=secmgr&act=new">سر گروه جدید
+					<span class="add-cat"></span>
+				</a>
+			  </li>
+			  <li>
+				<a href="?item=secmgr&act=mgr">حذف/ویرایش سر گروه ها
+					<span class="edit-cat"></span>
+				</a>
+			  </li>
 			  <li>		  
 				<a href="?item=catmgr&act=new">گروه جدید
 					<span class="add-cat"></span>
 				</a>
 			  </li>
+			  
 			  <li>
 				<a href="?item=catmgr&act=mgr">حذف/ویرایش گروه ها
 					<span class="edit-cat"></span>
