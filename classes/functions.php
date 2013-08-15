@@ -286,9 +286,21 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
         {
             $option = "<select name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
             foreach($arraydata as $key=>$val)
-            {
+            {			  
                if ($selected == $key){ $select = "selected='1'";} else { $select="";}
                 $option.="<option value='$key' {$select} >$val</option>";
+            }
+            $option.="</select>";
+            //var_dump($option);
+            return  $option;
+        }
+		function DbSelectOptionTag($optionname,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null)
+        {
+            $option = "<select name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
+            foreach($dbdata as $key=>$val)
+            {			  
+               if ($selected == $val["id"]){ $select = "selected='1'";} else { $select="";}
+                $option.="<option value='{$val["id"]}' {$select} >{$val[$feild]}</option>";
             }
             $option.="</select>";
             //var_dump($option);
