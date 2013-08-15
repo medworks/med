@@ -141,11 +141,8 @@ ht;
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
-$category = $db->SelectAll("category","*",null,"catname ASC");
-	for($i=0 ; $i<count($category) ; $i++){
-		$group[$category[$i]['catname']] = $category[$i]['catname'];
-    }		     
-$group = SelectOptionTag("group",$group,"1",null,"select");
+$sections = $db->SelectAll("section","*",null,"id ASC");
+$cbsection = DbSelectOptionTag("cbsec",$sections,"secname");	
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -163,7 +160,12 @@ $html=<<<cd
   <div class='content'>
 	<form name="frmnewsmgr" id="frmnewsmgr" class="" action="" method="post" >
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
-	 {$group}
+	 <div class="badboy"></div>
+       <p>
+         <label for="cbsection">سر گروه </label>
+         <span>*</span>
+       </p>    
+	 {$cbsection}
        <div class="badboy"></div>
        <p>
          <label for="subject">عنوان </label>
