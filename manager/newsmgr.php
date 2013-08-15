@@ -142,7 +142,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"id ASC");
-$cbsection = DbSelectOptionTag("cbsec",$sections,"secname");
+$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
 
 $html=<<<cd
 	<script type='text/javascript'>

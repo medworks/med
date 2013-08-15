@@ -16,7 +16,7 @@
  if (isset($_GET["sec"]))
 {
 	$category = $db->SelectAll("category","*","secid={$_GET[sec]}","id ASC");
-	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname");
+	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname",null,null,"select");
 	echo $cbcategory;
 }
 ?>
