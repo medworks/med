@@ -46,7 +46,8 @@
 		   if ($val==1)
 		   {		   
 			 $newname2 = OS_ROOT."/{$key}/".$newfilename;
-             copy($newname,$newname2);			 
+             copy($newname,$newname2);
+             $newname3 = "../{$key}/".$newfilename;			 
 		   }	
          }
 		 unlink($newname);
@@ -65,7 +66,7 @@
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
-	$values = array("'{$newfilename}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
+	$values = array("'{$newname3}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
