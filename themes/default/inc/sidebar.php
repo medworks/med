@@ -27,7 +27,7 @@
 		</ul>
 		<div class="badboy"></div>
 	</div>
-	<!-- ***********Login Panel************ -->
+	<!-- ***********Login Panel************ 
 	<div class="login-panel main-box">
 		<h2>ورود کاربران</h2>
 		<div class="line"></div>
@@ -42,6 +42,19 @@
 			<div class="badboy"></div>
 			<a href="#" class="forget">رمز خود را فراموش کرده ام!</a>
 			<div class="badboy"></div>
+		</div>
+	</div> -->
+	<!-- ***********Subscribe************ -->
+	<div class="subscrib main-box">
+		<h2>اشتراک</h2>
+		<div class="line"></div>
+		<div class="badboy"></div>
+		<div class="box-left">
+			<form action="">
+				<p>اشتراک خبرنامه به وسیله ایمیل</p>
+				<input type="text" class="validate[custom[email]] subscrib ltr" id="subscrib" value="Enter your e-mail address" onfocus="if (this.value == 'Enter your e-mail address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your e-mail address';}" />
+				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
+			</form>
 		</div>
 	</div>
 	<!-- ***********Gallery Slideshow************ -->
@@ -151,18 +164,6 @@
 		</div>
 	</div>
 	-->
-	<!-- ***********Subscribe************ -->
-	<div class="subscrib main-box">
-		<h2>اشتراک</h2>
-		<div class="line"></div>
-		<div class="badboy"></div>
-		<div class="box-left">
-			<form action="">
-				<p>اشتراک خبرنامه به وسیله ایمیل</p>
-				<input type="text" class="validate[custom[email]] subscrib ltr" id="subscrib" value="Enter your e-mail address" onfocus="if (this.value == 'Enter your e-mail address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your e-mail address';}" />
-				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
-			</form>
-		</div>
-	</div>
+	
 </div>
 <div class="badboy"></div>
