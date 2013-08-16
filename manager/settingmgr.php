@@ -86,7 +86,6 @@ else
 	<div class="title">
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
 			<li><span>درباره ما</span></li>
 	      </ul>
 	      <div class="badboy"></div>
@@ -174,7 +173,6 @@ ht;
 		<div class="title">
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
 			<li><span>اطلاعات سئو</span></li>
 	      </ul>
 	      <div class="badboy"></div>
@@ -213,7 +211,6 @@ ht;
 		<div class="title">
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
 			<li><span>ایمیل ها</span></li>
 	      </ul>
 	      <div class="badboy"></div>
@@ -251,7 +248,6 @@ ht;
 		<div class="title">
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><a href="?item=settingmgr&act=do">مدیریت تنظیمات</a></li>
 			<li><span>جداول اطلاعات</span></li>
 	      </ul>
 	      <div class="badboy"></div>
