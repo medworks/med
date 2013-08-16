@@ -44,7 +44,7 @@
 cd;
       if (mb_strlen($body)>500){
       $html.=<<<cd
-      <a href="?item=fullnews&act=do&wid={$post[id]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+      <a href="?item=fullnews&act=do&wid={$post[id]}" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
       }
       $html.=<<<cd

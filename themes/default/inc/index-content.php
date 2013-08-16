@@ -303,7 +303,7 @@ $html.=<<<cd
 cd;
 					if (mb_strlen($body)>100){
 						$html.=<<<cd
-						<a href="?item=fullnews&act=do&wid={$news[0][id]}" title="توضیحات بیشتر" class="button">توضیحات بیشتر</a>
+						<a href="?item=fullnews&act=do&wid={$news[0][id]}" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
 					}
 $html.=<<<cd
