@@ -54,7 +54,7 @@ include_once("./classes/messages.php");
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/gallerymgr.php";
 			break;
 			case 'secmgr':
-                if ($act=="do" or $act=="secnew" or $act=="secmgr" or $act=="secdel" or $act=="secedit") return "../manager/categorymgr.php";
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/categorymgr.php";
 			break;
 			case 'catmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/categorymgr.php";
