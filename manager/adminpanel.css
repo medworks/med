@@ -982,8 +982,8 @@ select.select2{
   height: 16px;
 }
 
-#catgory p{
-  display: none;
+#catgory select{
+  margin-right: 50px;
 }
 /*=============== data grid section  ===============*/
 .datagrid
