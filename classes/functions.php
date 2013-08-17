@@ -53,6 +53,9 @@ include_once("./classes/messages.php");
 			case 'gallerymgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/gallerymgr.php";
 			break;
+			case 'secmgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/categorymgr.php";
+			break;
 			case 'catmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/categorymgr.php";
 			break;
@@ -412,5 +415,18 @@ code;
             }
             return $ret;
     }
+	
+	function GetCategoryName($catid)
+	{
+	    $db = Database::GetDatabase();
+		$row = $db ->Select("category","catname","ID = '{$catid}'");
+		return ($row["catname"]);
+	}
+	function GetSectionName($secid)
+	{
+	    $db = Database::GetDatabase();
+		$row = $db ->Select("section","secname","ID = '{$secid}'");
+		return ($row["secname"]);
+	}
 	  
 ?>

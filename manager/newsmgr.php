@@ -48,9 +48,9 @@
 	}	
 	if (!$overall_error && $_POST["mark"]=="savenews")
 	{	    
-		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`");
+		$fields = array("`subject`","`image`","`body`","`ndate`","`userid`","`resource`","`catid`");
 		$_POST["detail"] = addslashes($_POST["detail"]);		
-		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'");
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$ndatetime}'","'{$userid}'","'{$_POST[res]}'","'{$_POST[cbcat]}'");
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -68,11 +68,12 @@
 	{		
 	    $_POST["detail"] = addslashes($_POST["detail"]);	    
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
-			                 "`image`"=>"'{$_POST[selectpic]}'",
-							 "`body`"=>"'{$_POST[detail]}'",
-							 "`ndate`"=>"'{$ndatetime}'",
-							 "`userid`"=>"'{$userid}'",
-							 "`resource`"=>"'{$_POST[res]}'");
+			            "`image`"=>"'{$_POST[selectpic]}'",
+						"`body`"=>"'{$_POST[detail]}'",
+						"`ndate`"=>"'{$ndatetime}'",
+						"`userid`"=>"'{$userid}'",
+						"`resource`"=>"'{$_POST[res]}'",
+						"`catid`"=>"'{$_POST[cbcat]}'");
 			
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=newsmgr&act=mgr');
@@ -85,7 +86,8 @@
 					 "body"=>$_POST['detail'],
 					 "ndate"=>$_POST['ndate'],
 					 "userid"=>$userid,
-					 "resource"=>$_POST['res']);
+					 "resource"=>$_POST['res'],
+					 "cat"=>$_POST['cbcat']);
 	}
 	
 	
@@ -142,7 +144,19 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"id ASC");
-$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
+if ($_GET['act']=="edit") 
+{   
+    $category = $db->SelectAll("category","*",null,"id ASC");
+    $secid = $db ->Select("category","secid","ID = '{$row[catid]}'")[0];	
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$secid}",null,"select");
+	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname","{$row[catid]}",null,"select");
+	
+}
+else
+{
+  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
+  $cbcategory = null;
+} 
 
 $html=<<<cd
 	<script type='text/javascript'>
@@ -155,7 +169,7 @@ $html=<<<cd
 				});
 			});
     });
-	</script>	   
+	</script>
   <div class="title">
       <ul>
         <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
@@ -179,6 +193,7 @@ $html=<<<cd
 	         <label for="cbsection">گروه </label>
 	         <span>*</span>
 	       </p>
+		   {$cbcategory}
 	   </div>
        <div class="badboy"></div>
        <p>
@@ -353,6 +368,7 @@ if ($_GET['act']=="mgr")
 						$rowsClass[] = "datagridoddrow";
 				}
 				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
+				$rows[$i]["catid"] = GetCategoryName($rows[$i]["catid"]);
 				$rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' class='edit-field'" .
 						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
@@ -368,6 +384,7 @@ del;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array( 
+					        "catid"=>"گروه",
 							"subject"=>"عنوان",
 							"image"=>"تصویر",
 							"body"=>"توضیحات",
