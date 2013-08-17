@@ -41,7 +41,7 @@
 		                "`catname`"=>"'{$_POST[catname]}'",
 						"`latinname`"=>"'{$_POST[latinname]}'",
 						"`describe`"=>"'{$_POST[describe]}'");		
-        $db->UpdateQuery("category",$values,array("id='{$_GET[cid]}'"));
+        $db->UpdateQuery("category",$values,array("id='{$_GET["cid"]}'"));
 		header('location:?item=catmgr&act=mgr');
 	}
 
@@ -286,38 +286,36 @@ $html = $code;
 } else
 if ($_GET['item']=="secmgr")
 {
-if (!$overall_error && $_POST["mark"]=="savecat")
+if (!$overall_error && $_POST["mark"]=="savesec")
 	{	    
-		$fields = array("`secid`","`catname`","`latinname`","`describe`");		
-		$values = array("'{$_POST[cbsec]}'","'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'");		
-		if (!$db->InsertQuery('category',$fields,$values)) 
+		$fields = array("`secname`","`latinname`","`describe`");		
+		$values = array("'{$_POST[secname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'");		
+		if (!$db->InsertQuery('section',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=catmgr&act=new&msg=2');
+			header('location:?item=secmgr&act=new&msg=2');
 			exit();
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			header('location:?item=catmgr&act=new&msg=1');
+			header('location:?item=secmgr&act=new&msg=1');
 		}  				 
 	}
     else
-	if (!$overall_error && $_POST["mark"]=="editcat")
-	{		
-	    //$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("`secid`"=>"'{$_POST[cbsec]}'",
-		                "`catname`"=>"'{$_POST[catname]}'",
+	if (!$overall_error && $_POST["mark"]=="editsec")
+	{			    
+		$values = array("`secname`"=>"'{$_POST[secname]}'",
 						"`latinname`"=>"'{$_POST[latinname]}'",
 						"`describe`"=>"'{$_POST[describe]}'");		
-        $db->UpdateQuery("category",$values,array("id='{$_GET[cid]}'"));
-		header('location:?item=catmgr&act=mgr');
+        $db->UpdateQuery("section",$values,array("id='{$_GET["sid"]}'"));
+		echo $db->cmd;
+		header('location:?item=secmgr&act=mgr');
 	}
 
 	if ($overall_error)
 	{
-		$row = array("secid"=>$_POST['cbsec'],
-		             "catname"=>$_POST['subject'],
+		$row = array("secname"=>$_POST['subject'],
 					 "latinname"=>$_POST['latinname'],
 					 "describe"=>$_POST['describe']);
 	}
@@ -395,15 +393,15 @@ if ($_GET['act']=="mgr")
 	if ($_POST["mark"]=="srhcat")
 	{	 		
 	   $rows = $db->SelectAll(
-				"category",
+				"section",
 				"*",
 				"{$_POST[cbsearch]} LIKE '%{$_POST[txtsrh]}%'",
-				"catname ASC",
+				"secname ASC",
 				$_GET["pageNo"]*10,
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "catmgr";
+				$_GET['item'] = "secmgr";
 				$_GET['act'] = "mgr";
 				$_GET['msg'] = 6;				
 				//header("Location:?item=newsmgr&act=mgr&msg=6");
@@ -413,19 +411,19 @@ if ($_GET['act']=="mgr")
 	else
 	{	
 		$rows = $db->SelectAll(
-				"category",
+				"section",
 				"*",
 				null,
-				"catname ASC",
+				"secname ASC",
 				$_GET["pageNo"]*10,
 				10);
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhcat")?$db->CountAll("category"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhcat")?$db->CountAll("section"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
-		        $rows[$i]["catname"] =(mb_strlen($rows[$i]["catname"])>20)?mb_substr($rows[$i]["catname"],0,20,"UTF-8")."...":$rows[$i]["catname"];
+		        $rows[$i]["secname"] =(mb_strlen($rows[$i]["secname"])>20)?mb_substr($rows[$i]["secname"],0,20,"UTF-8")."...":$rows[$i]["secname"];
 		        $rows[$i]["latinname"] =(mb_strlen($rows[$i]["latinname"])>20)?mb_substr($rows[$i]["latinname"],0,20,"UTF-8")."...":$rows[$i]["latinname"];
 		        $rows[$i]["describe"] =(mb_strlen($rows[$i]["describe"])>50)?mb_substr($rows[$i]["describe"],0,50,"UTF-8")."...":$rows[$i]["describe"];
                               
@@ -436,15 +434,14 @@ if ($_GET['act']=="mgr")
 				else
 				{
 						$rowsClass[] = "datagridoddrow";
-				}
-				$rows[$i]["secid"] = GetSectionName($rows[$i]["secid"]);
-				$rows[$i]["edit"] = "<a href='?item=catmgr&act=edit&cid={$rows[$i]["id"]}' class='edit-field' " .
+				}				
+				$rows[$i]["edit"] = "<a href='?item=secmgr&act=edit&sid={$rows[$i]["id"]}' class='edit-field' " .
 						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این گروه اطمینان دارید؟',
-				'?item=catmgr&act=del&pageNo={$_GET[pageNo]}&cid=');"
+				'?item=secmgr&act=del&pageNo={$_GET[pageNo]}&sid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
                          }
@@ -452,9 +449,8 @@ del;
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
-                    $gridcode .= DataGrid(array(
-					        "secid"=>"سر گروه",
-							"catname"=>"نام گروه",
+                    $gridcode .= DataGrid(array(					        
+							"secname"=>"نام گروه",
 							"latinname"=>"نام لاتین",
 							"describe"=>"توضیحات",							
                             "edit"=>"ویرایش",
@@ -463,7 +459,7 @@ del;
                     
             }
 $msgs = GetMessage($_GET['msg']);
-$list = array("catname"=>"نام گروه",
+$list = array("secname"=>"نام سر گروه",
 			  "latinname"=>"نام لاتین",
 			  "describe"=>"توضیحات" );
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
@@ -490,8 +486,8 @@ $code=<<<edit
 
 								<p class="search-form">
 									<input type="text" id="date_input_1" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
-									<a href="?item=catmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
-									<a href="?item=catmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+									<a href="?item=secmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=secmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhcat" /> 
 								{$msgs}
