@@ -4,6 +4,7 @@
 	include_once("./classes/database.php");
 	$db = database::getDatabase();
  	$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
+	$workstat = $db->SelectAll("workstat","*","workid = {$_GET[wid]}","id ASC");
 	$sdate = ToJalali($works["sdate"]," l d F  Y ");
 	$fdate = ToJalali($works["fdate"]," l d F  Y ");
 	$body= $works['body'];
@@ -32,37 +33,15 @@ $html=<<<ht
 			<div class="detail">
 				<div class="overview left">
 					<ul>
-						<li>
-							<h5>Graphic - 78%</h5>
-							<span>
-								<span style="width:78%"></span>
-							</span>
-						</li>
-						<li>
-							<h5>Dynamic - 90%</h5>
-							<span>
-								<span style="width:90%"></span>
-							</span>
-						</li>
-						<li>
-							<h5>Jquery - 58%</h5>
-							<span>
-								<span style="width:58%"></span>
-							</span>
-						</li>
-						<li>
-							<h5>Zepto - 38%</h5>
-							<span>
-								<span style="width:38%"></span>
-							</span>
-						</li>
-						<li>
-							<h5>Static - 10%</h5>
-							<span>
-								<span style="width:10%"></span>
-							</span>
-						</li>
-					</ul>
+ht;
+foreach($workstat as $key=>$val)
+{
+	$html.="<li> <h5> ".$key." - {$val["percent"]}% </h5>";
+	$html.="<span> <span style = 'width:{$val["percent"]}%'></span></span> </li>";
+}
+$html.=<<<ht
+				
+		</ul>
 				</div>
 				{$body}
 			</div>
