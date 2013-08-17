@@ -36,17 +36,6 @@
 			$overall_error = true;
 			//exit();
 		}
-		else
-		{			
-			if (empty($_POST['detail']))
-			{
-			   //header('location:?item=worksmgr&act=new&msg=5');
-				$_GET["item"] = "worksmgr";
-				$_GET["act"] = "new";
-				$_GET["msg"] = 5;
-			   $overall_error = true;
-			}			
-		}
 	}	
     if (!$overall_error && $_POST["mark"]=="saveworks")
 	{						   				
@@ -178,9 +167,8 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		   <div class="badboy"></div>
 		   <p>
 			 <label for="detail">توضیحات </label>
-			 <span>*</span>
 		   </p>
-		   <textarea cols="50" rows="10" name="detail" class="validate[required] detail" id="detail">{$row[body]}</textarea>
+		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail">{$row[body]}</textarea>
 		   <p>
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
@@ -233,7 +221,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			theme : "advanced",
 			skin : "o2k7",
 			plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
-			init_instance_callback : "initialiseInstance",
+			// init_instance_callback : "initialiseInstance",
 
 			// Theme options
 			theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,styleselect,formatselect,fontselect,fontsizeselect",
@@ -272,15 +260,15 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			}
 		});
 
-		function initialiseInstance(editor){
-			$('#submit').click(function(event){
-				if(editor.getContent()==""){
-					$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
-				}else{
-					$('#detail_tbl').validationEngine('hide');
-				}
-			});
-		}
+		// function initialiseInstance(editor){
+		// 	$('#submit').click(function(event){
+		// 		if(editor.getContent()==""){
+		// 			$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
+		// 		}else{
+		// 			$('#detail_tbl').validationEngine('hide');
+		// 		}
+		// 	});
+		// }
 	</script>
 	<!-- /TinyMCE -->  
 cd;

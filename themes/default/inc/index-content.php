@@ -335,7 +335,7 @@ $html.=<<<cd
 		<div class="cat-tabs-wrap" id="catab1">
 			<ul>
 cd;
-				$gallery= $db->SelectAll('gallery',NULL,NULL," subject DESC");
+				$gallery= $db->SelectAll('gallery',NULL,NULL," id DESC");
 $html.=<<<cd
 					<li class="first-li-picture">
 						<div class="pic first-tab-pic">

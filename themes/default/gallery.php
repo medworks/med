@@ -1,6 +1,6 @@
 <?php
 $db = database::GetDatabase();
-$gallery= $db->SelectAll('gallery',NULL,NULL," subject DESC");
+$gallery= $db->SelectAll('gallery',NULL,NULL," id DESC");
 
 $html="<div class='content'>
 		<div class='recent-works main-box'>
