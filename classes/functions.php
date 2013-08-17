@@ -416,7 +416,7 @@ code;
 	function GetCategoryName($catid)
 	{
 	    $db = Database::GetDatabase();
-		$row = $db ->Select("category","catname","ID = '{$catid}'");		
+		$row = $db ->Select("category","catname","ID = '{$catid}'");
 		return ($row["catname"]);
 	}
 	  
