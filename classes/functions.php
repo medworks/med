@@ -412,5 +412,15 @@ code;
             }
             return $ret;
     }
+	
+	function GetCategory($catid,$retfield=null)
+	{
+	    $db = Database::GetDatabase();
+		$row = $db ->Select("category","catname","ID = '{$catid}'");
+		if (isset($retfield))
+			return ($row[$retfield]);
+		else	
+			return ($row["catname"]);
+	}
 	  
 ?>
