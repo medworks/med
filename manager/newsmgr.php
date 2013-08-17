@@ -144,11 +144,19 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"id ASC");
-$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
-if ($_GEt['act']=="edit") 
-{   $secid = $db ->Select("category","secid","ID = '{$row[catid]}'");
-	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",{$secid},null,"select");
+if ($_GET['act']=="edit") 
+{   
+    $category = $db->SelectAll("category","*",null,"id ASC");
+    $secid = $db ->Select("category","secid","ID = '{$row[catid]}'")[0];	
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$secid}",null,"select");
+	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname","{$row[catid]}",null,"select");
+	
 }
+else
+{
+  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
+  $cbcategory = null;
+} 
 
 $html=<<<cd
 	<script type='text/javascript'>
@@ -161,7 +169,7 @@ $html=<<<cd
 				});
 			});
     });
-	</script>	   
+	</script>
   <div class="title">
       <ul>
         <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
@@ -185,6 +193,7 @@ $html=<<<cd
 	         <label for="cbsection">گروه </label>
 	         <span>*</span>
 	       </p>
+		   {$cbcategory}
 	   </div>
        <div class="badboy"></div>
        <p>
