@@ -335,28 +335,28 @@ $html.=<<<cd
 		<div class="cat-tabs-wrap" id="catab1">
 			<ul>
 cd;
-				$slides= $db->SelectAll('slides',NULL,NULL," pos DESC");
+				$gallery= $db->SelectAll('gallery',NULL,NULL," subject DESC");
 $html.=<<<cd
 					<li class="first-li-picture">
 						<div class="pic first-tab-pic">
-							<a href="{$slides[0][image]}" rel='prettyphoto[gallery2]' title="{$slides[0][subject]}">
-								<img src="{$slides[0][image]}" alt="{$slides[0][subject]}">
+							<a href="{$gallery[0][image]}" rel='prettyphoto[gallery2]' title="{$gallery[0][subject]}">
+								<img src="{$gallery[0][image]}" alt="{$gallery[0][subject]}">
 								<span class="overlay-zoom"></span>
 							</a>
 						</div>
 						<h2>
-							{$slides[0][subject]}
+							{$gallery[0][subject]}
 						</h2>
-						<div class="detial"><p>{$slides[0][body]}</p></div>
+						<div class="detial"><p>{$gallery[0][body]}</p></div>
 					</li>
 cd;
 				for($i=1 ; $i<13 ; $i++){
-					if($slides[$i]['image']!=null){
+					if($gallery[$i]['image']!=null){
 $html.=<<<cd
 					<li class="picture">
 						<div class="pic">
-							<a href="{$slides[$i][image]}" rel='prettyphoto[gallery2]' title="{$slides[$i][subject]}">
-								<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}">
+							<a href="{$gallery[$i][image]}" rel='prettyphoto[gallery2]' title="{$gallery[$i][subject]}">
+								<img src="{$gallery[$i][image]}" alt="{$gallery[$i][subject]}">
 							</a>
 						</div>
 					</li>	

@@ -1,6 +1,6 @@
 <?php
 $db = database::GetDatabase();
-$slides= $db->SelectAll('slides',NULL,NULL," pos ASC");
+$gallery= $db->SelectAll('gallery',NULL,NULL," subject DESC");
 
 $html="<div class='content'>
 		<div class='recent-works main-box'>
@@ -12,16 +12,16 @@ $html="<div class='content'>
 $html.=<<<ct
 				<ul>
 ct;
-					for($i=0 ; $i<count($slides) ; $i++){
+					for($i=0 ; $i<count($gallery) ; $i++){
 $html.=<<<ct
 						<li>
 							<div class="gallpic">
-								<a href="{$slides[$i][image]}" rel="prettyphoto[gallery3]" title="{$slides[$i][subject]}">
-									<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}" />
+								<a href="{$gallery[$i][image]}" rel="prettyphoto[gallery3]" title="{$gallery[$i][subject]}">
+									<img src="{$gallery[$i][image]}" alt="{$gallery[$i][subject]}" />
 									<span class="overlay-zoom"></span>
 								</a>
 							</div>
-							<h2>{$slides[$i][subject]}</h2>
+							<h2>{$gallery[$i][subject]}</h2>
 						</li>
 ct;
 					}
