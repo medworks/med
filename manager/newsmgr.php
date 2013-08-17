@@ -164,9 +164,8 @@ $html=<<<cd
 		$(document).ready(function(){	   
 			$("#frmnewsmgr").validationEngine();
 			$("#cbsec").change(function(){
-			$.get('ajaxcommand.php?sec='+$(this).val(), function(data) {
-					$('#catgory p').css('display','block')
-					$('#catgory').html(data);
+				$.get('ajaxcommand.php?sec='+$(this).val(), function(data) {
+						$('#catgory').html(data);
 				});
 			});
     });
@@ -187,13 +186,8 @@ $html=<<<cd
          <label for="cbsection">سر گروه </label>
          <span>*</span>
        </p>    
-	 {$cbsection}
-	 <div class="badboy"></div>    
+	 {$cbsection}   
 	   <div id="catgory">
-	   	   <p>
-	         <label for="cbsection">گروه </label>
-	         <span>*</span>
-	       </p>
 		   {$cbcategory}
 	   </div>
        <div class="badboy"></div>
