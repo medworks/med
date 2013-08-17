@@ -147,7 +147,8 @@ $sections = $db->SelectAll("section","*",null,"id ASC");
 if ($_GET['act']=="edit") 
 {   
     $category = $db->SelectAll("category","*",null,"id ASC");
-    $secid = $db ->Select("category","secid","ID = '{$row[catid]}'")[0];	
+    $secid = $db ->Select("category","secid","ID = '{$row[catid]}'");
+	$secid = $secid[0];
 	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$secid}",null,"select");
 	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname","{$row[catid]}",null,"select");
 	
