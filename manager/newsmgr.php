@@ -149,13 +149,13 @@ if ($_GET['act']=="edit")
     $category = $db->SelectAll("category","*",null,"id ASC");
     $secid = $db ->Select("category","secid","ID = '{$row[catid]}'");
 	$secid = $secid[0];
-	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$secid}",null,"select");
-	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname","{$row[catid]}",null,"select");
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$secid}",null,"select validate[required]");
+	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname","{$row[catid]}",null,"select validate[required]");
 	
 }
 else
 {
-  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");
+  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select select validate[required]");
   $cbcategory = null;
 } 
 
@@ -186,7 +186,7 @@ $html=<<<cd
          <label for="cbsection">سر گروه </label>
          <span>*</span>
        </p>    
-	 {$cbsection}   
+	   {$cbsection}   
 	   <div id="catgory">
 		   {$cbcategory}
 	   </div>

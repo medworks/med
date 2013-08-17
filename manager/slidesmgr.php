@@ -166,7 +166,6 @@ $html=<<<cd
 			<input type="text" name="body" class="validate[required] subject" id="body" value="{$row[body]}" /> 
 			<p>
 				<label for="cbpos">نمایش عکس در </label>
-				<span>*</span>
 			</p>
 			{$combobox}
 			{$editorinsert}

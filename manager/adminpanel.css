@@ -162,7 +162,7 @@ form .upload-file .action{
   background-image: -moz-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
   background-image: -ms-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
   background-image: -o-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  /*background-image: gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));*/
   background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
@@ -206,7 +206,7 @@ form .upload-file .action{
   background-image: -moz-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
   background-image: -ms-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
   background-image: -o-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
-  background-image: gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+  /*background-image: gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));*/
   background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
   background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
@@ -806,16 +806,16 @@ footer p{
 
 .admin_container form .select{
   float: right;
-  //width: 150px;
+  /*width: 150px;*/
   outline: 0 none;
   outline: 0 none;
-  //border: 1px solid #F1F1F1;
-  //border-top-color: #ddd;
-  //border-left-color: #ddd;
-  //background: #F9F9F9;
+  /*border: 1px solid #F1F1F1;*/
+  /*border-top-color: #ddd;*/
+  /*border-left-color: #ddd;*/
+  /*background: #F9F9F9;*/
   color: #000;
-  //padding: 4px 7px;
-  //margin-bottom: 15px;
+  /*padding: 4px 7px;*/
+  /*margin-bottom: 15px;*/
   display: block;
 }
 
