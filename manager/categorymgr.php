@@ -116,12 +116,8 @@ ht;
 if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
-$category = $db->SelectAll("category","*",null,"catname ASC");
-	$catgroup[""]="انتخاب گروه مادر";
-	for($i=0 ; $i<count($category) ; $i++){
-		$catgroup[$category[$i]['catname']] = $category[$i]['catname'];
-    }		     
-$catgroup = SelectOptionTag("parent",$catgroup,"0",null,"select");	
+$sections = $db->SelectAll("section","*",null,"secname ASC");
+$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");	
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -157,7 +153,7 @@ $html=<<<cd
        <p>
          <label for="detail">انتخاب گروه مادر </label>
        </p>
-       {$catgroup}
+       {$cbsection}
 	   <div class="badboy"></div>
        <p>
 	   {$editorinsert}       
