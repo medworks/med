@@ -18,9 +18,8 @@
 	if ($_GET['item']!="catmgr")	exit();
 	if (!$overall_error && $_POST["mark"]=="savecat")
 	{	    
-		$fields = array("`catname`","`latinname`","`describe`","`parent`");
-		//$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'","'{$_POST[parent]}'");		
+		$fields = array("`secid`","`catname`","`latinname`","`describe`");		
+		$values = array("'{$_POST[cbsec]}'","'{$_POST[catname]}'","'{$_POST[latinname]}'","'{$_POST[describe]}'");		
 		if (!$db->InsertQuery('category',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -37,20 +36,20 @@
 	if (!$overall_error && $_POST["mark"]=="editcat")
 	{		
 	    //$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("`catname`"=>"'{$_POST[catname]}'",
-						 "`latinname`"=>"'{$_POST[latinname]}'",
-						 "`describe`"=>"'{$_POST[describe]}'",
-						 "`parent`"=>"'{$_POST[parent]}'");		
-        $db->UpdateQuery("category",$values,array("id='{$_GET[nid]}'"));
+		$values = array("`secid`"=>"'{$_POST[cbsec]}'",
+		                "`catname`"=>"'{$_POST[catname]}'",
+						"`latinname`"=>"'{$_POST[latinname]}'",
+						"`describe`"=>"'{$_POST[describe]}'");		
+        $db->UpdateQuery("category",$values,array("id='{$_GET[cid]}'"));
 		header('location:?item=catmgr&act=mgr');
 	}
 
 	if ($overall_error)
 	{
-		$row = array("catname"=>$_POST['subject'],
+		$row = array("secid"=>$_POST['cbsec'],
+		             "catname"=>$_POST['subject'],
 					 "latinname"=>$_POST['latinname'],
-					 "describe"=>$_POST['describe'],
-					 "parent"=>$_POST['parent']);
+					 "describe"=>$_POST['describe']);
 	}
 	
 	
@@ -63,7 +62,7 @@ if ($_GET['act']=="new")
 }
 if ($_GET['act']=="edit")
 {
-	$row=$db->Select("category","*","id='{$_GET["nid"]}'",NULL);
+	$row=$db->Select("category","*","id='{$_GET["cid"]}'",NULL);
 	$editorinsert = "
 	<p>
       	 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
@@ -71,7 +70,7 @@ if ($_GET['act']=="edit")
 }
 if ($_GET['act']=="del")
 {
-	$db->Delete("category"," id",$_GET["nid"]);
+	$db->Delete("category"," id",$_GET["cid"]);
 	if ($db->CountAll("category")%10==0) $_GET["pageNo"]-=1;		
 	header("location:?item=catmgr&act=mgr&pageNo={$_GET[pageNo]}");
 }
@@ -117,7 +116,10 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 {
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"secname ASC");
-$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");	
+if ($_GET['act']=="edit")
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$row[secid]}",null,"select");
+else
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");	
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -212,13 +214,14 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}
-				$rows[$i]["edit"] = "<a href='?item=catmgr&act=edit&nid={$rows[$i]["id"]}' class='edit-field' " .
+				$rows[$i]["secid"] = GetSectionName($rows[$i]["secid"]);
+				$rows[$i]["edit"] = "<a href='?item=catmgr&act=edit&cid={$rows[$i]["id"]}' class='edit-field' " .
 						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این گروه اطمینان دارید؟',
-				'?item=catmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
+				'?item=catmgr&act=del&pageNo={$_GET[pageNo]}&cid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
                          }
@@ -226,11 +229,11 @@ del;
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
-                    $gridcode .= DataGrid(array( 
+                    $gridcode .= DataGrid(array(
+					        "secid"=>"سر گروه",
 							"catname"=>"نام گروه",
 							"latinname"=>"نام لاتین",
-							"describe"=>"توضیحات",
-							"parent"=>"گروه مادر",
+							"describe"=>"توضیحات",							
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=catmgr&act=mgr");
@@ -239,8 +242,7 @@ del;
 $msgs = GetMessage($_GET['msg']);
 $list = array("catname"=>"نام گروه",
 			  "latinname"=>"نام لاتین",
-			  "describe"=>"توضیحات",
-			  "parent"=>"گروه مادر");
+			  "describe"=>"توضیحات" );
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
