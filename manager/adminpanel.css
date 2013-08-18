@@ -529,9 +529,7 @@ header #mini-nav span.newSignup{
 }
 /*************************************SUB menu******************************************/
 .sub-menu ul li{
-  margin-bottom: 35px;
-  width: 200px;
-  height: 200px;
+  margin-bottom: 60px;
   margin-right: 300px;
 }
 
@@ -564,14 +562,15 @@ header #mini-nav span.newSignup{
   -ms-filter: none !important;
   -o-filter: none !important;
   filter: none !important;
+  padding: 10px 15px 150px !important;
 }
 
 .sub-menu ul li a span{
   display: block !important;
-  width: 128px !important;
   height: 128px !important;
-  margin-right: 30px !important;
-  margin-top: 15px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 10px;
 }
 
 .sub-menu ul li span.add-news{
