@@ -18,7 +18,8 @@
 		SetSettingValue("About_System",$_POST["about"]);		
 		//header('location:?item=settingmgr&act=do');
 		$_GET['item'] = "settingmgr";
-		$_GET['act'] = "do";		
+		$_GET['act'] = "about";
+		$_GET['msg'] = 1;
 	}
 	else
 	if ($_POST['mark']=="editseo")
@@ -28,7 +29,8 @@
 		SetSettingValue("Site_Describtion",$_POST["describe"]);
 		//header('location:?item=settingmgr&act=do');	
 		$_GET['item'] = "settingmgr";
-		$_GET['act'] = "do";		
+		$_GET['act'] = "seo";
+		$_GET['msg'] = 1;
 	}
 	else
 	if ($_POST['mark']=="editadd")
@@ -45,7 +47,8 @@
 		SetSettingValue("Address",$_POST["address"]);		
 		//header('location:?item=settingmgr&act=do');
 		$_GET['item'] = "settingmgr";
-		$_GET['act'] = "do";		
+		$_GET['act'] = "addresses";
+		$_GET['msg'] = 1;
 	}
 	else
 	if ($_POST['mark']=="editgrid")
@@ -54,7 +57,8 @@
 		SetSettingValue("Max_Post_Number",$_POST["Max_Post_Number"]);		
 		//header('location:?item=settingmgr&act=do');
 		$_GET['item'] = "settingmgr";
-		$_GET['act'] = "do";				
+		$_GET['act'] = "grid";
+		$_GET['msg'] = 1;
 	}
 	if ($_GET['act']=="do")
    {
