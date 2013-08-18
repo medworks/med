@@ -216,6 +216,11 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			  });
 			</script>
 		   </p>
+		   <p>
+			 درصد فعالیت ها
+			 <input type="text" name="substat" class="subject" id="substat" />
+			 <input type="text" name="percent" class="subject" id="percent" />
+		   </p>
 		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
