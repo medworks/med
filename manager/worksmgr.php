@@ -64,7 +64,7 @@
 		} 	
 		else 
 		{  										
-			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو�?قیت انجام شد");
 			//header('location:?item=worksmgr&act=new&msg=1');					
 			//exit();
 			$_GET["item"] = "worksmgr";
@@ -139,7 +139,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کارها
+				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذ�? / ویرایش کارها
 					<span class="edit-works"></span>
 				</a>
 			  </li>
@@ -289,7 +289,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		// function initialiseInstance(editor){
 		// 	$('#submit').click(function(event){
 		// 		if(editor.getContent()==""){
-		// 			$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
+		// 			$('#detail_tbl').validationEngine('showPrompt', '* لط�?ا �?یلد توضیحات را تکمیل نمایید', 'red', 'topRight');
 		// 		}else{
 		// 			$('#detail_tbl').validationEngine('hide');
 		// 		}
@@ -363,7 +363,7 @@ if ($_GET['act']=="mgr")
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
-					'از حذف این فعالیت اطمینان دارید؟',
+					'از حذ�? این �?عالیت اطمینان دارید؟',
 				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&wid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
@@ -379,7 +379,7 @@ del;
 							"sdate"=>"تاریخ شروع",
 							"fdate"=>"تاریخ پایان",							
                             "edit"=>"ویرایش",
-							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
+							"delete"=>"حذ�?",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=worksmgr&act=mgr");
                     
             }
