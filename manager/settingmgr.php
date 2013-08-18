@@ -27,11 +27,19 @@
 		header('location:?item=settingmgr&act=do');	
 	}
 	else
-	if ($_POST['mark']=="editemail")
+	if ($_POST['mark']=="editadd")
 	{
 		SetSettingValue("Admin_Email",$_POST["admin_email"]);
 		SetSettingValue("News_Email",$_POST["news_email"]);
 		SetSettingValue("Contact_Email",$_POST["contact_email"]);
+		SetSettingValue("FaceBook_Add",$_POST["facebook_add"]);
+		SetSettingValue("Twitter_Add",$_POST["twitter_add"]);
+		SetSettingValue("Rss_Add",$_POST["rss_add"]);
+		SetSettingValue("Youtube_Add",$_POST["youtube_add"]);
+		SetSettingValue("Tell_Number",$_POST["tel_number"]);
+		SetSettingValue("Fax_Number",$_POST["fax_number"]);
+		SetSettingValue("Address",$_POST["address"]);
+		
 		header('location:?item=settingmgr&act=do');		
 	}
 	else
@@ -64,7 +72,7 @@
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=settingmgr&act=emails" >ایمیل ها 
+				<a href="?item=settingmgr&act=addresses" >آدرس ها 
 					<span class="email"></span>
 				</a>
 			  </li>
@@ -202,7 +210,7 @@ ht;
 ht;
 	}
 	else
-	if ($_GET['act']=="emails")
+	if ($_GET['act']=="addresses")
 	{
 		$Admin_Email = GetSettingValue('Admin_Email',0);
 		$News_Email = GetSettingValue('News_Email',0);
@@ -211,11 +219,11 @@ ht;
 		<div class="title">
 	      <ul>
 	        <li><a href="?item=dashboard&act=do">پیشخوان</a></li>
-			<li><span>ایمیل ها</span></li>
+			<li><span>آدرس ها</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
-			<form name="frmemails" id= "frmemails" action="" method="post" >
+			<form name="frmaddresses" id= "frmaddresses" action="" method="post" >
 				<p>
 					<label for="subject">ایمیل ادمین</label>
 					<span>*</span>
@@ -232,8 +240,43 @@ ht;
 				</p>    
 				<input type="text" name="contact_email" class="validate[required] subject" id="contact_email" value='{$Contact_Email}'/>
 				<p>
+					<label for="facebook">آدرس فیس بوک </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="facebook_add" class="validate[required] subject" id="facebook_add" value='{$FaceBook_Add}'/>
+				<p>
+					<label for="twitter">آدرس تویتر </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="twitter_add" class="validate[required] subject" id="twitter_add" value='{$Twitter_Add}'/>
+				<p>
+					<label for="rss">آدرس RSS </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="rss_add" class="validate[required] subject" id="rss_add" value='{$Rss_Add}'/>
+				<p>
+					<label for="youtube">آدرس یوتیوب </label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="youtube_add" class="validate[required] subject" id="youtube_add" value='{$YouTube_Add}'/>
+				<p>
+					<label for="tel">تلفن شرکت</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="tel_number" class="validate[required] subject" id="tel_number" value='{$Tell_Number}'/>
+				<p>
+					<label for="fax">فاکس شرکت</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="fax_number" class="validate[required] subject" id="fax_number" value='{$Fax_Number}'/>
+				<p>
+					<label for="address">آدرس شرکت</label>
+					<span>*</span>
+				</p>    
+				<input type="text" name="address" class="validate[required] subject" id="address" value='{$Address}'/>
+				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
-			 <input type='hidden' name='mark' value='editemail' />
+			 <input type='hidden' name='mark' value='editadd' />
 		     <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
 			</form>
