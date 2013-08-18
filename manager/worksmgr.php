@@ -108,7 +108,7 @@
 	if ($_GET['act']=="del")
 	{
 		$db->Delete("works"," id",$_GET["wid"]);
-		if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
+		if ($db->CountAll("works")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=worksmgr&act=mgr&pageNo={$_GET[pageNo]}");
 	}	
 if ($_GET['act']=="do")
