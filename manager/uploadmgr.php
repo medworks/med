@@ -130,8 +130,7 @@
 		   if ($add[$i]==1)
 		   {
                //$address= OS_ROOT."/{$pic_fldrs[$i]}/".$row['image'];
-			   $address= "../{$pic_fldrs[$i]}/".$row['image'];
-			   echo "</br>",$address;
+			   $address= "../{$pic_fldrs[$i]}/".$row['image'];			   
 			   unlink($address);
 		   }
          }		 
