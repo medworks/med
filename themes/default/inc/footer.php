@@ -17,7 +17,7 @@
 		  					$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 							for($i=0 ; $i<3 ; $i++){
 								if($news[$i]['subject']!=null){
-			  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
+			  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
 											<div class='pic'><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
 											<h3><a href='?item=fullnews&act=do&wid={$news[$i][id]}' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
@@ -55,7 +55,7 @@
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$works = $db->SelectAll('works',NULL,NULL," sdate DESC");
+		  					$works = $db->SelectAll('works',NULL,NULL," id DESC");
 		  					
 							for($i=0 ; $i<3 ; $i++){
 								if($works[$i]['subject']!=null){
@@ -102,14 +102,20 @@
 				<a href="#">Mediateq</a>
 				 © Copyright 2013, All Rights Reserved
 			</div>
+			<?php
+				$youtube = GetSettingValue('YouTube_Add',0);
+				$facebook = GetSettingValue('FaceBook_Add',0);
+				$twitter = GetSettingValue('Twitter_Add',0);
+				$rss = GetSettingValue('Rss_Add',0);
+			?>
 			<div class="social right">
 				<ul>
-					<li><a href="#" class="ttip" original-title="Rss"><img src="./themes/default/images/rss.png" alt="Rss"></a></li>
-					<li><a href="#" class="ttip" original-title="Facebook"><img src="./themes/default/images/facebook.png" alt="Facebook"></a></li>
-					<li><a href="#" class="ttip" original-title="Twitter"><img src="./themes/default/images/twitter.png" alt="Twitter"></a></li>
+					<li><a href="http://<?php echo $rss; ?>" target="_blank" class="ttip" original-title="Rss"><img src="./themes/default/images/rss.png" alt="Rss"></a></li>
+					<li><a href="https://<?php echo $facebook; ?>" target="_blank" class="ttip" original-title="Facebook"><img src="./themes/default/images/facebook.png" alt="Facebook"></a></li>
+					<li><a href="https://<?php echo $twitter; ?>" target="_blank" class="ttip" original-title="Twitter"><img src="./themes/default/images/twitter.png" alt="Twitter"></a></li>
 					<li><a href="#" class="ttip" original-title="Pinterest"><img src="./themes/default/images/pinterest.png" alt="Pinterest"></a></li>
 					<li><a href="#" class="ttip" original-title="Dribbble"><img src="./themes/default/images/dribbble.png" alt="Dribbble"></a></li>
-					<li><a href="#" class="ttip" original-title="Youtube"><img src="./themes/default/images/youtube.png" alt="Youtube"></a></li>
+					<li><a href="https://<?php echo $youtube; ?>" target="_blank" class="ttip" original-title="Youtube"><img src="./themes/default/images/youtube.png" alt="Youtube"></a></li>
 					<li><a href="#" class="ttip" original-title="Behance"><img src="./themes/default/images/behance.png" alt="Behance"></a></li>
 					<li><a href="#" class="ttip" original-title="Instagram"><img src="./themes/default/images/instagram.png" alt="Instagram"></a></li>
 				</ul>
