@@ -215,6 +215,13 @@ ht;
 		$Admin_Email = GetSettingValue('Admin_Email',0);
 		$News_Email = GetSettingValue('News_Email',0);
 		$Contact_Email = GetSettingValue('Contact_Email',0);
+		$FaceBook_Add = GetSettingValue('FaceBook_Add',0);
+		$Twitter_Add = GetSettingValue('Twitter_Add',0);
+		$Rss_Add = GetSettingValue('Rss_Add',0);
+		$YouTube_Add = GetSettingValue('YouTube_Add',0);
+		$Tell_Number = GetSettingValue('Tell_Number',0);
+		$Fax_Number = GetSettingValue('Fax_Number',0);
+		$Address = GetSettingValue('Address',0);
 		$html=<<<ht
 		<div class="title">
 	      <ul>
