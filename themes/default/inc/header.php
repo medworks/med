@@ -87,7 +87,7 @@
 				</h2>
 			</div>
 			<div class="ads right">
-				<a href="#"><img src="./themes/default/images/text-logo.png"></a>
+				<a href="./" title="مدیا تک"><img src="./themes/default/images/text-logo.png" alt="mediateq"></a>
 			</div>
 		</div>
 		<div class="badboy"></div>

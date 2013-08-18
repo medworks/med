@@ -429,16 +429,16 @@ a.ttip, a.tooldown{display:inline-block;}
 	-ms-border-top-right-radius: 2px;
 	-o-border-top-right-radius: 2px;
 	border-top-right-radius: 2px;
-	-webkit-border-radius-topleft: 2px;
+	/*-webkit-border-radius-topleft: 2px;*/
 	-moz-border-radius-topleft: 2px;
 	-ms-border-radius-topleft: 2px;
 	-o-border-radius-topleft: 2px;
-	border-radius-topleft: 2px;
-	-webkit-border-radius-topright: 2px;
+	/*border-radius-topleft: 2px;*/
+	/*-webkit-border-radius-topright: 2px;*/
 	-moz-border-radius-topright: 2px;
 	-ms-border-radius-topright: 2px;
 	-o-border-radius-topright: 2px;
-	border-radius-topright: 2px;
+	/*border-radius-topright: 2px;*/
 	background:#FFF;
 	box-shadow: 0 -1px 2px #d4d4d4;
 	-ms-box-shadow:0 -1px 2px #d4d4d4;
@@ -800,7 +800,7 @@ div.container header .main-menu{
 }
 
 div.container header .main-menu > menu{
-	background: url('./images/main-menu-bg.png') repeat-x bottom;
+	background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA0CAYAAABLolKXAAAAG0lEQVQY02P4//8/AwM2QldX9//wIiwtLbESACm7V0A8fWJKAAAAAElFTkSuQmCC') repeat-x bottom;
 	height: 52px;
 	border-bottom: 5px solid #F88C00;
 }
@@ -1520,7 +1520,6 @@ footer .content ul li:first-child{
 
 footer .content ul li .pic{
 	float: right;
-	margin-right: 0 10px 0 0;
 }
 
 footer .content ul li .pic a{
