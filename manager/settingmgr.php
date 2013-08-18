@@ -6,7 +6,7 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");	
 	include_once("../classes/login.php");
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
     if (!$login->IsLogged())
 	 {
 		header("Location: ../index.php");

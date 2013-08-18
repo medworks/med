@@ -4,7 +4,7 @@
  include_once("../classes/messages.php");	
  include_once("../classes/functions.php"); 
  include_once("../classes/login.php");
- $login = Login::getLogin();
+ $login = Login::GetLogin();
  if (!$login->IsLogged())
  {
 	header("Location: ../index.php");

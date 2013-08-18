@@ -4,7 +4,7 @@
 	include_once("../classes/session.php");	
     include_once("../classes/security.php");	
     include_once("../classes/login.php");	
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
