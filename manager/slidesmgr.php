@@ -6,7 +6,7 @@
  include_once("../classes/functions.php"); 
  include_once("../lib/persiandate.php");
  include_once("../classes/login.php");
- $login = Login::getLogin();
+ $login = Login::GetLogin();
  if (!$login->IsLogged())
  {
 	header("Location: ../index.php");
@@ -36,14 +36,20 @@
 	if (!$db->InsertQuery('slides',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		header('location:?item=slidesmgr&act=new&msg=2');
-		exit();
+		//header('location:?item=slidesmgr&act=new&msg=2');
+		//exit();
+		$_GET["item"] = "slidsmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 2;
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		header('location:?item=slidesmgr&act=new&msg=1');					
-		exit();
+		//header('location:?item=slidesmgr&act=new&msg=1');					
+		//exit();
+		$_GET["item"] = "slidesmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 1;
 	 }
  }
  else
@@ -52,10 +58,11 @@
 	$values = array("`image`"=>"'{$_POST[selectpic]}'",
 	       		    "`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'",
-					"`pos`"=>"'{$_POST[cbpos]}'");		
+					"`pos`"=>"'{$_POST[cbpos]}'");
 	$db->UpdateQuery("slides",$values,array("id='{$_GET['sid']}'"));
-	//echo $db->cmd;
-	header('location:?item=slidesmgr&act=mgr');
+	//header('location:?item=slidesmgr&act=mgr');
+	$_GET["item"] = "slidesmgr";
+	$_GET["act"] = "mgr";	
  }
 
 	if ($overall_error)

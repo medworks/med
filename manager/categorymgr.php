@@ -6,7 +6,7 @@
 	include_once("../classes/functions.php");
 	include_once("../classes/login.php");
 	include_once("../lib/persiandate.php");	
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
@@ -24,13 +24,19 @@
 		if (!$db->InsertQuery('category',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=catmgr&act=new&msg=2');
-			exit();
+			//header('location:?item=catmgr&act=new&msg=2');
+			//exit();
+			$_GET["item"] = "catmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			header('location:?item=catmgr&act=new&msg=1');
+			//header('location:?item=catmgr&act=new&msg=1');
+			$_GET["item"] = "catmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -42,7 +48,9 @@
 						"`latinname`"=>"'{$_POST[latinname]}'",
 						"`describe`"=>"'{$_POST[describe]}'");		
         $db->UpdateQuery("category",$values,array("id='{$_GET["cid"]}'"));
-		header('location:?item=catmgr&act=mgr');
+		//header('location:?item=catmgr&act=mgr');
+		$_GET["item"] = "catmgr";
+		$_GET["act"] = "mgr";		
 	}
 
 	if ($overall_error)
@@ -293,13 +301,18 @@ if (!$overall_error && $_POST["mark"]=="savesec")
 		if (!$db->InsertQuery('section',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=secmgr&act=new&msg=2');
-			exit();
+			//header('location:?item=secmgr&act=new&msg=2');
+			$_GET["item"] = "secmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;			
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			header('location:?item=secmgr&act=new&msg=1');
+			//header('location:?item=secmgr&act=new&msg=1');
+			$_GET["item"] = "secmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -310,7 +323,9 @@ if (!$overall_error && $_POST["mark"]=="savesec")
 						"`describe`"=>"'{$_POST[describe]}'");		
         $db->UpdateQuery("section",$values,array("id='{$_GET["sid"]}'"));
 		echo $db->cmd;
-		header('location:?item=secmgr&act=mgr');
+		//header('location:?item=secmgr&act=mgr');
+		$_GET["item"] = "secmgr";
+		$_GET["act"] = "mgr";			
 	}
 
 	if ($overall_error)

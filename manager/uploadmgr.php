@@ -4,7 +4,7 @@
  include_once("../classes/messages.php");	
  include_once("../classes/functions.php"); 
  include_once("../classes/login.php");
- $login = Login::getLogin();
+ $login = Login::GetLogin();
  if (!$login->IsLogged())
  {
 	header("Location: ../index.php");
@@ -46,8 +46,7 @@
 		   if ($val==1)
 		   {		   
 			 $newname2 = OS_ROOT."/{$key}/".$newfilename;
-             copy($newname,$newname2);
-             $newname3 = "../{$key}/".$newfilename;			 
+             copy($newname,$newname2);             	 
 		   }	
          }
 		 unlink($newname);
@@ -66,18 +65,24 @@
  if (!$overall_error && $_POST["mark"]=="savefile")
  {						   				
 	$fields = array("`image`","`subject`","`body`","`address`");	
-	$values = array("'{$newname3}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
+	$values = array("'{$filename}'","'{$_POST[subject]}'","'{$_POST[body]}'","'{$str}'");
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		header('location:?item=uploadmgr&act=new&msg=2');
-		exit();
+		//header('location:?item=uploadmgr&act=new&msg=2');
+		//exit();
+		$_GET["item"] = "uploadmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 2;
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		header('location:?item=uploadmgr&act=new&msg=1');					
-		exit();
+		//header('location:?item=uploadmgr&act=new&msg=1');					
+		//exit();
+		$_GET["item"] = "uploadmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 1;
 	 }
  }
  else
@@ -86,8 +91,9 @@
 	$values = array("`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'");
 	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['uid']}'"));
-	//echo $db->cmd;
-	header('location:?item=uploadmgr&act=mgr');
+	//header('location:?item=uploadmgr&act=mgr');
+	$_GET["item"] = "uploadmgr";
+	$_GET["act"] = "mgr";	
  }
 
 	if ($overall_error)
@@ -118,11 +124,13 @@
 	{
 	    $row=$db->Select("uploadcenter","*","id='{$_GET["uid"]}'",NULL);
 		$pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");
-		foreach($row['address'] as $key=>$val)
+		$add = $row['address'];
+		for($i=0;$i<strlen($add);$i++)
 		 {
-		   if ($val==1)
+		   if ($add[$i]==1)
 		   {
-               $address= OS_ROOT."/{$pic_fldrs[key($row['address'])]}/".$row['image'];
+               //$address= OS_ROOT."/{$pic_fldrs[$i]}/".$row['image'];
+			   $address= "../{$pic_fldrs[$i]}/".$row['image'];			   
 			   unlink($address);
 		   }
          }		 

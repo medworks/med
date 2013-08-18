@@ -63,7 +63,7 @@ include_once("./classes/messages.php");
                 if ($act=="do" or $act=="chg" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/thememgr.php";
 			break;
 			case 'settingmgr':
-                if ($act=="do" or $act=="about" or $act=="seo" or $act=="grid" or $act=="emails") return "../manager/settingmgr.php";
+                if ($act=="do" or $act=="about" or $act=="seo" or $act=="grid" or $act=="addresses") return "../manager/settingmgr.php";
 			break;
 			case 'blocksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/blockmgr.php";
@@ -300,7 +300,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 		function DbSelectOptionTag($optionname,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null)
         {
             $option = "<select name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
-			$option.="<option value=0>انتخاب کنید</option>";
+			$option.="<option value=''>انتخاب کنید</option>";
             foreach($dbdata as $key=>$val)
             {			  
                if ($selected == $val["id"]){ $select = "selected='1'";} else { $select="";}

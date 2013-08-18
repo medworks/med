@@ -5,7 +5,7 @@
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
 	include_once("../classes/login.php");
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
@@ -38,15 +38,20 @@
 		if (!$db->InsertQuery('users',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=usermgr&act=new&msg=2');
-			exit();
+			//header('location:?item=usermgr&act=new&msg=2');
+			//exit();
+			$_GET["item"] = "usermgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-			header('location:?item=usermgr&act=new&msg=1');					
-			exit();
-			
+			//header('location:?item=usermgr&act=new&msg=1');					
+			//exit();
+			$_GET["item"] = "usermgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 		}  				 
 	}
 	else
@@ -63,7 +68,9 @@
 						 "`username`"=>"'{$_POST[username]}'",
 						 "`password`"=>"'{$pass}'");		
         $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
-		header('location:?item=usermgr&act=mgr');
+		//header('location:?item=usermgr&act=mgr');
+		$_GET["item"] = "usermgr";
+		$_GET["act"] = "mgr";		
 	}
 
 	if ($overall_error)

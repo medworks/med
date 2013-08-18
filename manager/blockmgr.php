@@ -5,7 +5,7 @@
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
 	include_once("../classes/login.php");
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
@@ -33,13 +33,19 @@
 		if (!$db->InsertQuery('block',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=newsmgr&act=new&msg=2');
-			exit();
+			//header('location:?item=blocksmgr&act=new&msg=2');
+			//exit();
+			$_GET["item"] = "blocksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			header('location:?item=newsmgr&act=new&msg=1');
+			//header('location:?item=blocksmgr&act=new&msg=1');
+			$_GET["item"] = "blocksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -54,7 +60,9 @@
 						 "`content`"=>"'{$_POST[content]}'",
 						 "`contenttype`"=>"'{$_POST[cbtype]}'");			
         $db->UpdateQuery("blocks",$values,array("id='{$_GET[bid]}'"));
-		header('location:?item=blocksmgr&act=mgr');
+		//header('location:?item=blocksmgr&act=mgr');
+		$_GET["item"] = "blocksmgr";
+		$_GET["act"] = "new";			
 	}
 
 	if ($overall_error)

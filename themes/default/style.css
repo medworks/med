@@ -1900,3 +1900,11 @@ section.main-content .content .detail p span{
 	-o-transition: background 500ms;
 	transition: background 500ms;
 }
+/*********************************About page*****************************/
+.aboutus p{
+	line-height: 2;
+}
+
+.aboutus span{
+  color: #000 !important;
+}

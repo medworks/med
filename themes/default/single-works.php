@@ -36,14 +36,21 @@ $html=<<<ht
 ht;
 foreach($workstat as $key=>$val)
 {
-	$html.="<li> <h5> ".$key." - {$val["percent"]}% </h5>";
+	$html.="<li> <h5>{$val[subject]} - {$val[percent]}% </h5>";
 	$html.="<span> <span style = 'width:{$val["percent"]}%'></span></span> </li>";
 }
 $html.=<<<ht
 				
-		</ul>
+					</ul>
 				</div>
 				{$body}
+ht;
+			if($works['link']!=null){
+$html.=<<<ht
+				<a href="http://{$works[link]}" title="{$works[subject]}" target="_blank" class="button">لینک سایت</a>
+ht;
+			}
+$html.=<<<ht
 			</div>
 			<div class="badboy"></div>
 		</div>

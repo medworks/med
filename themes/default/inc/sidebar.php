@@ -1,6 +1,10 @@
 <?php
 	include_once("./classes/database.php");
 	$db = database::GetDatabase();
+	$youtube = GetSettingValue('YouTube_Add',0);
+	$facebook = GetSettingValue('FaceBook_Add',0);
+	$twitter = GetSettingValue('Twitter_Add',0);
+	$rss = GetSettingValue('Rss_Add',0);
 ?>
 <div class="sidebar">
 	<!-- ***********Slideshow************ -->
@@ -10,19 +14,19 @@
 				<a href="#" class="dribble"></a>
 			</li>
 			<li>
-				<a href="#" class="facebook"></a>
+				<a href="https://<?php echo $facebook; ?>" target="_blank" class="facebook"></a>
 			</li>
 			<li>
-				<a href="#" class="twitter"></a>
+				<a href="https://<?php echo $twitter; ?>" target="_blank" class="twitter"></a>
 			</li>
 			<li>
 				<a href="#" class="vimeo"></a>
 			</li>
 			<li>
-				<a href="#" class="youtube"></a>
+				<a href="https://<?php echo $youtube; ?>" target="_blank" class="youtube"></a>
 			</li>
 			<li>
-				<a href="#" class="rss"></a>
+				<a href="http://<?php echo $rss; ?>" target="_blank" class="rss"></a>
 			</li>
 		</ul>
 		<div class="badboy"></div>

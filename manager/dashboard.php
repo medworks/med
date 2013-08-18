@@ -6,7 +6,7 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");
 	if ($_GET['item']!="dashboard")	exit();
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");

@@ -6,7 +6,7 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");	
 	include_once("../classes/login.php");
-	$login = Login::getLogin();
+	$login = Login::GetLogin();
     if (!$login->IsLogged())
 	 {
 		header("Location: ../index.php");
@@ -50,20 +50,26 @@
 	}	
     if (!$overall_error && $_POST["mark"]=="saveworks")
 	{						   				
-		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+		$fields = array("`subject`","`image`","`body`","`link`","`sdate`","`fdate`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$_POST[link]}'","'{$sdatetime}'","'{$fdatetime}'");	
 		if (!$db->InsertQuery('works',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=worksmgr&act=new&msg=2');
-			exit();
+			//header('location:?item=worksmgr&act=new&msg=2');
+			//exit();
+			$_GET["item"] = "worksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
-			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-			header('location:?item=worksmgr&act=new&msg=1');					
-			exit();
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو�?قیت انجام شد");
+			//header('location:?item=worksmgr&act=new&msg=1');					
+			//exit();
+			$_GET["item"] = "worksmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 			
 		}  				 
 	}
@@ -74,17 +80,21 @@
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`body`"=>"'{$_POST[detail]}'",
+						 "`link`"=>"'{$_POST[link]}'",
 						 "`sdate`"=>"'{$sdatetime}'",
 						 "`fdate`"=>"'{$fdatetime}'");		
         $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));		
-		header('location:?item=worksmgr&act=mgr');
+		//header('location:?item=worksmgr&act=mgr');
+		$_GET["item"] = "worksmgr";
+		$_GET["act"] = "mgr";			
 	}
 
 	if ($overall_error)
 	{
 		$row = array("subject"=>$_POST['subject'],
 					 "image"=>$_POST['image'],
-					 "body"=>$_POST['detail'],					
+					 "body"=>$_POST['detail'],
+					 "link"=>$_POST['link'],
 					 "sdate"=>$_POST['sdate'],
 					 "fdate"=>$_POST['fdate']);
 	}
@@ -108,7 +118,7 @@
 	if ($_GET['act']=="del")
 	{
 		$db->Delete("works"," id",$_GET["wid"]);
-		if ($db->CountAll("news")%10==0) $_GET["pageNo"]-=1;		
+		if ($db->CountAll("works")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=worksmgr&act=mgr&pageNo={$_GET[pageNo]}");
 	}	
 if ($_GET['act']=="do")
@@ -129,7 +139,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کار ها
+				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کارها
 					<span class="edit-works"></span>
 				</a>
 			  </li>
@@ -181,6 +191,10 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		   </p>
 		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail">{$row[body]}</textarea>
 		   <p>
+			 <label for="link">آدرس کار </label>
+		   </p>  	 
+		   <input type="text" name="link" class="ltr subject" id="link" value="{$row[link]}" />
+		   <p>
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
 			<input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" value="{$row[sdate]}" />
@@ -215,7 +229,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 					weekNumbers : true,
 			  });
 			</script>
-		   </p>
+		   </p>		  		   
 		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
@@ -274,7 +288,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		// function initialiseInstance(editor){
 		// 	$('#submit').click(function(event){
 		// 		if(editor.getContent()==""){
-		// 			$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
+		// 			$('#detail_tbl').validationEngine('showPrompt', '* لط??ا ??یلد توضیحات را تکمیل نمایید', 'red', 'topRight');
 		// 		}else{
 		// 			$('#detail_tbl').validationEngine('hide');
 		// 		}
@@ -348,7 +362,7 @@ if ($_GET['act']=="mgr")
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
-					'از حذف این فعالیت اطمینان دارید؟',
+					'از حذف این ??عالیت اطمینان دارید؟',
 				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&wid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
