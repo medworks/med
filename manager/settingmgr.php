@@ -16,7 +16,9 @@
 	if ($_POST['mark']=="editabout")
 	{
 		SetSettingValue("About_System",$_POST["about"]);		
-		header('location:?item=settingmgr&act=do');
+		//header('location:?item=settingmgr&act=do');
+		$_GET['item'] = "settingmgr";
+		$_GET['act'] = "do";		
 	}
 	else
 	if ($_POST['mark']=="editseo")
@@ -24,7 +26,9 @@
 		SetSettingValue("Site_Title",$_POST["title"]);
 		SetSettingValue("Site_KeyWords",$_POST["keywords"]);
 		SetSettingValue("Site_Describtion",$_POST["describe"]);
-		header('location:?item=settingmgr&act=do');	
+		//header('location:?item=settingmgr&act=do');	
+		$_GET['item'] = "settingmgr";
+		$_GET['act'] = "do";		
 	}
 	else
 	if ($_POST['mark']=="editadd")
@@ -38,16 +42,19 @@
 		SetSettingValue("Youtube_Add",$_POST["youtube_add"]);
 		SetSettingValue("Tell_Number",$_POST["tel_number"]);
 		SetSettingValue("Fax_Number",$_POST["fax_number"]);
-		SetSettingValue("Address",$_POST["address"]);
-		
-		header('location:?item=settingmgr&act=do');		
+		SetSettingValue("Address",$_POST["address"]);		
+		//header('location:?item=settingmgr&act=do');
+		$_GET['item'] = "settingmgr";
+		$_GET['act'] = "do";		
 	}
 	else
 	if ($_POST['mark']=="editgrid")
 	{
 		SetSettingValue("Max_Page_Number",$_POST["Max_Page_Number"]);
 		SetSettingValue("Max_Post_Number",$_POST["Max_Post_Number"]);		
-		header('location:?item=settingmgr&act=do');		
+		//header('location:?item=settingmgr&act=do');
+		$_GET['item'] = "settingmgr";
+		$_GET['act'] = "do";				
 	}
 	if ($_GET['act']=="do")
    {
