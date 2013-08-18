@@ -50,15 +50,15 @@
 	}	
     if (!$overall_error && $_POST["mark"]=="saveworks")
 	{						   				
-		$fields = array("`subject`","`image`","`body`","`sdate`","`fdate`");
+		$fields = array("`subject`","`image`","`body`","`link`","`sdate`","`fdate`");
 		$_POST["detail"] = addslashes($_POST["detail"]);
-		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$sdatetime}'","'{$fdatetime}'");	
+		$values = array("'{$_POST[subject]}'","'{$_POST[selectpic]}'","'{$_POST[detail]}'","'{$_POST[link]}'","'{$sdatetime}'","'{$fdatetime}'");	
 		if (!$db->InsertQuery('works',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
 			//header('location:?item=worksmgr&act=new&msg=2');
 			//exit();
-			$_GET["item"] = "workssmgr";
+			$_GET["item"] = "worksmgr";
 			$_GET["act"] = "new";
 			$_GET["msg"] = 2;
 		} 	
@@ -67,7 +67,7 @@
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
 			//header('location:?item=worksmgr&act=new&msg=1');					
 			//exit();
-			$_GET["item"] = "workssmgr";
+			$_GET["item"] = "worksmgr";
 			$_GET["act"] = "new";
 			$_GET["msg"] = 1;
 			
@@ -80,6 +80,7 @@
 		$values = array("`subject`"=>"'{$_POST[subject]}'",
 		                 "`image`"=>"'{$_POST[selectpic]}'",
 						 "`body`"=>"'{$_POST[detail]}'",
+						 "`link`"=>"'{$_POST[link]}'",
 						 "`sdate`"=>"'{$sdatetime}'",
 						 "`fdate`"=>"'{$fdatetime}'");		
         $db->UpdateQuery("works",$values,array("id='{$_GET[wid]}'"));		
@@ -92,7 +93,8 @@
 	{
 		$row = array("subject"=>$_POST['subject'],
 					 "image"=>$_POST['image'],
-					 "body"=>$_POST['detail'],					
+					 "body"=>$_POST['detail'],
+					 "link"=>$_POST['link'],
 					 "sdate"=>$_POST['sdate'],
 					 "fdate"=>$_POST['fdate']);
 	}
@@ -189,6 +191,11 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 		   </p>
 		   <textarea cols="50" rows="10" name="detail" class="detail" id="detail">{$row[body]}</textarea>
 		   <p>
+			 <label for="link">آدرس کار </label>
+			 <span>*</span>
+		   </p>  	 
+		   <input type="text" name="link" class="validate[required] subject" id="link" value="{$row[link]}" />
+		   <p>
 			<label for="sdate">تاریخ شروع </label>
 			<span>*</span><br /><br />
 			<input type="text" name="sdate" class="validate[required] sdate" id="date_input_1" value="{$row[sdate]}" />
@@ -223,13 +230,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 					weekNumbers : true,
 			  });
 			</script>
-		   </p>
-		   <p>
-			 <label>جزئیات کار </label>
-		   </p>
-			 <input type="text" name="substat" class="sdate" id="substat" />
-			 <input type="text" name="percent" class="sdate" id="percent" />
-		   
+		   </p>		  		   
 		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
