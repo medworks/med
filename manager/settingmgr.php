@@ -244,54 +244,44 @@ ht;
 			<form name="frmaddresses" id= "frmaddresses" action="" method="post" >
 				<p>
 					<label for="subject">ایمیل ادمین</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="admin_email" class="validate[required] subject" id="admin_email" value='{$Admin_Email}'/>
+				<input type="text" name="admin_email" class="subject" id="admin_email" value='{$Admin_Email}'/>
 				<p>
 					<label for="subject">ایمیل خبرنامه </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="news_email" class="validate[required] subject" id="news_email" value='{$News_Email}'/>
+				<input type="text" name="news_email" class="subject" id="news_email" value='{$News_Email}'/>
 								<p>
 					<label for="subject"> ایمیل تماس با ما</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="contact_email" class="validate[required] subject" id="contact_email" value='{$Contact_Email}'/>
+				<input type="text" name="contact_email" class="subject" id="contact_email" value='{$Contact_Email}'/>
 				<p>
 					<label for="facebook">آدرس فیس بوک </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="facebook_add" class="validate[required] subject" id="facebook_add" value='{$FaceBook_Add}'/>
+				<input type="text" name="facebook_add" class="subject" id="facebook_add" value='{$FaceBook_Add}'/>
 				<p>
 					<label for="twitter">آدرس تویتر </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="twitter_add" class="validate[required] subject" id="twitter_add" value='{$Twitter_Add}'/>
+				<input type="text" name="twitter_add" class="subject" id="twitter_add" value='{$Twitter_Add}'/>
 				<p>
 					<label for="rss">آدرس RSS </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="rss_add" class="validate[required] subject" id="rss_add" value='{$Rss_Add}'/>
+				<input type="text" name="rss_add" class="subject" id="rss_add" value='{$Rss_Add}'/>
 				<p>
 					<label for="youtube">آدرس یوتیوب </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="youtube_add" class="validate[required] subject" id="youtube_add" value='{$YouTube_Add}'/>
+				<input type="text" name="youtube_add" class="subject" id="youtube_add" value='{$YouTube_Add}'/>
 				<p>
 					<label for="tel">تلفن شرکت</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="tel_number" class="validate[required] subject" id="tel_number" value='{$Tell_Number}'/>
+				<input type="text" name="tel_number" class="subject" id="tel_number" value='{$Tell_Number}'/>
 				<p>
 					<label for="fax">فاکس شرکت</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="fax_number" class="validate[required] subject" id="fax_number" value='{$Fax_Number}'/>
+				<input type="text" name="fax_number" class="subject" id="fax_number" value='{$Fax_Number}'/>
 				<p>
 					<label for="address">آدرس شرکت</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="address" class="validate[required] subject" id="address" value='{$Address}'/>
+				<input type="text" name="address" class="subject" id="address" value='{$Address}'/>
 				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editadd' />
