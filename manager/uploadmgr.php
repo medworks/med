@@ -70,14 +70,20 @@
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		header('location:?item=uploadmgr&act=new&msg=2');
-		exit();
+		//header('location:?item=uploadmgr&act=new&msg=2');
+		//exit();
+		$_GET["item"] = "uploadmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 2;
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		header('location:?item=uploadmgr&act=new&msg=1');					
-		exit();
+		//header('location:?item=uploadmgr&act=new&msg=1');					
+		//exit();
+		$_GET["item"] = "uploadmgr";
+		$_GET["act"] = "new";
+		$_GET["msg"] = 1;
 	 }
  }
  else
@@ -86,8 +92,9 @@
 	$values = array("`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'");
 	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['uid']}'"));
-	//echo $db->cmd;
-	header('location:?item=uploadmgr&act=mgr');
+	//header('location:?item=uploadmgr&act=mgr');
+	$_GET["item"] = "uploadmgr";
+	$_GET["act"] = "mgr";	
  }
 
 	if ($overall_error)
