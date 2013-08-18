@@ -41,9 +41,16 @@ foreach($workstat as $key=>$val)
 }
 $html.=<<<ht
 				
-		</ul>
+					</ul>
 				</div>
 				{$body}
+ht;
+			if($works['link']!=null){
+$html.=<<<ht
+				<a href="http://{$works[link]}" title="{$works[subject]}" target="_blank" class="button">لینک سایت</a>
+ht;
+			}
+$html.=<<<ht
 			</div>
 			<div class="badboy"></div>
 		</div>
