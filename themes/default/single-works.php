@@ -36,7 +36,7 @@ $html=<<<ht
 ht;
 foreach($workstat as $key=>$val)
 {
-	$html.="<li> <h5> ".$key." - {$val["percent"]}% </h5>";
+	$html.="<li> <h5>{$val[subject]} - {$val[percent]}% </h5>";
 	$html.="<span> <span style = 'width:{$val["percent"]}%'></span></span> </li>";
 }
 $html.=<<<ht
