@@ -129,7 +129,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کار ها
+				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف / ویرایش کارها
 					<span class="edit-works"></span>
 				</a>
 			  </li>
@@ -217,10 +217,11 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 			</script>
 		   </p>
 		   <p>
-			 درصد فعالیت ها
-			 <input type="text" name="substat" class="subject" id="substat" />
-			 <input type="text" name="percent" class="subject" id="percent" />
+			 <label>جزئیات کار </label>
 		   </p>
+			 <input type="text" name="substat" class="sdate" id="substat" />
+			 <input type="text" name="percent" class="sdate" id="percent" />
+		   
 		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
