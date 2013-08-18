@@ -54,13 +54,19 @@
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=newsmgr&act=new&msg=2');
-			exit();
+			//header('location:?item=newsmgr&act=new&msg=2');
+			//exit();
+			$_GET["item"] = "newsmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			header('location:?item=newsmgr&act=new&msg=1');
+			//header('location:?item=newsmgr&act=new&msg=1');
+			$_GET["item"] = "newsmgr";
+			$_GET["act"] = "new";
+			$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -76,7 +82,9 @@
 						"`catid`"=>"'{$_POST[cbcat]}'");
 			
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
-		header('location:?item=newsmgr&act=mgr');
+		//header('location:?item=newsmgr&act=mgr');
+		$_GET["item"] = "newsmgr";
+		$_GET["act"] = "act";			
 	}
 
 	if ($overall_error)
