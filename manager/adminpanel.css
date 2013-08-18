@@ -563,6 +563,7 @@ header #mini-nav span.newSignup{
   -o-filter: none !important;
   filter: none !important;
   padding: 10px 15px 150px !important;
+  min-width: 150px;
 }
 
 .sub-menu ul li a span{

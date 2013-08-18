@@ -223,13 +223,7 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 					weekNumbers : true,
 			  });
 			</script>
-		   </p>
-		   <p>
-			 <label>جزئیات کار </label>
-		   </p>
-			 <input type="text" name="substat" class="sdate" id="substat" />
-			 <input type="text" name="percent" class="sdate" id="percent" />
-		   
+		   </p>		   
 		   {$editorinsert}
 			 <input type="reset" value="پاک کردن" class="reset" /> 	 	 
 		   </p>
