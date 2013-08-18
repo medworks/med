@@ -139,7 +139,7 @@ if ($_GET['act']=="do")
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذ�? / ویرایش کارها
+				<a href="?item=worksmgr&act=mgr" id="news" name="news">حذف/ویرایش کارها
 					<span class="edit-works"></span>
 				</a>
 			  </li>
