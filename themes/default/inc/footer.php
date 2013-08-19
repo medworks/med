@@ -118,7 +118,7 @@
 					<li><a href="http://<?php echo $rss; ?>" target="_blank" class="ttip" original-title="Rss"><img src="./themes/default/images/rss.png" alt="Rss"></a></li>
 					<li><a href="https://<?php echo $facebook; ?>" target="_blank" class="ttip" original-title="Facebook"><img src="./themes/default/images/facebook.png" alt="Facebook"></a></li>
 					<li><a href="https://<?php echo $twitter; ?>" target="_blank" class="ttip" original-title="Twitter"><img src="./themes/default/images/twitter.png" alt="Twitter"></a></li>
-					<li><a href="https://<?php echo $gplus; ?>" class="ttip" original-title="Google plus"><img src="./themes/default/images/gplus.png" alt="Google plus"></a></li>
+					<li><a href="https://<?php echo $gplus; ?>" target="_blank" class="ttip" original-title="Google plus"><img src="./themes/default/images/gplus.png" alt="Google plus"></a></li>
 				</ul>
 			</div>
 			<div class="badboy"></div>
