@@ -13,6 +13,10 @@ $html.=<<<cd
 			    });
 				</script>
 
+				<div class="map">
+					<iframe width="588" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;oe=UTF8&amp;msa=0&amp;msid=203962002147300705700.0004e448a591f6f386335&amp;t=m&amp;ll=36.309506,59.568729&amp;spn=0.006052,0.012617&amp;z=16&amp;iwloc=0004e448a8492cc73b7ee&amp;output=embed"></iframe>
+				</div>
+
 				<form action="" id="contactfrm" method="post">
 				   <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
 				   <p>
