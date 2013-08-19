@@ -19,16 +19,16 @@
 	if (isset($_POST["mark"]) and $_POST["mark"]!="srhnews")    
 	{
 		$msgs = "";	    
-		if(empty($_POST["selectpic"]))
-		{
-			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			//header('location:?item=newsmgr&act=new&msg=4');
-			$_GET["item"] = "usermgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 4;
-			$overall_error = true;
-			//exit();
-		}		
+		// if(empty($_POST["selectpic"]))
+		// {
+		// 	//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
+		// 	//header('location:?item=newsmgr&act=new&msg=4');
+		// 	$_GET["item"] = "usermgr";
+		// 	$_GET["act"] = "new";
+		// 	$_GET["msg"] = 4;
+		// 	$overall_error = true;
+		// 	//exit();
+		// }		
 	}	
 	if (!$overall_error &&$_POST["mark"]=="saveuser")
 	{
