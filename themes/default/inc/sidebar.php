@@ -1,7 +1,7 @@
 <?php
 	include_once("./classes/database.php");
 	$db = database::GetDatabase();
-	$youtube = GetSettingValue('YouTube_Add',0);
+	$gplus = GetSettingValue('Gplus_Add',0);
 	$facebook = GetSettingValue('FaceBook_Add',0);
 	$twitter = GetSettingValue('Twitter_Add',0);
 	$rss = GetSettingValue('Rss_Add',0);
@@ -23,7 +23,7 @@
 				<a href="#" class="vimeo"></a>
 			</li>
 			<li>
-				<a href="https://<?php echo $youtube; ?>" target="_blank" class="youtube"></a>
+				<a href="https://<?php echo $gplus; ?>" target="_blank" class="gpluse"></a>
 			</li>
 			<li>
 				<a href="http://<?php echo $rss; ?>" target="_blank" class="rss"></a>

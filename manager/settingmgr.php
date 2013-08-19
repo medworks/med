@@ -41,7 +41,7 @@
 		SetSettingValue("FaceBook_Add",$_POST["facebook_add"]);
 		SetSettingValue("Twitter_Add",$_POST["twitter_add"]);
 		SetSettingValue("Rss_Add",$_POST["rss_add"]);
-		SetSettingValue("Youtube_Add",$_POST["youtube_add"]);
+		SetSettingValue("Gplus_Add",$_POST["gplus_add"]);
 		SetSettingValue("Tell_Number",$_POST["tel_number"]);
 		SetSettingValue("Fax_Number",$_POST["fax_number"]);
 		SetSettingValue("Address",$_POST["address"]);		
@@ -229,7 +229,7 @@ ht;
 		$FaceBook_Add = GetSettingValue('FaceBook_Add',0);
 		$Twitter_Add = GetSettingValue('Twitter_Add',0);
 		$Rss_Add = GetSettingValue('Rss_Add',0);
-		$YouTube_Add = GetSettingValue('YouTube_Add',0);
+		$Gplus_Add = GetSettingValue('Gplus_Add',0);
 		$Tell_Number = GetSettingValue('Tell_Number',0);
 		$Fax_Number = GetSettingValue('Fax_Number',0);
 		$Address = GetSettingValue('Address',0);
@@ -267,9 +267,9 @@ ht;
 				</p>    
 				<input type="text" name="rss_add" class="subject" id="rss_add" value='{$Rss_Add}'/>
 				<p>
-					<label for="youtube">آدرس یوتیوب </label>
+					<label for="gpluse">آدرس گوگل پلاس </label>
 				</p>    
-				<input type="text" name="youtube_add" class="subject" id="youtube_add" value='{$YouTube_Add}'/>
+				<input type="text" name="gplus_add" class="subject" id="gplus_add" value='{$Gplus_Add}'/>
 				<p>
 					<label for="tel">تلفن شرکت</label>
 				</p>    

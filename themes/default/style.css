@@ -1308,8 +1308,8 @@ section.main-content .sidebar .social ul li a.vimeo:hover{
 	background-position: 0 -613px;
 }
 
-section.main-content .sidebar .social ul li a.youtube{
-	background-position: 0 -775px;
+section.main-content .sidebar .social ul li a.gpluse{
+	background: url('images/gpluse.png') no-repeat 0 0;
 	-webkit-transition: all ease-in-out 0.2s;
 	-moz-transition: all ease-in-out 0.2s;
 	-ms-transition: all ease-in-out 0.2s;
@@ -1317,9 +1317,9 @@ section.main-content .sidebar .social ul li a.youtube{
 	transition: all ease-in-out 0.2s;
 }
 
-section.main-content .sidebar .social ul li a.youtube:hover{
+section.main-content .sidebar .social ul li a.gpluse:hover{
 	opacity: 1;
-	background-position: 0 -829px;
+	background: url('images/gpluse.png') no-repeat 0 -55px;
 }
 
 section.main-content .sidebar .social ul li a.rss{
