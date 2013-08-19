@@ -115,7 +115,7 @@ input.text{
 	background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
 	background: -ms-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
 	background: -o-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
-	background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));
+	/*background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#459300));*/
 	text-shadow: #050505 0 -1px 0;
 	background-color: #459300;
 	-webkit-border-radius: 4px;
@@ -134,7 +134,7 @@ input.text{
 	background: -moz-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
 	background: -ms-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
 	background: -o-gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
-	background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));
+	/*background: gradient(linear, 0% 0%, 0% 100%, from(#a4d04a), to(#a4d04a), color-stop(80%, #76b226));*/
 	text-shadow: #050505 0 -1px 2px;
 	background-color: #a4d04a;
 	color: #fff;

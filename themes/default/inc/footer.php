@@ -55,7 +55,7 @@
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$works = $db->SelectAll('works',NULL,NULL," id DESC");
+		  					$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
 		  					
 							for($i=0 ; $i<3 ; $i++){
 								if($works[$i]['subject']!=null){

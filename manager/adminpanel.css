@@ -319,6 +319,16 @@ header #mini-nav {
   line-height: 32px; 
 }
 
+header #mini-nav li.pic{
+  width: 40px;
+  height: 32px;
+}
+
+header #mini-nav li.pic img{
+  width: 40px;
+  height: 32px;
+}
+
 header #mini-nav li.exit{
   background: #d13736;
 }
@@ -1029,7 +1039,7 @@ select.select2{
 
 .datagridevenrow img,
 .datagridoddrow img{
-  margin: 0 !important;
+  margin: -12px !important;
 }
 
 .datagridcol
