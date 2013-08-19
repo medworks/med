@@ -19,6 +19,7 @@
   						    "userspics"=>0,
 							"slidespics"=>0,
 							"gallerypics"=>0);
+ $pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");							
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
 	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
@@ -122,8 +123,7 @@
 	}
 	if ($_GET['act']=="del")
 	{
-	    $row=$db->Select("uploadcenter","*","id='{$_GET["uid"]}'",NULL);
-		$pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");
+	    $row=$db->Select("uploadcenter","*","id='{$_GET["uid"]}'",NULL);		
 		$add = $row['address'];
 		for($i=0;$i<strlen($add);$i++)
 		 {
@@ -277,7 +277,17 @@ if ($_GET['act']=="mgr")
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
+				$adr = $rows[$i]['address'];
+				//echo "adr is ",$adr;
+				for($j=0;$j<strlen($adr);$j++)
+				 {
+				   if ($adr[$j]==1)
+				   {					   
+					   $picaddress = "../{$pic_fldrs[$j]}/".$rows[$i]['image'];			   
+					   break;
+				   }
+				 }	
+                $rows[$i]["image"] ="<img src='{$picaddress}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
 				
 				if ($i % 2==0)
 				 {
