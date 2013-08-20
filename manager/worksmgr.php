@@ -362,7 +362,7 @@ if ($_GET['act']=="mgr")
 				$rows[$i]["delete"]=<<< del
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
-					'از حذف این ??عالیت اطمینان دارید؟',
+					'از حذف ایت فعالیت اطمینان دارید؟',
 				'?item=worksmgr&act=del&pageNo={$_GET[pageNo]}&wid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
