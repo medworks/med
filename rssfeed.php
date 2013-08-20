@@ -25,8 +25,6 @@
 		//$rss2_writer->addCategory();
 		$rss2_writer->addItem($row['subject'],$row['body'], $uri.$row['id']);		
 	}
-	header("Content-Type: application/rss+xml");
+	//header("Content-Type: application/rss+xml");
 	echo $rss2_writer->getXML();
-	
-
 ?>
