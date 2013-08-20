@@ -57,6 +57,7 @@
 	else
 	if (!$overall_error && $_POST["mark"]=="edituser")
 	{			    
+	    $row=$db->Select("users","*","id='{$_GET["uid"]}'",NULL);	    
 		if ($_POST['password'] != $row['password'])
 			$pass = md5($_POST['password']);
 		else
