@@ -6,7 +6,7 @@
 $html=<<<cd
 	<div class="contact-page" id="others-page">
 		<div class="page-header" id="others-page">
-			<h1>اخبار</h1>
+			<h1>تماس با ما</h1>
 			<div class="badboy"></div>
 		</div>
 		<div class="badboy"></div>
