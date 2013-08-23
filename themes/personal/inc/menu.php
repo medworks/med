@@ -34,12 +34,12 @@
 	<div class="main-menu">
 		<menu>
 			<li><a href="?item=home"><span class="home-icon"></span>خانه</a>
-				<menu>
+				<!-- <menu>
 					<li><a href="#">خانه 1</a></li>
 					<li><a href="#">خانه 2</a></li>
 					<li><a href="#">خانه 3</a></li>
 					<li><a href="#">خانه 4</a></li>
-				</menu>
+				</menu> -->
 			</li>
 			<li><a href="?item=works"><span class="works-icon"></span>کارهای ما</a></li>
 			<li><a href="?item=news"><span class="news-icon"></span>اخبار</a></li>
