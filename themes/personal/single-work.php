@@ -25,6 +25,8 @@ $html=<<<cd
 				</ul>
 				<div class="badboy"></div>
 				<div class="text">{$works[body]}</div>
+				<div class="badboy"></div>
+				<div class="link"><a href="http://{$works[link]}" target="_blank" class="btn">لینک سایت</a></div>
 			</div>
 		</div>
 	</div>
