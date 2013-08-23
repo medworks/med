@@ -5,15 +5,15 @@ $(document).ready(function(){
         if(this.href.trim() == url){
             $(this).parent().addClass("active");
             return false;
-        }else if(this.href.trim().match(/full/g)){
+        }else if(url.match(/full/i)){
             var href= url.substr(url.indexOf("full"));
             href= href.split('full');
             href= href[1].split('&');
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
-        }else if(this.href.trim().match(/wid/g)){
+        }else if(url.match(/gallery/g)){
             var href= url.substr(url.indexOf("item"));
             href= href.split('item=');
-            href= href[1].split('&');
+            href= href[1].split('#');
             $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
         }
     });
