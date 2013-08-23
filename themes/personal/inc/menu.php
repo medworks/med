@@ -21,6 +21,9 @@
 			case 'gallery':
                 return "themes/personal/gallery.php";
 			break;
+			case 'aboutus':
+                return "themes/personal/aboutus.php";
+			break;
 			case 'fullnews':
                 return "themes/personal/single-news.php";
 			break;
@@ -41,6 +44,7 @@
 					<li><a href="#">خانه 4</a></li>
 				</menu> -->
 			</li>
+			<li><a href="?item=aboutus"><span class="about-icon"></span>درباره ما</a></li>
 			<li><a href="?item=works"><span class="works-icon"></span>کارهای ما</a></li>
 			<li><a href="?item=news"><span class="news-icon"></span>اخبار</a></li>
 			<li><a href="?item=gallery"><span class="gallery-icon"></span>گالری تصاویر</a></li>

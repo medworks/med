@@ -489,6 +489,10 @@ section.middle .main-menu menu li span.gallery-icon{
     background-image: url('images/gallery.png'); 
 }
 
+section.middle .main-menu menu li span.about-icon{
+    background-image: url('images/about.png'); 
+}
+
 section.middle .main-menu menu li  a{
 	display: inline-block;
 	padding: 15px;
@@ -793,6 +797,10 @@ section.middle .contain .news-part .nav a#next1{
     background-image: url('images/prev.png');
 }
 /*****Tabs-part*****/
+section.middle .contain .tabs-part{
+    margin-bottom: 50px;    
+}
+
 section.middle .contain .tabs-part .tit{
 	margin-bottom: 25px;
 }
@@ -1140,6 +1148,14 @@ div.works-page .works ul li ul li p{
 
 div.works-page .works ul li ul li p.sep{
     color: #ccc;
+}
+/*************************************About us page******************************************/
+div.aboutus-page .about .detail{
+    margin-bottom: 50px;
+}
+
+div.aboutus-page .about .detail p{
+    line-height: 2;
 }
 /*************************************Gallery page******************************************/
 div.gallery-page .gallery ul{

@@ -168,8 +168,8 @@ $html.=<<<cd
 	</div>
 	<div class="badboy"></div>
 </div>
-<hr class="arrow">
-<!-- *********************Aboutus part************************** -->
+<!-- <hr class="arrow"> -->
+<!-- *********************Aboutus part************************** 
 <div class="about-part">
 	<div class="left aboutus">
 		<div class="tit"><h2>درباره ما</h2></div>
@@ -200,6 +200,7 @@ $html.=<<<cd
 	</div>
 	<div class="badboy"></div>
 </div>
+-->
 cd;
 return $html;
 ?>
