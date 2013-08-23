@@ -4,6 +4,14 @@
   	include_once("./lib/persiandate.php");
 	$db = database::GetDatabase();
 
+	$gplus = GetSettingValue('Gplus_Add',0);
+	$facebook = GetSettingValue('FaceBook_Add',0);
+	$twitter = GetSettingValue('Twitter_Add',0);
+	$rss = GetSettingValue('Rss_Add',0);
+	$address = GetSettingValue('Address',0);
+	$tel = GetSettingValue('Tell_Number',0);
+	$fax = GetSettingValue('Fax_Number',0);
+
 $html=<<<cd
 					</div>
 					<footer>
@@ -14,16 +22,17 @@ $html=<<<cd
 cd;
 									$news= $db->SelectAll('news',NULL,NULL," ndate DESC");
 									for($i=0 ; $i<3 ; $i++){
-										$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
+										if($news[$i]['subject']!=null){
+											$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
 $html.=<<<cd
-										<li>
-											<div class="text">
-												<p><a href="?item=fullnews&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a></p>
-												<span class="date">{$ndate}</span>
-											</div>
-										</li>
+											<li>
+												<div class="text">
+													<p><a href="?item=fullnews&wid={$news[$i][id]}" title="{$news[$i][subject]}">{$news[$i][subject]}</a></p>
+													<span class="date">{$ndate}</span>
+												</div>
+											</li>
 cd;
-									}
+									}}
 $html.=<<<cd
 								</ul>
 							</div>
@@ -33,20 +42,21 @@ $html.=<<<cd
 cd;
 									$works= $db->SelectAll('works',NULL,NULL," fdate DESC");
 									for($i=0 ; $i<3 ; $i++){
-										$sdate= ToJalali($works[$i]["sdate"]," l d F  Y");
-										$fdate= ToJalali($works[$i]["fdate"]," l d F  Y");
+										if($works[$i]['subject']!=null){
+											$sdate= ToJalali($works[$i]["sdate"]," l d F  Y");
+											$fdate= ToJalali($works[$i]["fdate"]," l d F  Y");
 $html.=<<<cd
-										<li>
-											<div class="text">
-												<p><a href="?item=fullworks&wid={$works[$i][id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></p>
-												<span class="sdate">{$sdate}</span>
-												<span class="sep">|</span>
-												<span class="fdate">{$fdate}</span>
-												<div class="badboy"></div>
-											</div>
-										</li>
+											<li>
+												<div class="text">
+													<p><a href="?item=fullworks&wid={$works[$i][id]}" title="{$works[$i][subject]}">{$works[$i][subject]}</a></p>
+													<span class="sdate">{$sdate}</span>
+													<span class="sep">|</span>
+													<span class="fdate">{$fdate}</span>
+													<div class="badboy"></div>
+												</div>
+											</li>
 cd;
-									}
+									}}
 $html.=<<<cd
 								</ul>
 							</div>
@@ -56,10 +66,9 @@ $html.=<<<cd
 									<li>
 										<div class="text">
 											<p>راههای ارتباط با ما</p>
-											<p class='address'><span>آدرس:</span> مشهد، سه راه فلسطسن، ساختمان 202، طبقه اول، واحد 3</p>
-											<p class="tel ltr"><span>Tel:</span> +98 (511) 766 6436</p>
-											<p class="fax ltr"><span>Fax:</span> +98 (511) 761 3679</p>
-											<p class='email ltr'><span>E-Mail:</span><a href="mailto:info@mediateq.ir"> info[at]mediateq.ir</a></p>
+											<p class='address'><span>آدرس:</span> {$address}</p>
+											<p class="tel ltr"><span>Tel:</span> {$tel}</p>
+											<p class="fax ltr"><span>Fax:</span> {$fax}</p>
 										</div>
 									</li>
 								</ul>
@@ -72,11 +81,10 @@ $html.=<<<cd
 							<p class="copyright ltr">&copy; 2013 Mediateq. All rights reserved.</p>
 							<div class="social">
 								<ul>
-									<li class="rss"><a href="#"></a></li>
-									<li class="twitter"><a href="#"></a></li>
-									<li class="facebook"><a href="#"></a></li>
-									<li class="dribbble"><a href="#"></a></li>
-									<li class="pinterest"><a href="#"></a></li>
+									<li class="rss"><a href="http://{$rss}" target="_blank"></a></li>
+									<li class="twitter"><a href="https://{$twitter}" target="_blank"></a></li>
+									<li class="facebook"><a href="https://{$facebook}" target="_blank"></a></li>
+									<li class="gplus"><a href="https://{$gplus}" target="_blank"></a></li>
 								</ul>
 								<div class="badboy"></div>
 							</div>
