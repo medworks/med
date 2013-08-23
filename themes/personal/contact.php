@@ -1,4 +1,8 @@
 <?php
+	$db = database::GetDatabase();
+	$address = GetSettingValue('Address',0);
+	$tel = GetSettingValue('Tell_Number',0);
+	$fax = GetSettingValue('Fax_Number',0);
 $html=<<<cd
 	<div class="contact-page" id="others-page">
 		<div class="page-header" id="others-page">
@@ -8,7 +12,7 @@ $html=<<<cd
 		<div class="badboy"></div>
 		<div class="contact" id="special-page">
 			<div class="map">
-				<iframe src="http://mapsengine.google.com/map/u/0/embed?mid=zXBBpAwsRbSk.kCrA-zSqoLqw" width="720" height="350"></iframe>
+					<iframe width="720" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;oe=UTF8&amp;msa=0&amp;msid=203962002147300705700.0004e448a591f6f386335&amp;t=m&amp;ll=36.309506,59.568729&amp;spn=0.006052,0.012617&amp;z=16&amp;iwloc=0004e448a8492cc73b7ee&amp;output=embed"></iframe>
 			</div>
 			<div class="detail">
 				<div class="contact-form right">
@@ -39,12 +43,12 @@ $html=<<<cd
 				</div>
 				<div class="address">
 					<h3>مشخصات تماس</h3>
-					<p>شما می توانید از طریق فرم زیر با ما تماس حاصل فرمایید.</p>
+					<p>راه های تماس با ما</p>
 					<h4>آدرس</h4>
-					<p class="addre">مشهد - سه راه فلسطین - ساختمان شماره 202 - طبقه اول - واحد 3</p>
+					<p class="addre">{$address}</p>
 					<h4>تلفن</h4>
-					<p class="tel ltr">Tel: +98 (511) 766 6436</p>
-					<p class="fax ltr">Fax: +98 (511) 761 3679</p>
+					<p class="tel ltr">Tel: {$tel}</p>
+					<p class="fax ltr">Fax: +{$fax}</p>
 					<h4>ایمیل</h4>
 					<p class="email ltr">Email: <a href="mailto:info@mediateq.ir" title="Send Mail">info[at]mediateq.ir</a></p>
 				</div>
