@@ -1,8 +1,10 @@
 <?php
-$Site_Title = GetSettingValue('Site_Title',0);
-$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-$Site_Describtion = GetSettingValue('Site_Describtion',0);
-?><!doctype html>
+	$Site_Title = GetSettingValue('Site_Title',0);
+	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
+	$Site_Describtion = GetSettingValue('Site_Describtion',0);
+	$tel = GetSettingValue('Tell_Number',0);
+?>
+<!doctype html>
 <html lang="fr">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -45,7 +47,7 @@ $Site_Describtion = GetSettingValue('Site_Describtion',0);
 			<div class="information right">
 				<ul>
 					<li ><span class="email-icon"></span><a href="mailto:info@mediateq.ir" title="Send mail" target="_blank">info<span class="at"></span>mediateq.ir</a></li>
-					<li class="ltr"><span class="tel-icon"></span><a title="Tel">+98 (511) 766 6436</a></li>
+					<li class="ltr"><span class="tel-icon"></span><a title="Tel"><?php echo $tel; ?></a></li>
 				</ul>	
 			</div>
 			<div class="badboy"></div>
