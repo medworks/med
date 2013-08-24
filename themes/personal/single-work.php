@@ -26,7 +26,17 @@ $html=<<<cd
 				<div class="badboy"></div>
 				<div class="text">{$works[body]}</div>
 				<div class="badboy"></div>
-				<div class="link"><a href="http://{$works[link]}" target="_blank" class="btn">لینک سایت</a></div>
+cd;
+				if($works['link']!=null){
+$html.=<<<cd
+					<div class="link"><a href="http://{$works[link]}" title="{$works[subject]}" target="_blank" class="btn">لینک سایت</a></div>
+cd;
+				}else{
+$html.=<<<cd
+					<div class="link"><a href="{$works[image]}" title="{$works[subject]}" rel="prettyphoto[gallery4]" class="btn">مشاهده عکس</a></div>
+cd;
+				}
+$html.=<<<cd
 			</div>
 		</div>
 	</div>

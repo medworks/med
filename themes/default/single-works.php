@@ -49,6 +49,10 @@ ht;
 $html.=<<<ht
 				<a href="http://{$works[link]}" title="{$works[subject]}" target="_blank" class="button">لینک سایت</a>
 ht;
+			}else{			
+$html.=<<<ht
+				<a href="{$works[image]}" title="{$works[subject]}" rel="prettyphoto[gallery4]" class="button">مشاهده تصویر</a>
+ht;
 			}
 $html.=<<<ht
 			</div>

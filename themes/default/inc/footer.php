@@ -128,7 +128,7 @@
 	<script type="text/javascript">
 		  $(document).ready(function(){
 		    $("a[rel^='prettyphoto']").prettyPhoto({
-		    	autoplay_slideshow: true,
+		    	autoplay_slideshow: false,
 		    	show_title: false,
 		    });
 		  });
