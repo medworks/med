@@ -29,6 +29,7 @@
 	<script src="themes/personal/js/jquery.hoverdir.min.js" type="text/javascript"></script>
 	<script src="themes/personal/js/jquery.isotope.min.js" type="text/javascript"></script>
 	<script src="themes/personal/js/script.js" type="text/javascript"></script>
+	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->

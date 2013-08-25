@@ -11,9 +11,36 @@ $html=<<<cd
 		</div>
 		<div class="badboy"></div>
 		<div class="contact" id="special-page">
-			<div class="map">
-					<iframe width="720" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?ie=UTF8&amp;hl=en&amp;oe=UTF8&amp;msa=0&amp;msid=203962002147300705700.0004e448a591f6f386335&amp;t=m&amp;ll=36.309506,59.568729&amp;spn=0.006052,0.012617&amp;z=16&amp;iwloc=0004e448a8492cc73b7ee&amp;output=embed"></iframe>
-			</div>
+			<script>
+				function initialize()
+				{
+					var mapProp = {
+					  center:new google.maps.LatLng(36.309462, 59.567817),
+					  zoom:18,
+					  mapTypeId:google.maps.MapTypeId.ROADMAP
+					  };
+
+					var map=new google.maps.Map(document.getElementById('googleMap'),mapProp);
+
+					var marker=new google.maps.Marker({
+					 	 position:myCenter,
+					  });
+
+					marker.setMap(map);
+
+					var infowindow = new google.maps.InfoWindow({
+						  content:'Mediateq'
+					  });
+
+					infowindow.open(map,marker);
+
+				}
+
+				google.maps.event.addDomListener(window, 'load', initialize);
+
+		   </script>
+		   <div id="googleMap" class="map" style="width:720px;height:380px;"></div>
+
 			<div class="detail">
 				<div class="contact-form right">
 					<h3>فرم تماس</h3>
