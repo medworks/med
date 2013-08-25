@@ -17,7 +17,7 @@ $html=<<<cd
 cd;
 							foreach($category as $key=>$val){								
 $html.=<<<cd
-								<li><a href="#" data-filter=".{$val['catname']}">{$val['catname']}</a></li>
+								<li><a href="#" data-filter=".{$val['id']}">{$val['catname']}</a></li>
 cd;
 							}
 $html.=<<<cd
@@ -32,14 +32,15 @@ $html.=<<<cd
 		<div class="news" id="special-page">
 			<ul class="items">
 cd;
-				for($i=0 ; $i<count($news) ; $i++){
+				for($i=0;$i<count($news);$i++){
+				    if (!isset($news[$i]["subject"])) continue;
 					$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
 					$news["userid"] = GetUserName($news[$i]["userid"]);					
 				    $body = strip_tags($news[$i]["body"]);
 				    $body = (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
 					$category = GetCategoryName($news[$i]["catid"]);
 $html.=<<<cd
-					<li class="item .{$category}">
+					<li class="item {$news[$i]['catid']}">
 						<div class="overlay">
 							<a href="?item=fullnews&wid={$news[$i][id]}">
 								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}" />
