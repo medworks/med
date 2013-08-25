@@ -3,6 +3,7 @@
   	include_once("./lib/persiandate.php");
   	$db = Database::GetDatabase();
   	$news = $db->SelectAll("news","*",null,"ndate DESC");
+	$category = $db->SelectAll("category","*",null,"id ASC");
 
 $html=<<<cd
 	<div class="news-page" id="others-page">
@@ -14,12 +15,11 @@ $html=<<<cd
 						<menu>
 							<li><a href="#" data-filter="*" class="active">همه موارد</a></li>
 cd;
-							for($i=0 ; $i<count($news) ; $i++){
-								if($news[$i]['groupname']!=null){
+							foreach($category as $key=>$val){								
 $html.=<<<cd
-								<li><a href="#" data-filter=".{$news[$i][groupname]}">{$news[$i][groupname]}</a></li>
+								<li><a href="#" data-filter=".{$val['catname']}">{$val['catname']}</a></li>
 cd;
-							}}
+							}
 $html.=<<<cd
 
 			            </menu>
@@ -34,12 +34,12 @@ $html.=<<<cd
 cd;
 				for($i=0 ; $i<count($news) ; $i++){
 					$ndate= ToJalali($news[$i]["ndate"]," l d F  Y ساعت H:m");
-					$news["userid"] = GetUserName($news[$i]["userid"]);
-					$body= $news[$i]["body"];
-				    $body= strip_tags($body);
-				    $body= (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
+					$news["userid"] = GetUserName($news[$i]["userid"]);					
+				    $body = strip_tags($news[$i]["body"]);
+				    $body = (mb_strlen($body)>100) ? mb_substr($body,0,100,"UTF-8")."..." : $body;
+					$category = GetCategoryName($news[$i]["catid"]);
 $html.=<<<cd
-					<li class="item {$news[$i][groupname]}">
+					<li class="item .{$category}">
 						<div class="overlay">
 							<a href="?item=fullnews&wid={$news[$i][id]}">
 								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}" />
@@ -54,7 +54,7 @@ $html.=<<<cd
 							<ul>
 								<li><p class="by">{$news["userid"]}</p></li>
 								<li><p class="sep">|</p></li>
-								<li><p class="type">{$news[$i][groupname]}</p></li>
+								<li><p class="type">{$category}</p></li>
 							</ul>
 							<div class="badboy"></div>
 							<p class="text">{$body}</p>
