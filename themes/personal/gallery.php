@@ -7,8 +7,8 @@
 	$maxItemsInPage = GetSettingValue('Max_Post_Number',0);
 	$from = ($pageNo - 1) * $maxItemsInPage;
 	$count = $maxItemsInPage;
-	$slides = $db->SelectAll("slides","*",null," pos ASC",$from,$count);
-    $itemsCount = $db->CountAll("slides");
+	$gallery = $db->SelectAll("gallery","*",null," id DESC",$from,$count);
+    $itemsCount = $db->CountAll("gallery");
 
 $html=<<<cd
 	<div class="gallery-page">
@@ -20,25 +20,25 @@ $html=<<<cd
 		<div class="gallery" id="special-page">
 			<ul>
 cd;
-				for($i=0 ; $i<count($slides) ; $i++){
-					// $body= $slides[$i]['body'];
+				for($i=0 ; $i<count($gallery) ; $i++){
+					// $body= $gallery[$i]['body'];
 					// $body= strip_tags($body);
    					// $body= (mb_strlen($body)>250) ? mb_substr($body,0,250,"UTF-8")."..." : $body;
 $html.=<<<cd
 					<li>
 						<div class="overlay">
-							<a href="{$slides[$i][image]}" rel="prettyphoto[gallery3]">
-								<img src="{$slides[$i][image]}" alt="{$slides[$i][subject]}" />
+							<a href="{$gallery[$i][image]}" rel="prettyphoto[gallery3]">
+								<img src="{$gallery[$i][image]}" alt="{$gallery[$i][subject]}" />
 							</a>
 						</div>
 						<div class="detail">
-							<h3><a href="{$slides[$i][image]}" rel="prettyphoto[gallery4] title="{$slides[$i][subject]}">{$slides[$i][subject]}</a></h3>
+							<h3><a href="{$gallery[$i][image]}" rel="prettyphoto[gallery4] title="{$gallery[$i][subject]}">{$gallery[$i][subject]}</a></h3>
 							<!-- <p class="text">{$body}</p> -->
 						</div>
 					</li>
 cd;
 				
-				if(($i+1) % 3 == 0 || $i == (count($slides)-1))
+				if(($i+1) % 3 == 0 || $i == (count($gallery)-1))
 $html.=<<<cd
 					<span class="line"></span>
 cd;
