@@ -126,9 +126,9 @@ if ($_GET['act']=="new" or $_GET['act']=="edit")
 $msgs = GetMessage($_GET['msg']);
 $sections = $db->SelectAll("section","*",null,"secname ASC");
 if ($_GET['act']=="edit")
-	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$row[secid]}",null,"select");
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname","{$row[secid]}",null,"select validate[required]");
 else
-	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select");	
+	$cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select validate[required]");	
 $html=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){	   
@@ -153,16 +153,15 @@ $html=<<<cd
        <input type="text" name="catname" class="validate[required] catname family" id="catname" value='{$row[catname]}'/>
        <p>
          <label for="latinname">نام لاتین </label>
-         <span>*</span>
        </p>    
-       <input type="text" name="latinname" class="validate[required] latinname family ltr" id="latinname" value='{$row[latinname]}'/>
+       <input type="text" name="latinname" class="latinname family ltr" id="latinname" value='{$row[latinname]}'/>
        <p>
          <label for="describe">توضیحات </label>
-         <span>*</span>
        </p>    
-       <input type="text" name="describe" class="validate[required] describe subject" id="describe" value='{$row[describe]}'/>
+       <input type="text" name="describe" class="describe subject" id="describe" value='{$row[describe]}'/>
        <p>
          <label for="detail">انتخاب گروه مادر </label>
+         <span>*</span>
        </p>
        {$cbsection}
 	   <div class="badboy"></div>
@@ -384,14 +383,12 @@ $html=<<<cd
        <input type="text" name="secname" class="validate[required] catname family" id="secname" value='{$row[secname]}'/>
        <p>
          <label for="latinname">نام لاتین </label>
-         <span>*</span>
        </p>    
-       <input type="text" name="latinname" class="validate[required] latinname family ltr" id="latinname" value='{$row[latinname]}'/>
+       <input type="text" name="latinname" class="latinname family ltr" id="latinname" value='{$row[latinname]}'/>
        <p>
          <label for="describe">توضیحات </label>
-         <span>*</span>
        </p>    
-       <input type="text" name="describe" class="validate[required] describe subject" id="describe" value='{$row[describe]}'/>       
+       <input type="text" name="describe" class="describe subject" id="describe" value='{$row[describe]}'/>       
 	   <div class="badboy"></div>
        <p>
 	   {$editorinsert}       
