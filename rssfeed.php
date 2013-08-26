@@ -23,7 +23,16 @@
 	foreach ($news as $row)
 	{		 
 		//$rss2_writer->addCategory();
-		$rss2_writer->addItem($row['subject'],$row['body'],$site."/".$uri.$row['id']);		
+		$rss2_writer->addItem($row['subject'],$row['body'],$site."/".$uri.$row['id']);
+		$date = $row['ndate'];
+		$strdate = explode("-", $date);
+		$strtime = explode(":", $date);
+		$strtime[0] = substr($strtime[0],11,2);
+		$strtime = $strtime[0].":".$strtime[1].":".$strtime[2];
+		$date = mktime(0,0,0,$strdate[1],$strdate[2],$strdate[0]); 
+		$convert = date("D, j M Y", $date);
+		$date = $convert .' '. $strtime.'  GMT';
+		$rss2_writer->addElement('pubDate', $date);
 	}
 	//header("Content-Type: application/rss+xml");
 	header("Content-type: text/xml");
