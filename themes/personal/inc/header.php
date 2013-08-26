@@ -7,7 +7,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
 	<title><?php echo $Site_Title;?></title>
 	<link rel="stylesheet" href="themes/css/1styles.css" />
@@ -36,6 +36,33 @@
 	<link rel="Shortcut Icon" href="themes/personal/favicon.ico" />
 </head>
 <body>
+	<!--[if IE]>
+		    <script type="text/javascript" 
+		     src="lib/js/CFInstall.js"></script>
+
+		    <style>
+		     .chromeFrameInstallDefaultStyle {
+		       width: 100%; /* default is 800px */
+		       border: 5px solid blue;
+		     }
+		    </style>
+
+		    <div id="prompt">
+
+		    </div>
+		 
+		    <script>
+		     // The conditional ensures that this code will only execute in IE,
+		     // Therefore we can use the IE-specific attachEvent without worry
+		     window.attachEvent("onload", function() {
+		       CFInstall.check({
+		         mode: "inline", // the default
+		         node: "prompt",
+		         destination: "www.mediateq.ir"
+		       });
+		     });
+		    </script>
+	  [endif]-->
 	<div class="container">
 		<!-- Header part -->
 		<header>
