@@ -22,8 +22,7 @@
 		                          );
 	foreach ($news as $row)
 	{		 
-		//$rss2_writer->addCategory();
-		$rss2_writer->addItem($row['subject'],$row['body'],$site."/".$uri.$row['id']);
+		//$rss2_writer->addCategory();		
 		$date = $row['ndate'];
 		$strdate = explode("-", $date);
 		$strtime = explode(":", $date);
@@ -33,6 +32,7 @@
 		$convert = date("D, j M Y", $date);
 		$date = $convert .' '. $strtime.'  GMT';
 		$rss2_writer->addElement('pubDate', $date);
+		$rss2_writer->addItem($row['subject'],$row['body'],$site."/".$uri.$row['id']);
 	}
 	//header("Content-Type: application/rss+xml");
 	header("Content-type: text/xml");
