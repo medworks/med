@@ -6,6 +6,7 @@
 	include_once("../classes/functions.php");
 	include_once("../lib/persiandate.php");
 	if ($_GET['item']!="dashboard")	exit();
+	if (!isset($_GET["type"])) $_GET["type"]="pie";
 	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
