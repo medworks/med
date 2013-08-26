@@ -75,7 +75,7 @@ $html=<<<cd
 					<p class="addre">{$address}</p>
 					<h4>تلفن</h4>
 					<p class="tel ltr">Tel: {$tel}</p>
-					<p class="fax ltr">Fax: +{$fax}</p>
+					<p class="fax ltr">Fax: {$fax}</p>
 					<h4>ایمیل</h4>
 					<p class="email ltr">Email: <a href="mailto:info@mediateq.ir" title="Send Mail">info[at]mediateq.ir</a></p>
 				</div>
