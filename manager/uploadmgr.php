@@ -55,10 +55,10 @@
    else	 
    { 
 		//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-		//header('location:?item=uploadmgr&act=new&msg=4');
-		$_GET["item"] = "uploadmgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 4;
+		header('location:?item=uploadmgr&act=new&msg=4');
+		//$_GET["item"] = "uploadmgr";
+		//$_GET["act"] = "new";
+		//$_GET["msg"] = 4;
 		$overall_error = true;
 	}
   }    
@@ -70,20 +70,20 @@
 	if (!$db->InsertQuery('uploadcenter',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		//header('location:?item=uploadmgr&act=new&msg=2');
+		header('location:?item=uploadmgr&act=new&msg=2');
 		//exit();
-		$_GET["item"] = "uploadmgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 2;
+		//$_GET["item"] = "uploadmgr";
+		//$_GET["act"] = "new";
+		//$_GET["msg"] = 2;
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		//header('location:?item=uploadmgr&act=new&msg=1');					
+		header('location:?item=uploadmgr&act=new&msg=1');					
 		//exit();
-		$_GET["item"] = "uploadmgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 1;
+		//$_GET["item"] = "uploadmgr";
+		//$_GET["act"] = "new";
+		//$_GET["msg"] = 1;
 	 }
  }
  else
@@ -92,9 +92,9 @@
 	$values = array("`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'");
 	$db->UpdateQuery("uploadcenter",$values,array("id='{$_GET['uid']}'"));
-	//header('location:?item=uploadmgr&act=mgr');
-	$_GET["item"] = "uploadmgr";
-	$_GET["act"] = "mgr";	
+	header('location:?item=uploadmgr&act=mgr');
+	//$_GET["item"] = "uploadmgr";
+	//$_GET["act"] = "mgr";	
  }
 
 	if ($overall_error)
@@ -251,10 +251,10 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "uploadmgr";
-				$_GET['act'] = "mgr";
-				$_GET['msg'] = 6;				
-				//header("Location:?item=uploadmgr&act=mgr&msg=6");
+				//$_GET['item'] = "uploadmgr";
+				//$_GET['act'] = "mgr";
+				//$_GET['msg'] = 6;				
+				header("Location:?item=uploadmgr&act=mgr&msg=6");
 			}
 		
 	}
