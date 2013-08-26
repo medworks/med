@@ -28,20 +28,20 @@
 	   if(empty($_POST["selectpic"]))
 	   { 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			//header('location:?item=newsmgr&act=new&msg=4');
-			$_GET["item"] = "newsmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 4;
+			header('location:?item=newsmgr&act=new&msg=4');
+			//$_GET["item"] = "newsmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 4;
 			$overall_error = true;
 			//exit();
 		}
 		else						
 		if (empty($_POST['detail']))
 		{
-		   //header('location:?item=newsmgr&act=new&msg=5');
-			$_GET["item"] = "newsmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 5;
+		   header('location:?item=newsmgr&act=new&msg=5');
+			//$_GET["item"] = "newsmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 5;
 		    $overall_error = true;
 		}			
 		
@@ -54,19 +54,18 @@
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			//header('location:?item=newsmgr&act=new&msg=2');
-			//exit();
-			$_GET["item"] = "newsmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 2;
+			header('location:?item=newsmgr&act=new&msg=2');			
+			//$_GET["item"] = "newsmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
-			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			//header('location:?item=newsmgr&act=new&msg=1');
-			$_GET["item"] = "newsmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 1;
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");			
+			header('location:?item=newsmgr&act=new&msg=1');		    
+			//$_GET["item"] = "newsmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -82,9 +81,9 @@
 						"`catid`"=>"'{$_POST[cbcat]}'");
 			
         $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
-		//header('location:?item=newsmgr&act=mgr');
-		$_GET["item"] = "newsmgr";
-		$_GET["act"] = "act";			
+		header('location:?item=newsmgr&act=mgr');
+		//$_GET["item"] = "newsmgr";
+		//$_GET["act"] = "act";			
 	}
 
 	if ($overall_error)
@@ -334,10 +333,10 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "newsmgr";
-				$_GET['act'] = "mgr";
-				$_GET['msg'] = 6;				
-				//header("Location:?item=newsmgr&act=mgr&msg=6");
+				//$_GET['item'] = "newsmgr";
+				//$_GET['act'] = "mgr";
+				//$_GET['msg'] = 6;				
+				header("Location:?item=newsmgr&act=mgr&msg=6");
 			}
 		
 	}

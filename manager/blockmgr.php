@@ -18,10 +18,10 @@
 	{	   
 		if (empty($_POST['content']))
 		{
-		   //header('location:?item=blocksmgr&act=new&msg=5');
-			$_GET["item"] = "blocksmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 5;
+		   header('location:?item=blocksmgr&act=new&msg=5');
+			//$_GET["item"] = "blocksmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 5;
 		    $overall_error = true;
 		}
 	}
@@ -33,19 +33,19 @@
 		if (!$db->InsertQuery('block',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			//header('location:?item=blocksmgr&act=new&msg=2');
+			header('location:?item=blocksmgr&act=new&msg=2');
 			//exit();
-			$_GET["item"] = "blocksmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 2;
+			//$_GET["item"] = "blocksmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-			//header('location:?item=blocksmgr&act=new&msg=1');
-			$_GET["item"] = "blocksmgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 1;
+			header('location:?item=blocksmgr&act=new&msg=1');
+			//$_GET["item"] = "blocksmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 1;
 		}  				 
 	}
     else
@@ -60,9 +60,9 @@
 						 "`content`"=>"'{$_POST[content]}'",
 						 "`contenttype`"=>"'{$_POST[cbtype]}'");			
         $db->UpdateQuery("blocks",$values,array("id='{$_GET[bid]}'"));
-		//header('location:?item=blocksmgr&act=mgr');
-		$_GET["item"] = "blocksmgr";
-		$_GET["act"] = "new";			
+		header('location:?item=blocksmgr&act=mgr');
+		//$_GET["item"] = "blocksmgr";
+		//$_GET["act"] = "new";			
 	}
 
 	if ($overall_error)
@@ -272,10 +272,10 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "blocksmgr";
-				$_GET['act'] = "mgr";
-				$_GET['msg'] = 6;				
-				//header("Location:?item=newsmgr&act=mgr&msg=6");
+				//$_GET['item'] = "blocksmgr";
+				//$_GET['act'] = "mgr";
+				//$_GET['msg'] = 6;				
+				header("Location:?item=newsmgr&act=mgr&msg=6");
 			}
 		
 	}

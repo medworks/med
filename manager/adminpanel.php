@@ -25,7 +25,9 @@
 			header("Location: ../index.php");
 	   else
 		    echo $mes->ShowError("عملیات خروج با خطا مواجه شد، لطفا مجددا سعی نمایید.");
-   }  
+   }
+	if (isset($_GET['item']) and $_GET['item']!="logout")  
+    	$reqpage = include_once GetPageName($_GET['item'],$_GET['act']);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -127,8 +129,7 @@
  </div> 
  <div id="container"  class="admin_container">
     <?php
-      if (isset($_GET['item']) and $_GET['item']!="logout")  
-    	echo include_once GetPageName($_GET['item'],$_GET['act']); 
+      echo $reqpage;
     ?>    
  </div>
 

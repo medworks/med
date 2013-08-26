@@ -38,20 +38,20 @@
 		if (!$db->InsertQuery('users',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			//header('location:?item=usermgr&act=new&msg=2');
+			header('location:?item=usermgr&act=new&msg=2');
 			//exit();
-			$_GET["item"] = "usermgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 2;
+			//$_GET["item"] = "usermgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 2;
 		} 	
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-			//header('location:?item=usermgr&act=new&msg=1');					
+			header('location:?item=usermgr&act=new&msg=1');					
 			//exit();
-			$_GET["item"] = "usermgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 1;
+			//$_GET["item"] = "usermgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 1;
 		}  				 
 	}
 	else
@@ -69,9 +69,9 @@
 						 "`username`"=>"'{$_POST[username]}'",
 						 "`password`"=>"'{$pass}'");		
         $db->UpdateQuery("users",$values,array("id='{$_GET[uid]}'"));		
-		//header('location:?item=usermgr&act=mgr');
-		$_GET["item"] = "usermgr";
-		$_GET["act"] = "mgr";		
+		header('location:?item=usermgr&act=mgr');
+		//$_GET["item"] = "usermgr";
+		//$_GET["act"] = "mgr";		
 	}
 
 	if ($overall_error)
@@ -230,10 +230,10 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "usermgr";
-				$_GET['act'] = "mgr";
-				$_GET['msg'] = 6;				
-				//header("Location:?item=usermgr&act=mgr&msg=6");
+				//$_GET['item'] = "usermgr";
+				//$_GET['act'] = "mgr";
+				//$_GET['msg'] = 6;				
+				header("Location:?item=usermgr&act=mgr&msg=6");
 			}
 		
 	}

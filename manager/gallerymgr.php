@@ -21,10 +21,10 @@
 	 if(empty($_POST["selectpic"]))
 		{ 
 			//$msgs = $msg->ShowError("لط??ا ??ایل عکس را انتخاب کنید");
-			//header('location:?item=gallermgr&act=new&msg=4');
-			$_GET["item"] = "gallermgr";
-			$_GET["act"] = "new";
-			$_GET["msg"] = 4;
+			header('location:?item=gallermgr&act=new&msg=4');
+			//$_GET["item"] = "gallermgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 4;
 			$overall_error = true;
 			//exit();
 		}
@@ -36,20 +36,20 @@
 	if (!$db->InsertQuery('gallery',$fields,$values)) 
 	{
 		//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-		//header('location:?item=gallerymgr&act=new&msg=2');
+		header('location:?item=gallerymgr&act=new&msg=2');
 		//exit();
-		$_GET["item"] = "gallerymgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 2;
+		//$_GET["item"] = "gallerymgr";
+		//$_GET["act"] = "new";
+		//$_GET["msg"] = 2;
 	} 	
 	else 
 	{  										
 		//$msgs = $msg->ShowSuccess("ثبت اطلاعات با موفقیت انجام شد");
-		//header('location:?item=gallerymgr&act=new&msg=1');					
+		header('location:?item=gallerymgr&act=new&msg=1');					
 		//exit();
-		$_GET["item"] = "gallerymgr";
-		$_GET["act"] = "new";
-		$_GET["msg"] = 1;
+		//$_GET["item"] = "gallerymgr";
+		//$_GET["act"] = "new";
+		//$_GET["msg"] = 1;
 	 }
  }
  else
@@ -59,9 +59,9 @@
 	       		    "`subject`"=>"'{$_POST[subject]}'",
 					"`body`"=>"'{$_POST[body]}'");
 	$db->UpdateQuery("gallery",$values,array("id='{$_GET['sid']}'"));
-	//header('location:?item=gallerymgr&act=mgr');
-	$_GET["item"] = "gallerymgr";
-	$_GET["act"] = "mgr";			
+	header('location:?item=gallerymgr&act=mgr');
+	//$_GET["item"] = "gallerymgr";
+	//$_GET["act"] = "mgr";			
  }
 
 	if ($overall_error)
@@ -185,10 +185,10 @@ if ($_GET['act']=="mgr")
 				10);
 			if (!$rows) 
 			{					
-				$_GET['item'] = "gallery";
-				$_GET['act'] = "mgr";
-				$_GET['msg'] = 6;				
-				//header("Location:?item=worksmgr&act=mgr&msg=6");
+				//$_GET['item'] = "gallery";
+				//$_GET['act'] = "mgr";
+				//$_GET['msg'] = 6;				
+				header("Location:?item=worksmgr&act=mgr&msg=6");
 			}
 		
 	}
