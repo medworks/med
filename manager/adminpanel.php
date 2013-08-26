@@ -88,7 +88,7 @@
 	  <div id="mainnav" class="main-menu">
         <ul>
           <li>
-            <a href="?item=dashboard&act=do&type=line" class='dashboard'><p>پیشخوان</p></a>
+            <a href="?item=dashboard&act=do" class='dashboard'><p>پیشخوان</p></a>
           </li>
           <li>
             <a href="?item=catmgr&act=do" class="catmgr"><p>دسته بندی</p></a>
