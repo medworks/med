@@ -35,7 +35,8 @@ class Login
        $sess->Set("username",$row["username"]);
 	   $sess->Set("userid",$row["id"]);
        $sess->Set("name",$row["name"]);
-       $sess->Set("family",$row["family"]);       
+       $sess->Set("family",$row["family"]);
+	   $sess->Set("userimg",$row["image"]);
        return true;
    } 
 	function LogOut()
