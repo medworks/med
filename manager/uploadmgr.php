@@ -283,11 +283,21 @@ if ($_GET['act']=="mgr")
 				 {
 				   if ($adr[$j]==1)
 				   {					   
-					   $picaddress = "../{$pic_fldrs[$j]}/".$rows[$i]['image'];			   
+					   $picaddress = "../{$pic_fldrs[$j]}/".$rows[$i]['image'];
 					   break;
 				   }
 				 }	
                 $rows[$i]["image"] ="<img src='{$picaddress}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";
+				$picaddress = array();
+				for($j=0;$j<strlen($adr);$j++)
+				 {
+				   if ($adr[$j]==1)
+				   {					   
+					   $picaddress[] = $pic_fldrs[$j];
+				   }
+				 }
+				 $place = implode(" - ",$picaddress);
+				 $rows[$i]["place"] = $place;
 				
 				if ($i % 2==0)
 				 {
@@ -315,6 +325,7 @@ del;
 							"image"=>"عکس",
 							"subject"=>"عنوان",
 							"body"=>"توضیحات",
+							"place"=>"محل عکس",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=uploadmgr&act=mgr");
