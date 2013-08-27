@@ -19,7 +19,8 @@
   						    "userspics"=>0,
 							"slidespics"=>0,
 							"gallerypics"=>0);
- $pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");							
+ $pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");
+ $fa_pic_fldrs = array("اخبار","کارها","کاربران","اسلایدها","گالری تصاویر");
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
 	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
@@ -293,7 +294,7 @@ if ($_GET['act']=="mgr")
 				 {
 				   if ($adr[$j]==1)
 				   {					   
-					   $picaddress[] = $pic_fldrs[$j];
+					   $picaddress[] = $fa_pic_fldrs[$j];
 				   }
 				 }
 				 $place = implode(" - ",$picaddress);
