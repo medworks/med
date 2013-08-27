@@ -15,10 +15,12 @@ class Seo
 	$this->$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
 	$this->$Site_Describtion = GetSettingValue('Site_Describtion',0);
  }
-public static function GetSeo()
+
+ public static function GetSeo()
 {
    if(is_null(self::$me))
        self::$me = new Seo();
     return self::$me;
+ }
  }
  ?>

@@ -320,7 +320,7 @@ function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 	   function GetSettingValue($key, $strip_tags = 0)
        {
 			$db = Database::GetDatabase();
-			$row = $db ->Select("settings","value","`key`='{$key}'");		
+			$row = $db ->Select("settings","value","`key`='{$key}'");			
 			if ($strip_tags == 1 && $row)
 				$row["value"] = strip_tags($row["value"]);
 			return ($row) ? $row["value"] : false;
