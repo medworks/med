@@ -245,39 +245,39 @@ ht;
 				<p>
 					<label for="subject">ایمیل ادمین</label>
 				</p>    
-				<input type="text" name="admin_email" class="subject" id="admin_email" value='{$Admin_Email}'/>
+				<input type="text" name="admin_email" class="subject ltr" id="admin_email" value='{$Admin_Email}'/>
 				<p>
 					<label for="subject">ایمیل خبرنامه </label>
 				</p>    
-				<input type="text" name="news_email" class="subject" id="news_email" value='{$News_Email}'/>
+				<input type="text" name="news_email" class="subject ltr" id="news_email" value='{$News_Email}'/>
 								<p>
 					<label for="subject"> ایمیل تماس با ما</label>
 				</p>    
-				<input type="text" name="contact_email" class="subject" id="contact_email" value='{$Contact_Email}'/>
+				<input type="text" name="contact_email" class="subject ltr" id="contact_email" value='{$Contact_Email}'/>
 				<p>
 					<label for="facebook">آدرس فیس بوک </label>
 				</p>    
-				<input type="text" name="facebook_add" class="subject" id="facebook_add" value='{$FaceBook_Add}'/>
+				<input type="text" name="facebook_add" class="subject ltr" id="facebook_add" value='{$FaceBook_Add}'/>
 				<p>
 					<label for="twitter">آدرس تویتر </label>
 				</p>    
-				<input type="text" name="twitter_add" class="subject" id="twitter_add" value='{$Twitter_Add}'/>
+				<input type="text" name="twitter_add" class="subject ltr" id="twitter_add" value='{$Twitter_Add}'/>
 				<p>
 					<label for="rss">آدرس RSS </label>
 				</p>    
-				<input type="text" name="rss_add" class="subject" id="rss_add" value='{$Rss_Add}'/>
+				<input type="text" name="rss_add" class="subject ltr" id="rss_add" value='{$Rss_Add}'/>
 				<p>
 					<label for="gpluse">آدرس گوگل پلاس </label>
 				</p>    
-				<input type="text" name="gplus_add" class="subject" id="gplus_add" value='{$Gplus_Add}'/>
+				<input type="text" name="gplus_add" class="subject ltr" id="gplus_add" value='{$Gplus_Add}'/>
 				<p>
 					<label for="tel">تلفن شرکت</label>
 				</p>    
-				<input type="text" name="tel_number" class="subject" id="tel_number" value='{$Tell_Number}'/>
+				<input type="text" name="tel_number" class="subject ltr" id="tel_number" value='{$Tell_Number}'/>
 				<p>
 					<label for="fax">فاکس شرکت</label>
 				</p>    
-				<input type="text" name="fax_number" class="subject" id="fax_number" value='{$Fax_Number}'/>
+				<input type="text" name="fax_number" class="subject ltr" id="fax_number" value='{$Fax_Number}'/>
 				<p>
 					<label for="address">آدرس شرکت</label>
 				</p>    

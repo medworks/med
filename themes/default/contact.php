@@ -1,5 +1,9 @@
 <?php
 
+$address = GetSettingValue('Address',0);
+$tel = GetSettingValue('Tell_Number',0);
+$fax = GetSettingValue('Fax_Number',0);
+
 $html="
 	   <script>
 			function initialize()
@@ -46,6 +50,11 @@ $html.=<<<cd
 				<div id="googleMap" style="width:588px;height:380px;"></div>
 
 				<form action="" id="contactfrm" method="post">
+				   <p class="note">شما می توانید از طریق زیر با ما در تماس باشید</p>
+				   <div class="addreess"><p>آدرس: $address</p></div>
+				   <div class="tel"><p>تلفن: $tel</p></div>
+				   <div class="fax"><p>تلفکس: $fax</p></div>
+				   <div class="email"><p><a href="mailto:info@mediateq.ir" target="_blank">ایمیل: info[at]mediateq.ir</a></p></div>
 				   <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
 				   <p>
 			         <label for="pic">نام و نام خانوادگی </label>
