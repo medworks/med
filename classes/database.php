@@ -22,7 +22,7 @@ public static function GetDatabase()
  
 public function RunSQL()
 {              
-   $security = security::GetSecurity ();
+   $security = Security::GetSecurity ();
    $this->cmd = $security->Xss_Clean($this->cmd);
    //echo $this->cmd;
    //var_dump(mysql_error());
