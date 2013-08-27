@@ -20,7 +20,7 @@
 							"slidespics"=>0,
 							"gallerypics"=>0);
  $pic_fldrs = array("newspics","workspics","userspics","slidespics","gallerypics");
- $fa_pic_fldrs = array("اخبار","کارها","کاربران","اسلایدها","گالری تصاویر");
+ $fa_pic_fldrs = array("اخبار","فعالیت ها","کاربران","اسلایدها","گالری تصاویر");
   for($i=0;$i<count($_POST['picsaddr']);$i++)
   {
 	if ($_POST['picsaddr'][$i]=="newspics") {$pic_fldr_bit_addr["newspics"]= 1;}
