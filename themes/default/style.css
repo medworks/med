@@ -1907,3 +1907,14 @@ section.main-content .content .detail p span{
 .aboutus span{
   color: #000 !important;
 }
+/*********************************404 page*****************************/
+.not-found{
+	color: #555555;
+	text-align: center;
+	font-size: 30px;
+}
+
+.not-found p{
+	text-align: center;
+	margin-bottom: 10px;
+}
