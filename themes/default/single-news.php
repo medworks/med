@@ -5,7 +5,7 @@
 	$db = database::getDatabase();
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
-	$news[userid] = GetUserName($news["userid"]);
+	$news["userid"] = GetUserName($news["userid"]);
 	$body= $news['body'];
 $html=<<<ht
 	<div class="content single-page">

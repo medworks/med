@@ -1,5 +1,5 @@
 <?php
-	include_once("classes/functions.php");
+	include_once("classes/functions.php");	
 	$Site_Title = GetSettingValue('Site_Title',0);
 	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
 	$Site_Describtion = GetSettingValue('Site_Describtion',0);
