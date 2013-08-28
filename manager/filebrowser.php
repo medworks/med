@@ -83,9 +83,22 @@ $html=<<<cd
 		</div>
 		<div class="files right">
 			<div class="pics">
-				<ul>
-					{$pics}                    
-				</ul>
+				<div class="cat-tabs-header">
+					<ul>
+						<li><a href="#catab1">پوشه اخبار</a></li>
+						<li><a href="#catab2">پوشه کارها</a></li>
+					</ul>
+				</div>
+				<div class="cat-tabs-wrap" id="catab1">
+					<ul>
+						{$pics}                    
+					</ul>
+				</div>
+				<div class="cat-tabs-wrap" id="catab2">
+					<ul>
+						{$pics}                    
+					</ul>
+				</div>
 				<div class="badboy"></div>
 			</div>
 		</div>
