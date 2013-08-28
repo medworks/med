@@ -1413,3 +1413,15 @@ div.contact-page .contact .detail .address p.email{
     text-align: center;
     margin-bottom: 10px;
 }
+
+.notfoundpage .mid{
+    margin-top: 50px;
+}
+
+.notfoundpage .mid .logo h2{
+    text-align: center;
+}
+
+.notfoundpage .mid .logo a strong{
+    display: none;
+}
