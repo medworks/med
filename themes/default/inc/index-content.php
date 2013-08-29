@@ -329,8 +329,6 @@ cd;
 $html.=<<<cd
 			</ul>
 			<div class="badboy"></div>
-			</ul>
-			<div class="badboy"></div>
 		</div>
 		<div class="cat-tabs-wrap" id="catab1">
 			<ul>
