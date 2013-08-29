@@ -82,7 +82,7 @@ $html=<<<cd
 			<a title="خروج" class="button" id="exit">خروج</a>
 		</div>
 		<div class="files right">
-			<div class="pics">
+			<div class="pics cat-box-content cat-box tab" id="cats-tabs-box">
 				<div class="cat-tabs-header">
 					<ul>
 						<li><a href="#catab1">پوشه اخبار</a></li>
@@ -91,13 +91,15 @@ $html=<<<cd
 				</div>
 				<div class="cat-tabs-wrap" id="catab1">
 					<ul>
-						{$pics}                    
+						{$pics}
 					</ul>
+					<div class="badboy"></div>
 				</div>
 				<div class="cat-tabs-wrap" id="catab2">
 					<ul>
-						{$pics}                    
+						{$pics}
 					</ul>
+					<div class="badboy"></div>
 				</div>
 				<div class="badboy"></div>
 			</div>
