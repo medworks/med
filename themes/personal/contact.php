@@ -16,7 +16,7 @@ $html=<<<cd
 				{
 					var mapProp = {
 					  center:new google.maps.LatLng(36.309462, 59.567817),
-					  zoom:18,
+					  zoom:17,
 					  mapTypeId:google.maps.MapTypeId.ROADMAP
 					  };
 
