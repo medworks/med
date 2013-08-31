@@ -1,0 +1,10 @@
+# deny most common except .php
+<FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module)$">
+deny from all
+</FilesMatch>
+                           
+<IFModule mod_rewrite.c>
+RewriteEngine on
+</IFModule>
+ErrorDocument 404 http://www.mediateq.ir/themes/404.html
+
