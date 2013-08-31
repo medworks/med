@@ -19,4 +19,39 @@
 	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname",null,null,"select validate[required]");
 	echo $cbcategory;
 }
+if ($_GET["cmd"]=="file")
+{
+    $dir = $_GET["item"];
+	$handle=opendir($_GET["item"]);
+    while ($file = readdir($handle))
+    {        
+         if (!preg_match("/^[.]/",$file,$out, PREG_OFFSET_CAPTURE))
+         {             
+			 if(is_file("{$dir}/".$file))
+			 {                              
+					  $dirname = "{$dir}/".basename($file);
+					  $filename = basename($file);
+					  $exe = substr($filename, strrpos($filename, '.') + 1);
+					  $name = substr($filename, 0, strrpos($filename, '.'));
+					  $allowedExts = array('jpg','jpeg','png','bmp','gif');
+
+					if(in_array($exe, $allowedExts)){
+                      $pics.=<<<cd
+					    <li>
+							<div class="pic">
+								<a class="select" title="انتخاب عکس {$name}">
+									<img src="{$dirname}" alt="{$name}" />
+									<div class="overlay"></div>
+								</a>
+							</div>
+							<h2><!-- <span class="highlight">نام فایل: </span> --><span class="filename">{$name}</span></h2>
+						</li>
+cd;
+					}
+			  }
+        }
+    }
+	closedir($handle);
+	 
+}
 ?>

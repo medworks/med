@@ -68,6 +68,23 @@ cd;
    
     closedir($handle);  
 $html=<<<cd
+<script type='text/javascript'>
+	$(document).ready(function(){	   			
+		$("#tab1").click(function(){	
+			$.get('ajaxcommand.php?cmd=file&item=newsmgr', function(data) {
+						$('#tab1').html(data);
+				});			
+			return false;
+		});
+		$("#tab2").click(function(){
+		$.get('ajaxcommand.php?cmd=file&item=worksmgr', function(data) {
+						$('#tab2').html(data);
+				});			
+			return false;
+		});
+		
+	});
+</script>	   
 	<div class="picmanager">
 		<div class="prev right">
 			<div class="pic">
@@ -85,8 +102,11 @@ $html=<<<cd
 			<div class="pics cat-box-content cat-box tab" id="cats-tabs-box">
 				<div class="cat-tabs-header">
 					<ul>
-						<li><a href="#catab1">پوشه اخبار</a></li>
-						<li><a href="#catab2">پوشه کارها</a></li>
+						<li id="tab1"><a href="#catab1">پوشه اخبار</a></li>
+						<li id="tab2"><a href="#catab2">پوشه کارها</a></li>
+						<li id="tab3"><a href="#catab3">پوشه اسلاید ها</a></li>
+						<li id="tab4"><a href="#catab4">پوشه گالری</a></li>
+						<li id="tab5"><a href="#catab5">پوشه کاربران</a></li>
 					</ul>
 				</div>
 				<div class="cat-tabs-wrap" id="catab1">
