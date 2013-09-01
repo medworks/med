@@ -47,14 +47,40 @@ if ($_GET["cmd"]=="file")
 								</a>
 							</div>
 							<h2><!-- <span class="highlight">نام فایل: </span> --><span class="filename">{$name}</span></h2>
-						</li>
+						</li>	   
 cd;
 					}
 			  }
         }
     }
 	closedir($handle);
-	echo $pics;
+$html.=<<<cd
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			$('#catab1 a.select').click(function(){
+	                var srcimg= $(this).children('img').attr('src');
+	                $('img#previmage').attr('src',srcimg);
+	                
+	                var filename= $(this).parent().parent().children('h2').children('span.filename').text();
+	                $('#namepreview').html(filename);
+
+	               var size= getImgSize(srcimg);
+	               $('#sizepreview').html(size);
+
+	               var ext = $(this).children('img').attr('src').split('.').pop().toLowerCase();
+	               $('#typepreview').html(ext);
+
+	               $('#select').click(function(){
+	                    var value= srcimg;
+	                    $('#selectpic').val(value);
+	                    value= value.split('/').reverse()[0];
+	                    $('#showadd').val(value);
+	               });
+	            });
+		});
+	</script>
+cd;
+	echo $pics.$html;
 	 
 }
 ?>
