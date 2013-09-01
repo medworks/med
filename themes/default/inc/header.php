@@ -143,7 +143,7 @@
 
 				<?php
   	  				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
-					for($i=0 ; $i<count($news) ; $i++){
+					for($i=0 ; $i<5 ; $i++){
 						$subject= $news[$i]["subject"];
 						$subject= (mb_strlen($subject)>100) ? mb_substr($subject,0,100,"UTF-8")."..." : $subject;
 						echo "<li><a href='?item=fullnews&act=do&wid={$news[$i]["id"]}' title='{$news[$i]["subject"]}'>$subject</a></li>";
