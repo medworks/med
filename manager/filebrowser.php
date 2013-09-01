@@ -36,53 +36,41 @@
 	{	 
 		$dir='../userspics';
 	}		
-    $handle=opendir($dir);
-    while ($file = readdir($handle))
-    {        
-         if (!preg_match("/^[.]/",$file,$out, PREG_OFFSET_CAPTURE))
-         {             
-			 if(is_file("{$dir}/".$file))
-			 {                              
-					  $dirname = "{$dir}/".basename($file);
-					  $filename = basename($file);
-					  $exe = substr($filename, strrpos($filename, '.') + 1);
-					  $name = substr($filename, 0, strrpos($filename, '.'));
-					  $allowedExts = array('jpg','jpeg','png','bmp','gif');
-
-					if(in_array($exe, $allowedExts)){
-                      $pics.=<<<cd
-					    <li>
-							<div class="pic">
-								<a class="select" title="انتخاب عکس {$name}">
-									<img src="{$dirname}" alt="{$name}" />
-									<div class="overlay"></div>
-								</a>
-							</div>
-							<h2><!-- <span class="highlight">نام فایل: </span> --><span class="filename">{$name}</span></h2>
-						</li>
-cd;
-					}
-			  }
-        }
-    }
    
-    closedir($handle);  
 $html=<<<cd
 <script type='text/javascript'>
-	$(document).ready(function(){	   			
+	$(document).ready(function(){		  	 
 		$("#tab1").click(function(){	
-			$.get('ajaxcommand.php?cmd=file&item=newsmgr', function(data) {
-						$('#tab1').html(data);
+			$.get('ajaxcommand.php?cmd=file&item=newspics', function(data) {
+						$('#catab1 ul').html(data);
 				});			
 			return false;
-		});
+		});		
 		$("#tab2").click(function(){
-		$.get('ajaxcommand.php?cmd=file&item=worksmgr', function(data) {
-						$('#tab2').html(data);
+		$.get('ajaxcommand.php?cmd=file&item=workspics', function(data) {
+						$('#catab2 ul').html(data);
 				});			
 			return false;
 		});
-		
+		$("#tab3").click(function(){
+		$.get('ajaxcommand.php?cmd=file&item=slidespics', function(data) {
+						$('#catab3 ul').html(data);
+				});			
+			return false;
+		});
+		$("#tab4").click(function(){
+		$.get('ajaxcommand.php?cmd=file&item=gallerypics', function(data) {
+						$('#catab4 ul').html(data);
+				});			
+			return false;
+		});
+		$("#tab5").click(function(){
+		$.get('ajaxcommand.php?cmd=file&item=userspics', function(data) {
+						$('#catab5 ul').html(data);
+				});			
+			return false;
+		});
+		$("#tab1").click();
 	});
 </script>	   
 	<div class="picmanager">
@@ -111,13 +99,31 @@ $html=<<<cd
 				</div>
 				<div class="cat-tabs-wrap" id="catab1">
 					<ul>
-						{$pics}
+						
 					</ul>
 					<div class="badboy"></div>
 				</div>
 				<div class="cat-tabs-wrap" id="catab2">
 					<ul>
-						{$pics}
+					
+					</ul>
+					<div class="badboy"></div>
+				</div>
+				<div class="cat-tabs-wrap" id="catab3">
+					<ul>
+						
+					</ul>
+					<div class="badboy"></div>
+				</div>
+				<div class="cat-tabs-wrap" id="catab4">
+					<ul>
+						
+					</ul>
+					<div class="badboy"></div>
+				</div>
+				<div class="cat-tabs-wrap" id="catab5">
+					<ul>
+						
 					</ul>
 					<div class="badboy"></div>
 				</div>

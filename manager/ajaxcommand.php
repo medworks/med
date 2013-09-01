@@ -21,8 +21,10 @@
 }
 if ($_GET["cmd"]=="file")
 {
-    $dir = $_GET["item"];
-	$handle=opendir($_GET["item"]);
+	$pics = "";
+	//echo "item is :",$_GET["item"];
+    $dir = "../".$_GET["item"];
+	$handle=opendir($dir);
     while ($file = readdir($handle))
     {        
          if (!preg_match("/^[.]/",$file,$out, PREG_OFFSET_CAPTURE))
@@ -52,6 +54,7 @@ cd;
         }
     }
 	closedir($handle);
+	echo $pics;
 	 
 }
 ?>
