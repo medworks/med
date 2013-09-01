@@ -3,7 +3,7 @@
 	include_once("./lib/persiandate.php");
 	include_once("./classes/database.php");	
 	$db = Database::GetDatabase();
-	//$seo = new Seo;
+	//$seo = Seo::GetSeo();
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$news["userid"] = GetUserName($news["userid"]);
