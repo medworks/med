@@ -32,6 +32,12 @@
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
+	<script type="text/javascript" src="http://counter.toolsir.com/secure.js"></script>
+	<script type="text/javascript">
+		var _torder = '&pic=1';
+		var _turl = 'http://www.mediateq.ir';
+		_tCounter (_torder,_turl);
+	</script>
 	<link rel="Shortcut Icon" href="themes/default/favicon.ico" />
 </head>
 <body>
