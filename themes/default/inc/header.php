@@ -84,7 +84,7 @@
 			</div>
 			<div class="top-menu">
 				<menu class="menu">
-					<li><a href="./">صفحه اصلی</a></li>
+					<li><a href="./">ص�?حه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
 					<li><a href="?item=gallery">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
