@@ -29,6 +29,22 @@
 	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
+	<!-- Piwik -->
+		<script type="text/javascript"> 
+		  var _paq = _paq || [];
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+			var u=(("https:" == document.location.protocol) ? "https" : "http") + "://mediateq.ir/analys//";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 1]);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+			g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+
+		</script>
+		<noscript><p><img src="http://mediateq.ir/analys/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+	<!-- End Piwik Code -->
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
