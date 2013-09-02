@@ -1,4 +1,31 @@
 <?php
+
+$admin = 'info@mediateq.ir';
+$name    = $_POST['name'];
+$email   = $_POST['email'];
+$subject   = $_POST['subject'];
+$text    = $_POST['message'];
+
+$message = "$text";
+
+if( strlen($name)>=8 && strlen($email)>=7 && strlen($text)>=10 ){
+	if( @mail (
+			$admin,
+			"$subject",
+			$message,
+			"From:$name $email" )
+	){
+		echo '<script type="text/javascript">
+				alert("پیام شما با موفقیت ارسال شد.");
+			  </script>';
+
+	}else{
+		echo '<script type="text/javascript">
+				alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
+			  </script>';
+	}
+}
+
 	$db = database::GetDatabase();
 	$address = GetSettingValue('Address',0);
 	$tel = GetSettingValue('Tell_Number',0);
@@ -52,7 +79,7 @@ $html=<<<cd
 						</p>
 						<label>ایمیل<span> *</span></label>
 						<p>
-							<input type="text" name="email" class="email" id="email" />
+							<input type="text" name="email" class="ltr email" id="email" />
 						</p>
 						<label>عنوان<span> *</span></label>
 						<p>
