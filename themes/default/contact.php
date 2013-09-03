@@ -1,5 +1,31 @@
 <?php
 
+$admin = 'info@mediateq.ir';
+$name    = $_POST['family'];
+$email   = $_POST['email'];
+$subject   = $_POST['subject'];
+$text    = $_POST['message'];
+
+$message = "$text";
+
+if( strlen($name)>=8 && strlen($email)>=7 && strlen($text)>=10 ){
+	if( @mail (
+			$admin,
+			"$subject",
+			$message,
+			"From:$name $email" )
+	){
+		echo '<script type="text/javascript">
+				alert("پیام شما با موفقیت ارسال شد.");
+			  </script>';
+
+	}else{
+		echo '<script type="text/javascript">
+				alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
+			  </script>';
+	}
+}
+
 $address = GetSettingValue('Address',0);
 $tel = GetSettingValue('Tell_Number',0);
 $fax = GetSettingValue('Fax_Number',0);
@@ -60,17 +86,17 @@ $html.=<<<cd
 			         <label for="pic">نام و نام خانوادگی </label>
 			         <span>*</span>
 			       </p>
-			       <input type="text" name="family" class="validate[required] family" id="family" value='{$row[subject]}'/>
+			       <input type="text" name="family" class="validate[required] family" id="family"/>
 				   <p>
 			         <label for="pic">ایمیل </label>
 			         <span>*</span>
 			       </p>
-			       <input type="text" name="email" class="validate[required,custom[email]] ltr email" id="email" value='{$row[subject]}'/>
+			       <input type="text" name="email" class="validate[required,custom[email]] ltr email" id="email"/>
 			       <p>
 			         <label for="subject">عنوان </label>
 			         <span>*</span>
 			       </p>    
-			       <input type="text" name="subject" class="validate[required] subject" id="subject" value='{$row[subject]}'/> 
+			       <input type="text" name="subject" class="validate[required] subject" id="subject"/> 
 				   <p>
 				   	 <label for="subject">پیام </label>
 			         <span>*</span>

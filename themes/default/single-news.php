@@ -2,11 +2,13 @@
 	include_once("./config.php");
 	include_once("./lib/persiandate.php");
 	include_once("./classes/database.php");	
-	$db = database::getDatabase();
+	$db = Database::GetDatabase();
+	//$seo = Seo::GetSeo();
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$news["userid"] = GetUserName($news["userid"]);
-	$body= $news['body'];
+	$body = $news['body'];
+	$seo->Site_Title = $news["subject"];	
 $html=<<<ht
 	<div class="content single-page">
 	<div class="title-menu">

@@ -1,19 +1,19 @@
 <?php
 	include_once("classes/functions.php");
 	include_once("classes/seo.php");
-	//$seo = Seo::GetSeo();
-	$Site_Title = GetSettingValue('Site_Title',0);
-	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	$Site_Describtion = GetSettingValue('Site_Describtion',0); 
+	$seo = Seo::GetSeo();
+	// $seo->Site_Title = GetSettingValue('Site_Title',0);
+	// $seo->Site_KeyWords = GetSettingValue('Site_KeyWords',0);
+	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0); 
 ?>
 <!doctype html>
 <html lang="fr">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
-	<title><?php echo $seo->$Site_Title;?></title>
-	<meta name="description" content="<?php echo $seo->$Site_Describtion;?> "/>
-	<meta name="keywords" content="<?php echo $seo->$Site_KeyWords;?> "/>
+	<title><?php echo $seo->Site_Title;?></title>
+	<meta name="description" content="<?php echo $seo->Site_Describtion;?> "/>
+	<meta name="keywords" content="<?php echo $seo->Site_KeyWords;?> "/>
 	<link rel="stylesheet" href="themes/css/1styles.css" />
 	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
 	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
@@ -29,15 +29,25 @@
 	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
+	<!-- Piwik -->
+		<script type="text/javascript"> 
+		  var _paq = _paq || [];
+		  _paq.push(['trackPageView']);
+		  _paq.push(['enableLinkTracking']);
+		  (function() {
+			var u=(("https:" == document.location.protocol) ? "https" : "http") + "://mediateq.ir/analys//";
+			_paq.push(['setTrackerUrl', u+'piwik.php']);
+			_paq.push(['setSiteId', 1]);
+			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+			g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+		  })();
+
+		</script>
+		<noscript><p><img src="http://mediateq.ir/analys/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+	<!-- End Piwik Code -->
 	<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 	<![endif]-->
-	<script type="text/javascript" src="http://counter.toolsir.com/secure.js"></script>
-	<script type="text/javascript">
-		var _torder = '&pic=1';
-		var _turl = 'http://www.mediateq.ir';
-		_tCounter (_torder,_turl);
-	</script>
 	<link rel="Shortcut Icon" href="themes/default/favicon.ico" />
 </head>
 <body>
@@ -90,7 +100,7 @@
 			</div>
 			<div class="top-menu">
 				<menu class="menu">
-					<li><a href="./">صفحه اصلی</a></li>
+					<li><a href="./">ص�?حه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
 					<li><a href="?item=gallery">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
