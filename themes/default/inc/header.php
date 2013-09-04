@@ -7,7 +7,7 @@
 	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0);	
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="fa">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
