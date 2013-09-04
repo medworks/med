@@ -34,7 +34,6 @@ if( strlen($name)>=1 && strlen($email)>=1 && strlen($subject)>=1 && strlen($text
 }
 
 $html="
-	   <script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 	   <script>
 			function initialize()
 			{
@@ -45,18 +44,6 @@ $html="
 				  };
 
 				var map=new google.maps.Map(document.getElementById('googleMap'),mapProp);
-
-				var marker=new google.maps.Marker({
-				 	 position:myCenter,
-				  });
-
-				marker.setMap(map);
-
-				var infowindow = new google.maps.InfoWindow({
-					  content:'Mediateq'
-				  });
-
-				infowindow.open(map,marker);
 
 			}
 
