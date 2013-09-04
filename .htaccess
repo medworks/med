@@ -7,4 +7,7 @@ deny from all
 RewriteEngine on
 </IFModule>
 ErrorDocument 404 http://www.mediateq.ir/themes/404.html
-
+# Enable / Disable directory Listing/Browsing
+Options -Indexes
+IndexOptions -FancyIndexing
+ServerSignature Off

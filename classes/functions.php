@@ -6,8 +6,8 @@ include_once("./classes/messages.php");
 */
   function GetPageName($func,$act)
 	{
-	    include_once("./classes/database.php");
-		include_once("./classes/seo.php");
+	    include_once("database.php");
+		include_once("seo.php");
 		$db = Database::GetDatabase();	
 		$seo = Seo::GetSeo();
 		switch($func)
@@ -31,12 +31,14 @@ include_once("./classes/messages.php");
 				if ($act=="do") return "dashboard.php";
 			break;	
             case 'works':
+				$seo->Site_Title = "کار های ما";
                 if ($act=="do") return "themes/default/works.php";
             break;
             case 'fullworks':
                 if ($act=="do") return "themes/default/single-works.php";
             break;			          
             case 'news':
+				$seo->Site_Title = "اخبار";
                 if ($act=="do") return "themes/default/news.php";
 			break;
 			case 'fullnews':
