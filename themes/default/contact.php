@@ -18,12 +18,13 @@ if( strlen($name)>=8 && strlen($email)>=7 && strlen($text)>=10 ){
 		echo '<script type="text/javascript">
 				alert("پیام شما با موفقیت ارسال شد.");
 			  </script>';
-
+     
 	}else{
 		echo '<script type="text/javascript">
 				alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
 			  </script>';
 	}
+	header("Location:?item=contact");
 }
 
 $address = GetSettingValue('Address',0);
