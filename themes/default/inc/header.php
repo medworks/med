@@ -26,7 +26,8 @@
 	<script src="lib/js/CFInstall.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
-	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
+	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>
+	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!-- Piwik -->
 		<script type="text/javascript"> 
