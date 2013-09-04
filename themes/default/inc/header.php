@@ -28,7 +28,6 @@
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
 	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
-	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 	<!-- Piwik -->
 		<script type="text/javascript"> 
 		  var _paq = _paq || [];
