@@ -4,8 +4,7 @@
 	$seo = Seo::GetSeo();
 	// $seo->Site_Title = GetSettingValue('Site_Title',0);
 	// $seo->Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0);
-	
+	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0);	
 ?>
 <!doctype html>
 <html lang="fr">
