@@ -38,12 +38,13 @@ $html=<<<cd
 		</div>
 		<div class="badboy"></div>
 		<div class="contact" id="special-page">
+			<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 			<script>
 				function initialize()
 				{
 					var mapProp = {
 					  center:new google.maps.LatLng(36.309462, 59.567817),
-					  zoom:17,
+					  zoom:18,
 					  mapTypeId:google.maps.MapTypeId.ROADMAP
 					  };
 

@@ -6,30 +6,39 @@ include_once("./classes/messages.php");
 */
   function GetPageName($func,$act)
 	{
+	    include_once("database.php");
+		include_once("seo.php");
+		$db = Database::GetDatabase();	
+		$seo = Seo::GetSeo();
 		switch($func)
 		{
 			case 'initial':
 				return "index.php";
 			break;
             case 'about':
+				$seo->Site_Title = "درباره ما";	
                 return "themes/default/about.php";
 			break;
-			case 'contact':
+			case 'contact':			    			
+				$seo->Site_Title = "تماس با ما";
                 return "themes/default/contact.php";
 			break;
 			case 'gallery':
+			    $seo->Site_Title = "گالری تصاویر";
                 return "themes/default/gallery.php";
 			break;
 			case 'dashboard':
 				if ($act=="do") return "dashboard.php";
 			break;	
             case 'works':
+				$seo->Site_Title = "کار های ما";
                 if ($act=="do") return "themes/default/works.php";
             break;
             case 'fullworks':
                 if ($act=="do") return "themes/default/single-works.php";
             break;			          
             case 'news':
+				$seo->Site_Title = "اخبار";
                 if ($act=="do") return "themes/default/news.php";
 			break;
 			case 'fullnews':

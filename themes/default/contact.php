@@ -1,6 +1,11 @@
 <?php
 
+$address = GetSettingValue('Address',0);
+$tel = GetSettingValue('Tell_Number',0);
+$fax = GetSettingValue('Fax_Number',0);
+
 $admin = 'info@mediateq.ir';
+
 $name    = $_POST['family'];
 $email   = $_POST['email'];
 $subject   = $_POST['subject'];
@@ -8,27 +13,25 @@ $text    = $_POST['message'];
 
 $message = "$text";
 
-if( strlen($name)>=8 && strlen($email)>=7 && strlen($text)>=10 ){
-	if( @mail (
-			$admin,
+if( strlen($name)>=1 && strlen($email)>=1 && strlen($subject)>=1 && strlen($text)>=1 ){
+	if(@mail($admin,
 			"$subject",
 			$message,
-			"From:$name $email" )
-	){
+			"From:$name $email")){
+
 		echo '<script type="text/javascript">
 				alert("پیام شما با موفقیت ارسال شد.");
 			  </script>';
-
+		echo 'test1';
 	}else{
-		echo '<script type="text/javascript">
-				alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
-			  </script>';
-	}
-}
+			echo '<script type="text/javascript">
+					alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
+				  </script>';
+		echo 'test1';
 
-$address = GetSettingValue('Address',0);
-$tel = GetSettingValue('Tell_Number',0);
-$fax = GetSettingValue('Fax_Number',0);
+		}
+	//header("Location:?item=contact");
+}
 
 $html="
 	   <script>
@@ -36,23 +39,11 @@ $html="
 			{
 				var mapProp = {
 				  center:new google.maps.LatLng(36.309462, 59.567817),
-				  zoom:17,
+				  zoom:18,
 				  mapTypeId:google.maps.MapTypeId.ROADMAP
 				  };
 
 				var map=new google.maps.Map(document.getElementById('googleMap'),mapProp);
-
-				var marker=new google.maps.Marker({
-				 	 position:myCenter,
-				  });
-
-				marker.setMap(map);
-
-				var infowindow = new google.maps.InfoWindow({
-					  content:'Mediateq'
-				  });
-
-				infowindow.open(map,marker);
 
 			}
 
@@ -111,5 +102,6 @@ $html.=<<<cd
 			</div>
 		</div></div>
 cd;
+
 return $html;
 ?>

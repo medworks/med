@@ -57,7 +57,7 @@ cd;
 $html.=<<<cd
 	<script type='text/javascript'>
 		$(document).ready(function(){
-			$('#catab1 a.select').click(function(){
+			$('.cat-tabs-wrap a.select').click(function(){
 	                var srcimg= $(this).children('img').attr('src');
 	                $('img#previmage').attr('src',srcimg);
 	                

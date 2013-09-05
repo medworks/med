@@ -4,10 +4,10 @@
 	$seo = Seo::GetSeo();
 	// $seo->Site_Title = GetSettingValue('Site_Title',0);
 	// $seo->Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0); 
+	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0);	
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="fa">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
@@ -26,9 +26,9 @@
 	<script src="lib/js/CFInstall.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
-	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>	
-	<script src="themes/default/js/script.js" type="text/javascript"></script>
+	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>
 	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
+	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!-- Piwik -->
 		<script type="text/javascript"> 
 		  var _paq = _paq || [];
@@ -100,7 +100,7 @@
 			</div>
 			<div class="top-menu">
 				<menu class="menu">
-					<li><a href="./">ص�?حه اصلی</a></li>
+					<li><a href="./">صفحه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
 					<li><a href="?item=gallery">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
