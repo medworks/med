@@ -112,7 +112,6 @@ else
 	<form name="frmabout" id= "frmabout" action="" method="post" >
 		<p>
 			 <label for="about">درباره ما </label>
-			 <span>*</span>
 		   </p>
 		   <textarea cols="50" rows="10" name="about" class="validate[required] detail" id="detail">{$About_System}</textarea>
 		   <p>
@@ -168,16 +167,6 @@ else
 				staffid : "991234"
 			}
 		});
-
-		function initialiseInstance(editor){
-			$('#submit').click(function(event){
-				if(editor.getContent()==""){
-					$('#detail_tbl').validationEngine('showPrompt', '* لطفا فیلد توضیحات را تکمیل نمایید', 'red', 'topRight');
-				}else{
-					$('#detail_tbl').validationEngine('hide');
-				}
-			});
-		}
 	</script>
 	<!-- /TinyMCE -->  
 ht;
@@ -199,19 +188,16 @@ ht;
 			<form name="frmseo" id= "frmseo" action="" method="post" >
 				<p>
 					<label for="subject">عنوان سایت </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="title" class="validate[required] subject" id="title" value='{$Site_Title}'/>
+				<input type="text" name="title" class="subject" id="title" value='{$Site_Title}'/>
 				<p>
 					<label for="subject">کلمات کلیدی </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="keywords" class="validate[required] subject" id="keywords" value='{$Site_KeyWords}'/>
+				<input type="text" name="keywords" class="subject" id="keywords" value='{$Site_KeyWords}'/>
 								<p>
 					<label for="subject">توضیحات سایت </label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="describe" class="validate[required] subject" id="describe" value='{$Site_Describtion}'/>
+				<input type="text" name="describe" class="subject" id="describe" value='{$Site_Describtion}'/>
 				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editseo' />
@@ -306,14 +292,12 @@ ht;
 			<form name="frmemails" id= "frmemails" action="" method="post" >
 				<p>
 					<label for="subject">تعداد صفحه در صفحه بندی</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="Max_Page_Number" class="validate[required] subject" id="Max_Page_Number" value='{$Max_Page_Number}'/>
+				<input type="text" name="Max_Page_Number" class="subject" id="Max_Page_Number" value='{$Max_Page_Number}'/>
 				<p>
 					<label for="subject">تعداد مطلب در صفحه اول</label>
-					<span>*</span>
 				</p>    
-				<input type="text" name="Max_Post_Number" class="validate[required] subject" id="title" value='{$Max_Post_Number}'/>				
+				<input type="text" name="Max_Post_Number" class="subject" id="title" value='{$Max_Post_Number}'/>				
 				<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
 			 <input type='hidden' name='mark' value='editgrid' />
