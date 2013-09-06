@@ -784,6 +784,8 @@ header #mini-nav span.newSignup{
 
 #mainnav > ul > li .current-arrow{
   position: absolute;
+  top: 43px;
+  left: 0;
 }
 
 #mainnav > ul > li .current-arrow:before,
