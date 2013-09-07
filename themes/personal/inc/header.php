@@ -1,15 +1,19 @@
 <?php
-	$Site_Title = GetSettingValue('Site_Title',0);
+	include_once("classes/seo.php");
+	$seo = Seo::GetSeo();
+	/* $Site_Title = GetSettingValue('Site_Title',0);
 	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
 	$Site_Describtion = GetSettingValue('Site_Describtion',0);
-	$tel = GetSettingValue('Tell_Number',0);
+	$tel = GetSettingValue('Tell_Number',0); */
 ?>
 <!doctype html>
 <html lang="fr">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
-	<title><?php echo $Site_Title;?></title>
+	<title><?php echo $seo->Site_Title;?></title>
+	<meta name="description" content="<?php echo $seo->Site_Describtion;?> "/>
+	<meta name="keywords" content="<?php echo $seo->Site_KeyWords;?> "/>
 	<link rel="stylesheet" href="themes/css/1styles.css" />
 	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
 	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
