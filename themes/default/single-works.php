@@ -3,7 +3,7 @@
 	include_once("./lib/persiandate.php");
 	include_once("./classes/database.php");
 	include_once("./classes/seo.php");
-	$db = database::getDatabase();
+	$db = Database::GetDatabase();
 	$seo = Seo::GetSeo();
  	$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
 	$workstat = $db->SelectAll("workstat","*","workid = {$_GET[wid]}","id ASC");
