@@ -1,4 +1,7 @@
 <?php
+	include_once("./classes/database.php");	
+	include_once("./classes/seo.php");
+	$db = Database::GetDatabase();	
 	function GetPage($func)
 	{
 		switch($func)
@@ -10,18 +13,28 @@
                 return "index-content.php";
 			break;
 			case 'contact':
+				$seo = Seo::GetSeo();
+				$seo->Site_Title = "تماس با ما";
                 return "themes/personal/contact.php";
 			break;
 			case 'works':
+				$seo = Seo::GetSeo();
+				$seo->Site_Title = "کار های ما";
                 return "themes/personal/works.php";
 			break;
 			case 'news':
+				$seo = Seo::GetSeo();
+				$seo->Site_Title = "اخبار";
                 return "themes/personal/news.php";
 			break;
 			case 'gallery':
+				$seo = Seo::GetSeo();
+				$seo->Site_Title = "گالری تصاویر";
                 return "themes/personal/gallery.php";
 			break;
 			case 'aboutus':
+				$seo = Seo::GetSeo();
+				$seo->Site_Title = "درباره ما";
                 return "themes/personal/aboutus.php";
 			break;
 			case 'fullnews':

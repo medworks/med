@@ -1,11 +1,14 @@
 <?php
 	include_once("./classes/database.php");
 	include_once("./lib/persiandate.php");
-	$db = database::GetDatabase();
+	include_once("./classes/seo.php");
+	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
  	$news = $db->Select('news',NULL,"id={$_GET[wid]}"," ndate DESC");
   	$ndate = ToJalali($news["ndate"]," l d F  Y ساعت H:m");
   	$news["userid"] = GetUserName($news["userid"]);	
-	$news["catid"] = GetCategoryName($news["catid"]);	
+	$news["catid"] = GetCategoryName($news["catid"]);
+	$seo->Site_Title = $news["subject"];
 $html=<<<cd
 	<div class="singlenew-page" id="others-page">
 		<div class="page-header">

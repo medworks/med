@@ -1,10 +1,13 @@
 <?php
 	include_once("./classes/database.php");
   	include_once("./lib/persiandate.php");
-	$db = database::getDatabase();
+	include_once("./classes/seo.php");
+	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
 	$works = $db->Select('works',NULL,"id={$_GET[wid]}"," sdate DESC");
 	$sdate = ToJalali($works["sdate"]," l d F  Y ");
    	$fdate = ToJalali($works["fdate"]," l d F  Y ");
+	$seo->Site_Title = $works["subject"];
 $html=<<<cd
 	<div class="singlework-page" id="others-page">
 		<div class="page-header">
