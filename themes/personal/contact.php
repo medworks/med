@@ -1,35 +1,43 @@
 <?php
 
+$msg="";
 $admin = 'info@mediateq.ir';
+
 $name    = $_POST['name'];
 $email   = $_POST['email'];
-$subject   = $_POST['subject'];
+$subject = $_POST['subject'];
 $text    = $_POST['message'];
 
 $message = "$text";
 
-if( strlen($name)>=8 && strlen($email)>=7 && strlen($text)>=10 ){
+if( strlen($name)>=1 && strlen($email)>=1 && strlen($subject)>=1 && strlen($text)>=1 ){
 	if( @mail (
 			$admin,
 			"$subject",
 			$message,
 			"From:$name $email" )
 	){
-		echo '<script type="text/javascript">
-				alert("پیام شما با موفقیت ارسال شد.");
-			  </script>';
+		// echo '<script type="text/javascript">
+		// 		alert("پیام شما با موفقیت ارسال شد.");
+		// 	  </script>';
+		//header("Location:?item=contact");
+		$msg="پیام شما با موفقیت ارسال شد.";
 
 	}else{
-		echo '<script type="text/javascript">
-				alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
-			  </script>';
+		// echo '<script type="text/javascript">
+		// 		alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
+		// 	  </script>';
+		//header("Location:?item=contact");
+		$msg="خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.";
+
 	}
 }
 
-	$db = database::GetDatabase();
-	$address = GetSettingValue('Address',0);
-	$tel = GetSettingValue('Tell_Number',0);
-	$fax = GetSettingValue('Fax_Number',0);
+$db = database::GetDatabase();
+$address = GetSettingValue('Address',0);
+$tel = GetSettingValue('Tell_Number',0);
+$fax = GetSettingValue('Fax_Number',0);
+
 $html=<<<cd
 	<div class="contact-page" id="others-page">
 		<div class="page-header" id="others-page">
@@ -95,6 +103,7 @@ $html=<<<cd
 							<input type="reset" name="reset" class="reset btn" id="reset" value="پاک کردن" />
 						</p>	
 					</form>
+						<p class="msg">{$msg}</p>
 				</div>
 				<div class="address">
 					<h3>مشخصات تماس</h3>

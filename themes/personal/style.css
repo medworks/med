@@ -1320,6 +1320,12 @@ div.contact-page .contact .detail .contact-form form textarea{
     height: 200px;
 }
 
+div.contact-page .contact .detail .contact-form .msg{
+    color: #74c9be;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
 div.contact-page .contact .detail .address{
     margin-right: 500px;
 }

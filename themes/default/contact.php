@@ -4,33 +4,37 @@ $address = GetSettingValue('Address',0);
 $tel = GetSettingValue('Tell_Number',0);
 $fax = GetSettingValue('Fax_Number',0);
 
+$msg="";
 $admin = 'info@mediateq.ir';
 
 $name    = $_POST['family'];
 $email   = $_POST['email'];
-$subject   = $_POST['subject'];
+$subject = $_POST['subject'];
 $text    = $_POST['message'];
 
 $message = "$text";
 
 if( strlen($name)>=1 && strlen($email)>=1 && strlen($subject)>=1 && strlen($text)>=1 ){
-	if(@mail($admin,
+	if( @mail (
+			$admin,
 			"$subject",
 			$message,
-			"From:$name $email")){
+			"From:$name $email" )
+	){
+		// echo '<script type="text/javascript">
+		// 		alert("پیام شما با موفقیت ارسال شد.");
+		// 	  </script>';
+		//header("Location:?item=contact");
+		$msg="پیام شما با موفقیت ارسال شد.";
 
-		echo '<script type="text/javascript">
-				alert("پیام شما با موفقیت ارسال شد.");
-			  </script>';
-		echo 'test1';
 	}else{
-			echo '<script type="text/javascript">
-					alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
-				  </script>';
-		echo 'test1';
+		// echo '<script type="text/javascript">
+		// 		alert("خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.");
+		// 	  </script>';
+		//header("Location:?item=contact");
+		$msg="خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.";
 
-		}
-	//header("Location:?item=contact");
+	}
 }
 
 $html="
@@ -99,6 +103,8 @@ $html.=<<<cd
 			      	 	<input type="reset" value="پاک کردن" class="reset"> 	 	     
 			       </p>
 				</form>
+			       <p class="msg">{$msg}</p>
+
 			</div>
 		</div></div>
 cd;
