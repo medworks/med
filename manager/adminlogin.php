@@ -28,7 +28,8 @@ else
 	}   
 
 	$html=<<<cod
-	<!DOCTYPE HTML>       
+	<!DOCTYPE HTML>
+	<html lang="fa">       
 	<head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	<title>بخش مديريت سايت</title>		

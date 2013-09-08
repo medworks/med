@@ -30,7 +30,7 @@
     	$reqpage = include_once GetPageName($_GET['item'],$_GET['act']);
 ?>
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="fa">
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
