@@ -13,6 +13,7 @@
 
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta charset="UTF-8">
+	<meta name="google-site-verification" content="-v04lxRhdr83WUdcvx52bws3lGnycYZQE03LNstOteg" />
 	<meta name="description" content="<?php echo $seo->Site_Describtion;?>"/>
 	<meta name="keywords" content="<?php echo $seo->Site_KeyWords;?>"/>
 	<meta name="robots" content="INDEX,FOLLOW">
