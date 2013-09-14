@@ -112,7 +112,7 @@ if ($_GET['act']=="do")
 		<div class="title">
 	      <ul>
 	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-	        <li><span>مدیریت اخبار</span></li>
+	        <li><span>مدیریت کاربران</span></li>
 	      </ul>
 	      <div class="badboy"></div>
 	    </div>
