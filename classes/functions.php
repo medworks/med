@@ -81,6 +81,9 @@ include_once("./classes/messages.php");
 			case 'pluginsmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/pluginmgr.php";
 			break;
+			case 'newslettermgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/newslettermgr.php";
+			break;
 
 		}
 	}
