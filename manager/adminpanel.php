@@ -139,7 +139,7 @@
             <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
           </li>
 		  <li >            
-            <a href="?item=newsletter&act=do" id="newslettermgr" name="newsletter" 
+            <a href="?item=newslettermgr&act=do" id="newslettermgr" name="newslettermgr" 
 			class="works"><p>مدیریت خبرنامه</p></a>
           </li>
     	 <li >            
