@@ -46,7 +46,7 @@
 		</div>		 
 ht;
 }else
-if ($_GET['act']=="new")
+if ($_GET['act']=="mgr" or $_GET['act']=="new")
 {
 	if ($_POST["mark"]=="srhnews")
 	{	 		
@@ -66,10 +66,10 @@ if ($_GET['act']=="new")
 				10);
 			if (!$rows) 
 			{					
-				//$_GET['item'] = "newsmgr";
+				//$_GET['item'] = "newslettermgr";
 				//$_GET['act'] = "mgr";
 				//$_GET['msg'] = 6;				
-				header("Location:?item=newsmgr&act=mgr&msg=6");
+				header("Location:?item=newslettermgr&act=mgr&msg=6");
 			}
 		
 	}
@@ -92,7 +92,8 @@ if ($_GET['act']=="new")
                 $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
                 mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
                 html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["ndate"] =ToJalali($rows[$i]["ndate"]," l d F  Y ");
+                $rows[$i]["ndate"] = ToJalali($rows[$i]["ndate"]," l d F  Y ");
+				$rows[$i]["select"] = "<input type='radio' name='select' value='{$rows[$i][id]}' > ";
 				$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";                                            
 				if ($i % 2==0)
 				 {
@@ -103,32 +104,22 @@ if ($_GET['act']=="new")
 						$rowsClass[] = "datagridoddrow";
 				}
 				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-				$rows[$i]["catid"] = GetCategoryName($rows[$i]["catid"]);
-				$rows[$i]["edit"] = "<a href='?item=newsmgr&act=edit&nid={$rows[$i]["id"]}' class='edit-field'" .
-						"style='text-decoration:none;'></a>";								
-				$rows[$i]["delete"]=<<< del
-				<a href="javascript:void(0)"
-				onclick="DelMsg('{$rows[$i]['id']}',
-					'از حذف این خبر اطمینان دارید؟',
-				'?item=newsmgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
-				 class='del-field' style='text-decoration:none;'></a>
-del;
+				$rows[$i]["catid"] = GetCategoryName($rows[$i]["catid"]);				
                          }
 
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array( 
-					        "catid"=>"گروه",
+					        "select"=>"انتخاب",
+							"catid"=>"گروه",
 							"subject"=>"عنوان",
 							"image"=>"تصویر",
 							"body"=>"توضیحات",
 							"ndate"=>"تاریخ",
 							"resource"=>"منبع",							
-							"username"=>"کاربر",
-                            "edit"=>"ویرایش",
-							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
-                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newsmgr&act=mgr");
+							"username"=>"کاربر",), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newslettermgr&act=mgr");
                     
             }
 $msgs = GetMessage($_GET['msg']);
@@ -165,7 +156,7 @@ $code=<<<edit
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="?item=newsmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							<form action="?item=newslettermgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
 								<p>جستجو بر اساس {$combobox}</p>
 
 								<p class="search-form">
@@ -183,8 +174,8 @@ $code=<<<edit
 							                weekNumbers : true
 							          });
 							        </script>
-									<a href="?item=newsmgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
-									<a href="?item=newsmgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+									<a href="?item=newslettermgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=newslettermgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
