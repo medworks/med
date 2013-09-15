@@ -1,7 +1,7 @@
 <?php
 	include_once("classes/functions.php");
 	include_once("classes/seo.php");
-	ob_start("ob_gzhandler");
+	//ob_start("ob_gzhandler");
 	$seo = Seo::GetSeo();
 	// $seo->Site_Title = GetSettingValue('Site_Title',0);
 	// $seo->Site_KeyWords = GetSettingValue('Site_KeyWords',0);
