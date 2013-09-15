@@ -34,22 +34,22 @@ public function RunSQL()
 
 public function AffectedRows()
 {
-  return mysql_affected_rows($this->link);
+  return mysqli_affected_rows($this->link);
 }
 
 public function InsertId()
 {
-  return mysql_insert_id($this->link);
+  return mysqli_insert_id($this->link);
 }
 
 public function ErrorMessage()
 {
- return mysql_error($this->link);
+ return mysqli_error($this->link);
 }
 
 public function ErrorNumber()
 {
-  return mysql_errno($this->link);
+  return mysqli_errno($this->link);
 }
 
 function Select($tableName, $fields=NULL, $where = NULL, $order = NULL)
@@ -127,7 +127,7 @@ public function MaxOfAll($column, $table)
 {   
    $this->cmd ="SELECT MAX(`$column`) FROM `$table`";
    $res = $this->RunSQL();
-   $row = mysql_fetch_row($res);
+   $row = mysqli_fetch_row($res);
    return $row[0];
 }
 
@@ -135,7 +135,7 @@ public function CountOf($table, $where)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table` WHERE $where";
   $res = $this->RunSQL();
-  $row = mysql_fetch_row($res);
+  $row = mysqli_fetch_row($res);
   return $row[0];
 }
 
@@ -143,7 +143,7 @@ public function CountAll($table)
 {
   $this->cmd ="SELECT COUNT(*) FROM `$table`";
   $res = $this->RunSQL();
-  $row = mysql_fetch_row($res);
+  $row = mysqli_fetch_row($res);
   return $row[0];
 }
 
