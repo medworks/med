@@ -9,9 +9,10 @@ class Database
  
  function __construct()
  {
-      $this->link = mysql_connect(_DB_SERVER,_DB_USER,_DB_PASS);  
-      mysql_query("set names 'utf8'");
-      mysql_select_db(_DB_NAME,$this->link);                  
+      $this->link = mysqli_connect(_DB_SERVER,_DB_USER,_DB_PASS);  
+      //mysqli_query("set names 'utf8'");
+	  mysqli_set_charset($this->link, "utf8");
+      mysqli_select_db($this->link,_DB_NAME);                  
  }
 public static function GetDatabase()
 {
@@ -26,7 +27,7 @@ public function RunSQL()
    $this->cmd = $security->Xss_Clean($this->cmd);
    //echo $this->cmd;
    //var_dump(mysql_error());
-   $result =  mysql_query($this->cmd, $this->link);          
+   $result =  mysqli_query($this->link,$this->cmd);          
    //if (!$result) die ('Unable to run query:'.$this->errormessage()); else
    return $result;
 }
@@ -59,7 +60,7 @@ function Select($tableName, $fields=NULL, $where = NULL, $order = NULL)
 	$this->cmd = "SELECT $fields FROM `$tableName` " . $where . $order;		
 	$res = $this->RunSQL();
     if ($res)
-	    return mysql_fetch_array($res);
+	    return mysqli_fetch_array($res);
 	else
         return false;
 }
@@ -77,7 +78,7 @@ public function  SelectAll($tableName, $fields,$where = NULL,
     $rows = array();
     if ($res)
     {
-        while($row = mysql_fetch_array($res)) $rows[] = $row;
+        while($row = mysqli_fetch_array($res)) $rows[] = $row;
     }
     return $rows;
 }
@@ -118,7 +119,7 @@ public function MaxOf($column, $table, $where)
 {
    $this->cmd ="SELECT MAX(`$column`) FROM `$table` WHERE $where";  
    $res = $this->RunSQL();
-   $row = mysql_fetch_row($res);
+   $row = mysqli_fetch_row($res);
    return $row[0];
 }
 
