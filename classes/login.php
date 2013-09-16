@@ -4,8 +4,8 @@ class Login
     private static $me;
     public function __construct()
     {
-        $security = Security::getSecurity();
-        $db = Database::getDatabase();
+        $security = Security::GetSecurity();
+        $db = Database::GetDatabase();
     }
     public static function GetLogin()
     {
@@ -24,13 +24,13 @@ class Login
        
        $username = $security->Xss_Clean($username);
        $password = $security->Xss_Clean($password);
-       $password = $password = md5($password);
+       $password = md5($password);
        $db->cmd = "SELECT * FROM `users` " .
-                            "WHERE (`username`='$username') AND (`password`='$password') limit 1";
-       $res = $db->RunSQL();	   
+                            "WHERE (`username`='$username') AND (`password`='$password') limit 1";	
+       $res = $db->RunSQL();       
 	  // if ($res===false) return false;
-	   if (mysql_num_rows($res)!=1) return false; 
-       $row = mysql_fetch_array($res);
+	   if (mysqli_num_rows($res)!=1) return false; 
+       $row = mysqli_fetch_array($res);
        $sess->Set("login",true);
        $sess->Set("username",$row["username"]);
 	   $sess->Set("userid",$row["id"]);
