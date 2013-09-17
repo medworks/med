@@ -44,7 +44,7 @@
 		if ($IsSend)
 		{
 			//$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
-		//	header('location:?item=newslettermgr&act=new&msg=7');
+		    header('location:?item=newslettermgr&act=new&msg=7');
 		}
 		else
 		{
