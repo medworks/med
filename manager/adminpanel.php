@@ -138,11 +138,10 @@
     		  <li>
             <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
           </li>
-		  <li >            
-            <a href="?item=newslettermgr&act=do" id="newslettermgr" name="newslettermgr" 
-			class="works"><p>مدیریت خبرنامه</p></a>
+		      <li >            
+            <a href="?item=newslettermgr&act=do" id="newslettermgr" class="newslettermgr"><p>مدیریت خبرنامه</p></a>
           </li>
-    	 <li >            
+    	    <li >            
             <a href="?item=usermgr&act=do" id="users" name="users" class="users"><p>مدیریت کاربران</p></a>
           </li>	
           <li >            
