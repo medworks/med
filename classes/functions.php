@@ -1,14 +1,11 @@
 <?php
-/*
-include_once("lib/persiandate.php");
-include_once("lib/class.phpmailer.php");
-include_once("./classes/messages.php");
-*/
-  include_once("database.php");
-  include_once("seo.php");
+	include_once("../lib/persiandate.php");
+	include_once("../lib/class.phpmailer.php");
+	include_once("messages.php");
+	include_once("database.php");
+	include_once("seo.php");
   function GetPageName($func,$act)
-	{
-	    
+	{	   
 		$db = Database::GetDatabase();	
 		$seo = Seo::GetSeo();
 		switch($func)
