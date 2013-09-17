@@ -17,7 +17,7 @@
 	$msg = Message::GetMessage();
 	if ($_POST["mark"]=="sendnews")
     {
-	    echo "mark is ",$_POST["mark"];
+	  //  echo "mark is ",$_POST["mark"];
 		$News_Email=GetSettingValue("News_Email",1);
 		$Email_Sender_Name = GetSettingValue("Email_Sender_Name",1);
 		$Is_Smtp = GetSettingValue("Is_Smtp_Active",1);
@@ -34,23 +34,24 @@
 
 			$IsSend = SendSmtpEmail($News_Email, $Email_Sender_Name, $emails,
 			          $news["subject"],$news["body"], $host, $port, $username, $password);
-      }
-      else
-      {
+	   }
+       else
+       {
+			//echo $News_Email,"<br/>",$Email_Sender_Name,"<br/>",$news["subject"];
 			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);			
-      }
-    }
-    if ($IsSend)
-    {
-        //$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
-		header('location:?item=newslettermgr&act=new&msg=7');
-    }
-    else
-    {
-       // $msgs=$msg->ShowError("ارسال خبر با خطا مواجه شد");
-		//header('location:?item=newslettermgr&act=new&msg=8');
-    }
-	
+       }
+    
+		if ($IsSend)
+		{
+			//$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
+		//	header('location:?item=newslettermgr&act=new&msg=7');
+		}
+		else
+		{
+		   // $msgs=$msg->ShowError("ارسال خبر با خطا مواجه شد");
+			header('location:?item=newslettermgr&act=new&msg=8');
+		}
+	}
 	if ($_GET['act']=="do")
 {
 	$html=<<<ht
