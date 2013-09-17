@@ -709,6 +709,10 @@ header #mini-nav span.newSignup{
   background-image: url('./images/works.png');
 }
 
+#mainnav > ul > li a.newslettermgr{
+  background-image: url('./images/newletter.png');
+}
+
 #mainnav > ul > li a.users{
   background-image: url('./images/users.png');
 }
@@ -920,6 +924,18 @@ header #mini-nav span.newSignup{
 
 .sub-menu ul li span.edit-file{
   background-image: url('./images/edit-file.png');
+}
+
+.sub-menu ul li span.add-newsletter{
+  background-image: url('./images/new-newsletter.png');
+}
+
+.sub-menu ul li span.edit-newsletter{
+  background-image: url('./images/edit-newsletter.png');
+}
+
+.sub-menu ul li span.member-newsletter{
+  background-image: url('./images/mem-newsletter.png');
 }
 
 .sub-menu ul li span.add-user{
@@ -1322,6 +1338,12 @@ select.select2{
 .datagridevenrow img,
 .datagridoddrow img{
   margin: -12px !important;
+}
+
+.datagridevenrow input,
+.datagridoddrow input{
+  margin: 0 auto;
+  margin-bottom: 0 !important;
 }
 
 .datagridcol

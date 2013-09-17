@@ -60,18 +60,18 @@
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=newslettermgr&act=new">خبرنامه جدید
-					<span class="add-user"></span>
+				<a href="?item=newslettermgr&act=new">ایجاد جدید
+					<span class="add-newsletter"></span>
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newslettermgr&act=mgr" >حذف/ویرایش خبرنامه
-					<span class="edit-user"></span>
+				<a href="?item=newslettermgr&act=mgr">آرشیو خبرنامه
+					<span class="edit-newsletter"></span>
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newslettermgr&act=user" >مدیریت اعضا
-					<span class="edit-user"></span>
+				<a href="?item=newslettermgr&act=user">اعضاء خبرنامه
+					<span class="member-newsletter"></span>
 				</a>
 			  </li>			 
 			 </ul>
@@ -213,15 +213,8 @@ $code=<<<edit
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
 
-								{$gridcode} 
-								<p>
-									<label for="email">ایمیل گیرنده(گان)</label>									
-								</p>
-								<input type="text" name="email" class="validate[required] name" id="email" />
-								<p>
-									<label for="chball">ارسال برای کلیه اعضاء</label>									
-								</p>
-								<input type="checkbox" name="chball" value="all">
+								{$gridcode}
+								<br />
 								<input type='submit' id='submit' value='ارسال' class='submit' />	 
 			                    <input type='hidden' name='mark' value='sendnews' />
 							</form>
