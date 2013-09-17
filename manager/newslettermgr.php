@@ -5,6 +5,7 @@
 	include_once("../classes/session.php");	
 	include_once("../classes/functions.php");
 	include_once("../classes/login.php");
+	include_once("../lib/class.phpmailer.php");
 	$login = Login::GetLogin();
 	if (!$login->IsLogged())
 	{
@@ -21,7 +22,7 @@
 		$Email_Sender_Name = GetSettingValue("Email_Sender_Name",1);
 		$Is_Smtp = GetSettingValue("Is_Smtp_Active",1);
 		$rows = $db->SelectAll("usersnews","email");
-		$news = $db->Select("news",NULL,"id={$_POST[select]}");
+		$news = $db->Select("news",NULL,"id={$_POST[select]}");		
 		$emails = array();
 		foreach ($rows as $row) $emails[] = $row["email"];
 		if ($Is_Smtp == "yes")
@@ -31,11 +32,12 @@
 			$password = GetSettingValue("Smtp_Pass_Word",1);
 			$port = GetSettingValue("Smtp_Port",1);
 
-        $IsSend = SendSmtpEmail($News_Email, $Email_Sender_Name, $emails,$news["subject"],$news["body"], $host, $port, $username, $password);
+			$IsSend = SendSmtpEmail($News_Email, $Email_Sender_Name, $emails,$news["subject"],$news["body"], $host, $port, $username, $password);
       }
       else
       {
-        $IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);
+			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);
+			echo "send situation is :",$IsSend;
       }
     }
     if ($IsSend)

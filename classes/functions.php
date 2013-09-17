@@ -1,6 +1,6 @@
 <?php
-	include_once("../lib/persiandate.php");
-	include_once("../lib/class.phpmailer.php");
+	//include_once("../lib/persiandate.php");		
+	//include_once("lib/class.phpmailer.php");
 	include_once("messages.php");
 	include_once("database.php");
 	include_once("seo.php");
@@ -107,7 +107,13 @@
 			break;	
 			case 6:
 				$result = $msg->ShowInfo("عبارت مورد نظر یافت نشد");
-			break;	
+			break;
+			case 7:
+				$result = $msg->ShowInfo("ارسال خبر با موفقیت انجام شد");
+			break;
+			case 8:
+				$result = $msg->ShowInfo("ارسال خبر با مشکل مواجه شد");
+			break;
 		}
 		$result .= <<<JAVA
 		<script language="javascript">
