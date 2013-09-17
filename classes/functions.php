@@ -238,7 +238,7 @@ function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 			$code .= "</table>";
 			return $code;
 		} 
-function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
+  function SendEmail($senderEmail, $senderName, $receivers, $subject, $message)
 	{
 		$mail = new PHPMailer();
 		$senderName = "=?UTF-8?B?" . base64_encode($senderName) . "?=";
