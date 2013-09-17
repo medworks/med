@@ -32,21 +32,23 @@
 			$password = GetSettingValue("Smtp_Pass_Word",1);
 			$port = GetSettingValue("Smtp_Port",1);
 
-			$IsSend = SendSmtpEmail($News_Email, $Email_Sender_Name, $emails,$news["subject"],$news["body"], $host, $port, $username, $password);
+			$IsSend = SendSmtpEmail($News_Email, $Email_Sender_Name, $emails,
+			          $news["subject"],$news["body"], $host, $port, $username, $password);
       }
       else
       {
-			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);
-			echo "send situation is :",$IsSend;
+			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);			
       }
     }
     if ($IsSend)
     {
-        $msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
+        //$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
+		header('location:?item=newslettermgr&act=new&msg=7');
     }
     else
     {
-        $msgs=$msg->ShowError("ارسال خبر با خطا مواجه شد");
+       // $msgs=$msg->ShowError("ارسال خبر با خطا مواجه شد");
+		//header('location:?item=newslettermgr&act=new&msg=8');
     }
 	
 	if ($_GET['act']=="do")
@@ -213,7 +215,7 @@ $code=<<<edit
 									<a href="?item=newslettermgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
-								{$msgs}
+								 <div class="mes" id="message">{$msgs}</div>
 
 								{$gridcode}
 								<br />
