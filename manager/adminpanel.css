@@ -1340,6 +1340,12 @@ select.select2{
   margin: -12px !important;
 }
 
+.datagridevenrow input,
+.datagridoddrow input{
+  margin: 0 auto;
+  margin-bottom: 0 !important;
+}
+
 .datagridcol
 {
    background-color: #E3ECF9;

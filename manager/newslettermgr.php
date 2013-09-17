@@ -180,15 +180,8 @@ $code=<<<edit
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
 
-								{$gridcode} 
-								<p>
-									<label for="email">ایمیل گیرنده(گان)</label>									
-								</p>
-								<input type="text" name="email" class="validate[required] name" id="email" />
-								<p>
-									<label for="chball">ارسال برای کلیه اعضاء</label>									
-								</p>
-								<input type="checkbox" name="chball" value="all">
+								{$gridcode}
+								<br />
 								<input type='submit' id='submit' value='ارسال' class='submit' />	 
 			                    <input type='hidden' name='mark' value='sendnews' />
 							</form>
