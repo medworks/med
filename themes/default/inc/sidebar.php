@@ -54,15 +54,10 @@
 		<div class="line"></div>
 		<div class="badboy"></div>
 		<div class="box-left">
-			<script type='text/javascript'>
-				$(document).ready(function(){	   
-					$("#subscribfrm").validationEngine();
-				});
-			</script>
 			<form id="subscribfrm" action="">
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
-				<input type="text" name="name" class="validate[required] subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
-				<input type="text" name="email" class="validate[required,custom[email]] subscrib ltr" id="subscrib" placeholder="E-mail" />
+				<input type="text" name="name" class="subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
+				<input type="text" name="email" class="subscrib ltr" id="subscrib" placeholder="E-mail" />
 				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
 			</form>
 		</div>
