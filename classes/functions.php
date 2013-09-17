@@ -109,10 +109,10 @@
 				$result = $msg->ShowInfo("عبارت مورد نظر یافت نشد");
 			break;
 			case 7:
-				$result = $msg->ShowInfo("ارسال خبر با موفقیت انجام شد");
+				$result = $msg->ShowSuccess("ارسال خبر با موفقیت انجام شد");
 			break;
 			case 8:
-				$result = $msg->ShowInfo("ارسال خبر با مشکل مواجه شد");
+				$result = $msg->ShowError("ارسال خبر با مشکل مواجه شد");
 			break;
 		}
 		$result .= <<<JAVA
