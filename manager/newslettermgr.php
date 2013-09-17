@@ -85,7 +85,7 @@ if ($_GET['act']=="mgr" or $_GET['act']=="new")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("news"):Count($rows);
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("newslettermgr"):Count($rows);
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
@@ -197,7 +197,55 @@ $code=<<<edit
 
 edit;
 $html = $code;
-}	
+}
+else
+if ($_GET['act']=="user")
+{
+$rows = $db->SelectAll(
+				"usersnews",
+				"*",
+				null,
+				"id ASC",
+				$_GET["pageNo"]*10,
+				10);
+                $rowsClass = array();
+                $colsClass = array();
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("usersnews"):Count($rows);
+                for($i = 0; $i < Count($rows); $i++)
+                {								                                            
+					if ($i % 2==0)
+					 {
+							$rowsClass[] = "datagridevenrow";
+					 }
+					else
+					{
+							$rowsClass[] = "datagridoddrow";
+					}
+					$rows[$i]["edit"] = "<a href='?item=usermgr&act=edit&uid={$rows[$i]["id"]}' class='edit-field'" .
+						"style='text-decoration:none;'></a>";								
+				$rows[$i]["delete"]=<<< del
+				<a href="javascript:void(0)"
+				onclick="DelMsg('{$rows[$i]['id']}',
+					'از حذف این فعالیت اطمینان دارید؟',
+				'?item=usermgr&act=del&pageNo={$_GET[pageNo]}&uid=');"
+				 class='del-field' style='text-decoration:none;'></a>
+del;
+								
+                }
+
+    if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
+            if (Count($rows) > 0)
+            {                    
+                    $gridcode .= DataGrid(array( 
+					        "email"=>"ایمیل",
+							"edit"=>"ویرایش",
+							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newslettermgr&act=user");
+                    
+            }
+
+$html = $gridcode;
+}
 	
 return $html;
 ?>
