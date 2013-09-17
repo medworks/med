@@ -54,9 +54,15 @@
 		<div class="line"></div>
 		<div class="badboy"></div>
 		<div class="box-left">
-			<form action="">
+			<script type='text/javascript'>
+				$(document).ready(function(){	   
+					$("#subscribfrm").validationEngine();
+				});
+			</script>
+			<form id="subscribfrm" action="">
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
-				<input type="text" class="validate[custom[email]] subscrib ltr" id="subscrib" value="Enter your e-mail address" onfocus="if (this.value == 'Enter your e-mail address') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your e-mail address';}" />
+				<input type="text" name="name" class="validate[required] subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
+				<input type="text" name="email" class="validate[required,custom[email]] subscrib ltr" id="subscrib" placeholder="E-mail" />
 				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
 			</form>
 		</div>
