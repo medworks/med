@@ -16,6 +16,7 @@
 	$msg = Message::GetMessage();
 	if ($_POST["mark"]=="sendnews")
     {
+	    echo "mark is ",$_POST["mark"];
 		$News_Email=GetSettingValue("News_Email",1);
 		$Email_Sender_Name = GetSettingValue("Email_Sender_Name",1);
 		$Is_Smtp = GetSettingValue("Is_Smtp_Active",1);
@@ -39,11 +40,11 @@
     }
     if ($IsSend)
     {
-        //$msg=ShowSuccess("ارسال خبر انجام شد");
+        $msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
     }
     else
     {
-        //$msg=ShowError("ارسال خبر با خطا مواجه شد");
+        $msgs=$msg->ShowError("ارسال خبر با خطا مواجه شد");
     }
 	
 	if ($_GET['act']=="do")
