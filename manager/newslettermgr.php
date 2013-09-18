@@ -232,6 +232,7 @@ $rows = $db->SelectAll(
 del;
 								
                 }
+				
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
