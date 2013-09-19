@@ -38,7 +38,8 @@
        else
        {
 			//echo $News_Email,"<br/>",$Email_Sender_Name,"<br/>",$news["subject"];
-			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails, $news["subject"], $news["body"]);			
+			$IsSend = SendEmail($News_Email,$Email_Sender_Name,$emails
+						, $news["subject"], $news["body"]);			
        }
     
 		if ($IsSend)
