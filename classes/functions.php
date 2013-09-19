@@ -79,7 +79,7 @@
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/pluginmgr.php";
 			break;
 			case 'newslettermgr':
-                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="user" or $act=="del" or $act=="edit") return "../manager/newslettermgr.php";
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="user" or $act=="del" or $act=="set") return "../manager/newslettermgr.php";
 			break;
 
 		}
@@ -244,7 +244,8 @@ function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
 		$senderName = "=?UTF-8?B?" . base64_encode($senderName) . "?=";
 		$mail->SetFrom($senderEmail, $senderName);
 		foreach($receivers as $key=>$r)
-			$mail->AddAddress($r);
+			//$mail->AddAddress($r);
+			$mail->AddBCC($r);
 		$mail->Subject = "=?UTF-8?B?" . base64_encode($subject) . "?=";
 		//$mail->MsgHTML("=?UTF-8?B?" . base64_encode($message). "?=");
                 $mail->CharSet = "utf-8";
@@ -271,7 +272,7 @@ function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
         $mail->CharSet = "utf-8";
         $mail->MsgHTML($message);
         $mail->WordWrap = 50;
-        foreach($receivers as $key=>$r) $mail->AddAddress($r);
+        foreach($receivers as $key=>$r) $mail->AddBCC($r);//$mail->AddAddress($r);
         $mail->IsHTML(true);
         return $mail->Send();
       }
