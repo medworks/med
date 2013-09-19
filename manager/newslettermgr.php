@@ -53,9 +53,19 @@
 			header('location:?item=newslettermgr&act=new&msg=8');
 		}
 	}
+	if ($_POST["mark"]=="setting")
+    {
+	    SetSettingValue("Email_Sender_Name",$_POST["tbname"]);
+		SetSettingValue("Is_Smtp_Active",$_POST["chbsmtp"]);
+		SetSettingValue("Smtp_Host",$_POST["tbsmtpadd"]);
+		SetSettingValue("Smtp_User_Name",$_POST["tbsmtpuser"]);
+		SetSettingValue("Smtp_Pass_Word",$_POST["tbsmtppass"]);
+		SetSettingValue("Smtp_Port",$_POST["tbport"]);		
+		header('location:?item=newslettermgr&act=set&msg=9');
+	}
 	if ($_GET['act']=="do")
-{
-	$html=<<<ht
+	{
+		$html=<<<ht
 		<div class="title">
 	      <ul>
 	        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
@@ -280,6 +290,57 @@ del;
             }
 
 $html = $gridcode;
+}else
+if ($_GET['act']=="set")
+{
+	$Email_Sender_Name = GetSettingValue('Email_Sender_Name',0);
+    if(GetSettingValue("Is_Smtp_Active",1)=="yes")
+    {
+        $Is_Smtp ="checked";
+    }
+    else {$Is_Smtp ="";}
+    $Smtp_Host = GetSettingValue("Smtp_Host",1);
+    $Smtp_User_Name = GetSettingValue("Smtp_User_Name",1);
+    $Smtp_Pass_Word = GetSettingValue("Smtp_Pass_Word",1);
+    $Smtp_Port = GetSettingValue("Smtp_Port",1);
+	$msgs = GetMessage($_GET['msg']);
+    $html=<<<set
+	<div class="mes" id="message">{$msgs}</div>
+   <form action="" method="post">   
+	   <p>
+         <label for="subject">نام فرستنده :</label>
+         <span>*</span>
+       </p>
+        <input type="text" name="tbname"  value="{$Email_Sender_Name}" />                
+			<p>
+				<label for="subject">استفاده از SMTP :</label>
+				<span>*</span>
+			</p>
+				<input type="checkbox" name="chbsmtp" value="yes" {$Is_Smtp}/>
+			<p>
+				<label for="subject">آدرس SMTP :</label>
+				<span>*</span>
+			</p>
+				 <input type="text" name="tbsmtpadd" value="{$Smtp_Host}" />
+			<p>
+				<label for="subject">نام کاربری  SMTP :</label>
+				<span>*</span>
+			</p>
+			 <input type="text" name="tbsmtpuser" value="{$Smtp_User_Name}" />
+			 <p>
+				<label for="subject">کلمه عبور SMTP :</label>
+				<span>*</span>
+			</p>                        
+			 <input type="password" name="tbsmtppass" value="{$Smtp_Pass_Word}" /> 
+			 <p>
+				<label for="subject">پورت SMTP :</label>
+				<span>*</span>
+			</p>
+			 <input type="text" name="tbport" value="{$Smtp_Port}" />           
+           <input  type="submit" value="ثبت/ویرایش" />
+           <input type="hidden" name="mark" value="setting" />                                              
+   </form>
+set;
 }
 	
 return $html;
