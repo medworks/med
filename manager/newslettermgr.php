@@ -66,7 +66,7 @@
 		<div class="sub-menu" id="mainnav">
 			<ul>
 			  <li>		  
-				<a href="?item=newslettermgr&act=new">ایجاد جدید
+				<a href="?item=newslettermgr&act=new">ایجاد خبرنامه
 					<span class="add-newsletter"></span>
 				</a>
 			  </li>
@@ -79,7 +79,12 @@
 				<a href="?item=newslettermgr&act=user">اعضاء خبرنامه
 					<span class="member-newsletter"></span>
 				</a>
-			  </li>			 
+			  </li>
+			  <li>
+				<a href="?item=newslettermgr&act=set">تنظیمات خبرنامه
+					<span class="member-newsletter"></span>
+				</a>
+			  </li>
 			 </ul>
 			 <div class="badboy"></div>
 		</div>		 
