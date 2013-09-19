@@ -114,6 +114,9 @@
 			case 8:
 				$result = $msg->ShowError("ارسال خبر با مشکل مواجه شد");
 			break;
+			case 9:
+				$result = $msg->ShowSuccess("تنظیمات اعمال شد");
+			break;
 		}
 		$result .= <<<JAVA
 		<script language="javascript">
