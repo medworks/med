@@ -57,6 +57,7 @@
 			<form id="subscribfrm" action="">
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
 				<input type="text" name="name" class="subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
+				<input type="text" name="tel" class="subscrib" id="subscrib" placeholder="تلفن همراه" />
 				<input type="text" name="email" class="subscrib ltr" id="subscrib" placeholder="E-mail" />
 				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
 			</form>
