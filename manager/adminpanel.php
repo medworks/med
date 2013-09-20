@@ -124,7 +124,7 @@
             <a href="?item=newsmgr&act=do" id="news" name="news" class="news"><p>مدیریت اخبار</p></a>
           </li>
           <li >            
-            <a href="?item=worksmgr&act=do" id="works" name="works" class="works"><p>مدیریت کار ها</p></a>
+            <a href="?item=worksmgr&act=do" id="works" name="works" class="works"><p>مدیریت کارها</p></a>
           </li>
           <li>
             <a href="?item=slidesmgr&act=do" class="slidemgr"><p>مدیریت اسلاید</p></a>

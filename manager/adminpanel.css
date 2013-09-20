@@ -938,6 +938,10 @@ header #mini-nav span.newSignup{
   background-image: url('./images/mem-newsletter.png');
 }
 
+.sub-menu ul li span.news-setting{
+  background-image: url('./images/news-setting.png');
+}
+
 .sub-menu ul li span.add-user{
   background-image: url('./images/add-user.png');
 }

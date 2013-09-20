@@ -74,7 +74,7 @@
 	      <div class="badboy"></div>
 	    </div>
 		<div class="sub-menu" id="mainnav">
-			<ul>
+			<ul class="two-column">
 			  <li>		  
 				<a href="?item=newslettermgr&act=new">ایجاد خبرنامه
 					<span class="add-newsletter"></span>
@@ -92,7 +92,7 @@
 			  </li>
 			  <li>
 				<a href="?item=newslettermgr&act=set">تنظیمات خبرنامه
-					<span class="member-newsletter"></span>
+					<span class="news-setting"></span>
 				</a>
 			  </li>
 			 </ul>
