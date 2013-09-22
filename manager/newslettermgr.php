@@ -303,7 +303,7 @@ if ($_GET['act']=="arc")
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این خبر اطمینان دارید؟',
-				'?item=newslettermgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
+				'?item=newslettermgr&act=dela&pageNo={$_GET[pageNo]}&nid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
                 }
