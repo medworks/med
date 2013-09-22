@@ -279,7 +279,7 @@ if ($_GET['act']=="arc")
 				"newsletter",
 				"*",
 				null,
-				"ndate DESC",
+				"sdate DESC",
 				$_GET["pageNo"]*10,
 				10);
     }
@@ -288,38 +288,34 @@ if ($_GET['act']=="arc")
                 $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("news"):Count($rows);				
                 for($i = 0; $i < Count($rows); $i++)
                 {						
-		        $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-                $rows[$i]["body"] =(mb_strlen($rows[$i]["body"])>30)?
-                mb_substr(html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8"), 0, 30,"UTF-8") . "..." :
-                html_entity_decode(strip_tags($rows[$i]["body"]), ENT_QUOTES, "UTF-8");               
-                $rows[$i]["ndate"] = ToJalali($rows[$i]["ndate"]," l d F  Y ");
-				$rows[$i]["select"] = "<input type='radio' name='select' value='{$rows[$i][id]}' > ";
-				$rows[$i]["image"] ="<img src='{$rows[$i][image]}' alt='{$rows[$i][subject]}' width='40px' height='40px' />";                                            
-				if ($i % 2==0)
-				 {
-						$rowsClass[] = "datagridevenrow";
-				 }
-				else
-				{
-						$rowsClass[] = "datagridoddrow";
-				}
-				$rows[$i]["username"]=GetUserName($rows[$i]["userid"]); 
-				$rows[$i]["catid"] = GetCategoryName($rows[$i]["catid"]);				
-                         }
+				    $row = $db->Select("news","subject","id ={$rows[$i][nid]}");
+					$rows[$i]["subject"] =(mb_strlen($row[0])>40)?mb_substr($row[0],0,40,"UTF-8")."...":$row[0];                
+					$rows[$i]["sdate"] = ToJalali($rows[$i]["sdate"]," l d F  Y ");								
+					if ($i % 2==0)
+					{
+							$rowsClass[] = "datagridevenrow";
+					}
+					else
+					{
+							$rowsClass[] = "datagridoddrow";
+					}
+					$rows[$i]["delete"]=<<< del
+				<a href="javascript:void(0)"
+				onclick="DelMsg('{$rows[$i]['id']}',
+					'از حذف این خبر اطمینان دارید؟',
+				'?item=newslettermgr&act=del&pageNo={$_GET[pageNo]}&nid=');"
+				 class='del-field' style='text-decoration:none;'></a>
+del;
+                }
 
     if (!$_GET["pageNo"] or $_GET["pageNo"]<=0) $_GET["pageNo"] = 0;
             if (Count($rows) > 0)
             {                    
-                    $gridcode .= DataGrid(array( 
-					        "select"=>"انتخاب",
-							"catid"=>"گروه",
+                    $gridcode .= DataGrid(array( 			
 							"subject"=>"عنوان",
-							"image"=>"تصویر",
-							"body"=>"توضیحات",
-							"ndate"=>"تاریخ",
-							"resource"=>"منبع",							
-							"username"=>"کاربر",), $rows, $colsClass, $rowsClass, 10,
-                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newslettermgr&act=mgr");
+							"sdate"=>"تاریخ",
+							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newslettermgr&act=arc");
                     
             }
 $msgs = GetMessage($_GET['msg']);
