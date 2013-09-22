@@ -319,10 +319,8 @@ del;
                     
             }
 $msgs = GetMessage($_GET['msg']);
-$list = array("subject"=>"عنوان",
-              "body"=>"توضیحات",
-			  "ndate"=>"تاریخ",
-			  "resource"=>"منبع");
+$list = array("subject"=>"عنوان",              
+			  "sdate"=>"تاریخ",);
 $combobox = SelectOptionTag("cbsearch",$list,"subject");
 $code=<<<edit
 <script type='text/javascript'>
@@ -333,7 +331,7 @@ $code=<<<edit
 		});
 		$('#cbsearch').change(function(){
 			$("select option:selected").each(function(){
-	            if($(this).val()=="ndate"){
+	            if($(this).val()=="sdate"){
 	            	$('.cal-btn').css('display' , 'inline-block');
 	            	return false;
 	            }else{
@@ -352,7 +350,7 @@ $code=<<<edit
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="?item=newslettermgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							<form action="?item=newslettermgr&act=arc" method="post" id="frmsrh" name="frmsrh">
 								<p>جستجو بر اساس {$combobox}</p>
 
 								<p class="search-form">
@@ -370,16 +368,13 @@ $code=<<<edit
 							                weekNumbers : true
 							          });
 							        </script>
-									<a href="?item=newslettermgr&act=mgr" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
-									<a href="?item=newslettermgr&act=mgr&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
+									<a href="?item=newslettermgr&act=arc" name="srhsubmit" id="srhsubmit" class="button"> جستجو</a>
+									<a href="?item=newslettermgr&act=arc&rec=all" name="retall" id="retall" class="button"> کلیه اطلاعات</a>
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								 <div class="mes" id="message">{$msgs}</div>
 
 								{$gridcode}
-								<br />
-								<input type='submit' id='submit' value='ارسال' class='submit' />	 
-			                    <input type='hidden' name='mark' value='sendnews' />
 							</form>
 					   </center>
 					</div>
