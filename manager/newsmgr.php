@@ -162,7 +162,7 @@ if ($_GET['act']=="edit")
 }
 else
 {
-  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select select validate[required]");
+  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select validate[required]");
   $cbcategory = null;
 } 
 
