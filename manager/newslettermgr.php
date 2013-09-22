@@ -53,6 +53,12 @@
 			header('location:?item=newslettermgr&act=new&msg=8');
 		}
 	}
+	if ($_GET['act']=="dela")
+	{
+		$db->Delete("newsletter"," id",$_GET["nid"]);
+		if ($db->CountAll("newsletter")%10==0) $_GET["pageNo"]-=1;		
+		header("location:?item=newslettermgr&act=arc&pageNo={$_GET[pageNo]}");
+	}
 	if ($_POST["mark"]=="setting")
     {
 	    SetSettingValue("Email_Sender_Name",$_POST["tbname"]);
