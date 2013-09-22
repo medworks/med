@@ -81,7 +81,7 @@
 				</a>
 			  </li>
 			  <li>
-				<a href="?item=newslettermgr&act=mgr">آرشیو خبرنامه
+				<a href="?item=newslettermgr&act=arc">آرشیو خبرنامه
 					<span class="edit-newsletter"></span>
 				</a>
 			  </li>
