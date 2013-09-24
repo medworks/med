@@ -55,9 +55,15 @@
 	}
 	if ($_GET['act']=="dela")
 	{
-		$db->Delete("newsletter"," id",$_GET["nid"]);
+		$db->Delete("newsletter","id",$_GET["nid"]);
 		if ($db->CountAll("newsletter")%10==0) $_GET["pageNo"]-=1;		
 		header("location:?item=newslettermgr&act=arc&pageNo={$_GET[pageNo]}");
+	}
+	if ($_GET['act']=="delu")
+	{
+		$db->Delete("usersnews","id",$_GET["uid"]);
+		if ($db->CountAll("usersnews")%10==0) $_GET["pageNo"]-=1;		
+		header("location:?item=newslettermgr&act=user&pageNo={$_GET[pageNo]}");
 	}
 	if ($_POST["mark"]=="setting")
     {
@@ -416,7 +422,7 @@ $rows = $db->SelectAll(
 				<a href="javascript:void(0)"
 				onclick="DelMsg('{$rows[$i]['id']}',
 					'از حذف این فعالیت اطمینان دارید؟',
-				'?item=usermgr&act=del&pageNo={$_GET[pageNo]}&uid=');"
+				'?item=newslettermgr&act=delu&pageNo={$_GET[pageNo]}&uid=');"
 				 class='del-field' style='text-decoration:none;'></a>
 del;
 								
