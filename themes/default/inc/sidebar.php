@@ -5,6 +5,12 @@
 	$facebook = GetSettingValue('FaceBook_Add',0);
 	$twitter = GetSettingValue('Twitter_Add',0);
 	$rss = GetSettingValue('Rss_Add',0);
+	if ($_POST["mark"]=="regnews")
+	{
+		$fields = array("`email`","`tel`","`name`");		
+		$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
+		if ($db->InsertQuery('usersnews',$fields,$values)) 
+	}
 ?>
 <div class="sidebar">
 	<!-- ***********Slideshow************ -->
@@ -54,12 +60,13 @@
 		<div class="line"></div>
 		<div class="badboy"></div>
 		<div class="box-left">
-			<form id="subscribfrm" action="">
+			<form id="subscribfrm" method="post" action="">
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
 				<input type="text" name="name" class="subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
 				<input type="text" name="tel" class="subscrib" id="subscrib" placeholder="تلفن همراه" />
 				<input type="text" name="email" class="subscrib ltr" id="subscrib" placeholder="E-mail" />
 				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
+				<input type="hidden" name='mark' value='regnews' />
 			</form>
 		</div>
 	</div>
