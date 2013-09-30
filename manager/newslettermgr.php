@@ -457,32 +457,32 @@ if ($_GET['act']=="set")
 	<div class="mes" id="message">{$msgs}</div>
    <form action="" method="post">   
 	   <p>
-         <label for="subject">نام فرستنده :</label>
+         <label for="subject">نام فرستنده </label>
          <span>*</span>
        </p>
         <input type="text" name="tbname"  value="{$Email_Sender_Name}" />                
 			<p>
-				<label for="subject">استفاده از SMTP :</label>
+				<label for="subject">استفاده از SMTP </label>
 				<span>*</span>
 			</p>
-				<input type="checkbox" name="chbsmtp" value="yes" {$Is_Smtp}/>
+				<p><input type="checkbox" name="chbsmtp" value="yes" {$Is_Smtp}/></p>
 			<p>
-				<label for="subject">آدرس SMTP :</label>
+				<label for="subject">آدرس SMTP </label>
 				<span>*</span>
 			</p>
 				 <input type="text" name="tbsmtpadd" value="{$Smtp_Host}" />
 			<p>
-				<label for="subject">نام کاربری  SMTP :</label>
+				<label for="subject">نام کاربری  SMTP </label>
 				<span>*</span>
 			</p>
 			 <input type="text" name="tbsmtpuser" value="{$Smtp_User_Name}" />
 			 <p>
-				<label for="subject">کلمه عبور SMTP :</label>
+				<label for="subject">کلمه عبور SMTP </label>
 				<span>*</span>
 			</p>                        
 			 <input type="password" name="tbsmtppass" value="{$Smtp_Pass_Word}" /> 
 			 <p>
-				<label for="subject">پورت SMTP :</label>
+				<label for="subject">پورت SMTP </label>
 				<span>*</span>
 			</p>
 			 <input type="text" name="tbport" value="{$Smtp_Port}" />           
