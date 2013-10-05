@@ -13,7 +13,12 @@ deny from all
 	RewriteCond %{HTTP_REFERER} !^http://(www.)?mediateq.ir/.*$ [NC]
 	RewriteRule .(gif|jpg|swf|flv|png)$ /feed/ [R=302,L]
 #Skip WWW	
-	RewriteCond %{HTTP_HOST} ^www.mediateq.ir [NC] RewriteRule ^(.*)$ http://mediateq.ir/$1 [L,R=301]
+	#RewriteCond %{HTTP_HOST} ^www.mediateq.ir [NC] 
+	#RewriteRule ^(.*)$ http://mediateq.ir/$1 [L,R=301]
+#Add WWW		
+	RewriteCond %{HTTP_HOST} ^mediateq.ir$ [NC]
+	RewriteRule ^(.*)$ http://www.mediateq.ir/$1 [L,R=301]	
+	
 	# proc/self/environ? no way!
 	RewriteCond %{QUERY_STRING} proc/self/environ [OR]
 
@@ -44,4 +49,3 @@ ServerSignature Off
 
 #RewriteCond %{HTTP_HOST} ^mediateq.ir$
 #RewriteRule ^/?$ "http\:\/\/www\.mediateq\.ir\/" [R=301,L]
-
