@@ -191,7 +191,7 @@ if ($_GET['act']=="mgr")
 				//$_GET['item'] = "catmgr";
 				//$_GET['act'] = "mgr";
 				//$_GET['msg'] = 6;				
-				header("Location:?item=newsmgr&act=mgr&msg=6");
+				header("Location:?item=catmgr&act=mgr&msg=6");
 			}
 		
 	}
@@ -416,7 +416,7 @@ if ($_GET['act']=="mgr")
 				//$_GET['item'] = "secmgr";
 				//$_GET['act'] = "mgr";
 				//$_GET['msg'] = 6;				
-				header("Location:?item=newsmgr&act=mgr&msg=6");
+				header("Location:?item=catmgr&act=mgr&msg=6");
 			}
 		
 	}
