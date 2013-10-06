@@ -162,7 +162,7 @@ if ($_GET['act']=="edit")
 }
 else
 {
-  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select select validate[required]");
+  $cbsection = DbSelectOptionTag("cbsec",$sections,"secname",null,null,"select validate[required]");
   $cbcategory = null;
 } 
 
@@ -437,7 +437,7 @@ $code=<<<edit
 
 								<p class="search-form">
 									<input type="text" id="date_input_1" name="txtsrh" class="search-form" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}"  /> 
-									<img src="../themes/default/images/admin/cal.png" class="cal-btn" id="date_btn_2" alt="cal-pic">
+									<img src="./images/cal.png" class="cal-btn" id="date_btn_2" alt="cal-pic">
 							         <script type="text/javascript">
 							          Calendar.setup({
 							            inputField  : "date_input_1",   // id of the input field

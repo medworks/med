@@ -21,6 +21,11 @@ div,table,form,label,input,a,p{
   direction: ltr;
 }
 
+.trick{
+  height: 0 !important;
+  padding: 0 !important;
+}
+
 a:active,
 a:visited,
 a:link{ 

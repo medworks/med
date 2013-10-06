@@ -163,7 +163,6 @@
 		<span class="right">خبرهای اخیر</span>
 		<div class="news right">
 			<ul>
-
 				<?php
   	  				$news = $db->SelectAll('news',NULL,NULL," ndate DESC");
 					for($i=0 ; $i<5 ; $i++){
