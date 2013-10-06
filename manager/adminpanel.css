@@ -1,5 +1,5 @@
 body{
-  background: url('./images/bg.jpg');
+  background-image: url('./images/bg.jpg');
   background-position: center;
   font-family: 'bmitra';
   font-weight: normal;
