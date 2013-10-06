@@ -416,7 +416,7 @@ if ($_GET['act']=="mgr")
 				//$_GET['item'] = "secmgr";
 				//$_GET['act'] = "mgr";
 				//$_GET['msg'] = 6;				
-				header("Location:?item=catmgr&act=mgr&msg=6");
+				header("Location:?item=secmgr&act=mgr&msg=6");
 			}
 		
 	}
@@ -467,7 +467,7 @@ del;
 							"describe"=>"توضیحات",							
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
-                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=catmgr&act=mgr");
+                            $_GET["pageNo"], "id", false, true, true, $rowCount,"item=secmgr&act=mgr");
                     
             }
 $msgs = GetMessage($_GET['msg']);
@@ -493,7 +493,7 @@ $code=<<<edit
 				  </div>
                     <div class="Top">                       
 						<center>
-							<form action="?item=catmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
+							<form action="?item=secmgr&act=mgr" method="post" id="frmsrh" name="frmsrh">
 								<p>جستجو بر اساس {$combobox}</p>
 
 								<p class="search-form">
