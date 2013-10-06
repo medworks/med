@@ -5,7 +5,7 @@ body{
 	background: url('./images/login/bg-login.png') repeat #1b1b1b;
 	font-size: 14px;
 	text-shadow: #050505 0 -1px 0;
-	font-weight: bold;
+  	font-weight: normal;
 	font-family: 'bmitra';
 }
 

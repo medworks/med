@@ -2,6 +2,11 @@ body{
   background: url('./images/bg.jpg');
   background-position: center;
   font-family: 'bmitra';
+  font-weight: normal;
+}
+
+h1,h2,h3,h4,h5,h6,a,p,label,span{
+  font-weight: normal;
 }
 
 .container{
@@ -775,7 +780,7 @@ header #mini-nav span.newSignup{
   outline: 0;
   text-decoration: none;
   color: rgba(0, 0, 0, 0.3);
-  font-size: 17px;
+  font-size: 20px;
   text-align: center;
   white-space: nowrap;
   -webkit-filter: grayscale(1);
