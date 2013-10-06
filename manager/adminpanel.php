@@ -133,12 +133,12 @@
           <li>
             <a href="?item=gallerymgr&act=do" class="gallerymgr"><p>گالری تصاویر</p></a>
           </li>
-    		  <li>
+    		  <!-- <li>
             <a href="?item=blocksmgr&act=do" class="block"><p>مدیریت بلاک</p></a>
           </li>
     		  <li>
             <a href="?item=pluginmgr&act=do" class="plugin"><p>مدیریت پلاگین</p></a>
-          </li>
+          </li> -->
 		      <li >            
             <a href="?item=newslettermgr&act=do" id="newslettermgr" class="newslettermgr"><p>مدیریت خبرنامه</p></a>
           </li>
