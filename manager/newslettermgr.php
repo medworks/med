@@ -432,6 +432,8 @@ del;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array( 
+					        "name"=>"نام",
+							"tel"=>"تلفن",
 					        "email"=>"ایمیل",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=newslettermgr&act=user");
