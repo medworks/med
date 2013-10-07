@@ -462,7 +462,7 @@ del;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array(					        
-							"secname"=>"نام گروه",
+							"secname"=>"نام سرگروه",
 							"latinname"=>"نام لاتین",
 							"describe"=>"توضیحات",							
                             "edit"=>"ویرایش",
