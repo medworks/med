@@ -78,7 +78,7 @@
 					data: $("#subscribfrm").serialize(), 
 					success: function(data)
 					{
-						alert(data); // show response from the php script.
+						alert(data); 
 					}
 				});
 				//return false;
