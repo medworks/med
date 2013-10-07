@@ -19,6 +19,18 @@
 	$cbcategory = DbSelectOptionTag("cbcat",$category,"catname",null,null,"select validate[required]");
 	echo $cbcategory;
 }
+
+if ($_GET["news"]=="reg")
+{
+    $msg = Message::GetMessage();
+	$fields = array("`email`","`tel`","`name`");		
+	$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
+	if ($db->InsertQuery('usersnews',$fields,$values))
+		echo $msg->ShowSuccess("ثبت نام با موفقیت انجام شد");
+	else
+		echo $msg->ShowError("ثبت نام با مشکل مواجه شد");
+}
+
 if ($_GET["cmd"]=="file")
 {
 	$pics = "";
