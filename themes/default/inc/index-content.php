@@ -61,7 +61,7 @@ $html.=<<<cd
 		<div class="line"></div>
 		<div class="badboy"></div>
 		<div class="works box-right">
-			<div id="slideshow-rec">
+			<div id="slideshow-rec" style="height:225px !important;">
 cd;
 								
 				$works = $db->SelectAll('works',NULL,NULL," fdate DESC");
