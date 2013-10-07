@@ -48,6 +48,7 @@
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine-en.js"></script>
 	<script type="text/javascript" src="../lib/js/jquery.validationEngine.js"></script>	
   <script type="text/javascript" src="../lib/js/CFInstall.js"></script>
+  <script type="text/javascript" src="../lib/js/tiny/tinymce.min.js"></script>
 	<script type="text/javascript" src="../lib/js/jsfuncs.js"></script>	
 
 	<!--[if lt IE 9]>
