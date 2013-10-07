@@ -58,33 +58,6 @@
 	<link rel="icon" href="themes/personal/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
-	  <!--[if IE]>
-		    <script type="text/javascript" 
-		     src="lib/js/CFInstall.js"></script>
-
-		    <style>
-		     .chromeFrameInstallDefaultStyle {
-		       width: 100%; /* default is 800px */
-		       border: 5px solid blue;
-		     }
-		    </style>
-
-		    <div id="prompt">
-
-		    </div>
-		 
-		    <script>
-		     // The conditional ensures that this code will only execute in IE,
-		     // Therefore we can use the IE-specific attachEvent without worry
-		     window.attachEvent("onload", function() {
-		       CFInstall.check({
-		         mode: "inline", // the default
-		         node: "prompt",
-		         destination: "www.mediateq.ir"
-		       });
-		     });
-		    </script>
-	  [endif]-->
 	<?php
 	  include_once("./config.php");
 	  include_once("./classes/database.php");

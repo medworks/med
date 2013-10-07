@@ -31,6 +31,7 @@ else
 	<!DOCTYPE HTML>
 	<html lang="fa">       
 	<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />	
 	<title>بخش مديريت سايت</title>		
 	<link rel="stylesheet" type="text/css" href="../themes/css/1styles.css"></link>   
