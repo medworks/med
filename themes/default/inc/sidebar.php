@@ -56,15 +56,35 @@
 		<div class="badboy"></div>
 		<div class="box-left">
 			<form id="subscribfrm" method="post" action="">
-			    <div class="mes" id="message"><?php echo $msgs ?></div>
+			    <div class="mes" id="message"></div>
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
 				<input type="text" name="name" class="subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
 				<input type="text" name="tel" class="subscrib" id="subscrib" placeholder="تلفن همراه" />
 				<input type="text" name="email" class="subscrib ltr" id="subscrib" placeholder="E-mail" />
-				<p><input type="submit" class="submit" id="submit" value="اشتراک" /></p>
+				<p><input type="submit" class="submit" id="nsubmit" value="اشتراک" /></p>
 				<input type="hidden" name='mark' value='regnews' />
 			</form>
 		</div>
+		<script type='text/javascript'>
+		$(document).ready(function(){	   			
+			$("#nsubmit").click(function(){
+			//	alert("click!!!");			 
+				//$.get('../../../manager/ajaxcommand.php?news=reg'+, function(data) {
+					//$('#message').html(data);						
+				//});
+				$.ajax({
+					type: "POST",
+					url: "../../../manager/ajaxcommand.php?news=reg",
+					data: $("#subscribfrm").serialize(), 
+					success: function(data)
+					{
+						alert(data); // show response from the php script.
+					}
+				});
+				//return false;
+			});
+    });
+	</script>
 	</div>
 	<!-- ***********Gallery Slideshow************ -->
 	<div class="gallery flexslider simple-box" id="slider">
@@ -177,7 +197,7 @@
 </div>
 <div class="badboy"></div>
 <?php
-if ($_POST["mark"]=="regnews")
+/* if ($_POST["mark"]=="regnews")
 	{
 		$fields = array("`email`","`tel`","`name`");		
 		$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
@@ -186,5 +206,5 @@ if ($_POST["mark"]=="regnews")
 		else
 			header('location:?item=initial&msg=2');
 		$msgs = GetMessage($_GET['msg']);
-	}
+	} */
 ?>
