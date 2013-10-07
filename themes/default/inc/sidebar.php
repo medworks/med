@@ -68,13 +68,13 @@
 		<script type='text/javascript'>
 		$(document).ready(function(){	   			
 			$("#nsubmit").click(function(){
-			//	alert("click!!!");			 
+				alert("click!!!");			 
 				//$.get('../../../manager/ajaxcommand.php?news=reg'+, function(data) {
 					//$('#message').html(data);						
 				//});
 				$.ajax({
 					type: "POST",
-					url: "../../../manager/ajaxcommand.php?news=reg",
+					url: "./manager/ajaxcommand.php?news=reg",
 					data: $("#subscribfrm").serialize(), 
 					success: function(data)
 					{
