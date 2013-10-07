@@ -1447,6 +1447,41 @@ section.main-content .sidebar .subscrib form p{
 	padding-bottom: 15px;
 	font-size: 18px;
 }
+
+/* CSS for Error notification */
+.notification_error{
+    border: 1px solid #f1dfc5;
+	width:100%;
+    height: auto;
+	color: #ca5702;
+    padding: 10px;
+    margin: 10px auto;
+    text-align:center;
+    -webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;
+    margin-bottom:5px;
+}
+/* CSS for Successfully sent notification */
+.notification_ok{
+    border: 1px #cbcf8e solid;
+	width:100%;
+    height: auto;
+	padding: 10px;
+    margin:0 auto;
+    background: #f5f9fd;
+    text-align: center;
+	-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;
+	margin-bottom:5px;
+}
+
+.info_fieldset{
+	font-family: 'bmitra';
+	width: 205px;
+	padding:0;
+	margin:0;
+	margin-bottom:10px;
+	background: none; 
+	border: 0px;
+}
 /***************************************Bottom Ads part**************************************/
 section.ads-bot{
 	width: 950px;

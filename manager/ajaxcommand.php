@@ -22,13 +22,21 @@
 
 if ($_GET["news"]=="reg")
 {
-    $msg = Message::GetMessage();
+	$msg="";
 	$fields = array("`email`","`tel`","`name`");		
 	$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
-	if ($db->InsertQuery('usersnews',$fields,$values))
-		echo $msg->ShowSuccess("ثبت نام با موفقیت انجام شد");
-	else
-		echo $msg->ShowError("ثبت نام با مشکل مواجه شد");
+	
+	$name=$_POST['name'];
+	$tel=$_POST['tel'];
+	$email=$_POST['email'];
+
+	if (strlen($name)>=1 && checkEmail($email) && strlen($tel)>=1){
+		if ($db->InsertQuery('usersnews',$fields,$values)){
+	    	$msg="OK";}
+	}else{
+		$msg="<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
+	}
+	echo $msg;
 }
 
 if ($_GET["cmd"]=="file")

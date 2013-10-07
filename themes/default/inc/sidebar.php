@@ -56,7 +56,9 @@
 		<div class="badboy"></div>
 		<div class="box-left">
 			<form id="subscribfrm" method="post" action="">
-			    <div class="mes" id="message"></div>
+			    <fieldset class="info_fieldset">
+					<div id="note"></div>
+				</fieldset>
 				<p>اشتراک خبرنامه به وسیله ایمیل</p>
 				<input type="text" name="name" class="subscrib" id="subscrib" placeholder="نام و نام خانوادگی" />
 				<input type="text" name="tel" class="subscrib" id="subscrib" placeholder="تلفن همراه" />
@@ -68,20 +70,32 @@
 		<script type='text/javascript'>
 		$(document).ready(function(){	   			
 			$("#nsubmit").click(function(){
-				alert("click!!!");			 
-				//$.get('../../../manager/ajaxcommand.php?news=reg'+, function(data) {
-					//$('#message').html(data);						
-				//});
 				$.ajax({
 					type: "POST",
-					url: "./manager/ajaxcommand.php?news=reg",
+					url: "manager/ajaxcommand.php?news=reg",
 					data: $("#subscribfrm").serialize(), 
-					success: function(data)
+					success: function(msg)
 					{
-						alert(data); 
+						$("#note").ajaxComplete(function(event, request, settings){
+
+						if(msg == 'OK')
+						{	
+							result = '<div class="notification_ok rtl">مشخصات شما با موفقیت ثبت شد.</div>';
+						}
+						else
+						{
+							result = msg;
+						}
+
+						$(this).hide();
+						$(this).html(result).slideDown("slow");
+						$(this).html(result);
+
+
+				});
 					}
 				});
-				//return false;
+				return false;
 			});
     });
 	</script>

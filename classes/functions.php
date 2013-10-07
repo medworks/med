@@ -449,5 +449,17 @@ code;
 		$row = $db ->Select("section","secname","ID = '{$secid}'");
 		return ($row["secname"]);
 	}
+
+	// *****************CheckEmail Function***********************
+	function checkEmail($email) {
+	  if (isset($_POST['email'])) {  
+	        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);  
+	        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {  
+	            return true;   
+	        }else{
+	            return false;
+	        }
+	    }
+	}
 	  
 ?>
