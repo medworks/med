@@ -21,33 +21,26 @@ $html=<<<cd
 		google.maps.event.addDomListener(window, "load", initialize);
 
 		$(document).ready(function(){
-			$("#contactfrm").submit(function(){
-				var str = $(this).serialize();
+			$(".contact-submit").click(function(){
 
 			    $.ajax({
 				    type: "POST",
 				    url: "./manager/ajaxcommand.php?contact=reg",
-				    data: str,
-					    success: function(msg){
-							$("#note-contact").ajaxComplete(function(event, request, settings){
-								if(msg == "OK")
-								{	
-									result = "<div class='notification_ok rtl medium'>پیام شما با موفقیت ارسال شد.</div>";
-								}else
-								{
-									result = msg;
-								}
-
+				    data: $("#contactfrm").serialize(),
+					    success: function(msg)
+						{
+							$("#note-contact").ajaxComplete(function(event, request, settings){				
 								$(this).hide();
-								$(this).html(result).slideDown("slow");
-								$(this).html(result);
+								$(this).html(msg).slideDown("slow");
+								$(this).html(msg);
+
 
 							});
-					}
+						}
 			    });
 				return false;
-				});
 			});
+		});
 	</script>
 
 	<div class='content'>
@@ -92,9 +85,9 @@ $html=<<<cd
 				   </p>
 			       <textarea name="message" class="validate[required]"></textarea>
 			       <p>
-						<input type="submit" id="submit" value="ارسال" class="submit">	 
-						<input type="hidden" name="mark" value="savenews">       
-			      	 	<input type="reset" value="پاک کردن" class="reset"> 	 	     
+						<input type="submit" id="submit" class="contact-submit submit" value="ارسال" />	 
+						<input type="hidden" name="mark" value="savenews" />       
+			      	 	<input type="reset" value="پاک کردن" class="reset" /> 	 	     
 			       </p>
 			        <fieldset class="info_fieldset info_contact">
 						<div id="note-contact"></div>

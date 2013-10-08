@@ -3,6 +3,7 @@
     include_once("../classes/database.php");	
 	include_once("../classes/functions.php");		
 	$db = Database::GetDatabase();
+
 if ($_GET["news"]=="reg")
 {
 	$fields = array("`email`","`tel`","`name`");		
@@ -21,13 +22,13 @@ if ($_GET["news"]=="reg")
 	} 
 	else 
 	{
-	echo "<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
+		echo "<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
 	}
 		 
 }
 
 if($_GET["contact"]=="reg"){
-	$msg="";
+
 	$admin = 'info@mediateq.ir';
 
 	$name    = $_POST['family'];
@@ -44,17 +45,16 @@ if($_GET["contact"]=="reg"){
 				$message,
 				"From:$name $email" )
 		){
-			$msg="OK";
+			echo "<div class='notification_ok rtl medium'>پیام شما با موفقیت ارسال شد.</div>";
 
 		}else{
-			$msg="<div class='notification_error rtl'>خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.</div>";
+			echo "<div class='notification_error rtl'>خطا! پیام شما ارسال نشد لطفا مجددا تلاش نمایید.</div>";
 
 		}
 	}else{
-		$msg="<div class='notification_error rtl'>خطا! لطفا فیلدها را بررسی نمایید و مجددا ارسال کنید!</div>";
+		echo "<div class='notification_error rtl'>خطا! لطفا فیلدها را بررسی نمایید و مجددا ارسال کنید!</div>";
 	}
 
-echo $msg;
 }
 
  if (isset($_GET["sec"]))
