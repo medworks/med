@@ -78,21 +78,21 @@
 					{
 						$("#note").ajaxComplete(function(event, request, settings){
 
-						if(msg == 'OK')
-						{	
-							result = '<div class="notification_ok rtl">مشخصات شما با موفقیت ثبت شد.</div>';
-						}
-						else
-						{
-							result = msg;
-						}
+							if(msg == 'OK')
+							{	
+								result = '<div class="notification_ok rtl">مشخصات شما با موفقیت ثبت شد.</div>';
+							}
+							else
+							{
+								result = msg;
+							}
 
-						$(this).hide();
-						$(this).html(result).slideDown("slow");
-						$(this).html(result);
+							$(this).hide();
+							$(this).html(result).slideDown("slow");
+							$(this).html(result);
 
 
-				});
+						});
 					}
 				});
 				return false;

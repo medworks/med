@@ -27,10 +27,9 @@ if ($_GET["news"]=="reg")
 	$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
 	
 	$name=$_POST['name'];
-	$tel=$_POST['tel'];
 	$email=$_POST['email'];
 
-	if (strlen($name)>=1 && checkEmail($email) && strlen($tel)>=1){
+	if (strlen($name)>=1 && checkEmail($email)){
 		if ($db->InsertQuery('usersnews',$fields,$values)){
 	    	$msg="OK";}
 	}else{
