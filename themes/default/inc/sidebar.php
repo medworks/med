@@ -72,24 +72,14 @@
 			$("#nsubmit").click(function(){
 				$.ajax({
 					type: "POST",
-					url: "manager/subscribe.php",
+					url: "manager/ajaxcommand.php?news=reg",
 					data: $("#subscribfrm").serialize(), 
 					success: function(msg)
 					{
-						$("#note").ajaxComplete(function(event, request, settings){
-
-							if(msg == 'OK')
-							{	
-								result = '<div class="notification_ok rtl">مشخصات شما با موفقیت ثبت شد.</div>';
-							}
-							else
-							{
-								result = msg;
-							}
-
+						$("#note").ajaxComplete(function(event, request, settings){				
 							$(this).hide();
-							$(this).html(result).slideDown("slow");
-							$(this).html(result);
+							$(this).html(msg).slideDown("slow");
+							$(this).html(msg);
 
 
 						});

@@ -1,18 +1,30 @@
 <?php
 	include_once("../config.php");
-    include_once("../classes/database.php");
-	include_once("../classes/messages.php");
-	include_once("../classes/session.php");	
-	include_once("../classes/functions.php");
-	include_once("../classes/login.php");
-	include_once("../lib/persiandate.php");	
-	$login = Login::GetLogin();
-	if (!$login->IsLogged())
-	{
-		header("Location: ../index.php");
-		die(); // solve a security bug
-	}
+    include_once("../classes/database.php");	
+	include_once("../classes/functions.php");		
 	$db = Database::GetDatabase();
+if ($_GET["news"]=="reg")
+{
+	$fields = array("`email`","`tel`","`name`");		
+	$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
+	
+	$name=$_POST['name'];
+	$email=$_POST['email'];
+    if( strlen($name)>=1 && checkEmail($email))
+	{
+		if ($db->InsertQuery('usersnews',$fields,$values)){
+	    	echo "<div class='notification_ok rtl'>مشخصات شما با موفقیت ثبت شد.</div>";}
+		else
+		{
+			echo "<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
+         }	
+	} 
+	else 
+	{
+	echo "<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
+	}
+		 
+}
  if (isset($_GET["sec"]))
 {
 	$category = $db->SelectAll("category","*","secid={$_GET[sec]}","id ASC");
