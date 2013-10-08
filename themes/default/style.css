@@ -1482,6 +1482,11 @@ section.main-content .sidebar .subscrib form p{
 	background: none; 
 	border: 0px;
 }
+
+.info_contact{
+	width: 404px;
+	font-size: 18px;
+}
 /***************************************Bottom Ads part**************************************/
 section.ads-bot{
 	width: 950px;

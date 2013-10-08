@@ -19,7 +19,7 @@
 			break;
 			case 'contact':			    			
 				$seo->Site_Title = "تماس با ما";
-                return "themes/default/contact.php";
+                return "themes/default/contact.html";
 			break;
 			case 'gallery':
 			    $seo->Site_Title = "گالری تصاویر";
