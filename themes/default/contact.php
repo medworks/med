@@ -21,7 +21,7 @@ $html=<<<cd
 		google.maps.event.addDomListener(window, "load", initialize);
 
 		$(document).ready(function(){
-			$(".contact-submit").click(function(){
+			$("#contactfrm").submit(function(){
 
 			    $.ajax({
 				    type: "POST",
@@ -53,7 +53,7 @@ $html=<<<cd
 				<script type='text/javascript'>
 					$(document).ready(function(){	   
 						$("#contactfrm").validationEngine();			
-			    });
+			  		});
 				</script>
 
 				<div id="googleMap" style="width:588px;height:380px;"></div>
@@ -85,7 +85,7 @@ $html=<<<cd
 				   </p>
 			       <textarea name="message" class="validate[required]"></textarea>
 			       <p>
-						<input type="submit" id="submit" class="contact-submit submit" value="ارسال" />	 
+						<input type="submit" id="submit" class="submit" value="ارسال" />	 
 						<input type="hidden" name="mark" value="savenews" />       
 			      	 	<input type="reset" value="پاک کردن" class="reset" /> 	 	     
 			       </p>
