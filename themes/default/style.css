@@ -1450,6 +1450,7 @@ section.main-content .sidebar .subscrib form p{
 
 /* CSS for Error notification */
 .notification_error{
+	background: #edc995;
     border: 1px solid #f1dfc5;
 	width:100%;
     height: auto;
@@ -1462,18 +1463,19 @@ section.main-content .sidebar .subscrib form p{
 }
 /* CSS for Successfully sent notification */
 .notification_ok{
+	background: #dde386;
     border: 1px #cbcf8e solid;
 	width:100%;
     height: auto;
 	padding: 10px;
     margin:0 auto;
-    background: #f5f9fd;
     text-align: center;
 	-webkit-border-radius:7px;-moz-border-radius:7px;border-radius:7px;
 	margin-bottom:5px;
 }
 
 .info_fieldset{
+	font-size: 16px;
 	font-family: 'bmitra';
 	width: 205px;
 	padding:0;
