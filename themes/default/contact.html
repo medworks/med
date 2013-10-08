@@ -1,6 +1,5 @@
 <?php
 		
-
 $address = GetSettingValue('Address',0);
 $tel = GetSettingValue('Tell_Number',0);
 $fax = GetSettingValue('Fax_Number',0);
@@ -30,7 +29,7 @@ $html=<<<cd
 				    url: "./themes/default/contact.php",
 				    data: str,
 					    success: function(msg){
-							$("#note").ajaxComplete(function(event, request, settings){
+							$("#note-contact").ajaxComplete(function(event, request, settings){
 								if(msg == "OK") // Message Sent? Show the "Thank You" message
 								{	
 									result = "<div class='notification_ok rtl medium'>پیام شما با موفقیت ارسال شد.</div>";
@@ -98,7 +97,7 @@ $html=<<<cd
 			      	 	<input type="reset" value="پاک کردن" class="reset"> 	 	     
 			       </p>
 			        <fieldset class="info_fieldset info_contact">
-						<div id="note"></div>
+						<div id="note-contact"></div>
 					</fieldset>
 				</form>
 
