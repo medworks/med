@@ -29,7 +29,6 @@
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>	
-	<script src="lib/js/CFInstall.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine-en.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
 	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>
