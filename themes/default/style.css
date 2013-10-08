@@ -1450,7 +1450,7 @@ section.main-content .sidebar .subscrib form p{
 
 /* CSS for Error notification */
 .notification_error{
-	background: #edc995;
+	background: #f5d19d;
     border: 1px solid #f1dfc5;
 	width:100%;
     height: auto;
@@ -1463,7 +1463,7 @@ section.main-content .sidebar .subscrib form p{
 }
 /* CSS for Successfully sent notification */
 .notification_ok{
-	background: #dde386;
+	background: #e3e988;
     border: 1px #cbcf8e solid;
 	width:100%;
     height: auto;
