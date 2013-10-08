@@ -72,7 +72,7 @@
 			$("#nsubmit").click(function(){
 				$.ajax({
 					type: "POST",
-					url: "manager/ajaxcommand.php?news=reg",
+					url: "manager/subscribe.php",
 					data: $("#subscribfrm").serialize(), 
 					success: function(msg)
 					{

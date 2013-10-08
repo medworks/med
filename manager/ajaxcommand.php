@@ -20,24 +20,6 @@
 	echo $cbcategory;
 }
 
-if ($_GET["news"]=="reg")
-{
-	$msg="";
-	$fields = array("`email`","`tel`","`name`");		
-	$values = array("'{$_POST[email]}'","'{$_POST[tel]}'","'{$_POST[name]}'");
-	
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-
-	if (strlen($name)>=1 && checkEmail($email)){
-		if ($db->InsertQuery('usersnews',$fields,$values)){
-	    	$msg="OK";}
-	}else{
-		$msg="<div class='notification_error rtl'>ثبت مشخصات شما با مشکل مواجه شد! لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";
-	}
-	echo $msg;
-}
-
 if ($_GET["cmd"]=="file")
 {
 	$pics = "";
