@@ -29,16 +29,13 @@
 				foreach($rows as $key=>$val)
 				{
 				 ++$rownum;
-				 $row .= "<a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
-					 {$rownum} - {$val['subject']}</a> <br/>";
+				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
+					 {$val['subject']}</a></p>";
 				}
 				$result=<<<rt
-			      نتایج یافت شده در بخش :{$cat}
-				  <br/>
-			     عبارت جستجو شده : {$_POST["searchtxt"]}
-				 <br/>
-				 تعداد نتایج یافت شده:{$success}
-				 <br/>
+			     <p class="sresult">نتایج یافت شده در بخش: {$cat}</p>
+			     <p class="sresult">عبارت جستجو شده: {$_POST["searchtxt"]}</p>
+				 <p class="sresult">تعداد نتایج یافت شده: {$success}</p>
 				 {$row}				 
 rt;
 			}
