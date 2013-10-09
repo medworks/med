@@ -45,6 +45,9 @@
 		if ($IsSend)
 		{
 			//$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
+			$fields = array("`nid`","`sdate`");	
+			$values = array("'{$news["id"]}'","'{$news["ndate"]}'");
+			$db->InsertQuery('newsletter',$fields,$values);
 		    header('location:?item=newslettermgr&act=new&msg=7');
 		}
 		else
@@ -297,7 +300,7 @@ if ($_GET['act']=="arc")
     }
                 $rowsClass = array();
                 $colsClass = array();
-                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("news"):Count($rows);				
+                $rowCount =($_GET["rec"]=="all" or $_POST["mark"]!="srhnews")?$db->CountAll("newsletter"):Count($rows);				
                 for($i = 0; $i < Count($rows); $i++)
                 {						
 				    $row = $db->Select("news","subject","id ={$rows[$i][nid]}");
