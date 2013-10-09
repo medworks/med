@@ -42,6 +42,10 @@
 			case 'fullnews':
                 if ($act=="do") return "themes/default/single-news.php";
 			break;
+			case 'search':
+				$seo->Site_Title = "جستجو";
+                if ($act=="do") return "themes/default/search.php";
+			break;
 			case 'uploadmgr':
               if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/uploadmgr.php";
 			break;

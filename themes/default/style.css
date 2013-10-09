@@ -1904,6 +1904,14 @@ section.main-content .content .detail p span{
 	font-weight: bold;
 }
 
+.contact form input[type="radio"]{
+	width: 15px;
+	margin: 0;
+	display: inline-block;
+	float: right;
+	margin-left: 15px;
+}
+
 .contact form input,
 .contact form textarea{
 	width: 410px;
