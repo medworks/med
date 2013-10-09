@@ -715,6 +715,10 @@ header #mini-nav span.newSignup{
   background-image: url('./images/news.png');
 }
 
+#mainnav > ul > li a.articles{
+  background-image: url('./images/articles.png');
+}
+
 #mainnav > ul > li a.works{
   background-image: url('./images/works.png');
 }
@@ -880,6 +884,14 @@ header #mini-nav span.newSignup{
   margin-top: 10px;
 }
 
+.sub-menu ul li span.add-article{
+  background-image: url('./images/articles-add.jpg');
+}
+
+.sub-menu ul li span.edit-article{
+  background-image: url('./images/articles-edit.jpg');
+}
+
 .sub-menu ul li span.add-news{
   background-image: url('./images/addnews.png');
 }
@@ -1004,7 +1016,7 @@ header #mini-nav span.newSignup{
  /* This Section related To Container Div Part*/  
 .admin_container{
   float : right;
-  min-height: 550px;
+  min-height: 600px;
   width : 782px;
   top: 15px;
   background: #fff;
