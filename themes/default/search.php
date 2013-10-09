@@ -35,8 +35,8 @@
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
-						 $row .= "<a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
-						 {$rownum} - {$val['subject']}</a> <br/>";
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
 			          }
 					break;
 					case 'works':
@@ -44,19 +44,16 @@
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
-						 $row .= "<a target='_blank' href='?item=fullworks&act=do&wid={$val['id']}'>
-						 {$rownum} -{$val['subject']}</a> <br/>";
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullworks&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
 			          }
 					break;
 			   }
 			   
 			   $result=<<<rt
-			      نتایج یافت شده در بخش :{$cat}
-				  <br/>
-			     عبارت جستجو شده : {$_POST["searchtxt"]}
-				 <br/>
-				 تعداد نتایج یافت شده:{$success}
-				 <br/>
+			     <p class="sresult">نتایج یافت شده در بخش: {$cat}</p>
+			     <p class="sresult">عبارت جستجو شده : {$_POST["searchtxt"]}</p>
+				 <p class="sresult">تعداد نتایج یافت شده: {$success}<p>
 				 {$row}				 
 rt;
 			}
@@ -76,7 +73,7 @@ $html=<<<cd
 				   <p>
 			         <label>عبارت مورد نظر </label>
 			       </p>
-			       <input type="text" name="searchtxt" class="subject" id="searchtxt"/>
+			       <input type="text" name="searchtxt" class="subject" id="searchtxt" value="{$_POST["searchtxt"]}"/>
 				   <p>
 			         <label>جستجو در </label>
 			       </p>
@@ -98,9 +95,8 @@ $html=<<<cd
 						value="body" />
 			       <div class="badboy"></div>
 			       <p>
-					  <input type="submit" id="submit" class="submit" value="ارسال" />
-			          <input type="hidden" name="mark" value="find" />	
-			      	  <input type="reset" value="پاک کردن" class="reset" />
+					  <input type="submit" id="submit" class="submit" value="جستجو" />
+			          <input type="hidden" name="mark" value="find" />
 			       </p>
 				</form>
 

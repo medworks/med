@@ -737,6 +737,24 @@ div.container header .top .top-menu a.advance-search{
 	margin-left: 3px;
 	background: url('images/advance-search.png') center no-repeat;
 }
+
+p.sresult:first-child{
+	margin-top: 15px;
+}
+
+a.srlink{
+	text-decoration: underline;
+}
+
+p.srlink{
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+p.sresult{
+	font-size: 20px;
+	margin-bottom: 10px;
+}
 /************End submenu***************/
 div.container header .top{
 	direction: ltr;
