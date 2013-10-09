@@ -89,6 +89,9 @@
             <a href="?item=secmgr&act=do" class="trick"></a>
           </li>
           <li>
+            <a href="?item=articlesmgr&act=do" id="articles" name="articles" class="articles"><p>مدیریت مقالات</p></a>
+          </li>
+          <li>
             <a href="?item=newsmgr&act=do" id="news" name="news" class="news"><p>مدیریت اخبار</p></a>
           </li>
           <li >            

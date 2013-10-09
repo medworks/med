@@ -78,8 +78,8 @@
 			<div class="top-menu">
 				<span class="left"><a href="?item=search&act=do" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
 				<menu class="menu">
-					<li><a href="./">صفحه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
+					<li><a href="?item=articles">مقالات</a></li>
 					<li><a href="?item=gallery">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
 						<menu>
@@ -116,6 +116,7 @@
 				<li><a href="?item=about">درباره ما</a></li>
 				<li><a href="?item=works&act=do">کارهای ما</a></li>
 				<li><a href="?item=news&act=do">اخبار</a></li>
+				<li><a href="?item=articles">مقالات</a></li>
 				<li><a href="?item=gallery">گالری تصاویر</a></li>
 				<!-- <li><a href="#">خدمات</a>
 					<menu>

@@ -46,11 +46,18 @@
 				$seo->Site_Title = "جستجو";
                 if ($act=="do") return "themes/default/search.php";
 			break;
+			case 'articles':
+				$seo->Site_Title = "مقالات";
+                return "themes/default/articles.php";
+			break;
 			case 'uploadmgr':
               if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/uploadmgr.php";
 			break;
 			case 'worksmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/worksmgr.php";
+			break;
+			case 'articlesmgr':
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/articlesmgr.php";
 			break;
 			case 'newsmgr':
                 if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/newsmgr.php";
