@@ -15,14 +15,16 @@
 			break;
             case 'about':
 				$seo->Site_Title = "درباره ما";	
+				$seo->Site_Describtion = mb_substr(GetSettingValue('About_System',1),0,150,"UTF-8");
                 return "themes/default/about.php";
 			break;
 			case 'contact':			    			
 				$seo->Site_Title = "تماس با ما";
+				$seo->Site_Describtion = mb_substr(GetSettingValue('Address',1),0,150,"UTF-8");
                 return "themes/default/contact.php";
 			break;
 			case 'gallery':
-			    $seo->Site_Title = "گالری تصاویر";
+			    $seo->Site_Title = "گالری تصاویر";				
                 return "themes/default/gallery.php";
 			break;
 			case 'dashboard':
