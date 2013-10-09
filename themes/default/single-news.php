@@ -10,7 +10,7 @@
 	$news["userid"] = GetUserName($news["userid"]);
 	$body = $news['body'];
 	$seo->Site_Title = $news["subject"];
-	$seo->$seo->Site_Describtion = mb_substr($news["body"],0,150,"UTF-8");
+	$seo->Site_Describtion = mb_substr($news["body"],0,150,"UTF-8");
 	
 	
 $html=<<<ht
