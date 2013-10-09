@@ -4,9 +4,10 @@ RewriteEngine on
 deny from all
 </FilesMatch>
                            
-<IFModule mod_rewrite.c>
+<IFModule mod_rewrite.c>   
 	RewriteEngine On 
-	RewriteRule ^news.htm http://mediateq.ir/?item=news&act=do
+	RewriteRule ^index.htm index.php 
+	RewriteRule ^news.htm index.php?item=news&act=do
 	RewriteRule ^news-([0-9]*).htm ?item=fullnews&act=do&wid=$1
 	RewriteBase / 	
 
