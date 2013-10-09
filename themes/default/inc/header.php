@@ -66,9 +66,9 @@
 		<div class="top">
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
-				<form action="./search.php" method="post" name="frmsearch">
+				<form action="?item=search&act=do" method="post" name="frmsearch">
 					<p></p>
-					<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
+					<input type="text" name="searchtxt" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 					<input type="submit" name="submit" class="submit left" value="" />
 					<input type="hidden" name="mark" value="search" />
 					<span class="left"></span>
