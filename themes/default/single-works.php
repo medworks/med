@@ -11,6 +11,7 @@
 	$fdate = ToJalali($works["fdate"]," l d F  Y ");
 	$body= $works['body'];
 	$seo->Site_Title = $works["subject"];
+	$seo->$seo->Site_Describtion = mb_substr($works["body"],0,150,"UTF-8");
 $html=<<<ht
 	<div class="content single-page">
 		<div class="title-menu">

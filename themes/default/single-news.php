@@ -9,7 +9,10 @@
 	$ndate = ToJalali($news["ndate"]," l d F  Y ");
 	$news["userid"] = GetUserName($news["userid"]);
 	$body = $news['body'];
-	$seo->Site_Title = $news["subject"];	
+	$seo->Site_Title = $news["subject"];
+	$seo->$seo->Site_Describtion = mb_substr($news["body"],0,150,"UTF-8");
+	
+	
 $html=<<<ht
 	<div class="content single-page">
 	<div class="title-menu">
