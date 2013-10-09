@@ -59,17 +59,18 @@
 	  include_once("./lib/persiandate.php");
 
 	  $datetime = ToJalali(date('Y-M-d H:i:s'),'l، d F Y');
-	  $db = database::GetDatabase();
+	  $db = Database::GetDatabase();
   	?>
   <div class="container">
 	<header>
 		<div class="top">
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
-				<form action="">
+				<form action="./search.php" method="post" name="frmsearch">
 					<p></p>
 					<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 					<input type="submit" name="submit" class="submit left" value="" />
+					<input type="hidden" name="mark" value="search" />
 					<span class="left"></span>
 				</form>
 
