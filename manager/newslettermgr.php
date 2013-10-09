@@ -45,6 +45,9 @@
 		if ($IsSend)
 		{
 			//$msgs=$msg->ShowSuccess("ارسال خبر انجام شد");
+			$fields = array("`nid`","`sdate`");	
+			$values = array("'{$news["id"]}'","'{$news["ndate"]}'");
+			$db->InsertQuery('newsletter',$fields,$values);
 		    header('location:?item=newslettermgr&act=new&msg=7');
 		}
 		else
