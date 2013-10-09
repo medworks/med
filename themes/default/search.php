@@ -25,25 +25,34 @@
 			{
                //header("Location:?item=search&act=do");			
 			   $success = count($rows);
+			   $cat = "";
+			   $rownum = 0;
 			   switch($_POST["category"])
 			   {
 					case 'news':
+					$cat = "اخبار";
+					
 					  foreach($rows as $key=>$val)
 					  {
+					     ++$rownum;
 						 $row .= "<a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
-						 {$val['subject']}</a> <br/>";
+						 {$rownum} - {$val['subject']}</a> <br/>";
 			          }
 					break;
 					case 'works':
+					$cat = "فعالیت ها";					
 					  foreach($rows as $key=>$val)
 					  {
+					     ++$rownum;
 						 $row .= "<a target='_blank' href='?item=fullworks&act=do&wid={$val['id']}'>
-						 {$val['subject']}</a> <br/>";
+						 {$rownum} -{$val['subject']}</a> <br/>";
 			          }
 					break;
 			   }
 			   
 			   $result=<<<rt
+			      نتایج یافت شده در بخش :{$cat}
+				  <br/>
 			     عبارت جستجو شده : {$_POST["searchtxt"]}
 				 <br/>
 				 تعداد نتایج یافت شده:{$success}
