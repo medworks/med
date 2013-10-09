@@ -6,6 +6,43 @@
    $table = "";
    $field = "";   
    $db = Database::GetDatabase();
+   if ($_POST["mark"]=="search")
+   {
+      $table = "news";
+      $field = "subject";
+	  $rownum = 0;
+	  $rows = $db->SelectAll(
+				$table,
+				"*",
+				"{$field} LIKE '%{$_POST[searchtxt]}%'",
+				"id DESC",
+				$_GET["pageNo"]*10,
+				10);
+			if (!$rows) 
+			{							
+				header("Location:?item=search&act=do&msg=6");
+			}
+			else
+			{
+			    $cat = "اخبار";
+				$success = count($rows);
+				foreach($rows as $key=>$val)
+				{
+				 ++$rownum;
+				 $row .= "<a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
+					 {$rownum} - {$val['subject']}</a> <br/>";
+				}
+				$result=<<<rt
+			      نتایج یافت شده در بخش :{$cat}
+				  <br/>
+			     عبارت جستجو شده : {$_POST["searchtxt"]}
+				 <br/>
+				 تعداد نتایج یافت شده:{$success}
+				 <br/>
+				 {$row}				 
+rt;
+			}
+   }
    if ($_POST["mark"]=="find")
   {
     $table = $_POST["category"];
@@ -73,7 +110,7 @@ $html=<<<cd
 				   <p>
 			         <label>عبارت مورد نظر </label>
 			       </p>
-			       <input type="text" name="searchtxt" class="subject" id="searchtxt" value="{$_POST["searchtxt"]}"/>
+			       <input type="text" name="searchtxt" class="subject" id="searchtxt" value="{$_POST[searchtxt]}"/>
 				   <p>
 			         <label>جستجو در </label>
 			       </p>
