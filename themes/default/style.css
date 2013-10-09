@@ -763,6 +763,7 @@ div.container header .top .search form .submit{
 	height: 30px;
 	width: 30px;
 	border: 0 none;
+	outline: 0 none;
 }
 
 div.container header .top .search form input.search-box{
