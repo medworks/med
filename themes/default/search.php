@@ -29,7 +29,7 @@
 				foreach($rows as $key=>$val)
 				{
 				 ++$rownum;
-				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}'>
+				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
 					 {$val['subject']}</a></p>";
 				}
 				$result=<<<rt
