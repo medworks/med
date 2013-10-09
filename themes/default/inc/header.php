@@ -1,11 +1,7 @@
 <?php
-	//ob_start("ob_gzhandler");
 	include_once("classes/functions.php");
 	include_once("classes/seo.php");
-	$seo = Seo::GetSeo();
-	// $seo->Site_Title = GetSettingValue('Site_Title',0);
-	// $seo->Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	// $seo->Site_Describtion = GetSettingValue('Site_Describtion',0);		
+	$seo = Seo::GetSeo();	
 ?>
 <!doctype html>
 <html lang="fa">
@@ -71,13 +67,16 @@
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
 				<form action="">
+					<p></p>
 					<input type="text" name="search" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 					<input type="submit" name="submit" class="submit left" value="" />
 					<span class="left"></span>
 				</form>
+
 				<div class="badboy"></div>
 			</div>
 			<div class="top-menu">
+				<span class="left"><a href="#" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
 				<menu class="menu">
 					<li><a href="./">صفحه اصلی</a></li>
 					<li><a href="?item=about">درباره ما</a></li>
@@ -93,6 +92,7 @@
 					</li> -->
 					<li><a href="?item=contact">تماس با ما</a></li>
 				</menu>
+				<div class="badboy"></div>
 			</div>
 		</div>
 		<div class="badboy"></div>
