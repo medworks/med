@@ -62,7 +62,7 @@ $html=<<<cd
 			<div class='badboy'></div>
 			<div class='contact box-right'>
 			<div class="mes" id="message">{$msgs}</div>
-			{$result}
+			<div id="result">{$result} </div>
 				<form action="" id="searchfrm" method="post">
 				   <p>
 			         <label>عبارت مورد نظر </label>
