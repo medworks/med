@@ -13,7 +13,8 @@ deny from all
 	RewriteRule ^news.html index.php?item=news&act=do [L]
 	RewriteRule ^works.html index.php?item=works&act=do [L]
 	RewriteRule ^news-([0-9]+).html index.php?item=fullnews&act=do&wid=$1 [L]
-	RewriteRule ^works-([0-9]+).html index.php?item=fullworks&act=do&wid=$1 [L]		
+	RewriteRule ^works-([0-9]+).html index.php?item=fullworks&act=do&wid=$1 [L]
+	RewriteRule ^articles-([0-9]+).html index.php?item=fullarticles&act=do&wid=$1 [L]		
 	RewriteBase / 	
 
 #Skip WWW	
