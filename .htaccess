@@ -1,4 +1,3 @@
-RewriteEngine on
 # deny most common except .php
 <FilesMatch "\.(inc|tpl|h|ihtml|sql|ini|conf|class|bin|spd|theme|module)$">
 deny from all
@@ -6,9 +5,15 @@ deny from all
                            
 <IFModule mod_rewrite.c>   
 	RewriteEngine On 
-	RewriteRule ^index.htm index.php 
-	RewriteRule ^news.htm index.php?item=news&act=do
-	RewriteRule ^news-([0-9]*).htm ?item=fullnews&act=do&wid=$1
+	RewriteRule ^index.html index.php [L]
+	RewriteRule ^about-us.html index.php?item=about [L]
+	RewriteRule ^gallery.html index.php?item=gallery [L]
+	RewriteRule ^articles.html index.php?item=articles [L]
+	RewriteRule ^contact.html index.php?item=contact [L]
+	RewriteRule ^news.html index.php?item=news&act=do [L]
+	RewriteRule ^works.html index.php?item=works&act=do [L]
+	RewriteRule ^news-([0-9]+).html index.php?item=fullnews&act=do&wid=$1 [L]
+	RewriteRule ^works-([0-9]+).html index.php?item=fullworks&act=do&wid=$1 [L]		
 	RewriteBase / 	
 
 #Skip WWW	
