@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div class="second">
-				<div class="title"><h4>مقالات</h4></div>
+				<div class="title"><h4>مطالب مفید</h4></div>
 				<div class="content">
 					<ul>
 						<?php
