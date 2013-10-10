@@ -79,9 +79,9 @@
 			<div class="top-menu">
 				<span class="left"><a href="?item=search&act=do" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
 				<menu class="menu">
-					<li><a href="?item=about">درباره ما</a></li>
-					<li><a href="?item=articles">مطالب مفید</a></li>
-					<li><a href="?item=gallery">گالری تصاویر</a></li>
+					<li><a href="about-us.html">درباره ما</a></li>
+					<li><a href="articles.html">مطالب مفید</a></li>
+					<li><a href="gallery.html">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
 						<menu>
 							<li><a href="#">خدمات 1</a></li>
@@ -91,7 +91,7 @@
 							<li><a href="#">خدمات 5</a></li>
 						</menu>
 					</li> -->
-					<li><a href="?item=contact">تماس با ما</a></li>
+					<li><a href="contact.html">تماس با ما</a></li>
 				</menu>
 				<div class="badboy"></div>
 			</div>
@@ -114,11 +114,16 @@
 		<div class="main-menu">
 			<menu>
 				<li><a href="./"></a></li>
-				<li><a href="?item=about">درباره ما</a></li>
-				<li><a href="?item=works&act=do">کارهای ما</a></li>
-				<li><a href="?item=news&act=do">اخبار</a></li>
-				<li><a href="?item=articles">مطالب مفید</a></li>
-				<li><a href="?item=gallery">گالری تصاویر</a></li>
+				<li><a href="about-us.html">درباره ما</a></li>
+				<!--<li><a href="?item=about">درباره ما</a></li> -->
+				<li><a href="works.html">کارهای ما</a></li>
+				<!-- <li><a href="?item=works&act=do">کارهای ما</a></li> -->
+				<li><a href="news.html">اخبار</a></li>
+				<!-- <li><a href="?item=news&act=do">اخبار</a></li> -->
+				<!-- <li><a href="?item=articles">مطالب مفید</a></li> -->
+				<li><a href="articles.html">مطالب مفید</a></li>
+				<!-- <li><a href="?item=gallery">گالری تصاویر</a></li> -->
+				<li><a href="gallery.html">گالری تصاویر</a></li>
 				<!-- <li><a href="#">خدمات</a>
 					<menu>
 						<li><a href="#">خدمات 1</a></li>
@@ -128,7 +133,8 @@
 						<li><a href="#">خدماتر 5</a></li>
 					</menu>
 				</li> -->
-				<li><a href="?item=contact">تماس با ما</a></li>
+				<li><a href="contact.html">تماس با ما</a></li>
+				<!-- <li><a href="?item=contact">تماس با ما</a></li> -->
 			</menu>
 		</div>
 	</header>
