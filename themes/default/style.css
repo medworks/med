@@ -1590,6 +1590,7 @@ footer .content ul li:first-child{
 
 footer .content ul li .pic{
 	float: right;
+	margin-left: 10px;
 }
 
 footer .content ul li .pic a{
@@ -1623,14 +1624,12 @@ footer .content ul li .pic img{
 
 footer .content ul li h3{
 	font-size: 19px;
-	margin-right: 65px;
 }
 
 footer .content ul li span{
 	font-family: 'bmitra';
 	font-size: 15px;
 	text-align: right;
-	margin-right: 65px;
 	display: block;
 	margin-top: 5px;
 }

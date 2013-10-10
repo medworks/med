@@ -36,17 +36,17 @@
 			$overall_error = true;
 			//exit();
 		}
-		// else
-		// {			
-		// 	if (empty($_POST['detail']))
-		// 	{
-		// 	   //header('location:?item=worksmgr&act=new&msg=5');
-		// 		$_GET["item"] = "worksmgr";
-		// 		$_GET["act"] = "new";
-		// 		$_GET["msg"] = 5;
-		// 	   $overall_error = true;
-		// 	}			
-		// }
+		else
+		{			
+			if (empty($_POST['detail']))
+			{
+			   //header('location:?item=worksmgr&act=new&msg=5');
+				$_GET["item"] = "worksmgr";
+				$_GET["act"] = "new";
+				$_GET["msg"] = 5;
+			   $overall_error = true;
+			}			
+		}
 	}	
     if (!$overall_error && $_POST["mark"]=="saveworks")
 	{						   				

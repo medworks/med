@@ -24,16 +24,10 @@
 	   list($year,$month,$day) = explode("-", trim($_POST["ndate"]));		
 	   list($gyear,$gmonth,$gday) = jalali_to_gregorian($year,$month,$day);		
 	   $ndatetime = Date("Y-m-d H:i:s",mktime($hour, $minute, $second, $gmonth, $gday, $gyear));		
-				  
-	   if(empty($_POST["selectpic"]))
-	   { 
-			header('location:?item=artilcesmgr&act=new&msg=4');
-			$overall_error = true;
-		}
-		else						
+						
 		if (empty($_POST['detail']))
 		{
-		   header('location:?item=artilcesmgr&act=new&msg=5');
+		   header('location:?item=articlesmgr&act=new&msg=5');
 		    $overall_error = true;
 		}			
 		
@@ -62,7 +56,7 @@
 						"`userid`"=>"'{$userid}'",
 						"`resource`"=>"'{$_POST[res]}'",
 						"`catid`"=>"'{$_POST[cbcat]}'",
-						"`keywords`"=>"'{$_POST[cbcat]}'");
+						"`keywords`"=>"'{$_POST[keywords]}'");
 			
         $db->UpdateQuery("articles",$values,array("id='{$_GET[nid]}'"));
 		header('location:?item=articlesmgr&act=mgr');		
@@ -162,7 +156,7 @@ $html=<<<cd
   <div class="title">
       <ul>
         <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-	    <li><span>مدیریت مقالات</span></li>
+	    <li><span>درج مقاله</span></li>
       </ul>
       <div class="badboy"></div>
   </div>
@@ -190,6 +184,11 @@ $html=<<<cd
          <span>*</span>
        </p>
        <textarea cols="50" rows="10" name="detail" class="detail" id="detail" > {$row[body]}</textarea>
+       <p>
+         <label for="detail">کلمات کلیدی </label>
+         <span>*</span>
+       </p>
+       <input type="text" name="keywords" class="validate[required] subject" id="keywords" value='{$row[keywords]}'/>
   	   <p>
         <label for="sdate">تاریخ </label>
         <span>*</span><br /><br />
@@ -209,7 +208,7 @@ $html=<<<cd
         </script>
        </p>
        <p>
-  	   <label>منبع خبر </label>
+  	   <label>منبع مقاله </label>
        <span>*</span>   	 
        </p>
        <input type="text" name="res" class='validate[required]' value='{$row['resource']}'/>
@@ -331,7 +330,7 @@ $code=<<<edit
 					<div class="title">
 				      <ul>
 				        <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-					    <li><span>مدیریت اخبار</span></li>
+					    <li><span>درج/ویرایش مقالات</span></li>
 				      </ul>
 				      <div class="badboy"></div>
 				  </div>

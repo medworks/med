@@ -74,21 +74,21 @@
 				</div>
 			</div>
 			<div class="forth">
-				<div class="title"><h4>لینک های مفید</h4></div>
+				<div class="title"><h4>مقالات</h4></div>
 				<div class="content">
 					<ul>
-						<li>
-							<div class='pic'><a href='http://php.net' title='php' target="_blank"><img src='./themes/default/images/php-logo.jpg' alt='php'></a></div>
-							<h3><a href='http://php.net' title='php' target="_blank">Php</a></h3>
-						</li>
-						<li>
-							<div class='pic'><a href='http://zeptojs.com' title='Zepto.js' target="_blank"><img src='./themes/default/images/zepto-logo.jpg' alt='zepto.js'></a></div>
-							<h3><a href='http://zeptojs.com' title='Zepto.js' target="_blank">Zepto.js</a></h3>
-						</li>
-						<li>
-							<div class='pic'><a href='http://jquery.com/' title='jquery' target="_blank"><img src='./themes/default/images/jquery_logo.jpg' alt='jquery'></a></div>
-							<h3><a href='http://jquery.com/' title='jquery' target="_blank">Jquery</a></h3>
-						</li>
+						<?php
+							$db = database::GetDatabase();
+		  					$articles = $db->SelectAll('articles',NULL,NULL," ndate DESC");
+							for($i=0 ; $i<3 ; $i++){
+								if($articles[$i]['subject']!=null){
+			  						$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
+									echo "<li>
+											<h3><a href='?item=fullarticles&act=do&wid={$articles[$i][id]}' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
+											<span class='date'>{$ndate}</span>
+										</li>";
+							}}
+						?>
 					</ul>
 					<div class="badboy"></div>
 				</div>

@@ -52,6 +52,9 @@
 				$seo->Site_Title = "مقالات";
                 return "themes/default/articles.php";
 			break;
+			case 'fullarticles':
+                if ($act=="do") return "themes/default/single-articles.php";
+			break;
 			case 'uploadmgr':
               if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit") return "../manager/uploadmgr.php";
 			break;
