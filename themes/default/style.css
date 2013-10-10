@@ -755,6 +755,10 @@ p.sresult{
 	font-size: 20px;
 	margin-bottom: 10px;
 }
+
+p.sresult span{
+	color: #777;
+}
 /************End submenu***************/
 div.container header .top{
 	direction: ltr;

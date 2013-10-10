@@ -33,9 +33,9 @@
 					 {$val['subject']}</a></p>";
 				}
 				$result=<<<rt
-			     <p class="sresult">نتایج یافت شده در بخش: {$cat}</p>
-			     <p class="sresult">عبارت جستجو شده: {$_POST["searchtxt"]}</p>
-				 <p class="sresult">تعداد نتایج یافت شده: {$success}</p>
+			     <p class="sresult"><span>نتایج یافت شده در بخش: </span>{$cat}</p>
+			     <p class="sresult"><span>عبارت جستجو شده: </span>{$_POST["searchtxt"]}</p>
+				 <p class="sresult"><span>تعداد نتایج یافت شده: </span>{$success}</p>
 				 {$row}				 
 rt;
 			}
@@ -74,7 +74,7 @@ rt;
 			          }
 					break;
 					case 'works':
-					$cat = "فعالیت ها";					
+					$cat = "کارهای ما";					
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
@@ -82,12 +82,21 @@ rt;
 						 {$val['subject']}</a></p>";
 			          }
 					break;
+					case 'articles':
+					$cat = "مقالات";					
+					  foreach($rows as $key=>$val)
+					  {
+					     ++$rownum;
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullarticles&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
+			          }
+					break;
 			   }
 			   
 			   $result=<<<rt
-			     <p class="sresult">نتایج یافت شده در بخش: {$cat}</p>
-			     <p class="sresult">عبارت جستجو شده : {$_POST["searchtxt"]}</p>
-				 <p class="sresult">تعداد نتایج یافت شده: {$success}<p>
+			     <p class="sresult"><span>نتایج یافت شده در بخش: </span>{$cat}</p>
+			     <p class="sresult"><span>عبارت جستجو شده: </span>{$_POST["searchtxt"]}</p>
+				 <p class="sresult"><span>تعداد نتایج یافت شده: </span>{$success}<p>
 				 {$row}				 
 rt;
 			}
@@ -96,7 +105,7 @@ rt;
 $msgs = GetMessage($_GET['msg']);
 $html=<<<cd
 	<div class='content'>
-		<div class='recent-works main-box'>
+		<div class='search main-box'>
 			<h2>جستجو</h2>
 			<div class='line'></div>
 			<div class='badboy'></div>
