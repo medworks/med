@@ -25,10 +25,11 @@
     $body= $post["body"];
     $body= strip_tags($body);
     $body= (mb_strlen($body)>500) ? mb_substr($body,0,500,"UTF-8")."..." : $body;
+	//<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
   	$html.=<<<cd
 		<div class='box-right'> 
-		<div class='title'>
-			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
+		<div class='title'>		
+		<a href="news-{$post["id"]}.html" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
 			<p><span>زمان ثبت:</span> {$ndate}</p>  
