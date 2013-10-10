@@ -1590,7 +1590,6 @@ footer .content ul li:first-child{
 
 footer .content ul li .pic{
 	float: right;
-	margin-left: 10px;
 }
 
 footer .content ul li .pic a{
@@ -1624,14 +1623,38 @@ footer .content ul li .pic img{
 
 footer .content ul li h3{
 	font-size: 19px;
+	margin-right: 65px;
+}
+
+footer .content ul li h3.article,
+footer .content ul li span.article{
+	margin-right: 0;
 }
 
 footer .content ul li span{
 	font-family: 'bmitra';
 	font-size: 15px;
 	text-align: right;
+	margin-right: 65px;
 	display: block;
 	margin-top: 5px;
+}
+
+footer .content ul.gallery{
+	border-bottom: 1px solid #444;
+	
+}
+
+footer .content ul.gallery li{
+	margin-left: 5px;
+	float: right;
+	border-bottom: 0 none;
+	border-top: 0 none;
+}
+
+footer .content ul.gallery .border{
+	border-bottom: 1px solid #232323;
+	overflow: hidden;
 }
 /***************************************Bottom Footer part**************************************/
 section.bot-footer{

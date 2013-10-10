@@ -30,18 +30,18 @@
 				</div>
 			</div>
 			<div class="second">
-				<div class="title"><h4>گالری تصاویر</h4></div>
+				<div class="title"><h4>مقالات</h4></div>
 				<div class="content">
 					<ul>
 						<?php
 							$db = database::GetDatabase();
-		  					$gallery = $db->SelectAll('gallery',NULL,NULL," id DESC");
-		  					
+								$articles = $db->SelectAll('articles',NULL,NULL," ndate DESC");
 							for($i=0 ; $i<3 ; $i++){
-								if($gallery[$i]['image']!=null){
+								if($articles[$i]['subject']!=null){
+										$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
-											<div class='pic'><a href='{$gallery[$i][image]}' rel='prettyphoto[gallery1]' title='{$gallery[$i]["subject"]}'><img src='{$gallery[$i]["image"]}'alt='{$gallery[$i]["subject"]}'></a></div>
-											<h3>{$gallery[$i]["subject"]}</h3>
+											<h3 class='article'><a href='?item=fullarticles&act=do&wid={$articles[$i][id]}' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
+											<span class='date article'>{$ndate}</span>
 										</li>";
 							}}
 						?>
@@ -74,21 +74,23 @@
 				</div>
 			</div>
 			<div class="forth">
-				<div class="title"><h4>مقالات</h4></div>
+				<div class="title"><h4>گالری تصاویر</h4></div>
 				<div class="content">
-					<ul>
+					<ul class="gallery">
 						<?php
 							$db = database::GetDatabase();
-		  					$articles = $db->SelectAll('articles',NULL,NULL," ndate DESC");
-							for($i=0 ; $i<3 ; $i++){
-								if($articles[$i]['subject']!=null){
-			  						$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
+		  					$gallery = $db->SelectAll('gallery',NULL,NULL," id DESC");
+		  					
+							for($i=0 ; $i<9 ; $i++){
+								if($gallery[$i]['image']!=null){
 									echo "<li>
-											<h3><a href='?item=fullarticles&act=do&wid={$articles[$i][id]}' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
-											<span class='date'>{$ndate}</span>
+											<div class='pic'><a href='{$gallery[$i][image]}' rel='prettyphoto[gallery1]' title='{$gallery[$i]["subject"]}'><img src='{$gallery[$i]["image"]}'alt='{$gallery[$i]["subject"]}'></a></div>
+											<!-- <h3>{$gallery[$i]["subject"]}</h3> -->
 										</li>";
 							}}
 						?>
+						<div class="badboy"></div>
+						<div class="border"></div>
 					</ul>
 					<div class="badboy"></div>
 				</div>
