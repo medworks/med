@@ -83,7 +83,7 @@ rt;
 			          }
 					break;
 					case 'articles':
-					$cat = "مقالات";					
+					$cat = "مطالب خواندنی";					
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
@@ -124,7 +124,7 @@ $html=<<<cd
 			        	<input type="radio" name="category" class="subject" id="category" value="news" checked/>
 			        <label class="right">کارهای ما</label>
 			        	<input type="radio" name="category" class="subject" id="category" value="works" />
-			        <label class="right">مقالات</label>
+			        <label class="right">مطالب خواندنی</label>
 			        	<input type="radio" name="category" class="subject" id="category"
 						value="articles" />
 			        <div class="badboy"></div>
