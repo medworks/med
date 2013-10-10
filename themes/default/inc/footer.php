@@ -84,7 +84,7 @@
 							for($i=0 ; $i<9 ; $i++){
 								if($gallery[$i]['image']!=null){
 									echo "<li>
-											<div class='pic'><a href='{$gallery[$i][image]}' rel='prettyphoto[gallery1]' title='{$gallery[$i]["subject"]}'><img src='{$gallery[$i]["image"]}'alt='{$gallery[$i]["subject"]}'></a></div>
+											<div class='pic'><a href='?item=gallery' title='{$gallery[$i]["subject"]}'><img src='{$gallery[$i]["image"]}'alt='{$gallery[$i]["subject"]}'></a></div>
 											<!-- <h3>{$gallery[$i]["subject"]}</h3> -->
 										</li>";
 							}}
