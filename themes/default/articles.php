@@ -7,11 +7,11 @@
   $from = ($pageNo - 1) * $maxItemsInPage;
   $count = $maxItemsInPage;
   
-  $news = $db->SelectAll("articles","*",null,"ndate DESC",$from,$count);
-  $itemsCount = $db->CountAll("articles");//count($news);
+  $articles = $db->SelectAll("articles","*",null,"ndate DESC",$from,$count);
+  $itemsCount = $db->CountAll("articles");
   $html = " <div class='content'>
               <div class='main-box'>
-                <h2>مقالات ";
+                <h2>مطالب خواندنی ";
                 if ($_GET["pid"]>1){
                   $html.="<span>(صفحه {$_GET[pid]})</span>";
                 }
@@ -19,7 +19,7 @@
   $html.="</h2><div class='line'></div>
   <div class='badboy'></div>";  
 
-  foreach($news as $key => $post){
+  foreach($articles as $key => $post){
   	$ndate = ToJalali($post["ndate"]," l d F  Y ساعت H:m");
   	$post["userid"] = GetUserName($post["userid"]);
     $body= $post["body"];
@@ -28,7 +28,7 @@
   	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
-			<a href="?item=fullnews&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
+			<a href="?item=fullarticles&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
 			<p><span>زمان ثبت:</span> {$ndate}</p>  
@@ -51,7 +51,7 @@ cd;
 cd;
   }
 $html.=" </div> ";  
-$linkFormat = '?item=news&act=do&pid=%PN%';
+$linkFormat = '?item=articles&act=do&pid=%PN%';
 $maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 $pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
 $html .= '<center>' . $pageNos . '</center> </div>';
