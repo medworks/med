@@ -49,7 +49,7 @@
                 if ($act=="do") return "themes/default/search.php";
 			break;
 			case 'articles':
-				$seo->Site_Title = "مقالات";
+				$seo->Site_Title = "مطالب مفید";
                 return "themes/default/articles.php";
 			break;
 			case 'fullarticles':
