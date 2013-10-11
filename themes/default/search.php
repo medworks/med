@@ -46,7 +46,7 @@ rt;
 				foreach($rows as $key=>$val)
 				{
 				 ++$rownum;
-				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
+				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='news-{$val['id']}.html' class='srlink'>
 					 {$val['subject']}</a></p>";
 				}
 				$result=<<<rt
@@ -120,7 +120,7 @@ rt;
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
-						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='news-{$val['id']}.html' class='srlink'>
 						 {$val['subject']}</a></p>";
 			          }
 					break;
@@ -129,7 +129,7 @@ rt;
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
-						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullworks&act=do&wid={$val['id']}' class='srlink'>
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='work-{$val['id']}.html' class='srlink'>
 						 {$val['subject']}</a></p>";
 			          }
 					break;
@@ -138,7 +138,7 @@ rt;
 					  foreach($rows as $key=>$val)
 					  {
 					     ++$rownum;
-						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullarticles&act=do&wid={$val['id']}' class='srlink'>
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='article-{$val['id']}.html' class='srlink'>
 						 {$val['subject']}</a></p>";
 			          }
 					break;
