@@ -66,7 +66,7 @@
 		<div class="top">
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
-				<form action="?item=search&act=do" method="post" name="frmsearch">
+				<form action="search.html" method="post" name="frmsearch">
 					<p></p>
 					<input type="text" name="searchtxt" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 					<input type="submit" name="submit" class="submit left" value="" />
@@ -77,7 +77,7 @@
 				<div class="badboy"></div>
 			</div>
 			<div class="top-menu">
-				<span class="left"><a href="?item=search&act=do" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
+				<span class="left"><a href="search.html" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
 				<menu class="menu">
 					<li><a href="about-us.html">درباره ما</a></li>
 					<li><a href="articles.html">مطالب مفید</a></li>
