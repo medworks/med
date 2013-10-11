@@ -59,7 +59,7 @@ $html=<<<cd
 				<div id="googleMap" style="width:588px;height:380px;"></div>
 
 				<form action="" id="contactfrm" method="post">
-				   <p class="note">شما می توانید از طریق زیر با ما در تماس باشید</p>
+				   <p class="note">شما می توانید از طرق زیر با ما در تماس باشید</p>
 				   <div class="addreess"><p>آدرس: $address</p></div>
 				   <div class="tel"><p>تلفن: $tel</p></div>
 				   <div class="fax"><p>تلفکس: $fax</p></div>
