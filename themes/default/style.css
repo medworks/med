@@ -1772,15 +1772,17 @@ section.main-content .content .pic img{
 section.main-content .content .detail{
 	margin-bottom: 10px;
 	padding-top: 10px;
-	font-size: 18px;
-	line-height: 1.2;
+	font-size: 20px;
+	line-height: 1.5;
+	font-family: 'bmitra';
+	text-align: right;
+	font-weight: normal;
+	word-wrap: break-word;
 }
 
-section.main-content .content .detail p{
-	text-align: right;
-	margin-bottom: 10px;
-	word-wrap: break-word;
-	line-height: 2;
+section.main-content .content .detail strong{
+	font-weight: bold;
+	font-size: 22px;
 }
 
 section.main-content .content .detail p span{
