@@ -40,7 +40,7 @@
 								if($articles[$i]['subject']!=null){
 										$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
-											<h3 class='article'><a href='articles-{$articles[$i][id]}.html' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
+											<h3 class='article'><a href='article-{$articles[$i][id]}.html' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
 											<span class='date article'>{$ndate}</span>
 										</li>";
 							}}
@@ -62,8 +62,8 @@
 									$sdate = ToJalali($works[$i]["sdate"]," l d F  Y"); 
 			  						$fdate = ToJalali($works[$i]["fworksdate"]," l d F  Y"); 
 									echo "<li>
-											<div class='pic'><a href='works-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
-											<h3><a href='works-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
+											<div class='pic'><a href='work-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
+											<h3><a href='work-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
 											<span class='date'>{$sdate}</span>
 											<span class='date'>{$fdate}</span>
 										</li>";

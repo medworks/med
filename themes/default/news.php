@@ -38,14 +38,14 @@
 		</div>
 		<div class='badboy'></div>
 		<div class="pic">
-			<a href="?item=fullnews&act=do&wid={$post[id]}" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
+			<a href="news-{$post[id]}.html" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
 		</div>
   		<div class="detail">
   			<p>{$body}</p>
 cd;
       if (mb_strlen($body)>500){
       $html.=<<<cd
-      <a href="?item=fullnews&act=do&wid={$post[id]}" title="ادامه مطلب" class="button">ادامه مطلب</a>
+      <a href="news-{$post[id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
       }
       $html.=<<<cd
