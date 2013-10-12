@@ -18,9 +18,11 @@
 				"id DESC",
 				$_GET["pageNo"]*10,
 				10);
-			if (!$rows) 
+			/* if (!$rows) 
 			{							
-				header("Location:?item=search&act=do&msg=6");
+				//header("Location:?item=search&act=do&msg=6");
+				header("Location:search.html");
+				
 			}
 			else
 			{
@@ -38,7 +40,21 @@
 				 <p class="sresult"><span>تعداد نتایج یافت شده: </span>{$success}</p>
 				 {$row}				 
 rt;
-			}
+			} */
+				$cat = "اخبار";
+				$success = count($rows);
+				foreach($rows as $key=>$val)
+				{
+				 ++$rownum;
+				 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
+					 {$val['subject']}</a></p>";
+				}
+				$result=<<<rt
+			     <p class="sresult"><span>نتایج یافت شده در بخش: </span>{$cat}</p>
+			     <p class="sresult"><span>عبارت جستجو شده: </span>{$_POST["searchtxt"]}</p>
+				 <p class="sresult"><span>تعداد نتایج یافت شده: </span>{$success}</p>
+				 {$row}				 
+rt;
    }
    if ($_POST["mark"]=="find")
   {
@@ -51,7 +67,7 @@ rt;
 				"id DESC",
 				$_GET["pageNo"]*10,
 				10);
-			if (!$rows) 
+			/* if (!$rows) 
 			{							
 				header("Location:?item=search&act=do&msg=6");
 			}
@@ -91,7 +107,42 @@ rt;
 						 {$val['subject']}</a></p>";
 			          }
 					break;
-			   }
+			   } */
+			   
+			   $success = count($rows);
+			   $cat = "";
+			   $rownum = 0;
+			   switch($_POST["category"])
+			   {
+					case 'news':
+					$cat = "اخبار";
+					
+					  foreach($rows as $key=>$val)
+					  {
+					     ++$rownum;
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullnews&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
+			          }
+					break;
+					case 'works':
+					$cat = "کارهای ما";					
+					  foreach($rows as $key=>$val)
+					  {
+					     ++$rownum;
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullworks&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
+			          }
+					break;
+					case 'articles':
+					$cat = "مطالب خواندنی";					
+					  foreach($rows as $key=>$val)
+					  {
+					     ++$rownum;
+						 $row .= "<p class='srlink'>{$rownum}- <a target='_blank' href='?item=fullarticles&act=do&wid={$val['id']}' class='srlink'>
+						 {$val['subject']}</a></p>";
+			          }
+					break;
+			   } 
 			   
 			   $result=<<<rt
 			     <p class="sresult"><span>نتایج یافت شده در بخش: </span>{$cat}</p>
@@ -99,9 +150,8 @@ rt;
 				 <p class="sresult"><span>تعداد نتایج یافت شده: </span>{$success}<p>
 				 {$row}				 
 rt;
-			}
-	
- }	
+	}
+		
 $msgs = GetMessage($_GET['msg']);
 $html=<<<cd
 	<div class='content'>
