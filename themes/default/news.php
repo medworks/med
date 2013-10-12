@@ -29,7 +29,7 @@
   	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>		
-		<a href="news-{$post["id"]}.html" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
+		<a href="news-fullpage{$post["id"]}.html" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
 			<p><span>زمان ثبت:</span> {$ndate}</p>  
@@ -38,24 +38,24 @@
 		</div>
 		<div class='badboy'></div>
 		<div class="pic">
-			<a href="news-{$post[id]}.html" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
+			<a href="news-fullpage{$post[id]}.html" title='{$post["subject"]}'><img src='{$post["image"]}' alt='{$post["subject"]}'></a>
 		</div>
   		<div class="detail">
   			<p>{$body}</p>
+      </div>
 cd;
       if (mb_strlen($body)>500){
       $html.=<<<cd
-      <a href="news-{$post[id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
+      <a href="news-fullpage{$post[id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
       }
       $html.=<<<cd
-  		</div>
 		<div class='badboy'></div>
 	   </div>
 cd;
   }
 $html.=" </div> ";  
-$linkFormat = 'news'.$pid='%PN%'.'.html';
+$linkFormat = 'news-page'.$pid='%PN%'.'.html';
 $maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 $pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
 $html .= '<center>' . $pageNos . '</center> </div>';

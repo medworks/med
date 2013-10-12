@@ -148,7 +148,7 @@
 					for($i=0 ; $i<5 ; $i++){
 						$subject= $news[$i]["subject"];
 						$subject= (mb_strlen($subject)>100) ? mb_substr($subject,0,100,"UTF-8")."..." : $subject;
-						$adrrs= 'news-'.$news[$i]['id'].'.html';
+						$adrrs= 'news-fullpage'.$news[$i]['id'].'.html';
 						echo "<li><a href='$adrrs' title='{$news[$i]["subject"]}'>$subject</a></li>";
 					}
 				?>

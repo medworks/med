@@ -19,8 +19,8 @@
 								if($news[$i]['subject']!=null){
 			  						$ndate = ToJalali($news[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
-											<div class='pic'><a href='news-{$news[$i][id]}.html' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
-											<h3><a href='news-{$news[$i][id]}.html' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
+											<div class='pic'><a href='news-fullpage{$news[$i][id]}.html' title='{$news[$i]["subject"]}'><img src='{$news[$i]["image"]}'alt='{$news[$i]["subject"]}'></a></div>
+											<h3><a href='news-fullpage{$news[$i][id]}.html' title='{$news[$i]["subject"]}'>{$news[$i]["subject"]}</a></h3>
 											<span class='date'>{$ndate}</span>
 										</li>";
 							}}
@@ -40,7 +40,7 @@
 								if($articles[$i]['subject']!=null){
 										$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
-											<h3 class='article'><a href='article-{$articles[$i][id]}.html' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
+											<h3 class='article'><a href='article-fullpage{$articles[$i][id]}.html' title='{$articles[$i]["subject"]}'>{$articles[$i]["subject"]}</a></h3>
 											<span class='date article'>{$ndate}</span>
 										</li>";
 							}}
@@ -62,8 +62,8 @@
 									$sdate = ToJalali($works[$i]["sdate"]," l d F  Y"); 
 			  						$fdate = ToJalali($works[$i]["fworksdate"]," l d F  Y"); 
 									echo "<li>
-											<div class='pic'><a href='work-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
-											<h3><a href='work-{$works[$i][id]}.html' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
+											<div class='pic'><a href='work-fullpage{$works[$i][id]}.html' title='{$works[$i]["subject"]}'><img src='{$works[$i]["image"]}'alt='{$works[$i]["subject"]}'></a></div>
+											<h3><a href='work-fullpage{$works[$i][id]}.html' title='{$works[$i]["subject"]}'>{$works[$i]["subject"]}</a></h3>
 											<span class='date'>{$sdate}</span>
 											<span class='date'>{$fdate}</span>
 										</li>";

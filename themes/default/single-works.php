@@ -47,7 +47,8 @@ $html.=<<<ht
 				
 					</ul>
 				</div>
-				{$body}
+					{$body}
+				</div>
 ht;
 			if($works['link']!=null){
 $html.=<<<ht
@@ -59,7 +60,6 @@ $html.=<<<ht
 ht;
 			}
 $html.=<<<ht
-			</div>
 			<div class="badboy"></div>
 		</div>
 	</div>
