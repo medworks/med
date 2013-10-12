@@ -80,8 +80,9 @@
 				<span class="left"><a href="search.html" class="advance-search ttip" title="جستجوی پیشرفته"></a></span>
 				<menu class="menu">
 					<li><a href="about-us.html">درباره ما</a></li>
+					<li><a href="works.html">کارهای ما</a></li>
+					<li><a href="news.html">اخبار</a></li>
 					<li><a href="articles.html">مطالب مفید</a></li>
-					<li><a href="gallery.html">گالری تصاویر</a></li>
 					<!-- <li><a href="#">خدمات</a>
 						<menu>
 							<li><a href="#">خدمات 1</a></li>

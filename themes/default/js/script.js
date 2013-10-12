@@ -163,6 +163,17 @@ $(document).ready(function(){
         //     $('.main-menu a[href*="'+href[0]+'"]').parent().addClass('active');
         // }
     });
+    $('.top-menu a').each(function(){
+        if(this.href.trim() == url){
+            $(this).parent().addClass("active");
+            return false;
+        }else if(url.match(/page/i)){
+            var href= window.location.href.substr(url.indexOf("/"));
+            href= href.split('-');
+            href= href[0].split('/');           
+            $('.top-menu a[href*="'+href[3]+'"]').parent().addClass('active');
+        }
+    });
 
 // *****************hide all validate message***********************
 
