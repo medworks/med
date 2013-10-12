@@ -56,7 +56,7 @@ cd;
   }
 
 $html.=" </div> ";  
-$linkFormat = '?item=works&act=do&pid=%PN%';
+$linkFormat = 'works'.$pid='%PN%'.'.html';;
 $maxPageNumberAtTime = GetSettingValue('Max_Page_Number',0);
 $pageNos = Pagination($itemsCount, $maxItemsInPage, $pageNo, $maxPageNumberAtTime, $linkFormat);
 $html .= '<center>' . $pageNos . '</center> </div>';
