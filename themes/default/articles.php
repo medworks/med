@@ -28,7 +28,7 @@
   	$html.=<<<cd
 		<div class='box-right'> 
 		<div class='title'>
-			<a href="?item=fullarticles&act=do&wid={$post["id"]}" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
+			<a href="article-{$post["id"]}.html" title='{$post["subject"]}'><p>{$post["subject"]}</p></a>
 		</div>
 		<div class='time'>
 			<p><span>زمان ثبت:</span> {$ndate}</p>  
@@ -41,7 +41,7 @@
 cd;
       if (mb_strlen($body)>500){
       $html.=<<<cd
-      <a href="?item=fullarticles&act=do&wid={$post[id]}" title="ادامه مطلب" class="button">ادامه مطلب</a>
+      <a href="article-{$post[id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
       }
       $html.=<<<cd
