@@ -17,7 +17,7 @@ $html=<<<ht
 		<div class="title-menu">
 			<menu>
 				<li><a href="./">صفحه اصلی</a><span>/</span></li>
-				<li><a href="?item=works&act=do">کارهای ما</a><span>/</span></li>
+				<li><a href="works.html">کارهای ما</a><span>/</span></li>
 				<li><p>{$works[subject]}</p></li>
 			</menu>
 		<div class="badboy"></div>
