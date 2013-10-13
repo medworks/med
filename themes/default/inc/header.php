@@ -63,6 +63,17 @@
 	  $db = Database::GetDatabase();
   	?>
   <div class="container">
+  	<noscript>
+  		<div class="global-site-notice noscript">
+  			<div class="notice-inner">
+	  			<p>
+					<strong>به نظر می رسد که جاوا اسکریپت در مرورگر شما غیر فعال می باشد.</strong>
+					<br />
+					برای بهره مندی کامل از امکانات این سایت و مشاهده درست تمامی قسمتها لطفا جاوا اسکریپت را در مرورگر خود فعال کنید.
+				</p>
+			</div>
+  		</div>
+	</noscript>
 	<header>
 		<div class="top">
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
