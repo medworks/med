@@ -1785,7 +1785,7 @@ section.main-content .content .pic img{
 section.main-content .content .detail{
 	margin-bottom: 10px;
 	padding-top: 10px;
-	font-size: 20px;
+	font-size: 18px;
 	line-height: 1.5;
 	font-family: 'bmitra';
 	text-align: right;
@@ -1795,7 +1795,7 @@ section.main-content .content .detail{
 
 section.main-content .content .detail strong{
 	font-weight: bold;
-	font-size: 22px;
+	font-size: 20px;
 }
 
 section.main-content .content .detail p span{
