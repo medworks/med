@@ -71,7 +71,7 @@ cd;
 $html.=<<<cd
 					<div class='scroll-item'>
 						<a href='work-fullpage{$works[$i][id]}.html' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
-						<h3><a href='work-{$works[$i][id]}.html' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h3>
+						<h3><a href='work-fullpage{$works[$i][id]}.html' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h3>
 						<p><span>شروع: </span>{$sdate}</p><br />
 						<p><span>پایان: </span>{$fdate}</p>
 					  </div>
@@ -290,20 +290,20 @@ cd;
 $html.=<<<cd
 				<li class="first-li">
 					<div class="pic first-tab-pic">
-						<a href="news-{$news[0][id]}.html" title="{$news[0][subject]}">
+						<a href="news-fullpage{$news[0][id]}.html" title="{$news[0][subject]}">
 							<img src="{$news[0][image]}" alt="{$news[0][subject]}">
 							<span class="overlay"></span>
 						</a>
 					</div>
 					<h2>
-						<a href="news-{$news[0][id]}.html" title="{$news[0][subject]}">{$news[0][subject]}</a>
+						<a href="news-fullpage{$news[0][id]}.html" title="{$news[0][subject]}">{$news[0][subject]}</a>
 					</h2>
 					<div class="date"><p><span>{$ndate}</span></p></div>
 					<div class="detial"><p>{$body}</p></div>
 cd;
 					if (mb_strlen($body)>100){
 						$html.=<<<cd
-						<a href="news-{$news[0][id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
+						<a href="news-fullpage{$news[0][id]}.html" title="ادامه مطلب" class="button">ادامه مطلب</a>
 cd;
 					}
 $html.=<<<cd
@@ -315,12 +315,12 @@ cd;
 $html.=<<<cd
 					<li>
 						<div class="pic">
-							<a href="news-{$news[$i][id]}.html" title="{$news[$i][subject]}">
+							<a href="news-fullpage{$news[$i][id]}.html" title="{$news[$i][subject]}">
 								<img src="{$news[$i][image]}" alt="{$news[$i][subject]}">
 							</a>
 						</div>
 						<h2>
-							<a href="news-{$news[$i][id]}.html" title="{$news[$i][subject]}">{$news[$i][subject]}</a>
+							<a href="news-fullpage{$news[$i][id]}.html" title="{$news[$i][subject]}">{$news[$i][subject]}</a>
 						</h2>
 						<div class="date"><p><span>$ndate</span></p></div>
 					</li>				
