@@ -87,7 +87,7 @@ $html=<<<cd
 			       <p>
 						<input type="submit" id="submit" class="submit" value="ارسال" />	 
 						<input type="hidden" name="mark" value="savenews" />       
-			      	 	<input type="reset" value="پاک کردن" class="reset" /> 	 	     
+			      	 	<input type="reset" value="پاک کردن" class="reset submit"" /> 	 	     
 			       </p>
 			        <fieldset class="info_fieldset info_contact">
 						<div id="note-contact"></div>

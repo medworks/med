@@ -133,7 +133,7 @@ $(document).ready(function(){
         jQuery(this).addClass("active");
         jQuery(".cat-tabs-wrap").hide();
         var activeTab = jQuery(this).find("a").attr("href");
-        jQuery(activeTab).fadeIn();
+        jQuery(activeTab).show();
         return false;
     });
 
