@@ -29,6 +29,7 @@
 	<script src="lib/js/jquery.validationEngine.js" type="text/javascript"></script>
 	<script src="themes/js/jquery.prettyphoto.js" type="text/javascript"></script>
 	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
+	<script src="themes/default/js/tie-scripts.js" type="text/javascript"></script>
 	<script src="themes/default/js/script.js" type="text/javascript"></script>
 	<!-- Piwik -->
 		<script type="text/javascript"> 
@@ -112,32 +113,34 @@
 			</div>
 		</div>
 		<div class="badboy"></div>
-		<div class="main-menu">
-			<menu>
-				<li><a href="./"></a></li>
-				<li><a href="about-us.html">درباره ما</a></li>
-				<!--<li><a href="?item=about">درباره ما</a></li> -->
-				<li><a href="works.html">کارهای ما</a></li>
-				<!-- <li><a href="?item=works&act=do">کارهای ما</a></li> -->
-				<li><a href="news.html">اخبار</a></li>
-				<!-- <li><a href="?item=news&act=do">اخبار</a></li> -->
-				<!-- <li><a href="?item=articles">مطالب مفید</a></li> -->
-				<li><a href="articles.html">مطالب مفید</a></li>
-				<!-- <li><a href="?item=gallery">گالری تصاویر</a></li> -->
-				<li><a href="gallery.html">گالری تصاویر</a></li>
-				<!-- <li><a href="#">خدمات</a>
-					<menu>
-						<li><a href="#">خدمات 1</a></li>
-						<li><a href="#">خدمات 2</a></li>
-						<li><a href="#">خدمات 3</a></li>
-						<li><a href="#">خدمات 4</a></li>
-						<li><a href="#">خدماتر 5</a></li>
-					</menu>
-				</li> -->
-				<li><a href="contact.html">تماس با ما</a></li>
-				<!-- <li><a href="?item=contact">تماس با ما</a></li> -->
-			</menu>
-		</div>
+		<nav id="main-nav" class="fixed-enabled">
+			<div class="main-menu">
+				<menu>
+					<li><a href="./"></a></li>
+					<li><a href="about-us.html">درباره ما</a></li>
+					<!--<li><a href="?item=about">درباره ما</a></li> -->
+					<li><a href="works.html">کارهای ما</a></li>
+					<!-- <li><a href="?item=works&act=do">کارهای ما</a></li> -->
+					<li><a href="news.html">اخبار</a></li>
+					<!-- <li><a href="?item=news&act=do">اخبار</a></li> -->
+					<!-- <li><a href="?item=articles">مطالب مفید</a></li> -->
+					<li><a href="articles.html">مطالب مفید</a></li>
+					<!-- <li><a href="?item=gallery">گالری تصاویر</a></li> -->
+					<li><a href="gallery.html">گالری تصاویر</a></li>
+					<!-- <li><a href="#">خدمات</a>
+						<menu>
+							<li><a href="#">خدمات 1</a></li>
+							<li><a href="#">خدمات 2</a></li>
+							<li><a href="#">خدمات 3</a></li>
+							<li><a href="#">خدمات 4</a></li>
+							<li><a href="#">خدماتر 5</a></li>
+						</menu>
+					</li> -->
+					<li><a href="contact.html">تماس با ما</a></li>
+					<!-- <li><a href="?item=contact">تماس با ما</a></li> -->
+				</menu>
+			</div>
+		</nav>
 	</header>
 
 	<section class="br-news">
