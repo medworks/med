@@ -70,7 +70,7 @@ cd;
 					$fdate= ToJalali($works[$i]["fdate"]," l d F  Y");
 $html.=<<<cd
 					<div class='scroll-item'>
-						<a href='work-{$works[$i][id]}.html' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
+						<a href='work-fullpage{$works[$i][id]}.html' title='{$works[$i][subject]}'><img src='{$works[$i][image]}' alt='{$works[$i][subject]}'></a>
 						<h3><a href='work-{$works[$i][id]}.html' title='{$works[$i][subject]}'>{$works[$i][subject]}</a></h3>
 						<p><span>شروع: </span>{$sdate}</p><br />
 						<p><span>پایان: </span>{$fdate}</p>
