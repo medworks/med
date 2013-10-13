@@ -36,7 +36,7 @@
 						<?php
 							$db = database::GetDatabase();
 								$articles = $db->SelectAll('articles',NULL,NULL," ndate DESC");
-							for($i=0 ; $i<3 ; $i++){
+							for($i=0 ; $i<4 ; $i++){
 								if($articles[$i]['subject']!=null){
 										$ndate = ToJalali($articles[$i]["ndate"]," l d F  Y-H:m");
 									echo "<li>
