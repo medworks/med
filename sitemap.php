@@ -4,9 +4,8 @@
 	include_once("../classes/functions.php");
 	
 	$db = Database::GetDatabase();
-// default header(don't delete)
-header("Content-Type: text/xml;charset=iso-8859-1");
-    echo '<?xml version="1.0" encoding="UTF-8"?>
+	header("Content-Type: text/xml;charset=iso-8859-1");
+    $sm = '<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
     
 	$news = $db->SelectAll("news","*",null,"id ASC");
@@ -14,8 +13,8 @@ header("Content-Type: text/xml;charset=iso-8859-1");
 	$articles = $db->SelectAll("articles","*",null,"id ASC");
 	$date = date("Y-m-d", $row['time']);
 	$add ="http://www.mediateq.ir/" ;
-// mytable = your content table name
-	$sm ="
+
+	$sm .="
 	<url>
 	  <loc>http://www.mediateq.ir/</loc>
 	</url>
