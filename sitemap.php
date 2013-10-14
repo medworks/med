@@ -4,7 +4,8 @@
 	include_once("./classes/functions.php");
 	
 	$db = Database::GetDatabase();
-	header("Content-Type: text/xml;charset=iso-8859-1");
+	//header("Content-Type: text/xml;charset=iso-8859-1");
+	header("Content-Type: application/xml; charset=utf-8");
     $sm = '<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
     
@@ -39,9 +40,12 @@
 	  <loc>http://www.mediateq.ir/gallery.html</loc>
 	</url>
 ";
+	$date = date("Y-m-dTH:i:s+00:00");	
+
 	foreach($news as $key=>$val)
 	{
-		$date = Date($val['ndate']);		
+		//$date = date("Y-m-dTH:i:s+00:00",$val['ndate']);
+		//$date = date("D, d M Y H:i:s T");
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}news-fullpage{$val["id"]}.html</loc>
@@ -53,7 +57,8 @@ cd;
 	}
 	foreach($works as $key=>$val)
 	{
-	   $date = Date($val['sdate']);
+	   //$date = date("D, d M Y H:i:s T",$val['sdate']);
+	   //$date = date("D, d M Y H:i:s T");
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}works-fullpage{$val["id"]}.html</loc>
@@ -65,7 +70,8 @@ cd;
 	}
 	foreach($articles as $key=>$val)
 	{
-		$date = Date($val['ndate']);
+		//$date = date("D, d M Y H:i:s T",$val['ndate']);
+		//$date = date("D, d M Y H:i:s T");
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}articles-fullpage{$val["id"]}.html</loc>
