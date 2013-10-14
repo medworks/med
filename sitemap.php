@@ -1,7 +1,7 @@
 <?php
-    include_once("../config.php");
-    include_once("../classes/database.php");	
-	include_once("../classes/functions.php");
+    include_once("./config.php");
+    include_once("./classes/database.php");	
+	include_once("./classes/functions.php");
 	
 	$db = Database::GetDatabase();
 	header("Content-Type: text/xml;charset=iso-8859-1");
@@ -10,8 +10,7 @@
     
 	$news = $db->SelectAll("news","*",null,"id ASC");
 	$works = $db->SelectAll("works","*",null,"id ASC");
-	$articles = $db->SelectAll("articles","*",null,"id ASC");
-	$date = date("Y-m-d", $row['time']);
+	$articles = $db->SelectAll("articles","*",null,"id ASC");	
 	$add ="http://www.mediateq.ir/" ;
 
 	$sm .="
@@ -42,6 +41,7 @@
 ";
 	foreach($news as $key=>$val)
 	{
+		$date = Date($val['ndate']);		
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}news-fullpage{$val["id"]}.html</loc>
@@ -53,6 +53,7 @@ cd;
 	}
 	foreach($works as $key=>$val)
 	{
+	   $date = Date($val['sdate']);
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}works-fullpage{$val["id"]}.html</loc>
@@ -64,6 +65,7 @@ cd;
 	}
 	foreach($articles as $key=>$val)
 	{
+		$date = Date($val['ndate']);
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}articles-fullpage{$val["id"]}.html</loc>
@@ -73,7 +75,5 @@ cd;
         </url>    		
 cd;
 	}		
-
-
-    $sm. = "</urlset>";
+    $sm.= "</urlset>";
 	echo $sm;
