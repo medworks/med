@@ -48,7 +48,7 @@
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}news-fullpage{$val["id"]}.html</loc>
-			<!-- <lastmod>{$date}</lastmod> -->
+			<lastmod>{$date}</lastmod>
 			<changefreq>daily</changefreq>
 			<priority>0.8</priority>
         </url>    		
@@ -61,7 +61,7 @@ cd;
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}works-fullpage{$val["id"]}.html</loc>
-			<!-- <lastmod>{$date}</lastmod> -->
+			<lastmod>{$date}</lastmod>
 			<changefreq>daily</changefreq>
 			<priority>0.8</priority>
         </url>    		
@@ -74,7 +74,7 @@ cd;
 		$sm.=<<<cd
 		<url>
 			<loc>{$add}articles-fullpage{$val["id"]}.html</loc>
-			<!-- <lastmod>{$date}</lastmod> -->
+			<lastmod>{$date}</lastmod>
 			<changefreq>daily</changefreq>
 			<priority>0.8</priority>
         </url>    		
