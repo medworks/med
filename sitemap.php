@@ -4,7 +4,6 @@
 	include_once("./classes/functions.php");
 	
 	$db = Database::GetDatabase();
-	//header("Content-Type: text/xml;charset=iso-8859-1");
 	header("Content-Type: application/xml; charset=utf-8");
     $sm = '<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
