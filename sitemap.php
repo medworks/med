@@ -76,3 +76,4 @@ cd;
 
 
     $sm. = "</urlset>";
+	echo $sm;
