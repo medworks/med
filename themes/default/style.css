@@ -839,6 +839,8 @@ div.container header .top .search form .submit{
 	width: 30px;
 	border: 0 none;
 	outline: 0 none;
+	box-shadow: 0 0 0 !important;
+	border-radius: 0 !important;
 }
 
 div.container header .top .search form input.search-box{
