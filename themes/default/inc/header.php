@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
 	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
 	<link rel="stylesheet" href="themes/default/style.css" />
+	<link rel="stylesheet" href="themes/default/responsive.css" />
 
 	<script src="lib/js/jquery.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
@@ -63,6 +64,7 @@
 	  $db = Database::GetDatabase();
   	?>
   <div class="container">
+  	<div class="inner">
   	<noscript>
   		<div class="global-site-notice noscript">
   			<div class="notice-inner">
@@ -79,7 +81,6 @@
 			<div class="time right"><p> <?php echo $datetime ?> </p></div>
 			<div class="search left">
 				<form action="search.html" method="post" name="frmsearch">
-					<p></p>
 					<input type="text" name="searchtxt" class="search-box right" value="جستجو..." onfocus="if (this.value == 'جستجو...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو...';}" />
 					<input type="submit" name="submit" class="submit left" value="" />
 					<input type="hidden" name="mark" value="search" />
@@ -106,12 +107,28 @@
 					</li> -->
 					<li><a href="contact.html">تماس با ما</a></li>
 				</menu>
+				<script>
+					$(document).ready(function(){ 
+						$("#top-menu-select option").click(function(){
+						   window.location.href = $(this).val();
+						});
+					});
+				</script>
+				<select class="top-menu-mob" id="top-menu-select">
+					<option value="">انتخاب</option>					
+					<option value="./">صفحه اصلی</option>					
+					<option value="./about-us.html">درباره ما</option>					
+					<option value="./works.html">کارهای ما</option>					
+					<option value="./news.html">اخبار</option>					
+					<option value="./articles.html">مطالب مفید</option>					
+					<option value="./contact.html">تماس با ما</option>					
+				</select>
 				<div class="badboy"></div>
 			</div>
 		</div>
 		<div class="badboy"></div>
 		<div class="mid">
-			<div class="logo left">
+			<div class="logo">
 				<h2>
 					<a href="./" title="مدیا تک">
 						<img src="./themes/default/images/logo.png" alt="مدیا تک">
@@ -150,6 +167,23 @@
 					<li><a href="contact.html">تماس با ما</a></li>
 					<!-- <li><a href="?item=contact">تماس با ما</a></li> -->
 				</menu>
+				<script>
+					$(document).ready(function(){ 
+						$("#main-menu-select option").click(function(){
+						   window.location.href = $(this).val();
+						});
+					});
+				</script>
+				<select class="main-menu-mob" id="main-menu-select">
+					<option value="">انتخاب</option>					
+					<option value="./">صفحه اصلی</option>					
+					<option value="./about-us.html">درباره ما</option>					
+					<option value="./works.html">کارهای ما</option>					
+					<option value="./news.html">اخبار</option>					
+					<option value="./articles.html">مطالب مفید</option>					
+					<option value="./gallery.html">گالری تصاویر</option>					
+					<option value="./contact.html">تماس با ما</option>					
+				</select>
 			</div>
 		</nav>
 	</header>
