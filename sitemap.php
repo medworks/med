@@ -39,7 +39,7 @@
 	  <loc>http://www.mediateq.ir/gallery.html</loc>
 	</url>
 ";
-	$date = date("Y-m-dTH:i");	
+	$date = date("Y-m-d");	
 
 	foreach($news as $key=>$val)
 	{
