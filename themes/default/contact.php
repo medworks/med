@@ -5,6 +5,7 @@ $tel = GetSettingValue('Tell_Number',0);
 $fax = GetSettingValue('Fax_Number',0);
 
 $html=<<<cd
+	<script src='http://maps.googleapis.com/maps/api/js?key=AIzaSyDun8B3aM33iKhRIZniXwprr2ztGlzgnrQ&sensor=false'></script>
 	<script>
 		function initialize()
 		{
