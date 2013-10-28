@@ -22,6 +22,7 @@
 
 body{
 	background: url('./images/bg.jpg') center;
+	min-width: 950px;
 }
 
 div,table,input,a,p,form{
