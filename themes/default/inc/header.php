@@ -8,7 +8,7 @@
 <head>
 	<title><?php echo $seo->Site_Title;?></title>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
 	<meta charset="UTF-8">
 	<meta name="google-site-verification" content="-v04lxRhdr83WUdcvx52bws3lGnycYZQE03LNstOteg" />
 	<meta name="description" content="<?php echo $seo->Site_Describtion;?>"/>
@@ -54,6 +54,14 @@
 	<link rel="icon" href="themes/personal/favicon.ico" type="image/x-icon"/>
 </head>
 <body>
+	<script type="text/javascript" src="lib/js/CFInstall.js"></script>
+    <script>
+	   CFInstall.check({
+	   		url: "//mediateq.ir/ie.html",
+		    mode: "overlay",
+		    destination: "http://www.mediateq.ir",
+	   });
+    </script>
 	<?php
 	  include_once("./config.php");
 	  include_once("./classes/database.php");
@@ -85,7 +93,6 @@
 					<input type="hidden" name="mark" value="search" />
 					<span class="left"></span>
 				</form>
-
 				<div class="badboy"></div>
 			</div>
 			<div class="top-menu">
