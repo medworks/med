@@ -395,13 +395,10 @@ $code=<<<edit
 								</p>
 								<input type="hidden" name="mark" value="srhnews" /> 
 								{$msgs}
-
 								{$gridcode} 
-															
 							</form>
 					   </center>
 					</div>
-
 edit;
 $html = $code;
 }	
