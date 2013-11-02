@@ -17,7 +17,7 @@
 	if (!$overall_error && $_POST["mark"]=="savepoll")
 	{	    
 	    $regdate = date("Y-m-d H:i:s");
-		$fields = array("`title`","`regedit`","`active`");		
+		$fields = array("`title`","`regdate`","`active`");		
 		$values = array("'{$regdate}'","'{$_POST[question]}'","'0'");
 		if (!$db->InsertQuery('polls',$fields,$values)) 
 		{
@@ -113,8 +113,10 @@ ht;
 	else
 	if ($_GET['act']=="new" or $_GET['act']=="edit")
 	{
+	$msgs = GetMessage($_GET['msg']);
 	$html=<<<cd
 	<form name="frmpollmgr" id="frmpollmgr" class="" action="" method="post" >
+	<div class="mes" id="message">{$msgs}</div>
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
 	 <div class="badboy"></div>
        <p>
