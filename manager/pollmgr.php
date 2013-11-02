@@ -13,7 +13,52 @@
 	}
 	$db = Database::GetDatabase();	
 	$overall_error = false;
-	if ($_GET['item']!="pollmgr")	exit();
+	if ($_GET['item']!="pollmgr")	exit();	
+	if (!$overall_error && $_POST["mark"]=="savepoll")
+	{	    
+	    $regdate = date("Y-m-d H:i:s");
+		$fields = array("`title`","`regedit`","`active`");
+		$option=split("\n", $_POST["option"]);
+		$values = array("'{$regdate}'","'{$_POST[question]}'","0");
+		if (!$db->InsertQuery('polls',$fields,$values)) 
+		{
+			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
+			header('location:?item=pollsmgr&act=new&msg=2');			
+			//$_GET["item"] = "pollmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 2;
+		} 	
+		else 
+		{  										
+			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
+		   $recid = $DBase->GetInsertedRecId();
+		   foreach($option as $row)
+		   {
+			 $DBase->InsertIntoTable("polloptions","`pid`,`option`","'{$recid}','{$row}'");
+		   }
+			header('location:?item=pollsmgr&act=new&msg=1');		    
+			//$_GET["item"] = "pollsmgr";
+			//$_GET["act"] = "new";
+			//$_GET["msg"] = 1;
+		}  				 
+	}
+    else
+	if (!$overall_error && $_POST["mark"]=="editpoll")
+	{			    
+		$values = array("`subject`"=>"'{$_POST[subject]}'",
+			            "`image`"=>"'{$_POST[selectpic]}'",
+						"`body`"=>"'{$_POST[detail]}'",
+						"`ndate`"=>"'{$ndatetime}'",
+						"`userid`"=>"'{$userid}'",
+						"`resource`"=>"'{$_POST[res]}'",
+						"`catid`"=>"'{$_POST[cbcat]}'");
+			
+        $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
+		header('location:?item=newsmgr&act=mgr');
+		//$_GET["item"] = "newsmgr";
+		//$_GET["act"] = "act";			
+	}
+
 	if ($_GET['act']=="new")
 	{
 		$editorinsert = "
