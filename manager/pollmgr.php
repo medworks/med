@@ -190,7 +190,10 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}
-				
+				$rows[$i]["active"] = ($rows[$i]["active"]==0)? "<a href='?item=pollmgr&act=en&pid={$rows[$i]["id"]}' " .
+                "style='text-decoration:none;' class='dis-field'></a>" :
+                "<a href='?item=pollmgr&act=en&pid={$rows[$i]["id"]}' " .
+                 "style='text-decoration:none;' class='en-field'</a>";				
 				$rows[$i]["edit"] = "<a href='?item=pollmgr&act=edit&pid={$rows[$i]["id"]}' class='edit-field'" .
 						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
