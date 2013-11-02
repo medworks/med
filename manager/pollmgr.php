@@ -18,7 +18,7 @@
 	{	    
 	    $regdate = date("Y-m-d H:i:s");
 		$fields = array("`title`","`regdate`","`active`");		
-		$values = array("'{$regdate}'","'{$_POST[question]}'","'0'");
+		$values = array("'{$_POST[question]}'","'{$regdate}'","'0'");
 		if (!$db->InsertQuery('polls',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -35,7 +35,7 @@
 		   $fields = array("`pid`","`option`");				   
 		   foreach($option as $row)
 		   {
-		     $values = array("'{$recid}'","{$row}");
+		     $values = array("'{$recid}'","'{$row}'");
 			 $db->InsertQuery('polloptions',$fields,$values);
 		   }
 			header('location:?item=pollmgr&act=new&msg=1');		    
