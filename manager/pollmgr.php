@@ -14,6 +14,27 @@
 	$db = Database::GetDatabase();	
 	$overall_error = false;
 	if ($_GET['item']!="pollmgr")	exit();
+	if ($_GET['act']=="new")
+	{
+		$editorinsert = "
+			<p>
+				<input type='submit' id='submit' value='ذخیره' class='submit' />	 
+				<input type='hidden' name='mark' value='savepoll' />";
+	}
+	if ($_GET['act']=="edit")
+	{
+		$row=$db->Select("poll","*","id='{$_GET["pid"]}'",NULL);		
+		$editorinsert = "
+		<p>
+			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
+			 <input type='hidden' name='mark' value='editpoll' />";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("polls"," id",$_GET["pid"]);
+		if ($db->CountAll("polls")%10==0) $_GET["pageNo"]-=1;		
+		header("location:?item=pollmgr&act=mgr&pageNo={$_GET[pageNo]}");
+	}
 	if ($_GET['act']=="do")
 	{
 		$html=<<<ht
@@ -44,6 +65,24 @@ ht;
 	else
 	if ($_GET['act']=="new" or $_GET['act']=="edit")
 	{
+	$html=<<<cd
+	<form name="frmpollmgr" id="frmpollmgr" class="" action="" method="post" >
+     <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
+	 <div class="badboy"></div>
+       <p>
+         <label for="cbsection">سوال</label>
+         <span>*</span>
+       </p>   	
+        <input type="text" name="question" value="" />
+		<div class="badboy"></div>
+       <p>
+         <label for="cbsection">گزینه ها</label>
+         <span>*</span>
+       </p>   	         
+         <textarea name="option" rows="10" cols="50"></textarea>         
+         {$editorinsert}
+	 </form>	 
+cd;
 	}
 	return $html;
 ?>	
