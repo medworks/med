@@ -62,6 +62,14 @@
 		header('location:?item=pollmgr&act=mgr');
 		//$_GET["item"] = "pollmgr";
 		//$_GET["act"] = "act";			
+	}else
+	if($_GET["act"]=="chg")
+	{
+		$values = array("`active`"=>"'1'");
+		$db->UpdateQuery("polls",$values,array("`id` ='{$_GET[pid]}'"));
+		$values = array("`active`"=>"'0'");
+		$db->UpdateQuery("polls",$values,array("`id` <>'{$_GET[pid]}'"));	
+		header("Location:?item=pollmgr&act=mgr");
 	}
 	if ($_GET['act']=="new")
 	{
@@ -190,9 +198,9 @@ if ($_GET['act']=="mgr")
 				{
 						$rowsClass[] = "datagridoddrow";
 				}
-				$rows[$i]["active"] = ($rows[$i]["active"]==0)? "<a href='?item=pollmgr&act=en&pid={$rows[$i]["id"]}' " .
+				$rows[$i]["active"] = ($rows[$i]["active"]==0)? "<a href='?item=pollmgr&act=chg&pid={$rows[$i]["id"]}' " .
                 "style='text-decoration:none;' class='dis-field'></a>" :
-                "<a href='?item=pollmgr&act=en&pid={$rows[$i]["id"]}' " .
+                "<a href='?item=pollmgr&act=chg&pid={$rows[$i]["id"]}' " .
                  "style='text-decoration:none;' class='en-field'</a>";				
 				$rows[$i]["edit"] = "<a href='?item=pollmgr&act=edit&pid={$rows[$i]["id"]}' class='edit-field'" .
 						"style='text-decoration:none;'></a>";								
