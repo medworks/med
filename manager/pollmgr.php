@@ -206,17 +206,16 @@ del;
             if (Count($rows) > 0)
             {                    
                     $gridcode .= DataGrid(array( 	
-							"title"=>"عنوان",
-							"title"=>"تصویر",
-							"regdate"=>"توضیحات",
-							"active"=>"تاریخ",
+							"title"=>"سوال",							
+							"regdate"=>"تاریخ",
+							"active"=>"فعال/غیر فعال",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=pollmgr&act=mgr");                    
             }
 $msgs = GetMessage($_GET['msg']);
 $list = array("title"=>"عنوان",
-              "regdate"=>"توضیحات");
+              "regdate"=>"تاریخ");
 $combobox = SelectOptionTag("cbsearch",$list,"title");
 $code=<<<edit
 <script type='text/javascript'>
