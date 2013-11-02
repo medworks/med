@@ -45,4 +45,5 @@ ht;
 	if ($_GET['act']=="new" or $_GET['act']=="edit")
 	{
 	}
+	return $html;
 ?>	
