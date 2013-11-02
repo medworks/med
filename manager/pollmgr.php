@@ -17,13 +17,12 @@
 	if (!$overall_error && $_POST["mark"]=="savepoll")
 	{	    
 	    $regdate = date("Y-m-d H:i:s");
-		$fields = array("`title`","`regedit`","`active`");
-		$option=split("\n", $_POST["option"]);
-		$values = array("'{$regdate}'","'{$_POST[question]}'","0");
+		$fields = array("`title`","`regedit`","`active`");		
+		$values = array("'{$regdate}'","'{$_POST[question]}'","'0'");
 		if (!$db->InsertQuery('polls',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
-			header('location:?item=pollsmgr&act=new&msg=2');			
+			header('location:?item=pollmgr&act=new&msg=2');			
 			//$_GET["item"] = "pollmgr";
 			//$_GET["act"] = "new";
 			//$_GET["msg"] = 2;
@@ -31,12 +30,15 @@
 		else 
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
-		   $recid = $DBase->GetInsertedRecId();
+		   $recid = $db->InsertId();
+		   $option=split("\n", $_POST["option"]);
+		   $fields = array("`pid`","`option`");				   
 		   foreach($option as $row)
 		   {
-			 $DBase->InsertIntoTable("polloptions","`pid`,`option`","'{$recid}','{$row}'");
+		     $values = array("'{$recid}'","{$row}");
+			 $db->InsertQuery('polloptions',$fields,$values);
 		   }
-			header('location:?item=pollsmgr&act=new&msg=1');		    
+			header('location:?item=pollmgr&act=new&msg=1');		    
 			//$_GET["item"] = "pollsmgr";
 			//$_GET["act"] = "new";
 			//$_GET["msg"] = 1;
@@ -45,20 +47,21 @@
     else
 	if (!$overall_error && $_POST["mark"]=="editpoll")
 	{			    
-		$values = array("`subject`"=>"'{$_POST[subject]}'",
-			            "`image`"=>"'{$_POST[selectpic]}'",
-						"`body`"=>"'{$_POST[detail]}'",
-						"`ndate`"=>"'{$ndatetime}'",
-						"`userid`"=>"'{$userid}'",
-						"`resource`"=>"'{$_POST[res]}'",
-						"`catid`"=>"'{$_POST[cbcat]}'");
-			
-        $db->UpdateQuery("news",$values,array("id='{$_GET[nid]}'"));
-		header('location:?item=newsmgr&act=mgr');
-		//$_GET["item"] = "newsmgr";
+		$values = array("`title`"=>"'{$_POST[title]}'");
+        $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));
+		$recid = $db->InsertId();
+	   $option=split("\n", $_POST["option"]);
+	   $fields = array("`pid`","`option`");				   
+	   foreach($option as $row)
+	   {
+	     $values = array("`title`"=>"'{$_POST[title]}'");
+		 $values = array("`pid`"=>"'{$_GET[pid]}'", "`option`"=>"{$row}");		 
+		 $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));		 
+	   }
+		header('location:?item=pollmgr&act=mgr');
+		//$_GET["item"] = "pollmgr";
 		//$_GET["act"] = "act";			
 	}
-
 	if ($_GET['act']=="new")
 	{
 		$editorinsert = "
