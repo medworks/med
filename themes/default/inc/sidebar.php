@@ -90,6 +90,22 @@
     });
 	</script>
 	</div>
+	<!-- ***********poll************ -->
+	<div class="subscrib main-box">
+		<h2>نظر سنجی</h2>
+		<div class="line"></div>
+		<div class="badboy"></div>
+		<div class="box-left">
+			<form id="frmpoll" method="post" action="">
+			    <fieldset class="info_fieldset">
+					<div id="note"></div>
+				</fieldset>
+				<p>سوال</p>				
+				<p><input type="submit" class="submit" id="nsubmit" value="ثبت" /></p>
+				<input type="hidden" name='mark' value='regpoll' />
+			</form>
+		</div>		
+	</div>
 	<!-- ***********Gallery Slideshow************ -->
 	<div class="gallery flexslider simple-box" id="slider">
 		<ul class="slides">
