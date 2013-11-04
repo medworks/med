@@ -7,7 +7,7 @@
 	$rss = GetSettingValue('Rss_Add',0);
 	$row = $db ->Select("polls","*","active = '1'");	
 	$rows = $db->SelectAll("polloptions","*","pid = '{$row[id]}'","id ASC");
-	$radios = DbRadioBoxTag("poll",$rows,"option");
+	$radios = DbRadioBoxTag("poll",$rows,"option","1");
 	
 	
 ?>
