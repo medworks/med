@@ -480,5 +480,14 @@ code;
 	        }
 	    }
 	}
+		
+	function  DbRadioBoxTag($RadioName,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null)
+	{
+		foreach($dbdata as $key=>$val)
+		{
+		   $radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}'/>{$val[$field]} <BR />";
+		}
+		return  $radio;
+	}
 	  
 ?>
