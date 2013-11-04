@@ -5,6 +5,9 @@
 	$facebook = GetSettingValue('FaceBook_Add',0);
 	$twitter = GetSettingValue('Twitter_Add',0);
 	$rss = GetSettingValue('Rss_Add',0);
+	$row = $db ->Select("polls","*","active = '1'");	
+	$rows = $db->SelectAll("polloptions","*","pid = '{$row[id]}'","id ASC");
+	$radios = DbRadioBoxTag("poll",$rows,"option");
 	
 ?>
 <div class="sidebar">
@@ -100,7 +103,7 @@
 			    <fieldset class="info_fieldset">
 					<div id="note"></div>
 				</fieldset>
-				<p>سوال</p>				
+				<p><?php echo $radios?></p>				
 				<p><input type="submit" class="submit" id="nsubmit" value="ثبت" /></p>
 				<input type="hidden" name='mark' value='regpoll' />
 			</form>
