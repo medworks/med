@@ -96,24 +96,24 @@
 	</div>
 	<!-- ***********poll************ -->
 	<div class="subscrib main-box">
-		<h2>نظر سنجی</h2>
-		<div id="msg"></div>
+		<h2>نظر سنجی</h2>		
 		<div class="line"></div>
-		<div class="badboy"></div>
+		<div class="badboy"></div>		
 		<div class="box-left">
+		   <div id="msg"></div>
 			<form id="frmpoll" method="post" action="">
 			    <fieldset class="info_fieldset">
 					<div id="note"></div>
 				</fieldset>
 				<p><?php echo $row["title"] ?> </p>
 				<p><?php echo $radios?></p>				
-				<p><input type="submit" class="submit" id="submit" value="ثبت" /></p>
+				<p><input type="submit" class="submit" id="psubmit" value="ثبت" /></p>
 				<input type="hidden" name='mark' value='regpoll' />
 			</form>
 		</div>	
 <script type='text/javascript'>
 		$(document).ready(function(){	   			
-			$("#submit").click(function(){
+			$("#psubmit").click(function(){
 				$.ajax({
 					type: "POST",
 					url: "manager/ajaxcommand.php?poll=reg",
