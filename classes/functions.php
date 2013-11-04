@@ -485,7 +485,7 @@ code;
 	{
 		foreach($dbdata as $key=>$val)
 		{
-		   $radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}'/>{$val[$field]} <BR />";
+		   $radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}'/>{$val[$feild]} <BR />";
 		}
 		return  $radio;
 	}
