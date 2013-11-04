@@ -128,4 +128,19 @@ cd;
 	echo $pics.$html;
 	 
 }
+if($_GET["poll"]=="reg")
+{
+		$ip = $_SERVER['REMOTE_ADDR'];
+		if ($db->CountOf("pollanswers","ip='{$ip}'") == 0)
+		{
+		    $fields = array("`poid`","`ip`");			
+		    $values = array("'{$_POST["poll"]}'","'{$ip}'");
+		    if ($db->InsertQuery("pollanswers",$fields,$values))
+			  echo "<div class='notification_ok rtl'>نظر شما با موفقیت ثبت شد</div>";
+			else
+              echo "<div class='notification_error rtl'>ثبت نظر با مشکل مواجه شد  لطفا فیلدها را بررسی نمایید و مجددا تلاش کنید.</div>";			
+		}        	
+		else 
+		echo "<div class='notification_error rtl'>شما قبلا نظر خود را ثبت نموده اید</div>";
+    }
 ?>
