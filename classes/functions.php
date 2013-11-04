@@ -481,11 +481,16 @@ code;
 	    }
 	}
 		
-	function  DbRadioBoxTag($RadioName,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null)
+	function  DbRadioBoxTag($RadioName,$dbdata,$feild,$selectedindex=Null,$onchange=Null,$classname=null)
 	{
+	    $i = 0;
 		foreach($dbdata as $key=>$val)
 		{
-		   $radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}'/>{$val[$feild]} <BR />";
+		   if (isset($selectedindex)) $i++;
+		   if ($selectedindex == $i)
+		      $radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}' checked='checked'/>{$val[$feild]} <BR />";
+			else  
+			$radio .= "<input type='radio' name='{$RadioName}' value='{$val[id]}'/>{$val[$feild]} <BR />";
 		}
 		return  $radio;
 	}
