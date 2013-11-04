@@ -9,6 +9,7 @@
 	$rows = $db->SelectAll("polloptions","*","pid = '{$row[id]}'","id ASC");
 	$radios = DbRadioBoxTag("poll",$rows,"option");
 	
+	
 ?>
 <div class="sidebar">
 	<!-- ***********Slideshow************ -->
@@ -96,6 +97,7 @@
 	<!-- ***********poll************ -->
 	<div class="subscrib main-box">
 		<h2>نظر سنجی</h2>
+		<div id="msg"></div>
 		<div class="line"></div>
 		<div class="badboy"></div>
 		<div class="box-left">
@@ -103,11 +105,34 @@
 			    <fieldset class="info_fieldset">
 					<div id="note"></div>
 				</fieldset>
+				<p><?php echo $row["title"] ?> </p>
 				<p><?php echo $radios?></p>				
-				<p><input type="submit" class="submit" id="nsubmit" value="ثبت" /></p>
+				<p><input type="submit" class="submit" id="submit" value="ثبت" /></p>
 				<input type="hidden" name='mark' value='regpoll' />
 			</form>
-		</div>		
+		</div>	
+<script type='text/javascript'>
+		$(document).ready(function(){	   			
+			$("#submit").click(function(){
+				$.ajax({
+					type: "POST",
+					url: "manager/ajaxcommand.php?poll=reg",
+					data: $("#frmpoll").serialize(), 
+					success: function(msg)
+					{
+						$("#msg").ajaxComplete(function(event, request, settings){				
+							$(this).hide();
+							$(this).html(msg).slideDown("slow");
+							$(this).html(msg);
+
+
+						});
+					}
+				});
+				return false;
+			});
+    });
+	</script>		
 	</div>
 	<!-- ***********Gallery Slideshow************ -->
 	<div class="gallery flexslider simple-box" id="slider">
