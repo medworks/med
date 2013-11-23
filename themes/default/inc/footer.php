@@ -133,6 +133,7 @@
 		    $("a[rel^='prettyphoto']").prettyPhoto({
 		    	autoplay_slideshow: false,
 		    	show_title: false,
+		    	social_tools: "",
 		    });
 		  });
 	</script>
