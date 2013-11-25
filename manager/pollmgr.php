@@ -79,8 +79,13 @@
 				<input type='hidden' name='mark' value='savepoll' />";
 	}
 	if ($_GET['act']=="edit")
-	{
-		$row=$db->Select("poll","*","id='{$_GET["pid"]}'",NULL);		
+	{            
+		$row=$db->Select("polls","*","id='{$_GET[pid]}'");      
+                $optionrw=$db->SelectAll("polloptions","*","pid='{$row[id]}'");
+                foreach ($optionrw as $key => $val) 
+                {
+                    $oprows .= $val["option"];
+                }
 		$editorinsert = "
 		<p>
 			 <input type='submit' id='submit' value='ویرایش' class='submit' />	 
@@ -132,13 +137,13 @@ ht;
          <label for="cbsection">سوال</label>
          <span>*</span>
        </p>   	
-        <input type="text" name="question" value="" />
+        <input type="text" name="question" value="{$row[title]}" />
 		<div class="badboy"></div>
        <p>
          <label for="cbsection">گزینه ها</label>
          <span>*</span>
        </p>   	         
-         <textarea name="option" rows="10" cols="50"></textarea>         
+         <textarea name="option" rows="10" cols="50">{$oprows}</textarea>
          {$editorinsert}
 	 </form>	 
 cd;
