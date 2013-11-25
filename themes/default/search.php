@@ -6,6 +6,7 @@
    $table = "";
    $field = "";   
    $db = Database::GetDatabase();
+   if (!empty($_POST["searchtxt"])) $searchtxt = "%{$_POST[searchtxt]}%";   
    if ($_POST["mark"]=="search")
    {
       $table = "news";
@@ -14,7 +15,7 @@
 	  $rows = $db->SelectAll(
 				$table,
 				"*",
-				"{$field} LIKE '%{$_POST[searchtxt]}%'",
+				"{$field} LIKE '{$searchtxt}'",
 				"id DESC",
 				$_GET["pageNo"]*10,
 				10);
@@ -63,7 +64,7 @@ rt;
 	$rows = $db->SelectAll(
 				$table,
 				"*",
-				"{$field} LIKE '%{$_POST[searchtxt]}%'",
+				"{$field} LIKE '{$searchtxt}'",
 				"id DESC",
 				$_GET["pageNo"]*10,
 				10);
