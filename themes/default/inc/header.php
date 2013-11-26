@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="themes/css/prettyphoto.css" />
 	<link rel="stylesheet" href="themes/css/validationEngine.css"/>
 	<link rel="stylesheet" href="themes/default/style.css" />
-	<link rel="stylesheet" href="themes/default/responsive.css" />
+	<!-- <link rel="stylesheet" href="themes/default/responsive.css" /> -->
 
 	<script src="lib/js/jquery.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
@@ -113,14 +113,14 @@
 					</li> -->
 					<li><a href="contact.html">تماس با ما</a></li>
 				</menu>
-				<script>
+				<!-- <script>
 					$(document).ready(function(){ 
 						$("#top-menu-select option").click(function(){
 						   window.location.href = $(this).val();
 						});
 					});
-				</script>
-				<select class="top-menu-mob" id="top-menu-select">
+				</script> -->
+				<!-- <select class="top-menu-mob" id="top-menu-select">
 					<option value="">انتخاب</option>					
 					<option value="./">صفحه اصلی</option>					
 					<option value="./about-us.html">درباره ما</option>					
@@ -128,7 +128,7 @@
 					<option value="./news.html">اخبار</option>					
 					<option value="./articles.html">مطالب مفید</option>					
 					<option value="./contact.html">تماس با ما</option>					
-				</select>
+				</select> -->
 				<div class="badboy"></div>
 			</div>
 		</div>
@@ -173,14 +173,14 @@
 					<li><a href="contact.html">تماس با ما</a></li>
 					<!-- <li><a href="?item=contact">تماس با ما</a></li> -->
 				</menu>
-				<script>
+				<!-- <script>
 					$(document).ready(function(){ 
 						$("#main-menu-select option").click(function(){
 						   window.location.href = $(this).val();
 						});
 					});
-				</script>
-				<select class="main-menu-mob" id="main-menu-select">
+				</script> -->
+				<!-- <select class="main-menu-mob" id="main-menu-select">
 					<option value="">انتخاب</option>					
 					<option value="./">صفحه اصلی</option>					
 					<option value="./about-us.html">درباره ما</option>					
@@ -189,7 +189,7 @@
 					<option value="./articles.html">مطالب مفید</option>					
 					<option value="./gallery.html">گالری تصاویر</option>					
 					<option value="./contact.html">تماس با ما</option>					
-				</select>
+				</select> -->
 			</div>
 		</nav>
 	</header>
