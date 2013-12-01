@@ -18,7 +18,7 @@
 	{	    
 	    $regdate = date("Y-m-d H:i:s");
 		$fields = array("`title`","`regdate`","`active`");		
-		$values = array("'{$_POST[question]}'","'{$regdate}'","'0'");
+		$values = array("'{$_POST[title]}'","'{$regdate}'","'0'");
 		if (!$db->InsertQuery('polls',$fields,$values)) 
 		{
 			//$msgs = $msg->ShowError("ثبت اطلاعات با مشکل مواجه شد");
@@ -49,16 +49,19 @@
 	if (!$overall_error && $_POST["mark"]=="editpoll")
 	{			    
 		$values = array("`title`"=>"'{$_POST[title]}'");
-        $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));
-		$recid = $_GET[pid];
+        $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));		
 	   $option=split("\n", $_POST["option"]);
+	   $fields = array("`pid`","`option`");
+           $db->Delete("polloptions"," pid",$_GET["pid"]);
+	   
+           $option=split("\n", $_POST["option"]);
 	   $fields = array("`pid`","`option`");				   
 	   foreach($option as $row)
 	   {
-	     $values = array("`title`"=>"'{$_POST[title]}'");
-		 $values = array("`pid`"=>"'{$_GET[pid]}'", "`option`"=>"{$row}");		 
-		 $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));		 
-	   }
+	       $row = strip_tags($row);
+	       $values = array("'{$_GET[pid]}'","'{$row}'");
+	       $db->InsertQuery('polloptions',$fields,$values);
+	  }
 		header('location:?item=pollmgr&act=mgr');
 		//$_GET["item"] = "pollmgr";
 		//$_GET["act"] = "act";			
@@ -137,10 +140,10 @@ ht;
          <label for="cbsection">سوال</label>
          <span>*</span>
        </p>   	
-        <input type="text" name="question" value="{$row[title]}" />
+        <input type="text" name="title" value="{$row[title]}" />
 		<div class="badboy"></div>
        <p>
-         <label for="cbsection">گزینه ها</label>
+         <label for="option">گزینه ها</label>
          <span>*</span>
        </p>   	         
          <textarea name="option" rows="10" cols="50">{$oprows}</textarea>
