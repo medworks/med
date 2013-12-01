@@ -207,6 +207,8 @@ if ($_GET['act']=="mgr")
                 "style='text-decoration:none;' class='dis-field'></a>" :
                 "<a href='?item=pollmgr&act=chg&pid={$rows[$i]["id"]}' " .
                  "style='text-decoration:none;' class='en-field'</a>";				
+                                $rows[$i]["stat"] = "<a href='?item=pollmgr&act=stat&pid={$rows[$i]["id"]}' class='stat-field'" .
+						"style='text-decoration:none;'></a>";
 				$rows[$i]["edit"] = "<a href='?item=pollmgr&act=edit&pid={$rows[$i]["id"]}' class='edit-field'" .
 						"style='text-decoration:none;'></a>";								
 				$rows[$i]["delete"]=<<< del
@@ -225,6 +227,7 @@ del;
 							"title"=>"سوال",							
 							"regdate"=>"تاریخ",
 							"active"=>"فعال/غیر فعال",
+                            "stat"=>"آمار",
                             "edit"=>"ویرایش",
 							"delete"=>"حذف",), $rows, $colsClass, $rowsClass, 10,
                             $_GET["pageNo"], "id", false, true, true, $rowCount,"item=pollmgr&act=mgr");                    
