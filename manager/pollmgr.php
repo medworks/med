@@ -50,7 +50,7 @@
 	{			    
 		$values = array("`title`"=>"'{$_POST[title]}'");
         $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));
-		$recid = $db->InsertId();
+		$recid = $_GET[pid];
 	   $option=split("\n", $_POST["option"]);
 	   $fields = array("`pid`","`option`");				   
 	   foreach($option as $row)
@@ -293,6 +293,13 @@ $code=<<<edit
 					</div>
 edit;
 $html = $code;
-}	
+}
+ else {
+   if ($_GET['act']=="mgr")
+   {
+       
+   }
+    
+}
 	return $html;
 ?>	
