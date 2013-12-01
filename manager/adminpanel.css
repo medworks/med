@@ -727,6 +727,10 @@ header #mini-nav span.newSignup{
   background-image: url('./images/newletter.png');
 }
 
+#mainnav > ul > li a.pollmgr{
+  background-image: url('./images/poll.png');
+}
+
 #mainnav > ul > li a.users{
   background-image: url('./images/users.png');
 }
@@ -898,6 +902,14 @@ header #mini-nav span.newSignup{
 
 .sub-menu ul li span.edit-news{
   background-image: url('./images/editnews.png');
+}
+
+.sub-menu ul li span.add-poll{
+  background-image: url('./images/add-poll.png');
+}
+
+.sub-menu ul li span.edit-poll{
+  background-image: url('./images/edit-poll.png');
 }
 
 .sub-menu ul li span.add-works{

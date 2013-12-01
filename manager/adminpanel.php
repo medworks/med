@@ -114,7 +114,7 @@
           </li>
 		  </li>
 		      <li >            
-            <a href="?item=pollmgr&act=do" id="pollmgr" class="pollmgr"><p>مدیریت نظرسنجی</p></a>
+            <a href="?item=pollmgr&act=do" id="pollmgr" class="pollmgr"><p>نظرسنجی</p></a>
           </li>
     	    <li >            
             <a href="?item=usermgr&act=do" id="users" name="users" class="users"><p>مدیریت کاربران</p></a>

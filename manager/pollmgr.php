@@ -111,12 +111,12 @@
 				<ul>
 				  <li>		  
 					<a href="?item=pollmgr&act=new">درج نظرسنجی جدید
-						<span class="add-news"></span>
+						<span class="add-poll"></span>
 					</a>
 				  </li>
 				  <li>
 					<a href="?item=pollmgr&act=mgr" id="poll" name="poll">حذف/ویرایش نظرسنجی
-						<span class="edit-news"></span>
+						<span class="edit-poll"></span>
 					</a>
 				  </li>
 				 </ul>
