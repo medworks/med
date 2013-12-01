@@ -87,7 +87,7 @@
                 $optionrw=$db->SelectAll("polloptions","*","pid='{$row[id]}'");
                 foreach ($optionrw as $key => $val) 
                 {
-                    $oprows .= $val["option"];
+                    $oprows .= $val["option"]."<br/>";
                 }
 		$editorinsert = "
 		<p>
