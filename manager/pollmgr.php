@@ -137,6 +137,13 @@ ht;
 			$("#frmpollmgr").validationEngine();
    		});
 	</script>
+        <div class="title">
+          <ul>
+                <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
+                <li><span>مدیریت نظر سنجی</span></li>
+          </ul>
+          <div class="badboy"></div>
+        </div>        
 	<form name="frmpollmgr" id="frmpollmgr" class="" action="" method="post" >
 	<div class="mes" id="message">{$msgs}</div>
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
@@ -325,6 +332,13 @@ $html = $code;
             $optionstat .= " گزینه ".$optionst.$persent."  را به خود اختصاص داده است "."<br/>";
          }
 $html=<<<cd
+			<div class="title">
+			  <ul>
+				<li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
+				<li><span>مدیریت نظر سنجی</span></li>
+			  </ul>
+			  <div class="badboy"></div>
+			</div>
         <p>سوال نظر سنجی :</p> {$poll["title"]}
         <p>آمار :</p> <br/> {$optionstat}
 cd;
