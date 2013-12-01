@@ -1316,6 +1316,12 @@ select.select2{
   height: 16px;
 }
 
+.admin_container a.stat-field{
+  background: url('./images/icons/chart.gif') no-repeat center;
+  display: block;
+  height: 16px;
+}
+
 .admin_container a.dis-field{
   background: url('./images/icons/disable.gif') no-repeat center;
   display: block;
