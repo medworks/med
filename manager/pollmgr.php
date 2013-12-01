@@ -132,6 +132,11 @@ ht;
 	{
 	$msgs = GetMessage($_GET['msg']);
 	$html=<<<cd
+	<script type='text/javascript'>
+		$(document).ready(function(){	   
+			$("#frmpollmgr").validationEngine();
+   		});
+	</script>
 	<form name="frmpollmgr" id="frmpollmgr" class="" action="" method="post" >
 	<div class="mes" id="message">{$msgs}</div>
      <p class="note">پر کردن موارد مشخص شده با * الزامی می باشد</p>
@@ -140,7 +145,7 @@ ht;
          <label for="cbsection">سوال</label>
          <span>*</span>
        </p>   	
-        <input type="text" name="title" value="{$row[title]}" />
+        <input type="text" name="title" class="validate[required] subject" value="{$row[title]}" />
 		<div class="badboy"></div>
        <p>
          <label for="option">گزینه ها</label>
