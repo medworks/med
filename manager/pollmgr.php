@@ -306,10 +306,10 @@ $html = $code;
    if ($_GET['act']=="stat")
    {
          $poll = $db ->Select("polls",NULL,"ID = '{$_GET[pid]}'");
-         $options = $db->SelectAll("polloptions","*","pid = '{$_GET[pid]}'","id ASC");
+         $options = $db->SelectAll("polloptions","*","pid = '{$_GET[pid]}'","id ASC");         
          $db->cmd = " SELECT COUNT(*) FROM `polloptions` as po , `pollanswers` as pa
                                 WHERE  po.id = pa.poid and po.pid='{$_GET[pid]}' ";
-         $res = $db->RunSQL();         
+         $res = $db->RunSQL();
          $totallcount = mysqli_fetch_array($res);
          $totalanswerscount = $totallcount[0];
          foreach ($options as $row)
@@ -321,12 +321,12 @@ $html = $code;
                 $persent .= "%";
             }
             else {$persent = "0%";}
-            $option ="<b>".$row["option"]."</b> ";
-            $option.=" گزینه ".$option.$persent."  را به خود اختصاص داده است "."<br/>";
+            $optionst = "<b>".$row["option"]."</b> ";
+            $optionstat .= " گزینه ".$optionst.$persent."  را به خود اختصاص داده است "."<br/>";
          }
 $html=<<<cd
         <p>سوال نظر سنجی :</p> {$poll["title"]}
-        <p>آمار :</p> <br/> {$option}
+        <p>آمار :</p> <br/> {$optionstat}
 cd;
    }
     
