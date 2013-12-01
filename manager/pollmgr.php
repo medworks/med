@@ -386,7 +386,7 @@ $html=<<<cd
         <script type="text/javascript"> 
             $('#cbchart').change(function(){    
                 $("select option:selected").each(function(){
-                    window.location.href = "adminpanel.php?item=pollmgr&act=stat&pid={$_GET[pid]}&type="+$(this).val();	
+                    window.location.href = "adminpanel.php?item=pollmgr&act=stat&pid={$_GET["pid"]}&type="+$(this).val();	
                   return false;
 		 });
             });
