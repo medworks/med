@@ -1306,31 +1306,36 @@ select.select2{
 
 .admin_container a.edit-field{
   background: url('./images/icons/edit.gif') no-repeat center;
-  display: block;
+  display: inline-block;
+  width: 16px;
   height: 16px;
 }
 
 .admin_container a.del-field{
   background: url('./images/icons/delete.gif') no-repeat center;
-  display: block;
+  display: inline-block;
+  width: 16px;
   height: 16px;
 }
 
 .admin_container a.stat-field{
   background: url('./images/icons/chart.gif') no-repeat center;
-  display: block;
+  display: inline-block;
   height: 16px;
+  width: 16px;
 }
 
 .admin_container a.dis-field{
   background: url('./images/icons/disable.gif') no-repeat center;
-  display: block;
+  display: inline-block;
+  width: 16px;
   height: 16px;
 }
 
 .admin_container a.en-field{
   background: url('./images/icons/enable.gif') no-repeat center;
-  display: block;
+  display: inline-block;
+  width: 16px;
   height: 16px;
 }
 
