@@ -99,7 +99,7 @@
 				    $act=="dela" or $act=="delu" or $act=="set" or $act=="arc") return "../manager/newslettermgr.php";
 			break;
 			case 'pollmgr':
-                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="del" or $act=="edit" or $act=="chg") return "../manager/pollmgr.php";
+                if ($act=="do" or $act=="new" or $act=="mgr" or $act=="stat" or $act=="del" or $act=="edit" or $act=="chg") return "../manager/pollmgr.php";
 			break;
 
 		}
