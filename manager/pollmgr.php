@@ -331,6 +331,44 @@ $html = $code;
             $optionst = "<b>".$row["option"]."</b> ";
             $optionstat .= " گزینه ".$optionst.$persent."  را به خود اختصاص داده است "."<br/>";
          }
+$chartlist = array("none"=>"انتخاب نوع نمودار",
+                   "area"=>"محیطی",
+                   "line"=>"خطی",
+                   "pie"=>"دایره ای",
+	           "bar"=>"میله ای");
+$combobox = SelectOptionTag("cbchart",$chartlist);
+if (!isset($_GET["type"])) $_GET["type"]="pie";
+        if (isset($options))
+	{
+		$row = array();
+		$pie = array();
+		$itemcount = array();
+		$count = array();
+		foreach($options as $key => $val)
+		{                  
+		  $row[] = $val['option'];
+                  $cnt = $db->CountOf("pollanswers","poid='{$val[id]}'");
+                  $count[] =$cnt; 
+                  $pie[] = "[{$val['option']},{$cnt}]";
+		}	
+		if (isset($row))
+		{			
+			if ($_GET["type"]=="pie")
+			{		
+				//$xnAxis = implode(', ',$uniq);
+				$nseries = implode(', ',$pie);
+			}
+			else
+			{ 	
+				$xnAxis = implode(', ',$row);
+				$nseries = implode(', ',$count);
+			}
+			unset($row);
+			unset($itemcount);
+			unset($pie);
+			unset($count);
+		}	
+	}
 $html=<<<cd
 			<div class="title">
 			  <ul>
@@ -341,6 +379,60 @@ $html=<<<cd
 			</div>
         <p>سوال نظر سنجی :</p> {$poll["title"]}
         <p>آمار :</p> <br/> {$optionstat}
+        <hr/>
+        {$combobox}
+        <script src="../lib/highcharts/js/highcharts.js"></script>
+        <script src="../lib/highcharts/js/modules/exporting.js"></script>
+        <script type="text/javascript"> 
+            $('#cbchart').change(function(){    
+                $("select option:selected").each(function(){
+                    window.location.href = "adminpanel.php?item=pollmgr&act=stat&type="+$(this).val();	
+                  return false;
+		 });
+            });
+    $(function () {       		
+        $('#pnlstat').highcharts({
+           chart: {		
+				type: '{$_GET[type]}',
+				width: 800,
+				height:600,
+				zoomType: 'xy'
+			},			
+            title: {
+			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
+             text: 'نمودار'
+            },
+            xAxis: {			   
+			  style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },	
+              categories: [{$xnAxis}]
+            },
+			yAxis: {
+			  style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
+              title: {
+                    text: 'تعداد نظر '
+                }
+            },
+            credits: {
+                enabled: false
+            },			
+            series: [{			
+			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
+			    title: {
+                    text: 'تعداد'
+                },
+                name: 'تعداد نظر ',
+				color: '#8bbc21',
+                data: [{$nseries}]
+                }]
+        });
+    });	
+  </script>
+	
+ <div id="pnlstat" style="width: 400px; height: 400px; margin: 0;"></div>
+ 
+ 
+        
+        
 cd;
    }
     
