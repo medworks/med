@@ -390,7 +390,7 @@ $html=<<<cd
                   return false;
 		 });
             });
-    $(function () {       		
+    $(function () {                    
         $('#pnlstat').highcharts({
            chart: {		
 				type: '{$_GET[type]}',
@@ -400,7 +400,7 @@ $html=<<<cd
 			},			
             title: {
 			style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },
-             text: 'نمودار'
+             text: '{$poll["title"]}'
             },
             xAxis: {			   
 			  style: {fontFamily: 'bmitra', fontWeight: 'bold', fontSize: '25px' },	
@@ -429,10 +429,6 @@ $html=<<<cd
   </script>
 	
  <div id="pnlstat" style="width: 400px; height: 400px; margin: 0;"></div>
- 
- 
-        
-        
 cd;
    }
     
