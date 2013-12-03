@@ -31,7 +31,7 @@
 		{  										
 			//$msgs = $msg->ShowSuccess("ثبت اطلاعات با مو??قیت انجام شد");
 		   $recid = $db->InsertId();
-		   $option[] = implode("\n", $_POST["option"]);
+		   $option = explode("\n", $_POST["option"]);
 		   $fields = array("`pid`","`option`");				   
 		   foreach($option as $row)
 		   {
@@ -50,11 +50,11 @@
 	{			    
 	    $values = array("`title`"=>"'{$_POST[title]}'");
             $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));		
-            $option[]=  implode("\n", $_POST["option"]);
+            $option[]= explode("\n", $_POST["option"]);
 	    $fields = array("`pid`","`option`");
             $db->Delete("polloptions"," pid",$_GET["pid"]);
 	   
-            //$option[]=  implode("\n", $_POST["option"]);
+            //$option[]=  explode("\n", $_POST["option"]);
             $fields = array("`pid`","`option`");				   
 	   foreach($option as $row)
 	   {
