@@ -428,7 +428,7 @@ $html=<<<cd
     });	
   </script>
 	
- <div id="pnlstat" style="width: 400px; height: 400px; margin: 0;"></div>
+ <div id="pnlstat" style="width: 800px; height: 600px; margin: 0;"></div>
 cd;
    }
     
