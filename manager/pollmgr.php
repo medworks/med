@@ -50,7 +50,7 @@
 	{			    
 	    $values = array("`title`"=>"'{$_POST[title]}'");
             $db->UpdateQuery("polls",$values,array("id='{$_GET[pid]}'"));		
-            $option[]= explode("\n", $_POST["option"]);
+            $option = explode("\n", $_POST["option"]);
 	    $fields = array("`pid`","`option`");
             $db->Delete("polloptions"," pid",$_GET["pid"]);
 	   
