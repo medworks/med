@@ -366,3 +366,4 @@ section.main-content .content .detail p span{color:#000 !important;}
 .notfoundpage .mid{margin-top:50px;}
 .notfoundpage .mid .logo h2{text-align:center;}
 .notfoundpage .mid .logo a strong{display:none;}
+form#frmpoll input[type="radio"]{margin-left: 5px;margin-bottom: 10px;}

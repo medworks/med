@@ -106,7 +106,7 @@
 			<div class="title">
 			  <ul>
 				<li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-				<li><span>مدیریت نظر سنجی</span></li>
+				<li><span>مدیریت نظرسنجی</span></li>
 			  </ul>
 			  <div class="badboy"></div>
 			</div>
@@ -140,7 +140,7 @@ ht;
         <div class="title">
           <ul>
                 <li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-                <li><span>مدیریت نظر سنجی</span></li>
+                <li><span>مدیریت نظرسنجی</span></li>
           </ul>
           <div class="badboy"></div>
         </div>        
@@ -373,12 +373,12 @@ $html=<<<cd
 			<div class="title">
 			  <ul>
 				<li><a href="adminpanel.php?item=dashboard&act=do">پیشخوان</a></li>
-				<li><span>مدیریت نظر سنجی</span></li>
+				<li><span>مدیریت نظرسنجی</span></li>
 			  </ul>
 			  <div class="badboy"></div>
 			</div>
-        <p>سوال نظر سنجی :</p> {$poll["title"]}
-        <p>آمار :</p> <br/> {$optionstat}
+        <p>سوال نظرسنجی :</p> <p>{$poll["title"]}</p><br/>
+        <p>آمار :</p> <p>{$optionstat}</p>
         <hr/>
         {$combobox}
         <script src="../lib/highcharts/js/highcharts.js"></script>
