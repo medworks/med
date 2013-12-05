@@ -3,8 +3,8 @@
 	$seo = Seo::GetSeo();
 	/* $Site_Title = GetSettingValue('Site_Title',0);
 	$Site_KeyWords = GetSettingValue('Site_KeyWords',0);
-	$Site_Describtion = GetSettingValue('Site_Describtion',0);
-	$tel = GetSettingValue('Tell_Number',0); */
+	$Site_Describtion = GetSettingValue('Site_Describtion',0);*/
+	$tel = GetSettingValue('Tell_Number',0); 
 ?>
 <!doctype html>
 <html lang="fa">
