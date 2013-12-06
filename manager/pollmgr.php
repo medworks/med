@@ -346,10 +346,12 @@ if (!isset($_GET["type"])) $_GET["type"]="pie";
 		$count = array();
 		foreach($options as $key => $val)
 		{                  
+                  $val['option'] = strip_tags($val['option']);
+                  $val['option'] = preg_replace( "/\r|\n/", "", $val['option'] );
                   $row[] = "'{$val['option']}'";
                   $cnt = $db->CountOf("pollanswers","poid='{$val[id]}'");
                   $count[] =$cnt; 
-                  $pie[] = "['{$val['option']}',{$cnt}]";
+                  $pie[] = "[{$val['option']},{$cnt}]";
 		}	
 		if (isset($row))
 		{			
