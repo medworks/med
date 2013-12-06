@@ -351,7 +351,7 @@ if (!isset($_GET["type"])) $_GET["type"]="pie";
                   $row[] = "'{$val['option']}'";
                   $cnt = $db->CountOf("pollanswers","poid='{$val[id]}'");
                   $count[] =$cnt; 
-                  $pie[] = "[{$val['option']},{$cnt}]";
+                  $pie[] = "['{$val['option']}',{$cnt}]";
 		}	
 		if (isset($row))
 		{			
