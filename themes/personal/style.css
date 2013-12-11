@@ -873,6 +873,7 @@ section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 h3{
 section.middle .contain .tabs-part .cat-tabs .cat-tabs-wrap2 p{
 	line-height: 1.5;
 	font-size: 18px;
+	text-align: justify;
 }
 
 section.middle .contain .tabs-part .pic{
@@ -880,8 +881,8 @@ section.middle .contain .tabs-part .pic{
 }
 
 section.middle .contain .tabs-part .pic img{
-    width: 486px;
-    height: 203px;
+    width: 385px;
+    height: 200px;
 }
 /*****aboutus-part*****/
 section.middle .contain .about-part .tit h2{
