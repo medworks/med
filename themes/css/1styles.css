@@ -1,9 +1,6 @@
 @font-face{font-family:'bmitra';src:url('../fonts/BMitra.eot');src:url('../fonts/BMitra.eot?#iefix') format('embedded-opentype'),
 url('../fonts/BMitra.woff') format('woff'),
 url('../fonts/BMitra.ttf') format('truetype');font-weight:normal;font-style:normal;}
-div.alert{background-color:yellow;margin:25px auto 0;padding:45px 0;}
-div.alert img{margin-left:50px;}
-div.alert p{margin-right:170px;line-height:1.5;font-size:20px;font-weight:"normal";}
 .error{padding:10px;width:450px;margin:0 auto;background-color:#fa9a79;-webkit-border-radius:8px;-moz-border-radius:8px;-ms-border-radius:8px;-o-border-radius:8px;border-radius:8px;text-align:center;}
 .error span{display:inline-block;background:url('../images/msg/error.png') no-repeat right center;background-size:48px 48px;height:48px;width:48px;float:right;}
 .error p{font-family:'bmitra';font-size:20px;display:inline-block;color:#000 !important;margin:0 !important;padding:15px !important;}
