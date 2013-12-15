@@ -367,3 +367,6 @@ section.main-content .content .detail p span{color:#000 !important;}
 .notfoundpage .mid .logo h2{text-align:center;}
 .notfoundpage .mid .logo a strong{display:none;}
 form#frmpoll input[type="radio"]{margin-left: 5px;margin-bottom: 10px;}
+.price .box-right p{margin-bottom: 25px;font-size:20px;}
+.price .box-right p a{font-size:16px;}
+.price .box-right p a:hover{color:#F88C00;}
