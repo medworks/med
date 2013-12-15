@@ -154,6 +154,7 @@
 					<li><a href="about-us.html">درباره ما</a></li>
 					<!--<li><a href="?item=about">درباره ما</a></li> -->
 					<li><a href="works.html">کارهای ما</a></li>
+					<li><a href="price.html">تعرفه ها</a></li>
 					<!-- <li><a href="?item=works&act=do">کارهای ما</a></li> -->
 					<li><a href="news.html">اخبار</a></li>
 					<!-- <li><a href="?item=news&act=do">اخبار</a></li> -->

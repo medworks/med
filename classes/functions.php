@@ -29,7 +29,11 @@
 			break;
 			case 'dashboard':
 				if ($act=="do") return "dashboard.php";
-			break;	
+			break;
+			case 'price':
+				$seo->Site_Title = "تعرفه ها";
+                if ($act=="do") return "themes/default/price.php";
+            break;	
             case 'works':
 				$seo->Site_Title = "کارهای ما";
                 if ($act=="do") return "themes/default/works.php";
